@@ -1,0 +1,285 @@
+{
+  "customer": {
+    "name": "Colombo",
+    "address": "via Bergamo 14, Monza (secondo piano)"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "togliamo i sanitari, sono quattro, el cess, il bidet, il lavandino e la vasca",
+      "work": "rimozione sanitari (water, bidet, lavabo, vasca)",
+      "quantity": 4,
+      "unit": "cad",
+      "quantityNote": "4 sanitari: water, bidet, lavabo, vasca",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-04",
+        "BAG-07",
+        "BAG-01",
+        "DEM-08",
+        "BAG-08",
+        "BAG-09",
+        "DEM-09"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "togliamo le piastrelle dei muri, sono alte due metri tutto intorno",
+      "work": "rimozione rivestimento in piastrelle a parete",
+      "quantity": 16,
+      "unit": "m2",
+      "quantityNote": "Perimetro 2×(2,20+1,80) = 8 m, per altezza 2 m = 16 m2. Misure del bagno approssimate (\"più o meno\"), nessuna detrazione per porta.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-05",
+        "BAG-12",
+        "BAG-13",
+        "CUC-04",
+        "DEM-04",
+        "CUC-05",
+        "VAR-01",
+        "TIN-11"
+      ],
+      "unitPriceCents": 2050,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "togliamo le piastrelle del pavimento",
+      "work": "rimozione pavimento in piastrelle",
+      "quantity": 3.96,
+      "unit": "m2",
+      "quantityNote": "2,20 × 1,80 = 3,96 m2. Misure approssimate.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "PAV-01",
+        "DEM-05",
+        "PAV-03",
+        "PAV-06",
+        "DEM-07",
+        "DEM-06",
+        "PAV-02"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "mettiamo il water a terra",
+      "work": "fornitura e posa water a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "IDR-02",
+        "BAG-02",
+        "BAG-03",
+        "BAG-04",
+        "DEM-08",
+        "PAV-01",
+        "IDR-10"
+      ],
+      "unitPriceCents": 22633,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "il bidet a terra",
+      "work": "fornitura e posa bidet a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-01",
+        "DEM-08",
+        "PAV-01"
+      ],
+      "unitPriceCents": 13688,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "il lavabo da sessantacinque",
+      "work": "fornitura e posa lavabo da 65 cm",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-08",
+        "DEM-02",
+        "DEM-03",
+        "DEM-06",
+        "PAV-08",
+        "PAV-09",
+        "PAV-10"
+      ],
+      "unitPriceCents": 12302,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "facciamo il piatto doccia ottanta per ottanta",
+      "work": "fornitura e posa piatto doccia 80×80",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-06",
+        "BAG-10",
+        "BAG-11"
+      ],
+      "unitPriceCents": 18182,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-06",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "miscelatore lavabo",
+      "work": "fornitura e posa miscelatore lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-08",
+        "BAG-05",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02"
+      ],
+      "unitPriceCents": 10744,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "miscelatore bidet",
+      "work": "fornitura e posa miscelatore bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-08",
+        "BAG-10",
+        "CUC-02",
+        "DEM-08"
+      ],
+      "unitPriceCents": 12310,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "il miscelatore della doccia a incasso, col soffione",
+      "work": "fornitura e posa miscelatore doccia a incasso con soffione",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-10",
+        "BAG-06",
+        "BAG-11",
+        "BAG-03",
+        "BAG-08",
+        "BAG-09",
+        "CUC-02",
+        "BAG-02"
+      ],
+      "unitPriceCents": 13993,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-10",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "il rivestimento in gres venti per venti, alto due metri come prima",
+      "work": "posa rivestimento in gres 20×20 a parete",
+      "quantity": 16,
+      "unit": "m2",
+      "quantityNote": "Come per la rimozione: perimetro 8 m × altezza 2 m = 16 m2. Misure del bagno approssimate.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-01",
+        "BAG-12",
+        "DEM-05",
+        "BAG-13",
+        "PAV-02",
+        "VAR-01",
+        "TIN-11",
+        "CUC-04"
+      ],
+      "unitPriceCents": 5062,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-12",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Vasca nuova: la signora ha detto niente vasca, si fa il piatto doccia"
+  ],
+  "notes": [
+    "Bagno circa 2,20 × 1,80 m (misure approssimate)",
+    "Sanitari e rubinetterie acquistati dall'impresa dal proprio fornitore e messi in conto al cliente",
+    "Pavimento nuovo rimandato: se ne parla col figlio della signora",
+    "Appartamento al secondo piano"
+  ],
+  "usage": {
+    "inputTokens": 10633,
+    "outputTokens": 2630,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 17288
+}

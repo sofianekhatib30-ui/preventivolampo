@@ -1,0 +1,76 @@
+{
+  "id": "32",
+  "title": "Tinteggiatura cucina e soggiorno con fissativo e crepe non misurate (imbianchino, Usmate)",
+  "tags": [
+    "misura_mancante",
+    "misura_approssimata"
+  ],
+  "customer": {
+    "name": "Valtorta",
+    "address": "via Roma 12, Usmate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "prima il fissativo su tutto",
+      "quantity": 120,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "poi due mani di semilavabile bianca",
+      "quantity": 116,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "120 − 4 m² dietro i fornelli, che vanno con la lavabile resistente"
+    },
+    {
+      "spoken": "dietro i fornelli... lì la lavabile resistente al posto della semilavabile",
+      "quantity": 4,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«saranno quattro metri quadri»: approssimata"
+    },
+    {
+      "spoken": "le crepe vicino alla finestra da stuccare, poca roba, la misuro quando torno",
+      "quantity": null,
+      "unit": null,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 3,
+      "kind": "quantita_mancante"
+    },
+    {
+      "lineIndex": 3,
+      "kind": "unita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": []
+}

@@ -1,0 +1,80 @@
+{
+  "customer": {
+    "name": "Arosio",
+    "address": "via Cantù, Meda"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "la ringhiera del balcone, in ferro: carteggiare, antiruggine e smalto. È lunga otto metri, alta un metro",
+      "work": "carteggiatura, antiruggine e smalto su ringhiera in ferro del balcone",
+      "quantity": 8,
+      "unit": "m2",
+      "quantityNote": "8 m di lunghezza × 1 m di altezza = 8 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-05",
+        "TIN-04",
+        "TIN-08",
+        "TIN-10",
+        "TIN-11"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato copre carteggiatura, antiruggine e smalto su ferro: TIN-05 è smalto per interni su intonaco, non su ringhiera in ferro.",
+        "suggestedCode": null,
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "il soffitto del balcone, è intonaco, fuori il bianco normale non tiene, ci vuole il quarzo, e quello non l'ho a listino. Il balcone è otto per uno e venti",
+      "work": "tinteggiatura del soffitto del balcone in intonaco con pittura al quarzo",
+      "quantity": 9.6,
+      "unit": "m2",
+      "quantityNote": "balcone 8 m × 1,20 m = 9,6 m2 di soffitto",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "TIN-01",
+        "DEM-10",
+        "TIN-05",
+        "TIN-09",
+        "TIN-02",
+        "TIN-03",
+        "TIN-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Serve pittura al quarzo per esterni, assente dai candidati: le idropitture sono per interni e il listino non la prevede.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "verniciatura delle quattro persiane in legno: le lasciamo fuori, il cliente ci pensa"
+  ],
+  "notes": [
+    "La pittura al quarzo per il soffitto non è a listino: prezzo da inserire a cura dell'artigiano",
+    "Per l'esterno il bianco normale non tiene, per questo si usa il quarzo",
+    "Il colore della ringhiera lo sceglie la signora, probabilmente verde scuro"
+  ],
+  "usage": {
+    "inputTokens": 4663,
+    "outputTokens": 1387,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12663
+}

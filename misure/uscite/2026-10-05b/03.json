@@ -1,0 +1,58 @@
+{
+  "customer": {
+    "name": "signora Galli",
+    "address": "via Cavour 21, Seregno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "io smonto el cess vecchio e monto quello nuovo, tutto lì. Il vaso vecchio lo porto via io, lo carico sul furgone",
+      "work": "sostituzione vaso a terra con smontaggio del vecchio e trasporto via del vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "un solo vaso da sostituire; il vaso nuovo, uguale al vecchio, è già stato acquistato dalla cliente",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-01",
+        "DEM-11",
+        "SMA-05",
+        "DEM-08",
+        "DEM-12",
+        "DEM-04",
+        "SMA-04",
+        "DEM-09"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-01",
+        "confidence": 0.7
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Cassetta di scarico esterna: è ancora buona e non viene toccata"
+  ],
+  "notes": [
+    "Vaso che perde alla base",
+    "Tempo previsto: mezza giornata",
+    "Il vaso vecchio viene caricato e portato via dall'impresa sul furgone"
+  ],
+  "usage": {
+    "inputTokens": 4080,
+    "outputTokens": 1106,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 10785
+}

@@ -16,12 +16,12 @@ export async function POST(request: Request): Promise<Response> {
     const body = (await request.json().catch(() => ({}))) as { testo?: unknown; codice?: unknown; esempio?: unknown };
     // Gli esempi del banco non chiamano l'API: niente codice d'accesso, solo il limite per IP.
     if (typeof body.esempio === "string") {
-      if (!fromN8n && troppeRichieste(`esempio:${ip}`, 40)) return Response.json({ errore: "Troppe prove in poco tempo. Riprova tra un'ora." }, { status: 429 });
+      if (!fromN8n && (await troppeRichieste(`esempio:${ip}`, 40))) return Response.json({ errore: "Troppe prove in poco tempo. Riprova tra un'ora." }, { status: 429 });
       const p = await creaDaEsempio(body.esempio);
       return Response.json({ id: p.id, revisione: `/revisione/${p.id}`, righe: p.righe.length }, { status: 201 });
     }
     // Il limite conta anche i codici sbagliati: niente tentativi a raffica.
-    if (!fromN8n && troppeRichieste(ip)) return Response.json({ errore: "Troppe prove in poco tempo. Riprova tra un'ora." }, { status: 429 });
+    if (!fromN8n && (await troppeRichieste(ip))) return Response.json({ errore: "Troppe prove in poco tempo. Riprova tra un'ora." }, { status: 429 });
     if (!fromN8n && !codiceValido(body.codice)) return Response.json({ errore: "Codice d'accesso non valido." }, { status: 401 });
     if (typeof body.testo !== "string") return Response.json({ errore: "Manca il testo del sopralluogo." }, { status: 400 });
     const p = await creaDaTesto(body.testo, anthropicCaller());

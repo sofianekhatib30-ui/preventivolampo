@@ -4,6 +4,7 @@ import { chooseMatches } from "./abbinamento";
 import { modelName, type ToolCaller } from "./claude";
 import { extract } from "./estrazione";
 import { missingVatAnswers, vatRegime } from "./iva";
+import { jaccard, tokens } from "./testo";
 import type { Draft, DraftLine, DraftQuestion } from "./tipi";
 
 // Il motore: trascrizione → estrazione (Claude) → candidati (codice) → scelta (Claude) → regole (codice).
@@ -49,6 +50,10 @@ export async function elabora(transcript: string, list: PriceList, call: ToolCal
     return { ...base, unit, unitPriceCents: item.priceCents, match: { kind: "listino", code: item.code, confidence: choice.confidence } };
   });
 
+  const merged = mergeSameItem(lines);
+  lines.length = 0;
+  lines.push(...merged);
+
   const questions: DraftQuestion[] = [];
   lines.forEach((l, i) => {
     if (l.quantity === null) {
@@ -71,4 +76,33 @@ export async function elabora(transcript: string, list: PriceList, call: ToolCal
     model: modelName(),
     elapsedMs: Date.now() - started,
   };
+}
+
+// Regola in codice: una voce di listino, una riga. Due righe con la stessa voce e la stessa unità
+// si sommano («una presa per il forno, una per la lavastoviglie» = 2 prese); una riga ripetuta
+// con le stesse parole e la stessa quantità è un doppione e si toglie. Se manca una quantità
+// le righe restano separate: la domanda va fatta su ciascuna.
+export function mergeSameItem(lines: DraftLine[]): DraftLine[] {
+  const out: DraftLine[] = [];
+  for (const line of lines) {
+    const code = line.match.kind === "listino" ? line.match.code : null;
+    const prev =
+      code === null || line.quantity === null
+        ? undefined
+        : out.find((o) => o.match.kind === "listino" && o.match.code === code && o.unit === line.unit && o.quantity !== null);
+    if (!prev) {
+      out.push(line);
+      continue;
+    }
+    const sameWords = jaccard(tokens(prev.spoken), tokens(line.spoken)) >= 0.6;
+    if (sameWords && prev.quantity === line.quantity) continue;
+    const i = out.indexOf(prev);
+    out[i] = {
+      ...prev,
+      spoken: `${prev.spoken} · ${line.spoken}`.slice(0, 400),
+      quantity: Math.round((prev.quantity! + line.quantity!) * 100) / 100,
+      quantityNote: [prev.quantityNote, line.quantityNote, `somma di due righe con la stessa voce`].filter(Boolean).join("; "),
+    };
+  }
+  return out;
 }

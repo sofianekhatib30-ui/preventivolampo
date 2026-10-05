@@ -1,0 +1,75 @@
+{
+  "customer": {
+    "name": "Giorgio Viganò",
+    "address": "via Buonarroti 20, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Il parquet della sala e delle due camere è da lamare e verniciare",
+      "work": "lamatura e verniciatura parquet (sala e due camere)",
+      "quantity": 40.5,
+      "unit": "m2",
+      "quantityNote": "Sala 5x4 = 20 m2; camera 3,5x3 = 10,5 m2; camera 3x3 = 9 m2; totale 39,5... ricalcolo: 20 + 10,5 + 9 = 39,5 m2. Misure approssimate ('più o meno').",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-07",
+        "PAV-04",
+        "TIN-11",
+        "PAV-05",
+        "TIN-05"
+      ],
+      "unitPriceCents": 2598,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-07",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il battiscopa in legno è rovinato, lo cambio tutto: lo tolgo e metto quello nuovo, sempre in legno, facciamo quaranta metri che ci stiamo dentro",
+      "work": "sostituzione battiscopa in legno (rimozione e posa nuovo)",
+      "quantity": 40,
+      "unit": "m",
+      "quantityNote": "Quantità indicata dall'artigiano, circa 40 m ('che ci stiamo dentro'), approssimata.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-11",
+        "DEM-07",
+        "SMA-04",
+        "DEM-11",
+        "IDR-08",
+        "PAV-04",
+        "DEM-09"
+      ],
+      "unitPriceCents": 664,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11",
+        "confidence": 0.8
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Misure delle camere approssimate ('più o meno').",
+    "I mobili li sposta il cliente e devono restare fuori casa per tre giorni per l'asciugatura della vernice."
+  ],
+  "usage": {
+    "inputTokens": 4527,
+    "outputTokens": 708,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 6161
+}

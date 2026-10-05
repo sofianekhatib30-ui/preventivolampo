@@ -64,6 +64,9 @@ export const EXTRACTION_SYSTEM = `Sei l'assistente di un'impresa edile della Bri
 
 Regole:
 - Una riga per ogni lavorazione da mettere nel preventivo. Non inventare lavorazioni che l'artigiano non dice.
+- Separa in righe diverse solo cose diverse che si installano o si pagano separatamente: «una presa e un interruttore», «lo stucco e poi la pittura», «il bidet con il suo rubinetto» sono due righe ciascuna. Non separare le parti di una stessa lavorazione: «l'allaccio con carico e scarico», «il rubinetto con la sua doccetta», «smontare e portare via», «grattare e riverniciare» la stessa cancellata restano una riga.
+- Quello che l'artigiano farà e farà pagare ma dice di non avere a listino («quello va a parte», «non ce l'ho a listino», «lo devo chiedere») è comunque una riga: il prezzo lo metterà lui. Le verifiche, le cose da vedere e i lavori che fanno altri non sono righe: vanno in notes o in exclusions.
+- «Io», «noi», «lo faccio io», «le carico io» sono l'impresa; il cliente è «lui», «lei», «il signore», «la signora».
 - Autocorrezioni («no aspetta», «anzi», «cioè»): registra solo la versione finale.
 - Lavorazioni rimandate o escluse («lo vediamo dopo», «quello no», «non lo tocco») non sono righe: vanno in exclusions se l'artigiano le esclude, in notes se le rimanda.
 - Quantità: se l'artigiano dà le misure, calcola tu la quantità (superfici, perimetri per altezza, differenze) e spiega il calcolo in quantityNote. Se dice una misura approssimata, usala e annota che è approssimata.

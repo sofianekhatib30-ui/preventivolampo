@@ -43,8 +43,11 @@ export default function Prova() {
         <ProvaForm esempi={esempi()} chiediCodice={serveCodice()} />
         <p className="mt-10 text-sm leading-relaxed text-testo-3">
           Dati di prova inventati: l&apos;impresa del listino e i clienti degli esempi non esistono. Non inserire nomi, indirizzi o
-          numeri di persone reali: le bozze della demo restano salvate e chiunque abbia il link può aprirle. Il testo viene
-          elaborato con Claude di Anthropic.
+          numeri di persone reali: le bozze restano 7 giorni e chiunque abbia il link può aprirle. Il testo libero viene elaborato
+          con Claude di Anthropic.{" "}
+          <Link href="/privacy" className="font-semibold text-cielo-scuro">
+            Privacy
+          </Link>
         </p>
       </main>
     </>

@@ -1,0 +1,166 @@
+{
+  "customer": {
+    "name": "signora Ronchi",
+    "address": "via Italia 3, Bovisio Masciago"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Il termosifone del bagno va sostituito con uno scaldasalviette",
+      "work": "sostituzione termosifone del bagno con scaldasalviette",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-07",
+        "BAG-08",
+        "BAG-12",
+        "DEM-09",
+        "TIN-07"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato riguarda la sostituzione di un termosifone con uno scaldasalviette.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "prolungo quello che c'è: il tubo da sedici per l'acqua calda e fredda",
+      "work": "prolungamento tubazione da 16 mm acqua calda e fredda per spostamento lavello",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": "Metri non noti: dipende dal percorso delle tubazioni. Lo spostamento del lavello è di 1,5 m, ma la lunghezza del tubo non è ricavabile da questo.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-06",
+        "IDR-01",
+        "IDR-07",
+        "IDR-03",
+        "IDR-04",
+        "IDR-10",
+        "IDR-08",
+        "IDR-09"
+      ],
+      "unitPriceCents": 386,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-06",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "e lo scarico da quaranta",
+      "work": "prolungamento scarico da 40 mm per spostamento lavello",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": "Metri non noti: dipende dal percorso. Lo spostamento del lavello è di 1,5 m, ma la lunghezza dello scarico non è ricavabile da questo.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-08",
+        "CUC-03",
+        "IDR-05",
+        "IDR-09",
+        "IDR-10",
+        "CUC-01",
+        "BAG-11",
+        "CUC-02"
+      ],
+      "unitPriceCents": 788,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-08",
+        "confidence": 0.92
+      }
+    },
+    {
+      "spoken": "rimonto il suo lavello, quello vecchio",
+      "work": "rimontaggio lavello esistente nella nuova posizione",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "CUC-01",
+        "CUC-03",
+        "DEM-12",
+        "CUC-02",
+        "TIN-09",
+        "BAG-05",
+        "PAV-07",
+        "SMA-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "CUC-01",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "e il suo rubinetto vecchio, niente di nuovo da comprare",
+      "work": "rimontaggio rubinetto esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "DEM-12",
+        "BAG-08",
+        "CUC-02",
+        "TIN-09",
+        "BAG-09",
+        "BAG-10",
+        "PAV-07",
+        "SMA-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "CUC-02",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «prolungamento tubazione da 16 mm acqua calda e fredda per spostamento lavello»?"
+    },
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «prolungamento scarico da 40 mm per spostamento lavello»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Scaldasalviette non a listino: bisogna vedere il modello, il prezzo lo inserisce l'artigiano.",
+    "In cucina il lavello viene spostato di 1,5 m; l'attacco non viene rifatto ma prolungato.",
+    "Lunghezza dei prolungamenti (tubo da 16 e scarico da 40) da definire in base al percorso."
+  ],
+  "usage": {
+    "inputTokens": 6672,
+    "outputTokens": 1688,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 16229
+}

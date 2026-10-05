@@ -519,7 +519,9 @@
         "dare il bianco",
         "tinteggiare",
         "pitturare le pareti",
-        "dare una mano di bianco"
+        "dare una mano di bianco",
+        "bianco normale",
+        "semilavabile"
       ],
       "significantGood": false,
       "clientSuppliable": false

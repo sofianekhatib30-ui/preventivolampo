@@ -1,0 +1,130 @@
+{
+  "customer": {
+    "name": "signora Valtorta",
+    "address": "via Roma 12, Usmate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Prima il fissativo su tutto",
+      "work": "applicazione di fissativo su pareti e soffitti di cucina e soggiorno",
+      "quantity": 120,
+      "unit": "m2",
+      "quantityNote": "120 m2 totali tra pareti e soffitti, misura data dal geometra",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "BAG-12",
+        "CUC-04",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-10",
+        "CUC-01"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "poi due mani di semilavabile bianca",
+      "work": "tinteggiatura con idropittura semilavabile bianca a due mani su pareti e soffitti",
+      "quantity": 116,
+      "unit": "m2",
+      "quantityNote": "120 m2 totali meno 4 m2 di muro annerito dietro i fornelli, dove si usa la lavabile resistente; superficie per due mani",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "TIN-11",
+        "BAG-12",
+        "VAR-01",
+        "TIN-03",
+        "TIN-04",
+        "VAR-06"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "dietro i fornelli, c'è un pezzo di muro annerito, saranno quattro metri quadri: lì la lavabile resistente al posto della semilavabile",
+      "work": "tinteggiatura con idropittura lavabile resistente sul muro annerito dietro i fornelli",
+      "quantity": 4,
+      "unit": "m2",
+      "quantityNote": "misura approssimata detta dall'artigiano (circa 4 m2); finitura al posto della semilavabile, presumibilmente a due mani",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-01",
+        "TIN-04",
+        "ELE-12",
+        "BAG-12",
+        "DEM-10",
+        "TIN-03",
+        "VAR-02"
+      ],
+      "unitPriceCents": 611,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-04",
+        "confidence": 0.88
+      }
+    },
+    {
+      "spoken": "le crepe vicino alla finestra da stuccare, poca roba, la misuro quando torno",
+      "work": "stuccatura crepe vicino alla finestra",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-08",
+        "TIN-10",
+        "TIN-11"
+      ],
+      "unitPriceCents": 238,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 3,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «stuccatura crepe vicino alla finestra»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Le misure di 120 m2 sono state date dal geometra.",
+    "Le crepe vicino alla finestra vanno misurate al prossimo passaggio dell'artigiano.",
+    "Non è detto chi compra i materiali."
+  ],
+  "usage": {
+    "inputTokens": 6139,
+    "outputTokens": 1409,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 10709
+}

@@ -1,0 +1,79 @@
+{
+  "id": "34",
+  "title": "Ristrutturazione: tramezza, pavimento e caldana con macerie (muratore, Varedo)",
+  "tags": [
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Colnaghi",
+    "address": "via Monte Rosa 4, Varedo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "buttiamo giù la tramezza tra cucina e soggiorno, è da dieci, lunga tre e venti, alta due e settanta",
+      "quantity": 8.64,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-03"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,20 × 2,70 = 8,64 m²"
+    },
+    {
+      "spoken": "togliamo il pavimento della cucina, quattro per tre",
+      "quantity": 12,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "4 × 3 = 12 m²"
+    },
+    {
+      "spoken": "e anche la caldana sotto",
+      "quantity": 12,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "rifacciamo la caldana, stessa misura",
+      "quantity": 12,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "le macerie le carichiamo noi e le portiamo in discarica, sarà un metro cubo e mezzo",
+      "quantity": 1.5,
+      "unit": "m3",
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Pavimento nuovo della cucina: lo sceglie la signora, da riparlarne"
+  ]
+}

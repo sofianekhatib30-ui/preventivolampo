@@ -21,6 +21,12 @@ export function Demo() {
               Prova con un esempio
             </a>
             <a
+              href="/progetto"
+              className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro"
+            >
+              Leggi il caso di studio
+            </a>
+            <a
               href={REPO_URL}
               className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro"
             >
@@ -37,11 +43,16 @@ export function Demo() {
 // Striscia in cima alla home: chi arriva deve capire subito che è una demo.
 export function BannerDemo() {
   return (
-    <p className="margini m-0 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 bg-cielo py-2 text-center text-sm font-medium text-inchiostro">
+    <aside aria-label="Progetto dimostrativo" className="margini m-0 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 bg-cielo py-2 text-center text-sm font-medium text-inchiostro">
       <span>Progetto dimostrativo: il servizio non è in vendita.</span>
-      <a href="/prova" className="font-bold underline">
-        Prova con un esempio
-      </a>
-    </p>
+      <span className="flex gap-4">
+        <a href="/progetto" className="font-bold underline">
+          Com&apos;è fatto
+        </a>
+        <a href="/prova" className="font-bold underline">
+          Prova con un esempio
+        </a>
+      </span>
+    </aside>
   );
 }

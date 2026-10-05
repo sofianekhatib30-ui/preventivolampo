@@ -1,0 +1,68 @@
+{
+  "id": "35",
+  "title": "Bagno: pavimento con piastrelle del cliente e zoccolino in gres (piastrellista, Monza)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino"
+  ],
+  "customer": {
+    "name": "Galimberti",
+    "address": "via Mentana 20, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "io faccio solo la posa delle piastrelle comprate dal cliente: il bagno è due e quaranta per uno e ottanta",
+      "quantity": 4.32,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true,
+      "quantityNote": "2,40 × 1,80 = 4,32 m²"
+    },
+    {
+      "spoken": "prima tolgo il pavimento vecchio, stessa misura",
+      "quantity": 4.32,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "lo zoccolino in gres, quello lo porto io: otto metri e mezzo",
+      "quantity": 8.5,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-12"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "lo zoccolino vecchio lo tolgo, stessi metri",
+      "quantity": 8.5,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-07"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Materiali misti: piastrelle del cliente, zoccolino dell'impresa (IVA da chiarire)"
+  ]
+}

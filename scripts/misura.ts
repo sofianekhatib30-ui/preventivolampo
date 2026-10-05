@@ -2,6 +2,8 @@
 // Il report è generato da questo comando: nessun numero si ricopia a mano.
 // Opzioni: --casi 01,02,03     (sottoinsieme)
 //          --da-uscite AAAA-MM-GG (ricalcola il report dalle uscite salvate, senza chiamare l'API)
+//          --seconda             (seconda misura nello stesso giorno: AAAA-MM-GGb, la prima resta)
+//          --banco verifica      (i casi nuovi di testset/verifica: report misure/AAAA-MM-GG-verifica.md)
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { ExpectedCase } from "@/lib/banco/schema";
@@ -36,24 +38,27 @@ function vatOf(lines: Array<{ quantity: number | null; price: number | null }>, 
 
 async function main() {
   loadEnvLocal();
+  const banco = process.argv.includes("--banco") ? process.argv[process.argv.indexOf("--banco") + 1] : null;
+  const base = banco === "verifica" ? "testset/verifica" : "testset";
   const only = process.argv.includes("--casi") ? process.argv[process.argv.indexOf("--casi") + 1].split(",") : null;
   const list = PriceList.parse(JSON.parse(readFileSync("dati/listino.json", "utf8")));
   const byCode = new Map<string, PriceListItem>(list.items.map((i) => [i.code, i]));
-  const ids = readdirSync("testset/atteso")
+  const ids = readdirSync(`${base}/atteso`)
     .filter((f) => f.endsWith(".json"))
     .map((f) => f.slice(0, 2))
     .filter((id) => !only || only.includes(id))
     .sort();
   const fromSaved = process.argv.includes("--da-uscite") ? process.argv[process.argv.indexOf("--da-uscite") + 1] : null;
   const call = fromSaved ? null : anthropicCaller();
-  const day = fromSaved ?? new Date().toISOString().slice(0, 10);
+  const day =
+    fromSaved ?? new Date().toISOString().slice(0, 10) + (process.argv.includes("--seconda") ? "b" : "") + (banco === "verifica" ? "-verifica" : "");
   const outDir = `misure/uscite/${day}`;
   mkdirSync(outDir, { recursive: true });
 
   const rows: Array<{ score: CaseScore; draft: Draft | null; error?: string; vatOk: boolean | null }> = [];
   for (const id of ids) {
-    const expected = ExpectedCase.parse(JSON.parse(readFileSync(`testset/atteso/${id}.json`, "utf8")));
-    const transcript = readFileSync(`testset/copioni/${id}.md`, "utf8").replace(/<!--[\s\S]*?-->/g, "").trim();
+    const expected = ExpectedCase.parse(JSON.parse(readFileSync(`${base}/atteso/${id}.json`, "utf8")));
+    const transcript = readFileSync(`${base}/copioni/${id}.md`, "utf8").replace(/<!--[\s\S]*?-->/g, "").trim();
     process.stdout.write(`caso ${id}… `);
     try {
       const draft: Draft = call
@@ -90,7 +95,7 @@ async function main() {
   const md = `# Misura del motore — ${day}
 
 Generato da \`npm run misura\` (non scritto a mano). Modello: \`${modelName()}\`. Casi: ${ok.length} eseguiti su ${rows.length}${rows.length - ok.length ? `, ${rows.length - ok.length} in errore` : ""}.
-Ingresso: le trascrizioni testuali dei copioni (\`testset/copioni/\`), non ancora gli audio. Dati inventati.
+Ingresso: le trascrizioni testuali dei copioni (\`${base}/copioni/\`), non ancora gli audio. Dati inventati.
 Uscite grezze del motore: \`${outDir}/\`.
 
 ## Risultati
@@ -111,7 +116,7 @@ Uscite grezze del motore: \`${outDir}/\`.
 | Costo medio per preventivo | $${avgCostUsd.toFixed(4)} ≈ ${formatEuro(Math.round(avgCostUsd * eurPerUsd * 100 * 100) / 100)} (token reali; $${inUsd}/$${outUsd} per milione di token, cambio ${eurPerUsd} €/$) |
 
 Note sul metodo:
-- Gli attesi sono stati scritti prima che il motore esistesse (vedi \`testset/LEGGIMI.md\`) e non si correggono guardando queste uscite.
+- Gli attesi sono stati scritti prima che il motore esistesse (vedi \`${base}/LEGGIMI.md\`) e non si correggono guardando queste uscite.
 - Le righe della bozza si allineano a quelle attese per somiglianza delle parole dette; una quantità è giusta entro l'1%.
 - «IVA al centesimo» esclude i casi con beni significativi (il valore del bene lo dà l'artigiano in revisione) e quelli con domande aperte.
 

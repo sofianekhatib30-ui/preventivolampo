@@ -1,0 +1,127 @@
+{
+  "customer": {
+    "name": "Vergani",
+    "address": "via Cadorna, Sesto San Giovanni"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "in soggiorno c'è una parete in cartongesso da buttare giù, tre metri per due e settanta, con due lastre per lato",
+      "work": "demolizione parete in cartongesso",
+      "quantity": 8.1,
+      "unit": "m2",
+      "quantityNote": "3 m x 2,70 m = 8,1 m2 di parete; due lastre per lato",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-01",
+        "DEM-01",
+        "VAR-02",
+        "BAG-12",
+        "DEM-03",
+        "DEM-02",
+        "TIN-11",
+        "BAG-13"
+      ],
+      "unitPriceCents": 413,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "nel corridoio facciamo il controsoffitto in cartongesso, il corridoio è lungo sei metri e largo uno e dieci",
+      "work": "realizzazione controsoffitto in cartongesso",
+      "quantity": 6.6,
+      "unit": "m2",
+      "quantityNote": "6 m x 1,10 m = 6,6 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-03",
+        "DEM-01",
+        "VAR-01",
+        "VAR-02",
+        "DEM-03"
+      ],
+      "unitPriceCents": 4616,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-03",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "io lo lascio rasato e basta",
+      "work": "rasatura del controsoffitto in cartongesso",
+      "quantity": 6.6,
+      "unit": "m2",
+      "quantityNote": "Stessa superficie del controsoffitto: 6 m x 1,10 m = 6,6 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-03",
+        "TIN-10",
+        "VAR-01",
+        "DEM-01",
+        "TIN-11",
+        "VAR-02",
+        "VAR-06",
+        "PAV-06"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "abbinamento incerto: La rasatura del soffitto in cartongesso è coperta solo approssimativamente da questa voce su soffitti, ma il numero di mani non è precisato.",
+        "suggestedCode": "VAR-06",
+        "confidence": 0.5
+      }
+    },
+    {
+      "spoken": "Le macerie, tipo un metro cubo, le carico io e le porto in discarica",
+      "work": "carico e trasporto macerie in discarica",
+      "quantity": 1,
+      "unit": "m3",
+      "quantityNote": "Quantità approssimata detta dall'artigiano: circa 1 m3",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "DEM-11",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "DEM-04",
+        "DEM-01"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Faretti nel controsoffitto: li monta l'elettricista, non l'impresa",
+    "Pittura del controsoffitto: la fa il cognato della signora, l'impresa lascia solo la rasatura"
+  ],
+  "notes": [],
+  "usage": {
+    "inputTokens": 6336,
+    "outputTokens": 1408,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 10705
+}

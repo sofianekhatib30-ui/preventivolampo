@@ -4,7 +4,7 @@
 
 > **Progetto dimostrativo.** L'impresa edile del listino e i clienti dei sopralluoghi sono inventati. I numeri invece sono veri: li misura un comando su un banco di prova di 30 casi scritto prima del motore.
 
-**Demo online: [preventivolampo.vercel.app](https://preventivolampo.vercel.app)** — la home racconta il prodotto, [`/prova`](https://preventivolampo.vercel.app/prova) fa girare il motore vero. La prova chiede un codice d'accesso, perché ogni bozza è una chiamata a pagamento all'API di Claude: chiedimelo.
+**Demo online: [preventivolampo.vercel.app](https://preventivolampo.vercel.app)** — la home racconta il prodotto, [`/progetto`](https://preventivolampo.vercel.app/progetto) è il caso di studio, [`/prova`](https://preventivolampo.vercel.app/prova) fa girare il motore vero. Gli esempi partono subito; per un testo tuo serve un codice d'accesso, perché ogni bozza è una chiamata a pagamento all'API di Claude: chiedimelo.
 
 L'artigiano edile, dopo il sopralluogo, racconta il lavoro come lo direbbe a un collega. PreventivoLampo estrae le lavorazioni, le abbina al suo listino, gli prepara una bozza da controllare dal telefono e, dopo la sua approvazione, genera il PDF del preventivo con l'IVA edile e un link con cui il cliente lo accetta.
 
@@ -18,23 +18,39 @@ L'artigiano edile, dopo il sopralluogo, racconta il lavoro come lo direbbe a un 
 ## I numeri
 
 <!-- misura:inizio -->
-Da [`misure/2026-10-05.md`](misure/2026-10-05.md). Generato da `npm run misura` (non scritto a mano). Modello: `claude-sonnet-5-5`. Casi: 30 eseguiti su 30.
+Da [`misure/2026-10-05b.md`](misure/2026-10-05b.md). Generato da `npm run misura` (non scritto a mano). Modello: `claude-sonnet-5-5`. Casi: 30 eseguiti su 30.
 
 | Misura | Valore |
 |---|---|
-| Righe giuste senza correzioni (voce, quantità e unità) | 138 su 159 (86,8%) |
-| Voci di listino abbinate correttamente | 124 su 137 (90,5%) |
-| Voci «da prezzare» riconosciute come tali | 19 su 22 (86,4%) |
-| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 7 |
+| Righe giuste senza correzioni (voce, quantità e unità) | 145 su 159 (91,2%) |
+| Voci di listino abbinate correttamente | 130 su 137 (94,9%) |
+| Voci «da prezzare» riconosciute come tali | 21 su 22 (95,5%) |
+| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 2 |
 | **Prezzi inventati** | **0** |
-| Domande di chiarimento corrette | 12 su 12 (100,0%); domande in più: 6 |
+| Domande di chiarimento corrette | 12 su 12 (100,0%); domande in più: 4 |
 | Regime IVA corretto (casi con contesto completo) | 15 su 15 |
-| Regime IVA dato senza che il vocale bastasse a stabilirlo | 1 su 15 (casi 14) |
-| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 6 su 10 |
-| Righe in più rispetto all'atteso | 7 |
-| Tempo medio per preventivo | 14,61 s |
-| Costo medio per preventivo | $0.0312 ≈ 0,03 € (token reali; $2/$10 per milione di token, cambio 0.86 €/$) |
+| Regime IVA dato senza che il vocale bastasse a stabilirlo | 0 su 15 |
+| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 5 su 10 |
+| Righe in più rispetto all'atteso | 4 |
+| Tempo medio per preventivo | 13,95 s |
+| Costo medio per preventivo | $0.0314 ≈ 0,03 € (token reali; $2/$10 per milione di token, cambio 0.86 €/$) |
 <!-- misura:fine -->
+
+### Prima e dopo
+
+Dopo la prima misura ho letto gli errori e cambiato tre regole generali: righe separate per le cose che si pagano a parte, una riga anche per quello che è fuori listino, una voce di listino = una riga (in codice, `mergeSameItem`). Rimisurare sugli stessi 30 casi dà un numero ottimistico, perché le regole nascono proprio da quei casi: per questo ho scritto 6 casi nuovi con i loro attesi (`testset/verifica/`) **prima** di farci girare il motore, una volta sola.
+
+<!-- confronto:inizio -->
+| Misura | Prima ([`2026-10-05.md`](misure/2026-10-05.md)) | Dopo ([`2026-10-05b.md`](misure/2026-10-05b.md)) | Verifica, 6 casi nuovi ([`2026-10-05-verifica.md`](misure/2026-10-05-verifica.md)) |
+|---|---|---|---|
+| Righe giuste senza correzioni (voce, quantità e unità) | 138 su 159 (86,8%) | 145 su 159 (91,2%) | 24 su 26 (92,3%) |
+| Voci di listino abbinate correttamente | 124 su 137 (90,5%) | 130 su 137 (94,9%) | 25 su 25 (100,0%) |
+| Voci «da prezzare» riconosciute come tali | 19 su 22 (86,4%) | 21 su 22 (95,5%) | 1 su 1 (100,0%) |
+| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 7 | 2 | 0 |
+| Prezzi inventati | 0 | 0 | 0 |
+| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 6 su 10 | 5 su 10 | 3 su 3 |
+| Righe in più rispetto all'atteso | 7 | 4 | 0 |
+<!-- confronto:fine -->
 
 Come leggerli: gli attesi dei 30 casi (`testset/atteso/`) sono stati scritti leggendo solo il copione e il listino, prima che il motore esistesse, e non si correggono guardando le uscite. Il report completo, caso per caso, e le uscite grezze del motore sono in `misure/`.
 
@@ -89,7 +105,7 @@ Su `/prova` si incolla il testo di un vocale (o si sceglie uno dei 30 sopralluog
 - **Banco piccolo e scritto da noi.** 30 casi, una sola impresa inventata, attesi scritti da un agente AI e rivisti: misurano il motore su questo listino, non su qualunque artigiano.
 - **Prezzi da prezzario pubblico**, non i prezzi di un'impresa reale.
 - **Non è consulenza fiscale.** Il regime IVA dipende dalle risposte dell'artigiano.
-- **Dati**: la demo salva su file locali o su Vercel Blob (Francoforte); Claude API elabora il testo negli USA con clausole contrattuali UE. Per un servizio reale vanno decisi regione dei dati, conservazione degli audio (30 giorni) e informativa.
+- **Dati**: la demo salva su file locali o su Vercel Blob (Francoforte) e un cron notturno (`/api/pulizia`) cancella tutto quello che non è stato toccato da 7 giorni; Claude API elabora il testo negli USA con clausole contrattuali UE. Per un servizio reale vanno decisi regione dei dati, conservazione degli audio (30 giorni) e informativa.
 
 ## Metodo
 

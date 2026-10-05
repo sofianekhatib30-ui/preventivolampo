@@ -1,6 +1,6 @@
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, rename, stat, unlink, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { get, put } from "@vercel/blob";
+import { del, get, list, put } from "@vercel/blob";
 import { Preventivo } from "./modello";
 
 // Dove vivono i preventivi.
@@ -11,7 +11,7 @@ import { Preventivo } from "./modello";
 
 const ID = /^[A-Za-z0-9_-]{22}$/;
 
-function suBlob(): boolean {
+export function suBlob(): boolean {
   return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
 }
 
@@ -19,7 +19,7 @@ export function cartella(): string {
   return process.env.PREVENTIVI_DIR || path.join(process.cwd(), "archivio-locale", "preventivi");
 }
 
-async function leggiOggetto(nome: string): Promise<unknown | null> {
+export async function leggiOggetto(nome: string): Promise<unknown | null> {
   if (suBlob()) {
     const res = await get(nome, { access: "private", useCache: false });
     if (!res) return null;
@@ -32,7 +32,7 @@ async function leggiOggetto(nome: string): Promise<unknown | null> {
   }
 }
 
-async function scriviOggetto(nome: string, dati: unknown): Promise<void> {
+export async function scriviOggetto(nome: string, dati: unknown): Promise<void> {
   const testo = `${JSON.stringify(dati, null, 2)}\n`;
   if (suBlob()) {
     await put(nome, testo, { access: "private", addRandomSuffix: false, allowOverwrite: true, contentType: "application/json" });
@@ -71,4 +71,39 @@ export async function leggiPerToken(token: string): Promise<Preventivo | null> {
 // Proposte per il listino che impara: un oggetto per preventivo, mai sovrascritte.
 export async function salvaProposte(numero: string, proposte: unknown[]): Promise<void> {
   await scriviOggetto(`proposte/${numero}.json`, proposte);
+}
+
+// Pulizia della demo: tutto quello che non è stato toccato da più di `giorni` giorni si cancella
+// (preventivi, indici dei token, proposte, contatori del limite). La chiama il cron di Vercel ogni notte.
+export async function pulisci(giorni = 7, adesso = Date.now()): Promise<number> {
+  const limite = adesso - giorni * 86_400_000;
+  const prefissi = [`${path.basename(cartella())}/`, "token/", "proposte/", "limiti/"];
+  let cancellati = 0;
+  if (suBlob()) {
+    for (const prefix of prefissi) {
+      let cursor: string | undefined;
+      do {
+        const pagina = await list({ prefix, cursor, limit: 1000 });
+        const vecchi = pagina.blobs.filter((b) => new Date(b.uploadedAt).getTime() < limite).map((b) => b.url);
+        if (vecchi.length) await del(vecchi);
+        cancellati += vecchi.length;
+        cursor = pagina.hasMore ? pagina.cursor : undefined;
+      } while (cursor);
+    }
+    return cancellati;
+  }
+  const radice = path.dirname(cartella());
+  for (const prefix of prefissi) {
+    const dir = path.join(/*turbopackIgnore: true*/ radice, prefix);
+    const nomi = await readdir(/*turbopackIgnore: true*/ dir).catch(() => [] as string[]);
+    for (const nome of nomi) {
+      const file = path.join(/*turbopackIgnore: true*/ dir, nome);
+      const info = await stat(/*turbopackIgnore: true*/ file).catch(() => null);
+      if (info?.isFile() && info.mtimeMs < limite) {
+        await unlink(/*turbopackIgnore: true*/ file);
+        cancellati++;
+      }
+    }
+  }
+  return cancellati;
 }

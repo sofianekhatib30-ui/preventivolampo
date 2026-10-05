@@ -1,0 +1,150 @@
+{
+  "customer": {
+    "name": "signora Sironi",
+    "address": "via Milano 60, Cinisello"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "scrostare l'intonaco fino al mattone, la parete è quattro metri per due e ottanta, tutta",
+      "work": "rimozione intonaco fino al mattone su parete della camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "4 m × 2,80 m = 11,2 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "BAG-12",
+        "DEM-03",
+        "VAR-01",
+        "BAG-13",
+        "DEM-02",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "rifare l'intonaco civile, stessa misura",
+      "work": "rifacimento intonaco civile su parete della camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete: 4 m × 2,80 m = 11,2 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "VAR-06",
+        "TIN-10",
+        "TIN-01"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "fissativo ... sempre su quella parete",
+      "work": "applicazione fissativo su parete della camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete: 4 m × 2,80 m = 11,2 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "DEM-10",
+        "TIN-01"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "bianco, due mani, sempre su quella parete",
+      "work": "tinteggiatura bianca a due mani su parete della camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete: 4 m × 2,80 m = 11,2 m², due mani",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-11",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "VAR-06",
+        "TIN-02"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.75
+      }
+    },
+    {
+      "spoken": "Sul soffitto, nell'angolo, c'è la muffa: trattamento antimuffa, un paio di metri",
+      "work": "trattamento antimuffa su soffitto in corrispondenza dell'angolo",
+      "quantity": 2,
+      "unit": "m2",
+      "quantityNote": "misura approssimata ('un paio di metri'); unità non chiara (metri lineari o quadri)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "VAR-03"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Noleggio dell'eventuale deumidificatore: a carico della cliente"
+  ],
+  "notes": [
+    "Prima di partire verificare se il muro è asciutto",
+    "Forse serve un deumidificatore, che noleggia la cliente",
+    "Infiltrazione dal bagno del vicino; il danno è pagato dall'assicurazione del vicino, ma il preventivo è intestato alla signora Sironi"
+  ],
+  "usage": {
+    "inputTokens": 6950,
+    "outputTokens": 1945,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14450
+}

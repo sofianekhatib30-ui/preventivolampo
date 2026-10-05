@@ -1,4 +1,5 @@
 import { createHash, timingSafeEqual } from "node:crypto";
+import { leggiOggetto, scriviOggetto, suBlob } from "./archivio";
 import { Rifiuto } from "./servizio";
 
 export function errore(e: unknown): Response {
@@ -13,12 +14,31 @@ export function provaAttiva(): boolean {
   return process.env.NODE_ENV !== "production" || process.env.PROVA_ATTIVA === "1";
 }
 
+// Limite di prove per IP. Online il contatore sta su Blob (condiviso fra tutte le istanze della
+// funzione, una chiave per IP e per finestra oraria; l'IP è salvato solo come hash). In locale e
+// nei test resta in memoria. Il conteggio è approssimato (leggi-poi-scrivi), che per un limite basta.
 const finestre = new Map<string, number[]>();
-export function troppeRichieste(chiave: string, max = 12, finestraMs = 60 * 60 * 1000, adesso = Date.now()): boolean {
+
+function inMemoria(chiave: string, max: number, finestraMs: number, adesso: number): boolean {
   const recenti = (finestre.get(chiave) ?? []).filter((t) => adesso - t < finestraMs);
   recenti.push(adesso);
   finestre.set(chiave, recenti);
   return recenti.length > max;
+}
+
+export async function troppeRichieste(chiave: string, max = 12, finestraMs = 60 * 60 * 1000, adesso = Date.now()): Promise<boolean> {
+  if (!suBlob()) return inMemoria(chiave, max, finestraMs, adesso);
+  const hash = createHash("sha256").update(`preventivolampo:${chiave}`).digest("hex").slice(0, 32);
+  const nome = `limiti/${hash}-${Math.floor(adesso / finestraMs)}.json`;
+  try {
+    const prima = (await leggiOggetto(nome)) as { n?: number } | null;
+    const n = (prima?.n ?? 0) + 1;
+    await scriviOggetto(nome, { n });
+    return n > max;
+  } catch {
+    // Se lo storage non risponde, il limite in memoria fa da riserva.
+    return inMemoria(chiave, max, finestraMs, adesso);
+  }
 }
 
 // Codice d'accesso della demo pubblica: se PROVA_CODICE è impostato, /api/elabora lo pretende.

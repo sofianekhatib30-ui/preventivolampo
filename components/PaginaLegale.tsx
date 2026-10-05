@@ -1,19 +1,19 @@
+import type { ReactNode } from "react";
 import { SaltaAlContenuto } from "./SaltaAlContenuto";
 import { TestataApp } from "./TestataApp";
 
-// Contenitore delle pagine legali. I testi veri li scrive Notaio in legale/ e li inserisce
-// un passo successivo: fino ad allora la pagina dichiara che è una bozza.
-export function PaginaLegale({ titolo }: { titolo: string }) {
+// Pagine legali della demo. Il servizio non è in vendita: queste pagine descrivono la demo
+// pubblica (cosa si raccoglie, dove va, quando si cancella), non un contratto commerciale.
+export function PaginaLegale({ titolo, aggiornata, children }: { titolo: string; aggiornata: string; children: ReactNode }) {
   return (
     <>
       <SaltaAlContenuto />
       <TestataApp />
-      <main id="contenuto" tabIndex={-1} className="margini py-14 outline-none lg:py-24">
-        <article className="flex max-w-[760px] flex-col gap-6">
-          <h1 className="titolo-h2 m-0">{titolo}</h1>
-          <p className="m-0 self-start rounded-full bg-ambra px-4 py-2 font-mono text-sm font-semibold text-ambra-testo">
-            Bozza in preparazione
-          </p>
+      <main id="contenuto" tabIndex={-1} className="margini py-12 outline-none lg:py-20">
+        <article className="testo-legale flex max-w-[68ch] flex-col gap-4 text-[17px] leading-relaxed text-testo-2">
+          <h1 className="titolo-h2 m-0 text-inchiostro">{titolo}</h1>
+          <p className="m-0 text-[15px] text-testo-3">Progetto dimostrativo · aggiornata il {aggiornata}</p>
+          {children}
         </article>
       </main>
     </>

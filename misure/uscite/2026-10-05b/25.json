@@ -1,0 +1,158 @@
+{
+  "customer": {
+    "name": "famiglia Radaelli",
+    "address": "via Lario, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "buttiamo giù il tavolato tra cucina e sala, è sottile, sette centimetri con l'intonaco; sarà... quattro metri per due e settanta",
+      "work": "demolizione tavolato in laterizio sottile (spessore 7 cm con intonaco) tra cucina e sala",
+      "quantity": 10.8,
+      "unit": "m2",
+      "quantityNote": "4 m × 2,70 m = 10,8 m². Misura detta con «sarà...», quindi approssimata.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "VAR-05",
+        "DEM-02",
+        "CUC-04",
+        "DEM-06",
+        "DEM-01",
+        "DEM-03",
+        "CUC-05"
+      ],
+      "unitPriceCents": 1073,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-02",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Togliamo due porte, quelle normali, ottanta per duecentodieci, col telaio",
+      "work": "rimozione porte interne complete di telaio (80×210 cm)",
+      "quantity": 2,
+      "unit": null,
+      "quantityNote": "Due porte da 80×210 cm, con telaio.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "DEM-02",
+        "DEM-03",
+        "DEM-06",
+        "VAR-05",
+        "BAG-06",
+        "DEM-09",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1610,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-11",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Scrostiamo l'intonaco sulla parete della cucina, tre e mezzo per due e settanta",
+      "work": "rimozione intonaco su parete della cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "3,5 m × 2,70 m = 9,45 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-11"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "e lo rifacciamo a civile",
+      "work": "rifacimento intonaco civile sulla parete della cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "Stessa parete dell'intonaco rimosso: 3,5 m × 2,70 m = 9,45 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "VAR-06"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Le macerie le carichiamo a mano e le portiamo in discarica: saranno due metri cubi, due e mezzo",
+      "work": "carico a mano e trasporto a discarica delle macerie",
+      "quantity": 2.5,
+      "unit": "m3",
+      "quantityNote": "Quantità approssimata: l'artigiano dice «due metri cubi, due e mezzo»; usato il valore più alto (2,5 m³).",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "TIN-10",
+        "DEM-04",
+        "DEM-11"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "unita_mancante",
+      "text": "«rimozione porte interne complete di telaio (80×210 cm)»: 2 in che unità?"
+    }
+  ],
+  "exclusions": [
+    "Fornitura e posa delle porte nuove: le fa il falegname"
+  ],
+  "notes": [
+    "CILA già presentata dal geometra",
+    "La famiglia Radaelli andrà a vivere nella casa dopo i lavori"
+  ],
+  "usage": {
+    "inputTokens": 7618,
+    "outputTokens": 1895,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12933
+}

@@ -1,0 +1,186 @@
+{
+  "customer": {
+    "name": "famiglia Ferrari",
+    "address": "via Manzoni, Desio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?",
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "la presa con l'interruttore bipolare per il forno, una per la lavastoviglie",
+      "work": "punto presa con interruttore bipolare (forno e lavastoviglie)",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": "una presa con interruttore bipolare per il forno e una per la lavastoviglie",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-01",
+        "ELE-08",
+        "ELE-07",
+        "DEM-12",
+        "ELE-09",
+        "ELE-02"
+      ],
+      "unitPriceCents": 5332,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "il frigo va su una presa normale da sedici, senza interruttore",
+      "work": "punto presa da 16 A senza interruttore per frigorifero",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "ELE-01",
+        "CUC-06",
+        "ELE-07",
+        "ELE-08",
+        "IDR-06",
+        "DEM-12",
+        "ELE-09"
+      ],
+      "unitPriceCents": 4633,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-07",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "le prese sopra il piano, quelle da dieci: ne vuole... boh, quattro o cinque, deve decidere la signora",
+      "work": "prese da 10 A sopra il piano di lavoro",
+      "quantity": null,
+      "unit": "cad",
+      "quantityNote": "quantità non definita: 4 o 5, la decide la signora all'arrivo del mobiliere",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "PAV-12",
+        "DEM-12",
+        "BAG-03",
+        "DEM-10"
+      ],
+      "unitPriceCents": 4462,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "un punto luce con l'interruttore al centro",
+      "work": "punto luce con interruttore",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-02",
+        "ELE-03",
+        "ELE-05",
+        "CUC-06",
+        "DEM-12",
+        "ELE-06",
+        "ELE-09"
+      ],
+      "unitPriceCents": 4893,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "un punto luce sotto i pensili, in parallelo a quello",
+      "work": "punto luce sotto i pensili in parallelo al punto luce centrale",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-05",
+        "ELE-02",
+        "ELE-03",
+        "DEM-12",
+        "ELE-06",
+        "IDR-01",
+        "ELE-07"
+      ],
+      "unitPriceCents": 1965,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "nel quadro aggiungo un salvavita per la linea della cucina",
+      "work": "fornitura e posa salvavita nel quadro per la linea cucina",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-10",
+        "CUC-04",
+        "ELE-12",
+        "CUC-01",
+        "CUC-02",
+        "CUC-05",
+        "DEM-09",
+        "ELE-11"
+      ],
+      "unitPriceCents": 8905,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti pezzi di «prese da 10 A sopra il piano di lavoro»?"
+    }
+  ],
+  "exclusions": [
+    "Tracce e ripristini murari: li fa il muratore"
+  ],
+  "notes": [
+    "Il piano cottura è a induzione: da verificare la potenza del contatore",
+    "Numero di prese sopra il piano (4 o 5) da decidere con la signora quando arriva il mobiliere"
+  ],
+  "usage": {
+    "inputTokens": 7690,
+    "outputTokens": 2107,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 18126
+}

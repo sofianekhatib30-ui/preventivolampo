@@ -1,0 +1,58 @@
+{
+  "id": "36",
+  "title": "Studio dentistico: superlavabile, smalto porte e ore di manovale (imbianchino, Desio)",
+  "tags": [
+    "non_abitazione",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Sangalli",
+    "address": "via Cavour 30, Desio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "ordinaria_22"
+  },
+  "lines": [
+    {
+      "spoken": "nella sala d'attesa tinteggiamo le pareti, sessanta metri quadri, con la superlavabile",
+      "quantity": 60,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-03"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "le due porte del bagno vanno smaltate, ogni porta circa quattro metri quadri contando i due lati",
+      "quantity": 8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "2 porte × 4 m² = 8 m², approssimata"
+    },
+    {
+      "spoken": "spostare i mobili e coprire tutto: tre ore di un manovale",
+      "quantity": 3,
+      "unit": "h",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-08"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Soffitto: fatto l'anno scorso"
+  ],
+  "notes": []
+}

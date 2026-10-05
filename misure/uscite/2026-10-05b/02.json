@@ -1,0 +1,168 @@
+{
+  "customer": {
+    "name": "Davide Rinaldi",
+    "address": "via Padova, Milano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Prima stucco i buchi dei quadri nel soggiorno, sono pochi, tipo cinque metri quadri di stuccatura sparsa",
+      "work": "stuccatura dei buchi sulle pareti del soggiorno",
+      "quantity": 5,
+      "unit": "m2",
+      "quantityNote": "Quantità approssimata detta dall'artigiano (circa 5 m2 di stuccatura sparsa)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-08",
+        "BAG-12",
+        "TIN-10",
+        "VAR-01",
+        "BAG-13",
+        "TIN-11",
+        "ELE-12",
+        "TIN-06"
+      ],
+      "unitPriceCents": 238,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il soggiorno con l'angolo cottura è tipo cinque per quattro, alto due e settanta: faccio pareti e soffitto, col bianco normale, semilavabile · Il soggiorno con l'angolo cottura è tipo cinque per quattro, alto due e settanta: faccio pareti e soffitto, col bianco normale, semilavabile",
+      "work": "tinteggiatura pareti soggiorno con angolo cottura, bianco semilavabile",
+      "quantity": 68.6,
+      "unit": "m2",
+      "quantityNote": "Perimetro 2×(5+4)=18 m × altezza 2,70 m = 48,6 m2. Misure approssimate (circa 5×4). Nessuna detrazione per porte e finestre.; 5 m × 4 m = 20 m2. Misure approssimate (circa 5×4).; somma di due righe con la stessa voce",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "VAR-01",
+        "BAG-12",
+        "TIN-11",
+        "BAG-13",
+        "TIN-10",
+        "BAG-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "La camera invece non l'ho misurata, me la deve mandare lui la misura; comunque pareti e soffitto uguale, stesso bianco",
+      "work": "tinteggiatura pareti camera, bianco semilavabile",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "BAG-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "La camera invece non l'ho misurata, me la deve mandare lui la misura; comunque pareti e soffitto uguale, stesso bianco",
+      "work": "tinteggiatura soffitto camera, bianco semilavabile",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "BAG-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "In bagno c'è un po' di muffa sul soffitto, gli do l'antimuffa, sarà un metro quadro, due... facciamo due",
+      "work": "trattamento antimuffa sul soffitto del bagno",
+      "quantity": 2,
+      "unit": "m2",
+      "quantityNote": "Superficie stimata dall'artigiano: circa 2 m2 (approssimata)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "ELE-12",
+        "BAG-12",
+        "BAG-05",
+        "TIN-11",
+        "VAR-03",
+        "BAG-07",
+        "BAG-13"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.97
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «tinteggiatura pareti camera, bianco semilavabile»?"
+    },
+    {
+      "lineIndex": 3,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «tinteggiatura soffitto camera, bianco semilavabile»?"
+    }
+  ],
+  "exclusions": [
+    "Porte: niente smalto sulle porte"
+  ],
+  "notes": [
+    "Camera non misurata: il cliente deve mandare le misure, poi calcolare pareti e soffitto",
+    "I mobili li sposta il cliente",
+    "L'impresa protegge solo il pavimento con copertura",
+    "Colore: bianco normale semilavabile, stesso per soggiorno e camera"
+  ],
+  "usage": {
+    "inputTokens": 8337,
+    "outputTokens": 2198,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14684
+}

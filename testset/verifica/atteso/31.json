@@ -1,0 +1,77 @@
+{
+  "id": "31",
+  "title": "Camera: prese, punto luce deviato e quadro (elettricista, Concorezzo)",
+  "tags": [
+    "autocorrezione",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Teruzzi",
+    "address": "via Dante 6, Concorezzo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "in camera da letto mettiamo due prese da dieci",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un punto luce deviato, coi due comandi ai lati del letto",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "nel quadro aggiungo un salvavita",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e un magnetotermico per la linea della camera",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "tolgo la vecchia applique sopra la porta",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Presa TV: la fa l'antennista"
+  ],
+  "notes": []
+}

@@ -1,0 +1,118 @@
+{
+  "customer": {
+    "name": "signora Pirovano",
+    "address": "via Solferino, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "una presa in più in camera, da dieci",
+      "work": "fornitura e posa presa elettrica da 10 A in camera",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "DEM-12",
+        "ELE-12",
+        "ELE-11",
+        "PAV-12"
+      ],
+      "unitPriceCents": 4462,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "una presa internet in soggiorno",
+      "work": "fornitura e posa presa dati in soggiorno",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-08",
+        "ELE-06",
+        "CUC-06",
+        "ELE-07",
+        "DEM-12"
+      ],
+      "unitPriceCents": 3312,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "il lampadario del soggiorno l'ha comprato lei, glielo monto io",
+      "work": "montaggio lampadario in soggiorno",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato disponibile per il montaggio del lampadario.",
+        "suggestedCode": null,
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "nel quadro le salta sempre il salvavita: devo trovare il guasto, a ore... un'ora, un'ora e mezza. Metti un'ora e mezza",
+      "work": "ricerca guasto impianto elettrico (intervento del salvavita)",
+      "quantity": 1.5,
+      "unit": "h",
+      "quantityNote": "Stima dell'artigiano: da un'ora a un'ora e mezza, indicato di mettere un'ora e mezza",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-07",
+        "ELE-10",
+        "VAR-09",
+        "ELE-12",
+        "VAR-08",
+        "DEM-12",
+        "ELE-11",
+        "SMA-01"
+      ],
+      "unitPriceCents": 3656,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "La cliente abita da sola nell'abitazione.",
+    "Il tipo di intervento e chi acquista i materiali non sono stati detti, tranne il lampadario acquistato dalla cliente."
+  ],
+  "usage": {
+    "inputTokens": 5124,
+    "outputTokens": 815,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 7401
+}

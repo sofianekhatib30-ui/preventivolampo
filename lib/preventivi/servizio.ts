@@ -43,7 +43,7 @@ export async function creaDaTesto(testo: string, call: ToolCaller): Promise<Prev
 // (misure/uscite/, l'ultima misura). Nessuna chiamata all'API: gli esempi sono gratis e immediati.
 export function cartellaUscite(): string {
   const base = path.join(process.cwd(), "misure", "uscite");
-  const ultima = readdirSync(base).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort().at(-1);
+  const ultima = readdirSync(base).filter((d) => /^\d{4}-\d{2}-\d{2}[a-z]?$/.test(d)).sort().at(-1);
   if (!ultima) throw new Rifiuto("Nessuna misura registrata.", 500);
   return path.join(base, ultima);
 }

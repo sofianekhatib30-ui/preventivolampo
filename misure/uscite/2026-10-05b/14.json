@@ -1,0 +1,130 @@
+{
+  "customer": {
+    "name": "Mariani",
+    "address": "via Tonale 3, Brugherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Il rubinetto della cucina gocciola: lo cambio, glielo porto io, un miscelatore normale",
+      "work": "sostituzione rubinetto cucina con miscelatore monocomando standard",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "CUC-02",
+        "BAG-08",
+        "BAG-09",
+        "BAG-10",
+        "DEM-11",
+        "CUC-04",
+        "CUC-01",
+        "CUC-05"
+      ],
+      "unitPriceCents": 14208,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Il sifone del lavandino del bagno perde, lo sistemo io, è mezz'ora di lavoro",
+      "work": "riparazione sifone lavandino bagno",
+      "quantity": 0.5,
+      "unit": "h",
+      "quantityNote": "mezz'ora di lavoro come detto dall'artigiano",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "VAR-07",
+        "BAG-08",
+        "VAR-08",
+        "VAR-09",
+        "BAG-12",
+        "BAG-07",
+        "CUC-03"
+      ],
+      "unitPriceCents": 3656,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Poi vuole l'attacco per la lavatrice sul balcone, acqua fredda e scarico, contro il muro del bagno che è lì dietro",
+      "work": "realizzazione attacco lavatrice sul balcone con carico acqua fredda e scarico",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-04",
+        "IDR-01",
+        "IDR-02",
+        "IDR-03",
+        "IDR-05",
+        "CUC-03",
+        "SMA-05",
+        "DEM-09"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "abbinamento incerto: Servono acqua fredda e scarico: IDR-01 include acqua calda e fredda con scarico DE40, ma il solo acqua fredda con scarico non ha una voce esatta; IDR-01 è la più vicina ma include anche l'acqua calda.",
+        "suggestedCode": "IDR-03",
+        "confidence": 0.55
+      }
+    },
+    {
+      "spoken": "per passare i tubi c'è da fare un foro nel muro esterno, un carotaggio: quello non ce l'ho a listino, lo devo chiedere a quello del carotaggio",
+      "work": "carotaggio nel muro esterno per passaggio tubazioni",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-09",
+        "VAR-04",
+        "DEM-10",
+        "IDR-06",
+        "BAG-08",
+        "CUC-02",
+        "IDR-01",
+        "IDR-02"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Il carotaggio non è a listino e nessun candidato lo copre.",
+        "suggestedCode": null,
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Carotaggio non a listino: l'artigiano deve chiedere il prezzo a chi esegue i carotaggi."
+  ],
+  "usage": {
+    "inputTokens": 6536,
+    "outputTokens": 961,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 9322
+}

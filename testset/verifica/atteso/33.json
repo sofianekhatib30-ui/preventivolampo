@@ -1,0 +1,77 @@
+{
+  "id": "33",
+  "title": "Bagno: lavabo con miscelatore, miscelatore doccia e attacco lavatrice (idraulico, Biassono)",
+  "tags": [
+    "bene_significativo",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Brambati",
+    "address": "via Matteotti 9, Biassono"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10_beni_significativi"
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il lavandino vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "metto un lavabo nuovo da sessantacinque a parete",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "con il miscelatore",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il rubinetto della doccia, quello a incasso, lo cambiamo, col soffione nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "per la lavatrice mi serve un attacco solo acqua fredda, lo scarico c'è già",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-04"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Box doccia: resta quello esistente"
+  ],
+  "notes": []
+}

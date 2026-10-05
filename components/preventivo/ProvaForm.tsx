@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import Dettatura from "./Dettatura";
 
 type Esempio = { id: string; titolo: string; testo: string };
 
@@ -139,6 +140,7 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
               className="mt-2 block w-full rounded-campo border border-linea-2 bg-superficie px-3 py-3 text-[17px] leading-relaxed"
             />
           </label>
+          <Dettatura onTesto={(pezzo) => setTesto((t) => (t ? `${t.trimEnd()} ${pezzo}` : pezzo))} />
           {chiediCodice && (
             <label className="block">
               <span className="text-[17px] font-semibold">Codice d&apos;accesso</span>
