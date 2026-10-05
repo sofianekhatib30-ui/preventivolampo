@@ -26,15 +26,15 @@ export function Confronto() {
         Fai da te o fatto per te
       </h2>
 
-      <div className="hidden overflow-hidden rounded-[20px] border-2 border-inchiostro text-[17px] lg:block">
+      <div className="hidden overflow-hidden rounded-[20px] border-2 border-ardesia text-[17px] lg:block">
         <table className="w-full border-collapse">
           <thead>
-            <tr className="bg-inchiostro text-left font-bold text-fondo">
+            <tr className="bg-ardesia text-left font-bold text-fondo">
               <td className="w-[clamp(220px,21vw,300px)] px-6 py-[18px]" />
               <th scope="col" className="px-6 py-[18px]">
                 {COLONNE[0]}
               </th>
-              <th scope="col" className="bg-segnale px-6 py-[18px] text-inchiostro">
+              <th scope="col" className="bg-lime px-6 py-[18px] text-inchiostro">
                 {COLONNE[1]}
               </th>
             </tr>
@@ -55,8 +55,8 @@ export function Confronto() {
 
       <ul className="m-0 flex list-none flex-col gap-3 p-0 lg:hidden">
         {RIGHE.map((riga) => (
-          <li key={riga.tema} className="overflow-hidden rounded-[18px] border-2 border-inchiostro">
-            <h3 className="m-0 bg-inchiostro px-4 py-3 text-lg font-bold text-fondo">{riga.tema}</h3>
+          <li key={riga.tema} className="overflow-hidden rounded-[18px] border-2 border-ardesia">
+            <h3 className="m-0 bg-ardesia px-4 py-3 text-lg font-bold text-fondo">{riga.tema}</h3>
             <dl className="m-0 text-base">
               <div className="px-4 py-3">
                 <dt className="text-sm font-semibold text-testo-3">{COLONNE[0]}</dt>
@@ -64,7 +64,7 @@ export function Confronto() {
               </div>
               <div className="border-t border-linea bg-superficie px-4 py-3">
                 <dt className="text-sm font-semibold">
-                  <span className="bg-segnale px-1">{COLONNE[1]}</span>
+                  <span className="rounded bg-lime px-1.5 py-0.5 text-inchiostro">{COLONNE[1]}</span>
                 </dt>
                 <dd className="m-0">{riga.noi}</dd>
               </div>

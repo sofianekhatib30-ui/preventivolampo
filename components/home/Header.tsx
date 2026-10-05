@@ -13,27 +13,27 @@ export const NAV_LINKS = [
 export function ctaPrincipale() {
   return candidatureAperte()
     ? ({ href: "#candidatura", label: "Diventa artigiano pilota" } as const)
-    : ({ href: "/prova", label: "Prova la demo" } as const);
+    : ({ href: "/prova", label: "Prova con un esempio" } as const);
 }
 
 export function Header() {
   const CTA_PILOTA = ctaPrincipale();
   return (
-    <header className="margini sticky top-0 z-40 flex h-16 items-center justify-between border-b border-linea bg-fondo lg:h-[88px]">
+    <header className="su-scuro margini sticky top-0 z-40 flex h-16 items-center justify-between border-b border-scuro-linea bg-ardesia text-fondo lg:h-[80px]">
       <Logo />
       <nav aria-label="Principale" className="hidden items-center gap-9 font-medium xl:flex">
         {NAV_LINKS.map((link) => (
           <a
             key={link.href}
             href={link.href}
-            className="flex min-h-11 items-center whitespace-nowrap no-underline hover:text-testo-2"
+            className="flex min-h-11 items-center whitespace-nowrap no-underline hover:text-lime"
           >
             {link.label}
           </a>
         ))}
         <a
           href={CTA_PILOTA.href}
-          className="flex min-h-11 items-center whitespace-nowrap rounded-full bg-inchiostro px-[22px] font-bold text-fondo no-underline hover:text-fondo hover:opacity-90"
+          className="bottone bottone-azione-scuro whitespace-nowrap"
         >
           {CTA_PILOTA.label}
         </a>

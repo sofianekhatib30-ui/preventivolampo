@@ -1,8 +1,9 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { PriceList, type PriceListItem } from "@/lib/listino/schema";
 import { elabora } from "@/lib/motore";
 import type { ToolCaller } from "@/lib/motore/claude";
+import type { Draft } from "@/lib/motore/tipi";
 import { leggi, leggiPerToken, salva, salvaProposte } from "./archivio";
 import { mancanze } from "./calcolo";
 import { daBozza, nuovoId } from "./da-bozza";
@@ -33,9 +34,38 @@ export async function creaDaTesto(testo: string, call: ToolCaller): Promise<Prev
   if (t.length < 30) throw new Rifiuto("Il testo del sopralluogo è troppo corto.", 400);
   if (t.length > 6000) throw new Rifiuto("Il testo del sopralluogo è troppo lungo (massimo 6000 caratteri).", 400);
   const draft = await elabora(t, listino(), call);
-  const p = daBozza(draft, perCodice());
+  const p: Preventivo = { ...daBozza(draft, perCodice()), origine: { tipo: "testo" } };
   await salva(p);
   return p;
+}
+
+// Esempi del banco di prova: la bozza nasce dall'uscita registrata del motore su quel caso
+// (misure/uscite/, l'ultima misura). Nessuna chiamata all'API: gli esempi sono gratis e immediati.
+export function cartellaUscite(): string {
+  const base = path.join(process.cwd(), "misure", "uscite");
+  const ultima = readdirSync(base).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort().at(-1);
+  if (!ultima) throw new Rifiuto("Nessuna misura registrata.", 500);
+  return path.join(base, ultima);
+}
+
+export async function creaDaEsempio(caso: string): Promise<Preventivo> {
+  if (!/^\d{2}$/.test(caso)) throw new Rifiuto("Esempio inesistente.", 400);
+  let draft: Draft;
+  try {
+    draft = JSON.parse(readFileSync(path.join(cartellaUscite(), `${caso}.json`), "utf8")) as Draft;
+  } catch {
+    throw new Rifiuto("Esempio inesistente.", 404);
+  }
+  const p: Preventivo = { ...daBozza(draft, perCodice()), origine: { tipo: "esempio", caso } };
+  await salva(p);
+  return p;
+}
+
+// Il cliente ha aperto la pagina: lo segno una volta sola, per la timeline dell'artigiano.
+export async function segnaVisto(token: string, adesso = new Date()): Promise<void> {
+  const p = await leggiPerToken(token);
+  if (!p || p.stato !== "approvato" || p.vistoIl) return;
+  await salva({ ...p, vistoIl: adesso.toISOString() });
 }
 
 export async function aggiornaBozza(id: string, body: unknown): Promise<Preventivo> {

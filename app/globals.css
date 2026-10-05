@@ -1,34 +1,49 @@
 @import "tailwindcss";
 
 /*
- * Token della home: documentazione/index/SPEC.md, sezione «Token».
- * I font arrivano da next/font/google (self-hosted) tramite le variabili
- * --font-archivo e --font-plex-mono impostate su <html> in app/layout.tsx.
+ * Token del brand. I font arrivano da next/font/google (self-hosted) tramite le variabili
+ * --font-archivo e --font-inter impostate su <html> in app/layout.tsx.
  */
 @theme {
-  --color-fondo: #f3f0e8;
-  --color-fondo-2: #e9e4d8;
+  /* Brand 2026: ardesia di base, lime solo per l'azione, azzurro per l'informazione.
+     Contrasti (WCAG 2.x): lime su ardesia 9,1:1 · inchiostro su lime 12,4:1 · azzurro su ardesia 5,9:1.
+     Il lime non va mai come testo su fondo chiaro (1,3:1): lì si usa lime-scuro. */
+  --color-ardesia: #343645;
+  --color-ardesia-2: #2a2c39;
+  --color-lime: #b2f601;
+  --color-lime-scuro: #4a6b00;
+  --color-cielo: #62c0f6;
+  --color-cielo-scuro: #1a6496;
+  --color-ambra: #fff1c2;
+  --color-ambra-testo: #7a4f00;
+  --color-ambra-bordo: #e0b44c;
+  --color-errore: #c62828;
+  --color-successo: #17692f;
+
+  --color-fondo: #f5f6f2;
+  --color-fondo-2: #e9ebe4;
   --color-superficie: #ffffff;
-  --color-inchiostro: #16150f;
-  --color-testo-2: #3f3d36;
-  --color-testo-3: #5c5a52;
-  --color-linea: #d9d4c7;
-  --color-linea-2: #b8b3a5;
-  --color-scuro-testo: #cfcabb;
-  --color-scuro-nota: #a39e8f;
-  --color-scuro-linea: #3a3830;
-  --color-segnale: #ffc21f;
-  --color-bolla-mia: #d6e9c6;
-  /* Colori secondari presenti nel riferimento, non elencati come token nella SPEC */
-  --color-chat: #ede9df;
-  --color-scontrino: #fbfaf6;
-  --color-campo: #8c8878;
-  --color-riga: #e6e1d5;
+  --color-inchiostro: #1f2029;
+  --color-testo-2: #444756;
+  --color-testo-3: #5e6172;
+  --color-linea: #e4e6ec;
+  --color-linea-2: #c9ccd5;
+  --color-scuro-testo: #d5d7e0;
+  --color-scuro-nota: #a3a6b5;
+  --color-scuro-linea: #4a4d5e;
+  /* «segnale» resta come alias dell'azione, per i componenti che lo usano */
+  --color-segnale: #b2f601;
+  --color-bolla-mia: #e3f6b8;
+  --color-chat: #eceee7;
+  --color-scontrino: #fbfbf8;
+  --color-campo: #8a8d9c;
+  --color-riga: #eceef1;
 
   --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+  /* Cifre, importi e dati: Inter con cifre tabellari (la classe resta font-mono) */
+  --font-mono: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --radius-card: 24px;
+  --radius-card: 20px;
   --radius-campo: 12px;
 }
 
@@ -67,13 +82,22 @@
     text-underline-offset: 0.15em;
   }
 
-  /* Focus visibile ovunque: contorno 3px inchiostro con offset 3px, anche sul giallo */
+  /* Focus visibile ovunque: inchiostro sul chiaro, lime sull'ardesia */
   :focus-visible {
     outline: 3px solid var(--color-inchiostro);
     outline-offset: 3px;
   }
   .su-scuro :focus-visible {
-    outline-color: var(--color-fondo);
+    outline-color: var(--color-lime);
+  }
+
+  .font-mono {
+    font-variant-numeric: tabular-nums;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: var(--color-inchiostro);
   }
 }
 
@@ -118,7 +142,82 @@
 }
 @utility etichetta {
   font-family: var(--font-mono);
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Pulsanti: un solo stile d'azione (lime, testo inchiostro) e uno secondario a contorno */
+@utility bottone {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  padding-inline: 1.5rem;
+  font-weight: 800;
+  text-decoration-line: none;
+}
+@utility bottone-azione {
+  background: var(--color-lime);
+  color: var(--color-inchiostro);
+  box-shadow: inset 0 0 0 2px var(--color-inchiostro);
+  &:hover {
+    background: #c3ff2e;
+  }
+}
+@utility bottone-azione-scuro {
+  background: var(--color-lime);
+  color: var(--color-inchiostro);
+  &:hover {
+    background: #c3ff2e;
+  }
+}
+
+/* Logo: il fulmine scocca all'apertura della pagina e al passaggio del mouse */
+@keyframes lampo-traccia {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes lampo-riempi {
+  0%,
+  45% {
+    fill-opacity: 0;
+  }
+  60% {
+    fill-opacity: 1;
+    filter: brightness(1.6) drop-shadow(0 0 3px #b2f601);
+  }
+  100% {
+    fill-opacity: 1;
+    filter: none;
+  }
+}
+@keyframes lampo-angolo {
+  0%,
+  55% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .logo-animato .lampo-fulmine {
+    stroke-dasharray: 1;
+    animation:
+      lampo-traccia 0.55s cubic-bezier(0.6, 0, 0.3, 1) both,
+      lampo-riempi 1s ease-out both;
+  }
+  .logo-animato .lampo-angolo {
+    transform-box: fill-box;
+    transform-origin: 100% 0;
+    animation: lampo-angolo 0.9s cubic-bezier(0.3, 0, 0.2, 1.4) both;
+  }
 }

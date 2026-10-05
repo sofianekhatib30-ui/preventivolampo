@@ -8,10 +8,15 @@ import type { Preventivo } from "./modello";
 
 // PDF del preventivo approvato: A4, Helvetica (codifica WinAnsi): unità scritte «mq» e «mc», come nei preventivi italiani.
 
-const INK = rgb(0.086, 0.082, 0.059);
-const GREY = rgb(0.36, 0.35, 0.32);
-const LINE = rgb(0.85, 0.83, 0.78);
-const SIGNAL = rgb(1, 0.76, 0.12);
+// Colori del brand: testo inchiostro su bianco, intestazioni ardesia, il lime solo come filetto
+// (su bianco non si legge come testo e in stampa in bianco e nero sparisce).
+const hex = (h: string) => rgb(parseInt(h.slice(1, 3), 16) / 255, parseInt(h.slice(3, 5), 16) / 255, parseInt(h.slice(5, 7), 16) / 255);
+const INK = hex("#1F2029");
+const GREY = hex("#5E6172");
+const LINE = hex("#E4E6EC");
+const ARDESIA = hex("#343645");
+const LIME = hex("#B2F601");
+const WHITE = rgb(1, 1, 1);
 const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li" };
 const REGIME_LABEL: Record<string, string> = {
   ordinaria_22: "IVA ordinaria 22%",
@@ -68,14 +73,15 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
   };
 
   // Intestazione
-  page.drawRectangle({ x: M, y: y - 4, width: 10, height: 10, color: SIGNAL });
-  text(company.name, M + 16, 12, bold);
+  text(company.name, M, 13, bold, ARDESIA);
   y -= 16;
   text(`${company.address} · P.IVA ${company.vatNumber}`, M, 8, reg, GREY);
   y -= 11;
   text(`${company.phone} · ${company.email}`, M, 8, reg, GREY);
-  y -= 26;
-  text(`Preventivo n. ${p.numero}`, M, 16, bold);
+  y -= 10;
+  page.drawRectangle({ x: M, y, width: W, height: 3, color: LIME });
+  y -= 24;
+  text(`Preventivo n. ${p.numero}`, M, 16, bold, ARDESIA);
   const data = new Date(p.approvatoIl);
   const scade = new Date(data.getTime() + company.quoteValidityDays * 86_400_000);
   const fmt = (d: Date) => d.toLocaleDateString("it-IT", { timeZone: "Europe/Rome", day: "2-digit", month: "2-digit", year: "numeric" });
@@ -95,29 +101,27 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
   // Tabella
   const col = { desc: M, q: M + W - 210, u: M + W - 165, pu: M + W - 125, imp: M + W };
   const header = () => {
-    page.drawLine({ start: { x: M, y: y + 12 }, end: { x: M + W, y: y + 12 }, thickness: 1, color: INK });
-    text("Lavorazione", col.desc, 8, bold);
-    text("Q.tà", col.q, 8, bold);
-    text("U.m.", col.u, 8, bold);
-    text("Prezzo", col.pu, 8, bold);
-    page.drawText("Importo", { x: col.imp - bold.widthOfTextAtSize("Importo", 8), y, size: 8, font: bold, color: INK });
-    y -= 8;
-    page.drawLine({ start: { x: M, y }, end: { x: M + W, y }, thickness: 0.5, color: LINE });
-    y -= 12;
+    page.drawRectangle({ x: M, y: y - 6, width: W, height: 20, color: ARDESIA });
+    text("Lavorazione", col.desc + 6, 8, bold, WHITE);
+    text("Q.tà", col.q, 8, bold, WHITE);
+    text("U.m.", col.u, 8, bold, WHITE);
+    text("Prezzo", col.pu, 8, bold, WHITE);
+    page.drawText("Importo", { x: col.imp - 6 - bold.widthOfTextAtSize("Importo", 8), y, size: 8, font: bold, color: WHITE });
+    y -= 24;
   };
   header();
   for (const r of p.righe) {
-    const desc = wrap(r.work, reg, 9, col.q - col.desc - 10);
+    const desc = wrap(r.work, reg, 9, col.q - col.desc - 16);
     ensure(desc.length * 12 + 8);
     const amount = euro(importoRiga(r)!);
-    text(desc[0], col.desc, 9);
+    text(desc[0], col.desc + 6, 9);
     text(qty(r.quantity!), col.q, 9);
     text(UNIT_LABEL[r.unit!] ?? r.unit!, col.u, 9);
     text(euro(r.unitPriceCents!), col.pu, 9);
-    page.drawText(amount, { x: col.imp - reg.widthOfTextAtSize(amount, 9), y, size: 9, font: reg, color: INK });
+    page.drawText(amount, { x: col.imp - 6 - reg.widthOfTextAtSize(amount, 9), y, size: 9, font: reg, color: INK });
     for (const extra of desc.slice(1)) {
       y -= 11;
-      text(extra, col.desc, 9);
+      text(extra, col.desc + 6, 9);
     }
     y -= 6;
     page.drawLine({ start: { x: M, y }, end: { x: M + W, y }, thickness: 0.5, color: LINE });
@@ -128,15 +132,17 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
   ensure(90);
   const right = (label: string, value: string, font = reg, size = 9) => {
     text(label, col.pu - 150, size, font);
-    page.drawText(value, { x: col.imp - font.widthOfTextAtSize(value, size), y, size, font, color: INK });
+    page.drawText(value, { x: col.imp - 6 - font.widthOfTextAtSize(value, size), y, size, font, color: INK });
     y -= size + 6;
   };
   right("Imponibile", euro(c.taxableCents));
   if (c.at10Cents > 0) right(`IVA 10% su ${euro(c.at10Cents)}`, euro(Math.round(c.at10Cents * 0.1)));
   if (c.at22Cents > 0) right(`IVA 22% su ${euro(c.at22Cents)}`, euro(Math.round(c.at22Cents * 0.22)));
   y -= 2;
-  right("Totale", euro(c.totalCents), bold, 12);
-  y -= 8;
+  page.drawRectangle({ x: col.pu - 156, y: y - 6, width: col.imp - (col.pu - 156), height: 22, color: ARDESIA });
+  text("Totale", col.pu - 150, 12, bold, WHITE);
+  page.drawText(euro(c.totalCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.totalCents), 12), y, size: 12, font: bold, color: WHITE });
+  y -= 30;
 
   para(`${REGIME_LABEL[c.regime!]}.${c.beniSignificativiCents > 0 ? ` Valore dei beni significativi: ${euro(c.beniSignificativiCents)}.` : ""} ${VAT_NOTICE}`);
   if (p.esclusioni.length) {
@@ -150,6 +156,16 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
     `Prezzi IVA esclusa salvo dove indicato. Lavori non elencati e varianti richieste in corso d'opera si preventivano a parte. ` +
       `Se il cliente è un consumatore e accetta a distanza (link), ha diritto di recesso entro 14 giorni dall'accettazione, salvo esecuzione dei lavori richiesta prima della scadenza.`,
   );
+  if (p.accettazione) {
+    y -= 8;
+    ensure(40);
+    const quando = new Date(p.accettazione.il).toLocaleString("it-IT", { timeZone: "Europe/Rome", day: "2-digit", month: "2-digit", year: "numeric", hour: "2-digit", minute: "2-digit" });
+    const riga = `${p.accettazione.esito === "accettato" ? "Accettato" : "Rifiutato"} online da ${p.accettazione.nome} il ${quando}.`;
+    page.drawRectangle({ x: M, y: y - 10, width: W, height: 26, borderColor: ARDESIA, borderWidth: 1 });
+    page.drawRectangle({ x: M, y: y - 10, width: 4, height: 26, color: p.accettazione.esito === "accettato" ? LIME : GREY });
+    text(riga, M + 12, 9.5, bold, INK);
+    y -= 30;
+  }
   y -= 6;
   para(company.fictitiousNotice + " Documento generato da PreventivoLampo a scopo dimostrativo.", 7.5);
 

@@ -1,5 +1,7 @@
 # PreventivoLampo
 
+<img src="public/brand/logo-animato-scuro.gif" alt="Logo animato di PreventivoLampo: il fulmine si traccia sul foglio e si accende" width="480">
+
 > **Progetto dimostrativo.** L'impresa edile del listino e i clienti dei sopralluoghi sono inventati. I numeri invece sono veri: li misura un comando su un banco di prova di 30 casi scritto prima del motore.
 
 **Demo online: [preventivolampo.vercel.app](https://preventivolampo.vercel.app)** — la home racconta il prodotto, [`/prova`](https://preventivolampo.vercel.app/prova) fa girare il motore vero. La prova chiede un codice d'accesso, perché ogni bozza è una chiamata a pagamento all'API di Claude: chiedimelo.
@@ -55,6 +57,12 @@ vocale / testo ──► 1. Estrazione (Claude, JSON a schema fisso)
 - **IVA edile**: 22% / 10% / 10% con beni significativi (DM 29/12/1999). Per i beni significativi il 10% vale sul bene solo fino alla differenza fra il totale e il valore dei beni; l'eccedenza va al 22%. Il test riproduce l'esempio dell'Agenzia delle Entrate (10.000 € di cui 6.000 di beni → 8.000 al 10% e 2.000 al 22%). Il valore del bene lo inserisce l'artigiano; sul PDF c'è sempre «verifica con il commercialista».
 - **Listino che impara**: una riga prezzata a mano può diventare una proposta per il listino, che l'artigiano conferma.
 - **Importi** sempre in centesimi interi.
+
+## Brand e interfaccia
+
+Ardesia `#343645` come base, lime `#B2F601` solo per l'azione principale, azzurro `#62C0F6` per l'informazione, ambra per le voci da sistemare. Le schermate di lavoro sono chiare e ad alto contrasto (si usano in cantiere, sotto il sole); i contrasti sono verificati da un test (`test/contrasto-token.test.ts`). Il marchio è un foglio con l'orecchia e un fulmine: si anima all'apertura della pagina e nella favicon.
+
+Dalla ricerca sui concorrenti (Jobber, Tradify, Joist, app «vocale → preventivo») sono entrati: stato esplicito di ogni riga con la frase detta accanto, un solo pulsante che porta al prossimo dato mancante, conferma prima dell'approvazione, invio su WhatsApp, linea del tempo approvato → visto → accettato, pagina del cliente col nome dell'impresa in alto e totale in evidenza. Gli esempi della pagina di prova usano l'uscita registrata del motore: sono immediati e non chiamano l'API.
 
 ## Stack
 

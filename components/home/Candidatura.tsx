@@ -7,7 +7,7 @@ export function Candidatura() {
   return (
     <section
       id="candidatura"
-      className="margini flex flex-col gap-6 bg-segnale pb-7 pt-14 lg:gap-[72px] lg:pb-12 lg:pt-28"
+      className="margini flex flex-col gap-6 bg-fondo-2 pb-7 pt-14 lg:gap-[72px] lg:pb-12 lg:pt-28"
     >
       <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,520px)] lg:grid-rows-[auto_auto_1fr] lg:gap-x-[clamp(40px,5vw,72px)] lg:gap-y-7">
         <h2 className="titolo-finale m-0 lg:col-start-1">Il prossimo preventivo mandalo dal furgone.</h2>

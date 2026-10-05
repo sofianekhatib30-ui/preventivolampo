@@ -97,7 +97,7 @@ export function Domande() {
           <details
             key={indice}
             open={indice === 0}
-            className={`group ${indice === 0 ? "border-t-2 border-inchiostro" : "border-t border-linea-2"}`}
+            className={`group ${indice === 0 ? "border-t-2 border-ardesia" : "border-t border-linea-2"}`}
           >
             <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 py-[18px] lg:py-6 [&::-webkit-details-marker]:hidden">
               <h3 className="m-0 text-xl [font-weight:750] [font-stretch:85%] lg:text-2xl">{voce.domanda}</h3>

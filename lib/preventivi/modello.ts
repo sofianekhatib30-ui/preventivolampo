@@ -37,6 +37,10 @@ export const Preventivo = z.strictObject({
   tokenAccettazione: z.string().nullable(),
   accettazione: z.strictObject({ nome: z.string(), il: z.string(), esito: z.enum(["accettato", "rifiutato"]) }).nullable(),
   motore: z.strictObject({ model: z.string(), inputTokens: z.number(), outputTokens: z.number(), elapsedMs: z.number() }),
+  // «esempio»: bozza creata dall'uscita registrata del motore su un caso del banco di prova (nessuna chiamata all'API).
+  origine: z.object({ tipo: z.enum(["esempio", "testo"]), caso: z.string().optional() }).optional(),
+  // Prima apertura della pagina del cliente (da browser vero, non dall'anteprima del link).
+  vistoIl: z.string().nullable().optional(),
 });
 
 export type RigaPreventivo = z.infer<typeof RigaPreventivo>;

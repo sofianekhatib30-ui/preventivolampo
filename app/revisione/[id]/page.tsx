@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Approvato from "@/components/preventivo/Approvato";
 import Revisione from "@/components/preventivo/Revisione";
+import { TestataApp } from "@/components/TestataApp";
 import { leggi } from "@/lib/preventivi/archivio";
 import { listino } from "@/lib/preventivi/servizio";
 
@@ -15,8 +16,15 @@ export default async function PaginaRevisione({ params }: { params: Promise<{ id
   if (!p) notFound();
   const voci = listino().items.map((i) => ({ code: i.code, name: i.name, unit: i.unit, priceCents: i.priceCents, significantGood: i.significantGood }));
   return (
-    <main className="mx-auto max-w-3xl px-4 py-8 sm:py-12">
-      {p.stato === "bozza" ? <Revisione iniziale={p} voci={voci} /> : <Approvato p={p} />}
-    </main>
+    <>
+      <TestataApp>
+        <a href="/prova" className="text-sm font-semibold text-scuro-testo">
+          Nuova prova
+        </a>
+      </TestataApp>
+      <main className="mx-auto max-w-3xl px-4 pt-6 pb-8 sm:pt-10">
+        {p.stato === "bozza" ? <Revisione iniziale={p} voci={voci} /> : <Approvato p={p} />}
+      </main>
+    </>
   );
 }

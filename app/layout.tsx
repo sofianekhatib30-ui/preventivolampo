@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Mono } from "next/font/google";
+import { Archivo, Inter } from "next/font/google";
+import { FaviconAnimata } from "@/components/FaviconAnimata";
 import { INDEXABLE, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/sito";
 import "./globals.css";
 
@@ -11,11 +12,11 @@ const archivo = Archivo({
   variable: "--font-archivo",
 });
 
-const plexMono = IBM_Plex_Mono({
+// Inter per cifre, importi ed etichette: cifre tabellari, leggibile anche piccola.
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
-  variable: "--font-plex-mono",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -34,8 +35,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="it" className={`${archivo.variable} ${plexMono.variable} antialiased`}>
-      <body className="min-h-dvh">{children}</body>
+    <html lang="it" className={`${archivo.variable} ${inter.variable} antialiased`}>
+      <body className="min-h-dvh">
+        {children}
+        <FaviconAnimata />
+      </body>
     </html>
   );
 }

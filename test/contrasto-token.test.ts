@@ -2,7 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 
-// SPEC, «Token»: --testo-3 deve avere contrasto ≥ 4,5:1 su tutti i fondi chiari.
+// Regole di contrasto del brand (WCAG 2.x, testo normale ≥ 4,5:1).
 // I valori si leggono da app/globals.css per nome del token, non per posizione.
 
 const css = readFileSync(path.resolve(__dirname, "../app/globals.css"), "utf8");
@@ -27,17 +27,27 @@ function contrasto(a: string, b: string): number {
 }
 
 describe("contrasto dei token", () => {
-  it.each(["fondo", "fondo-2", "superficie", "scontrino"])("testo-3 su %s ≥ 4,5:1", (fondo) => {
-    expect(contrasto(token("testo-3"), token(fondo))).toBeGreaterThanOrEqual(4.5);
+  it.each(["inchiostro", "testo-2", "testo-3", "lime-scuro", "cielo-scuro", "errore", "successo"])("%s sui fondi chiari ≥ 4,5:1", (colore) => {
+    for (const fondo of ["fondo", "fondo-2", "superficie", "scontrino"]) {
+      expect(contrasto(token(colore), token(fondo)), `${colore} su ${fondo}`).toBeGreaterThanOrEqual(4.5);
+    }
   });
 
-  it.each(["scuro-testo", "scuro-nota", "segnale"])("%s su inchiostro ≥ 4,5:1", (colore) => {
-    expect(contrasto(token(colore), token("inchiostro"))).toBeGreaterThanOrEqual(4.5);
+  it.each(["fondo", "scuro-testo", "scuro-nota", "lime", "cielo"])("%s sull'ardesia ≥ 4,5:1", (colore) => {
+    for (const fondo of ["ardesia", "ardesia-2"]) {
+      expect(contrasto(token(colore), token(fondo)), `${colore} su ${fondo}`).toBeGreaterThanOrEqual(4.5);
+    }
   });
 
-  it("testo-3 sul giallo NON arriva a 4,5:1: sul giallo si usano solo inchiostro e testo-2", () => {
-    // Registrato perché nessuno lo usi lì: se un giorno i valori cambiano, questo test lo dice.
-    expect(contrasto(token("testo-3"), token("segnale"))).toBeLessThan(4.5);
-    expect(contrasto(token("testo-2"), token("segnale"))).toBeGreaterThanOrEqual(4.5);
+  it("sul lime si scrive in inchiostro; l'avviso ambra si legge", () => {
+    expect(contrasto(token("inchiostro"), token("lime"))).toBeGreaterThanOrEqual(7);
+    expect(contrasto(token("ambra-testo"), token("ambra"))).toBeGreaterThanOrEqual(4.5);
+    expect(contrasto(token("inchiostro"), token("cielo"))).toBeGreaterThanOrEqual(4.5);
+  });
+
+  it("lime e azzurro non vanno mai come testo sul chiaro: per questo esistono lime-scuro e cielo-scuro", () => {
+    // Registrato perché nessuno li usi lì: se un giorno i valori cambiano, questo test lo dice.
+    expect(contrasto(token("lime"), token("superficie"))).toBeLessThan(3);
+    expect(contrasto(token("cielo"), token("superficie"))).toBeLessThan(3);
   });
 });

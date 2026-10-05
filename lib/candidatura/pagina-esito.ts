@@ -15,12 +15,12 @@ function escapeHtml(value: string): string {
 }
 
 const STILE = `
-body{margin:0;background:#FFC21F;color:#16150F;font-family:ui-sans-serif,system-ui,sans-serif}
+body{margin:0;background:#F5F6F2;color:#1F2029;font-family:ui-sans-serif,system-ui,sans-serif}
 main{max-width:640px;margin:0 auto;padding:64px 20px;display:flex;flex-direction:column;gap:20px}
 h1{margin:0;font-size:40px;line-height:1;font-weight:900}
 p,li{font-size:18px;line-height:1.5}
-a{color:#16150F;font-weight:700}
-a:focus-visible{outline:3px solid #16150F;outline-offset:3px}
+a{color:#1A6496;font-weight:700}
+a:focus-visible{outline:3px solid #1F2029;outline-offset:3px}
 `;
 
 export function paginaEsito(esito: Esito): string {

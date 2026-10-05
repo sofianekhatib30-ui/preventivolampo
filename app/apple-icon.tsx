@@ -1,24 +1,19 @@
 import { ImageResponse } from "next/og";
+import { MARCHIO } from "@/lib/brand/marchio";
 
-// Icona Apple 180×180 dal fulmine del logo (SPEC, «SEO, condivisione, dati strutturati»).
+// Icona Apple 180×180: il marchio su fondo ardesia (iOS arrotonda da solo gli angoli).
 export const size = { width: 180, height: 180 };
 export const contentType = "image/png";
 
 export default function AppleIcon() {
+  const { foglio, orecchia, fulmine, colori } = MARCHIO;
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          background: "#FFC21F",
-        }}
-      >
-        <svg width="150" height="150" viewBox="0 0 40 40">
-          <path d="M22.5 7 L12 22 H19 L17 33 L28 17.5 H21 Z" fill="#16150F" />
+      <div style={{ width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center", background: "#343645" }}>
+        <svg width="132" height="132" viewBox="0 0 40 40">
+          <path d={foglio} fill={colori.foglio} />
+          <path d={orecchia} fill={colori.orecchia} />
+          <path d={fulmine} fill={colori.fulmine} />
         </svg>
       </div>
     ),

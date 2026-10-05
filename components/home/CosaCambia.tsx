@@ -19,7 +19,6 @@ export function CosaCambia() {
   return (
     <section id="perche" className="margini flex flex-col gap-6 py-14 lg:gap-14 lg:py-28">
       <div className="flex max-w-[860px] flex-col gap-2 lg:gap-4">
-        <p className="etichetta m-0 text-[13px] lg:text-sm">Cosa cambia</p>
         <h2 className="titolo-h2 m-0 mb-2 lg:mb-0">
           Trascrivere un vocale lo sanno fare in tanti. Noi ci occupiamo di quello che ti fa perdere
           soldi.
@@ -49,9 +48,9 @@ export function CosaCambia() {
           <ul className="m-0 mt-auto flex list-none flex-col gap-2.5 p-0 font-mono text-[12.5px] lg:text-sm">
             <li className="hidden justify-between gap-3 rounded-campo border border-linea px-4 py-3 lg:flex">
               <span>Rimozione vasca · 1 cad.</span>
-              <span className="whitespace-nowrap">dal listino ✓</span>
+              <span className="whitespace-nowrap text-lime-scuro">dal listino ✓</span>
             </li>
-            <li className="flex justify-between gap-3 rounded-[10px] border-2 border-inchiostro bg-segnale px-3 py-2.5 font-semibold lg:rounded-campo lg:px-4 lg:py-3">
+            <li className="flex justify-between gap-3 rounded-[10px] border-2 border-ambra-bordo bg-ambra px-3 py-2.5 font-semibold text-ambra-testo lg:rounded-campo lg:px-4 lg:py-3">
               <span>
                 Box doccia su misura<SoloDesktop> · 1 cad.</SoloDesktop>
               </span>
@@ -59,7 +58,7 @@ export function CosaCambia() {
             </li>
             <li className="hidden justify-between gap-3 rounded-campo border border-linea px-4 py-3 lg:flex">
               <span>Tinteggiatura soffitto · 6 m²</span>
-              <span className="whitespace-nowrap">dal listino ✓</span>
+              <span className="whitespace-nowrap text-lime-scuro">dal listino ✓</span>
             </li>
           </ul>
         </Card>
@@ -168,10 +167,10 @@ function Scontrino() {
         importo="800,00 + 440,00"
         className="text-testo-2"
       />
-      <div aria-hidden="true" className="border-t-2 border-inchiostro lg:my-1.5" />
+      <div aria-hidden="true" className="border-t-2 border-ardesia lg:my-1.5" />
       <RigaScontrino
         voce="Totale"
-        importo={<span className="bg-segnale px-[5px] lg:px-1.5">11.240,00 €</span>}
+        importo={<span className="rounded bg-ardesia px-[5px] text-fondo lg:px-1.5">11.240,00 €</span>}
         className="text-sm font-semibold lg:text-[17px]"
       />
     </div>

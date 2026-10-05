@@ -7,7 +7,7 @@ const listino = ["./dati/listino.json"];
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/prova": ["./testset/copioni/**", "./testset/atteso/**"],
-    "/api/elabora": listino,
+    "/api/elabora": [...listino, "./misure/uscite/**"],
     "/api/preventivi/**": listino,
     "/api/accetta/**": listino,
     "/revisione/**": listino,

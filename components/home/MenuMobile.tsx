@@ -31,7 +31,7 @@ export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }
         aria-controls={panelId}
         aria-label={open ? "Chiudi il menu" : "Apri il menu"}
         onClick={() => setOpen((value) => !value)}
-        className="flex size-11 items-center justify-center rounded-campo border-[1.5px] border-inchiostro bg-transparent"
+        className="flex size-11 items-center justify-center rounded-campo border-[1.5px] border-scuro-linea bg-transparent text-fondo"
       >
         <svg
           width="20"
@@ -50,11 +50,11 @@ export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }
         id={panelId}
         aria-label="Principale"
         hidden={!open}
-        className="margini absolute inset-x-0 top-full border-b border-linea bg-fondo pb-6 pt-2"
+        className="margini absolute inset-x-0 top-full border-b border-scuro-linea bg-ardesia pb-6 pt-2 text-fondo"
       >
         <ul className="flex flex-col">
           {links.map((link) => (
-            <li key={link.href} className="border-b border-linea">
+            <li key={link.href} className="border-b border-scuro-linea">
               <a
                 href={link.href}
                 onClick={() => setOpen(false)}
@@ -68,7 +68,7 @@ export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }
         <a
           href={cta.href}
           onClick={() => setOpen(false)}
-          className="mt-5 flex min-h-12 items-center justify-center rounded-full bg-inchiostro px-6 text-[17px] font-bold text-fondo no-underline"
+          className="bottone bottone-azione-scuro mt-5 flex w-full text-[17px]"
         >
           {cta.label}
         </a>
