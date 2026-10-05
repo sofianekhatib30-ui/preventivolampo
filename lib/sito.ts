@@ -2,9 +2,14 @@
 // Testi: documentazione/index/SPEC.md, sezione «SEO, condivisione, dati strutturati».
 
 // Il dominio definitivo non è deciso: finché manca, gli URL assoluti (sitemap, og:image)
-// usano SITO_URL se impostata, altrimenti l'indirizzo locale. Nessun canonical finché
+// usano SITO_URL se impostata, poi l'indirizzo di produzione su Vercel, altrimenti quello locale. Nessun canonical finché
 // il dominio non è deciso.
-export const SITE_URL = process.env.SITO_URL ?? "http://localhost:3000";
+// Su Vercel, senza SITO_URL, vale l'indirizzo di produzione del progetto.
+export const SITE_URL =
+  process.env.SITO_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const SITE_TITLE = "PreventivoLampo — Il preventivo parte dal furgone | Monza e Brianza";
 
