@@ -62,7 +62,7 @@ export default async function PaginaAccetta({ params }: { params: Promise<{ toke
       ) : (
         <p className="mt-6 rounded-campo bg-superficie p-4 font-semibold">
           {p.accettazione?.esito === "accettato" ? "Hai accettato" : "Hai rifiutato"} questo preventivo il{" "}
-          {new Date(p.accettazione!.il).toLocaleDateString("it-IT")}.
+          {new Date(p.accettazione!.il).toLocaleDateString("it-IT", { timeZone: "Europe/Rome" })}.
         </p>
       )}
       <p className="mt-8 text-xs text-testo-3">{company.fictitiousNotice}</p>

@@ -17,7 +17,7 @@ export default function Approvato({ p }: { p: Preventivo }) {
       {p.accettazione && (
         <p className="mt-2 text-testo-2">
           {p.accettazione.esito === "accettato" ? "Accettato" : "Rifiutato"} da {p.accettazione.nome} il{" "}
-          {new Date(p.accettazione.il).toLocaleString("it-IT")}.
+          {new Date(p.accettazione.il).toLocaleString("it-IT", { timeZone: "Europe/Rome" })}.
         </p>
       )}
       {c && <p className="mt-4 font-mono text-2xl font-semibold">Totale {euro(c.totalCents)}</p>}

@@ -78,7 +78,7 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
   text(`Preventivo n. ${p.numero}`, M, 16, bold);
   const data = new Date(p.approvatoIl);
   const scade = new Date(data.getTime() + company.quoteValidityDays * 86_400_000);
-  const fmt = (d: Date) => d.toLocaleDateString("it-IT", { day: "2-digit", month: "2-digit", year: "numeric" });
+  const fmt = (d: Date) => d.toLocaleDateString("it-IT", { timeZone: "Europe/Rome", day: "2-digit", month: "2-digit", year: "numeric" });
   y -= 16;
   text(`Data ${fmt(data)} · valido fino al ${fmt(scade)} (${company.quoteValidityDays} giorni)`, M, 9, reg, GREY);
   y -= 22;
