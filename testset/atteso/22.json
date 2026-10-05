@@ -1,0 +1,53 @@
+{
+  "id": "22",
+  "title": "Ringhiera in ferro e soffitto del balcone al quarzo (imbianchino, Meda)",
+  "tags": [
+    "fuori_listino",
+    "esclusione",
+    "autocorrezione"
+  ],
+  "customer": {
+    "name": "Arosio",
+    "address": "via Cantù, Meda"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "la ringhiera del balcone, in ferro: carteggiare, antiruggine e smalto. È lunga otto metri, alta un metro",
+      "quantity": 8,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce per la verniciatura di ferro: TIN-05 è smalto su intonaco"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "8 × 1 = 8 m² vuoto per pieno; la ringhiera potrebbe essere prezzata anche a metro"
+    },
+    {
+      "spoken": "il soffitto del balcone ... ci vuole il quarzo, e quello non l'ho a listino",
+      "quantity": 9.6,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "pittura al quarzo per esterni non presente nel listino"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "8 × 1,20 = 9,6 m²"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Verniciatura delle quattro persiane in legno (per ora fuori)"
+  ],
+  "notes": [
+    "Autocorrezione: non il bianco normale ma pittura al quarzo per esterni",
+    "Colore della ringhiera da scegliere con la cliente (probabilmente verde scuro)"
+  ]
+}

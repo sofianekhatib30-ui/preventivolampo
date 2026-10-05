@@ -1,0 +1,171 @@
+{
+  "customer": {
+    "name": "Paolo Brioschi",
+    "address": "via Rimembranze 9, Lesmo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il lavandino vecchio e il bidet, due pezzi",
+      "work": "rimozione lavandino e bidet esistenti",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": "Due pezzi: lavandino e bidet",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-05",
+        "DEM-12",
+        "BAG-09",
+        "DEM-08",
+        "DEM-09",
+        "TIN-09",
+        "DEM-04"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.88
+      }
+    },
+    {
+      "spoken": "Metto un lavabo nuovo da sessantacinque, a parete",
+      "work": "fornitura e posa lavabo sospeso a parete, larghezza 65 cm, bianco, standard",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un lavabo",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-02",
+        "BAG-08",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-01",
+        "TIN-10"
+      ],
+      "unitPriceCents": 12302,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "un bidet a terra, bianchi, normali",
+      "work": "fornitura e posa bidet a pavimento, bianco, standard",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un bidet",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "DEM-04",
+        "PAV-01",
+        "BAG-01",
+        "BAG-09",
+        "PAV-03",
+        "PAV-06",
+        "PAV-02"
+      ],
+      "unitPriceCents": 13688,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "Il miscelatore del lavabo",
+      "work": "fornitura e posa miscelatore per lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un miscelatore per il lavabo",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-08",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02"
+      ],
+      "unitPriceCents": 10744,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "il miscelatore del bidet",
+      "work": "fornitura e posa miscelatore per bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un miscelatore per il bidet",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-08",
+        "BAG-10",
+        "CUC-02",
+        "DEM-08"
+      ],
+      "unitPriceCents": 12310,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "gli cambio il sifone della doccia, il gruppo di scarico",
+      "work": "sostituzione sifone e gruppo di scarico della doccia",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un gruppo di scarico doccia (sifone), numero non detto esplicitamente, inteso come uno",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-11",
+        "BAG-06",
+        "CUC-03",
+        "BAG-10",
+        "IDR-05",
+        "IDR-02",
+        "IDR-08",
+        "IDR-09"
+      ],
+      "unitPriceCents": 5269,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-11",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Box doccia: non si tocca, il cliente lo tiene"
+  ],
+  "notes": [
+    "Bagno di servizio. Intervento di sola sostituzione dei pezzi, senza opere murarie.",
+    "Tutti i materiali sono acquistati dall'impresa e messi in fattura al cliente."
+  ],
+  "usage": {
+    "inputTokens": 6903,
+    "outputTokens": 1708,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 11318
+}

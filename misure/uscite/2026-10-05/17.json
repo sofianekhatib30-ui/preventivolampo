@@ -1,0 +1,248 @@
+{
+  "customer": {
+    "name": "signora Meroni",
+    "address": "via Borgazzi 40, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "smontare i quattro sanitari vecchi, vasca compresa",
+      "work": "smontaggio sanitari esistenti (vasca compresa)",
+      "quantity": 4,
+      "unit": "cad",
+      "quantityNote": "4 sanitari vecchi, vasca compresa",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-07",
+        "DEM-08",
+        "DEM-09",
+        "ELE-06",
+        "DEM-12",
+        "DEM-11",
+        "CUC-01",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "rimonto i suoi: il vaso sospeso",
+      "work": "montaggio vaso sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-02",
+        "BAG-01",
+        "BAG-03"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-02",
+        "confidence": 0.92
+      }
+    },
+    {
+      "spoken": "il bidet sospeso",
+      "work": "montaggio bidet sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-04",
+        "BAG-02",
+        "BAG-09",
+        "DEM-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato per bidet sospeso: BAG-04 è a pavimento, quindi non corrisponde.",
+        "suggestedCode": null,
+        "confidence": 0.4
+      }
+    },
+    {
+      "spoken": "il lavabo",
+      "work": "montaggio lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-05",
+        "BAG-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-05",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "il piatto doccia al posto della vasca",
+      "work": "montaggio piatto doccia al posto della vasca",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-06",
+        "BAG-07",
+        "BAG-10",
+        "BAG-11",
+        "CUC-01",
+        "DEM-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-06",
+        "confidence": 0.75
+      }
+    },
+    {
+      "spoken": "più i tre miscelatori, lavabo, bidet e doccia",
+      "work": "montaggio miscelatori (lavabo, bidet, doccia)",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": "3 miscelatori: lavabo, bidet, doccia",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-04",
+        "BAG-06",
+        "BAG-05",
+        "BAG-10",
+        "BAG-08",
+        "BAG-09",
+        "BAG-11",
+        "CUC-02"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Tre miscelatori diversi richiedono tre voci distinte (BAG-08, BAG-09, BAG-10); una sola riga non può mapparli tutti.",
+        "suggestedCode": null,
+        "confidence": 0.5
+      }
+    },
+    {
+      "spoken": "quattro attacchi, quello del water con lo scarico grosso",
+      "work": "impianto idraulico: attacco acqua e scarico per vaso (scarico grosso)",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "1 attacco per il water su 4 totali",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-01",
+        "BAG-01",
+        "IDR-02",
+        "IDR-04",
+        "IDR-03",
+        "IDR-05",
+        "BAG-02",
+        "CUC-03"
+      ],
+      "unitPriceCents": 20244,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-02",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "e tre normali, acqua calda e fredda con lo scarico",
+      "work": "impianto idraulico: attacchi acqua calda/fredda e scarico per bidet, lavabo e doccia",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": "3 attacchi normali su 4 totali",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-01",
+        "BAG-04",
+        "BAG-06",
+        "IDR-03",
+        "BAG-05",
+        "BAG-11",
+        "IDR-04",
+        "IDR-02"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.92
+      }
+    },
+    {
+      "spoken": "Tutto il vecchio lo porto via io",
+      "work": "trasporto e smaltimento materiali di risulta",
+      "quantity": null,
+      "unit": null,
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "SMA-06",
+        "SMA-05",
+        "SMA-04",
+        "DEM-12",
+        "SMA-01",
+        "TIN-09",
+        "DEM-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Il cliente porta via i materiali da sé, quindi nessuna voce di trasporto o smaltimento serve.",
+        "suggestedCode": null,
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 8,
+      "kind": "quantita_mancante",
+      "text": "Quanto «trasporto e smaltimento materiali di risulta»? Dimmi numero e unità."
+    },
+    {
+      "lineIndex": 8,
+      "kind": "unita_mancante",
+      "text": "«trasporto e smaltimento materiali di risulta»: la quantità in che unità?"
+    }
+  ],
+  "exclusions": [
+    "Piastrelle: non si toccano, restano quelle esistenti"
+  ],
+  "notes": [
+    "Sanitari e rubinetti già scelti e acquistati dalla cliente; l'impresa li monta soltanto",
+    "Non è detto chi fornisce il materiale per gli attacchi idraulici"
+  ],
+  "usage": {
+    "inputTokens": 8243,
+    "outputTokens": 2320,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 20003
+}

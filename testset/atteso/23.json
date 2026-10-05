@@ -1,0 +1,108 @@
+{
+  "id": "23",
+  "title": "Da vasca a doccia con muretto non misurato (muratore, Arcore)",
+  "tags": [
+    "bene_significativo",
+    "misura_mancante",
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Perego",
+    "address": "via Casati 15, Arcore"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "togliere la vasca",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "le piastrelle intorno alla vasca: sulla parete lunga saranno un metro e settanta per due, più i due lati corti, settanta per due ciascuno",
+      "quantity": 6.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "1,70 × 2 = 3,4 m² + 2 × (0,70 × 2) = 2,8 m² = 6,2 m²; misure «saranno»"
+    },
+    {
+      "spoken": "piatto doccia ottanta per ottanta",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il miscelatore della doccia a incasso col soffione",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "lo scarico della doccia nuovo, col sifone",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-11"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il rivestimento nuovo in monocottura venti per venti, dove ho tolto",
+      "quantity": 6.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-13"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stessa superficie tolta: 6,2 m²"
+    },
+    {
+      "spoken": "lo chiudiamo con un muretto in forati da otto, ma la misura del muretto la prendo la prossima volta",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-04"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 6,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [
+    "Box doccia (lo sceglie la cliente e lo monta il vetraio)"
+  ],
+  "notes": [
+    "Abitazione, tipo di intervento e chi compra i beni non detti: da chiedere per l'IVA"
+  ]
+}

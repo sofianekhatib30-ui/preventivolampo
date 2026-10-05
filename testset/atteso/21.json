@@ -1,0 +1,86 @@
+{
+  "id": "21",
+  "title": "Parete da rifare dopo infiltrazione (muratore, Cinisello)",
+  "tags": [
+    "dialetto",
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Sironi",
+    "address": "via Milano 60, Cinisello"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "scrostare l'intonaco fino al mattone, la parete è quattro metri per due e ottanta, tutta",
+      "quantity": 11.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "4 × 2,80 = 11,2 m²"
+    },
+    {
+      "spoken": "rifare l'intonaco civile, stessa misura",
+      "quantity": 11.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,2 m²"
+    },
+    {
+      "spoken": "fissativo",
+      "quantity": 11.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,2 m²"
+    },
+    {
+      "spoken": "e bianco, due mani, sempre su quella parete",
+      "quantity": 11.2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,2 m²"
+    },
+    {
+      "spoken": "sul soffitto, nell'angolo, c'è la muffa: trattamento antimuffa, un paio di metri",
+      "quantity": 2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«un paio di metri» = 2 m²"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Deumidificatore (lo noleggia la cliente)"
+  ],
+  "notes": [
+    "Il danno lo paga l'assicurazione del vicino; il preventivo è intestato alla cliente",
+    "Prima di partire verificare che il muro sia asciutto"
+  ]
+}

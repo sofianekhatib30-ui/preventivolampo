@@ -1,0 +1,25 @@
+// Dati del sito condivisi da metadata, sitemap, immagine Open Graph e JSON-LD.
+// Testi: documentazione/index/SPEC.md, sezione «SEO, condivisione, dati strutturati».
+
+// Il dominio definitivo non è deciso: finché manca, gli URL assoluti (sitemap, og:image)
+// usano SITO_URL se impostata, altrimenti l'indirizzo locale. Nessun canonical finché
+// il dominio non è deciso.
+export const SITE_URL = process.env.SITO_URL ?? "http://localhost:3000";
+
+export const SITE_TITLE = "PreventivoLampo — Il preventivo parte dal furgone | Monza e Brianza";
+
+export const SITE_DESCRIPTION =
+  "Mandi un vocale su WhatsApp dopo il sopralluogo: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Programma pilota per artigiani in Monza e Brianza.";
+
+export const CONTACT_EMAIL = "studio@kdigitalsolution.it";
+
+// Finché la pagina non è in produzione (SPEC, «Promesse della pagina»), nessuna indicizzazione.
+export const INDEXABLE = false;
+
+// Demo da portfolio: il servizio non è in vendita. Il modulo di candidatura resta spento
+// finché CANDIDATURE_APERTE non vale 1; al suo posto la home porta alla prova del motore.
+export function candidatureAperte(): boolean {
+  return process.env.CANDIDATURE_APERTE === "1";
+}
+
+export const REPO_URL = "https://github.com/sofianekhatib30-ui/preventivolampo";

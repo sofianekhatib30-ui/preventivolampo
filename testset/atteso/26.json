@@ -1,0 +1,88 @@
+{
+  "id": "26",
+  "title": "Scaldasalviette e spostamento lavello con rimontaggio (idraulico, Bovisio Masciago)",
+  "tags": [
+    "fuori_listino",
+    "misura_mancante",
+    "materiale_cliente"
+  ],
+  "customer": {
+    "name": "Ronchi",
+    "address": "via Italia 3, Bovisio Masciago"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "il termosifone del bagno va sostituito con uno scaldasalviette",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce per scaldasalviette o termosifoni nel listino"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il tubo da sedici per l'acqua calda e fredda",
+      "quantity": null,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e lo scarico da quaranta; i metri non li so",
+      "quantity": null,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "rimonto il suo lavello, quello vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "e il suo rubinetto vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "quantita_mancante"
+    },
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Modello dello scaldasalviette da scegliere; non detto chi lo compra",
+    "Percorso dello scarico da verificare in cantiere"
+  ]
+}

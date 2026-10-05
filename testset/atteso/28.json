@@ -1,0 +1,105 @@
+{
+  "id": "28",
+  "title": "Bagno cieco: controparete, lavabo e water dall'impresa, rivestimento da definire (muratore, Cologno Monzese)",
+  "tags": [
+    "bene_significativo",
+    "fuori_listino",
+    "misura_mancante"
+  ],
+  "customer": {
+    "name": "Marelli",
+    "address": "via Fratelli Bandiera 45, Cologno Monzese"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10_beni_significativi"
+  },
+  "lines": [
+    {
+      "spoken": "controparete idrorepellente incollata su quella parete, due e mezzo per due e quaranta",
+      "quantity": 6,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-02"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "2,50 × 2,40 = 6 m²"
+    },
+    {
+      "spoken": "tolgo il lavabo vecchio e il water",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un lavabo nuovo da sessantacinque",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "col suo miscelatore",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un water a terra uguale a quello di adesso",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "ci vuole un aspiratore elettrico, visto che è cieco",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce per aspiratore elettrico nel listino"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "sulla controparete il rivestimento in gres venti per venti, alto... non so",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-12"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 6,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Altezza del rivestimento da decidere con la cliente (fino al soffitto o a metà)",
+    "Muro sempre umido: causa da verificare in cantiere"
+  ]
+}

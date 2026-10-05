@@ -1,0 +1,77 @@
+{
+  "id": "06",
+  "title": "Pavimento soggiorno con gres fornito dal cliente (piastrellista, Lissone)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino",
+    "misura_approssimata",
+    "esclusione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Luca Pozzi",
+    "address": "via Garibaldi 8, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "togliamo le piastrelle vecchie, quelle in graniglia",
+      "quantity": 26,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "6,50 × 4 = 26 m², misure «più o meno»"
+    },
+    {
+      "spoken": "le piastrelle nuove le ha già prese lui, sono gres sessanta per sessanta, io faccio solo la posa",
+      "quantity": 26,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa, e solo gres 30x30"
+      },
+      "clientSuppliesMaterial": true,
+      "quantityNote": "stessa superficie: 26 m²"
+    },
+    {
+      "spoken": "togliamo quello vecchio in piastrella",
+      "quantity": 20,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-07"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«una ventina di metri, tutto intorno»"
+    },
+    {
+      "spoken": "mettiamo quello nuovo in legno, quello lo porto io",
+      "quantity": 20,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«una ventina di metri, tutto intorno»"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Massetto (caldana) esistente: non si tocca"
+  ],
+  "notes": [
+    "Chi compra i beni è misto (gres dal cliente, battiscopa dall'impresa): da chiarire per l'IVA",
+    "Macerie portate via dal piastrellista (DEM-04 comprende carico e trasporto, esclusi oneri di smaltimento)"
+  ]
+}

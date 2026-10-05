@@ -1,0 +1,2087 @@
+{
+  "company": {
+    "name": "Edilizia Lampo Dimostrativa S.r.l.",
+    "fictitiousNotice": "Impresa inventata per un progetto dimostrativo: nome, indirizzo, partita IVA e contatti non corrispondono ad alcuna azienda reale.",
+    "address": "Via dell'Esempio 1, 20100 Milano (MI) — indirizzo fittizio",
+    "vatNumber": "IT00000000000 (fittizia)",
+    "phone": "+39 000 000 0000 (fittizio)",
+    "email": "preventivi@example.com",
+    "defaultVatRatePercent": 10,
+    "quoteValidityDays": 30
+  },
+  "priceBasis": "Prezzi del Prezzario Regionale dei Lavori Pubblici di Regione Lombardia, edizione 2026: comprensivi di spese generali (15%) e utile d'impresa (10%), IVA esclusa. Sono prezzi per appalti pubblici, usati qui come listino di un'impresa inventata.",
+  "items": [
+    {
+      "code": "DEM-01",
+      "category": "demolizioni",
+      "name": "Demolizione cartongesso, per ogni lastra rimossa",
+      "description": "Demolizione di tramezzo interno in lastre di gesso rivestito (cartongesso), per ogni lastra di spessore fino a 2,5 cm. Escluso carico, trasporto e oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 413,
+      "synonyms": [
+        "buttare giù cartongesso",
+        "tirare giù il cartongesso",
+        "smontare parete in cartongesso",
+        "demolire cartongesso"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc01.C0100.H0002.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 711 (ex codice 1C.01.070.0010.i)"
+      }
+    },
+    {
+      "code": "DEM-02",
+      "category": "demolizioni",
+      "name": "Demolizione tramezzo in forati fino a 7 cm",
+      "description": "Demolizione di tramezzo interno in blocchi forati intonacato o rivestito, spessore fino a 7 cm. Escluso carico, trasporto e oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 1073,
+      "synonyms": [
+        "buttare giù tramezza",
+        "demolire muretto",
+        "abbattere tavolato",
+        "tramezza sottile",
+        "muro divisorio sottile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc01.C0100.Za001.0010.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 713 (ex codice 1C.01.070.0010.a)"
+      }
+    },
+    {
+      "code": "DEM-03",
+      "category": "demolizioni",
+      "name": "Demolizione tramezzo in forati fino a 11 cm",
+      "description": "Demolizione di tramezzo interno in blocchi forati intonacato o rivestito, spessore fino a 11 cm. Escluso carico, trasporto e oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 1554,
+      "synonyms": [
+        "buttare giù tramezza da dieci",
+        "demolire muro divisorio",
+        "demolire parete forati"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc01.C0100.Za001.0010.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 713 (ex codice 1C.01.070.0010.b)"
+      }
+    },
+    {
+      "code": "DEM-04",
+      "category": "demolizioni",
+      "name": "Demolizione pavimento in piastrelle con malta",
+      "description": "Demolizione di pavimento interno in piastrelle (cemento, ceramica, cotto) con malta di allettamento. Incluso carico e trasporto macerie a impianto. Esclusi oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 1129,
+      "synonyms": [
+        "togliere pavimento",
+        "spaccare le piastrelle per terra",
+        "demolire pavimento vecchio",
+        "levare le piastrelle del pavimento",
+        "rompere il pavimento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc01.C1206.Za000.0250.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 719 (ex codice 1C.01.100.0010.a)"
+      }
+    },
+    {
+      "code": "DEM-05",
+      "category": "demolizioni",
+      "name": "Rimozione rivestimento in piastrelle",
+      "description": "Rimozione di rivestimento in piastrelle di ceramica/gres con malta o collante, con conservazione del supporto. Incluso carico e trasporto a impianto. Esclusi oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 2050,
+      "synonyms": [
+        "togliere le piastrelle dai muri",
+        "spicconare il rivestimento",
+        "levare le piastrelle del bagno",
+        "togliere il rivestimento",
+        "picchettare rivestimento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc04.C1220.L0002.0250.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 729 (ex codice 1C.01.120.0010.a)"
+      }
+    },
+    {
+      "code": "DEM-06",
+      "category": "demolizioni",
+      "name": "Demolizione massetto spessore 5 cm",
+      "description": "Demolizione manuale di massetto interno per pavimenti, spessore 5 cm (esclusi massetti a secco). Escluso carico, trasporto e oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 1035,
+      "synonyms": [
+        "togliere la caldana",
+        "demolire sottofondo",
+        "rompere il massetto",
+        "levare il sottofondo",
+        "spaccare la caldana"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc01.C0915.Za001.0000.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 717 (ex codice 1C.01.100.0020.b)"
+      }
+    },
+    {
+      "code": "DEM-07",
+      "category": "demolizioni",
+      "name": "Rimozione battiscopa in piastrelle",
+      "description": "Rimozione di battiscopa in piastrelle (ceramica, gres, marmo). Incluso carico e trasporto a impianto. Esclusi oneri di smaltimento",
+      "unit": "m",
+      "priceCents": 213,
+      "synonyms": [
+        "togliere zoccolino",
+        "levare il battiscopa",
+        "togliere lo zoccolo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc04.C1240.Za000.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 731 (ex codice 1C.01.120.0020.a)"
+      }
+    },
+    {
+      "code": "DEM-08",
+      "category": "demolizioni",
+      "name": "Rimozione apparecchio sanitario",
+      "description": "Rimozione di apparecchi igienico-sanitari con smontaggio di rubinetterie e accessori, abbassamento, carico e trasporto a impianto. Esclusi oneri di smaltimento",
+      "unit": "cad",
+      "priceCents": 2899,
+      "synonyms": [
+        "smontare il water",
+        "togliere il cesso",
+        "levare il bidet",
+        "smontare lavandino",
+        "togliere i sanitari",
+        "togliere la vasca",
+        "smontare i sanitari vecchi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.01.170.0010",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 48 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "DEM-09",
+      "category": "demolizioni",
+      "name": "Rimozione linee acqua e scarichi di un sanitario",
+      "description": "Rimozione delle linee di alimentazione acqua calda e fredda degli apparecchi sanitari fino alle valvole e degli scarichi fino alla colonna, da murature che non vengono demolite, comprese demolizioni a parete e pavimento. Esclusi oneri di smaltimento",
+      "unit": "cad",
+      "priceCents": 11522,
+      "synonyms": [
+        "togliere i tubi vecchi",
+        "levare le tubazioni del bagno",
+        "smantellare impianto idraulico vecchio",
+        "togliere gli scarichi vecchi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.01.170.0020.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 48 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "DEM-10",
+      "category": "demolizioni",
+      "name": "Scrostamento intonaco fino al vivo del muro",
+      "description": "Scrostamento di intonaco interno o esterno fino al vivo della muratura, in buono stato di conservazione, compresi piani di lavoro, pulizia, carico e trasporto a impianto. Esclusi oneri di smaltimento",
+      "unit": "m2",
+      "priceCents": 1467,
+      "synonyms": [
+        "spicconare intonaco",
+        "togliere intonaco",
+        "scrostare le pareti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.01.090.0020.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 48 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "DEM-11",
+      "category": "demolizioni",
+      "name": "Rimozione porta interna in legno con telaio (al m² di porta)",
+      "description": "Rimozione di porta in legno interna o esterna con controtelaio, telaio, imbotte e mostre, con cernita vetro e legno. Escluso carico e trasporto a deposito o discarica",
+      "unit": "m2",
+      "priceCents": 1610,
+      "synonyms": [
+        "smontare le porte",
+        "togliere porta vecchia",
+        "levare le porte con il telaio",
+        "togliere porte e stipiti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Mc04.C3310.Qa000.0000.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 733 (ex codice 1C.01.140.0010.b)"
+      }
+    },
+    {
+      "code": "DEM-12",
+      "category": "demolizioni",
+      "name": "Rimozione punto elettrico esistente",
+      "description": "Rimozione di punto di utilizzo elettrico su impianto in opera, con sfilaggio dei cavi sotto traccia e delle apparecchiature di comando, trasporto e conferimento a smaltimento",
+      "unit": "cad",
+      "priceCents": 1065,
+      "synonyms": [
+        "togliere prese vecchie",
+        "sfilare i fili",
+        "levare punto luce vecchio",
+        "smantellare impianto elettrico vecchio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1E.02.070.0010",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 139 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-01",
+      "category": "smaltimento",
+      "name": "Conferimento macerie miste a impianto per inerti",
+      "description": "Oneri di conferimento di rifiuti misti da costruzione e demolizione (CER 170904) a impianto di smaltimento autorizzato per rifiuti inerti",
+      "unit": "100kg",
+      "priceCents": 354,
+      "synonyms": [
+        "smaltimento macerie",
+        "smaltire calcinacci",
+        "smaltimento inerti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.27.050.0100.d",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 136 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-02",
+      "category": "smaltimento",
+      "name": "Conferimento macerie miste a impianto per non pericolosi",
+      "description": "Oneri di conferimento di rifiuti misti da costruzione e demolizione (CER 170904) a impianto di smaltimento autorizzato per rifiuti non pericolosi",
+      "unit": "100kg",
+      "priceCents": 849,
+      "synonyms": [
+        "smaltimento rifiuti misti",
+        "discarica rifiuti non pericolosi",
+        "smaltire macerie miste"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.27.050.0100.e",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 136 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-03",
+      "category": "smaltimento",
+      "name": "Conferimento macerie miste a impianto di recupero",
+      "description": "Oneri di conferimento di rifiuti misti da costruzione e demolizione (CER 170904) a impianto di recupero autorizzato",
+      "unit": "100kg",
+      "priceCents": 199,
+      "synonyms": [
+        "recupero macerie",
+        "riciclo calcinacci",
+        "portare macerie al recupero"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.27.050.0100.f",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 136 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-04",
+      "category": "smaltimento",
+      "name": "Conferimento rifiuti in legno a impianto di recupero",
+      "description": "Oneri di conferimento di rifiuti da costruzione e demolizione in legno (CER 170201) a impianto di recupero autorizzato",
+      "unit": "100kg",
+      "priceCents": 1852,
+      "synonyms": [
+        "smaltire legno",
+        "smaltimento porte vecchie",
+        "smaltire parquet vecchio",
+        "buttare via il legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.27.050.0100.g",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 136 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-05",
+      "category": "smaltimento",
+      "name": "Carico manuale, trasporto e scarico macerie in discarica",
+      "description": "Carico esclusivamente manuale di materiali sfusi (macerie, terre), trasporto a discarica autorizzata a qualsiasi distanza e scarico",
+      "unit": "m3",
+      "priceCents": 3004,
+      "synonyms": [
+        "carico e trasporto macerie",
+        "portare giù le macerie",
+        "trasporto in discarica",
+        "sgombero macerie"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.NC.90.050.0050",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 243 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "SMA-06",
+      "category": "smaltimento",
+      "name": "Solo trasporto materiali già caricati",
+      "description": "Solo trasporto di materiali sciolti già caricati sul mezzo, a discarica o impianto di riciclaggio a qualsiasi distanza, e scarico",
+      "unit": "m3",
+      "priceCents": 1556,
+      "synonyms": [
+        "solo trasporto",
+        "viaggio in discarica",
+        "trasporto macerie già caricate"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.NC.80.050.0010",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 238 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "BAG-01",
+      "category": "bagno",
+      "name": "Vaso a pavimento installato",
+      "description": "Vaso igienico a pavimento in vitreous-china bianco con viteria, raccordo di scarico e guarnizioni, installato (cassetta esclusa)",
+      "unit": "cad",
+      "priceCents": 22633,
+      "synonyms": [
+        "water",
+        "wc",
+        "cesso",
+        "tazza",
+        "vaso a terra",
+        "water a pavimento"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8220.L0008.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 82 (ex codice 1M.11.010.0010.a)"
+      }
+    },
+    {
+      "code": "BAG-02",
+      "category": "bagno",
+      "name": "Vaso sospeso con telaio da incasso installato",
+      "description": "Vaso igienico sospeso in vitreous-china bianco con telaio metallico da incasso, mensole, raccordo di scarico e guarnizioni, installato",
+      "unit": "cad",
+      "priceCents": 24102,
+      "synonyms": [
+        "water sospeso",
+        "wc sospeso",
+        "vaso sospeso"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8220.L0008.0015.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 82 (ex codice 1M.11.010.0010.d)"
+      }
+    },
+    {
+      "code": "BAG-03",
+      "category": "bagno",
+      "name": "Cassetta di scarico da incasso con placca",
+      "description": "Cassetta di lavaggio da incasso per vaso, capacità minima 10 l, con comando a pulsante, placca, tubo di allacciamento e guarnizioni, installata",
+      "unit": "cad",
+      "priceCents": 19010,
+      "synonyms": [
+        "cassetta a incasso",
+        "cassetta del water",
+        "sciacquone"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N9705.Za001.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 91 (ex codice 1M.11.010.0030.f)"
+      }
+    },
+    {
+      "code": "BAG-04",
+      "category": "bagno",
+      "name": "Bidet a pavimento installato",
+      "description": "Bidet a pavimento in vetrochina bianco con viti di fissaggio, installato (rubinetteria esclusa)",
+      "unit": "cad",
+      "priceCents": 13688,
+      "synonyms": [
+        "bidet",
+        "bidè",
+        "bidet a terra"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8230.L0012.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 84 (ex codice 1M.11.030.0010.a)"
+      }
+    },
+    {
+      "code": "BAG-05",
+      "category": "bagno",
+      "name": "Lavabo a parete 65 cm installato",
+      "description": "Lavabo a parete in vetrochina bianco da 65 cm con mensole, installato (rubinetteria esclusa)",
+      "unit": "cad",
+      "priceCents": 12302,
+      "synonyms": [
+        "lavandino del bagno",
+        "lavabo",
+        "lavandino",
+        "lavello del bagno"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8225.L0012.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 83 (ex codice 1M.11.020.0010.b)"
+      }
+    },
+    {
+      "code": "BAG-06",
+      "category": "bagno",
+      "name": "Piatto doccia 80x80 installato",
+      "description": "Piatto doccia quadrato in fireclay bianco 80x80 cm, installato",
+      "unit": "cad",
+      "priceCents": 18182,
+      "synonyms": [
+        "piatto doccia",
+        "doccia",
+        "piatto ottanta per ottanta"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8240.L0013.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 86 (ex codice 1M.11.050.0010.b)"
+      }
+    },
+    {
+      "code": "BAG-07",
+      "category": "bagno",
+      "name": "Vasca in acciaio 170x70 installata",
+      "description": "Vasca da bagno in acciaio smaltato bianco 170x70 cm da rivestire, installata",
+      "unit": "cad",
+      "priceCents": 15720,
+      "synonyms": [
+        "vasca",
+        "vasca da bagno",
+        "vasca centosettanta"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8235.Sb001.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 85 (ex codice 1M.11.040.0010.b)"
+      }
+    },
+    {
+      "code": "BAG-08",
+      "category": "bagno",
+      "name": "Miscelatore lavabo montato",
+      "description": "Miscelatore monocomando per lavabo da 1/2 pollice con bocca fissa, scarico a saltarello e tubi di allacciamento, montato",
+      "unit": "cad",
+      "priceCents": 10744,
+      "synonyms": [
+        "rubinetto del lavandino",
+        "miscelatore lavabo",
+        "rubinetteria lavabo",
+        "rubinetto bagno"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1776 (ex codice 1M.11.020.0040.a)"
+      }
+    },
+    {
+      "code": "BAG-09",
+      "category": "bagno",
+      "name": "Miscelatore bidet montato",
+      "description": "Miscelatore monocomando per bidet da 1/2 pollice con bocca fissa, scarico a saltarello e raccordi flessibili, montato",
+      "unit": "cad",
+      "priceCents": 12310,
+      "synonyms": [
+        "rubinetto del bidet",
+        "miscelatore bidet"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0025.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1777 (ex codice 1M.11.030.0020)"
+      }
+    },
+    {
+      "code": "BAG-10",
+      "category": "bagno",
+      "name": "Miscelatore doccia da incasso con soffione montato",
+      "description": "Miscelatore monocomando da incasso per doccia da 1/2 pollice con braccio e soffione anticalcare orientabile, montato",
+      "unit": "cad",
+      "priceCents": 13993,
+      "synonyms": [
+        "rubinetto doccia",
+        "miscelatore doccia",
+        "rubinetteria doccia"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0040.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1777 (ex codice 1M.11.050.0020.b)"
+      }
+    },
+    {
+      "code": "BAG-11",
+      "category": "bagno",
+      "name": "Gruppo di scarico per doccia montato",
+      "description": "Gruppo di scarico per doccia con pozzetto sifonato e piletta grigliata, montato",
+      "unit": "cad",
+      "priceCents": 5269,
+      "synonyms": [
+        "piletta doccia",
+        "scarico doccia",
+        "sifone doccia"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I7800.Za001.0750.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1770 (ex codice 1M.11.050.0030)"
+      }
+    },
+    {
+      "code": "BAG-12",
+      "category": "bagno",
+      "name": "Rivestimento pareti gres porcellanato 20x20",
+      "description": "Rivestimento in piastrelle di gres porcellanato 20x20 cm liscio colore chiaro, prima scelta, con pezzi speciali e collante, posato su idoneo intonaco con stuccatura giunti. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5062,
+      "synonyms": [
+        "piastrelle sui muri del bagno",
+        "rivestimento bagno",
+        "piastrellare le pareti",
+        "gres a parete",
+        "mattonelle sul muro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0005.0010.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 237 (ex codice 1C.19.050.0040.c)"
+      }
+    },
+    {
+      "code": "BAG-13",
+      "category": "bagno",
+      "name": "Rivestimento pareti monocottura 20x20",
+      "description": "Rivestimento in piastrelle di monocottura smaltata 20x20 cm, con pezzi speciali e collante, posato su idoneo intonaco con stuccatura giunti. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 4892,
+      "synonyms": [
+        "monocottura a parete",
+        "piastrelle smaltate bagno",
+        "rivestimento in monocottura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0001.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 234 (ex codice 1C.19.050.0020.a)"
+      }
+    },
+    {
+      "code": "CUC-01",
+      "category": "cucina",
+      "name": "Lavello inox 1 vasca con scolapiatti installato",
+      "description": "Lavello da semi-incasso in acciaio inox 1 bacino con scolapiatti 90x50 cm, con mensole, installato",
+      "unit": "cad",
+      "priceCents": 14828,
+      "synonyms": [
+        "lavello cucina",
+        "lavandino della cucina",
+        "lavello inox",
+        "acquaio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.N8210.Sb008.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 80 (ex codice 1M.11.060.0020.a)"
+      }
+    },
+    {
+      "code": "CUC-02",
+      "category": "cucina",
+      "name": "Miscelatore lavello montato",
+      "description": "Miscelatore monocomando per lavello da 1/2 pollice con bocca girevole e tubi di allacciamento, montato",
+      "unit": "cad",
+      "priceCents": 14208,
+      "synonyms": [
+        "rubinetto della cucina",
+        "miscelatore cucina",
+        "rubinetto lavello"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0050.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1777 (ex codice 1M.11.060.0040.a)"
+      }
+    },
+    {
+      "code": "CUC-03",
+      "category": "cucina",
+      "name": "Gruppo di scarico lavello montato",
+      "description": "Gruppo di scarico per lavello a 1 bacino con piletta, tappo e sifone ispezionabile, montato",
+      "unit": "cad",
+      "priceCents": 5870,
+      "synonyms": [
+        "sifone lavello",
+        "scarico lavello",
+        "scarico cucina"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa29.I7800.Za001.0260.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1770 (ex codice 1M.11.060.0050.a)"
+      }
+    },
+    {
+      "code": "CUC-04",
+      "category": "cucina",
+      "name": "Rivestimento cucina monocottura 30x30",
+      "description": "Rivestimento in piastrelle di monocottura smaltata in tinta unita 30x30 cm, con pezzi speciali e collante, posato su idoneo intonaco. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5489,
+      "synonyms": [
+        "piastrelle sopra il piano cucina",
+        "rivestimento cucina",
+        "schienale cucina in piastrelle",
+        "paraschizzi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0001.0020.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 235 (ex codice 1C.19.050.0020.e)"
+      }
+    },
+    {
+      "code": "CUC-05",
+      "category": "cucina",
+      "name": "Rivestimento cucina maiolica 20x20",
+      "description": "Rivestimento in piastrelle di maiolica smaltata in tinta unita 20x20 cm, con pezzi speciali e collante, posato su idoneo intonaco. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5102,
+      "synonyms": [
+        "maiolica cucina",
+        "piastrelle in maiolica",
+        "rivestimento maiolica"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0010.0010.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 239 (ex codice 1C.19.050.0010.c)"
+      }
+    },
+    {
+      "code": "CUC-06",
+      "category": "cucina",
+      "name": "Presa 16 A con interruttore bipolare (elettrodomestici)",
+      "description": "Punto presa da incasso 2P+T 16 A con interruttore bipolare, completo di tubo, conduttori, scatola, frutto e placca e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 5332,
+      "synonyms": [
+        "presa forno",
+        "presa lavastoviglie",
+        "presa lavatrice",
+        "presa con interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1015.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 813 (ex codice 1E.02.060.0015.k)"
+      }
+    },
+    {
+      "code": "TIN-01",
+      "category": "tinteggiature",
+      "name": "Idropittura traspirante semilavabile, 2 mani",
+      "description": "Idropittura traspirante semilavabile per interni su intonaco civile o gesso già preparato, 2 mani. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 537,
+      "synonyms": [
+        "imbiancare",
+        "dare il bianco",
+        "tinteggiare",
+        "pitturare le pareti",
+        "dare una mano di bianco"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca000.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 596 (ex codice 1C.24.120.0020.b)"
+      }
+    },
+    {
+      "code": "TIN-02",
+      "category": "tinteggiature",
+      "name": "Idropittura vinilica lavabile, 2 mani",
+      "description": "Idropittura vinilica traspirante lavabile per interni su intonaco già preparato, 2 mani. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 508,
+      "synonyms": [
+        "pittura lavabile",
+        "lavabile",
+        "idropittura lavabile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca015.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 599 (ex codice 1C.24.120.0020.a)"
+      }
+    },
+    {
+      "code": "TIN-03",
+      "category": "tinteggiature",
+      "name": "Idropittura acrilica superlavabile, 2 mani",
+      "description": "Idropittura acrilica traspirante superlavabile per interni (oltre 5000 colpi spazzola) su intonaco già preparato, 2 mani. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 547,
+      "synonyms": [
+        "superlavabile",
+        "pittura superlavabile",
+        "acrilica"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca012.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 597 (ex codice 1C.24.120.0020.c)"
+      }
+    },
+    {
+      "code": "TIN-04",
+      "category": "tinteggiature",
+      "name": "Idropittura acrilica lavabile alta resistenza, 2 mani",
+      "description": "Idropittura acrilica traspirante lavabile per interni (oltre 10000 colpi spazzola) su intonaco già preparato, 2 mani. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 611,
+      "synonyms": [
+        "lavabile resistente",
+        "pittura per cucina"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca012.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 597 (ex codice 1C.24.120.0020.d)"
+      }
+    },
+    {
+      "code": "TIN-05",
+      "category": "tinteggiature",
+      "name": "Smalto per interni, 2 mani",
+      "description": "Pittura alchidica (smalto) lucida o satinata per interni su intonaco già preparato, 2 mani. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 739,
+      "synonyms": [
+        "smalto",
+        "verniciare a smalto",
+        "zoccolatura a smalto",
+        "pittura a olio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca028.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 600 (ex codice 1C.24.120.0030.b)"
+      }
+    },
+    {
+      "code": "TIN-06",
+      "category": "tinteggiature",
+      "name": "Primer (fissativo) prima di rasare o pitturare",
+      "description": "Trattamento delle superfici prima di rasature o pitturazioni con primer in dispersione acquosa a rullo o pennello, compresi piani di lavoro interni",
+      "unit": "m2",
+      "priceCents": 250,
+      "synonyms": [
+        "fissativo",
+        "isolante",
+        "primer",
+        "dare il fondo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.100.0020.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 111 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "TIN-07",
+      "category": "tinteggiature",
+      "name": "Trattamento antimuffa",
+      "description": "Trattamento delle superfici con liquido antimuffa, antibatterico, antialghe a pennello o rullo con successiva spazzolatura, compresi piani di lavoro interni",
+      "unit": "m2",
+      "priceCents": 253,
+      "synonyms": [
+        "antimuffa",
+        "trattare la muffa",
+        "muffa in bagno",
+        "togliere la muffa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.100.0020.e",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 111 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "TIN-08",
+      "category": "tinteggiature",
+      "name": "Stuccatura saltuaria di fori e crepe",
+      "description": "Stuccatura saltuaria di superfici interne con stucco emulsionato su scalfitture, fori e cavillature, con carteggiatura delle zone stuccate",
+      "unit": "m2",
+      "priceCents": 238,
+      "synonyms": [
+        "stuccare i buchi",
+        "stuccatura",
+        "chiudere le crepe",
+        "stuccare le cavillature"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.100.0010",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 111 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "TIN-09",
+      "category": "tinteggiature",
+      "name": "Raschiatura vecchie pitture",
+      "description": "Raschiatura saltuaria di vecchie pitture con limitati distacchi su supporti murari conservati, con rimozione di chiodi e ganci e spolveratura",
+      "unit": "m2",
+      "priceCents": 195,
+      "synonyms": [
+        "raschiare",
+        "grattare la pittura vecchia",
+        "raschiatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.710.0010.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 112 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "TIN-10",
+      "category": "tinteggiature",
+      "name": "Rasatura pareti con stucco, 1 mano",
+      "description": "Rasatura dell'intera superficie interna con stucco emulsionato ad una mano e carteggiatura, su vecchie pitturazioni raschiate",
+      "unit": "m2",
+      "priceCents": 789,
+      "synonyms": [
+        "rasare",
+        "rasatura",
+        "una mano di rasante",
+        "lisciare le pareti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.710.0020.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 112 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "TIN-11",
+      "category": "tinteggiature",
+      "name": "Rasatura pareti con stucco, 2 mani",
+      "description": "Rasatura dell'intera superficie interna con stucco emulsionato a due mani con doppia carteggiatura, su vecchie pitturazioni raschiate",
+      "unit": "m2",
+      "priceCents": 1316,
+      "synonyms": [
+        "rasatura a due mani",
+        "rasare bene",
+        "doppia rasatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1C.24.710.0020.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 112 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "PAV-01",
+      "category": "pavimenti",
+      "name": "Pavimento gres porcellanato smaltato 30x30",
+      "description": "Pavimento interno in piastrelle di gres porcellanato smaltato colore chiaro 30x30 cm, posato a malta, compresa la boiacca. Esclusi sottofondo, letto di posa e assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5598,
+      "synonyms": [
+        "piastrelle per terra",
+        "gres",
+        "pavimento in gres",
+        "piastrellare il pavimento",
+        "mattonelle"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0005.0220.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 172 (ex codice 1C.18.150.0030.e)"
+      }
+    },
+    {
+      "code": "PAV-02",
+      "category": "pavimenti",
+      "name": "Pavimento gres porcellanato liscio 30x30",
+      "description": "Pavimento interno in piastrelle di gres porcellanato liscio colore chiaro 30x30 cm, posato a malta, compresa la boiacca. Esclusi sottofondo, letto di posa e assistenza muraria",
+      "unit": "m2",
+      "priceCents": 4217,
+      "synonyms": [
+        "gres liscio",
+        "porcellanato",
+        "gres tecnico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0005.0260.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 173 (ex codice 1C.18.200.0030.g)"
+      }
+    },
+    {
+      "code": "PAV-03",
+      "category": "pavimenti",
+      "name": "Pavimento monocottura 30x30",
+      "description": "Pavimento interno in piastrelle di monocottura smaltata in tinta unita 30x30 cm, posato a malta, compresa la boiacca. Esclusi sottofondo, letto di posa e assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5488,
+      "synonyms": [
+        "monocottura",
+        "piastrelle in monocottura",
+        "pavimento monocottura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0001.0020.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 161 (ex codice 1C.18.150.0010.e)"
+      }
+    },
+    {
+      "code": "PAV-04",
+      "category": "pavimenti",
+      "name": "Parquet in listoni di rovere su magatelli",
+      "description": "Pavimento in listoni di rovere 60-120 x 6-7 cm spessore 2,2 cm su magatelli, con levigatura e ceratura. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 12041,
+      "synonyms": [
+        "parquet",
+        "parchè",
+        "listoni di rovere",
+        "pavimento in legno",
+        "legno massello"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.Qa005.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 196 (ex codice 1C.18.400.0010.a)"
+      }
+    },
+    {
+      "code": "PAV-05",
+      "category": "pavimenti",
+      "name": "Pavimento in laminato 8 mm",
+      "description": "Pavimento in laminato HDF effetto legno spessore 8 mm classe AC5, con materassino antirumore. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 5810,
+      "synonyms": [
+        "laminato",
+        "finto parquet"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.Qb003.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 200 (ex codice 1C.18.400.0040)"
+      }
+    },
+    {
+      "code": "PAV-06",
+      "category": "pavimenti",
+      "name": "Pavimento vinilico in listoni (LVT) incollato",
+      "description": "Pavimento vinilico multistrato in listoni PVC effetto legno spessore 2 mm incollati, compresa rasatura del sottofondo esistente. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 3963,
+      "synonyms": [
+        "vinilico",
+        "pvc",
+        "lvt",
+        "pavimento in pvc"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1206.D0017.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 136 (ex codice 1C.18.450.0065.a)"
+      }
+    },
+    {
+      "code": "PAV-07",
+      "category": "pavimenti",
+      "name": "Levigatura e verniciatura parquet esistente",
+      "description": "Levigatura meccanica di pavimento in legno esistente con verniciatura a 3 mani di vernice trasparente e pulizia finale. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 2598,
+      "synonyms": [
+        "levigare il parquet",
+        "lamare il parquet",
+        "rifare il parquet",
+        "lamatura",
+        "sistemare il legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa30.C1206.Qa000.0255.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 692 (ex codice 1C.18.400.0060.b)"
+      }
+    },
+    {
+      "code": "PAV-08",
+      "category": "pavimenti",
+      "name": "Massetto sabbia-cemento 5 cm",
+      "description": "Massetto sabbia-cemento (dosaggio 300 kg/m³) spessore 5 cm tirato in perfetto piano a mano, per pavimenti incollati",
+      "unit": "m2",
+      "priceCents": 2508,
+      "synonyms": [
+        "caldana",
+        "massetto",
+        "sottofondo",
+        "fare la caldana",
+        "rifare il sottofondo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0001.0005.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 511 (ex codice 1C.08.050.0030)"
+      }
+    },
+    {
+      "code": "PAV-09",
+      "category": "pavimenti",
+      "name": "Massetto alleggerito con argilla espansa 5 cm",
+      "description": "Massetto alleggerito con argilla espansa spessore 5 cm steso con mezzo meccanico, per pavimenti posati a malta. Esclusa installazione pompa autocarrata",
+      "unit": "m2",
+      "priceCents": 2214,
+      "synonyms": [
+        "massetto alleggerito",
+        "caldana leggera",
+        "sottofondo alleggerito",
+        "argilla espansa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0004.0005.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 514 (ex codice 1C.08.100.0020)"
+      }
+    },
+    {
+      "code": "PAV-10",
+      "category": "pavimenti",
+      "name": "Massetto autolivellante 4 cm",
+      "description": "Massetto autolivellante a base di anidrite spessore 4 cm su supporto isolato con polietilene",
+      "unit": "m2",
+      "priceCents": 3062,
+      "synonyms": [
+        "autolivellante",
+        "massetto autolivellante"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0018.0000.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 519 (ex codice 1C.08.250.0030.a)"
+      }
+    },
+    {
+      "code": "PAV-11",
+      "category": "pavimenti",
+      "name": "Battiscopa in legno",
+      "description": "Battiscopa in legno duro 60x9 mm fissato con viti o incollato, compresi tagli e sfridi. Esclusa assistenza muraria",
+      "unit": "m",
+      "priceCents": 664,
+      "synonyms": [
+        "zoccolino in legno",
+        "battiscopa legno",
+        "zoccolo in legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1240.Qa001.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 255 (ex codice 1C.18.600.0010.a)"
+      }
+    },
+    {
+      "code": "PAV-12",
+      "category": "pavimenti",
+      "name": "Battiscopa in gres h 10 cm",
+      "description": "Battiscopa in gres porcellanato piano altezza 10 cm posato con malta o collante. Esclusa assistenza muraria",
+      "unit": "m",
+      "priceCents": 1487,
+      "synonyms": [
+        "zoccolino",
+        "battiscopa",
+        "zoccolino in gres",
+        "battiscopa in piastrella"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1240.L0005.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 249 (ex codice 1C.18.600.0030.b)"
+      }
+    },
+    {
+      "code": "IDR-01",
+      "category": "idraulico",
+      "name": "Allacciamento sanitario acqua calda e fredda con scarico",
+      "description": "Allacciamento completo di apparecchio sanitario acqua fredda e calda con scarico: valvola generale DN15, tubazione DN15 con guaina isolante, scarico DE40 in PEAD fino alla colonna. Esclusi assistenza muraria, apparecchio e rubinetteria",
+      "unit": "cad",
+      "priceCents": 19661,
+      "synonyms": [
+        "punto acqua",
+        "attacco acqua e scarico",
+        "portare l'acqua",
+        "attacchi",
+        "punto acqua calda e fredda"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1M.11.200.0010.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 167 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "IDR-02",
+      "category": "idraulico",
+      "name": "Allacciamento sanitario acqua con scarico DE110",
+      "description": "Allacciamento completo di apparecchio sanitario acqua fredda o calda con scarico DE110 in PEAD fino alla colonna, tubazione DN15 con guaina isolante. Esclusi assistenza muraria, apparecchio e rubinetteria",
+      "unit": "cad",
+      "priceCents": 20244,
+      "synonyms": [
+        "attacco water",
+        "scarico del water",
+        "punto acqua per il wc"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1M.11.200.0010.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 167 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "IDR-03",
+      "category": "idraulico",
+      "name": "Allacciamento acqua calda e fredda senza scarico",
+      "description": "Allacciamento di apparecchio sanitario acqua fredda e calda senza scarico, tubazioni DN15 con guaina isolante. Esclusi assistenza muraria, apparecchio e rubinetteria",
+      "unit": "cad",
+      "priceCents": 16969,
+      "synonyms": [
+        "solo acqua calda e fredda",
+        "attacchi senza scarico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1M.11.200.0010.c",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 167 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "IDR-04",
+      "category": "idraulico",
+      "name": "Allacciamento acqua singola senza scarico",
+      "description": "Allacciamento di apparecchio sanitario acqua fredda o calda senza scarico, tubazione DN15 con guaina isolante. Esclusi assistenza muraria, apparecchio e rubinetteria",
+      "unit": "cad",
+      "priceCents": 5593,
+      "synonyms": [
+        "solo acqua fredda",
+        "attacco lavatrice",
+        "punto acqua singolo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1M.11.200.0010.d",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 167 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "IDR-05",
+      "category": "idraulico",
+      "name": "Allacciamento solo scarico DE40",
+      "description": "Allacciamento del solo scarico di apparecchio sanitario con tubazione DE40 in PEAD fino alla colonna. Esclusi assistenza muraria, apparecchio e rubinetteria",
+      "unit": "cad",
+      "priceCents": 8228,
+      "synonyms": [
+        "solo scarico",
+        "scarico lavatrice",
+        "portare lo scarico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026) - Parte 4: file della cartella allegati-corretti non più collegato dalla pagina ufficiale, che collega la versione del 27/05/2026 con gli stessi prezzi (verifica Notaio 23/09/2026)",
+        "sourceCode": "LOM261.1M.11.200.0010.e",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-4-elenco-prezzi-precedente-struttura.pdf",
+        "reference": "Parte 4 Precedente struttura pag. PDF 167 del file citato (nella versione del 27/05/2026 la pagina cambia: il riferimento stabile è il codice)"
+      }
+    },
+    {
+      "code": "IDR-06",
+      "category": "idraulico",
+      "name": "Tubo PE-X acqua diametro 16",
+      "description": "Tubazione in polietilene reticolato PE-X per distribuzione acqua diametro 16 mm, in opera",
+      "unit": "m",
+      "priceCents": 386,
+      "synonyms": [
+        "tubo da sedici",
+        "tubazione acqua",
+        "pex sedici",
+        "pex"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.I7407.D0033.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1402 (ex codice 1M.14.060.0010.a)"
+      }
+    },
+    {
+      "code": "IDR-07",
+      "category": "idraulico",
+      "name": "Tubo PE-X acqua diametro 20",
+      "description": "Tubazione in polietilene reticolato PE-X per distribuzione acqua diametro 20 mm, in opera",
+      "unit": "m",
+      "priceCents": 464,
+      "synonyms": [
+        "tubo da venti",
+        "dorsale acqua"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.I7407.D0033.0010.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1402 (ex codice 1M.14.060.0010.c)"
+      }
+    },
+    {
+      "code": "IDR-08",
+      "category": "idraulico",
+      "name": "Tubo di scarico diametro 40",
+      "description": "Tubazione di scarico in polipropilene autoestinguente a bicchiere diametro 40 mm, compreso fissaggio",
+      "unit": "m",
+      "priceCents": 788,
+      "synonyms": [
+        "scarico da quaranta",
+        "tubo scarico quaranta"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1452 (ex codice 1C.12.030.0010.b)"
+      }
+    },
+    {
+      "code": "IDR-09",
+      "category": "idraulico",
+      "name": "Tubo di scarico diametro 50",
+      "description": "Tubazione di scarico in polipropilene autoestinguente a bicchiere diametro 50 mm, compreso fissaggio",
+      "unit": "m",
+      "priceCents": 875,
+      "synonyms": [
+        "scarico da cinquanta",
+        "tubo scarico cinquanta"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0010.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1452 (ex codice 1C.12.030.0010.c)"
+      }
+    },
+    {
+      "code": "IDR-10",
+      "category": "idraulico",
+      "name": "Tubo di scarico diametro 110",
+      "description": "Tubazione di scarico in polipropilene autoestinguente a bicchiere diametro 110 mm, compreso fissaggio",
+      "unit": "m",
+      "priceCents": 1554,
+      "synonyms": [
+        "scarico da centodieci",
+        "tubo del water"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0025.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1452 (ex codice 1C.12.030.0010.f)"
+      }
+    },
+    {
+      "code": "ELE-01",
+      "category": "elettrico",
+      "name": "Punto luce interrotto",
+      "description": "Punto luce interrotto da incasso con interruttore bipolare e spia, completo di tubo, conduttori, scatola, frutto e placca e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 4893,
+      "synonyms": [
+        "punto luce",
+        "luce con interruttore",
+        "interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 822 (ex codice 1E.02.060.0015.a)"
+      }
+    },
+    {
+      "code": "ELE-02",
+      "category": "elettrico",
+      "name": "Punto luce deviato",
+      "description": "Punto luce deviato da incasso, completo di tubo, conduttori, scatole, frutti e placche e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 6454,
+      "synonyms": [
+        "deviatore",
+        "luce deviata",
+        "luce da due punti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.0500.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 821 (ex codice 1E.02.060.0015.b)"
+      }
+    },
+    {
+      "code": "ELE-03",
+      "category": "elettrico",
+      "name": "Punto luce invertito",
+      "description": "Punto luce invertito da incasso, completo di tubo, conduttori, scatole, frutti e placche e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 9658,
+      "synonyms": [
+        "invertitore",
+        "luce da tre punti",
+        "luce invertita"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1250.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 823 (ex codice 1E.02.060.0015.c)"
+      }
+    },
+    {
+      "code": "ELE-04",
+      "category": "elettrico",
+      "name": "Invertitore aggiuntivo oltre il primo",
+      "description": "Punto luce invertito da incasso, per ogni invertitore oltre il primo",
+      "unit": "cad",
+      "priceCents": 3278,
+      "synonyms": [
+        "invertitore in più",
+        "un altro invertitore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1255.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 823 (ex codice 1E.02.060.0015.p)"
+      }
+    },
+    {
+      "code": "ELE-05",
+      "category": "elettrico",
+      "name": "Punto luce in parallelo",
+      "description": "Punto luce in parallelo ad una qualsiasi derivazione, da incasso",
+      "unit": "cad",
+      "priceCents": 1965,
+      "synonyms": [
+        "luce in parallelo",
+        "altra luce sullo stesso interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.0750.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 821 (ex codice 1E.02.060.0015.g)"
+      }
+    },
+    {
+      "code": "ELE-06",
+      "category": "elettrico",
+      "name": "Punto presa 10 A",
+      "description": "Punto presa da incasso 2P+T 10 A, completo di tubo, conduttori, scatola, frutto e placca e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 4462,
+      "synonyms": [
+        "presa",
+        "presa piccola",
+        "presetta",
+        "punto presa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 812 (ex codice 1E.02.060.0015.h)"
+      }
+    },
+    {
+      "code": "ELE-07",
+      "category": "elettrico",
+      "name": "Punto presa 16 A",
+      "description": "Punto presa da incasso 2P+T 16 A, completo di tubo, conduttori, scatola, frutto e placca e linea fino al punto di alimentazione",
+      "unit": "cad",
+      "priceCents": 4633,
+      "synonyms": [
+        "presa grande",
+        "presa sedici"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 812 (ex codice 1E.02.060.0015.i)"
+      }
+    },
+    {
+      "code": "ELE-08",
+      "category": "elettrico",
+      "name": "Punto presa telefono o dati",
+      "description": "Punto presa telefono o dati da incasso, completo di tubo, conduttori, scatola, frutto e placca",
+      "unit": "cad",
+      "priceCents": 3312,
+      "synonyms": [
+        "presa internet",
+        "presa rete",
+        "presa telefono",
+        "rj45"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1105.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 815 (ex codice 1E.02.060.0075.f)"
+      }
+    },
+    {
+      "code": "ELE-09",
+      "category": "elettrico",
+      "name": "Interruttore magnetotermico 2 poli",
+      "description": "Interruttore automatico magnetotermico modulare civile 2 poli curva C 6-32 A potere di interruzione 4,5 kA, installato",
+      "unit": "cad",
+      "priceCents": 2506,
+      "synonyms": [
+        "magnetotermico",
+        "automatico",
+        "interruttore nel quadro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8205.Za001.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 732 (ex codice 1E.03.030.0010.b)"
+      }
+    },
+    {
+      "code": "ELE-10",
+      "category": "elettrico",
+      "name": "Interruttore magnetotermico differenziale",
+      "description": "Interruttore magnetotermico differenziale modulare civile 1P+N 6-32 A sensibilità 0,03 A classe AC potere di interruzione 6 kA, installato",
+      "unit": "cad",
+      "priceCents": 8905,
+      "synonyms": [
+        "salvavita",
+        "differenziale",
+        "magnetotermico differenziale"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G8205.Za001.0750.b",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 759 (ex codice 1E.03.030.0300.a)"
+      }
+    },
+    {
+      "code": "ELE-11",
+      "category": "elettrico",
+      "name": "Centralino da incasso fino a 12 moduli",
+      "description": "Quadro elettrico (centralino) da incasso in resina fino a 12 moduli IP40 con porta trasparente e morsettiere, installato",
+      "unit": "cad",
+      "priceCents": 4657,
+      "synonyms": [
+        "quadretto",
+        "quadro elettrico piccolo",
+        "centralino"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G7436.Ca000.0000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 636 (ex codice 1E.03.070.0180)"
+      }
+    },
+    {
+      "code": "ELE-12",
+      "category": "elettrico",
+      "name": "Centralino da incasso fino a 24 moduli",
+      "description": "Quadro elettrico (centralino) da incasso in resina fino a 24 moduli IP40 con porta trasparente, installato",
+      "unit": "cad",
+      "priceCents": 5733,
+      "synonyms": [
+        "quadro elettrico",
+        "quadro generale",
+        "centralino grande"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa01.G7436.Ca000.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 636 (ex codice 1E.03.070.0200.a)"
+      }
+    },
+    {
+      "code": "ELE-13",
+      "category": "elettrico",
+      "name": "Cavo unipolare 2,5 mm²",
+      "description": "Cavo unipolare FS17 450/750 V sezione 2,5 mm², posato",
+      "unit": "m",
+      "priceCents": 130,
+      "synonyms": [
+        "filo da due e mezzo",
+        "cavo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.G7424.Sc009.2260.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-2-elenco-prezzi-impianti-meccanici-elettrici-elettrotecnici-idraulici-e-antincendi.pdf",
+        "reference": "Parte 2 Elenco prezzi Impianti pag. PDF 1218 (ex codice 1E.02.040.0015.c)"
+      }
+    },
+    {
+      "code": "VAR-01",
+      "category": "opere_varie",
+      "name": "Parete in cartongesso una lastra per lato",
+      "description": "Tramezzo in cartongesso con una lastra da 1,3 cm per faccia su orditura in acciaio zincato (montanti interasse 60 cm), compresa rasatura dei giunti. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 4314,
+      "synonyms": [
+        "parete in cartongesso",
+        "tramezza in cartongesso",
+        "fare una parete",
+        "chiudere con il cartongesso"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C0100.H0002.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 99 (ex codice 1C.06.560.0050.a)"
+      }
+    },
+    {
+      "code": "VAR-02",
+      "category": "opere_varie",
+      "name": "Controparete in cartongesso idrorepellente incollata",
+      "description": "Controparete in lastra di cartongesso idrorepellente da 1,3 cm incollata a parete per bagni e cucine, compresa rasatura dei giunti. Esclusi assistenza muraria e piani di lavoro",
+      "unit": "m2",
+      "priceCents": 2642,
+      "synonyms": [
+        "controparete",
+        "cartongesso verde",
+        "idrorepellente",
+        "placcare il muro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C0102.H0002.0005.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 103 (ex codice 1C.06.550.0100)"
+      }
+    },
+    {
+      "code": "VAR-03",
+      "category": "opere_varie",
+      "name": "Controsoffitto in cartongesso",
+      "description": "Controsoffitto in lastre di cartongesso da 1,3 cm con orditura nascosta di sostegno. Esclusa assistenza muraria",
+      "unit": "m2",
+      "priceCents": 4616,
+      "synonyms": [
+        "controsoffitto",
+        "abbassare il soffitto",
+        "ribassamento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C1210.H0002.0010.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 204 (ex codice 1C.20.050.0050)"
+      }
+    },
+    {
+      "code": "VAR-04",
+      "category": "opere_varie",
+      "name": "Tramezzo in forati spessore 8 cm",
+      "description": "Tramezzo in blocchi forati di laterizio spessore 8 cm (formato 24x8x24) con malta di cemento, comprese spalle e voltini. Esclusi piani di lavoro",
+      "unit": "m2",
+      "priceCents": 2783,
+      "synonyms": [
+        "tavolato",
+        "tramezza",
+        "muretto in forati",
+        "tirare su un muro",
+        "fare un divisorio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa02.C0102.L0011.0290.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 122 (ex codice 1C.06.070.0110)"
+      }
+    },
+    {
+      "code": "VAR-05",
+      "category": "opere_varie",
+      "name": "Intonaco civile completo interno",
+      "description": "Intonaco completo interno a civile fine su pareti verticali (rinzaffo, rustico premiscelato e arricciatura) steso con mezzo meccanico. Esclusi piani di lavoro",
+      "unit": "m2",
+      "priceCents": 3146,
+      "synonyms": [
+        "intonaco",
+        "rifare l'intonaco",
+        "intonacare",
+        "arricciatura",
+        "civile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa16.C0900.Za001.0510.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 669 (ex codice 1C.07.220.0020)"
+      }
+    },
+    {
+      "code": "VAR-06",
+      "category": "opere_varie",
+      "name": "Rasatura a civile fine, 2 mani",
+      "description": "Rasatura interna a civile fine con rasante a base di cemento e calce, 2 mani, su pareti o soffitti. Esclusi piani di lavoro",
+      "unit": "m2",
+      "priceCents": 1156,
+      "synonyms": [
+        "rasante",
+        "stabilitura",
+        "finitura a civile",
+        "lisciatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.OC.EEA.Pa16.C0900.Za001.1000.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-1-elenco-prezzi-civile-urbanizzazione-difesa-suolo-agroforestale.pdf",
+        "reference": "Parte 1 Elenco prezzi Civile pag. PDF 672 (ex codice 1C.07.230.0010)"
+      }
+    },
+    {
+      "code": "VAR-07",
+      "category": "opere_varie",
+      "name": "Manodopera operaio specializzato (ora)",
+      "description": "Manodopera: operaio edile di livello 3° specializzato (muratore, pavimenti e rivestimenti, verniciatore e assimilati), ora ordinaria",
+      "unit": "h",
+      "priceCents": 4390,
+      "synonyms": [
+        "ore di muratore",
+        "manodopera",
+        "in economia",
+        "a ore",
+        "ore di lavoro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.RU.00.00.00.0005.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-3-elenco-prezzi-risorse-elementari-umane-materiali-strumentali-e-produttive-tecnologiche.pdf",
+        "reference": "Parte 3 Risorse elementari pag. PDF 1470"
+      }
+    },
+    {
+      "code": "VAR-08",
+      "category": "opere_varie",
+      "name": "Manodopera operaio comune (ora)",
+      "description": "Manodopera: operaio edile di livello 1° comune, ora ordinaria",
+      "unit": "h",
+      "priceCents": 3663,
+      "synonyms": [
+        "manovale",
+        "ore di manovalanza",
+        "aiutante",
+        "garzone"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.RU.00.00.00.0015.a",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-3-elenco-prezzi-risorse-elementari-umane-materiali-strumentali-e-produttive-tecnologiche.pdf",
+        "reference": "Parte 3 Risorse elementari pag. PDF 1471"
+      }
+    },
+    {
+      "code": "VAR-09",
+      "category": "opere_varie",
+      "name": "Manodopera idraulico o elettricista (ora)",
+      "description": "Manodopera: operaio metalmeccanico di livello B1 (idraulici, elettricisti, termoidraulici), ora ordinaria",
+      "unit": "h",
+      "priceCents": 3656,
+      "synonyms": [
+        "ore idraulico",
+        "ore elettricista",
+        "intervento a ore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false,
+      "source": {
+        "document": "Prezzario Regionale dei Lavori Pubblici Regione Lombardia",
+        "edition": "2026 (DGR XII/6071 del 27/04/2026)",
+        "sourceCode": "LOM261.RU.00.01.00.0025.-",
+        "url": "https://www.regione.lombardia.it/content/dam/rl/canali-tematici-servizi/09-infrastrutture-trasporti-e-mobilit%C3%A0/01-acquisti-e-contratti-pubblici/02-prezzario-regionale-dei-lavori-pubblici/02-prezzario-regionale-dei-lavori-pubblici-infr/allegati/allegato-2026-unico/allegati-corretti/all-parte-3-elenco-prezzi-risorse-elementari-umane-materiali-strumentali-e-produttive-tecnologiche.pdf",
+        "reference": "Parte 3 Risorse elementari pag. PDF 1471"
+      }
+    }
+  ]
+}

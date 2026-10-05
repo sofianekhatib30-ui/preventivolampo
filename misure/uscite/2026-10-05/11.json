@@ -1,0 +1,163 @@
+{
+  "customer": {
+    "name": "signora Riva",
+    "address": "via Monte Grappa 5, Muggiò"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Noi togliamo le piastrelle vecchie dietro il piano, la parete è lunga tre e quaranta e le piastrelle sono alte sessanta centimetri",
+      "work": "rimozione rivestimento in piastrelle dietro il piano cucina",
+      "quantity": 2.04,
+      "unit": "m2",
+      "quantityNote": "3,40 m × 0,60 m = 2,04 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-05",
+        "CUC-04",
+        "BAG-12",
+        "CUC-05",
+        "BAG-13",
+        "DEM-04",
+        "VAR-01",
+        "TIN-10"
+      ],
+      "unitPriceCents": 2050,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Poi rimettiamo il rivestimento in monocottura trenta per trenta, stessa misura",
+      "work": "posa rivestimento in monocottura 30x30 cm",
+      "quantity": 2.04,
+      "unit": "m2",
+      "quantityNote": "Stessa superficie della rimozione: 3,40 m × 0,60 m = 2,04 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-03",
+        "BAG-13",
+        "CUC-04",
+        "DEM-05",
+        "BAG-12",
+        "CUC-05",
+        "PAV-01",
+        "PAV-02"
+      ],
+      "unitPriceCents": 5489,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-04",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il lavello si sposta: attacco nuovo acqua calda e fredda con lo scarico, uno",
+      "work": "nuovo attacco acqua calda e fredda con scarico per spostamento lavello",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-01",
+        "IDR-03",
+        "IDR-04",
+        "CUC-03",
+        "IDR-02",
+        "IDR-05",
+        "CUC-01",
+        "DEM-09"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Il lavello inox con lo scolapiatti lo metto io",
+      "work": "fornitura e posa lavello inox con scolapiatti",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo lavello (detto al singolare)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "CUC-01",
+        "CUC-03",
+        "CUC-02",
+        "BAG-05"
+      ],
+      "unitPriceCents": 14828,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "e anche il miscelatore",
+      "work": "fornitura e posa miscelatore",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo miscelatore (detto al singolare)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-08",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02"
+      ],
+      "unitPriceCents": 14208,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02",
+        "confidence": 0.7
+      }
+    },
+    {
+      "spoken": "E il sifone nuovo",
+      "work": "fornitura e posa sifone nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo sifone (detto al singolare)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "CUC-03",
+        "BAG-11"
+      ],
+      "unitPriceCents": 5870,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-03",
+        "confidence": 0.75
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Montaggio dei mobili della cucina: lo esegue il mobiliere, non l'impresa"
+  ],
+  "notes": [
+    "La signora ha detto chiaramente che i materiali li compra l'impresa",
+    "Manutenzione ordinaria, nessuna pratica edilizia necessaria",
+    "La signora cambia la cucina"
+  ],
+  "usage": {
+    "inputTokens": 6543,
+    "outputTokens": 2089,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 18685
+}

@@ -1,0 +1,144 @@
+{
+  "customer": {
+    "name": "Studio geometra Villa",
+    "address": "Via della Repubblica, Agrate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "ordinaria_22",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "sei prese dati, quelle per la rete",
+      "work": "fornitura e posa prese dati di rete",
+      "quantity": 6,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-08",
+        "CUC-06",
+        "ELE-06",
+        "ELE-07",
+        "DEM-12"
+      ],
+      "unitPriceCents": 3312,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "otto prese normali da dieci",
+      "work": "fornitura e posa prese di corrente da 10 A",
+      "quantity": 8,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "DEM-12",
+        "PAV-12",
+        "BAG-03"
+      ],
+      "unitPriceCents": 4462,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "il quadro è piccolo, lo sostituiamo con un centralino da ventiquattro moduli",
+      "work": "sostituzione quadro elettrico con centralino da 24 moduli",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo quadro da sostituire",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-12",
+        "ELE-11",
+        "DEM-12",
+        "ELE-06",
+        "ELE-09"
+      ],
+      "unitPriceCents": 5733,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-12",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "tolgo i quattro punti luce vecchi",
+      "work": "rimozione punti luce esistenti",
+      "quantity": 4,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "DEM-12",
+        "ELE-02",
+        "ELE-03",
+        "ELE-05",
+        "DEM-09",
+        "ELE-06",
+        "DEM-08"
+      ],
+      "unitPriceCents": 1065,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "ne faccio due deviati nel corridoio",
+      "work": "realizzazione punti luce deviati nel corridoio",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-02",
+        "ELE-01",
+        "ELE-03",
+        "ELE-05",
+        "DEM-12",
+        "ELE-06",
+        "IDR-01",
+        "ELE-07"
+      ],
+      "unitPriceCents": 6454,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02",
+        "confidence": 0.97
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Pannelli a LED del controsoffitto: fornitura e montaggio a cura di un'altra ditta"
+  ],
+  "notes": [
+    "Differenziale nuovo e due magnetotermici nel quadro esistente non quotati come righe separate: l'artigiano ha poi deciso di sostituire il quadro con un centralino da 24 moduli. Da verificare se gli interruttori sono compresi nel centralino."
+  ],
+  "usage": {
+    "inputTokens": 5928,
+    "outputTokens": 1433,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 11605
+}

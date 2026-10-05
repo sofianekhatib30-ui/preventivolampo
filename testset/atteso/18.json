@@ -1,0 +1,77 @@
+{
+  "id": "18",
+  "title": "Demolizione cartongesso e controsoffitto nel corridoio (muratore, Sesto San Giovanni)",
+  "tags": [
+    "fuori_listino",
+    "esclusione",
+    "autocorrezione",
+    "misura_approssimata"
+  ],
+  "customer": {
+    "name": "Vergani",
+    "address": "via Cadorna, Sesto San Giovanni"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "una parete in cartongesso da buttare giù, tre metri per due e settanta, con due lastre per lato",
+      "quantity": 32.4,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3 × 2,70 = 8,1 m² × 4 lastre (due per lato) = 32,4 m²"
+    },
+    {
+      "spoken": "nel corridoio facciamo il controsoffitto in cartongesso, il corridoio è lungo sei metri e largo uno e dieci",
+      "quantity": 6.6,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-03"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "6 × 1,10 = 6,6 m²"
+    },
+    {
+      "spoken": "io lo lascio rasato e basta",
+      "quantity": 6.6,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce di rasatura su cartongesso nuovo: TIN-10 è su vecchie pitture, VAR-06 è rasante a calce e cemento"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "superficie del controsoffitto: 6,6 m²"
+    },
+    {
+      "spoken": "le macerie, tipo un metro cubo, le carico io e le porto in discarica",
+      "quantity": 1,
+      "unit": "m3",
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«tipo un metro cubo»"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Faretti nel controsoffitto (li fa l'elettricista)",
+    "Pittura del controsoffitto (la fa il cognato della cliente)"
+  ],
+  "notes": [
+    "Autocorrezione: niente pittura del controsoffitto, solo rasatura",
+    "Oneri di conferimento in discarica non detti: da chiedere"
+  ]
+}

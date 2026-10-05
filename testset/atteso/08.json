@@ -1,0 +1,69 @@
+{
+  "id": "08",
+  "title": "Tavolato per la cameretta con tinteggiatura non misurata (muratore, Vimercate)",
+  "tags": [
+    "misura_mancante",
+    "dialetto",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Brambilla",
+    "address": "via Italia, Vimercate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "tiriamo su un tavolato in forati da otto, lungo... tre e ottanta, alto fino al soffitto, due e settanta",
+      "quantity": 10.26,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,80 × 2,70 = 10,26 m², vuoto per pieno (il vano porta non è misurato)"
+    },
+    {
+      "spoken": "l'intonaco civile sulle due facce del tavolato",
+      "quantity": 20.52,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "10,26 m² × 2 facce = 20,52 m²"
+    },
+    {
+      "spoken": "gh'è da dare il bianco nella cameretta nuova",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [
+    "Fornitura e montaggio della porta (la prende il cliente, la monta il falegname)",
+    "Spostamento dell'interruttore (lo fa l'elettricista del cliente)"
+  ],
+  "notes": [
+    "Il vano porta resta nel tavolato: misura del vano da verificare",
+    "Preventivo da mandare lunedì"
+  ]
+}

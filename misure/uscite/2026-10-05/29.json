@@ -1,0 +1,162 @@
+{
+  "customer": {
+    "name": "signora Frigerio",
+    "address": "via Veneto, Macherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "camera dei ragazzi, c'è la carta da parati da togliere su tutte le pareti",
+      "work": "rimozione carta da parati dalle pareti della camera",
+      "quantity": 37.8,
+      "unit": "m2",
+      "quantityNote": "Perimetro 2×(3,80+3,20)=14,00 m × altezza 2,70 m = 37,8 m². Nessuna detrazione per porte e finestre, perché non sono state indicate.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-08",
+        "BAG-12",
+        "VAR-01",
+        "DEM-09",
+        "DEM-05",
+        "DEM-07",
+        "DEM-11",
+        "BAG-13"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato riguarda la rimozione di carta da parati; le voci di rimozione sono per piastrelle, sanitari o porte.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "rasatura a una mano sulle pareti",
+      "work": "rasatura a una mano delle pareti della camera",
+      "quantity": 37.8,
+      "unit": "m2",
+      "quantityNote": "Perimetro 14,00 m × altezza 2,70 m = 37,8 m². Nessuna detrazione per aperture.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-10",
+        "TIN-11",
+        "VAR-01",
+        "BAG-12",
+        "BAG-13",
+        "VAR-06",
+        "TIN-01",
+        "VAR-02"
+      ],
+      "unitPriceCents": 789,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-10",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "poi il bianco semilavabile, pareti e soffitto",
+      "work": "tinteggiatura pareti con pittura semilavabile bianca nella camera",
+      "quantity": 37.8,
+      "unit": "m2",
+      "quantityNote": "Perimetro 14,00 m × altezza 2,70 m = 37,8 m². Nessuna detrazione per aperture.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-01",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "poi il bianco semilavabile, pareti e soffitto",
+      "work": "tinteggiatura soffitto con pittura semilavabile bianca nella camera",
+      "quantity": 12.16,
+      "unit": "m2",
+      "quantityNote": "3,80 × 3,20 = 12,16 m².",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-01",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "nel corridoio solo una rinfrescata, bianco anche lì",
+      "work": "tinteggiatura bianca del corridoio (rinfrescata)",
+      "quantity": null,
+      "unit": null,
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-05",
+        "SMA-06",
+        "TIN-01"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "abbinamento incerto: È l'unica tinteggiatura tra i candidati, ma prevede 2 mani mentre la rinfrescata è più leggera.",
+        "suggestedCode": "TIN-01",
+        "confidence": 0.5
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 4,
+      "kind": "quantita_mancante",
+      "text": "Quanto «tinteggiatura bianca del corridoio (rinfrescata)»? Dimmi numero e unità."
+    },
+    {
+      "lineIndex": 4,
+      "kind": "unita_mancante",
+      "text": "«tinteggiatura bianca del corridoio (rinfrescata)»: la quantità in che unità?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Il corridoio non è stato misurato: l'artigiano chiederà le misure alla cliente.",
+    "L'artigiano indica circa due giorni e mezzo di lavoro per la camera.",
+    "Il fondo sotto la carta da parati è pittura vecchia, probabilmente rovinata: per questo è prevista la rasatura."
+  ],
+  "usage": {
+    "inputTokens": 6619,
+    "outputTokens": 1957,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 15189
+}

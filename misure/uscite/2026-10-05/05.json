@@ -1,0 +1,105 @@
+{
+  "customer": {
+    "name": "Elena Mauri",
+    "address": "corso Milano, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "ordinaria_22",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Prima una mano di fissativo, su tutto.",
+      "work": "applicazione di fissativo su pareti e soffitto",
+      "quantity": 118,
+      "unit": "m2",
+      "quantityNote": "Misure approssimate (locale circa 8x5 m, h 3 m). Pareti: perimetro (8+5)x2 = 26 m x 3 m = 78 m2. Soffitto: 8x5 = 40 m2. Totale 78+40 = 118 m2, senza detrarre aperture.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "TIN-10",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-01",
+        "TIN-11",
+        "VAR-06"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "Tinteggiatura: pareti e soffitto, lei vuole la superlavabile perché coi prodotti si sporca tutto.",
+      "work": "tinteggiatura di pareti e soffitto con pittura superlavabile",
+      "quantity": 118,
+      "unit": "m2",
+      "quantityNote": "Misure approssimate (locale circa 8x5 m, h 3 m). Pareti: perimetro (8+5)x2 = 26 m x 3 m = 78 m2. Soffitto: 8x5 = 40 m2. Totale 78+40 = 118 m2, senza detrarre aperture.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-03",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": 547,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-03",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "Nel retro c'è un tavolato da buttare giù, sarà due metri e mezzo per tre, in forati, da dieci finito.",
+      "work": "demolizione di tavolato in laterizio forato, spessore 10 cm finito",
+      "quantity": 7.5,
+      "unit": "m2",
+      "quantityNote": "2,5 m x 3 m = 7,5 m2. Misura approssimata (\"sarà\"). Spessore 10 cm finito.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "DEM-01",
+        "DEM-06",
+        "PAV-09",
+        "PAV-12",
+        "PAV-08"
+      ],
+      "unitPriceCents": 1554,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-03",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Parete in cartongesso al posto del tavolato: non si fa, la cliente vuole l'ambiente aperto."
+  ],
+  "notes": [
+    "Lavori da eseguire di lunedì, perché il negozio è chiuso.",
+    "Dimensioni del locale approssimate (\"tipo otto per cinque\"): da verificare.",
+    "Nel conteggio della tinteggiatura non sono state detratte porte, finestre o altre aperture."
+  ],
+  "usage": {
+    "inputTokens": 5438,
+    "outputTokens": 1640,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12540
+}

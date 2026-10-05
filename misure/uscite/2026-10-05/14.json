@@ -1,0 +1,127 @@
+{
+  "customer": {
+    "name": "Mariani",
+    "address": "via Tonale 3, Brugherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Il rubinetto della cucina gocciola: lo cambio, glielo porto io, un miscelatore normale",
+      "work": "sostituzione rubinetto cucina con miscelatore monocomando standard",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "un rubinetto da sostituire",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "CUC-02",
+        "BAG-08",
+        "BAG-09",
+        "BAG-10",
+        "DEM-11",
+        "CUC-04",
+        "CUC-01",
+        "CUC-05"
+      ],
+      "unitPriceCents": 14208,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il sifone del lavandino del bagno perde, lo sistemo io, è mezz'ora di lavoro",
+      "work": "sistemazione sifone lavandino bagno",
+      "quantity": 0.5,
+      "unit": "h",
+      "quantityNote": "mezz'ora di lavoro, come detto dall'artigiano",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "VAR-07",
+        "BAG-08",
+        "VAR-08",
+        "VAR-09",
+        "BAG-12",
+        "BAG-07",
+        "CUC-03"
+      ],
+      "unitPriceCents": 3656,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09",
+        "confidence": 0.7
+      }
+    },
+    {
+      "spoken": "Poi vuole l'attacco per la lavatrice sul balcone, acqua fredda e scarico, contro il muro del bagno che è lì dietro",
+      "work": "realizzazione attacco lavatrice sul balcone (acqua fredda e scarico) dal bagno",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "un solo attacco; lunghezza dei tubi non detta",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-04",
+        "IDR-01",
+        "IDR-02",
+        "IDR-03",
+        "IDR-05",
+        "CUC-03",
+        "DEM-09",
+        "BAG-11"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.6
+      }
+    },
+    {
+      "spoken": "Per passare i tubi c'è da fare un foro nel muro esterno, un carotaggio",
+      "work": "carotaggio muro esterno per passaggio tubazioni",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "un foro; diametro e spessore del muro non detti",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-09",
+        "VAR-04",
+        "DEM-10",
+        "IDR-06",
+        "BAG-08",
+        "CUC-02",
+        "IDR-01",
+        "IDR-02"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessuna voce copre il carotaggio del muro esterno.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Il carotaggio non è a listino: l'artigiano deve chiedere il prezzo al fornitore che esegue i carotaggi.",
+    "Diametro del foro e spessore del muro esterno da verificare per il carotaggio."
+  ],
+  "usage": {
+    "inputTokens": 6134,
+    "outputTokens": 1726,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 16900
+}

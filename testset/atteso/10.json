@@ -1,0 +1,101 @@
+{
+  "id": "10",
+  "title": "Ufficio: rifacimento parziale impianto elettrico (elettricista, Agrate)",
+  "tags": [
+    "non_abitazione",
+    "autocorrezione",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Studio del geometra Villa",
+    "address": "via della Repubblica, Agrate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "ordinaria_22"
+  },
+  "lines": [
+    {
+      "spoken": "sei prese dati, quelle per la rete",
+      "quantity": 6,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "otto prese normali da dieci",
+      "quantity": 8,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "nel quadro un differenziale nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e due magnetotermici",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "lo sostituiamo con un centralino da ventiquattro moduli",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-12"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "tolgo i quattro punti luce vecchi",
+      "quantity": 4,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "ne faccio due deviati nel corridoio",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Pannelli LED del controsoffitto (li compra e li monta un'altra ditta)"
+  ],
+  "notes": [
+    "Autocorrezioni: il quadro piccolo si sostituisce con un centralino da 24 moduli; non plafoniere ma punti luce da togliere",
+    "Rimozione del vecchio quadro non detta: da verificare"
+  ]
+}

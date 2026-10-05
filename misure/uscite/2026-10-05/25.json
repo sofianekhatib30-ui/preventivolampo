@@ -1,0 +1,158 @@
+{
+  "customer": {
+    "name": "famiglia Radaelli",
+    "address": "via Lario, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "buttiamo giù il tavolato tra cucina e sala, è sottile, sette centimetri con l'intonaco; sarà... quattro metri per due e settanta",
+      "work": "demolizione tavolato divisorio sp. 7 cm intonacato tra cucina e sala",
+      "quantity": 10.8,
+      "unit": "m2",
+      "quantityNote": "4 m x 2,70 m = 10,8 m2. Lunghezza detta con \"sarà...\", quindi da verificare.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "VAR-05",
+        "DEM-02",
+        "CUC-04",
+        "DEM-03",
+        "CUC-05",
+        "DEM-10",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1073,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-02",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Togliamo due porte, quelle normali, ottanta per duecentodieci, col telaio",
+      "work": "rimozione porte interne con telaio, cm 80x210",
+      "quantity": 2,
+      "unit": null,
+      "quantityNote": "2 porte da 80x210 cm, telaio compreso",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "DEM-02",
+        "DEM-03",
+        "DEM-06",
+        "BAG-06",
+        "DEM-09",
+        "DEM-01",
+        "BAG-02"
+      ],
+      "unitPriceCents": 1610,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-11",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "Scrostiamo l'intonaco sulla parete della cucina, tre e mezzo per due e settanta",
+      "work": "rimozione intonaco parete cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "3,5 m x 2,70 m = 9,45 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-11"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "lo rifacciamo a civile",
+      "work": "rifacimento intonaco civile parete cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "stessa parete dell'intonaco rimosso: 3,5 m x 2,70 m = 9,45 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "VAR-06"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Le macerie le carichiamo a mano e le portiamo in discarica: saranno due metri cubi, due e mezzo",
+      "work": "carico a mano e trasporto a discarica delle macerie",
+      "quantity": 2.5,
+      "unit": "m3",
+      "quantityNote": "Quantità approssimata: l'artigiano ha detto prima due m3, poi due e mezzo, e si registra l'ultima versione.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "TIN-10",
+        "DEM-04",
+        "DEM-11"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "unita_mancante",
+      "text": "«rimozione porte interne con telaio, cm 80x210»: 2 in che unità?"
+    }
+  ],
+  "exclusions": [
+    "Fornitura e posa delle porte nuove: le fa il falegname"
+  ],
+  "notes": [
+    "CILA già presentata dal geometra",
+    "I Radaelli andranno a vivere nell'immobile dopo i lavori"
+  ],
+  "usage": {
+    "inputTokens": 7271,
+    "outputTokens": 1646,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12748
+}

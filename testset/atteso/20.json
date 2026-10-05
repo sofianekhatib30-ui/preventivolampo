@@ -1,0 +1,89 @@
+{
+  "id": "20",
+  "title": "Bagno di servizio: lavabo, bidet e miscelatori dall'impresa (idraulico, Lesmo)",
+  "tags": [
+    "bene_significativo",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Paolo Brioschi",
+    "address": "via Rimembranze 9, Lesmo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10_beni_significativi"
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il lavandino vecchio e il bidet, due pezzi",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un lavabo nuovo da sessantacinque, a parete",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un bidet a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il miscelatore del lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il miscelatore del bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "gli cambio il sifone della doccia, il gruppo di scarico",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-11"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Box doccia: resta quello esistente"
+  ],
+  "notes": [
+    "Niente opere murarie"
+  ]
+}

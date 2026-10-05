@@ -1,0 +1,108 @@
+{
+  "customer": {
+    "name": "Signora Galli",
+    "address": "via Cavour 21, Seregno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "io smonto el cess vecchio",
+      "work": "smontaggio vaso sanitario (water) esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo vaso, che perde alla base",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "DEM-08",
+        "DEM-12",
+        "DEM-09",
+        "BAG-02",
+        "IDR-02",
+        "TIN-09",
+        "BAG-03"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "monto quello nuovo",
+      "work": "montaggio vaso sanitario (water) nuovo a terra, fornito dal cliente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo vaso, uguale a quello vecchio, acquistato dalla cliente al centro bricolage",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-01",
+        "BAG-02",
+        "IDR-02",
+        "DEM-08",
+        "BAG-03",
+        "DEM-09",
+        "IDR-01",
+        "BAG-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Il vaso vecchio lo porto via io, lo carico sul furgone",
+      "work": "asporto e trasporto del vaso vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo vaso vecchio caricato sul furgone",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "SMA-05",
+        "BAG-01",
+        "BAG-02",
+        "DEM-12",
+        "SMA-06",
+        "SMA-04",
+        "TIN-09"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Il cliente porta via il vaso da sé: nessuna voce di asporto del singolo sanitario; SMA-06 e SMA-05 sono a m3 per materiali sfusi e non descrivono questo caso.",
+        "suggestedCode": null,
+        "confidence": 0.7
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Cassetta di scarico esterna: è ancora buona, non si tocca"
+  ],
+  "notes": [
+    "Tempo stimato: mezza giornata",
+    "Il vaso nuovo è già stato comprato dalla cliente, è a terra e uguale al vecchio",
+    "Il vaso vecchio perde alla base",
+    "La cliente abita nella casa da trent'anni"
+  ],
+  "usage": {
+    "inputTokens": 5333,
+    "outputTokens": 1296,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 11949
+}

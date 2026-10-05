@@ -1,0 +1,90 @@
+{
+  "id": "11",
+  "title": "Cucina: rivestimento, lavello e attacco spostato (muratore, Muggiò)",
+  "tags": [
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Riva",
+    "address": "via Monte Grappa 5, Muggiò"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "togliamo le piastrelle vecchie dietro il piano, la parete è lunga tre e quaranta e le piastrelle sono alte... sessanta centimetri",
+      "quantity": 2.04,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,40 × 0,60 = 2,04 m²"
+    },
+    {
+      "spoken": "rimettiamo il rivestimento in monocottura trenta per trenta, stessa misura",
+      "quantity": 2.04,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stessa misura: 2,04 m²"
+    },
+    {
+      "spoken": "attacco nuovo acqua calda e fredda con lo scarico, uno",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il lavello inox con lo scolapiatti lo metto io",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e anche il miscelatore",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e il sifone nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-03"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Montaggio dei mobili della cucina (lo fa il mobiliere)"
+  ],
+  "notes": [
+    "Lavello e miscelatore da cucina non sono beni significativi: IVA 10% piena"
+  ]
+}

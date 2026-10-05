@@ -1,0 +1,86 @@
+{
+  "id": "25",
+  "title": "Demolizione tavolato, porte e intonaco in ristrutturazione (muratore, Lissone)",
+  "tags": [
+    "dialetto",
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "famiglia Radaelli",
+    "address": "via Lario, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "buttiamo giù il tavolato tra cucina e sala, è sottile, sette centimetri con l'intonaco; sarà... quattro metri per due e settanta",
+      "quantity": 10.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-02"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "4 × 2,70 = 10,8 m²; spessore 7 cm, entro la voce «fino a 7 cm»"
+    },
+    {
+      "spoken": "togliamo due porte, quelle normali, ottanta per duecentodieci, col telaio",
+      "quantity": 3.36,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-11"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "2 porte × 0,80 × 2,10 = 3,36 m² di porta"
+    },
+    {
+      "spoken": "scrostiamo l'intonaco sulla parete della cucina, tre e mezzo per due e settanta",
+      "quantity": 9.45,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,50 × 2,70 = 9,45 m²"
+    },
+    {
+      "spoken": "e lo rifacciamo a civile",
+      "quantity": 9.45,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "9,45 m²"
+    },
+    {
+      "spoken": "le macerie le carichiamo a mano e le portiamo in discarica: saranno due metri cubi, due e mezzo",
+      "quantity": 2.5,
+      "unit": "m3",
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "detto «due, due e mezzo»: si prende 2,5 m³, da verificare"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Porte nuove (le fa il falegname)"
+  ],
+  "notes": [
+    "CILA presentata dal geometra",
+    "Oneri di conferimento in discarica non detti: da chiedere"
+  ]
+}

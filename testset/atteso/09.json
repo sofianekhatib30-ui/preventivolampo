@@ -1,0 +1,87 @@
+{
+  "id": "09",
+  "title": "Monolocale in casa di ringhiera: raschiatura, rasatura e lavabile (imbianchino, Milano)",
+  "tags": [
+    "misura_approssimata",
+    "dialetto",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Giulia Bianchi",
+    "address": "via Vigevano, Milano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "raschiatura",
+      "quantity": 52.7,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-09"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "pareti (4 + 4,50) × 2 × 3,10 = 52,7 m², vuoto per pieno; misure «più o meno»; soffitto escluso"
+    },
+    {
+      "spoken": "rasatura a due mani",
+      "quantity": 52.7,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-11"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stesse pareti: 52,7 m²"
+    },
+    {
+      "spoken": "fissativo",
+      "quantity": 52.7,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stesse pareti: 52,7 m²"
+    },
+    {
+      "spoken": "due mani di lavabile",
+      "quantity": 52.7,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-02"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stesse pareti: 52,7 m²"
+    },
+    {
+      "spoken": "la zoccolatura a smalto nell'ingresso, alta un metro, lunga... boh, sei metri, tipo",
+      "quantity": 6,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "1 × 6 = 6 m², lunghezza «tipo»"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Soffitto a travi di legno: non si tocca"
+  ],
+  "notes": [
+    "Protezione dei mobili a carico dell'imbianchino",
+    "Quattro giorni di lavoro",
+    "Senza ascensore, scarico in cortile: accesso da considerare"
+  ]
+}

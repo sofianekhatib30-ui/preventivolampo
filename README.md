@@ -1,0 +1,88 @@
+# PreventivoLampo
+
+> **Progetto dimostrativo.** L'impresa edile del listino e i clienti dei sopralluoghi sono inventati. I numeri invece sono veri: li misura un comando su un banco di prova di 30 casi scritto prima del motore.
+
+**Demo online: [preventivolampo.vercel.app](https://preventivolampo.vercel.app)** — la home racconta il prodotto, [`/prova`](https://preventivolampo.vercel.app/prova) fa girare il motore vero. La prova chiede un codice d'accesso, perché ogni bozza è una chiamata a pagamento all'API di Claude: chiedimelo.
+
+L'artigiano edile, dopo il sopralluogo, racconta il lavoro come lo direbbe a un collega. PreventivoLampo estrae le lavorazioni, le abbina al suo listino, gli prepara una bozza da controllare dal telefono e, dopo la sua approvazione, genera il PDF del preventivo con l'IVA edile e un link con cui il cliente lo accetta.
+
+**L'AI propone, l'artigiano decide.**
+- Nessun prezzo esce dal modello: ogni prezzo viene dal listino o dalla mano dell'artigiano.
+- Una lavorazione senza voce sicura nel listino resta **«da prezzare»**, evidenziata, mai completata a fantasia.
+- Una misura non detta diventa **una domanda**, mai una stima.
+- L'uscita del modello è validata contro uno schema: uscita non valida = errore, non bozza.
+- Niente PDF senza l'approvazione esplicita dell'artigiano.
+
+## I numeri
+
+<!-- misura:inizio -->
+Da [`misure/2026-10-05.md`](misure/2026-10-05.md). Generato da `npm run misura` (non scritto a mano). Modello: `claude-sonnet-5-5`. Casi: 30 eseguiti su 30.
+
+| Misura | Valore |
+|---|---|
+| Righe giuste senza correzioni (voce, quantità e unità) | 138 su 159 (86,8%) |
+| Voci di listino abbinate correttamente | 124 su 137 (90,5%) |
+| Voci «da prezzare» riconosciute come tali | 19 su 22 (86,4%) |
+| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 7 |
+| **Prezzi inventati** | **0** |
+| Domande di chiarimento corrette | 12 su 12 (100,0%); domande in più: 6 |
+| Regime IVA corretto (casi con contesto completo) | 15 su 15 |
+| Regime IVA dato senza che il vocale bastasse a stabilirlo | 1 su 15 (casi 14) |
+| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 6 su 10 |
+| Righe in più rispetto all'atteso | 7 |
+| Tempo medio per preventivo | 14,61 s |
+| Costo medio per preventivo | $0.0312 ≈ 0,03 € (token reali; $2/$10 per milione di token, cambio 0.86 €/$) |
+<!-- misura:fine -->
+
+Come leggerli: gli attesi dei 30 casi (`testset/atteso/`) sono stati scritti leggendo solo il copione e il listino, prima che il motore esistesse, e non si correggono guardando le uscite. Il report completo, caso per caso, e le uscite grezze del motore sono in `misure/`.
+
+## Come funziona
+
+```
+vocale / testo ──► 1. Estrazione (Claude, JSON a schema fisso)
+                      cliente, lavorazioni, quantità calcolate dalle misure dette, esclusioni, contesto IVA
+                 ──► 2. Candidati (codice deterministico)
+                      sinonimi di cantiere, parole della voce, unità di misura → max 8 voci per riga
+                 ──► 3. Scelta (Claude, solo fra i candidati, con confidenza)
+                 ──► 4. Regole (codice)
+                      sotto soglia o fuori dai candidati → «da prezzare»
+                      materiale fornito dal cliente su voce «fornitura e posa» → «solo posa», da prezzare
+                      quantità mancante o unità diversa dal listino → domanda
+                      regime IVA dalle tre risposte (abitazione, tipo di intervento, chi compra i beni)
+                 ──► 5. Revisione dal telefono → Approva → PDF → link di accettazione per il cliente
+```
+
+- **IVA edile**: 22% / 10% / 10% con beni significativi (DM 29/12/1999). Per i beni significativi il 10% vale sul bene solo fino alla differenza fra il totale e il valore dei beni; l'eccedenza va al 22%. Il test riproduce l'esempio dell'Agenzia delle Entrate (10.000 € di cui 6.000 di beni → 8.000 al 10% e 2.000 al 22%). Il valore del bene lo inserisce l'artigiano; sul PDF c'è sempre «verifica con il commercialista».
+- **Listino che impara**: una riga prezzata a mano può diventare una proposta per il listino, che l'artigiano conferma.
+- **Importi** sempre in centesimi interi.
+
+## Stack
+
+Next.js 16 (App Router) e TypeScript, Claude API (`claude-sonnet-5-5`, uscite strutturate), zod per gli schemi, pdf-lib per il PDF, Vitest. Listino di prova dal Prezzario Regionale dei Lavori Pubblici della Lombardia 2026, con la fonte per ogni voce (`dati/listino.json`). I preventivi sono file JSON in locale e oggetti privati su Vercel Blob nella demo online (raggiungibili solo dal server, per id o token casuale); per un servizio reale il disegno prevede Supabase (UE) con RLS.
+
+## Provarlo in locale
+
+```bash
+npm install
+# crea .env.local con ANTHROPIC_API_KEY=... (mai nel repository)
+npm run dev              # http://localhost:3000/prova
+npm test                 # test senza rete: Claude è sostituito da un finto
+npm run misura           # i 30 casi del banco contro la API vera → misure/AAAA-MM-GG.md
+npm run readme           # copia qui sopra la tabella dell'ultima misura
+```
+
+Variabili d'ambiente: vedi `.env.example`. Online servono `ANTHROPIC_API_KEY`, `PROVA_ATTIVA=1`, `PROVA_CODICE` e un Blob store collegato al progetto.
+
+Su `/prova` si incolla il testo di un vocale (o si sceglie uno dei 30 sopralluoghi inventati), si corregge la bozza, si approva e si apre il PDF e la pagina del cliente.
+
+## Limiti dichiarati
+
+- **Ingresso testuale.** I numeri sono misurati sulle trascrizioni dei copioni. La trascrizione degli audio (fase F4) e il canale WhatsApp (F6) non sono ancora collegati: il servizio di trascrizione sta dietro un'interfaccia unica e si sceglie misurandolo sugli stessi 30 casi.
+- **Banco piccolo e scritto da noi.** 30 casi, una sola impresa inventata, attesi scritti da un agente AI e rivisti: misurano il motore su questo listino, non su qualunque artigiano.
+- **Prezzi da prezzario pubblico**, non i prezzi di un'impresa reale.
+- **Non è consulenza fiscale.** Il regime IVA dipende dalle risposte dell'artigiano.
+- **Dati**: la demo salva su file locali o su Vercel Blob (Francoforte); Claude API elabora il testo negli USA con clausole contrattuali UE. Per un servizio reale vanno decisi regione dei dati, conservazione degli audio (30 giorni) e informativa.
+
+## Metodo
+
+Costruito con Claude Code e una squadra di agenti (orchestratore, sviluppo, collaudo, legale, ricerca) con revisioni da remoto; architettura, regole e verifiche restano mie. Prima il banco di prova con gli attesi, poi il motore, poi la misura: nessun numero in questa pagina è scritto a mano. Le note di lavoro interne restano in un repository privato; qui ci sono il codice, il banco, le misure e la specifica della home (`documentazione/index/SPEC.md`).

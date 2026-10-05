@@ -1,0 +1,130 @@
+{
+  "customer": {
+    "name": "signora Sironi",
+    "address": "via Milano 60, Cinisello"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "scrostare l'intonaco fino al mattone, la parete è quattro metri per due e ottanta, tutta",
+      "work": "rimozione intonaco fino al mattone su parete camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "4 m × 2,80 m = 11,2 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "BAG-12",
+        "DEM-03",
+        "VAR-01",
+        "BAG-13",
+        "DEM-02",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "rifare l'intonaco civile, stessa misura",
+      "work": "rifacimento intonaco civile su parete camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete: 4 m × 2,80 m = 11,2 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "VAR-06",
+        "TIN-10",
+        "TIN-01"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "fissativo e bianco, due mani, sempre su quella parete",
+      "work": "applicazione fissativo e tinteggiatura bianca a due mani su parete camera",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete: 4 m × 2,80 m = 11,2 m2; le due mani sono comprese nella lavorazione, superficie non raddoppiata",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "TIN-11",
+        "TIN-01",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "VAR-06"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Servono due voci (fissativo TIN-06 e idropittura TIN-01); una sola riga non copre entrambe le lavorazioni, quindi nessuna scelta singola.",
+        "suggestedCode": null,
+        "confidence": 0.45
+      }
+    },
+    {
+      "spoken": "Sul soffitto, nell'angolo, c'è la muffa: trattamento antimuffa, un paio di metri",
+      "work": "trattamento antimuffa su soffitto in corrispondenza dell'angolo",
+      "quantity": 2,
+      "unit": "m2",
+      "quantityNote": "quantità approssimata ('un paio di metri'); unità non precisata, ipotizzata m2 ma da confermare",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "VAR-03",
+        "TIN-06",
+        "TIN-10",
+        "TIN-11",
+        "VAR-06"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Causa: infiltrazione dal bagno del vicino in camera; il danno lo paga l'assicurazione del vicino, ma il preventivo è intestato alla signora Sironi.",
+    "Prima di iniziare verificare se il muro è asciutto.",
+    "Eventuale deumidificatore: da valutare dopo la verifica, eventualmente noleggiato dalla cliente (non in preventivo).",
+    "Per l'antimuffa 'un paio di metri' non ha unità chiara: confermare se m2 o metri lineari."
+  ],
+  "usage": {
+    "inputTokens": 6100,
+    "outputTokens": 1108,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 9353
+}

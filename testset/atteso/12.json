@@ -1,0 +1,78 @@
+{
+  "id": "12",
+  "title": "Tinteggiatura trilocale con bagno non misurato e crepe senza unità (imbianchino, Monza)",
+  "tags": [
+    "misura_mancante"
+  ],
+  "customer": {
+    "name": "Longoni",
+    "address": "viale Libertà, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "tinteggiatura di tutto, il bianco normale, pareti e soffitti ... fanno duecentoquaranta metri quadri",
+      "quantity": 210,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "240 m² dal geometra − 30 m² della cucina = 210 m²"
+    },
+    {
+      "spoken": "in cucina invece la lavabile resistente, quella da cucina, sui muri: sono trenta metri quadri",
+      "quantity": 30,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "in bagno l'antimuffa su tutto il soffitto, ma non so quanto è grande il bagno",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "in camera ci sono delle crepe da stuccare, tre crepe lunghe... metti tre",
+      "quantity": 3,
+      "unit": null,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«metti tre»: tre crepe, non tre m²; la voce è a m²"
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante"
+    },
+    {
+      "lineIndex": 3,
+      "kind": "unita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Metri quadri forniti dal geometra dei clienti",
+    "Colore della camera da decidere con la cliente, per ora bianco"
+  ]
+}

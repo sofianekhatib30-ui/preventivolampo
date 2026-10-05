@@ -1,0 +1,113 @@
+{
+  "customer": {
+    "name": "Brambilla",
+    "address": "via Italia, Vimercate"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Tiriamo su un tavolato in forati da otto, lungo tre e ottanta, alto fino al soffitto, due e settanta. Dentro lasciamo il vano per la porta",
+      "work": "tavolato in laterizio forato spessore 8 cm, con predisposizione del vano porta",
+      "quantity": 10.26,
+      "unit": "m2",
+      "quantityNote": "3,80 m di lunghezza x 2,70 m di altezza = 10,26 m2. Il vano porta non è stato misurato, quindi non è stato detratto.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "DEM-11",
+        "DEM-06",
+        "PAV-08",
+        "PAV-09",
+        "PAV-10"
+      ],
+      "unitPriceCents": 2783,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-04",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "Poi l'intonaco civile sulle due facce del tavolato",
+      "work": "intonaco civile su entrambe le facce del tavolato",
+      "quantity": 20.52,
+      "unit": "m2",
+      "quantityNote": "10,26 m2 per faccia x 2 facce = 20,52 m2. Il vano porta non è stato detratto perché non sono state date le misure.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "VAR-04",
+        "DEM-10",
+        "VAR-06",
+        "TIN-11",
+        "TIN-01",
+        "DEM-02",
+        "BAG-12"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "gh'è da dare il bianco nella cameretta nuova, ma la misura della stanza non l'ho presa, gliela chiedo",
+      "work": "tinteggiatura bianca della cameretta nuova",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": "Misura della stanza non rilevata, l'artigiano la chiede al cliente.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "TIN-01",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "TIN-06"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «tinteggiatura bianca della cameretta nuova»?"
+    }
+  ],
+  "exclusions": [
+    "Fornitura e montaggio della porta: la porta la prende il cliente e la fa montare dal falegname. All'impresa spetta solo il vano.",
+    "Spostamento dell'interruttore: lo fa l'elettricista del cliente."
+  ],
+  "notes": [
+    "Misure della cameretta da chiedere al cliente per calcolare la tinteggiatura.",
+    "Le misure del vano porta non sono state date e non sono state detratte da tavolato e intonaco.",
+    "L'artigiano manda il preventivo lunedì."
+  ],
+  "usage": {
+    "inputTokens": 5153,
+    "outputTokens": 1636,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14034
+}

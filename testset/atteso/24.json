@@ -1,0 +1,70 @@
+{
+  "id": "24",
+  "title": "Presa, presa dati, lampadario della cliente e ricerca guasto (elettricista, Monza)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino",
+    "dialetto",
+    "misura_approssimata"
+  ],
+  "customer": {
+    "name": "Pirovano",
+    "address": "via Solferino, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "una presa in più in camera, da dieci",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "una presa internet in soggiorno",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il lampadario del soggiorno l'ha comprato lei, glielo monto io",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "montaggio di un lampadario fornito dalla cliente: nessuna voce nel listino"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "devo trovare il guasto, a ore... un'ora, un'ora e mezza. Metti un'ora e mezza",
+      "quantity": 1.5,
+      "unit": "h",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«metti un'ora e mezza» = 1,5 h"
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Il salvavita scatta spesso: la causa può richiedere lavori ulteriori, da verificare in cantiere"
+  ]
+}

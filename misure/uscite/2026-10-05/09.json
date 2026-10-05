@@ -1,0 +1,155 @@
+{
+  "customer": {
+    "name": "Giulia Bianchi",
+    "address": "via Vigevano, Milano, primo piano (casa di ringhiera)"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "raschiatura",
+      "work": "raschiatura della pittura vecchia sulle pareti",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Perimetro stanza 2×(4+4,5)=17 m × altezza 3,10 m = 52,7 m². Misure della stanza approssimate (\"più o meno\"); aperture non detratte perché non indicate.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-09",
+        "BAG-12",
+        "VAR-01",
+        "TIN-10",
+        "BAG-13",
+        "TIN-11",
+        "TIN-05",
+        "DEM-10"
+      ],
+      "unitPriceCents": 195,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-09",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "rasatura a due mani",
+      "work": "rasatura delle pareti a due mani",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Perimetro 17 m × altezza 3,10 m = 52,7 m². Misure della stanza approssimate; aperture non detratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-11",
+        "TIN-10",
+        "VAR-01",
+        "BAG-12",
+        "VAR-06",
+        "BAG-13",
+        "TIN-01",
+        "TIN-02"
+      ],
+      "unitPriceCents": 1316,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-11",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "fissativo",
+      "work": "applicazione di fissativo sulle pareti",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Perimetro 17 m × altezza 3,10 m = 52,7 m². Misure della stanza approssimate; aperture non detratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "DEM-10",
+        "TIN-01"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "due mani di lavabile",
+      "work": "tinteggiatura pareti con idropittura lavabile a due mani",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Perimetro 17 m × altezza 3,10 m = 52,7 m². Misure della stanza approssimate; aperture non detratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-04",
+        "TIN-11",
+        "TIN-01",
+        "BAG-12",
+        "VAR-01",
+        "TIN-03",
+        "BAG-13"
+      ],
+      "unitPriceCents": 508,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-02",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "la zoccolatura a smalto nell'ingresso, alta un metro, lunga boh sei metri tipo",
+      "work": "verniciatura a smalto della zoccolatura nell'ingresso",
+      "quantity": 6,
+      "unit": "m2",
+      "quantityNote": "Altezza 1 m × lunghezza circa 6 m = 6 m². Lunghezza approssimata (\"boh, sei metri, tipo\").",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-05",
+        "PAV-01",
+        "PAV-07",
+        "TIN-04",
+        "DEM-07",
+        "PAV-11"
+      ],
+      "unitPriceCents": 739,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-05",
+        "confidence": 0.88
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Soffitto a travi di legno: non viene toccato"
+  ],
+  "notes": [
+    "Copertura dei mobili a carico dell'impresa (\"ghe pensi mi\")",
+    "Durata prevista: quattro giorni di lavoro",
+    "Nessun ascensore; il materiale si scarica in cortile",
+    "Stanza monolocale; pareti in cattivo stato con pittura vecchia che si stacca"
+  ],
+  "usage": {
+    "inputTokens": 6889,
+    "outputTokens": 1890,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14031
+}

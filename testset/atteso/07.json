@@ -1,0 +1,93 @@
+{
+  "id": "07",
+  "title": "Idraulica bagno in ristrutturazione con piatto doccia fuori misura (idraulico, Cesano Maderno)",
+  "tags": [
+    "bene_significativo",
+    "fuori_listino",
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Marco Sala",
+    "address": "via Volta 22, Cesano Maderno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "attacchi acqua calda e fredda con lo scarico per lavabo, bidet e doccia, sono tre",
+      "quantity": 3,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "l'attacco del water, con lo scarico grosso, uno",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il tubo da venti per la dorsale, dal contatore al bagno, saranno... tre metri, tre metri e mezzo, metti tre e mezzo",
+      "quantity": 3.5,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-07"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "detto «tre, tre e mezzo, metti tre e mezzo»"
+    },
+    {
+      "spoken": "il vaso sospeso col telaio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "la cassetta a incasso con la placca",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-03"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il piatto doccia invece è grande, settanta per centoquaranta, filo pavimento",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "il listino ha solo il piatto doccia 80x80"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Demolizioni (le fa l'impresa)"
+  ],
+  "notes": [
+    "Pratica in Comune presentata dall'architetto",
+    "Lavabo, bidet e rubinetterie: non detto se li fornisce l'idraulico, da chiarire"
+  ]
+}

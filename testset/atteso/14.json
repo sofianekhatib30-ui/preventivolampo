@@ -1,0 +1,78 @@
+{
+  "id": "14",
+  "title": "Piccoli interventi idraulici e carotaggio (idraulico, Brugherio)",
+  "tags": [
+    "fuori_listino"
+  ],
+  "customer": {
+    "name": "Mariani",
+    "address": "via Tonale 3, Brugherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "il rubinetto della cucina gocciola: lo cambio, glielo porto io, un miscelatore normale",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il sifone del lavandino del bagno perde, lo sistemo io, è mezz'ora di lavoro",
+      "quantity": 0.5,
+      "unit": "h",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "mezz'ora = 0,5 h"
+    },
+    {
+      "spoken": "l'attacco per la lavatrice sul balcone, acqua fredda",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e scarico",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "per passare i tubi c'è da fare un foro nel muro esterno, un carotaggio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce di carotaggio nel listino"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Il carotaggio lo esegue un terzo: prezzo da chiedere",
+    "Non è detto se è l'abitazione della cliente"
+  ]
+}

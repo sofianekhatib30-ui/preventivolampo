@@ -1,0 +1,1249 @@
+{
+  "_nota": "Nome breve e sinonimi sono scritti da Maestro per l'abbinamento, NON vengono dalla fonte. Prezzo, unità, descrizione e fonte li prende scripts/genera-listino.mjs dal CSV di ricerca, per codice_fonte. significantGood (bene significativo, DM 29/12/1999) e clientSuppliable (materiale fornibile dal cliente) sono classificazioni di Maestro, da verificare.",
+  "voci": [
+    {
+      "code": "DEM-01",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc01.C0100.H0002.0000.-",
+      "name": "Demolizione cartongesso, per ogni lastra rimossa",
+      "synonyms": [
+        "buttare giù cartongesso",
+        "tirare giù il cartongesso",
+        "smontare parete in cartongesso",
+        "demolire cartongesso"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-02",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc01.C0100.Za001.0010.a",
+      "name": "Demolizione tramezzo in forati fino a 7 cm",
+      "synonyms": [
+        "buttare giù tramezza",
+        "demolire muretto",
+        "abbattere tavolato",
+        "tramezza sottile",
+        "muro divisorio sottile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-03",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc01.C0100.Za001.0010.b",
+      "name": "Demolizione tramezzo in forati fino a 11 cm",
+      "synonyms": [
+        "buttare giù tramezza da dieci",
+        "demolire muro divisorio",
+        "demolire parete forati"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-04",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc01.C1206.Za000.0250.-",
+      "name": "Demolizione pavimento in piastrelle con malta",
+      "synonyms": [
+        "togliere pavimento",
+        "spaccare le piastrelle per terra",
+        "demolire pavimento vecchio",
+        "levare le piastrelle del pavimento",
+        "rompere il pavimento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-05",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc04.C1220.L0002.0250.-",
+      "name": "Rimozione rivestimento in piastrelle",
+      "synonyms": [
+        "togliere le piastrelle dai muri",
+        "spicconare il rivestimento",
+        "levare le piastrelle del bagno",
+        "togliere il rivestimento",
+        "picchettare rivestimento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-06",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc01.C0915.Za001.0000.b",
+      "name": "Demolizione massetto spessore 5 cm",
+      "synonyms": [
+        "togliere la caldana",
+        "demolire sottofondo",
+        "rompere il massetto",
+        "levare il sottofondo",
+        "spaccare la caldana"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-07",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc04.C1240.Za000.0000.-",
+      "name": "Rimozione battiscopa in piastrelle",
+      "synonyms": [
+        "togliere zoccolino",
+        "levare il battiscopa",
+        "togliere lo zoccolo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-08",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.1C.01.170.0010",
+      "name": "Rimozione apparecchio sanitario",
+      "synonyms": [
+        "smontare il water",
+        "togliere il cesso",
+        "levare il bidet",
+        "smontare lavandino",
+        "togliere i sanitari",
+        "togliere la vasca",
+        "smontare i sanitari vecchi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-09",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.1C.01.170.0020.a",
+      "name": "Rimozione linee acqua e scarichi di un sanitario",
+      "synonyms": [
+        "togliere i tubi vecchi",
+        "levare le tubazioni del bagno",
+        "smantellare impianto idraulico vecchio",
+        "togliere gli scarichi vecchi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-10",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.1C.01.090.0020.a",
+      "name": "Scrostamento intonaco fino al vivo del muro",
+      "synonyms": [
+        "spicconare intonaco",
+        "togliere intonaco",
+        "scrostare le pareti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-11",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.OC.EEA.Mc04.C3310.Qa000.0000.b",
+      "name": "Rimozione porta interna in legno con telaio (al m² di porta)",
+      "synonyms": [
+        "smontare le porte",
+        "togliere porta vecchia",
+        "levare le porte con il telaio",
+        "togliere porte e stipiti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "DEM-12",
+      "category": "demolizioni",
+      "sourceCode": "LOM261.1E.02.070.0010",
+      "name": "Rimozione punto elettrico esistente",
+      "synonyms": [
+        "togliere prese vecchie",
+        "sfilare i fili",
+        "levare punto luce vecchio",
+        "smantellare impianto elettrico vecchio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-01",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.1C.27.050.0100.d",
+      "name": "Conferimento macerie miste a impianto per inerti",
+      "synonyms": [
+        "smaltimento macerie",
+        "smaltire calcinacci",
+        "smaltimento inerti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-02",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.1C.27.050.0100.e",
+      "name": "Conferimento macerie miste a impianto per non pericolosi",
+      "synonyms": [
+        "smaltimento rifiuti misti",
+        "discarica rifiuti non pericolosi",
+        "smaltire macerie miste"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-03",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.1C.27.050.0100.f",
+      "name": "Conferimento macerie miste a impianto di recupero",
+      "synonyms": [
+        "recupero macerie",
+        "riciclo calcinacci",
+        "portare macerie al recupero"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-04",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.1C.27.050.0100.g",
+      "name": "Conferimento rifiuti in legno a impianto di recupero",
+      "synonyms": [
+        "smaltire legno",
+        "smaltimento porte vecchie",
+        "smaltire parquet vecchio",
+        "buttare via il legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-05",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.NC.90.050.0050",
+      "name": "Carico manuale, trasporto e scarico macerie in discarica",
+      "synonyms": [
+        "carico e trasporto macerie",
+        "portare giù le macerie",
+        "trasporto in discarica",
+        "sgombero macerie"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "SMA-06",
+      "category": "smaltimento",
+      "sourceCode": "LOM261.NC.80.050.0010",
+      "name": "Solo trasporto materiali già caricati",
+      "synonyms": [
+        "solo trasporto",
+        "viaggio in discarica",
+        "trasporto macerie già caricate"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "BAG-01",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8220.L0008.0000.-",
+      "name": "Vaso a pavimento installato",
+      "synonyms": [
+        "water",
+        "wc",
+        "cesso",
+        "tazza",
+        "vaso a terra",
+        "water a pavimento"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-02",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8220.L0008.0015.-",
+      "name": "Vaso sospeso con telaio da incasso installato",
+      "synonyms": [
+        "water sospeso",
+        "wc sospeso",
+        "vaso sospeso"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-03",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N9705.Za001.0000.-",
+      "name": "Cassetta di scarico da incasso con placca",
+      "synonyms": [
+        "cassetta a incasso",
+        "cassetta del water",
+        "sciacquone"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-04",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8230.L0012.0000.-",
+      "name": "Bidet a pavimento installato",
+      "synonyms": [
+        "bidet",
+        "bidè",
+        "bidet a terra"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-05",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8225.L0012.0005.-",
+      "name": "Lavabo a parete 65 cm installato",
+      "synonyms": [
+        "lavandino del bagno",
+        "lavabo",
+        "lavandino",
+        "lavello del bagno"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-06",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8240.L0013.0005.-",
+      "name": "Piatto doccia 80x80 installato",
+      "synonyms": [
+        "piatto doccia",
+        "doccia",
+        "piatto ottanta per ottanta"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-07",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8235.Sb001.0005.-",
+      "name": "Vasca in acciaio 170x70 installata",
+      "synonyms": [
+        "vasca",
+        "vasca da bagno",
+        "vasca centosettanta"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-08",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0000.-",
+      "name": "Miscelatore lavabo montato",
+      "synonyms": [
+        "rubinetto del lavandino",
+        "miscelatore lavabo",
+        "rubinetteria lavabo",
+        "rubinetto bagno"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-09",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0025.-",
+      "name": "Miscelatore bidet montato",
+      "synonyms": [
+        "rubinetto del bidet",
+        "miscelatore bidet"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-10",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0040.-",
+      "name": "Miscelatore doccia da incasso con soffione montato",
+      "synonyms": [
+        "rubinetto doccia",
+        "miscelatore doccia",
+        "rubinetteria doccia"
+      ],
+      "significantGood": true,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-11",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I7800.Za001.0750.-",
+      "name": "Gruppo di scarico per doccia montato",
+      "synonyms": [
+        "piletta doccia",
+        "scarico doccia",
+        "sifone doccia"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "BAG-12",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0005.0010.-",
+      "name": "Rivestimento pareti gres porcellanato 20x20",
+      "synonyms": [
+        "piastrelle sui muri del bagno",
+        "rivestimento bagno",
+        "piastrellare le pareti",
+        "gres a parete",
+        "mattonelle sul muro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "BAG-13",
+      "category": "bagno",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0001.0000.-",
+      "name": "Rivestimento pareti monocottura 20x20",
+      "synonyms": [
+        "monocottura a parete",
+        "piastrelle smaltate bagno",
+        "rivestimento in monocottura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "CUC-01",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa01.N8210.Sb008.0000.-",
+      "name": "Lavello inox 1 vasca con scolapiatti installato",
+      "synonyms": [
+        "lavello cucina",
+        "lavandino della cucina",
+        "lavello inox",
+        "acquaio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "CUC-02",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I8234.Za001.0050.-",
+      "name": "Miscelatore lavello montato",
+      "synonyms": [
+        "rubinetto della cucina",
+        "miscelatore cucina",
+        "rubinetto lavello"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "CUC-03",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa29.I7800.Za001.0260.-",
+      "name": "Gruppo di scarico lavello montato",
+      "synonyms": [
+        "sifone lavello",
+        "scarico lavello",
+        "scarico cucina"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "CUC-04",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0001.0020.-",
+      "name": "Rivestimento cucina monocottura 30x30",
+      "synonyms": [
+        "piastrelle sopra il piano cucina",
+        "rivestimento cucina",
+        "schienale cucina in piastrelle",
+        "paraschizzi"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "CUC-05",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1220.L0010.0010.-",
+      "name": "Rivestimento cucina maiolica 20x20",
+      "synonyms": [
+        "maiolica cucina",
+        "piastrelle in maiolica",
+        "rivestimento maiolica"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "CUC-06",
+      "category": "cucina",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1015.-",
+      "name": "Presa 16 A con interruttore bipolare (elettrodomestici)",
+      "synonyms": [
+        "presa forno",
+        "presa lavastoviglie",
+        "presa lavatrice",
+        "presa con interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-01",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca000.0000.-",
+      "name": "Idropittura traspirante semilavabile, 2 mani",
+      "synonyms": [
+        "imbiancare",
+        "dare il bianco",
+        "tinteggiare",
+        "pitturare le pareti",
+        "dare una mano di bianco"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-02",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca015.0000.-",
+      "name": "Idropittura vinilica lavabile, 2 mani",
+      "synonyms": [
+        "pittura lavabile",
+        "lavabile",
+        "idropittura lavabile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-03",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca012.0000.-",
+      "name": "Idropittura acrilica superlavabile, 2 mani",
+      "synonyms": [
+        "superlavabile",
+        "pittura superlavabile",
+        "acrilica"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-04",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca012.0005.-",
+      "name": "Idropittura acrilica lavabile alta resistenza, 2 mani",
+      "synonyms": [
+        "lavabile resistente",
+        "pittura per cucina"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-05",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.OC.EEA.Pa06.C1234.Ca028.0000.-",
+      "name": "Smalto per interni, 2 mani",
+      "synonyms": [
+        "smalto",
+        "verniciare a smalto",
+        "zoccolatura a smalto",
+        "pittura a olio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-06",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.100.0020.a",
+      "name": "Primer (fissativo) prima di rasare o pitturare",
+      "synonyms": [
+        "fissativo",
+        "isolante",
+        "primer",
+        "dare il fondo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-07",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.100.0020.e",
+      "name": "Trattamento antimuffa",
+      "synonyms": [
+        "antimuffa",
+        "trattare la muffa",
+        "muffa in bagno",
+        "togliere la muffa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-08",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.100.0010",
+      "name": "Stuccatura saltuaria di fori e crepe",
+      "synonyms": [
+        "stuccare i buchi",
+        "stuccatura",
+        "chiudere le crepe",
+        "stuccare le cavillature"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-09",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.710.0010.a",
+      "name": "Raschiatura vecchie pitture",
+      "synonyms": [
+        "raschiare",
+        "grattare la pittura vecchia",
+        "raschiatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-10",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.710.0020.a",
+      "name": "Rasatura pareti con stucco, 1 mano",
+      "synonyms": [
+        "rasare",
+        "rasatura",
+        "una mano di rasante",
+        "lisciare le pareti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "TIN-11",
+      "category": "tinteggiature",
+      "sourceCode": "LOM261.1C.24.710.0020.b",
+      "name": "Rasatura pareti con stucco, 2 mani",
+      "synonyms": [
+        "rasatura a due mani",
+        "rasare bene",
+        "doppia rasatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "PAV-01",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0005.0220.-",
+      "name": "Pavimento gres porcellanato smaltato 30x30",
+      "synonyms": [
+        "piastrelle per terra",
+        "gres",
+        "pavimento in gres",
+        "piastrellare il pavimento",
+        "mattonelle"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-02",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0005.0260.-",
+      "name": "Pavimento gres porcellanato liscio 30x30",
+      "synonyms": [
+        "gres liscio",
+        "porcellanato",
+        "gres tecnico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-03",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.L0001.0020.-",
+      "name": "Pavimento monocottura 30x30",
+      "synonyms": [
+        "monocottura",
+        "piastrelle in monocottura",
+        "pavimento monocottura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-04",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.Qa005.0000.-",
+      "name": "Parquet in listoni di rovere su magatelli",
+      "synonyms": [
+        "parquet",
+        "parchè",
+        "listoni di rovere",
+        "pavimento in legno",
+        "legno massello"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-05",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.Qb003.0000.-",
+      "name": "Pavimento in laminato 8 mm",
+      "synonyms": [
+        "laminato",
+        "finto parquet"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-06",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1206.D0017.0000.-",
+      "name": "Pavimento vinilico in listoni (LVT) incollato",
+      "synonyms": [
+        "vinilico",
+        "pvc",
+        "lvt",
+        "pavimento in pvc"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-07",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa30.C1206.Qa000.0255.-",
+      "name": "Levigatura e verniciatura parquet esistente",
+      "synonyms": [
+        "levigare il parquet",
+        "lamare il parquet",
+        "rifare il parquet",
+        "lamatura",
+        "sistemare il legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "PAV-08",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0001.0005.a",
+      "name": "Massetto sabbia-cemento 5 cm",
+      "synonyms": [
+        "caldana",
+        "massetto",
+        "sottofondo",
+        "fare la caldana",
+        "rifare il sottofondo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "PAV-09",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0004.0005.a",
+      "name": "Massetto alleggerito con argilla espansa 5 cm",
+      "synonyms": [
+        "massetto alleggerito",
+        "caldana leggera",
+        "sottofondo alleggerito",
+        "argilla espansa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "PAV-10",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa04.C0915.J0018.0000.a",
+      "name": "Massetto autolivellante 4 cm",
+      "synonyms": [
+        "autolivellante",
+        "massetto autolivellante"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "PAV-11",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1240.Qa001.0000.-",
+      "name": "Battiscopa in legno",
+      "synonyms": [
+        "zoccolino in legno",
+        "battiscopa legno",
+        "zoccolo in legno"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "PAV-12",
+      "category": "pavimenti",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1240.L0005.0005.-",
+      "name": "Battiscopa in gres h 10 cm",
+      "synonyms": [
+        "zoccolino",
+        "battiscopa",
+        "zoccolino in gres",
+        "battiscopa in piastrella"
+      ],
+      "significantGood": false,
+      "clientSuppliable": true
+    },
+    {
+      "code": "IDR-01",
+      "category": "idraulico",
+      "sourceCode": "LOM261.1M.11.200.0010.a",
+      "name": "Allacciamento sanitario acqua calda e fredda con scarico",
+      "synonyms": [
+        "punto acqua",
+        "attacco acqua e scarico",
+        "portare l'acqua",
+        "attacchi",
+        "punto acqua calda e fredda"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-02",
+      "category": "idraulico",
+      "sourceCode": "LOM261.1M.11.200.0010.b",
+      "name": "Allacciamento sanitario acqua con scarico DE110",
+      "synonyms": [
+        "attacco water",
+        "scarico del water",
+        "punto acqua per il wc"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-03",
+      "category": "idraulico",
+      "sourceCode": "LOM261.1M.11.200.0010.c",
+      "name": "Allacciamento acqua calda e fredda senza scarico",
+      "synonyms": [
+        "solo acqua calda e fredda",
+        "attacchi senza scarico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-04",
+      "category": "idraulico",
+      "sourceCode": "LOM261.1M.11.200.0010.d",
+      "name": "Allacciamento acqua singola senza scarico",
+      "synonyms": [
+        "solo acqua fredda",
+        "attacco lavatrice",
+        "punto acqua singolo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-05",
+      "category": "idraulico",
+      "sourceCode": "LOM261.1M.11.200.0010.e",
+      "name": "Allacciamento solo scarico DE40",
+      "synonyms": [
+        "solo scarico",
+        "scarico lavatrice",
+        "portare lo scarico"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-06",
+      "category": "idraulico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.I7407.D0033.0000.-",
+      "name": "Tubo PE-X acqua diametro 16",
+      "synonyms": [
+        "tubo da sedici",
+        "tubazione acqua",
+        "pex sedici",
+        "pex"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-07",
+      "category": "idraulico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.I7407.D0033.0010.-",
+      "name": "Tubo PE-X acqua diametro 20",
+      "synonyms": [
+        "tubo da venti",
+        "dorsale acqua"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-08",
+      "category": "idraulico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0005.-",
+      "name": "Tubo di scarico diametro 40",
+      "synonyms": [
+        "scarico da quaranta",
+        "tubo scarico quaranta"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-09",
+      "category": "idraulico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0010.-",
+      "name": "Tubo di scarico diametro 50",
+      "synonyms": [
+        "scarico da cinquanta",
+        "tubo scarico cinquanta"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "IDR-10",
+      "category": "idraulico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.I7822.D0014.0025.-",
+      "name": "Tubo di scarico diametro 110",
+      "synonyms": [
+        "scarico da centodieci",
+        "tubo del water"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-01",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1000.-",
+      "name": "Punto luce interrotto",
+      "synonyms": [
+        "punto luce",
+        "luce con interruttore",
+        "interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-02",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.0500.-",
+      "name": "Punto luce deviato",
+      "synonyms": [
+        "deviatore",
+        "luce deviata",
+        "luce da due punti"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-03",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1250.-",
+      "name": "Punto luce invertito",
+      "synonyms": [
+        "invertitore",
+        "luce da tre punti",
+        "luce invertita"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-04",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.1255.-",
+      "name": "Invertitore aggiuntivo oltre il primo",
+      "synonyms": [
+        "invertitore in più",
+        "un altro invertitore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-05",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8237.Za001.0750.-",
+      "name": "Punto luce in parallelo",
+      "synonyms": [
+        "luce in parallelo",
+        "altra luce sullo stesso interruttore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-06",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1000.-",
+      "name": "Punto presa 10 A",
+      "synonyms": [
+        "presa",
+        "presa piccola",
+        "presetta",
+        "punto presa"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-07",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1005.-",
+      "name": "Punto presa 16 A",
+      "synonyms": [
+        "presa grande",
+        "presa sedici"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-08",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8235.Za001.1105.-",
+      "name": "Punto presa telefono o dati",
+      "synonyms": [
+        "presa internet",
+        "presa rete",
+        "presa telefono",
+        "rj45"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-09",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8205.Za001.0005.-",
+      "name": "Interruttore magnetotermico 2 poli",
+      "synonyms": [
+        "magnetotermico",
+        "automatico",
+        "interruttore nel quadro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-10",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G8205.Za001.0750.b",
+      "name": "Interruttore magnetotermico differenziale",
+      "synonyms": [
+        "salvavita",
+        "differenziale",
+        "magnetotermico differenziale"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-11",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G7436.Ca000.0000.-",
+      "name": "Centralino da incasso fino a 12 moduli",
+      "synonyms": [
+        "quadretto",
+        "quadro elettrico piccolo",
+        "centralino"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-12",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa01.G7436.Ca000.0005.-",
+      "name": "Centralino da incasso fino a 24 moduli",
+      "synonyms": [
+        "quadro elettrico",
+        "quadro generale",
+        "centralino grande"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "ELE-13",
+      "category": "elettrico",
+      "sourceCode": "LOM261.OC.EEA.Pa02.G7424.Sc009.2260.-",
+      "name": "Cavo unipolare 2,5 mm²",
+      "synonyms": [
+        "filo da due e mezzo",
+        "cavo"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-01",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C0100.H0002.0005.-",
+      "name": "Parete in cartongesso una lastra per lato",
+      "synonyms": [
+        "parete in cartongesso",
+        "tramezza in cartongesso",
+        "fare una parete",
+        "chiudere con il cartongesso"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-02",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C0102.H0002.0005.-",
+      "name": "Controparete in cartongesso idrorepellente incollata",
+      "synonyms": [
+        "controparete",
+        "cartongesso verde",
+        "idrorepellente",
+        "placcare il muro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-03",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C1210.H0002.0010.-",
+      "name": "Controsoffitto in cartongesso",
+      "synonyms": [
+        "controsoffitto",
+        "abbassare il soffitto",
+        "ribassamento"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-04",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa02.C0102.L0011.0290.-",
+      "name": "Tramezzo in forati spessore 8 cm",
+      "synonyms": [
+        "tavolato",
+        "tramezza",
+        "muretto in forati",
+        "tirare su un muro",
+        "fare un divisorio"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-05",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa16.C0900.Za001.0510.-",
+      "name": "Intonaco civile completo interno",
+      "synonyms": [
+        "intonaco",
+        "rifare l'intonaco",
+        "intonacare",
+        "arricciatura",
+        "civile"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-06",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.OC.EEA.Pa16.C0900.Za001.1000.-",
+      "name": "Rasatura a civile fine, 2 mani",
+      "synonyms": [
+        "rasante",
+        "stabilitura",
+        "finitura a civile",
+        "lisciatura"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-07",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.RU.00.00.00.0005.a",
+      "name": "Manodopera operaio specializzato (ora)",
+      "synonyms": [
+        "ore di muratore",
+        "manodopera",
+        "in economia",
+        "a ore",
+        "ore di lavoro"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-08",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.RU.00.00.00.0015.a",
+      "name": "Manodopera operaio comune (ora)",
+      "synonyms": [
+        "manovale",
+        "ore di manovalanza",
+        "aiutante",
+        "garzone"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    },
+    {
+      "code": "VAR-09",
+      "category": "opere_varie",
+      "sourceCode": "LOM261.RU.00.01.00.0025.-",
+      "name": "Manodopera idraulico o elettricista (ora)",
+      "synonyms": [
+        "ore idraulico",
+        "ore elettricista",
+        "intervento a ore"
+      ],
+      "significantGood": false,
+      "clientSuppliable": false
+    }
+  ]
+}

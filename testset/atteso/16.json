@@ -1,0 +1,155 @@
+{
+  "id": "16",
+  "title": "Rifacimento impianto elettrico in ristrutturazione (elettricista, Seveso)",
+  "tags": [
+    "misura_mancante",
+    "fuori_listino",
+    "misura_approssimata"
+  ],
+  "customer": {
+    "name": "Tagliabue",
+    "address": "via Sciesa 7, Seveso"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "tolgo tutti i punti vecchi, sono... tipo venticinque, li riconto",
+      "quantity": 25,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«tipo venticinque», da ricontare"
+    },
+    {
+      "spoken": "dodici punti luce interrotti",
+      "quantity": 12,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "tre deviati tra corridoio e camere",
+      "quantity": 3,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un invertito in sala",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-03"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "prese da dieci, diciotto",
+      "quantity": 18,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "da sedici, sei",
+      "quantity": 6,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-07"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "due prese internet",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "centralino da dodici moduli",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-11"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "con un salvavita",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "e quattro magnetotermici",
+      "quantity": 4,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il videocitofono lo cambiamo anche, quello va a parte",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce per il videocitofono nel listino"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il cavo da due e mezzo per la dorsale non so quanti metri",
+      "quantity": null,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-13"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 11,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Pratica di ristrutturazione presentata",
+    "Numero dei punti da rimuovere da ricontare in cantiere"
+  ]
+}

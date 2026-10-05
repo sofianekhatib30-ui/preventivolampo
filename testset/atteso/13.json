@@ -1,0 +1,99 @@
+{
+  "id": "13",
+  "title": "Bagno piccolo: rivestimento del cliente, caldana e pavimento (piastrellista, Carate Brianza)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino",
+    "esclusione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Fumagalli",
+    "address": "via Dante 31, Carate Brianza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "prima però tolgo le vecchie, stessa superficie",
+      "quantity": 16.28,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "perimetro (1,60 + 2,10) × 2 = 7,40 m × 2,20 m = 16,28 m², vuoto per pieno"
+    },
+    {
+      "spoken": "lui ha già comprato le piastrelle per i muri, gres venti per venti ... io le poso",
+      "quantity": 16.28,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true,
+      "quantityNote": "7,40 m × 2,20 m = 16,28 m²"
+    },
+    {
+      "spoken": "il pavimento vecchio va tolto",
+      "quantity": 3.36,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "1,60 × 2,10 = 3,36 m²"
+    },
+    {
+      "spoken": "quindi tolgo anche la caldana vecchia",
+      "quantity": 3.36,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,36 m²"
+    },
+    {
+      "spoken": "va rifatta la caldana, cinque centimetri",
+      "quantity": 3.36,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,36 m²"
+    },
+    {
+      "spoken": "il pavimento invece lo porto io, monocottura trenta per trenta",
+      "quantity": 3.36,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-03"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,36 m²"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Sanitari e impianto idraulico (li fa l'idraulico)"
+  ],
+  "notes": [
+    "Chi compra i beni è misto (rivestimento dal cliente, pavimento dall'impresa): da chiarire per l'IVA",
+    "Tempi: una settimana abbondante",
+    "Spessore della caldana vecchia non detto: DEM-06 vale per 5 cm, da verificare in cantiere"
+  ]
+}

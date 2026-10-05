@@ -1,0 +1,182 @@
+{
+  "customer": {
+    "name": "Marelli",
+    "address": "Via Fratelli Bandiera 45, Cologno Monzese"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "controparete idrorepellente incollata su quella parete, due e mezzo per due e quaranta",
+      "work": "fornitura e posa di controparete idrorepellente incollata",
+      "quantity": 6,
+      "unit": "m2",
+      "quantityNote": "2,5 m x 2,4 m = 6,0 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-02",
+        "BAG-12",
+        "VAR-01",
+        "TIN-11",
+        "BAG-13",
+        "TIN-10",
+        "PAV-06",
+        "VAR-05"
+      ],
+      "unitPriceCents": 2642,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-02",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "Tolgo il lavabo vecchio",
+      "work": "rimozione lavabo esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "DEM-12",
+        "BAG-08",
+        "DEM-09",
+        "TIN-09",
+        "DEM-04",
+        "DEM-08",
+        "DEM-11"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Tolgo il water",
+      "work": "rimozione water esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "DEM-12",
+        "DEM-08",
+        "IDR-02",
+        "DEM-09",
+        "BAG-02",
+        "BAG-03",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "metto un lavabo nuovo da sessantacinque col suo miscelatore",
+      "work": "fornitura e posa di lavabo nuovo da 65 cm con miscelatore",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un lavabo con il relativo miscelatore",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-08",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02",
+        "DEM-02",
+        "DEM-03",
+        "DEM-06"
+      ],
+      "unitPriceCents": 12302,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05",
+        "confidence": 0.6
+      }
+    },
+    {
+      "spoken": "un water a terra uguale a quello di adesso",
+      "work": "fornitura e posa di water a terra, modello uguale all'esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "IDR-02",
+        "DEM-12",
+        "BAG-02",
+        "BAG-03",
+        "BAG-04",
+        "DEM-08",
+        "PAV-01"
+      ],
+      "unitPriceCents": 22633,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "sulla controparete il rivestimento in gres venti per venti, alto... non so, dipende dalla signora, fino al soffitto o a metà",
+      "work": "fornitura e posa di rivestimento in gres 20x20 sulla controparete",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": "Larghezza 2,4 m, ma altezza non definita (fino al soffitto o a metà parete, decide la cliente): superficie non calcolabile",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-01",
+        "VAR-02",
+        "BAG-12",
+        "DEM-05",
+        "PAV-02",
+        "BAG-13",
+        "CUC-05",
+        "CUC-04"
+      ],
+      "unitPriceCents": 5062,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-12",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 5,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «fornitura e posa di rivestimento in gres 20x20 sulla controparete»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Bagno cieco; il muro del lavabo è sempre umido.",
+    "Aspiratore elettrico necessario perché il bagno è cieco: fuori listino, l'artigiano lo valuta in seguito.",
+    "Altezza del rivestimento in gres da decidere con la cliente: fino al soffitto o a metà parete.",
+    "Sanitari e rubinetteria acquistati dall'impresa."
+  ],
+  "usage": {
+    "inputTokens": 7938,
+    "outputTokens": 2183,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 19987
+}

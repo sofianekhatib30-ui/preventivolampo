@@ -1,0 +1,76 @@
+{
+  "id": "29",
+  "title": "Camera con carta da parati e corridoio non misurato (imbianchino, Macherio)",
+  "tags": [
+    "fuori_listino",
+    "misura_mancante"
+  ],
+  "customer": {
+    "name": "Frigerio",
+    "address": "via Veneto, Macherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "c'è la carta da parati da togliere su tutte le pareti",
+      "quantity": 37.8,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce per la rimozione di carta da parati nel listino"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "pareti (3,80 + 3,20) × 2 × 2,70 = 37,8 m², vuoto per pieno"
+    },
+    {
+      "spoken": "rasatura a una mano sulle pareti",
+      "quantity": 37.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-10"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "37,8 m²"
+    },
+    {
+      "spoken": "il bianco semilavabile, pareti e soffitto",
+      "quantity": 49.96,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "pareti 37,8 m² + soffitto 3,80 × 3,20 = 12,16 m² = 49,96 m²"
+    },
+    {
+      "spoken": "nel corridoio solo una rinfrescata, bianco anche lì, ma il corridoio non l'ho misurato",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 3,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Tipo due giorni e mezzo per la camera",
+    "Stato della pittura sotto la carta da verificare dopo la rimozione"
+  ]
+}

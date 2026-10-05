@@ -1,0 +1,64 @@
+{
+  "id": "27",
+  "title": "Lamatura parquet e battiscopa in legno (piastrellista, Monza)",
+  "tags": [
+    "misura_approssimata",
+    "fuori_listino",
+    "esclusione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Giorgio Viganò",
+    "address": "via Buonarroti 20, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "il parquet della sala e delle due camere è da lamare e verniciare",
+      "quantity": 39.5,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-07"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "5 × 4 = 20 + 3,50 × 3 = 10,5 + 3 × 3 = 9 → 39,5 m², misure «più o meno»"
+    },
+    {
+      "spoken": "il battiscopa in legno è rovinato ... lo tolgo",
+      "quantity": 40,
+      "unit": "m",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "rimozione di battiscopa in legno: DEM-07 è solo per battiscopa in piastrelle"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«facciamo quaranta metri che ci stiamo dentro»"
+    },
+    {
+      "spoken": "metto quello nuovo, sempre in legno, facciamo quaranta metri che ci stiamo dentro",
+      "quantity": 40,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«facciamo quaranta metri»"
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Spostamento dei mobili (lo fa il cliente)"
+  ],
+  "notes": [
+    "I mobili stanno fuori casa tre giorni per l'asciugatura della vernice"
+  ]
+}

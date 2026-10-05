@@ -1,0 +1,78 @@
+{
+  "id": "02",
+  "title": "Tinteggiatura bilocale con camera non misurata (imbianchino, Milano)",
+  "tags": [
+    "misura_mancante",
+    "misura_approssimata",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "Davide Rinaldi",
+    "address": "via Padova, Milano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "il soggiorno con l'angolo cottura è tipo cinque per quattro, alto due e settanta: faccio pareti e soffitto, col bianco normale, semilavabile",
+      "quantity": 68.6,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "pareti (5 + 4) × 2 × 2,70 = 48,6 m² + soffitto 5 × 4 = 20 m² = 68,6 m², vuoto per pieno; misure «tipo»"
+    },
+    {
+      "spoken": "la camera invece non l'ho misurata ... pareti e soffitto uguale, stesso bianco",
+      "quantity": null,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "in bagno c'è un po' di muffa sul soffitto, gli do l'antimuffa, sarà un metro quadro, due... facciamo due",
+      "quantity": 2,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "stucco i buchi dei quadri nel soggiorno ... tipo cinque metri quadri di stuccatura sparsa",
+      "quantity": 5,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [
+    "Smalto delle porte",
+    "Spostamento dei mobili (lo fa il cliente)"
+  ],
+  "notes": [
+    "La misura della camera la manda il cliente",
+    "Protezione del solo pavimento a carico dell'imbianchino"
+  ]
+}

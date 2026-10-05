@@ -1,0 +1,174 @@
+{
+  "customer": {
+    "name": "Marco Sala",
+    "address": "Via Volta 22, Cesano Maderno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "attacchi acqua calda e fredda con lo scarico per lavabo, bidet e doccia, sono tre",
+      "work": "attacchi acqua calda e fredda con scarico per lavabo, bidet e doccia",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": "Tre attacchi: lavabo, bidet e doccia",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-01",
+        "BAG-04",
+        "BAG-06",
+        "IDR-03",
+        "BAG-05",
+        "BAG-11",
+        "IDR-04",
+        "IDR-02"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "L'attacco del water, con lo scarico grosso, uno",
+      "work": "attacco water con scarico di grosso diametro",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-02",
+        "BAG-01",
+        "IDR-05",
+        "IDR-10",
+        "IDR-08",
+        "IDR-09",
+        "CUC-03",
+        "IDR-01"
+      ],
+      "unitPriceCents": 20244,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-02",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "il tubo da venti per la dorsale, dal contatore al bagno, saranno tre metri, tre metri e mezzo, metti tre e mezzo",
+      "work": "fornitura e posa tubazione DN20 per dorsale dal contatore al bagno",
+      "quantity": 3.5,
+      "unit": "m",
+      "quantityNote": "Misura approssimata detta dall'artigiano: da 3 a 3,5 m, indicato di usare 3,5 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-07",
+        "IDR-06",
+        "IDR-10",
+        "IDR-08",
+        "IDR-09",
+        "BAG-05",
+        "BAG-12",
+        "BAG-07"
+      ],
+      "unitPriceCents": 464,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-07",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "il vaso sospeso col telaio",
+      "work": "fornitura e posa vaso sospeso con telaio",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo vaso, detto al singolare",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-02",
+        "BAG-01",
+        "DEM-11",
+        "BAG-03"
+      ],
+      "unitPriceCents": 24102,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-02",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "la cassetta a incasso con la placca",
+      "work": "fornitura e posa cassetta di scarico a incasso con placca",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Una sola cassetta, detta al singolare",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-03",
+        "IDR-05",
+        "CUC-03",
+        "BAG-11",
+        "IDR-02",
+        "IDR-08",
+        "IDR-09",
+        "IDR-01"
+      ],
+      "unitPriceCents": 19010,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-03",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "Il piatto doccia invece è grande, settanta per centoquaranta, filo pavimento",
+      "work": "fornitura e posa piatto doccia a filo pavimento 70x140",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un solo piatto doccia, misura 70x140 cm",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-06",
+        "BAG-10",
+        "BAG-11",
+        "DEM-04",
+        "PAV-01",
+        "BAG-01",
+        "PAV-03",
+        "PAV-06"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: L'unico piatto doccia in listino è 80x80, non coincide con la misura 70x140 filo pavimento.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Demolizioni: le fa l'impresa, non l'artigiano"
+  ],
+  "notes": [
+    "Il piatto doccia 70x140 a filo pavimento non è a listino: l'artigiano deve cercarlo, prezzo da definire",
+    "L'artigiano esegue solo la parte idraulica del bagno",
+    "Pratica in Comune presentata dall'architetto per tutto l'appartamento"
+  ],
+  "usage": {
+    "inputTokens": 7218,
+    "outputTokens": 2043,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 15824
+}

@@ -1,0 +1,89 @@
+{
+  "id": "19",
+  "title": "Pavimento cucina con caldana nuova e battiscopa non misurato (piastrellista, Giussano)",
+  "tags": [
+    "misura_mancante",
+    "dialetto",
+    "autocorrezione"
+  ],
+  "customer": {
+    "name": "Galbiati",
+    "address": "via Umberto Primo, Giussano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "demolizione del pavimento",
+      "quantity": 11.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "3,60 × 3 = 10,8 m² + 1 m² del frigo = 11,8 m²"
+    },
+    {
+      "spoken": "e della caldana",
+      "quantity": 11.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,8 m²"
+    },
+    {
+      "spoken": "rifacciamo la caldana, cinque centimetri",
+      "quantity": 11.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,8 m²"
+    },
+    {
+      "spoken": "gres porcellanato liscio trenta per trenta",
+      "quantity": 11.8,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-02"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "11,8 m²"
+    },
+    {
+      "spoken": "il battiscopa in gres, alto dieci, tutto intorno: i metri non li ho presi",
+      "quantity": null,
+      "unit": "m",
+      "match": {
+        "kind": "listino",
+        "code": "PAV-12"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 4,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Autocorrezione: non si posa sopra il vecchio, si toglie tutto",
+    "Metri del battiscopa da prendere quando la cucina è svuotata",
+    "Spessore della caldana vecchia non detto: DEM-06 vale per 5 cm, da verificare in cantiere"
+  ]
+}

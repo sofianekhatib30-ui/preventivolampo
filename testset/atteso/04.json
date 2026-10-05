@@ -1,0 +1,97 @@
+{
+  "id": "04",
+  "title": "Impianto elettrico cucina con prese da decidere (elettricista, Desio)",
+  "tags": [
+    "misura_mancante",
+    "autocorrezione",
+    "esclusione"
+  ],
+  "customer": {
+    "name": "famiglia Ferrari",
+    "address": "via Manzoni, Desio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "expectedRegime": null
+  },
+  "lines": [
+    {
+      "spoken": "la presa con l'interruttore bipolare per il forno, una per la lavastoviglie",
+      "quantity": 2,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "CUC-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il frigo va su una presa normale da sedici, senza interruttore",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-07"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "le prese sopra il piano, quelle da dieci: ne vuole... boh, quattro o cinque",
+      "quantity": null,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un punto luce con l'interruttore al centro",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "un punto luce sotto i pensili, in parallelo a quello",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "nel quadro aggiungo un salvavita per la linea della cucina",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante"
+    }
+  ],
+  "exclusions": [
+    "Tracce e ripristini murari (li fa il muratore)"
+  ],
+  "notes": [
+    "Autocorrezione: il frigo non va su presa con interruttore bipolare ma su presa 16 A",
+    "Numero di prese sopra il piano (quattro o cinque) da decidere con la cliente e il mobiliere",
+    "Piano a induzione: verificare la potenza del contatore"
+  ]
+}

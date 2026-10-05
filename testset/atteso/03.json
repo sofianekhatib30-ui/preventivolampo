@@ -1,0 +1,52 @@
+{
+  "id": "03",
+  "title": "Sostituzione vaso comprato dalla cliente (idraulico, Seregno)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino",
+    "esclusione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Galli",
+    "address": "via Cavour 21, Seregno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "smonto el cess vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "monto quello nuovo (il vaso a terra l'ha già comprato lei)",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Cassetta di scarico esterna: non si tocca"
+  ],
+  "notes": [
+    "Tempo stimato mezza giornata",
+    "Il vaso vecchio lo porta via l'idraulico (DEM-08 comprende carico e trasporto, esclusi oneri di smaltimento)"
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "customer": {
+    "name": "Signora Ronchi",
+    "address": "via Italia 3, Bovisio Masciago"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Il termosifone del bagno va sostituito con uno scaldasalviette",
+      "work": "sostituzione termosifone del bagno con scaldasalviette",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un termosifone sostituito con uno scaldasalviette",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-07",
+        "BAG-08",
+        "BAG-12",
+        "DEM-09",
+        "TIN-07"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato riguarda la sostituzione di un termosifone con scaldasalviette.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "prolungo quello che c'è: il tubo da sedici per l'acqua calda e fredda; i metri non li so, dipende da dove passiamo",
+      "work": "prolungamento tubazione acqua calda e fredda Ø16 per spostamento lavello cucina",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": "Metri non noti, dipendono dal percorso. Lo spostamento del lavello è di circa 1,5 m, ma la lunghezza della tubazione non è stata data",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-06",
+        "CUC-01",
+        "IDR-01",
+        "IDR-03",
+        "IDR-07",
+        "IDR-04",
+        "CUC-02",
+        "CUC-03"
+      ],
+      "unitPriceCents": 386,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-06",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "e lo scarico da quaranta; i metri non li so, dipende da dove passiamo",
+      "work": "prolungamento scarico Ø40 per spostamento lavello cucina",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": "Metri non noti, dipendono dal percorso",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-08",
+        "CUC-01",
+        "CUC-03",
+        "CUC-02",
+        "IDR-05",
+        "IDR-09",
+        "CUC-04",
+        "IDR-10"
+      ],
+      "unitPriceCents": 788,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Poi rimonto il suo lavello, quello vecchio",
+      "work": "rimontaggio lavello esistente nella nuova posizione",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un lavello esistente",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "CUC-01",
+        "CUC-03",
+        "DEM-12",
+        "CUC-02",
+        "TIN-09",
+        "BAG-05",
+        "PAV-07",
+        "SMA-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "CUC-01",
+        "confidence": 0.7
+      }
+    },
+    {
+      "spoken": "e il suo rubinetto vecchio, niente di nuovo da comprare",
+      "work": "rimontaggio rubinetto esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un rubinetto esistente",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "DEM-12",
+        "BAG-08",
+        "CUC-02",
+        "TIN-09",
+        "BAG-09",
+        "BAG-10",
+        "PAV-07",
+        "SMA-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "CUC-02",
+        "confidence": 0.8
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 1,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «prolungamento tubazione acqua calda e fredda Ø16 per spostamento lavello cucina»?"
+    },
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «prolungamento scarico Ø40 per spostamento lavello cucina»?"
+    }
+  ],
+  "exclusions": [
+    "Rifacimento dell'attacco del lavello in cucina: non viene rifatto, si prolunga l'esistente"
+  ],
+  "notes": [
+    "Scaldasalviette del bagno non a listino: modello da definire",
+    "Lavello di cucina da spostare di 1,5 m",
+    "Lunghezza di tubi di carico e scarico da definire in base al percorso"
+  ],
+  "usage": {
+    "inputTokens": 6415,
+    "outputTokens": 1837,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 16035
+}

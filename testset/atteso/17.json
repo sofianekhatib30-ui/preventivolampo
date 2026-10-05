@@ -1,0 +1,113 @@
+{
+  "id": "17",
+  "title": "Bagno con sanitari e rubinetti comprati dalla cliente (muratore, Monza)",
+  "tags": [
+    "materiale_cliente",
+    "fuori_listino",
+    "esclusione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Meroni",
+    "address": "via Borgazzi 40, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "expectedRegime": "agevolata_10"
+  },
+  "lines": [
+    {
+      "spoken": "smontare i quattro sanitari vecchi, vasca compresa",
+      "quantity": 4,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il vaso sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "il bidet sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha solo il bidet a pavimento, con fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "il lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "il piatto doccia al posto della vasca",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "i tre miscelatori, lavabo, bidet e doccia",
+      "quantity": 3,
+      "unit": "cad",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa"
+      },
+      "clientSuppliesMaterial": true
+    },
+    {
+      "spoken": "quello del water con lo scarico grosso",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-02"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "tre normali, acqua calda e fredda con lo scarico",
+      "quantity": 3,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01"
+      },
+      "clientSuppliesMaterial": false
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Rivestimento e piastrelle: restano quelle esistenti"
+  ],
+  "notes": [
+    "Telaio da incasso e cassetta per il vaso sospeso non detti: chi li fornisce?",
+    "Togliendo la vasca, rivestimento e pavimento sotto la vasca da verificare in cantiere",
+    "Il vecchio lo porta via il muratore (DEM-08 comprende carico e trasporto, esclusi oneri di smaltimento)"
+  ]
+}

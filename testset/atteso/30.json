@@ -1,0 +1,102 @@
+{
+  "id": "30",
+  "title": "Bagno di servizio: vaso, bidet nuovo e spostamento lavandino (idraulico, Villasanta)",
+  "tags": [
+    "bene_significativo",
+    "materiale_cliente",
+    "fuori_listino",
+    "dialetto",
+    "misura_approssimata"
+  ],
+  "customer": {
+    "name": "Crippa",
+    "address": "via Mazzini 11, Villasanta"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10_beni_significativi"
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il vaso vecchio",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il vaso a terra nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il bidet a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "per il bidet serve un attacco nuovo, acqua calda e fredda con lo scarico, uno",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il miscelatore del bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "va spostato il lavandino di una ventina di centimetri: quello a ore, tipo tre ore mie",
+      "quantity": 3,
+      "unit": "h",
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "«tipo tre ore»"
+    },
+    {
+      "spoken": "le piastrelle che rompo dove passo coi tubi le rimetto con quelle di scorta che ha lui in cantina, sarà mezzo metro quadro",
+      "quantity": 0.5,
+      "unit": "m2",
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "ripristino localizzato del rivestimento con piastrelle del cliente: nessuna voce di sola posa nel listino"
+      },
+      "clientSuppliesMaterial": true,
+      "quantityNote": "«sarà mezzo metro quadro»"
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Il materiale nuovo lo compra l'idraulico; solo le piastrelle di scorta sono del cliente"
+  ]
+}

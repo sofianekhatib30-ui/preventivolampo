@@ -1,0 +1,169 @@
+{
+  "customer": {
+    "name": "Luca Pozzi",
+    "address": "via Garibaldi 8, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Togliamo le piastrelle vecchie, quelle in graniglia",
+      "work": "rimozione pavimento in piastrelle di graniglia nel soggiorno",
+      "quantity": 26,
+      "unit": "m2",
+      "quantityNote": "Soggiorno 6,5 x 4 m = 26 m2; misura approssimata (\"più o meno\")",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "PAV-01",
+        "DEM-05",
+        "PAV-03",
+        "TIN-09",
+        "DEM-12",
+        "PAV-06",
+        "DEM-09"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Le piastrelle nuove le ha già prese lui, sono gres sessanta per sessanta, io faccio solo la posa",
+      "work": "posa pavimento in gres porcellanato 60x60 nel soggiorno (solo posa)",
+      "quantity": 26,
+      "unit": "m2",
+      "quantityNote": "Soggiorno 6,5 x 4 m = 26 m2; misura approssimata (\"più o meno\")",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "PAV-01",
+        "PAV-02",
+        "DEM-04",
+        "BAG-12",
+        "CUC-06",
+        "ELE-06",
+        "PAV-03",
+        "ELE-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessuna voce copre la posa di gres 60x60: i candidati sono tutti 30x30 o altre lavorazioni.",
+        "suggestedCode": null,
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "togliamo quello vecchio in piastrella",
+      "work": "rimozione battiscopa in piastrella",
+      "quantity": 20,
+      "unit": "m",
+      "quantityNote": "Circa 20 m lineari tutto intorno (\"una ventina di metri\"); misura approssimata",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "DEM-07",
+        "DEM-04",
+        "DEM-05",
+        "DEM-12",
+        "PAV-11",
+        "TIN-09",
+        "DEM-09"
+      ],
+      "unitPriceCents": 213,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-07",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "mettiamo quello nuovo in legno, quello lo porto io",
+      "work": "fornitura e posa battiscopa in legno",
+      "quantity": 20,
+      "unit": "m",
+      "quantityNote": "Circa 20 m lineari tutto intorno (\"una ventina di metri\"); misura approssimata",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-11",
+        "DEM-11",
+        "SMA-04",
+        "DEM-07",
+        "PAV-04",
+        "PAV-07"
+      ],
+      "unitPriceCents": 664,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Le macerie del pavimento le porto via io col furgone",
+      "work": "trasporto e smaltimento macerie della demolizione del pavimento",
+      "quantity": null,
+      "unit": null,
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-01",
+        "DEM-04",
+        "SMA-05",
+        "DEM-11",
+        "SMA-02",
+        "SMA-03",
+        "PAV-01",
+        "SMA-06"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Le macerie le porta via il cliente, nessuna voce di trasporto/smaltimento da addebitare; SMA-xx non corrispondono a un servizio richiesto all'impresa.",
+        "suggestedCode": null,
+        "confidence": 0.6
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 4,
+      "kind": "quantita_mancante",
+      "text": "Quanto «trasporto e smaltimento macerie della demolizione del pavimento»? Dimmi numero e unità."
+    },
+    {
+      "lineIndex": 4,
+      "kind": "unita_mancante",
+      "text": "«trasporto e smaltimento macerie della demolizione del pavimento»: la quantità in che unità?"
+    }
+  ],
+  "exclusions": [
+    "Caldana (massetto) esistente: è buona, non viene toccata"
+  ],
+  "notes": [
+    "Misure del soggiorno e lunghezza del battiscopa approssimate, da verificare",
+    "Piastrelle in gres 60x60 già acquistate dal cliente; battiscopa in legno fornito dall'impresa, quindi chi compra i materiali è misto",
+    "Tipo di intervento non specificato",
+    "Quantità delle macerie non indicata"
+  ],
+  "usage": {
+    "inputTokens": 6973,
+    "outputTokens": 1648,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12358
+}

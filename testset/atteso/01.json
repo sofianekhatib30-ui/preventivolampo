@@ -1,0 +1,145 @@
+{
+  "id": "01",
+  "title": "Bagno completo con sanitari comprati dall'impresa (muratore, Monza)",
+  "tags": [
+    "bene_significativo",
+    "misura_approssimata",
+    "autocorrezione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Colombo",
+    "address": "via Bergamo 14, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "agevolata_10_beni_significativi"
+  },
+  "lines": [
+    {
+      "spoken": "togliamo i sanitari, sono quattro, el cess, il bidet, il lavandino e la vasca",
+      "quantity": 4,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "togliamo le piastrelle dei muri, sono alte due metri tutto intorno",
+      "quantity": 16,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "perimetro (2,20 + 1,80) × 2 = 8 m × 2 m di altezza = 16 m², vuoto per pieno; misure «più o meno»"
+    },
+    {
+      "spoken": "e il pavimento",
+      "quantity": 3.96,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "2,20 × 1,80 = 3,96 m², misure «più o meno»"
+    },
+    {
+      "spoken": "il water a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il bidet a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il lavabo da sessantacinque",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "facciamo il piatto doccia ottanta per ottanta",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-06"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "miscelatore lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "miscelatore bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il miscelatore della doccia a incasso, col soffione",
+      "quantity": 1,
+      "unit": "cad",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-10"
+      },
+      "clientSuppliesMaterial": false
+    },
+    {
+      "spoken": "il rivestimento in gres venti per venti, alto due metri come prima",
+      "quantity": 16,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "BAG-12"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stessa superficie delle piastrelle tolte: 8 m × 2 m = 16 m²"
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Autocorrezione: niente vasca nuova, al suo posto il piatto doccia 80x80",
+    "Pavimento nuovo da definire col figlio della cliente: non entra in questo preventivo",
+    "Scarico del piatto doccia e allacciamenti non detti: da verificare in cantiere",
+    "Secondo piano: accesso da verificare"
+  ]
+}

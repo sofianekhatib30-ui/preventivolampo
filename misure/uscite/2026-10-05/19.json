@@ -1,0 +1,160 @@
+{
+  "customer": {
+    "name": "Galbiati",
+    "address": "via Umberto Primo, Giussano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?",
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "demolizione del pavimento",
+      "work": "demolizione del pavimento esistente in cucina",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "Cucina 3,60 x 3 = 10,80 m2, più 1 m2 del vano frigo = 11,80 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "CUC-04",
+        "PAV-01",
+        "PAV-06",
+        "CUC-05",
+        "PAV-03",
+        "DEM-12",
+        "DEM-06"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "demolizione del pavimento e della caldana",
+      "work": "demolizione della caldana esistente",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "Stessa superficie del pavimento: 10,80 + 1 = 11,80 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-04",
+        "DEM-06",
+        "PAV-01",
+        "PAV-06",
+        "PAV-03",
+        "DEM-12",
+        "PAV-07"
+      ],
+      "unitPriceCents": 1035,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "rifacciamo la caldana, cinque centimetri",
+      "work": "rifacimento caldana (massetto) spessore 5 cm",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "Superficie 10,80 + 1 = 11,80 m2, spessore 5 cm",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-06",
+        "PAV-09",
+        "PAV-10",
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2508,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "gres porcellanato liscio trenta per trenta",
+      "work": "posa pavimento in gres porcellanato liscio 30x30",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "Cucina 3,60 x 3 = 10,80 m2, più 1 m2 del vano frigo = 11,80 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-01",
+        "PAV-02",
+        "DEM-04",
+        "BAG-12",
+        "PAV-03",
+        "PAV-06",
+        "PAV-12",
+        "VAR-06"
+      ],
+      "unitPriceCents": 4217,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-02",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "il battiscopa in gres, alto dieci, tutto intorno",
+      "work": "posa battiscopa in gres h 10 cm lungo tutto il perimetro",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": "Metri non rilevati: la cucina è piena di mobili, da misurare dopo lo svuotamento",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-01",
+        "PAV-02",
+        "DEM-07",
+        "PAV-11",
+        "BAG-12",
+        "DEM-03",
+        "BAG-05"
+      ],
+      "unitPriceCents": 1487,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-12",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 4,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «posa battiscopa in gres h 10 cm lungo tutto il perimetro»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Le piastrelle vecchie non restano: il cliente vuole togliere tutto.",
+    "Metri del battiscopa da prendere quando svuotano la cucina.",
+    "Materiali acquistati dall'impresa."
+  ],
+  "usage": {
+    "inputTokens": 7077,
+    "outputTokens": 1755,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 15446
+}

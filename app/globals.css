@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/*
+ * Token della home: documentazione/index/SPEC.md, sezione «Token».
+ * I font arrivano da next/font/google (self-hosted) tramite le variabili
+ * --font-archivo e --font-plex-mono impostate su <html> in app/layout.tsx.
+ */
+@theme {
+  --color-fondo: #f3f0e8;
+  --color-fondo-2: #e9e4d8;
+  --color-superficie: #ffffff;
+  --color-inchiostro: #16150f;
+  --color-testo-2: #3f3d36;
+  --color-testo-3: #5c5a52;
+  --color-linea: #d9d4c7;
+  --color-linea-2: #b8b3a5;
+  --color-scuro-testo: #cfcabb;
+  --color-scuro-nota: #a39e8f;
+  --color-scuro-linea: #3a3830;
+  --color-segnale: #ffc21f;
+  --color-bolla-mia: #d6e9c6;
+  /* Colori secondari presenti nel riferimento, non elencati come token nella SPEC */
+  --color-chat: #ede9df;
+  --color-scontrino: #fbfaf6;
+  --color-campo: #8c8878;
+  --color-riga: #e6e1d5;
+
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+
+  --radius-card: 24px;
+  --radius-campo: 12px;
+}
+
+@layer base {
+  html {
+    background: var(--color-fondo);
+    color: var(--color-inchiostro);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--color-fondo);
+    color: var(--color-inchiostro);
+    font-family: var(--font-sans);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Le ancore tengono conto dell'header sticky (64 px mobile, 88 px desktop) */
+  [id] {
+    scroll-margin-top: 80px;
+  }
+  @media (min-width: 64rem) {
+    [id] {
+      scroll-margin-top: 104px;
+    }
+  }
+
+  a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-underline-offset: 0.15em;
+  }
+
+  /* Focus visibile ovunque: contorno 3px inchiostro con offset 3px, anche sul giallo */
+  :focus-visible {
+    outline: 3px solid var(--color-inchiostro);
+    outline-offset: 3px;
+  }
+  .su-scuro :focus-visible {
+    outline-color: var(--color-fondo);
+  }
+}
+
+/* Titoli: Archivo 850–900, stretto, interlinea corta. Scala desktop → mobile con clamp() */
+@utility titolo-h1 {
+  font-size: clamp(3.375rem, 2.4rem + 4vw, 6rem); /* 54 → 96 px */
+  line-height: 0.92;
+  font-weight: 850;
+  font-stretch: 68%;
+  letter-spacing: -0.02em;
+}
+@utility titolo-h2 {
+  font-size: clamp(2.625rem, 2.114rem + 2.095vw, 4rem); /* 42 → 64 px */
+  line-height: 0.95;
+  font-weight: 850;
+  font-stretch: 68%;
+  letter-spacing: -0.015em;
+}
+@utility titolo-finale {
+  font-size: clamp(3.625rem, 2.371rem + 5.143vw, 7rem); /* 58 → 112 px */
+  line-height: 0.88;
+  font-weight: 900;
+  font-stretch: 64%;
+  letter-spacing: -0.025em;
+}
+@utility titolo-confronto {
+  font-size: clamp(2.25rem, 1.971rem + 1.143vw, 3rem); /* 36 → 48 px */
+  line-height: 1;
+  font-weight: 850;
+  font-stretch: 70%;
+}
+@utility testo-hero {
+  font-size: clamp(1.125rem, 1.055rem + 0.286vw, 1.3125rem); /* 18 → 21 px */
+  line-height: 1.5;
+}
+@utility testo-base {
+  font-size: clamp(1rem, 0.954rem + 0.19vw, 1.125rem); /* 16 → 18 px */
+  line-height: 1.55;
+}
+@utility margini {
+  padding-inline: clamp(1.25rem, -1.071rem + 9.524vw, 7.5rem); /* 20 → 120 px */
+}
+@utility etichetta {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

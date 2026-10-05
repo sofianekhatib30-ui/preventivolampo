@@ -1,0 +1,64 @@
+{
+  "id": "05",
+  "title": "Negozio di parrucchiera: tinteggiatura e demolizione tavolato (imbianchino, Monza)",
+  "tags": [
+    "non_abitazione",
+    "misura_approssimata",
+    "autocorrezione",
+    "dialetto"
+  ],
+  "customer": {
+    "name": "Elena Mauri",
+    "address": "corso Milano, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "expectedRegime": "ordinaria_22"
+  },
+  "lines": [
+    {
+      "spoken": "prima una mano di fissativo, su tutto",
+      "quantity": 118,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "pareti (8 + 5) × 2 × 3 = 78 m² + soffitto 8 × 5 = 40 m² = 118 m², vuoto per pieno; misure «tipo»"
+    },
+    {
+      "spoken": "pareti e soffitto, lei vuole la superlavabile",
+      "quantity": 118,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "TIN-03"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "stessa superficie del fissativo: 118 m²"
+    },
+    {
+      "spoken": "nel retro c'è un tavolato da buttare giù, sarà due metri e mezzo per tre, in forati, da dieci finito",
+      "quantity": 7.5,
+      "unit": "m2",
+      "match": {
+        "kind": "listino",
+        "code": "DEM-03"
+      },
+      "clientSuppliesMaterial": false,
+      "quantityNote": "2,50 × 3 = 7,5 m²; spessore 10 cm finito, entro gli 11 cm della voce"
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Autocorrezione: niente parete in cartongesso al posto del tavolato, ambiente aperto",
+    "Si lavora di lunedì, giorno di chiusura del negozio",
+    "Carico, trasporto e smaltimento delle macerie del tavolato non detti (DEM-03 li esclude): da chiedere"
+  ]
+}
