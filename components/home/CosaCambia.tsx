@@ -91,6 +91,28 @@ export function CosaCambia() {
           </p>
         </article>
 
+        <article className={`${card} lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-x-10`}>
+          <div className="flex flex-col gap-3 lg:gap-[18px]">
+            <h3 className={titoloCard}>Tu racconti nella tua lingua. Il cliente legge nella sua.</h3>
+            <p className={testoCard}>
+              Scrivi o detti il sopralluogo in rumeno, albanese, arabo o un&apos;altra lingua: la bozza esce in italiano. Se il cliente è
+              straniero, il preventivo gli arriva in inglese, tedesco, francese, spagnolo o olandese, con il testo italiano accanto
+              che fa fede. La traduzione la vedi e la correggi prima di mandarla.
+            </p>
+          </div>
+          <ol className="m-0 mt-4 flex list-none flex-col gap-2 p-0 font-mono text-[13px] lg:mt-0 lg:text-sm">
+            <li lang="ro" className="rounded-campo bg-bolla-mia px-4 py-3">«Scot faianța veche din baie, doisprezece metri.»</li>
+            <li className="rounded-campo border border-linea px-4 py-3">
+              <span className="font-semibold">Rimozione rivestimento in piastrelle · 12 mq</span>
+              <span className="block text-testo-3">dal tuo listino, in italiano</span>
+            </li>
+            <li lang="de" className="rounded-campo border border-linea px-4 py-3">
+              Entfernung des Fliesenbelags
+              <span className="block text-testo-3">al cliente tedesco, con l&apos;italiano accanto</span>
+            </li>
+          </ol>
+        </article>
+
         <Card titolo="Un aiuto vero, da una persona">
           <p className={testoCard}>
             <SoloDesktop>

@@ -8,7 +8,7 @@ const link = "font-semibold text-cielo-scuro";
 
 export default function Page() {
   return (
-    <PaginaLegale titolo="Privacy" aggiornata="8 ottobre 2026">
+    <PaginaLegale titolo="Privacy" aggiornata="9 ottobre 2026">
       <p>
         Questa pagina spiega quali dati personali tratta PreventivoLampo, perché, dove finiscono e per quanto tempo restano.
       </p>
@@ -71,7 +71,7 @@ export default function Page() {
       <ul>
         <li>Supabase: database, accesso all&apos;area e archivio dei PDF, in Irlanda (UE).</li>
         <li>Vercel: il sito e le sue funzioni, a Francoforte (UE).</li>
-        <li>Anthropic (Claude): legge il testo del sopralluogo e prepara la bozza, negli Stati Uniti.</li>
+        <li>Anthropic (Claude): legge il testo del sopralluogo e prepara la bozza, e traduce le voci del preventivo quando il cliente parla un&apos;altra lingua, negli Stati Uniti.</li>
         <li>Twilio e WhatsApp (Meta): ricevono e mandano i messaggi WhatsApp.</li>
         <li>n8n: collega i messaggi WhatsApp a PreventivoLampo.</li>
         <li>Resend: manda le email con il codice di accesso.</li>

@@ -2,9 +2,23 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import type { Testi } from "@/lib/preventivi/lingua";
+
+const ITALIANO: Testi["accetta"] = {
+  titolo: "La tua risposta",
+  nome: "Nome e cognome",
+  letto: "Ho letto il preventivo e lo accetto alle condizioni indicate.",
+  accetto: "Accetto il preventivo",
+  invio: "Registro la risposta…",
+  nonAccetto: "Non lo accetto",
+  nota: "Accettando confermi il preventivo con il tuo nome, la data e l'ora di oggi. Non è una firma elettronica qualificata. Se sei un consumatore hai 14 giorni per recedere.",
+  errore: "Non sono riuscito a registrare la risposta. Riprova.",
+};
 
 // La risposta del cliente: nome, spunta di presa visione, un pulsante. Nessuna registrazione.
-export default function Accetta({ token }: { token: string }) {
+// Cliente straniero: i testi nella sua lingua, con la clausola «prevale il testo italiano» nella spunta.
+export default function Accetta({ token, testi }: { token: string; testi?: Testi["accetta"] }) {
+  const t = testi ?? ITALIANO;
   const router = useRouter();
   const [nome, setNome] = useState("");
   const [letto, setLetto] = useState(false);
@@ -29,7 +43,10 @@ export default function Accetta({ token }: { token: string }) {
       body: JSON.stringify({ nome, esito }),
     });
     if (res.ok) router.refresh();
-    else setErrore((await res.json()).errore ?? "Non sono riuscito a registrare la risposta. Riprova.");
+    else {
+      const msg = (await res.json().catch(() => ({}))).errore as string | undefined;
+      setErrore(testi ? t.errore : (msg ?? t.errore));
+    }
     setInvio(false);
   }
 
@@ -37,9 +54,9 @@ export default function Accetta({ token }: { token: string }) {
 
   return (
     <section id="accetta" className="mt-8 rounded-card bg-superficie p-5 ring-1 ring-linea sm:p-6">
-      <h2 className="text-xl font-extrabold">La tua risposta</h2>
+      <h2 className="text-xl font-extrabold">{t.titolo}</h2>
       <label className="mt-3 block text-[15px] font-semibold text-testo-2">
-        Nome e cognome
+        {t.nome}
         <input
           value={nome}
           onChange={(e) => setNome(e.target.value)}
@@ -49,7 +66,7 @@ export default function Accetta({ token }: { token: string }) {
       </label>
       <label className="mt-4 flex cursor-pointer items-start gap-3 text-[16px]">
         <input type="checkbox" className="mt-0.5 size-6 shrink-0 accent-[#343645]" checked={letto} onChange={(e) => setLetto(e.target.checked)} />
-        Ho letto il preventivo e lo accetto alle condizioni indicate.
+        {t.letto}
       </label>
       <button
         type="button"
@@ -57,7 +74,7 @@ export default function Accetta({ token }: { token: string }) {
         onClick={() => rispondi("accettato")}
         className="bottone bottone-azione mt-5 min-h-14 w-full text-[17px] disabled:opacity-50"
       >
-        {invio ? "Registro la risposta…" : "Accetto il preventivo"}
+        {invio ? t.invio : t.accetto}
       </button>
       <button
         type="button"
@@ -65,11 +82,10 @@ export default function Accetta({ token }: { token: string }) {
         onClick={() => rispondi("rifiutato")}
         className="bottone mt-2 min-h-12 w-full text-[16px] font-semibold text-testo-2 underline disabled:opacity-50"
       >
-        Non lo accetto
+        {t.nonAccetto}
       </button>
       <p className="mt-4 text-sm leading-relaxed text-testo-3">
-        Accettando confermi il preventivo con il tuo nome, la data e l&apos;ora di oggi. Non è una firma elettronica qualificata.
-        Se sei un consumatore hai 14 giorni per recedere.
+        {t.nota}
       </p>
       {errore && (
         <p role="alert" className="mt-3 rounded-campo border-l-4 border-errore px-4 py-3 font-semibold text-errore">

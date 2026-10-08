@@ -46,7 +46,7 @@ export default function NuovoPreventivo() {
   return (
     <form className="mt-6 space-y-4" onSubmit={invia}>
       <label className="block">
-        <span className="text-[17px] font-semibold">Racconta il lavoro come lo diresti nel vocale</span>
+        <span className="text-[17px] font-semibold">Racconta il lavoro come lo diresti nel vocale, in italiano o nella tua lingua</span>
         <textarea
           required
           minLength={30}

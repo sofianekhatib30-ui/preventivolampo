@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { conti, importoRiga, imponibileParziale, mancanze, regimeDi, type Mancanza } from "@/lib/preventivi/calcolo";
+import { LINGUE, linguaDi, mancanzaTraduzione, NOME_LINGUA, traduzioneAllineata, type Lingua } from "@/lib/preventivi/lingua";
 import type { Preventivo, RigaPreventivo } from "@/lib/preventivi/modello";
 import { centesimi, euro, numero, REGIME, UNITA } from "./formato";
 
@@ -80,7 +81,18 @@ function Scelta<T extends string>({
 }
 
 // api: dove salvare (la demo usa /api/preventivi, l'area dell'impresa /api/area/preventivi).
-export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: { iniziale: Preventivo; voci: Voce[]; api?: string }) {
+export default function Revisione({
+  iniziale,
+  voci,
+  api = "/api/preventivi",
+  traduzioni = false,
+}: {
+  iniziale: Preventivo;
+  voci: Voce[];
+  api?: string;
+  // Lingua del cliente e traduzione: solo nell'area delle imprese.
+  traduzioni?: boolean;
+}) {
   const router = useRouter();
   const [p, setP] = useState<Preventivo>(iniziale);
   const [testiPrezzo, setTestiPrezzo] = useState<string[]>(iniziale.righe.map((r) => (r.unitPriceCents === null ? "" : (r.unitPriceCents / 100).toFixed(2).replace(".", ","))));
@@ -89,17 +101,24 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
   const [soloDaSistemare, setSoloDaSistemare] = useState(false);
   const [conferma, setConferma] = useState(false);
   const [controllato, setControllato] = useState(false);
+  const [traduco, setTraduco] = useState(false);
   const spunta = useRef<HTMLInputElement>(null);
   const byCode = useMemo(() => new Map(voci.map((v) => [v.code, v])), [voci]);
 
-  const m = mancanze(p);
+  const mDati = mancanze(p);
+  const mTrad = traduzioni ? mancanzaTraduzione(p) : null;
+  // Le mancanze dei dati, più la traduzione da fare quando il cliente è straniero.
+  const m: Mancanza[] = mTrad ? [...mDati, { riga: null, testo: mTrad }] : mDati;
+  const lingua = linguaDi(p);
+  const allineata = traduzioneAllineata(p);
+  const sezioneDi = (x: Mancanza) => (x.riga !== null ? `riga-${x.riga}` : x.testo === mTrad ? "sezione-lingua" : "sezione-iva");
   const c = conti(p);
   const regime = regimeDi(p);
   const stati = p.righe.map((_, i) => statoRiga(m, i));
   const pronte = stati.filter((s) => s.tipo === "pronta").length;
   const daPrezzare = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Da prezzare")).length;
   const senzaMisura = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Manca la misura")).length;
-  const domandeIva = m.filter((x) => x.riga === null).length;
+  const domandeIva = mDati.filter((x) => x.riga === null).length;
   const senzaValore = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Manca il valore del bene")).length;
 
   useEffect(() => {
@@ -141,14 +160,20 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
     const prima = m[0];
     if (!prima) return;
     setSoloDaSistemare(false);
-    window.setTimeout(() => vaiA(prima.riga === null ? "sezione-iva" : `riga-${prima.riga}`), 0);
+    window.setTimeout(() => vaiA(sezioneDi(prima)), 0);
   }
 
   async function salva(): Promise<boolean> {
     const res = await fetch(`${api}/${p.id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ cliente: p.cliente, iva: p.iva, righe: p.righe, esclusioni: p.esclusioni }),
+      body: JSON.stringify({
+        cliente: p.cliente,
+        iva: p.iva,
+        righe: p.righe,
+        esclusioni: p.esclusioni,
+        ...(traduzioni ? { lingua: p.lingua ?? "it", traduzione: p.traduzione ?? null } : {}),
+      }),
     });
     if (!res.ok) {
       setMessaggio((await res.json()).errore ?? "Non sono riuscito a salvare. Riprova.");
@@ -172,6 +197,27 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
     setStato("pronto");
   }
 
+  async function traduci() {
+    setTraduco(true);
+    setMessaggio("");
+    if (await salva()) {
+      const res = await fetch(`${api}/${p.id}/traduci`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ lingua }),
+      });
+      const b = await res.json().catch(() => ({}));
+      if (res.ok) setP((prev) => ({ ...prev, lingua: b.lingua, traduzione: b.traduzione }));
+      else setMessaggio(b.errore ?? "Non sono riuscito a tradurre. Riprova.");
+    }
+    setTraduco(false);
+  }
+
+  const setTradotta = (campo: "righe" | "esclusioni", i: number, testo: string) =>
+    setP((prev) =>
+      prev.traduzione ? { ...prev, traduzione: { ...prev.traduzione, [campo]: prev.traduzione[campo].map((x, j) => (j === i ? testo : x)) } } : prev,
+    );
+
   async function soloSalva() {
     setStato("invio");
     setMessaggio((await salva()) ? "Bozza salvata." : "");
@@ -181,6 +227,7 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
   // Le mancanze raggruppate: «valore del bene significativo (righe 4, 5, 6)».
   const gruppi = new Map<string, number[]>();
   for (const x of m) gruppi.set(x.testo, [...(gruppi.get(x.testo) ?? []), ...(x.riga === null ? [] : [x.riga])]);
+  const vaiAlGruppo = (testo: string, righe: number[]) => vaiA(righe.length ? `riga-${righe[0]}` : testo === mTrad ? "sezione-lingua" : "sezione-iva");
 
   const origine =
     p.origine?.tipo === "esempio"
@@ -237,6 +284,70 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
           </label>
         </div>
       </section>
+
+      {traduzioni && (
+        <section id="sezione-lingua" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${mTrad ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
+          <h2 className="text-xl font-extrabold">Lingua del cliente</h2>
+          <label className={`${etichetta} mt-3`}>
+            In che lingua gli mandi il preventivo?
+            <select className={campo} value={lingua} onChange={(e) => setP({ ...p, lingua: e.target.value as Lingua })}>
+              {LINGUE.map((l) => (
+                <option key={l} value={l}>
+                  {l === "it" ? "Italiano" : `${NOME_LINGUA[l].proprio} (${NOME_LINGUA[l].italiano})`}
+                </option>
+              ))}
+            </select>
+          </label>
+          {lingua !== "it" && (
+            <>
+              <p className="mt-3 text-[15px] leading-relaxed text-testo-2">
+                Il cliente riceve messaggio, pagina e PDF in {NOME_LINGUA[lingua].italiano}, con il testo italiano accanto: in caso di
+                dubbio vale l&apos;italiano. Controlla le voci tradotte, puoi correggerle.
+              </p>
+              {!allineata && p.traduzione?.lingua === lingua && (
+                <p className="mt-3 rounded-campo bg-ambra px-4 py-3 text-[15px] font-semibold text-ambra-testo">
+                  Hai cambiato le voci dopo la traduzione: rifalla, così il cliente legge le stesse cose che leggi tu.
+                </p>
+              )}
+              {(!allineata || traduco) && (
+                <button type="button" onClick={traduci} disabled={traduco} className="bottone bottone-azione mt-4 min-h-12 text-[16px] disabled:opacity-60">
+                  {traduco ? "Traduco…" : p.traduzione?.lingua === lingua ? "Rifai la traduzione" : `Traduci in ${NOME_LINGUA[lingua].italiano}`}
+                </button>
+              )}
+              {allineata && p.traduzione && (
+                <ol className="mt-4 space-y-3">
+                  {p.righe.map((r, i) => (
+                    <li key={i}>
+                      <label className="block text-[14px] text-testo-3">
+                        {i + 1}. {r.work}
+                        <input
+                          lang={lingua}
+                          className={campo}
+                          value={p.traduzione!.righe[i]}
+                          onChange={(e) => setTradotta("righe", i, e.target.value)}
+                        />
+                      </label>
+                    </li>
+                  ))}
+                  {p.esclusioni.map((e, i) => (
+                    <li key={`e${i}`}>
+                      <label className="block text-[14px] text-testo-3">
+                        Escluso: {e}
+                        <input
+                          lang={lingua}
+                          className={campo}
+                          value={p.traduzione!.esclusioni[i]}
+                          onChange={(ev) => setTradotta("esclusioni", i, ev.target.value)}
+                        />
+                      </label>
+                    </li>
+                  ))}
+                </ol>
+              )}
+            </>
+          )}
+        </section>
+      )}
 
       <section id="sezione-iva" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${domandeIva ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
         <h2 className="text-xl font-extrabold">IVA: tre domande</h2>
@@ -479,7 +590,7 @@ export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: {
                 <li key={testo}>
                   <button
                     type="button"
-                    onClick={() => vaiA(righe.length ? `riga-${righe[0]}` : "sezione-iva")}
+                    onClick={() => vaiAlGruppo(testo, righe)}
                     className="min-h-10 text-left text-[15px] text-cielo underline underline-offset-2"
                   >
                     {testo}

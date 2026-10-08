@@ -87,6 +87,8 @@ La home promette cose precise. **Non va online in produzione finché ognuna non 
 | «firmiamo l'accordo per il trattamento dei dati» | Modello DPA pronto | Notaio |
 | «Nessun rinnovo automatico» / «Disdici quando vuoi» | Condizioni coerenti | Notaio |
 | «100% dei prezzi dal tuo listino» / «tutte le 26 voci giuste» | Numeri pubblicati = misure generate da `npm run misura`: si pubblicano in grande solo i 100% che reggono a ogni misura (prezzi inventati, IVA, banco di verifica); le voci giuste del banco principale variano fra 97 e 99% e stanno nel testo. Si aggiornano a ogni nuova misura, anche se peggiori | `misure/2026-10-08.md`, `misure/2026-10-08-verifica.md` |
+| «la bozza esce in italiano» | Racconto in un'altra lingua: le voci della bozza sempre in italiano (regola nel prompt di estrazione) | `test/lingue.test.ts` |
+| «gli mandi il preventivo nella sua lingua» | Traduzione delle voci controllata dall'artigiano; PDF e pagina bilingui con l'italiano che prevale; niente approvazione se la traduzione manca o non corrisponde alle voci | `test/lingue.test.ts` |
 
 Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Mandi un vocale su WhatsApp» è diventata «Lo racconti a voce o lo scrivi» (il canale WhatsApp con i vocali non è ancora attivo per gli artigiani), e «audio cancellati dopo 30 giorni» è diventata «Ai nostri server arriva solo il testo, non l'audio» (la dettatura avviene nel browser, nessun audio viene salvato).
 

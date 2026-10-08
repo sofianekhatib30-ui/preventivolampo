@@ -52,6 +52,17 @@ const DOMANDE: Domanda[] = [
     ),
   },
   {
+    domanda: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
+    risposta: (
+      <>
+        Sì. Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino, spagnolo o un&apos;altra lingua, e la bozza esce in
+        italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c&apos;è, la scrivi. E se il cliente
+        parla inglese, tedesco, francese, spagnolo o olandese, gli mandi il preventivo nella sua lingua: la traduzione la controlli
+        tu, e il testo italiano resta accanto e fa fede.
+      </>
+    ),
+  },
+  {
     domanda: "Parlo veloce, c'è rumore, uso termini miei.",
     risposta: (
       <>

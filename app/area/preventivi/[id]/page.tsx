@@ -38,7 +38,7 @@ export default async function PaginaPreventivo({ params }: { params: Promise<{ i
           Tutti i preventivi
         </Link>
         <div className="mt-3">
-          {p.stato === "bozza" ? <Revisione iniziale={p} voci={voci} api="/api/area/preventivi" /> : <Approvato p={p} pdf={`/api/area/preventivi/${p.id}/pdf`} />}
+          {p.stato === "bozza" ? <Revisione iniziale={p} voci={voci} api="/api/area/preventivi" traduzioni /> : <Approvato p={p} pdf={`/api/area/preventivi/${p.id}/pdf`} />}
         </div>
         {p.stato === "bozza" && (
           <div className="mt-8 border-t border-linea pt-4">

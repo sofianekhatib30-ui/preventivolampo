@@ -9,7 +9,9 @@ import { mancanze } from "./calcolo";
 import type { Contesto } from "./contesto";
 import { daBozza, nuovoId } from "./da-bozza";
 import { demo, listino, perCodice } from "./demo";
-import { ModificheBozza, type Preventivo } from "./modello";
+import { Lingua, ModificheBozza, type Preventivo } from "./modello";
+import { traduciVoci } from "./traduzione";
+import { linguaDi, mancanzaTraduzione } from "./lingua";
 import { generaPdf } from "./pdf";
 import { Rifiuto } from "./rifiuto";
 import { perToken } from "./risolvi";
@@ -93,11 +95,31 @@ export async function approvaIn(ctx: Contesto, id: string, adesso = new Date()):
   const p = await ctx.leggi(id);
   if (!p) throw new Rifiuto("Preventivo non trovato.", 404);
   if (p.stato !== "bozza") throw new Rifiuto("Il preventivo è già approvato.", 409);
-  const m = mancanze(p);
-  if (m.length) throw new Rifiuto(`Prima di approvare: ${m.map((x) => x.testo).join("; ")}.`, 422);
+  const m = mancanze(p).map((x) => x.testo);
+  const t = mancanzaTraduzione(p);
+  if (t) m.push(t);
+  if (m.length) throw new Rifiuto(`Prima di approvare: ${m.join("; ")}.`, 422);
   const next: Preventivo = { ...p, stato: "approvato", approvatoIl: adesso.toISOString(), tokenAccettazione: nuovoId() };
   await ctx.salva(next, { tipo: "approvato" });
   await imparaDalPreventivo(ctx, next);
+  return next;
+}
+
+// Traduce le voci nella lingua del cliente. Solo in bozza: approvato, il documento non cambia più.
+export async function traduciIn(ctx: Contesto, id: string, lingua: unknown, call: ToolCaller): Promise<Preventivo> {
+  const p = await ctx.leggi(id);
+  if (!p) throw new Rifiuto("Preventivo non trovato.", 404);
+  if (p.stato !== "bozza") throw new Rifiuto("Il preventivo è già approvato: non si traduce più.", 409);
+  const l = Lingua.safeParse(lingua);
+  if (!l.success) throw new Rifiuto("Lingua non disponibile.", 400);
+  if (l.data === "it") {
+    const next: Preventivo = { ...p, lingua: "it", traduzione: null };
+    await ctx.salva(next);
+    return next;
+  }
+  const traduzione = await traduciVoci(p, l.data, call);
+  const next: Preventivo = { ...p, lingua: l.data, traduzione };
+  await ctx.salva(next);
   return next;
 }
 
@@ -117,7 +139,7 @@ export async function rispondiCliente(token: string, nome: string, esito: "accet
   // Prova di cosa ha visto il cliente: l'impronta del PDF approvato, com'era prima della sua risposta.
   const impronta = ctx.tipo === "impresa" ? createHash("sha256").update(await generaPdf(p, azienda)).digest("hex") : undefined;
   const next: Preventivo = { ...p, stato: esito, accettazione: { nome: n, il: adesso.toISOString(), esito } };
-  await ctx.salva(next, { tipo: esito, dati: { nome: n, ...traccia, ...(impronta ? { pdfSha256: impronta } : {}) } });
+  await ctx.salva(next, { tipo: esito, dati: { nome: n, lingua: linguaDi(p), ...traccia, ...(impronta ? { pdfSha256: impronta } : {}) } });
   return next;
 }
 

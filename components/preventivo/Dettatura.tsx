@@ -1,9 +1,12 @@
 "use client";
 
 import { useRef, useState, useSyncExternalStore } from "react";
+import { LINGUE_RACCONTO } from "@/lib/preventivi/lingua";
 
 // Dettatura con il riconoscimento vocale del browser (Web Speech API, italiano): niente chiavi,
 // niente audio sul nostro server. Dove il browser non lo supporta, il pulsante non compare.
+// L'artigiano sceglie la lingua in cui parla: la bozza esce comunque in italiano. Se il telefono
+// non conosce quella lingua (per esempio albanese o arabo dialettale su iPhone), lo diciamo e si scrive.
 type Riconoscimento = {
   lang: string;
   continuous: boolean;
@@ -31,6 +34,13 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
   const [ascolto, setAscolto] = useState(false);
   const [provvisorio, setProvvisorio] = useState("");
   const [errore, setErrore] = useState("");
+  const [lingua, setLingua] = useState<string>(() => {
+    try {
+      return (typeof window !== "undefined" && window.localStorage.getItem("pl_lingua_racconto")) || "it-IT";
+    } catch {
+      return "it-IT";
+    }
+  });
   const rec = useRef<Riconoscimento | null>(null);
 
   if (!supportata) return null;
@@ -39,7 +49,7 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
     const C = costruttore();
     if (!C) return;
     const r = new C();
-    r.lang = "it-IT";
+    r.lang = lingua;
     r.continuous = true;
     r.interimResults = true;
     r.onresult = (e) => {
@@ -51,7 +61,14 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
       }
       setProvvisorio(parziale);
     };
-    r.onerror = (e) => setErrore(e.error === "not-allowed" ? "Il browser non ha il permesso di usare il microfono." : "La dettatura si è interrotta. Riprova.");
+    r.onerror = (e) =>
+      setErrore(
+        e.error === "not-allowed"
+          ? "Il browser non ha il permesso di usare il microfono."
+          : e.error === "language-not-supported"
+            ? "Su questo telefono la dettatura in questa lingua non c'è. Scrivi pure il testo nella tua lingua: la bozza esce in italiano lo stesso."
+            : "La dettatura si è interrotta. Riprova.",
+      );
     r.onend = () => {
       setAscolto(false);
       setProvvisorio("");
@@ -62,8 +79,32 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
     setAscolto(true);
   }
 
+  function cambiaLingua(l: string) {
+    setLingua(l);
+    try {
+      window.localStorage.setItem("pl_lingua_racconto", l);
+    } catch {
+      // senza memoria del browser resta la scelta di questa volta
+    }
+  }
+
   return (
     <div className="mt-2">
+      <label className="mb-2 flex flex-wrap items-center gap-2 text-[15px] font-semibold text-testo-2">
+        Parlo in
+        <select
+          value={lingua}
+          onChange={(e) => cambiaLingua(e.target.value)}
+          disabled={ascolto}
+          className="min-h-11 rounded-campo border border-linea-2 bg-superficie px-2 text-[16px] font-normal text-inchiostro"
+        >
+          {LINGUE_RACCONTO.map((l) => (
+            <option key={l.codice} value={l.codice} lang={l.codice}>
+              {l.nome}
+            </option>
+          ))}
+        </select>
+      </label>
       <button
         type="button"
         onClick={() => (ascolto ? rec.current?.stop() : avvia())}
@@ -78,7 +119,9 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
       </button>
       {provvisorio && <p className="mt-2 text-[15px] italic text-testo-3">{provvisorio}…</p>}
       {errore && <p className="mt-2 text-[15px] text-errore">{errore}</p>}
-      <p className="mt-1.5 text-sm text-testo-3">Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo.</p>
+      <p className="mt-1.5 text-sm text-testo-3">
+        Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo. In qualunque lingua parli, la bozza esce in italiano.
+      </p>
     </div>
   );
 }

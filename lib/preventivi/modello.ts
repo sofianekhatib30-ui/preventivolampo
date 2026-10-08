@@ -1,6 +1,7 @@
 import { z } from "zod";
 import { VatContext } from "@/lib/banco/schema";
 import { CODICE, Unit } from "@/lib/listino/schema";
+import { LINGUE } from "./lingua";
 
 // Il preventivo salvato: la bozza del motore diventa un documento che l'artigiano corregge e approva.
 // Stati: bozza → approvato (PDF) → accettato o rifiutato dal cliente; scaduto dopo la validità.
@@ -23,6 +24,15 @@ export const RigaPreventivo = z.strictObject({
   addToPriceList: z.boolean(),
 });
 
+// Lingua del cliente e traduzione delle voci (lib/preventivi/lingua.ts). Senza: italiano.
+export const Lingua = z.enum(LINGUE);
+export const Traduzione = z.strictObject({
+  lingua: Lingua.exclude(["it"]),
+  righe: z.array(z.string().max(400)).max(80),
+  esclusioni: z.array(z.string().max(400)).max(30),
+  sorgente: z.strictObject({ righe: z.array(z.string().max(200)).max(80), esclusioni: z.array(z.string().max(300)).max(30) }),
+});
+
 export const Preventivo = z.strictObject({
   id: z.string().regex(/^[A-Za-z0-9_-]{22}$/),
   numero: z.string(),
@@ -41,6 +51,8 @@ export const Preventivo = z.strictObject({
   origine: z.object({ tipo: z.enum(["esempio", "testo"]), caso: z.string().optional() }).optional(),
   // Prima apertura della pagina del cliente (da browser vero, non dall'anteprima del link).
   vistoIl: z.string().nullable().optional(),
+  lingua: Lingua.optional(),
+  traduzione: Traduzione.nullable().optional(),
 });
 
 export type RigaPreventivo = z.infer<typeof RigaPreventivo>;
@@ -52,5 +64,7 @@ export const ModificheBozza = z.strictObject({
   iva: VatContext,
   righe: z.array(RigaPreventivo).min(1).max(80),
   esclusioni: z.array(z.string().max(300)).max(30),
+  lingua: Lingua.optional(),
+  traduzione: Traduzione.nullable().optional(),
 });
 export type ModificheBozza = z.infer<typeof ModificheBozza>;

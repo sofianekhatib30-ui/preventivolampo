@@ -3,6 +3,7 @@
 import { useState, useSyncExternalStore } from "react";
 import { conti } from "@/lib/preventivi/calcolo";
 import type { Preventivo } from "@/lib/preventivi/modello";
+import { linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
 import { euro } from "./formato";
 
 const quando = (iso: string) =>
@@ -21,9 +22,14 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
   const [copiato, setCopiato] = useState(false);
 
   const linkCliente = p.tokenAccettazione ? `${origine}/accetta/${p.tokenAccettazione}` : "";
-  const messaggio = `Buongiorno${p.cliente.name ? ` ${p.cliente.name}` : ""}, le mando il preventivo n. ${p.numero}${
-    c ? ` (totale ${euro(c.totalCents)} IVA inclusa)` : ""
-  }. Lo può vedere e accettare da qui, senza registrarsi: ${linkCliente}`;
+  // Al cliente straniero il messaggio arriva nella sua lingua (la pagina e il PDF sono bilingui).
+  const lingua = linguaDi(p);
+  const messaggio =
+    lingua !== "it" && traduzioneAllineata(p)
+      ? TESTI[lingua].messaggio(p.cliente.name, p.numero, c ? euro(c.totalCents) : null, linkCliente)
+      : `Buongiorno${p.cliente.name ? ` ${p.cliente.name}` : ""}, le mando il preventivo n. ${p.numero}${
+          c ? ` (totale ${euro(c.totalCents)} IVA inclusa)` : ""
+        }. Lo può vedere e accettare da qui, senza registrarsi: ${linkCliente}`;
 
   async function copia() {
     try {
@@ -77,6 +83,11 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
 
       {p.stato === "approvato" && p.tokenAccettazione && (
         <div className="mt-5 flex flex-col gap-2.5">
+          {lingua !== "it" && traduzioneAllineata(p) && (
+            <p className="text-[15px] text-testo-2">
+              Il cliente riceve messaggio, pagina e PDF in {NOME_LINGUA[lingua].italiano}, con il testo italiano accanto che fa fede.
+            </p>
+          )}
           <a
             href={`https://wa.me/?text=${encodeURIComponent(messaggio)}`}
             target="_blank"

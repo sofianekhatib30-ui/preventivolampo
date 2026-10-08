@@ -96,6 +96,18 @@ const PROMESSE: Promessa[] = [
     requisito: "Numeri pubblicati = misure generate da npm run misura",
     prova: { file: "misure/2026-10-08-verifica.md", contiene: "| 26 su 26 (100,0%) |" },
   },
+  {
+    rigaSpec: "«la bozza esce in italiano»",
+    frasi: ["la bozza esce in italiano"],
+    requisito: "Racconto in un'altra lingua, voci della bozza in italiano",
+    prova: { file: "test/lingue.test.ts", contiene: "il motore sa che il racconto può essere in un'altra lingua" },
+  },
+  {
+    rigaSpec: "«gli mandi il preventivo nella sua lingua»",
+    frasi: ["gli mandi il preventivo nella sua lingua"],
+    requisito: "Traduzione controllata, PDF e pagina bilingui con l'italiano che prevale",
+    prova: { file: "test/lingue.test.ts", contiene: "non si approva senza traduzione; con la traduzione il PDF è bilingue" },
+  },
 ];
 
 const ROOT = path.resolve(__dirname, "..");
@@ -145,7 +157,7 @@ describe("promesse della home", () => {
   it("ogni riga della tabella della SPEC ha la sua promessa qui, e nessuna in più", () => {
     const righe = righeDellaSpec();
     // Minimo: una tabella che sparisce o si svuota non deve far passare il test.
-    expect(righe.length).toBeGreaterThanOrEqual(12);
+    expect(righe.length).toBeGreaterThanOrEqual(14);
     expect(PROMESSE.map((p) => p.rigaSpec).sort()).toEqual([...righe].sort());
   });
 
