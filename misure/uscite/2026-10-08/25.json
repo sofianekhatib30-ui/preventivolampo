@@ -1,0 +1,152 @@
+{
+  "customer": {
+    "name": "famiglia Radaelli",
+    "address": "via Lario, Lissone"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "buttiamo giù il tavolato tra cucina e sala, è sottile, sette centimetri con l'intonaco; sarà... quattro metri per due e settanta",
+      "work": "demolizione tavolato tra cucina e sala, spessore 7 cm con intonaco",
+      "quantity": 10.8,
+      "unit": "m2",
+      "quantityNote": "lunghezza 4 m per altezza 2,70 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "VAR-05",
+        "DEM-02",
+        "CUC-04",
+        "DEM-06",
+        "DEM-01",
+        "DEM-03",
+        "CUC-05"
+      ],
+      "unitPriceCents": 1073,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-02",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Togliamo due porte, quelle normali, ottanta per duecentodieci, col telaio",
+      "work": "rimozione porte interne 80x210 cm con telaio",
+      "quantity": 3.36,
+      "unit": "m2",
+      "quantityNote": "nella misura della voce: 2*0.8*2.1 = 3,36 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "DEM-02",
+        "DEM-03",
+        "DEM-06",
+        "BAG-06",
+        "DEM-09",
+        "DEM-01",
+        "BAG-02"
+      ],
+      "unitPriceCents": 1610,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-11",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Scrostiamo l'intonaco sulla parete della cucina, tre e mezzo per due e settanta",
+      "work": "rimozione intonaco parete cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "larghezza parete 3,5 m per altezza 2,70 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-11"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "e lo rifacciamo a civile",
+      "work": "rifacimento intonaco civile parete cucina",
+      "quantity": 9.45,
+      "unit": "m2",
+      "quantityNote": "stessa parete dell'intonaco rimosso: 3,5 m per 2,70 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "VAR-06"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Le macerie le carichiamo a mano e le portiamo in discarica: saranno due metri cubi, due e mezzo",
+      "work": "carico a mano e trasporto macerie in discarica",
+      "quantity": 2.5,
+      "unit": "m3",
+      "quantityNote": "quantità stimata dall'artigiano, detta come «due metri cubi, due e mezzo»: presa l'ultima, 2,5 m³",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "TIN-10",
+        "DEM-04",
+        "DEM-11"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Fornitura e posa delle porte nuove: le fa il falegname"
+  ],
+  "notes": [
+    "CILA già presentata dal geometra",
+    "Macerie: l'artigiano ha detto «due metri cubi, due e mezzo», registrati 2,5 m³ da verificare"
+  ],
+  "usage": {
+    "inputTokens": 9629,
+    "outputTokens": 1717,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12131
+}

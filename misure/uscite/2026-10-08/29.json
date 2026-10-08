@@ -1,0 +1,138 @@
+{
+  "customer": {
+    "name": "Frigerio",
+    "address": "via Veneto, Macherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "camera dei ragazzi, c'è la carta da parati da togliere su tutte le pareti. La camera è tre e ottanta per tre e venti, alta due e settanta",
+      "work": "rimozione carta da parati pareti camera",
+      "quantity": 37.8,
+      "unit": "m2",
+      "quantityNote": "perimetro della camera per l'altezza: (3,80+3,20)*2*2,70",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-08",
+        "BAG-12",
+        "VAR-01",
+        "DEM-09",
+        "DEM-05",
+        "DEM-07",
+        "DEM-11",
+        "TIN-11"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato riguarda la rimozione della carta da parati: DEM-05 è per piastrelle, quindi non va bene.",
+        "suggestedCode": null,
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "rasatura a una mano sulle pareti",
+      "work": "rasatura a una mano delle pareti",
+      "quantity": 37.8,
+      "unit": "m2",
+      "quantityNote": "perimetro della camera per l'altezza: (3,80+3,20)*2*2,70",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-10",
+        "TIN-11",
+        "VAR-01",
+        "BAG-12",
+        "BAG-13",
+        "VAR-06",
+        "TIN-01",
+        "VAR-02"
+      ],
+      "unitPriceCents": 789,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "il bianco semilavabile, pareti e soffitto",
+      "work": "pittura bianca semilavabile pareti e soffitto camera",
+      "quantity": 49.96,
+      "unit": "m2",
+      "quantityNote": "pareti (3,80+3,20)*2*2,70 più soffitto 3,80*3,20",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "nel corridoio solo una rinfrescata, bianco anche lì, ma il corridoio non l'ho misurato",
+      "work": "pittura bianca corridoio",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-09",
+        "IDR-05",
+        "SMA-06",
+        "TIN-05",
+        "TIN-02",
+        "TIN-03",
+        "TIN-04"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.7
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 3,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «pittura bianca corridoio»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Misure del corridoio non rilevate: l'artigiano le chiederà dopo.",
+    "Tempo stimato per la camera: circa due giorni e mezzo.",
+    "Camera: rasatura prevista perché sotto c'è la pittura vecchia, probabilmente rovinata.",
+    "Per il corridoio non è chiaro se la pittura riguardi solo le pareti o anche il soffitto."
+  ],
+  "usage": {
+    "inputTokens": 8602,
+    "outputTokens": 1145,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 8027
+}

@@ -1,0 +1,152 @@
+{
+  "customer": {
+    "name": "signora Sironi",
+    "address": "via Milano 60, Cinisello"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?",
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "scrostare l'intonaco fino al mattone, la parete è quattro metri per due e ottanta, tutta",
+      "work": "rimozione intonaco fino al mattone",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "parete 4 m x 2,80 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "BAG-12",
+        "DEM-03",
+        "VAR-01",
+        "BAG-13",
+        "DEM-02",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1467,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-10",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "rifare l'intonaco civile, stessa misura",
+      "work": "rifacimento intonaco civile",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete 4 m x 2,80 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-05",
+        "DEM-10",
+        "VAR-06",
+        "TIN-01",
+        "PAV-07",
+        "PAV-08",
+        "BAG-12",
+        "BAG-13"
+      ],
+      "unitPriceCents": 3146,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-05",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "fissativo e bianco, due mani, sempre su quella parete",
+      "work": "fissativo e tinteggiatura bianca a due mani",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa parete 4 m x 2,80 m; due mani incluse nella lavorazione",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "TIN-01",
+        "TIN-11",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "VAR-06"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "fissativo e bianco, due mani, sempre su quella parete",
+      "work": "Idropittura traspirante semilavabile, 2 mani",
+      "quantity": 11.2,
+      "unit": "m2",
+      "quantityNote": "stessa lavorazione, seconda voce del listino",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "TIN-01",
+        "TIN-11",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "VAR-06"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "Sul soffitto, nell'angolo, c'è la muffa: trattamento antimuffa, un paio di metri",
+      "work": "trattamento antimuffa sul soffitto",
+      "quantity": 2,
+      "unit": "m2",
+      "quantityNote": "misura approssimata (\"un paio di metri\"), intesa come superficie",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "VAR-03",
+        "TIN-06",
+        "VAR-06"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.92
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Infiltrazione dal bagno del vicino: il danno lo paga l'assicurazione del vicino, ma il preventivo è intestato alla signora Sironi.",
+    "Prima di partire verificare se il muro è asciutto.",
+    "Eventuale deumidificatore: serve forse, lo noleggia la cliente (non è una riga del preventivo).",
+    "Il fissativo e la tinteggiatura sono in una riga unica con due mani; la quantità del trattamento antimuffa è approssimata."
+  ],
+  "usage": {
+    "inputTokens": 8233,
+    "outputTokens": 1249,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 10801
+}

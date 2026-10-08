@@ -1,0 +1,104 @@
+{
+  "customer": {
+    "name": "Elena Mauri",
+    "address": "corso Milano, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "ordinaria_22",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Prima una mano di fissativo, su tutto.",
+      "work": "mano di fissativo su pareti e soffitto",
+      "quantity": 118,
+      "unit": "m2",
+      "quantityNote": "Locale circa 8x5 m, alto 3 m: pareti (8+5)*2*3 = 78 m2 più soffitto 8*5 = 40 m2. Misure approssimate (\"tipo otto per cinque\").",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "TIN-10",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-01",
+        "TIN-11",
+        "VAR-06"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "tinteggiatura: il locale è tipo otto per cinque, alto tre metri. Pareti e soffitto, lei vuole la superlavabile perché coi prodotti si sporca tutto.",
+      "work": "tinteggiatura con pittura superlavabile di pareti e soffitto",
+      "quantity": 118,
+      "unit": "m2",
+      "quantityNote": "Locale circa 8x5 m, alto 3 m: pareti (8+5)*2*3 = 78 m2 più soffitto 8*5 = 40 m2. Misure approssimate (\"tipo otto per cinque\").",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-03",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": 547,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-03",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "nel retro c'è un tavolato da buttare giù, sarà due metri e mezzo per tre, in forati, da dieci finito.",
+      "work": "demolizione tavolato in forati spessore 10 cm finito",
+      "quantity": 7.5,
+      "unit": "m2",
+      "quantityNote": "Tavolato circa 2,5 x 3 m = 7,5 m2. Misura approssimata (\"sarà\").",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "DEM-01",
+        "DEM-06",
+        "PAV-09",
+        "PAV-12",
+        "PAV-08"
+      ],
+      "unitPriceCents": 1554,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-03",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Parete in cartongesso al posto del tavolato: non si fa, la cliente vuole l'ambiente aperto"
+  ],
+  "notes": [
+    "Lavori da fare di lunedì perché il negozio è chiuso",
+    "Il tavolato è la tramezza che si toglie, motivo della manutenzione straordinaria"
+  ],
+  "usage": {
+    "inputTokens": 7902,
+    "outputTokens": 1624,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14988
+}

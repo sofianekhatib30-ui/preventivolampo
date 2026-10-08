@@ -117,8 +117,9 @@ export default function Progetto() {
           <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">I numeri, misurati</h2>
           <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-testo-2">
             Un banco di 30 sopralluoghi inventati, con gli attesi scritti prima che il motore esistesse. Dopo la prima misura ho
-            corretto tre regole guardando gli errori; rimisurare sugli stessi casi è ottimistico, quindi ho scritto 6 casi nuovi
-            e li ho fatti girare una volta sola. Ogni numero viene da un report generato da un comando.
+            corretto le regole guardando gli errori, in due giri; rimisurare sugli stessi casi è ottimistico, quindi ho scritto
+            6 casi nuovi con gli attesi prima di provarli. I loro errori del primo giro li ho letti, quindi non sono più del tutto
+            ciechi. Ogni numero viene da un report generato da un comando.
           </p>
           <div tabIndex={0} role="region" aria-label="Tabella dei numeri misurati" className="mt-6 overflow-x-auto rounded-card ring-1 ring-linea">
             <table className="w-full min-w-[560px] border-collapse bg-superficie text-left text-[15px]">

@@ -1,0 +1,151 @@
+{
+  "customer": {
+    "name": "famiglia Colnaghi",
+    "address": "via Monte Rosa 4, Varedo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Buttiamo giù la tramezza tra cucina e soggiorno, è da dieci, lunga tre metri e venti, alta due e settanta",
+      "work": "demolizione tramezza da 10 cm tra cucina e soggiorno",
+      "quantity": 8.64,
+      "unit": "m2",
+      "quantityNote": "lunghezza 3,20 m per altezza 2,70 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "CUC-04",
+        "DEM-01",
+        "CUC-05",
+        "DEM-06",
+        "TIN-04"
+      ],
+      "unitPriceCents": 1554,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-03",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "togliamo il pavimento della cucina, quattro per tre",
+      "work": "rimozione pavimento cucina",
+      "quantity": 12,
+      "unit": "m2",
+      "quantityNote": "cucina 4x3 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "CUC-04",
+        "PAV-01",
+        "CUC-05",
+        "PAV-03",
+        "PAV-06",
+        "DEM-06",
+        "DEM-09"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "e anche la caldana sotto",
+      "work": "demolizione caldana (massetto) cucina",
+      "quantity": 12,
+      "unit": "m2",
+      "quantityNote": "stessa superficie del pavimento della cucina, 4x3 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-06",
+        "CUC-04",
+        "PAV-09",
+        "CUC-05",
+        "PAV-10",
+        "CUC-01",
+        "CUC-02"
+      ],
+      "unitPriceCents": 1035,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Rifacciamo la caldana, stessa misura",
+      "work": "rifacimento caldana (massetto) cucina",
+      "quantity": 12,
+      "unit": "m2",
+      "quantityNote": "stessa misura della caldana demolita, 4x3 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-06",
+        "CUC-04",
+        "PAV-09",
+        "CUC-05",
+        "PAV-10",
+        "CUC-01",
+        "CUC-02"
+      ],
+      "unitPriceCents": 2508,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Le macerie le carichiamo noi e le portiamo in discarica, sarà un metro cubo e mezzo",
+      "work": "carico e trasporto in discarica delle macerie",
+      "quantity": 1.5,
+      "unit": "m3",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "DEM-04",
+        "DEM-11",
+        "DEM-01"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "C'è la CILA.",
+    "Il pavimento nuovo lo sceglie la signora, se ne riparla: posa del pavimento non inclusa per ora.",
+    "Spessore della caldana non detto."
+  ],
+  "usage": {
+    "inputTokens": 9309,
+    "outputTokens": 1160,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 9824
+}

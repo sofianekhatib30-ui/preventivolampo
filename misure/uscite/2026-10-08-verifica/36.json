@@ -1,0 +1,96 @@
+{
+  "customer": {
+    "name": "dottoressa Sangalli",
+    "address": "via Cavour 30, Desio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": false,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "ordinaria_22",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Nella sala d'attesa tinteggiamo le pareti, sono sessanta metri quadri, con la superlavabile perché ci passa tanta gente",
+      "work": "tinteggiatura pareti sala d'attesa con pittura superlavabile",
+      "quantity": 60,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-03",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-09",
+        "ELE-12"
+      ],
+      "unitPriceCents": 547,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-03",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Le due porte del bagno vanno smaltate, ogni porta fa circa quattro metri quadri contando i due lati",
+      "work": "smaltatura porte bagno",
+      "quantity": 8,
+      "unit": "m2",
+      "quantityNote": "2 porte da circa 4 m2 ciascuna, due lati compresi (misura approssimata)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-05",
+        "DEM-11",
+        "ELE-12",
+        "BAG-13",
+        "BAG-12",
+        "BAG-07",
+        "BAG-05",
+        "DEM-01"
+      ],
+      "unitPriceCents": 739,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-05",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "C'è da spostare i mobili e coprire tutto: mettiamo tre ore di un manovale",
+      "work": "spostamento mobili e protezione con coperture (manovale)",
+      "quantity": 3,
+      "unit": "h",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-08",
+        "VAR-07",
+        "VAR-09"
+      ],
+      "unitPriceCents": 3663,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-08",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Soffitto: non si tinteggia, rifatto l'anno scorso"
+  ],
+  "notes": [],
+  "usage": {
+    "inputTokens": 7073,
+    "outputTokens": 780,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 5994
+}

@@ -1,0 +1,159 @@
+{
+  "customer": {
+    "name": "Galbiati",
+    "address": "via Umberto Primo, Giussano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": null,
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?",
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "demolizione del pavimento",
+      "work": "demolizione pavimento in piastrelle cucina",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "cucina 3,60x3 più il pezzo del frigo di 1 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "CUC-04",
+        "PAV-01",
+        "DEM-05",
+        "CUC-05",
+        "PAV-03",
+        "PAV-06",
+        "DEM-07"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "demolizione del pavimento e della caldana",
+      "work": "demolizione caldana cucina",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "stessa superficie del pavimento: cucina 3,60x3 più il pezzo del frigo di 1 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-04",
+        "DEM-06",
+        "CUC-04",
+        "PAV-01",
+        "CUC-05",
+        "PAV-03",
+        "PAV-06"
+      ],
+      "unitPriceCents": 1035,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "rifacciamo la caldana, cinque centimetri",
+      "work": "rifacimento caldana, spessore 5 cm",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "cucina 3,60x3 più il pezzo del frigo di 1 m2; spessore 5 cm",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-06",
+        "PAV-09",
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "PAV-10",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2508,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "gres porcellanato liscio trenta per trenta",
+      "work": "posa pavimento in gres porcellanato liscio 30x30",
+      "quantity": 11.8,
+      "unit": "m2",
+      "quantityNote": "cucina 3,60x3 più il pezzo del frigo di 1 m2",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-01",
+        "PAV-02",
+        "DEM-04",
+        "BAG-12",
+        "PAV-03",
+        "PAV-06",
+        "PAV-12",
+        "VAR-06"
+      ],
+      "unitPriceCents": 4217,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-02",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "il battiscopa in gres, alto dieci, tutto intorno",
+      "work": "posa battiscopa in gres h 10 cm",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-01",
+        "PAV-02",
+        "DEM-07",
+        "PAV-11",
+        "BAG-12",
+        "DEM-03",
+        "BAG-05"
+      ],
+      "unitPriceCents": 1487,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-12",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 4,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «posa battiscopa in gres h 10 cm»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Battiscopa: metri non presi perché la cucina è piena di mobili, da misurare quando svuotano",
+    "Il cliente vuole togliere tutto: le piastrelle vecchie non restano sotto"
+  ],
+  "usage": {
+    "inputTokens": 9464,
+    "outputTokens": 1761,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12597
+}

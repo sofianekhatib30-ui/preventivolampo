@@ -1,0 +1,156 @@
+{
+  "customer": {
+    "name": "Giulia Bianchi",
+    "address": "via Vigevano, Milano, primo piano (casa di ringhiera)"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "raschiatura",
+      "work": "raschiatura della pittura vecchia dalle pareti",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Pareti della stanza: perimetro (4 + 4,5) x 2 per altezza 3,10. Misure approssimate (\"più o meno\"). Aperture non sottratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-09",
+        "BAG-12",
+        "VAR-01",
+        "TIN-10",
+        "BAG-13",
+        "TIN-11",
+        "TIN-05",
+        "DEM-10"
+      ],
+      "unitPriceCents": 195,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-09",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "rasatura a due mani",
+      "work": "rasatura delle pareti a due mani",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Pareti della stanza: perimetro (4 + 4,5) x 2 per altezza 3,10. Misure approssimate (\"più o meno\"). Aperture non sottratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-11",
+        "TIN-10",
+        "VAR-01",
+        "BAG-12",
+        "VAR-06",
+        "BAG-13",
+        "TIN-01",
+        "TIN-02"
+      ],
+      "unitPriceCents": 1316,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-11",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "fissativo",
+      "work": "applicazione di fissativo sulle pareti",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Pareti della stanza: perimetro (4 + 4,5) x 2 per altezza 3,10. Misure approssimate (\"più o meno\"). Aperture non sottratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-06",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "DEM-10",
+        "TIN-01"
+      ],
+      "unitPriceCents": 250,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "due mani di lavabile",
+      "work": "pittura lavabile a due mani sulle pareti",
+      "quantity": 52.7,
+      "unit": "m2",
+      "quantityNote": "Pareti della stanza: perimetro (4 + 4,5) x 2 per altezza 3,10. Misure approssimate (\"più o meno\"). Aperture non sottratte.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-04",
+        "TIN-11",
+        "BAG-12",
+        "VAR-01",
+        "TIN-05",
+        "BAG-13",
+        "TIN-01"
+      ],
+      "unitPriceCents": 508,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-02",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "la zoccolatura a smalto nell'ingresso, alta un metro, lunga... boh, sei metri, tipo",
+      "work": "verniciatura a smalto della zoccolatura nell'ingresso",
+      "quantity": 6,
+      "unit": "m2",
+      "quantityNote": "Lunghezza circa 6 m (approssimata) per altezza 1 m.",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-05",
+        "PAV-01",
+        "PAV-07",
+        "TIN-04",
+        "DEM-07",
+        "PAV-11"
+      ],
+      "unitPriceCents": 739,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-05",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Soffitto a travi di legno: non viene toccato"
+  ],
+  "notes": [
+    "Misure della stanza approssimate (4 x 4,5 m, altezza 3,10 m): da verificare",
+    "Protezione dei mobili a carico dell'impresa",
+    "Tempi previsti: quattro giorni di lavoro",
+    "Attenzione: non c'è l'ascensore, si scarica in cortile",
+    "Tipo di intervento ai fini IVA non detto"
+  ],
+  "usage": {
+    "inputTokens": 9399,
+    "outputTokens": 2071,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14131
+}

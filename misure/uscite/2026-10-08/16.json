@@ -1,0 +1,303 @@
+{
+  "customer": {
+    "name": "Tagliabue",
+    "address": "via Sciesa 7, Seveso"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "ristrutturazione",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "tolgo tutti i punti vecchi, sono... tipo venticinque, li riconto",
+      "work": "rimozione punti elettrici esistenti",
+      "quantity": 25,
+      "unit": "cad",
+      "quantityNote": "Quantità approssimata (\"tipo venticinque\"), da ricontare",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-12",
+        "DEM-09",
+        "ELE-01",
+        "ELE-06",
+        "DEM-08",
+        "ELE-02",
+        "ELE-03",
+        "ELE-12"
+      ],
+      "unitPriceCents": 1065,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Faccio dodici punti luce interrotti",
+      "work": "punto luce interrotto",
+      "quantity": 12,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-02",
+        "ELE-03",
+        "ELE-05",
+        "DEM-12",
+        "ELE-06",
+        "IDR-01",
+        "ELE-07"
+      ],
+      "unitPriceCents": 4893,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-01",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "tre deviati tra corridoio e camere",
+      "work": "punto luce deviato",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-02",
+        "ELE-03",
+        "ELE-05",
+        "DEM-12",
+        "ELE-06",
+        "IDR-01",
+        "ELE-07"
+      ],
+      "unitPriceCents": 6454,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "un invertito in sala",
+      "work": "punto luce invertito",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-03",
+        "ELE-02",
+        "ELE-05",
+        "DEM-12",
+        "ELE-06",
+        "ELE-04",
+        "IDR-01"
+      ],
+      "unitPriceCents": 9658,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-03",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Prese da dieci, diciotto",
+      "work": "presa da 10 A",
+      "quantity": 18,
+      "unit": "cad",
+      "quantityNote": "Interpretato: 18 prese da 10 A",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "DEM-12",
+        "PAV-12",
+        "BAG-03"
+      ],
+      "unitPriceCents": 4462,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "da sedici, sei",
+      "work": "presa da 16 A",
+      "quantity": 6,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-07",
+        "ELE-08",
+        "IDR-06",
+        "DEM-12"
+      ],
+      "unitPriceCents": 4633,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-07",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Due prese internet",
+      "work": "presa dati/internet",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "ELE-08",
+        "CUC-06",
+        "ELE-07",
+        "DEM-12",
+        "ELE-02",
+        "TIN-11"
+      ],
+      "unitPriceCents": 3312,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-08",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Centralino da dodici moduli",
+      "work": "centralino da 12 moduli",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-11",
+        "ELE-12"
+      ],
+      "unitPriceCents": 4657,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-11",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "un salvavita",
+      "work": "interruttore differenziale (salvavita)",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-10",
+        "ELE-01",
+        "CUC-06",
+        "ELE-09",
+        "ELE-05"
+      ],
+      "unitPriceCents": 8905,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "quattro magnetotermici",
+      "work": "interruttori magnetotermici",
+      "quantity": 4,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-09",
+        "ELE-10",
+        "ELE-01",
+        "CUC-06",
+        "ELE-05"
+      ],
+      "unitPriceCents": 2506,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-09",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Il videocitofono lo cambiamo anche, quello va a parte, non ce l'ho a listino",
+      "work": "fornitura e posa videocitofono",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessun candidato; il videocitofono non è a listino.",
+        "suggestedCode": null,
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "Il cavo da due e mezzo per la dorsale non so quanti metri, lo vedo in cantiere",
+      "work": "cavo 2,5 mm² per dorsale",
+      "quantity": null,
+      "unit": "m",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-13",
+        "IDR-07",
+        "PAV-05",
+        "IDR-06",
+        "IDR-08",
+        "IDR-09",
+        "IDR-10",
+        "PAV-11"
+      ],
+      "unitPriceCents": 130,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-13",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 11,
+      "kind": "quantita_mancante",
+      "text": "Quanti metri di «cavo 2,5 mm² per dorsale»?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Impianto elettrico con pratica in corso",
+    "Punti da rimuovere: circa 25, l'artigiano deve ricontarli",
+    "Prese da 10 A: 18 e prese da 16 A: 6, interpretazione da confermare",
+    "Videocitofono: voce a parte, non a listino, prezzo da inserire",
+    "Metri di cavo da 2,5 per la dorsale da verificare in cantiere"
+  ],
+  "usage": {
+    "inputTokens": 11651,
+    "outputTokens": 2685,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 18417
+}

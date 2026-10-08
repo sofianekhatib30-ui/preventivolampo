@@ -1,0 +1,140 @@
+{
+  "customer": {
+    "name": "Davide Rinaldi",
+    "address": "via Padova, Milano"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Prima stucco i buchi dei quadri nel soggiorno, sono pochi, tipo cinque metri quadri di stuccatura sparsa",
+      "work": "stuccatura puntuale dei fori nelle pareti del soggiorno",
+      "quantity": 5,
+      "unit": "m2",
+      "quantityNote": "Stima approssimata detta dall'artigiano (\"tipo cinque metri quadri\") di stuccatura sparsa",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-08",
+        "BAG-12",
+        "TIN-10",
+        "VAR-01",
+        "BAG-13",
+        "TIN-11",
+        "ELE-12",
+        "TIN-06"
+      ],
+      "unitPriceCents": 238,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il soggiorno con l'angolo cottura è tipo cinque per quattro, alto due e settanta: faccio pareti, col bianco normale, semilavabile · Il soggiorno con l'angolo cottura è tipo cinque per quattro: faccio pareti e soffitto, col bianco normale, semilavabile",
+      "work": "tinteggiatura pareti soggiorno con angolo cottura, bianco semilavabile",
+      "quantity": 68.6,
+      "unit": "m2",
+      "quantityNote": "Perimetro del soggiorno (5x4, misura approssimata) per altezza 2,70 m; non sono detratte aperture; Superficie del soggiorno 5x4 m (misura approssimata); somma di due righe con la stessa voce",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "VAR-01",
+        "BAG-12",
+        "TIN-11",
+        "BAG-13",
+        "TIN-10",
+        "BAG-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "La camera invece non l'ho misurata, me la deve mandare lui la misura; comunque pareti e soffitto uguale, stesso bianco",
+      "work": "tinteggiatura pareti camera, bianco semilavabile",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "TIN-02",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "TIN-11",
+        "BAG-05"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "In bagno c'è un po' di muffa sul soffitto, gli do l'antimuffa, sarà un metro quadro, due... facciamo due",
+      "work": "trattamento antimuffa del soffitto del bagno",
+      "quantity": 2,
+      "unit": "m2",
+      "quantityNote": "Superficie approssimata: tra uno e due metri quadri, l'artigiano ha scelto due",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "ELE-12",
+        "BAG-12",
+        "BAG-05",
+        "TIN-11",
+        "VAR-03",
+        "BAG-07",
+        "BAG-13"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.96
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «tinteggiatura pareti camera, bianco semilavabile»?"
+    }
+  ],
+  "exclusions": [
+    "Porte: niente smalto sulle porte"
+  ],
+  "notes": [
+    "Misura della camera non rilevata: la deve mandare il cliente",
+    "I mobili li sposta il cliente",
+    "L'impresa copre solo il pavimento (protezione inclusa nel lavoro)",
+    "Misure del soggiorno approssimate (circa 5x4, altezza 2,70 m)",
+    "Quantità di stuccatura (5 m2) e di antimuffa (2 m2) approssimate"
+  ],
+  "usage": {
+    "inputTokens": 10384,
+    "outputTokens": 2548,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 21829
+}

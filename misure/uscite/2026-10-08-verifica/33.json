@@ -1,0 +1,148 @@
+{
+  "customer": {
+    "name": "Brambati",
+    "address": "via Matteotti 9, Biassono"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il lavandino vecchio",
+      "work": "smontaggio lavandino esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "DEM-12",
+        "DEM-08",
+        "DEM-09",
+        "TIN-09",
+        "DEM-04",
+        "DEM-11",
+        "SMA-04"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "metto un lavabo nuovo da sessantacinque a parete",
+      "work": "fornitura e posa lavabo a parete da 65 cm",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-08",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "TIN-10",
+        "DEM-03",
+        "DEM-02"
+      ],
+      "unitPriceCents": 12302,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "con il miscelatore",
+      "work": "fornitura e posa miscelatore lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "Un miscelatore per il lavabo, detto al singolare",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-08",
+        "BAG-05",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02"
+      ],
+      "unitPriceCents": 10744,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "il rubinetto della doccia, quello a incasso, lo cambiamo, col soffione nuovo",
+      "work": "sostituzione rubinetto doccia a incasso con soffione nuovo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-10",
+        "BAG-06",
+        "BAG-11",
+        "BAG-03",
+        "BAG-08",
+        "CUC-02",
+        "BAG-02",
+        "ELE-11"
+      ],
+      "unitPriceCents": 13993,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-10",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "per la lavatrice in bagno mi serve un attacco solo acqua fredda, lo scarico c'è già",
+      "work": "attacco acqua fredda per lavatrice",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-04",
+        "IDR-01",
+        "IDR-05",
+        "IDR-03",
+        "IDR-02",
+        "SMA-06",
+        "CUC-03",
+        "DEM-09"
+      ],
+      "unitPriceCents": 5593,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-04",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Box doccia: resta quello esistente"
+  ],
+  "notes": [
+    "Lo scarico della lavatrice è già presente, non da fare"
+  ],
+  "usage": {
+    "inputTokens": 8747,
+    "outputTokens": 1032,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 8148
+}

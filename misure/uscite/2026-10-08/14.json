@@ -1,0 +1,153 @@
+{
+  "customer": {
+    "name": "signora Mariani",
+    "address": "via Tonale 3, Brugherio"
+  },
+  "vat": {
+    "context": {
+      "dwelling": null,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": null,
+    "missing": [
+      "L'immobile è un'abitazione?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Il rubinetto della cucina gocciola: lo cambio, glielo porto io, un miscelatore normale.",
+      "work": "sostituzione rubinetto cucina con miscelatore normale",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "CUC-02",
+        "BAG-08",
+        "DEM-11",
+        "BAG-09",
+        "BAG-10",
+        "CUC-04",
+        "CUC-01",
+        "CUC-05"
+      ],
+      "unitPriceCents": 14208,
+      "match": {
+        "kind": "listino",
+        "code": "CUC-02",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Il sifone del lavandino del bagno perde, lo sistemo io, è mezz'ora di lavoro.",
+      "work": "sistemazione sifone lavandino bagno",
+      "quantity": 0.5,
+      "unit": "h",
+      "quantityNote": "mezz'ora di lavoro",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "VAR-07",
+        "BAG-08",
+        "VAR-08",
+        "VAR-09",
+        "BAG-12",
+        "BAG-07",
+        "CUC-03"
+      ],
+      "unitPriceCents": 3656,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "Poi vuole l'attacco per la lavatrice sul balcone, acqua fredda e scarico, contro il muro del bagno che è lì dietro.",
+      "work": "attacco lavatrice sul balcone con acqua fredda e scarico",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-04",
+        "IDR-01",
+        "IDR-02",
+        "IDR-03",
+        "IDR-05",
+        "CUC-03",
+        "DEM-09",
+        "BAG-11"
+      ],
+      "unitPriceCents": 5593,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-04",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Poi vuole l'attacco per la lavatrice sul balcone, acqua fredda e scarico, contro il muro del bagno che è lì dietro.",
+      "work": "Allacciamento solo scarico DE40",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "stessa lavorazione, seconda voce del listino",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-04",
+        "IDR-01",
+        "IDR-02",
+        "IDR-03",
+        "IDR-05",
+        "CUC-03",
+        "DEM-09",
+        "BAG-11"
+      ],
+      "unitPriceCents": 8228,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-05",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Per passare i tubi c'è da fare un foro nel muro esterno, un carotaggio: quello non ce l'ho a listino, lo devo chiedere a quello del carotaggio.",
+      "work": "foro nel muro esterno con carotaggio per passaggio tubi",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": "un foro",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-04",
+        "DEM-10",
+        "DEM-09",
+        "BAG-08",
+        "CUC-02",
+        "BAG-12",
+        "PAV-08",
+        "VAR-01"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Il carotaggio non è a listino e nessun candidato lo descrive.",
+        "suggestedCode": null,
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Carotaggio non a listino: prezzo da chiedere a chi esegue il carotaggio.",
+    "Non detto esplicitamente se sia un'abitazione; la quantità del miscelatore è un pezzo."
+  ],
+  "usage": {
+    "inputTokens": 8422,
+    "outputTokens": 1073,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 9347
+}

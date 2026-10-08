@@ -1,0 +1,103 @@
+{
+  "customer": {
+    "name": "Giorgio Viganò",
+    "address": "via Buonarroti 20, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "Il parquet della sala e delle due camere è da lamare e verniciare: la sala è cinque per quattro, le camere tre e mezzo per tre e tre per tre, più o meno",
+      "work": "lamatura e verniciatura parquet",
+      "quantity": 39.5,
+      "unit": "m2",
+      "quantityNote": "Sala 5x4 più camera 3,5x3 più camera 3x3; misure approssimate ('più o meno')",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-07",
+        "PAV-04",
+        "TIN-11",
+        "PAV-05",
+        "TIN-05",
+        "ELE-13",
+        "PAV-09",
+        "VAR-05"
+      ],
+      "unitPriceCents": 2598,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-07",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il battiscopa in legno è rovinato, lo cambio tutto: lo tolgo",
+      "work": "rimozione battiscopa in legno",
+      "quantity": 40,
+      "unit": "m",
+      "quantityNote": "Quantità approssimata detta dall'artigiano ('facciamo quaranta metri che ci stiamo dentro')",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-11",
+        "DEM-07",
+        "SMA-04",
+        "DEM-11",
+        "PAV-04",
+        "DEM-09",
+        "PAV-07"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nel listino c'è la rimozione del battiscopa solo in piastrelle, non quella del battiscopa in legno.",
+        "suggestedCode": null,
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "metto quello nuovo, sempre in legno, facciamo quaranta metri che ci stiamo dentro",
+      "work": "fornitura e posa battiscopa in legno",
+      "quantity": 40,
+      "unit": "m",
+      "quantityNote": "Quantità approssimata detta dall'artigiano ('facciamo quaranta metri che ci stiamo dentro')",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-11",
+        "DEM-07",
+        "SMA-04",
+        "IDR-08",
+        "PAV-04",
+        "PAV-07",
+        "DEM-11"
+      ],
+      "unitPriceCents": 664,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "I mobili li sposta il cliente e devono stare fuori casa tre giorni perché la vernice deve asciugare.",
+    "Le misure delle camere sono approssimate ('più o meno')."
+  ],
+  "usage": {
+    "inputTokens": 7566,
+    "outputTokens": 1379,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 9523
+}

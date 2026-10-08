@@ -18,38 +18,40 @@ L'artigiano edile, dopo il sopralluogo, racconta il lavoro come lo direbbe a un 
 ## I numeri
 
 <!-- misura:inizio -->
-Da [`misure/2026-10-05b.md`](misure/2026-10-05b.md). Generato da `npm run misura` (non scritto a mano). Modello: `claude-sonnet-5-5`. Casi: 30 eseguiti su 30.
+Da [`misure/2026-10-08.md`](misure/2026-10-08.md). Generato da `npm run misura` (non scritto a mano). Modello: `claude-sonnet-5-5`. Casi: 30 eseguiti su 30.
 
 | Misura | Valore |
 |---|---|
-| Righe giuste senza correzioni (voce, quantità e unità) | 145 su 159 (91,2%) |
-| Voci di listino abbinate correttamente | 130 su 137 (94,9%) |
-| Voci «da prezzare» riconosciute come tali | 21 su 22 (95,5%) |
-| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 2 |
+| Righe giuste senza correzioni (voce, quantità e unità) | 158 su 159 (99,4%) |
+| Voci di listino abbinate correttamente | 136 su 137 (99,3%) |
+| Voci «da prezzare» riconosciute come tali | 22 su 22 (100,0%) |
+| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 0 |
 | **Prezzi inventati** | **0** |
-| Domande di chiarimento corrette | 12 su 12 (100,0%); domande in più: 4 |
+| Domande di chiarimento corrette | 12 su 12 (100,0%); domande in più: 0 |
 | Regime IVA corretto (casi con contesto completo) | 15 su 15 |
 | Regime IVA dato senza che il vocale bastasse a stabilirlo | 0 su 15 |
-| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 5 su 10 |
-| Righe in più rispetto all'atteso | 4 |
-| Tempo medio per preventivo | 13,95 s |
-| Costo medio per preventivo | $0.0314 ≈ 0,03 € (token reali; $2/$10 per milione di token, cambio 0.86 €/$) |
+| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 9 su 10 |
+| Righe in più rispetto all'atteso | 0 |
+| Tempo medio per preventivo | 12,96 s |
+| Costo medio per preventivo | $0.0354 ≈ 0,03 € (token reali; $2/$10 per milione di token, cambio 0.86 €/$) |
 <!-- misura:fine -->
 
 ### Prima e dopo
 
-Dopo la prima misura ho letto gli errori e cambiato tre regole generali: righe separate per le cose che si pagano a parte, una riga anche per quello che è fuori listino, una voce di listino = una riga (in codice, `mergeSameItem`). Rimisurare sugli stessi 30 casi dà un numero ottimistico, perché le regole nascono proprio da quei casi: per questo ho scritto 6 casi nuovi con i loro attesi (`testset/verifica/`) **prima** di farci girare il motore, una volta sola.
+Dopo la prima misura ho letto gli errori e cambiato tre regole generali: righe separate per le cose che si pagano a parte, una riga anche per quello che è fuori listino, una voce di listino = una riga (in codice, `mergeSameItem`). Rimisurare sugli stessi 30 casi dà un numero ottimistico, perché le regole nascono proprio da quei casi: per questo ho scritto 6 casi nuovi con i loro attesi (`testset/verifica/`) **prima** di farci girare il motore.
+
+Secondo giro (8 ottobre): ho letto le 16 righe ancora sbagliate e corretto quattro famiglie di errori con regole generali, non caso per caso. I conti delle quantità ora li fa il codice (il modello scrive l'espressione, `lib/motore/calcolo.ts`); quando una voce si misura a modo suo («al m² di porta», «per ogni lastra») la quantità si ricalcola con le misure dette; togliere e rimettere sono due righe, «anzi» cancella solo quello che contraddice, un accessorio («col telaio») non raddoppia il pezzo; un'unità non detta si chiede invece di indovinarla. Per arrivarci ho fatto tre giri di prova sui 30 casi (151, 157 e 155 righe giuste su 159) prima della misura qui sotto. Attenzione: i 2 errori dei 6 casi di verifica li avevo letti dopo il primo giro, quindi anche quel gruppo ora non è più del tutto cieco; per un numero davvero pulito servono casi nuovi.
 
 <!-- confronto:inizio -->
-| Misura | Prima ([`2026-10-05.md`](misure/2026-10-05.md)) | Dopo ([`2026-10-05b.md`](misure/2026-10-05b.md)) | Verifica, 6 casi nuovi ([`2026-10-05-verifica.md`](misure/2026-10-05-verifica.md)) |
+| Misura | Prima ([`2026-10-05.md`](misure/2026-10-05.md)) | Dopo ([`2026-10-08.md`](misure/2026-10-08.md)) | Verifica, 6 casi nuovi ([`2026-10-08-verifica.md`](misure/2026-10-08-verifica.md)) |
 |---|---|---|---|
-| Righe giuste senza correzioni (voce, quantità e unità) | 138 su 159 (86,8%) | 145 su 159 (91,2%) | 24 su 26 (92,3%) |
-| Voci di listino abbinate correttamente | 124 su 137 (90,5%) | 130 su 137 (94,9%) | 25 su 25 (100,0%) |
-| Voci «da prezzare» riconosciute come tali | 19 su 22 (86,4%) | 21 su 22 (95,5%) | 1 su 1 (100,0%) |
-| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 7 | 2 | 0 |
+| Righe giuste senza correzioni (voce, quantità e unità) | 138 su 159 (86,8%) | 158 su 159 (99,4%) | 26 su 26 (100,0%) |
+| Voci di listino abbinate correttamente | 124 su 137 (90,5%) | 136 su 137 (99,3%) | 25 su 25 (100,0%) |
+| Voci «da prezzare» riconosciute come tali | 19 su 22 (86,4%) | 22 su 22 (100,0%) | 1 su 1 (100,0%) |
+| Abbinamenti sbagliati con prezzo di listino (l'errore pericoloso) | 7 | 0 | 0 |
 | Prezzi inventati | 0 | 0 | 0 |
-| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 6 su 10 | 5 su 10 | 3 su 3 |
-| Righe in più rispetto all'atteso | 7 | 4 | 0 |
+| IVA corretta al centesimo (casi calcolabili senza l'artigiano) | 6 su 10 | 9 su 10 | 3 su 3 |
+| Righe in più rispetto all'atteso | 7 | 0 | 0 |
 <!-- confronto:fine -->
 
 Come leggerli: gli attesi dei 30 casi (`testset/atteso/`) sono stati scritti leggendo solo il copione e il listino, prima che il motore esistesse, e non si correggono guardando le uscite. Il report completo, caso per caso, e le uscite grezze del motore sono in `misure/`.

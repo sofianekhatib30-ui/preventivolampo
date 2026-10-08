@@ -1,0 +1,127 @@
+{
+  "customer": {
+    "name": "signora Vergani",
+    "address": "via Cadorna, Sesto San Giovanni"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "in soggiorno c'è una parete in cartongesso da buttare giù, tre metri per due e settanta, con due lastre per lato",
+      "work": "demolizione parete in cartongesso con doppia lastra per lato",
+      "quantity": 32.4,
+      "unit": "m2",
+      "quantityNote": "Parete 3 m x 2,70 m di altezza; la doppia lastra per lato non cambia la superficie; nella misura della voce: 3*2.7*4 = 32,4 m²",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-01",
+        "DEM-01",
+        "TIN-11",
+        "VAR-02",
+        "BAG-12",
+        "DEM-03",
+        "DEM-02",
+        "BAG-13"
+      ],
+      "unitPriceCents": 413,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-01",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "nel corridoio facciamo il controsoffitto in cartongesso, il corridoio è lungo sei metri e largo uno e dieci",
+      "work": "realizzazione controsoffitto in cartongesso",
+      "quantity": 6.6,
+      "unit": "m2",
+      "quantityNote": "Corridoio lungo 6 m e largo 1,10 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-03",
+        "DEM-01",
+        "VAR-01",
+        "VAR-02",
+        "DEM-03"
+      ],
+      "unitPriceCents": 4616,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-03",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "rasatura e pittura del controsoffitto... anzi no, la pittura la fa suo cognato, io lo lascio rasato e basta",
+      "work": "rasatura controsoffitto in cartongesso",
+      "quantity": 6.6,
+      "unit": "m2",
+      "quantityNote": "Stessa superficie del controsoffitto del corridoio, 6 m x 1,10 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-03",
+        "TIN-10",
+        "VAR-01",
+        "DEM-01",
+        "TIN-11",
+        "VAR-02",
+        "TIN-09",
+        "TIN-05"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Le rasature a listino sono per pareti su vecchie pitture raschiate, non per un controsoffitto in cartongesso nuovo, e il numero di mani non è detto.",
+        "suggestedCode": null,
+        "confidence": 0.4
+      }
+    },
+    {
+      "spoken": "Le macerie, tipo un metro cubo, le carico io e le porto in discarica",
+      "work": "carico e trasporto a discarica macerie",
+      "quantity": 1,
+      "unit": "m3",
+      "quantityNote": "Quantità approssimata detta a voce («tipo un metro cubo»)",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "SMA-05",
+        "DEM-11",
+        "SMA-06",
+        "SMA-03",
+        "SMA-02",
+        "SMA-01",
+        "DEM-04",
+        "DEM-01"
+      ],
+      "unitPriceCents": 3004,
+      "match": {
+        "kind": "listino",
+        "code": "SMA-05",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Faretti nel controsoffitto: li monta l'elettricista, non l'impresa",
+    "Pittura del controsoffitto: la fa il cognato della signora, l'impresa lascia solo rasato"
+  ],
+  "notes": [],
+  "usage": {
+    "inputTokens": 8396,
+    "outputTokens": 1578,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 13053
+}

@@ -1,0 +1,82 @@
+{
+  "customer": {
+    "name": "signora Galli",
+    "address": "via Cavour 21, Seregno"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "io smonto el cess vecchio",
+      "work": "smontaggio vaso (water) esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "DEM-12",
+        "DEM-08",
+        "BAG-02",
+        "DEM-09",
+        "IDR-02",
+        "TIN-09",
+        "BAG-03"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "monto quello nuovo",
+      "work": "montaggio vaso (water) nuovo a terra fornito dal cliente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-01",
+        "BAG-02",
+        "IDR-02",
+        "BAG-03",
+        "BAG-04",
+        "DEM-08",
+        "IDR-10",
+        "PAV-01"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-01",
+        "confidence": 0.88
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Cassetta esterna: è ancora buona, non viene toccata"
+  ],
+  "notes": [
+    "Il vaso nuovo è già stato comprato dalla signora al centro bricolage, a terra, uguale al vecchio",
+    "Tempo stimato: mezza giornata",
+    "Il vaso vecchio viene portato via dall'impresa sul furgone"
+  ],
+  "usage": {
+    "inputTokens": 6712,
+    "outputTokens": 553,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 5492
+}

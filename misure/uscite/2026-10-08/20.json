@@ -1,0 +1,172 @@
+{
+  "customer": {
+    "name": "Paolo Brioschi",
+    "address": "via Rimembranze 9, Lesmo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il lavandino vecchio e il bidet, due pezzi",
+      "work": "rimozione lavandino e bidet esistenti",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-05",
+        "DEM-12",
+        "BAG-09",
+        "DEM-08",
+        "DEM-09",
+        "TIN-09",
+        "DEM-04"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Metto un lavabo nuovo da sessantacinque, a parete",
+      "work": "fornitura e posa lavabo a parete da 65 cm, bianco",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-05",
+        "BAG-08",
+        "BAG-12",
+        "VAR-01",
+        "TIN-01",
+        "BAG-13",
+        "TIN-10",
+        "DEM-03"
+      ],
+      "unitPriceCents": 12302,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-05",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "un bidet a terra, bianchi, normali",
+      "work": "fornitura e posa bidet a terra, bianco",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "TIN-01",
+        "BAG-01",
+        "DEM-08",
+        "PAV-01",
+        "BAG-02",
+        "BAG-05"
+      ],
+      "unitPriceCents": 13688,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "Il miscelatore del lavabo",
+      "work": "fornitura e posa miscelatore lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-08",
+        "BAG-05",
+        "BAG-09",
+        "BAG-10",
+        "CUC-02"
+      ],
+      "unitPriceCents": 10744,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-08",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "il miscelatore del bidet",
+      "work": "fornitura e posa miscelatore bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-08",
+        "BAG-10",
+        "CUC-02",
+        "DEM-08"
+      ],
+      "unitPriceCents": 12310,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09",
+        "confidence": 0.97
+      }
+    },
+    {
+      "spoken": "gli cambio il sifone della doccia, il gruppo di scarico",
+      "work": "sostituzione sifone e gruppo di scarico doccia",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-11",
+        "BAG-06",
+        "CUC-03",
+        "BAG-10",
+        "IDR-05",
+        "IDR-02",
+        "IDR-08",
+        "IDR-09"
+      ],
+      "unitPriceCents": 5269,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-11",
+        "confidence": 0.9
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Box doccia: non si tocca, il cliente lo mantiene"
+  ],
+  "notes": [
+    "Intervento nel bagno di servizio, solo sostituzione dei pezzi, nessuna opera muraria",
+    "Materiali acquistati dall'impresa e messi in fattura al cliente",
+    "Sanitari bianchi, modelli normali"
+  ],
+  "usage": {
+    "inputTokens": 9081,
+    "outputTokens": 1605,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 12978
+}

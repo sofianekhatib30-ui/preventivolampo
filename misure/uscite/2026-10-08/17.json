@@ -1,0 +1,212 @@
+{
+  "customer": {
+    "name": "Meroni",
+    "address": "via Borgazzi 40, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "cliente"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "smontare i quattro sanitari vecchi, vasca compresa",
+      "work": "smontaggio sanitari esistenti, vasca compresa",
+      "quantity": 4,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-07",
+        "DEM-08",
+        "DEM-09",
+        "ELE-06",
+        "DEM-12",
+        "DEM-11",
+        "CUC-01",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "rimonto i suoi: il vaso sospeso",
+      "work": "montaggio vaso sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-02",
+        "BAG-01",
+        "BAG-03"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-02",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "il bidet sospeso",
+      "work": "montaggio bidet sospeso",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-04",
+        "BAG-02",
+        "BAG-09",
+        "DEM-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Il listino ha solo il bidet a pavimento, non quello sospeso.",
+        "suggestedCode": null,
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "il lavabo",
+      "work": "montaggio lavabo",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-05",
+        "BAG-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-05",
+        "confidence": 0.6
+      }
+    },
+    {
+      "spoken": "il piatto doccia al posto della vasca",
+      "work": "montaggio piatto doccia",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-06",
+        "BAG-07",
+        "BAG-10",
+        "BAG-11",
+        "CUC-01",
+        "DEM-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-06",
+        "confidence": 0.6
+      }
+    },
+    {
+      "spoken": "più i tre miscelatori, lavabo, bidet e doccia",
+      "work": "montaggio miscelatori (lavabo, bidet, doccia)",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "BAG-04",
+        "BAG-06",
+        "BAG-05",
+        "BAG-10",
+        "BAG-08",
+        "BAG-09",
+        "BAG-11",
+        "CUC-02"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Tre miscelatori diversi (lavabo, bidet, doccia) richiedono tre voci distinte; una sola voce non copre la riga.",
+        "suggestedCode": null,
+        "confidence": 0.3
+      }
+    },
+    {
+      "spoken": "quello del water con lo scarico grosso",
+      "work": "attacco idraulico water con scarico grosso",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "IDR-02",
+        "IDR-05",
+        "CUC-03",
+        "IDR-01",
+        "IDR-10",
+        "BAG-03",
+        "BAG-11"
+      ],
+      "unitPriceCents": 20244,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-02",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "tre normali, acqua calda e fredda con lo scarico",
+      "work": "attacchi idraulici normali con acqua calda, fredda e scarico",
+      "quantity": 3,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "IDR-01",
+        "IDR-03",
+        "IDR-04",
+        "IDR-02",
+        "IDR-05",
+        "CUC-03",
+        "DEM-09",
+        "BAG-11"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Piastrelle: non si toccano, restano quelle esistenti"
+  ],
+  "notes": [
+    "Sanitari e rubinetti scelti e acquistati dalla cliente; l'impresa li monta soltanto.",
+    "Non è detto chi compra il materiale per l'idraulica (attacchi)."
+  ],
+  "usage": {
+    "inputTokens": 9688,
+    "outputTokens": 2126,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 13545
+}

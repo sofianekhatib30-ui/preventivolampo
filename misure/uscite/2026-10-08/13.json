@@ -1,0 +1,182 @@
+{
+  "customer": {
+    "name": "Fumagalli",
+    "address": "via Dante 31, Carate Brianza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Prima però tolgo le vecchie, stessa superficie.",
+      "work": "rimozione rivestimento in piastrelle",
+      "quantity": 16.28,
+      "unit": "m2",
+      "quantityNote": "perimetro del bagno 1,60x2,10 per altezza rivestimento 2,20, stessa superficie della posa",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-05",
+        "DEM-04",
+        "BAG-12",
+        "CUC-04",
+        "CUC-05",
+        "BAG-13",
+        "TIN-09",
+        "DEM-12"
+      ],
+      "unitPriceCents": 2050,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-05",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "lui ha già comprato le piastrelle per i muri, gres venti per venti, le ha in garage. Io le poso: il bagno è uno e sessanta per due e dieci, rivestimento alto due e venti tutto intorno.",
+      "work": "posa rivestimento in gres 20x20",
+      "quantity": 16.28,
+      "unit": "m2",
+      "quantityNote": "perimetro del bagno 1,60x2,10 per altezza rivestimento 2,20 (nessuna detrazione per porta o aperture)",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "PAV-01",
+        "BAG-12",
+        "DEM-05",
+        "BAG-13",
+        "CUC-05",
+        "PAV-02",
+        "CUC-04",
+        "DEM-04"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "solo posa: il listino ha fornitura e posa",
+        "suggestedCode": "BAG-12",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "Sotto, il pavimento vecchio va tolto",
+      "work": "rimozione pavimento esistente",
+      "quantity": 3.36,
+      "unit": "m2",
+      "quantityNote": "superficie del bagno 1,60x2,10",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "DEM-12",
+        "PAV-01",
+        "PAV-06",
+        "TIN-09",
+        "PAV-03",
+        "DEM-09",
+        "DEM-11"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.93
+      }
+    },
+    {
+      "spoken": "tolgo anche la caldana vecchia",
+      "work": "demolizione caldana esistente",
+      "quantity": 3.36,
+      "unit": "m2",
+      "quantityNote": "superficie del bagno 1,60x2,10, spessore circa 5 cm",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-12",
+        "DEM-06",
+        "TIN-09",
+        "DEM-04",
+        "DEM-11",
+        "DEM-09",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1035,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-06",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "va rifatta la caldana, cinque centimetri",
+      "work": "rifacimento caldana spessore 5 cm",
+      "quantity": 3.36,
+      "unit": "m2",
+      "quantityNote": "superficie del bagno 1,60x2,10, spessore 5 cm",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-08",
+        "DEM-06",
+        "PAV-09",
+        "VAR-04",
+        "DEM-02",
+        "DEM-03",
+        "PAV-10",
+        "DEM-01"
+      ],
+      "unitPriceCents": 2508,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-08",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Il pavimento invece lo porto io, monocottura trenta per trenta.",
+      "work": "fornitura e posa pavimento in monocottura 30x30",
+      "quantity": 3.36,
+      "unit": "m2",
+      "quantityNote": "superficie del bagno 1,60x2,10",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-03",
+        "PAV-01",
+        "DEM-04",
+        "DEM-11",
+        "BAG-13",
+        "PAV-02",
+        "CUC-04",
+        "PAV-06"
+      ],
+      "unitPriceCents": 5488,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-03",
+        "confidence": 0.93
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Sanitari e idraulica: li fa l'idraulico"
+  ],
+  "notes": [
+    "Piastrelle del rivestimento già acquistate dal cliente, sono in garage",
+    "Piastrelle del pavimento fornite dall'impresa",
+    "Tempi: una settimana abbondante",
+    "Tipo di intervento ai fini IVA non detto"
+  ],
+  "usage": {
+    "inputTokens": 10646,
+    "outputTokens": 2197,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 14096
+}

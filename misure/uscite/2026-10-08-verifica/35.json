@@ -1,0 +1,128 @@
+{
+  "customer": {
+    "name": "Galimberti",
+    "address": "via Mentana 20, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_ordinaria",
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "il cliente ha già comprato le piastrelle per il pavimento, io faccio solo la posa: il bagno è due e quaranta per uno e ottanta",
+      "work": "posa pavimento in piastrelle (bagno)",
+      "quantity": 4.32,
+      "unit": "m2",
+      "quantityNote": "superficie del bagno 2,40 x 1,80 m",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "DEM-04",
+        "PAV-01",
+        "PAV-03",
+        "SMA-06",
+        "DEM-05",
+        "BAG-12",
+        "PAV-02",
+        "PAV-06"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "abbinamento incerto: Il tipo di piastrella non è detto (gres liscio, smaltato o monocottura 30x30): PAV-02 è solo una delle tre voci di pavimento possibili, quindi la scelta è incerta.",
+        "suggestedCode": "PAV-02",
+        "confidence": 0.4
+      }
+    },
+    {
+      "spoken": "Prima tolgo il pavimento vecchio, stessa misura",
+      "work": "rimozione pavimento esistente (bagno)",
+      "quantity": 4.32,
+      "unit": "m2",
+      "quantityNote": "stessa superficie del bagno, 2,40 x 1,80 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-04",
+        "DEM-12",
+        "PAV-01",
+        "DEM-09",
+        "PAV-06",
+        "TIN-09",
+        "PAV-03",
+        "BAG-12"
+      ],
+      "unitPriceCents": 1129,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-04",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "Poi lo zoccolino in gres, quello lo porto io: tutto intorno sono otto metri e mezzo, togliendo la porta",
+      "work": "fornitura e posa zoccolino in gres",
+      "quantity": 8.5,
+      "unit": "m",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-01",
+        "DEM-11",
+        "PAV-02",
+        "DEM-07",
+        "BAG-12",
+        "DEM-05",
+        "DEM-09"
+      ],
+      "unitPriceCents": 1487,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-12",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Lo zoccolino vecchio lo tolgo, stessi metri",
+      "work": "rimozione zoccolino esistente",
+      "quantity": 8.5,
+      "unit": "m",
+      "quantityNote": "stessi metri del nuovo zoccolino, 8,5 m",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "DEM-12",
+        "DEM-07",
+        "TIN-09",
+        "DEM-09",
+        "DEM-04",
+        "DEM-11",
+        "SMA-04"
+      ],
+      "unitPriceCents": 213,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-07",
+        "confidence": 0.95
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Materiale per il pavimento fornito dal cliente (piastrelle); lo zoccolino in gres lo fornisce l'impresa, quindi chi compra i materiali non è univoco."
+  ],
+  "usage": {
+    "inputTokens": 8741,
+    "outputTokens": 1484,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 10448
+}

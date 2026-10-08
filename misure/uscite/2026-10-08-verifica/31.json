@@ -1,0 +1,148 @@
+{
+  "customer": {
+    "name": "Teruzzi",
+    "address": "via Dante 6, Concorezzo"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "In camera da letto mettiamo due prese da dieci",
+      "work": "fornitura e posa prese da 10 A in camera da letto",
+      "quantity": 2,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-06",
+        "CUC-06",
+        "ELE-08",
+        "ELE-07",
+        "DEM-12",
+        "ELE-02",
+        "PAV-12",
+        "BAG-03"
+      ],
+      "unitPriceCents": 4462,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-06",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Poi un punto luce deviato, coi due comandi ai lati del letto",
+      "work": "punto luce deviato con due comandi ai lati del letto",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-01",
+        "ELE-02",
+        "ELE-03",
+        "ELE-05",
+        "DEM-12",
+        "ELE-06",
+        "IDR-01",
+        "ELE-07"
+      ],
+      "unitPriceCents": 6454,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-02",
+        "confidence": 0.96
+      }
+    },
+    {
+      "spoken": "Nel quadro aggiungo un salvavita",
+      "work": "fornitura e posa interruttore differenziale (salvavita) nel quadro",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-10",
+        "ELE-01",
+        "ELE-09",
+        "ELE-12",
+        "CUC-06",
+        "ELE-11",
+        "ELE-05"
+      ],
+      "unitPriceCents": 8905,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-10",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "e un magnetotermico per la linea della camera",
+      "work": "fornitura e posa interruttore magnetotermico per la linea della camera",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "ELE-09",
+        "ELE-01",
+        "ELE-10",
+        "CUC-06",
+        "DEM-09",
+        "ELE-02",
+        "ELE-03",
+        "ELE-06"
+      ],
+      "unitPriceCents": 2506,
+      "match": {
+        "kind": "listino",
+        "code": "ELE-09",
+        "confidence": 0.88
+      }
+    },
+    {
+      "spoken": "E tolgo la vecchia applique sopra la porta",
+      "work": "rimozione vecchia applique sopra la porta",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-11",
+        "DEM-12",
+        "DEM-09",
+        "SMA-04",
+        "TIN-09",
+        "DEM-04",
+        "DEM-08",
+        "DEM-01"
+      ],
+      "unitPriceCents": 1065,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-12",
+        "confidence": 0.85
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "Presa TV in camera da letto: la fa l'antennista"
+  ],
+  "notes": [],
+  "usage": {
+    "inputTokens": 8759,
+    "outputTokens": 1312,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 11568
+}

@@ -1,0 +1,101 @@
+{
+  "customer": {
+    "name": "famiglia Cattaneo",
+    "address": "via Pellico 12, Nova Milanese"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "laminato da otto millimetri su tutti e trentadue",
+      "work": "fornitura e posa pavimento in laminato da 8 mm sopra parquet esistente",
+      "quantity": 32,
+      "unit": "m2",
+      "quantityNote": "Superficie totale di camera e corridoio data dal cliente dalla planimetria",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-05",
+        "PAV-04",
+        "PAV-07",
+        "DEM-04",
+        "PAV-01",
+        "PAV-06",
+        "PAV-03",
+        "PAV-02"
+      ],
+      "unitPriceCents": 5810,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-05",
+        "confidence": 0.9
+      }
+    },
+    {
+      "spoken": "Battiscopa nuovo in legno, trenta metri circa",
+      "work": "fornitura e posa battiscopa in legno",
+      "quantity": 30,
+      "unit": "m",
+      "quantityNote": "Misura approssimata detta dall'artigiano",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "PAV-12",
+        "PAV-11",
+        "DEM-07",
+        "SMA-04",
+        "PAV-04",
+        "PAV-07",
+        "DEM-11"
+      ],
+      "unitPriceCents": 664,
+      "match": {
+        "kind": "listino",
+        "code": "PAV-11",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "le porte vanno accorciate da sotto, sono tre porte: quello lo faccio a ore, un paio d'ore",
+      "work": "accorciamento porte dal basso",
+      "quantity": 2,
+      "unit": "h",
+      "quantityNote": "Un paio d'ore a ore per tre porte",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-07",
+        "DEM-11",
+        "VAR-09",
+        "VAR-08"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "abbinamento incerto: Lavoro a ore su porte (falegnameria/finiture): la voce più vicina è l'operaio specializzato, ma il mestiere non è esplicito.",
+        "suggestedCode": "VAR-07",
+        "confidence": 0.55
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [
+    "rimozione del parquet esistente: viene lasciato, il laminato si posa sopra"
+  ],
+  "notes": [
+    "Autocorrezione: il parquet non viene tolto, il laminato è posato sopra.",
+    "Le tre porte da accorciare sono tre pezzi, lavoro a ore.",
+    "Quantità di 32 m2 fornita dal cliente dalla planimetria, non misurata."
+  ],
+  "usage": {
+    "inputTokens": 7088,
+    "outputTokens": 854,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 6766
+}

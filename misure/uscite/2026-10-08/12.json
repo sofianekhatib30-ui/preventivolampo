@@ -1,0 +1,138 @@
+{
+  "customer": {
+    "name": "Longoni",
+    "address": "viale Libertà, Monza"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": null,
+      "goodsBoughtBy": null
+    },
+    "regime": null,
+    "missing": [
+      "È manutenzione ordinaria, straordinaria o ristrutturazione?",
+      "I materiali li compri tu o il cliente?"
+    ]
+  },
+  "lines": [
+    {
+      "spoken": "Tinteggiatura di tutto, il bianco normale, pareti e soffitti. Fanno duecentoquaranta metri quadri in tutto, pareti e soffitti. In cucina sono trenta metri quadri e quelli li tolgo dal totale",
+      "work": "tinteggiatura pareti e soffitti con idropittura bianca normale",
+      "quantity": 210,
+      "unit": "m2",
+      "quantityNote": "240 m² totali di pareti e soffitti (misure del geometra) meno 30 m² di pareti della cucina, che hanno la lavabile",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-01",
+        "CUC-04",
+        "BAG-12",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-02",
+        "TIN-04"
+      ],
+      "unitPriceCents": 537,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-01",
+        "confidence": 0.6
+      }
+    },
+    {
+      "spoken": "In cucina invece la lavabile resistente, quella da cucina, sui muri: sono trenta metri quadri",
+      "work": "tinteggiatura pareti cucina con pittura lavabile resistente",
+      "quantity": 30,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-02",
+        "TIN-04",
+        "BAG-12",
+        "CUC-04",
+        "VAR-01",
+        "BAG-13",
+        "CUC-05",
+        "TIN-10"
+      ],
+      "unitPriceCents": 611,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-04",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "In bagno l'antimuffa su tutto il soffitto, ma non so quanto è grande il bagno, lo chiedo",
+      "work": "pittura antimuffa sul soffitto del bagno",
+      "quantity": null,
+      "unit": "m2",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-07",
+        "TIN-09",
+        "BAG-12",
+        "TIN-05",
+        "BAG-05",
+        "TIN-02",
+        "TIN-03",
+        "TIN-04"
+      ],
+      "unitPriceCents": 253,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-07",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "In camera ci sono delle crepe da stuccare, tre crepe lunghe... metti tre",
+      "work": "stuccatura crepe in camera",
+      "quantity": 3,
+      "unit": null,
+      "quantityNote": "Tre crepe, la lunghezza non è stata detta",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "TIN-08",
+        "ELE-03",
+        "TIN-10",
+        "TIN-11"
+      ],
+      "unitPriceCents": 238,
+      "match": {
+        "kind": "listino",
+        "code": "TIN-08",
+        "confidence": 0.6
+      }
+    }
+  ],
+  "questions": [
+    {
+      "lineIndex": 2,
+      "kind": "quantita_mancante",
+      "text": "Quanti m² di «pittura antimuffa sul soffitto del bagno»?"
+    },
+    {
+      "lineIndex": 3,
+      "kind": "unita_mancante",
+      "text": "«stuccatura crepe in camera»: 3 in che unità?"
+    }
+  ],
+  "exclusions": [],
+  "notes": [
+    "Superficie del bagno da chiedere: la quantità dell'antimuffa sul soffitto resta da definire. Non è stata sottratta dai 240 m² perché la misura non si conosce.",
+    "Il colore della camera lo decide la signora, per adesso bianco.",
+    "I 240 m² totali (pareti e soffitti) sono le misure date dal geometra dei clienti.",
+    "Le tre crepe in camera sono contate a pezzi perché l'artigiano ha detto di mettere tre; la lunghezza non è stata detta."
+  ],
+  "usage": {
+    "inputTokens": 8285,
+    "outputTokens": 1894,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 13598
+}

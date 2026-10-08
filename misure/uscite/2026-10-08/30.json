@@ -1,0 +1,190 @@
+{
+  "customer": {
+    "name": "signor Crippa",
+    "address": "via Mazzini 11, Villasanta"
+  },
+  "vat": {
+    "context": {
+      "dwelling": true,
+      "intervention": "manutenzione_straordinaria",
+      "goodsBoughtBy": "impresa"
+    },
+    "regime": "agevolata_10_beni_significativi",
+    "missing": []
+  },
+  "lines": [
+    {
+      "spoken": "tolgo il vaso vecchio",
+      "work": "rimozione vaso esistente",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "DEM-12",
+        "DEM-09",
+        "BAG-01",
+        "BAG-02",
+        "TIN-09",
+        "DEM-04",
+        "DEM-08",
+        "DEM-11"
+      ],
+      "unitPriceCents": 2899,
+      "match": {
+        "kind": "listino",
+        "code": "DEM-08",
+        "confidence": 0.85
+      }
+    },
+    {
+      "spoken": "Metto il vaso a terra nuovo",
+      "work": "fornitura e posa vaso a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-01",
+        "BAG-02",
+        "BAG-04",
+        "PAV-01",
+        "BAG-03"
+      ],
+      "unitPriceCents": 22633,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-01",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "il bidet a terra",
+      "work": "fornitura e posa bidet a terra",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-01",
+        "DEM-08",
+        "PAV-01"
+      ],
+      "unitPriceCents": 13688,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-04",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "per il bidet serve un attacco nuovo, acqua calda e fredda con lo scarico, uno",
+      "work": "nuovo attacco bidet con acqua calda, fredda e scarico",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "IDR-01",
+        "IDR-03",
+        "IDR-04",
+        "IDR-02",
+        "IDR-05",
+        "BAG-09",
+        "CUC-03"
+      ],
+      "unitPriceCents": 19661,
+      "match": {
+        "kind": "listino",
+        "code": "IDR-01",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Il miscelatore del bidet",
+      "work": "fornitura e posa miscelatore bidet",
+      "quantity": 1,
+      "unit": "cad",
+      "quantityNote": null,
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "BAG-04",
+        "BAG-09",
+        "BAG-08",
+        "BAG-10",
+        "CUC-02",
+        "DEM-08"
+      ],
+      "unitPriceCents": 12310,
+      "match": {
+        "kind": "listino",
+        "code": "BAG-09",
+        "confidence": 0.95
+      }
+    },
+    {
+      "spoken": "Per fare spazio va spostato il lavandino di una ventina di centimetri: quello a ore, tipo tre ore mie",
+      "work": "spostamento lavandino di circa 20 cm, a ore",
+      "quantity": 3,
+      "unit": "h",
+      "quantityNote": "Tre ore dette a stima dall'artigiano",
+      "clientSuppliesMaterial": false,
+      "candidates": [
+        "VAR-07",
+        "BAG-05",
+        "VAR-09",
+        "PAV-08",
+        "VAR-04",
+        "VAR-08",
+        "CUC-01",
+        "VAR-01"
+      ],
+      "unitPriceCents": 3656,
+      "match": {
+        "kind": "listino",
+        "code": "VAR-09",
+        "confidence": 0.8
+      }
+    },
+    {
+      "spoken": "Le piastrelle che rompo dove passo coi tubi le rimetto con quelle di scorta che ha lui in cantina, sarà mezzo metro quadro",
+      "work": "ripristino rivestimento in piastrelle dove si passano le tubazioni, con piastrelle di scorta del cliente",
+      "quantity": 0.5,
+      "unit": "m2",
+      "quantityNote": "Misura approssimata detta dall'artigiano (circa mezzo metro quadro)",
+      "clientSuppliesMaterial": true,
+      "candidates": [
+        "DEM-05",
+        "CUC-04",
+        "CUC-05",
+        "BAG-12",
+        "BAG-13",
+        "DEM-04",
+        "ELE-12",
+        "PAV-01"
+      ],
+      "unitPriceCents": null,
+      "match": {
+        "kind": "da_prezzare",
+        "reason": "nessuna voce del listino: Nessuna voce di solo ripristino/posa di piastrelle a parete di scorta; le voci di rivestimento hanno formati specifici e non descrivono questo ripristino.",
+        "suggestedCode": null,
+        "confidence": 0.4
+      }
+    }
+  ],
+  "questions": [],
+  "exclusions": [],
+  "notes": [
+    "Il materiale nuovo lo compra l'impresa; le piastrelle di scorta sono del cliente."
+  ],
+  "usage": {
+    "inputTokens": 10064,
+    "outputTokens": 1929,
+    "calls": 2
+  },
+  "model": "claude-sonnet-5-5",
+  "elapsedMs": 13515
+}
