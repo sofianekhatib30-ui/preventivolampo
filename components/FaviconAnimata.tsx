@@ -51,7 +51,9 @@ function disegna(ctx: CanvasRenderingContext2D, t: number, lunghezza: number) {
 export function FaviconAnimata() {
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const link = document.querySelector<HTMLLinkElement>('link[rel~="icon"][type="image/svg+xml"], link[rel~="icon"]');
+    const link =
+      document.querySelector<HTMLLinkElement>('link[rel~="icon"][type="image/svg+xml"]') ??
+      document.querySelector<HTMLLinkElement>('link[rel~="icon"]');
     if (!link) return;
     const originale = link.href;
     const canvas = document.createElement("canvas");
