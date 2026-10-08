@@ -11,6 +11,8 @@ http.createServer((req, res) => {
     if (req.url === '/_reset') { log.length = 0; return res.end('ok'); }
     log.push(entry);
     res.setHeader('content-type', 'application/json');
+    if (/^\/twilio\/2010-04-01\/Accounts\/AC\w+\/Messages\.json/.test(req.url)) return res.end(JSON.stringify({ sid: 'SMprova', status: 'queued' }));
+    if (req.url.startsWith('/files/tw-media')) { res.setHeader('content-type', 'audio/ogg'); return res.end(Buffer.from('OGGTWILIO')); }
     if (/^\/graph\/\d+\/messages/.test(req.url)) return res.end(JSON.stringify({ messaging_product: 'whatsapp', messages: [{ id: 'wamid.RISPOSTA' }] }));
     if (req.url.startsWith('/graph/MEDIA1')) return res.end(JSON.stringify({ url: 'http://127.0.0.1:5999/files/wa-media', mime_type: 'audio/ogg; codecs=opus', id: 'MEDIA1' }));
     if (req.url.startsWith('/files/wa-media')) { res.setHeader('content-type', 'audio/ogg'); return res.end(Buffer.from('OGGFINTO')); }
