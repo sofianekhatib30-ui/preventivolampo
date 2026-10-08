@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { centesimi, euro, UNITA } from "@/components/preventivo/formato";
+import { centesimi, euro, PER_UNITA, UNITA } from "@/components/preventivo/formato";
 import type { Voce } from "@/lib/impresa/schema";
 
 const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal text-inchiostro";
@@ -248,7 +248,7 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
               </span>
               <span className="shrink-0 text-right font-mono">
                 <span className="block text-[17px] font-semibold">{euro(v.prezzo_cents)}</span>
-                <span className="block text-[14px] text-testo-3">al {UNITA[v.unita]}</span>
+                <span className="block text-[14px] text-testo-3">{PER_UNITA[v.unita]}</span>
               </span>
             </button>
             {aperta === v.id && <Editor id={v.id} iniziale={daVoce(v)} onFatto={fatto} onAnnulla={() => setAperta(null)} />}

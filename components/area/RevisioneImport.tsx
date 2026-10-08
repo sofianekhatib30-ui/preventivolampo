@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { centesimi, euro, UNITA } from "@/components/preventivo/formato";
+import { centesimi, euro, PER_UNITA, UNITA } from "@/components/preventivo/formato";
 import type { Campo, Mappatura, RigaImport } from "@/lib/impresa/importa";
 
 const NOMI: Record<Campo, string> = {
@@ -204,7 +204,7 @@ export default function RevisioneImport({
                   ) : (
                     <p className="mt-1 flex flex-wrap items-baseline gap-x-3 font-mono text-[15px]">
                       <span className="font-semibold">{euro(centesimi(r.prezzoTesto) ?? 0)}</span>
-                      <span className="text-testo-3">al {UNITA[r.unita!]}</span>
+                      <span className="text-testo-3">{PER_UNITA[r.unita!]}</span>
                       <span className="text-testo-3">{r.codice}</span>
                       <button type="button" onClick={() => set(r.n, { aperta: true })} className="min-h-11 font-sans text-[14px] font-semibold text-cielo-scuro underline">
                         Correggi

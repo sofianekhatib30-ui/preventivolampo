@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { centesimi, euro, UNITA } from "@/components/preventivo/formato";
+import { centesimi, euro, PER_UNITA, UNITA } from "@/components/preventivo/formato";
 import type { Proposta } from "@/lib/impresa/da-prezzare";
 
 const piccolo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal";
@@ -38,7 +38,7 @@ function Scheda({ p, codice }: { p: Proposta; codice: string }) {
     <li className="rounded-card bg-superficie p-4 ring-1 ring-linea sm:p-5">
       <p className="text-[14px] text-testo-3">
         Dal preventivo n. <span className="font-mono">{p.numero ?? "?"}</span>
-        {p.prezzo_cents !== null && p.unita && ` · hai messo ${euro(p.prezzo_cents)} al ${UNITA[p.unita] ?? p.unita}`}
+        {p.prezzo_cents !== null && p.unita && ` · hai messo ${euro(p.prezzo_cents)} ${PER_UNITA[p.unita] ?? p.unita}`}
       </p>
       <label className="mt-2 block text-[15px] font-semibold text-testo-2">
         Nome nel listino
