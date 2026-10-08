@@ -32,6 +32,21 @@ describe("una voce, una riga", () => {
   it("lascia separate le righe senza quantità, con unità diverse o da prezzare", () => {
     expect(mergeSameItem([riga("bianco in camera", "TIN-01", 30, "m2"), riga("bianco nel corridoio", "TIN-01", null, "m2")])).toHaveLength(2);
     expect(mergeSameItem([riga("cavo", "ELE-13", 10, "m"), riga("cavo", "ELE-13", 2, "h")])).toHaveLength(2);
-    expect(mergeSameItem([riga("carotaggio", null, 1), riga("carotaggio", null, 1)])).toHaveLength(2);
+    expect(mergeSameItem([riga("carotaggio in cucina", null, 1), riga("carotaggio in bagno", null, 1)])).toHaveLength(2);
+  });
+
+  it("toglie il doppione esatto anche senza quantità o da prezzare", () => {
+    expect(mergeSameItem([riga("La camera non l'ho misurata", "TIN-01", null, "m2"), riga("la camera non l'ho misurata.", "TIN-01", null, "m2")])).toHaveLength(1);
+    expect(mergeSameItem([riga("carotaggio", null, 1), riga("carotaggio", null, 1)])).toHaveLength(1);
+    expect(mergeSameItem([riga("la camera non l'ho misurata, pareti e soffitto, stesso bianco", "TIN-01", null, "m2"), riga("la camera non l'ho misurata, pareti uguale, stesso bianco", "TIN-01", null, "m2")])).toHaveLength(1);
+  });
+
+  it("un accessorio staccato («col telaio», «con la placca») non raddoppia il pezzo", () => {
+    const out = mergeSameItem([riga("il vaso sospeso", "BAG-02", 1), riga("col telaio", "BAG-02", 1)]);
+    expect(out).toHaveLength(1);
+    expect(out[0].quantity).toBe(1);
+    expect(mergeSameItem([riga("la cassetta a incasso", "BAG-03", 1), riga("con la placca", "BAG-03", 1)])[0].quantity).toBe(1);
+    // «con altre due» invece aggiunge pezzi.
+    expect(mergeSameItem([riga("una presa", "ELE-06", 1), riga("con altre due prese", "ELE-06", 2)])[0].quantity).toBe(3);
   });
 });

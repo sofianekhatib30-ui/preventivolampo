@@ -31,6 +31,8 @@ export type Extraction = z.infer<typeof Extraction>;
 export const MatchChoice = z.strictObject({
   index: z.number().int().nonnegative(),
   code: z.string().min(1).max(40).nullable(),
+  alsoCode: z.string().min(1).max(40).nullable().optional(),
+  quantityCalc: z.string().max(200).nullable().optional(),
   confidence: z.number().min(0).max(1),
   reason: z.string().min(3),
 });
