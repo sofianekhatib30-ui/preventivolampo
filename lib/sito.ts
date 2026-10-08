@@ -14,7 +14,7 @@ export const SITE_URL =
 export const SITE_TITLE = "PreventivoLampo — Il preventivo parte dal furgone";
 
 export const SITE_DESCRIPTION =
-  "Mandi un vocale su WhatsApp dopo il sopralluogo: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Programma pilota per artigiani edili.";
+  "Racconti il sopralluogo a voce o per iscritto: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Per tutti i mestieri della casa.";
 
 export const CONTACT_EMAIL = "studio@kdigitalsolution.it";
 

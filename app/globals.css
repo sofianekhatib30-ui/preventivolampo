@@ -240,3 +240,47 @@
 .testo-legale p {
   margin: 0;
 }
+
+/* Fondo a quadretti, come il foglio del sopralluogo: si dissolve verso il basso */
+@utility quadretti {
+  background-image:
+    linear-gradient(to right, rgb(74 77 94 / 0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(74 77 94 / 0.45) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+/* Cursori della sezione «quanto ti costano i preventivi» */
+.cursore {
+  appearance: none;
+  width: 100%;
+  height: 2.75rem;
+  background: transparent;
+  cursor: pointer;
+}
+.cursore::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--color-ardesia) var(--pieno, 50%), var(--color-linea-2) var(--pieno, 50%));
+}
+.cursore::-moz-range-track {
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--color-ardesia) var(--pieno, 50%), var(--color-linea-2) var(--pieno, 50%));
+}
+.cursore::-webkit-slider-thumb {
+  appearance: none;
+  margin-top: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background: var(--color-lime);
+  border: 2px solid var(--color-inchiostro);
+}
+.cursore::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background: var(--color-lime);
+  border: 2px solid var(--color-inchiostro);
+}

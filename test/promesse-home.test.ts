@@ -25,46 +25,46 @@ type Promessa = {
 
 const PROMESSE: Promessa[] = [
   {
-    rigaSpec: "«Mandi un vocale su WhatsApp»",
-    frasi: ["Mandi un vocale su WhatsApp"],
-    requisito: "Canale WhatsApp Business Platform (F6)",
-    prova: null,
+    rigaSpec: "«Lo racconti a voce o lo scrivi»",
+    frasi: ["Lo racconti a voce o lo scrivi"],
+    requisito: "Dettatura nel browser e testo libero nell'area",
+    prova: { file: "components/preventivo/Dettatura.tsx", contiene: "SpeechRecognition" },
   },
   {
     rigaSpec: "«Ti chiede cosa manca»",
     frasi: ["Ti chiede cosa manca"],
     requisito: "Domande di chiarimento su quantità/unità mancanti (banco F2/F3)",
-    prova: null,
+    prova: { file: "test/motore.test.ts", contiene: "misura mancante → domanda" },
   },
   {
     rigaSpec: "«Nessun prezzo inventato» / «da prezzare»",
     frasi: ["Nessun prezzo inventato", "da prezzare"],
     requisito: "Nessun prezzo fuori listino; voce non abbinata = «da prezzare» (misura F3)",
-    prova: null,
+    prova: { file: "misure/2026-10-08.md", contiene: "| **Prezzi inventati** | **0** |" },
   },
   {
     rigaSpec: "«l'IVA giusta» / ripartizione 10% e 22%",
     frasi: ["l'IVA giusta", "IVA 10% e 22%"],
     requisito: "Motore IVA con beni significativi, esempio AdE 4.000 + 6.000 → totale 11.240,00",
-    prova: null,
+    prova: { file: "test/motore.test.ts", contiene: "esempio dell'Agenzia delle Entrate" },
   },
   {
     rigaSpec: "«il cliente riceve il PDF da accettare con un clic»",
     frasi: ["il cliente riceve il PDF da accettare con un clic"],
     requisito: "Link di accettazione senza registrazione (F5)",
-    prova: null,
+    prova: { file: "test/preventivo-e2e.test.ts", contiene: "poi PDF, link al cliente e accettazione" },
   },
   {
     rigaSpec: "«Tu vedi quando lo apre e quando dice sì»",
     frasi: ["Tu vedi quando lo apre e quando dice sì"],
     requisito: "Stati inviato / visto / accettato / rifiutato / scaduto (F5)",
-    prova: null,
+    prova: { file: "test/esempi-visto.test.ts", contiene: "si segna una volta sola e solo sui preventivi approvati" },
   },
   {
     rigaSpec: "«Le voci nuove che prezzi entrano nel tuo listino»",
     frasi: ["Le voci nuove che prezzi entrano nel tuo listino"],
     requisito: "Voce prezzata in revisione → proposta di aggiunta al listino (F5)",
-    prova: null,
+    prova: { file: "lib/impresa/da-prezzare.ts", contiene: "Entrano nel listino solo quando lui le conferma" },
   },
   {
     rigaSpec: "«server nell'Unione Europea»",
@@ -73,11 +73,10 @@ const PROMESSE: Promessa[] = [
     prova: null,
   },
   {
-    // La SPEC abbrevia: nella pagina la frase è «Gli audio vengono cancellati dopo 30 giorni».
-    rigaSpec: "«audio cancellati dopo 30 giorni»",
-    frasi: ["audio vengono cancellati dopo 30 giorni"],
-    requisito: "Job di cancellazione a 30 giorni, testato (F4/F5)",
-    prova: null,
+    rigaSpec: "«Ai nostri server arriva solo il testo, non l'audio»",
+    frasi: ["Ai nostri server arriva solo il testo, non l'audio"],
+    requisito: "La dettatura avviene nel browser; nessun audio salvato",
+    prova: { file: "components/preventivo/Dettatura.tsx", contiene: "niente audio sul nostro server" },
   },
   {
     rigaSpec: "«firmiamo l'accordo per il trattamento dei dati»",
@@ -89,7 +88,13 @@ const PROMESSE: Promessa[] = [
     rigaSpec: "«Nessun rinnovo automatico» / «Disdici quando vuoi»",
     frasi: ["Nessun rinnovo automatico", "Disdici quando vuoi"],
     requisito: "Condizioni coerenti (Notaio)",
-    prova: null,
+    prova: { file: "app/condizioni/page.tsx", contiene: "Nessun rinnovo automatico" },
+  },
+  {
+    rigaSpec: "«99,4%» / «26 su 26»",
+    frasi: ["99,4%", "26 su 26"],
+    requisito: "Numeri pubblicati = misure generate da npm run misura",
+    prova: { file: "misure/2026-10-08.md", contiene: "| 158 su 159 (99,4%) |" },
   },
 ];
 
@@ -140,7 +145,7 @@ describe("promesse della home", () => {
   it("ogni riga della tabella della SPEC ha la sua promessa qui, e nessuna in più", () => {
     const righe = righeDellaSpec();
     // Minimo: una tabella che sparisce o si svuota non deve far passare il test.
-    expect(righe.length).toBeGreaterThanOrEqual(11);
+    expect(righe.length).toBeGreaterThanOrEqual(12);
     expect(PROMESSE.map((p) => p.rigaSpec).sort()).toEqual([...righe].sort());
   });
 

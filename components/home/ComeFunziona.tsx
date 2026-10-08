@@ -1,18 +1,13 @@
 import type { ReactNode } from "react";
-import { SoloDesktop, SoloMobile } from "./Varianti";
+import { SoloDesktop } from "./Varianti";
 
 type Passo = { numero: string; titolo: string; testo: ReactNode; nota: string };
 
 const PASSI: Passo[] = [
   {
     numero: "01",
-    titolo: "Parli come parli",
-    testo: (
-      <>
-        Un vocale dopo il sopralluogo<SoloDesktop>. Misure</SoloDesktop>
-        <SoloMobile>: misure</SoloMobile> a voce, lavori, cosa porta il cliente, cosa è escluso.
-      </>
-    ),
+    titolo: "Racconti il lavoro",
+    testo: "A voce o per iscritto, dal telefono, appena finito il sopralluogo: misure, lavori, cosa porta il cliente, cosa è escluso.",
     nota: "«tre per due e mezzo, più o meno»",
   },
   {
@@ -52,7 +47,7 @@ export function ComeFunziona() {
           Dal vocale al preventivo accettato, in quattro passaggi.
         </h2>
         <p className="m-0 hidden max-w-[380px] text-lg leading-normal text-testo-2 lg:block">
-          Tu parli e controlli. Il resto — misure, listino, IVA, PDF, invio — lo fa il sistema.
+          Tu racconti e controlli. Conti, listino, IVA, PDF e invio li fa il sistema.
         </p>
       </div>
       <ol className="m-0 grid list-none gap-3 p-0 lg:grid-cols-2 lg:gap-5 xl:grid-cols-4">

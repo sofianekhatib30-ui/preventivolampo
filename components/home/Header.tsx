@@ -5,7 +5,8 @@ import { MenuMobile } from "./MenuMobile";
 
 export const NAV_LINKS = [
   { href: "#come", label: "Come funziona" },
-  { href: "#perche", label: "Cosa cambia" },
+  { href: "#mestieri", label: "Mestieri" },
+  { href: "#numeri", label: "I numeri" },
   { href: "#prezzi", label: "Prezzi" },
   { href: "#domande", label: "Domande" },
 ] as const;

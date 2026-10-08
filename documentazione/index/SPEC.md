@@ -75,22 +75,25 @@ La home promette cose precise. **Non va online in produzione finché ognuna non 
 
 | Promessa nella pagina | Requisito | Dove si prova |
 |---|---|---|
-| «Mandi un vocale su WhatsApp» | Canale WhatsApp Business Platform | F6 (aggiornata in D2) |
+| «Lo racconti a voce o lo scrivi» | Dettatura nel browser e testo libero nell'area; WhatsApp di prova solo scritto | `components/preventivo/Dettatura.tsx` |
 | «Ti chiede cosa manca» | Domande di chiarimento su quantità/unità mancanti | Banco F2/F3: casi con misura mancante |
-| «Nessun prezzo inventato» / «da prezzare» | Nessun prezzo fuori listino; voce non abbinata = «da prezzare» | Misura F3: prezzi inventati = 0 |
+| «Nessun prezzo inventato» / «da prezzare» | Nessun prezzo fuori listino; voce non abbinata = «da prezzare» | Misura F3: prezzi inventati = 0 (`misure/2026-10-08.md`) |
 | «l'IVA giusta» / ripartizione 10% e 22% | Motore IVA con beni significativi | Test sull'esempio AdE: 4.000 + 6.000 → 8.000 al 10%, 2.000 al 22%, totale 11.240,00 |
-| «il cliente riceve il PDF da accettare con un clic» | Link di accettazione senza registrazione | F5 |
-| «Tu vedi quando lo apre e quando dice sì» | Stati inviato / visto / accettato / rifiutato / scaduto | F5 |
+| «il cliente riceve il PDF da accettare con un clic» | Link di accettazione senza registrazione | F5 (`test/preventivo-e2e.test.ts`) |
+| «Tu vedi quando lo apre e quando dice sì» | Stati inviato / visto / accettato / rifiutato / scaduto | F5 (`test/esempi-visto.test.ts`) |
 | «Le voci nuove che prezzi entrano nel tuo listino» | Voce prezzata in revisione → proposta di aggiunta al listino | F5 |
 | «server nell'Unione Europea» | Database, storage e funzioni in regione UE; elenco sub-responsabili | Bastione + notaio |
-| «audio cancellati dopo 30 giorni» | Job di cancellazione a 30 giorni, testato | F4/F5 |
+| «Ai nostri server arriva solo il testo, non l'audio» | La dettatura avviene nel browser; nessun audio salvato | `components/preventivo/Dettatura.tsx` |
 | «firmiamo l'accordo per il trattamento dei dati» | Modello DPA pronto | Notaio |
 | «Nessun rinnovo automatico» / «Disdici quando vuoi» | Condizioni coerenti | Notaio |
+| «99,4%» / «26 su 26» | Numeri pubblicati = misure generate da `npm run misura`; si aggiornano a ogni nuova misura, anche se peggiori | `misure/2026-10-08.md`, `misure/2026-10-08-verifica.md` |
+
+Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Mandi un vocale su WhatsApp» è diventata «Lo racconti a voce o lo scrivi» (il canale WhatsApp con i vocali non è ancora attivo per gli artigiani), e «audio cancellati dopo 30 giorni» è diventata «Ai nostri server arriva solo il testo, non l'audio» (la dettatura avviene nel browser, nessun audio viene salvato).
 
 ## SEO, condivisione, dati strutturati
 
 - `title`: «PreventivoLampo — Il preventivo parte dal furgone | Monza e Brianza»
-- `description`: «Mandi un vocale su WhatsApp dopo il sopralluogo: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Programma pilota per artigiani in Monza e Brianza.»
+- `description`: «Racconti il sopralluogo a voce o per iscritto: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Per tutti i mestieri della casa.»
 - `lang="it"`, `canonical` sul dominio definitivo (decisione aperta), `robots` `noindex` finché la pagina non è in produzione
 - Immagine Open Graph 1200×630 generata con `next/og`: fondo inchiostro, H1 in giallo, logo
 - Favicon e icona Apple dal fulmine (SVG + PNG 180)

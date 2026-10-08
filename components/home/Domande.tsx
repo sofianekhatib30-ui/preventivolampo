@@ -9,9 +9,45 @@ const DOMANDE: Domanda[] = [
     domanda: "E se sbaglia?",
     risposta: (
       <>
-        Al cliente non arriva niente senza la tua approvazione. Le voci incerte le vedi evidenziate
-        e i prezzi vengono solo dal tuo listino.
-        <SoloDesktop> Il controllo finale è sempre tuo.</SoloDesktop>
+        Al cliente non arriva niente senza la tua approvazione: le voci incerte le vedi evidenziate e i prezzi vengono solo dal
+        tuo listino. Sulle nostre prove ha sbagliato una riga su 159, e nessun prezzo inventato.
+      </>
+    ),
+  },
+  {
+    domanda: "Non sono bravo con il computer.",
+    risposta: (
+      <>
+        Se sai mandare un vocale su WhatsApp, sai usarlo. Si apre dal browser del telefono, niente da installare, e se ti blocchi
+        ti risponde una persona.
+      </>
+    ),
+  },
+  {
+    domanda: "I prezzi li so solo io.",
+    risposta: (
+      <>
+        Appunto: usiamo solo i tuoi. Il listino lo carichi com&apos;è, anche in foto o da vecchi preventivi, e quello che non c&apos;è
+        resta da prezzare finché non lo decidi tu.
+      </>
+    ),
+  },
+  {
+    domanda: "Non basta un chatbot?",
+    risposta: (
+      <>
+        Un assistente generico non conosce il tuo listino, quindi i prezzi li stima. Non ripartisce l&apos;IVA con i beni
+        significativi, non fa il PDF con il tuo logo e non raccoglie il sì del cliente.
+      </>
+    ),
+  },
+  {
+    domanda: "Va bene per il mio mestiere?",
+    risposta: (
+      <>
+        Se lavori a voci e misure, sì: elettricisti, idraulici, imbianchini, piastrellisti, muratori, cartongessisti,
+        serramentisti, fabbri, giardinieri. Le parole del mestiere le trova nel tuo listino. Con il pilota lo misuriamo anche sui
+        mestieri che non abbiamo ancora provato.
       </>
     ),
   },
@@ -19,19 +55,17 @@ const DOMANDE: Domanda[] = [
     domanda: "Parlo veloce, c'è rumore, uso termini miei.",
     risposta: (
       <>
-        Il sistema conosce le voci del tuo listino<SoloDesktop> e i nomi che usi tu</SoloDesktop>.
-        Se una misura non è chiara, te la richiede invece di
-        <SoloDesktop> tirare a</SoloDesktop> indovinare.
+        Il sistema conosce le voci del tuo listino<SoloDesktop> e i nomi che usi tu</SoloDesktop>. Se una misura non è chiara,
+        te la richiede invece di tirare a indovinare.
       </>
     ),
   },
   {
-    domanda: "Devo installare qualcosa?",
+    domanda: "Il cliente vuole la carta.",
     risposta: (
       <>
-        No. Usi WhatsApp come fai già, e la bozza si apre nel browser del telefono.{" "}
-        <SoloDesktop>Il tuo cliente non deve registrarsi: apre il link e accetta.</SoloDesktop>
-        <SoloMobile>Il cliente apre il link e accetta, senza registrarsi.</SoloMobile>
+        Il PDF si stampa come qualunque preventivo. Con il link però accetta in un minuto, senza registrarsi, e tu hai la prova
+        di che cosa ha accettato.
       </>
     ),
   },
@@ -44,10 +78,9 @@ const DOMANDE: Domanda[] = [
     ),
     risposta: (
       <>
-        Listino e preventivi stanno su server nell&apos;Unione Europea; per preparare la bozza il testo del
-        sopralluogo passa dall&apos;intelligenza artificiale di Anthropic. Gli audio vengono cancellati dopo 30 giorni, e con te
-        firmiamo l&apos;accordo per il trattamento dei dati
-        <SoloDesktop> dei tuoi clienti</SoloDesktop>.
+        Listino e preventivi stanno su server nell&apos;Unione Europea. Per preparare la bozza il testo del sopralluogo passa da
+        un servizio di intelligenza artificiale, indicato nella <a href="/privacy">pagina Privacy</a>. Ai nostri server arriva solo il testo, non
+        l&apos;audio, e con te firmiamo l&apos;accordo per il trattamento dei dati<SoloDesktop> dei tuoi clienti</SoloDesktop>.
       </>
     ),
   },
@@ -59,18 +92,7 @@ const DOMANDE: Domanda[] = [
     ),
     risposta: (
       <>
-        No, tieni il tuo. PreventivoLampo si occupa dei preventivi
-        <SoloDesktop>; le fatture restano dove sono</SoloDesktop>.
-      </>
-    ),
-  },
-  {
-    domanda: "Va bene anche per elettricisti e imbianchini?",
-    risposta: (
-      <>
-        Sì, se lavori a voci e misure. Partiamo da bagni, impianti e ristrutturazioni: se fai
-        altro, candidati lo stesso
-        <SoloDesktop> e ne parliamo</SoloDesktop>.
+        No, tieni il tuo. PreventivoLampo si occupa dei preventivi<SoloDesktop>; le fatture restano dove sono</SoloDesktop>.
       </>
     ),
   },

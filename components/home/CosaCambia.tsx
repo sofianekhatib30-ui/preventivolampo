@@ -76,12 +76,12 @@ export function CosaCambia() {
             </p>
             <p className={`${testoCard} hidden lg:block`}>
               Ti facciamo tre domande — tipo di immobile, tipo di lavoro, chi compra i materiali — e
-              sul PDF la ripartizione esce giusta, con la dicitura.
+              sul PDF l&apos;IVA 10% e 22% esce ripartita giusta, con la dicitura.
             </p>
             <p className={`${testoCard} lg:hidden`}>
               Il 10% sui lavori in casa, ma i beni significativi — sanitari, rubinetteria, infissi,
               caldaie — ci rientrano solo fino al valore del resto. La parte che eccede va al 22%.
-              Tre domande, e sul PDF la ripartizione esce giusta.
+              Tre domande, e sul PDF l&apos;IVA 10% e 22% esce ripartita giusta.
             </p>
           </div>
           <Scontrino />

@@ -5,11 +5,19 @@ import { z } from "zod";
 // Messaggi di errore: formulazioni minime, da far riscrivere ad Araldo (vedi consegna).
 
 export const TRADES = [
-  "Idraulico",
-  "Piastrellista",
-  "Impresa di ristrutturazioni",
   "Elettricista",
+  "Idraulico",
+  "Termoidraulico",
   "Imbianchino",
+  "Piastrellista",
+  "Muratore",
+  "Cartongessista",
+  "Serramentista",
+  "Falegname",
+  "Fabbro",
+  "Giardiniere",
+  "Impresa edile",
+  "Impresa di ristrutturazioni",
   "Altro",
 ] as const;
 
