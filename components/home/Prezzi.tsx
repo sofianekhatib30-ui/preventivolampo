@@ -32,7 +32,7 @@ export function Prezzi() {
             <span className="text-base text-scuro-testo lg:text-lg">per 60 giorni</span>
           </p>
           <p className="m-0 text-base leading-[1.55] text-scuro-testo lg:text-[17px]">
-            Ti aiutiamo noi a partire, preventivi illimitati. In cambio ci dici cosa non funziona.{" "}
+            Preventivi illimitati e assistenza se ti serve. In cambio ci dici cosa non funziona.{" "}
             Dal 61° giorno 19,90 € al mese o 199 € l&apos;anno, solo se decidi di restare: nessun rinnovo automatico.
           </p>
           <a

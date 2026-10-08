@@ -17,7 +17,7 @@ export default function Page() {
       <h2>Programma pilota</h2>
       <ul>
         <li>Dieci posti per artigiani di Monza e Brianza, assegnati da noi dopo una telefonata.</li>
-        <li>60 giorni gratuiti dall&apos;avvio, con preventivi illimitati e un&apos;ora di affiancamento per caricare il listino e impostare logo, dati e condizioni sul PDF.</li>
+        <li>60 giorni gratuiti dall&apos;avvio, con preventivi illimitati. Il listino lo carichi tu dal tuo Excel; se ti serve, ti assistiamo noi.</li>
         <li>Nessun rinnovo automatico: alla fine dei 60 giorni decidi tu se restare. Se non ci dici niente, il pilota finisce lì.</li>
         <li>In cambio ti chiediamo di usarlo sui tuoi lavori veri e di dirci cosa funziona e cosa no.</li>
       </ul>

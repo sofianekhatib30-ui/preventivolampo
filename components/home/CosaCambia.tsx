@@ -28,8 +28,8 @@ export function CosaCambia() {
         <Card titolo="Il tuo listino, dal tuo Excel">
           <p className={testoCard}>
             Carichi l&apos;Excel o il CSV che hai già: il sistema riconosce voci, unità di misura e
-            prezzi, e segna a parte i sanitari per l&apos;IVA. Tu controlli e confermi. Se il listino ce
-            l&apos;hai solo su carta, ti aiutiamo noi.
+            prezzi, e segna a parte i sanitari per l&apos;IVA. Tu controlli e confermi. Se ti blocchi,
+            ti aiutiamo noi.
           </p>
           <TabellaListino />
         </Card>
