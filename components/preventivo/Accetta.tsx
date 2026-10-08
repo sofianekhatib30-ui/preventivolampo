@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // La risposta del cliente: nome, spunta di presa visione, un pulsante. Nessuna registrazione.
 export default function Accetta({ token }: { token: string }) {
@@ -12,7 +12,11 @@ export default function Accetta({ token }: { token: string }) {
   const [invio, setInvio] = useState(false);
 
   // «Visto»: lo segna il browser dopo il caricamento, non l'anteprima del link su WhatsApp.
+  // Una volta sola per caricamento (in sviluppo React esegue gli effetti due volte).
+  const segnato = useRef(false);
   useEffect(() => {
+    if (segnato.current) return;
+    segnato.current = true;
     fetch(`/api/accetta/${token}/visto`, { method: "POST" }).catch(() => {});
   }, [token]);
 

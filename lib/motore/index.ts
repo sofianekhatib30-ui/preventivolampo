@@ -1,4 +1,4 @@
-import type { PriceList, PriceListItem } from "@/lib/listino/schema";
+import type { VoceMotore as PriceListItem } from "@/lib/listino/schema";
 import { candidatesFor } from "./candidati";
 import { chooseMatches } from "./abbinamento";
 import { modelName, type ToolCaller } from "./claude";
@@ -12,12 +12,15 @@ import type { Draft, DraftLine, DraftQuestion } from "./tipi";
 
 export const CONFIDENCE_THRESHOLD = 0.6;
 
-const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali" };
+const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo" };
 
-export async function elabora(transcript: string, list: PriceList, call: ToolCaller): Promise<Draft> {
+export type ListinoMotore = { items: PriceListItem[] };
+export type OpzioniMotore = { impresa?: string };
+
+export async function elabora(transcript: string, list: ListinoMotore, call: ToolCaller, opzioni: OpzioniMotore = {}): Promise<Draft> {
   const started = Date.now();
   const byCode = new Map<string, PriceListItem>(list.items.map((i) => [i.code, i]));
-  const ex = await extract(transcript, call);
+  const ex = await extract(transcript, call, opzioni.impresa);
   const candidates = ex.extraction.lines.map((l) => candidatesFor(`${l.work} ${l.spoken}`, l.unit, list.items));
   const mt = await chooseMatches(ex.extraction.lines, candidates, call);
 

@@ -71,14 +71,20 @@ Regole:
 - Lavorazioni rimandate o escluse («lo vediamo dopo», «quello no», «non lo tocco») non sono righe: vanno in exclusions se l'artigiano le esclude, in notes se le rimanda.
 - Quantità: se l'artigiano dà le misure, calcola tu la quantità (superfici, perimetri per altezza, differenze) e spiega il calcolo in quantityNote. Se dice una misura approssimata, usala e annota che è approssimata.
 - Se la quantità non è detta né ricavabile, quantity = null. Non stimare mai.
-- unit: m2, m, m3, cad (pezzi), h (ore), 100kg. Usa l'unità in cui la quantità è detta. Se il numero detto non ha un'unità chiara, unit = non_detto.
+- unit: m2, m, m3, cad (pezzi), h (ore), 100kg, kg, l (litri), corpo (lavoro a corpo, quantità 1). Usa l'unità in cui la quantità è detta. Se il numero detto non ha un'unità chiara, unit = non_detto.
 - clientSuppliesMaterial = true solo se l'artigiano dice che il materiale di quella riga lo compra o lo fornisce il cliente.
 - Contesto IVA, solo se detto o evidente dalle parole: dwelling (abitazione: «ci abita», «casa sua»; negozio o ufficio = false), intervention (manutenzione_ordinaria, manutenzione_straordinaria, ristrutturazione), goodsBoughtBy (chi compra i materiali: «li compro io» = impresa, «li ha comprati lei» = cliente). Se non è detto, null (per gli elenchi: non_detto).
 - Termini dialettali lombardi: «el cess» = water, «caldana» = massetto, «sciura» = signora, «magütt» = muratore, «minga» = non.
 - Non scrivere prezzi.`;
 
-export async function extract(transcript: string, call: ToolCaller) {
-  const result = await call({ system: EXTRACTION_SYSTEM, user: transcript, tool: EXTRACTION_TOOL });
+// Il listino di prova è di un'impresa della Brianza; per un'impresa vera si dice chi è e che mestieri fa.
+export function extractionSystem(impresa?: string): string {
+  if (!impresa) return EXTRACTION_SYSTEM;
+  return EXTRACTION_SYSTEM.replace("di un'impresa edile della Brianza", `di ${impresa}`);
+}
+
+export async function extract(transcript: string, call: ToolCaller, impresa?: string) {
+  const result = await call({ system: extractionSystem(impresa), user: transcript, tool: EXTRACTION_TOOL });
   const parsed = Extraction.safeParse(notSaidToNull(result.input));
   if (!parsed.success) {
     throw new Error(`Uscita dell'estrazione non valida: ${parsed.error.issues.map((i) => i.path.join(".")).join(", ")}`);

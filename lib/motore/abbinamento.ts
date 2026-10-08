@@ -1,4 +1,4 @@
-import type { PriceListItem } from "@/lib/listino/schema";
+import type { VoceMotore as PriceListItem } from "@/lib/listino/schema";
 import type { ToolCaller, ToolSpec } from "./claude";
 import type { Candidate } from "./candidati";
 import { MatchChoices, type ExtractedLine } from "./tipi";

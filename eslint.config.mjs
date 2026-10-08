@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Banco di prova di n8n: script Node (CommonJS) che girano fuori dall'app.
+    "n8n/prova/**",
   ]),
 ]);
 

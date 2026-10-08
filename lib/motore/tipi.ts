@@ -30,7 +30,7 @@ export type Extraction = z.infer<typeof Extraction>;
 // La scelta del modello fra i candidati del listino, una per riga.
 export const MatchChoice = z.strictObject({
   index: z.number().int().nonnegative(),
-  code: z.string().regex(/^[A-Z]{3}-\d{2}$/).nullable(),
+  code: z.string().min(1).max(40).nullable(),
   confidence: z.number().min(0).max(1),
   reason: z.string().min(3),
 });

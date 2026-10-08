@@ -1,9 +1,8 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "pdf-lib";
 import { formatEuro } from "@/lib/importi";
-import type { Company } from "@/lib/listino/schema";
 import { VAT_NOTICE } from "@/lib/motore/iva";
-import type { z } from "zod";
 import { conti, importoRiga } from "./calcolo";
+import type { Azienda } from "./contesto";
 import type { Preventivo } from "./modello";
 
 // PDF del preventivo approvato: A4, Helvetica (codifica WinAnsi): unità scritte «mq» e «mc», come nei preventivi italiani.
@@ -17,7 +16,7 @@ const LINE = hex("#E4E6EC");
 const ARDESIA = hex("#343645");
 const LIME = hex("#B2F601");
 const WHITE = rgb(1, 1, 1);
-const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li" };
+const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo" };
 const REGIME_LABEL: Record<string, string> = {
   ordinaria_22: "IVA ordinaria 22%",
   agevolata_10: "IVA agevolata 10% (manutenzione su abitazione)",
@@ -27,8 +26,22 @@ const REGIME_LABEL: Record<string, string> = {
 const euro = (c: number) => formatEuro(c).replace(/ /g, " ");
 const qty = (q: number) => q.toLocaleString("it-IT", { maximumFractionDigits: 2 });
 
+// Helvetica standard scrive solo i caratteri di Windows-1252: gli altri (testi incollati, emoji) si sostituiscono.
+const CP1252_EXTRA = "€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ";
+export function sicuro(s: string): string {
+  return s
+    .normalize("NFC")
+    .replace(/[\u2010-\u2012]/g, "-")
+    .replace(/[\u00A0\u2007\u202F]/g, " ")
+    .replace(/\t|\r|\n/g, " ")
+    .replace(/./gu, (c) => {
+      const n = c.codePointAt(0)!;
+      return (n >= 0x20 && n <= 0x7e) || (n >= 0xa0 && n <= 0xff) || CP1252_EXTRA.includes(c) ? c : "?";
+    });
+}
+
 function wrap(text: string, font: PDFFont, size: number, width: number): string[] {
-  const words = text.replace(/\s+/g, " ").trim().split(" ");
+  const words = sicuro(text).replace(/\s+/g, " ").trim().split(" ");
   const lines: string[] = [];
   let cur = "";
   for (const w of words) {
@@ -43,12 +56,12 @@ function wrap(text: string, font: PDFFont, size: number, width: number): string[
   return lines.length ? lines : [""];
 }
 
-export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>): Promise<Uint8Array> {
+export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8Array> {
   const c = conti(p);
   if (!c || !p.approvatoIl) throw new Error("Il preventivo non è approvato o è incompleto");
   const doc = await PDFDocument.create();
   doc.setTitle(`Preventivo ${p.numero}`);
-  doc.setAuthor(company.name);
+  doc.setAuthor(sicuro(company.name));
   doc.setCreator("PreventivoLampo");
   const reg = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -57,7 +70,7 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
   let page: PDFPage = doc.addPage([595.28, 841.89]);
   let y = 841.89 - M;
 
-  const text = (s: string, x: number, size = 9, font = reg, color = INK) => page.drawText(s, { x, y, size, font, color });
+  const text = (s: string, x: number, size = 9, font = reg, color = INK) => page.drawText(sicuro(s), { x, y, size, font, color });
   const ensure = (h: number) => {
     if (y - h < M + 40) {
       page = doc.addPage([595.28, 841.89]);
@@ -72,13 +85,24 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
     }
   };
 
-  // Intestazione
-  text(company.name, M, 13, bold, ARDESIA);
+  // Intestazione: logo dell'impresa a destra, se c'è (alto al massimo 44 punti, largo al massimo 140).
+  const logo = await company.logo();
+  if (logo) {
+    const img = logo.tipo === "image/png" ? await doc.embedPng(logo.bytes) : await doc.embedJpg(logo.bytes);
+    const scala = Math.min(44 / img.height, 140 / img.width, 1);
+    page.drawImage(img, { x: M + W - img.width * scala, y: 841.89 - M + 10 - img.height * scala, width: img.width * scala, height: img.height * scala });
+  }
+  const larghezzaTesto = logo ? W - 160 : W;
+  const nome = wrap(company.name, bold, 13, larghezzaTesto);
+  text(nome[0], M, 13, bold, ARDESIA);
   y -= 16;
-  text(`${company.address} · P.IVA ${company.vatNumber}`, M, 8, reg, GREY);
-  y -= 11;
+  for (const riga of wrap(`${company.address} · P.IVA ${company.vatNumber}`, reg, 8, larghezzaTesto)) {
+    text(riga, M, 8, reg, GREY);
+    y -= 11;
+  }
   text(`${company.phone} · ${company.email}`, M, 8, reg, GREY);
   y -= 10;
+  if (logo) y = Math.min(y, 841.89 - M - 50);
   page.drawRectangle({ x: M, y, width: W, height: 3, color: LIME });
   y -= 24;
   text(`Preventivo n. ${p.numero}`, M, 16, bold, ARDESIA);
@@ -156,6 +180,12 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
     `Prezzi IVA esclusa salvo dove indicato. Lavori non elencati e varianti richieste in corso d'opera si preventivano a parte. ` +
       `Se il cliente è un consumatore e accetta a distanza (link), ha diritto di recesso entro 14 giorni dall'accettazione, salvo esecuzione dei lavori richiesta prima della scadenza.`,
   );
+  if (company.condizioniPagamento || company.iban) {
+    y -= 2;
+    para("Pagamento", 8.5, bold, INK);
+    if (company.condizioniPagamento) para(company.condizioniPagamento);
+    if (company.iban) para(`IBAN ${company.iban.replace(/(.{4})/g, "$1 ").trim()} intestato a ${company.name}`);
+  }
   if (p.accettazione) {
     y -= 8;
     ensure(40);
@@ -167,7 +197,7 @@ export async function generaPdf(p: Preventivo, company: z.infer<typeof Company>)
     y -= 30;
   }
   y -= 6;
-  para(company.fictitiousNotice + " Documento generato da PreventivoLampo a scopo dimostrativo.", 7.5);
+  if (company.avviso) para(company.avviso, 7.5);
 
   return doc.save();
 }

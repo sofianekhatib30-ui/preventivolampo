@@ -79,7 +79,8 @@ function Scelta<T extends string>({
   );
 }
 
-export default function Revisione({ iniziale, voci }: { iniziale: Preventivo; voci: Voce[] }) {
+// api: dove salvare (la demo usa /api/preventivi, l'area dell'impresa /api/area/preventivi).
+export default function Revisione({ iniziale, voci, api = "/api/preventivi" }: { iniziale: Preventivo; voci: Voce[]; api?: string }) {
   const router = useRouter();
   const [p, setP] = useState<Preventivo>(iniziale);
   const [testiPrezzo, setTestiPrezzo] = useState<string[]>(iniziale.righe.map((r) => (r.unitPriceCents === null ? "" : (r.unitPriceCents / 100).toFixed(2).replace(".", ","))));
@@ -144,7 +145,7 @@ export default function Revisione({ iniziale, voci }: { iniziale: Preventivo; vo
   }
 
   async function salva(): Promise<boolean> {
-    const res = await fetch(`/api/preventivi/${p.id}`, {
+    const res = await fetch(`${api}/${p.id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ cliente: p.cliente, iva: p.iva, righe: p.righe, esclusioni: p.esclusioni }),
@@ -160,7 +161,7 @@ export default function Revisione({ iniziale, voci }: { iniziale: Preventivo; vo
     setStato("invio");
     setMessaggio("");
     if (await salva()) {
-      const res = await fetch(`/api/preventivi/${p.id}/approva`, { method: "POST" });
+      const res = await fetch(`${api}/${p.id}/approva`, { method: "POST" });
       if (res.ok) {
         router.refresh();
         return;

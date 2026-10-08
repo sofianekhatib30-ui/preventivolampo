@@ -14,7 +14,10 @@ export const CATEGORIES = [
   "opere_varie",
 ] as const;
 
-export const UNITS = ["m2", "m", "m3", "cad", "h", "100kg"] as const;
+export const UNITS = ["m2", "m", "m3", "cad", "h", "100kg", "kg", "l", "corpo"] as const;
+
+// Codice di una voce: quello del listino di prova (BAG-03) o quello che usa l'impresa (A.12, 03/45, FIN-7).
+export const CODICE = /^[A-Za-z0-9][A-Za-z0-9._/-]{0,23}$/;
 
 export const Category = z.enum(CATEGORIES);
 export const Unit = z.enum(UNITS);
@@ -60,4 +63,9 @@ export const PriceList = z.strictObject({
 });
 
 export type PriceListItem = z.infer<typeof PriceListItem>;
+// Quello che serve al motore di una voce: vale per il listino di prova e per quello di ogni impresa.
+export type VoceMotore = Pick<
+  PriceListItem,
+  "code" | "name" | "description" | "unit" | "priceCents" | "synonyms" | "significantGood" | "clientSuppliable"
+>;
 export type PriceList = z.infer<typeof PriceList>;

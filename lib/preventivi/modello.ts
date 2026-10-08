@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { VatContext } from "@/lib/banco/schema";
-import { Unit } from "@/lib/listino/schema";
+import { CODICE, Unit } from "@/lib/listino/schema";
 
 // Il preventivo salvato: la bozza del motore diventa un documento che l'artigiano corregge e approva.
 // Stati: bozza → approvato (PDF) → accettato o rifiutato dal cliente; scaduto dopo la validità.
@@ -13,7 +13,7 @@ export const RigaPreventivo = z.strictObject({
   quantity: z.number().positive().nullable(),
   unit: Unit.nullable(),
   unitPriceCents: z.number().int().nonnegative().nullable(),
-  code: z.string().regex(/^[A-Z]{3}-\d{2}$/).nullable(),
+  code: z.string().regex(CODICE).nullable(),
   // «listino» se il prezzo è quello della voce; «artigiano» se l'ha scritto lui; null se manca ancora.
   priceSource: z.enum(["listino", "artigiano"]).nullable(),
   flag: z.string().max(300).nullable(), // perché la riga è evidenziata (dubbia, solo posa, domanda)

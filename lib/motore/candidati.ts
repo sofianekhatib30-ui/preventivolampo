@@ -1,4 +1,4 @@
-import type { PriceListItem } from "@/lib/listino/schema";
+import type { VoceMotore as PriceListItem } from "@/lib/listino/schema";
 import { normalize, tokens } from "./testo";
 
 // Filtro deterministico: dalla riga detta ai candidati del listino.

@@ -12,7 +12,11 @@ const nextConfig: NextConfig = {
     "/api/accetta/**": listino,
     "/revisione/**": listino,
     "/accetta/**": listino,
+    "/area/**": listino,
+    "/api/area/**": listino,
   },
+  // Lettore Excel: resta un pacchetto Node esterno (le sue dipendenze facoltative, come S3, non si impacchettano).
+  serverExternalPackages: ["read-excel-file", "unzipper"],
 };
 
 export default nextConfig;

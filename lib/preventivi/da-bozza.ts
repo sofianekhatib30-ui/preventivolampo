@@ -1,5 +1,5 @@
 import { randomBytes } from "node:crypto";
-import type { PriceListItem } from "@/lib/listino/schema";
+import type { VoceMotore } from "@/lib/listino/schema";
 import type { Draft } from "@/lib/motore/tipi";
 import type { Preventivo } from "./modello";
 
@@ -9,7 +9,7 @@ export function nuovoId(): string {
   return randomBytes(16).toString("base64url"); // 22 caratteri, 128 bit: non indovinabile
 }
 
-export function daBozza(draft: Draft, byCode: Map<string, PriceListItem>, adesso = new Date()): Preventivo {
+export function daBozza(draft: Draft, byCode: Map<string, VoceMotore>, adesso = new Date()): Preventivo {
   const id = nuovoId();
   return {
     id,

@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import Accetta from "@/components/preventivo/Accetta";
 import { euro, UNITA_BREVE } from "@/components/preventivo/formato";
 import { conti, importoRiga } from "@/lib/preventivi/calcolo";
-import { leggiPerToken } from "@/lib/preventivi/archivio";
-import { listino } from "@/lib/preventivi/servizio";
+import { perToken } from "@/lib/preventivi/risolvi";
 
 export const metadata: Metadata = { title: "Il tuo preventivo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -12,9 +11,11 @@ export const dynamic = "force-dynamic";
 // Pagina del cliente: niente registrazione. Vede il preventivo e risponde con nome e data.
 export default async function PaginaAccetta({ params }: { params: Promise<{ token: string }> }) {
   const { token } = await params;
-  const p = await leggiPerToken(token);
-  if (!p || p.stato === "bozza") notFound();
-  const company = listino().company;
+  const trovato = await perToken(token);
+  if (!trovato || trovato.p.stato === "bozza") notFound();
+  const { p } = trovato;
+  const company = await trovato.ctx.azienda();
+  const conLogo = trovato.ctx.tipo === "impresa" && (await company.logo()) !== null;
   const c = conti(p)!;
   const scadenza = p.approvatoIl ? new Date(new Date(p.approvatoIl).getTime() + company.quoteValidityDays * 86_400_000) : null;
   const data = (d: Date | string) => new Date(d).toLocaleDateString("it-IT", { timeZone: "Europe/Rome" });
@@ -29,9 +30,14 @@ export default async function PaginaAccetta({ params }: { params: Promise<{ toke
       {/* La pagina è dell'impresa, non di PreventivoLampo: il suo nome in alto, il nostro solo in fondo */}
       <header className="border-b border-linea bg-superficie">
         <div className="mx-auto flex max-w-2xl items-center gap-3 px-4 py-4">
-          <span aria-hidden="true" className="flex size-11 shrink-0 items-center justify-center rounded-campo bg-ardesia text-[17px] font-black text-fondo">
-            {iniziali}
-          </span>
+          {conLogo ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={`/api/accetta/${token}/logo`} alt="" className="h-11 w-auto max-w-28 shrink-0 object-contain" />
+          ) : (
+            <span aria-hidden="true" className="flex size-11 shrink-0 items-center justify-center rounded-campo bg-ardesia text-[17px] font-black text-fondo">
+              {iniziali}
+            </span>
+          )}
           <div className="min-w-0">
             <p className="truncate text-[17px] font-extrabold">{company.name}</p>
             <p className="truncate text-sm text-testo-3">P.IVA {company.vatNumber}</p>
@@ -87,7 +93,7 @@ export default async function PaginaAccetta({ params }: { params: Promise<{ toke
 
         {p.esclusioni.length > 0 && <p className="mt-4 text-[15px] text-testo-2">Esclusi: {p.esclusioni.join("; ")}.</p>}
         <p className="mt-4">
-          <a href={`/api/preventivi/${p.id}/pdf`} className="text-[16px] font-semibold text-cielo-scuro">
+          <a href={`/api/accetta/${token}/pdf`} className="text-[16px] font-semibold text-cielo-scuro">
             Scarica il PDF completo
           </a>
         </p>
@@ -103,8 +109,8 @@ export default async function PaginaAccetta({ params }: { params: Promise<{ toke
           </p>
         )}
         <footer className="mt-10 border-t border-linea pt-4 text-xs leading-relaxed text-testo-3">
-          <p>{company.fictitiousNotice}</p>
-          <p className="mt-2">Preventivo creato con PreventivoLampo.</p>
+          {company.avviso && <p className="mb-2">{company.avviso}</p>}
+          <p>Preventivo creato con PreventivoLampo.</p>
         </footer>
       </main>
     </>

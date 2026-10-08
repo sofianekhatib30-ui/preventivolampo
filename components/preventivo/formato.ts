@@ -1,5 +1,5 @@
 // Formati condivisi dalle pagine del preventivo.
-export const UNITA: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali" };
+export const UNITA: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo" };
 
 export function euro(cents: number): string {
   return new Intl.NumberFormat("it-IT", { style: "currency", currency: "EUR", useGrouping: "always" }).format(cents / 100);
@@ -28,4 +28,4 @@ export const REGIME: Record<string, string> = {
 };
 
 // Unità brevi per le righe compatte («1 pz × 226,33 €»).
-export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q" };
+export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q", kg: "kg", l: "l", corpo: "corpo" };

@@ -1,6 +1,6 @@
 import { createHash, timingSafeEqual } from "node:crypto";
 import { leggiOggetto, scriviOggetto, suBlob } from "./archivio";
-import { Rifiuto } from "./servizio";
+import { Rifiuto } from "./rifiuto";
 
 export function errore(e: unknown): Response {
   if (e instanceof Rifiuto) return Response.json({ errore: e.message }, { status: e.status });

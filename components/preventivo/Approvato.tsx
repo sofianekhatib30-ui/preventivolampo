@@ -10,7 +10,7 @@ const quando = (iso: string) =>
 
 // Dopo l'approvazione: il preventivo è pronto, adesso va mandato. Il primo pulsante è WhatsApp,
 // il canale che usano artigiano e cliente. Sotto, la linea del tempo: approvato, visto, risposta.
-export default function Approvato({ p }: { p: Preventivo }) {
+export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { p: Preventivo; pdf?: string }) {
   const c = conti(p);
   // L'indirizzo del sito si conosce solo nel browser: sul server il link resta relativo.
   const origine = useSyncExternalStore(
@@ -92,7 +92,7 @@ export default function Approvato({ p }: { p: Preventivo }) {
             <button type="button" onClick={copia} className="bottone min-h-12 border-2 border-ardesia text-[16px]">
               {copiato ? "Link copiato" : "Copia il link"}
             </button>
-            <a href={`/api/preventivi/${p.id}/pdf`} className="bottone min-h-12 border-2 border-ardesia text-[16px]">
+            <a href={pdf} className="bottone min-h-12 border-2 border-ardesia text-[16px]">
               Apri il PDF
             </a>
           </div>
@@ -102,7 +102,7 @@ export default function Approvato({ p }: { p: Preventivo }) {
         </div>
       )}
       {p.stato !== "approvato" && (
-        <a href={`/api/preventivi/${p.id}/pdf`} className="bottone mt-5 min-h-12 border-2 border-ardesia text-[16px]">
+        <a href={pdf} className="bottone mt-5 min-h-12 border-2 border-ardesia text-[16px]">
           Apri il PDF
         </a>
       )}
