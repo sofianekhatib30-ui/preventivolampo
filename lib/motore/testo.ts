@@ -1,5 +1,6 @@
 // Normalizzazione del parlato per il filtro deterministico: minuscole, senza accenti,
-// parole vuote tolte, radice grezza (le ultime vocali via) per far combaciare «piastrelle» e «piastrella».
+// parole vuote tolte, radice grezza (le ultime vocali via) per far combaciare «piastrelle» e «piastrella»,
+// e il verbo con il nome del lavoro («tinteggiare» e «tinteggiatura»).
 
 const STOP = new Set(
   "a ad al alla alle allo ai agli anche c che chi ci col con coi cosi da dal dalla dalle dai dagli de dei degli del della delle dello di e ed el gli ha ho i il in la le li lo l ma me mi ne nel nella nelle nei negli no non o per piu poi quel quella quello questo questa se si so su sul sulla sui sono tra tutto tutti un una uno va vi ecc tipo poi allora praticamente quindi".split(
@@ -18,7 +19,8 @@ export function normalize(text: string): string {
 
 export function stem(word: string): string {
   if (word.length <= 4) return word;
-  return word.replace(/(ioni|ione|ature|atura|mente|i|e|a|o)$/, "");
+  // Anche le desinenze di verbi e participi: «tinteggiare», «tinteggiato», «tinteggiatura» → «tinteggi».
+  return word.replace(/(azioni|azione|ature|atura|ioni|ione|mente|are|ere|ire|ato|ata|ati|ate|i|e|a|o)$/, "");
 }
 
 export function tokens(text: string): string[] {
