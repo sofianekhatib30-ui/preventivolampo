@@ -25,10 +25,11 @@ export function CosaCambia() {
         </h2>
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card titolo="Il tuo listino, caricato da noi">
+        <Card titolo="Il tuo listino, dal tuo Excel">
           <p className={testoCard}>
-            Mandaci l&apos;Excel, la foto del listino o i prezzi del grossista. Lo sistemiamo noi:
-            unità di misura, prezzi, e i sanitari segnati a parte per l&apos;IVA. Tu confermi e parti.
+            Carichi l&apos;Excel o il CSV che hai già: il sistema riconosce voci, unità di misura e
+            prezzi, e segna a parte i sanitari per l&apos;IVA. Tu controlli e confermi. Se il listino ce
+            l&apos;hai solo su carta, ti aiutiamo noi.
           </p>
           <TabellaListino />
         </Card>

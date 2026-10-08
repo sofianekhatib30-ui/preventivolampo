@@ -30,15 +30,10 @@ export function serviceJsonLd() {
       },
       {
         "@type": "Offer",
-        name: "Avvio fatto per te",
-        priceSpecification: euro("150"),
-      },
-      {
-        "@type": "Offer",
         name: "Canone",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "29",
+          price: "19.90",
           priceCurrency: "EUR",
           valueAddedTaxIncluded: false,
           unitCode: "MON",
@@ -50,7 +45,7 @@ export function serviceJsonLd() {
         name: "Canone annuale",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "290",
+          price: "199",
           priceCurrency: "EUR",
           valueAddedTaxIncluded: false,
           unitCode: "ANN",

@@ -17,15 +17,14 @@ export default function Page() {
       <h2>Programma pilota</h2>
       <ul>
         <li>Dieci posti per artigiani di Monza e Brianza, assegnati da noi dopo una telefonata.</li>
-        <li>60 giorni gratuiti dall&apos;avvio, con preventivi illimitati e l&apos;avvio fatto da noi (listino, logo, dati e condizioni sul PDF, un&apos;ora di affiancamento).</li>
+        <li>60 giorni gratuiti dall&apos;avvio, con preventivi illimitati e un&apos;ora di affiancamento per caricare il listino e impostare logo, dati e condizioni sul PDF.</li>
         <li>Nessun rinnovo automatico: alla fine dei 60 giorni decidi tu se restare. Se non ci dici niente, il pilota finisce lì.</li>
         <li>In cambio ti chiediamo di usarlo sui tuoi lavori veri e di dirci cosa funziona e cosa no.</li>
       </ul>
 
       <h2>Dopo il pilota</h2>
       <ul>
-        <li>Canone: 29 € al mese oppure 290 € l&apos;anno, IVA esclusa, con preventivi illimitati.</li>
-        <li>Avvio fatto per te: 150 € una volta sola, gratis con l&apos;annuale e per chi viene dal pilota.</li>
+        <li>Canone: 19,90 € al mese oppure 199 € l&apos;anno, IVA esclusa, con preventivi illimitati. Nessun costo di avvio.</li>
         <li>Il mensile si disdice quando vuoi, con effetto alla fine del mese già pagato. L&apos;annuale vale 12 mesi e si rinnova solo se lo chiedi tu.</li>
         <li>Se cambiamo i prezzi te lo diciamo almeno 30 giorni prima, e valgono solo dal rinnovo successivo.</li>
       </ul>

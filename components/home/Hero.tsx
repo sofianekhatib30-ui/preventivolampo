@@ -2,7 +2,7 @@ import { ctaPrincipale } from "./Header";
 import { Marchio } from "@/components/Marchio";
 import { SoloDesktop, SoloMobile } from "./Varianti";
 
-const PUNTI = ["Niente app da installare", "Listino caricato da noi", "Decidi sempre tu"];
+const PUNTI = ["Niente app da installare", "Il tuo listino, dal tuo Excel", "Decidi sempre tu"];
 
 export function Hero() {
   const CTA_PILOTA = ctaPrincipale();

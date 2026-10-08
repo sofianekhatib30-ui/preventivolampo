@@ -1,7 +1,7 @@
 const COLONNE = ["Le app di preventivi fai da te", "PreventivoLampo"] as const;
 
 const RIGHE: { tema: string; faiDaTe: string; noi: string }[] = [
-  { tema: "Il listino", faiDaTe: "Lo inserisci tu, voce per voce", noi: "Lo carichiamo noi, tu confermi" },
+  { tema: "Il listino", faiDaTe: "Lo inserisci tu, voce per voce", noi: "Carichi il tuo Excel, lo legge lui" },
   {
     tema: "Le voci che mancano",
     faiDaTe: "Spesso stimate dall'AI",
