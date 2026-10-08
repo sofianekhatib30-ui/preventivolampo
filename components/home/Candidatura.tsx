@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL } from "@/lib/sito";
+import { CONTACT_EMAIL, linkWhatsAppProva } from "@/lib/sito";
 import { ModuloCandidatura } from "./ModuloCandidatura";
 import { PiePagina } from "./PiePagina";
 import { SoloDesktop } from "./Varianti";
@@ -18,14 +18,27 @@ export function Candidatura() {
         <div className="lg:col-start-2 lg:row-span-3 lg:row-start-1">
           <ModuloCandidatura />
         </div>
-        <p className="m-0 text-[15px] lg:col-start-1 lg:row-start-3 lg:text-[17px]">
-          Preferisci scrivere?{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold">
-            {CONTACT_EMAIL}
-          </a>
-        </p>
+        <div className="flex flex-col gap-3 text-[15px] lg:col-start-1 lg:row-start-3 lg:text-[17px]">
+          <p className="m-0">
+            Vuoi vederlo prima di candidarti?{" "}
+            <a href={linkWhatsAppProva()} target="_blank" rel="noopener noreferrer" className="font-bold">
+              Provalo su WhatsApp
+            </a>
+            : il primo messaggio è già scritto, premi invio e poi racconta un sopralluogo. Oppure{" "}
+            <a href="/prova" className="font-bold">
+              prova con un esempio
+            </a>
+            .
+          </p>
+          <p className="m-0">
+            Preferisci scrivere?{" "}
+            <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold">
+              {CONTACT_EMAIL}
+            </a>
+          </p>
+        </div>
       </div>
-      <PiePagina>PreventivoLampo è un servizio di K Digital Solution · Monza (MB) · P.IVA [DA INSERIRE]</PiePagina>
+      <PiePagina>PreventivoLampo è un servizio di K Digital Solution · Monza (MB)</PiePagina>
     </section>
   );
 }

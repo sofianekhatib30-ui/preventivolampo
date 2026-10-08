@@ -8,6 +8,8 @@ import { REPO_URL } from "@/lib/sito";
 export const metadata: Metadata = {
   title: "Caso di studio — PreventivoLampo",
   description: "Come funziona PreventivoLampo: dal vocale del sopralluogo al preventivo, con i prezzi solo dal listino. Numeri misurati su 36 casi.",
+  // Pagina tecnica per chi valuta il lavoro (link dal CV): nessun link dal sito, mai indicizzata.
+  robots: { index: false, follow: false },
 };
 
 // Il caso di studio: per chi valuta il progetto. Problema, motore, numeri (letti dai report), scelte, limiti.

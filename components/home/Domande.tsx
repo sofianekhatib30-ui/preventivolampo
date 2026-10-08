@@ -44,7 +44,8 @@ const DOMANDE: Domanda[] = [
     ),
     risposta: (
       <>
-        Su server nell&apos;Unione Europea. Gli audio vengono cancellati dopo 30 giorni, e con te
+        Listino e preventivi stanno su server nell&apos;Unione Europea; per preparare la bozza il testo del
+        sopralluogo passa dall&apos;intelligenza artificiale di Anthropic. Gli audio vengono cancellati dopo 30 giorni, e con te
         firmiamo l&apos;accordo per il trattamento dei dati
         <SoloDesktop> dei tuoi clienti</SoloDesktop>.
       </>

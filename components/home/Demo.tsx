@@ -1,4 +1,4 @@
-import { linkWhatsAppProva, REPO_URL, WHATSAPP_PROVA } from "@/lib/sito";
+import { linkWhatsAppProva, WHATSAPP_PROVA } from "@/lib/sito";
 import { PiePagina } from "./PiePagina";
 
 // Chiusura della home nella demo pubblica, al posto del modulo di candidatura.
@@ -21,7 +21,7 @@ export function Demo() {
             <li>Ti arriva il riepilogo della bozza: rispondi «ok» e ricevi il link per aprirla.</li>
           </ol>
           <p className="m-0 max-w-[520px] text-sm text-scuro-testo">
-            È il numero di prova di Twilio: per ora solo messaggi scritti, i vocali arrivano con il numero definitivo.
+            Per ora solo messaggi scritti: i vocali arrivano con il numero definitivo.
           </p>
           <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3.5">
             <a
@@ -38,18 +38,6 @@ export function Demo() {
             >
               Provalo su WhatsApp
             </a>
-            <a
-              href="/progetto"
-              className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro"
-            >
-              Leggi il caso di studio
-            </a>
-            <a
-              href={REPO_URL}
-              className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro"
-            >
-              Leggi il codice su GitHub
-            </a>
           </div>
         </div>
       </div>
@@ -64,9 +52,6 @@ export function BannerDemo() {
     <aside aria-label="Progetto dimostrativo" className="margini m-0 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 bg-cielo py-2 text-center text-sm font-medium text-inchiostro">
       <span>Progetto dimostrativo: il servizio non è in vendita.</span>
       <span className="flex gap-4">
-        <a href="/progetto" className="font-bold underline">
-          Com&apos;è fatto
-        </a>
         <a href="/prova" className="font-bold underline">
           Prova con un esempio
         </a>
