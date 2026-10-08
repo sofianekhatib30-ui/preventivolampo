@@ -3,7 +3,7 @@ import { codiceValido, errore, provaAttiva, troppeRichieste } from "@/lib/preven
 import { creaDaEsempio, creaDaTesto } from "@/lib/preventivi/servizio";
 
 // Dal testo del sopralluogo alla bozza: estrazione, abbinamento, salvataggio. Restituisce il link di revisione.
-// In F6 la chiamerà n8n con il segreto condiviso ELABORA_SHARED_SECRET.
+// La chiama anche n8n (Slack, WhatsApp) con il segreto condiviso ELABORA_SHARED_SECRET: vedi n8n/.
 // Estrazione + abbinamento possono superare i 10 secondi di default.
 export const maxDuration = 60;
 

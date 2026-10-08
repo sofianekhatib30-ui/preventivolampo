@@ -1,0 +1,498 @@
+{
+  "name": "PreventivoLampo · Slack",
+  "nodes": [
+    {
+      "id": "5e23a614-a20b-438f-b922-f146b101b6b9",
+      "name": "Slack: evento in arrivo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "a6911f15-84bd-484d-a8c3-e121b7b2433a",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "preventivolampo-slack",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": true
+        }
+      }
+    },
+    {
+      "id": "2abe0f60-e619-41d5-ad33-608846d2dbde",
+      "name": "Verifica e smista",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// Verifica che la richiesta venga davvero da Slack (firma HMAC sul corpo grezzo) e decide cosa fare.\nconst crypto = require('crypto');\nconst item = $input.first();\nconst headers = item.json.headers || {};\n// ⚙️ Incolla qui il Signing Secret dell'app Slack (api.slack.com/apps → Basic Information). Resta solo in n8n.\nconst SEGRETO_FIRMA = '';\n// ⚙️ Metti true dopo aver scelto la credenziale OpenAI nel nodo «Trascrivi il vocale».\nconst VOCALI_ATTIVI = false;\nconst segreto = SEGRETO_FIRMA;\n\nlet grezzo = '';\ntry {\n  grezzo = (await this.helpers.getBinaryDataBuffer(0, 'data')).toString('utf8');\n} catch (e) {\n  grezzo = '';\n}\nlet corpo = item.json.body;\nif ((!corpo || typeof corpo !== 'object' || !Object.keys(corpo).length) && grezzo) {\n  try { corpo = JSON.parse(grezzo); } catch (e) { corpo = {}; }\n}\ncorpo = corpo || {};\n\nfunction firmaValida() {\n  if (!segreto || !grezzo) return false;\n  const ts = String(headers['x-slack-request-timestamp'] || '');\n  const firma = String(headers['x-slack-signature'] || '');\n  if (!/^\\d+$/.test(ts) || Math.abs(Date.now() / 1000 - Number(ts)) > 300) return false;\n  const attesa = 'v0=' + crypto.createHmac('sha256', segreto).update(`v0:${ts}:${grezzo}`).digest('hex');\n  const a = Buffer.from(attesa), b = Buffer.from(firma);\n  return a.length === b.length && crypto.timingSafeEqual(a, b);\n}\n\nconst out = (o) => [{ json: o }];\n\n// Prima configurazione: Slack verifica l'indirizzo prima che il segreto sia sul server.\nif (corpo.type === 'url_verification' && (!segreto || firmaValida())) {\n  return out({ azione: 'sfida', challenge: corpo.challenge, codice: 200 });\n}\nif (!firmaValida()) return out({ azione: 'rifiuta', codice: 401 });\n// Slack ripete l'evento se non risponde in 3 secondi: la ripetizione si ignora, l'originale è già in lavoro.\nif (headers['x-slack-retry-num']) return out({ azione: 'ignora', codice: 200 });\nif (corpo.type !== 'event_callback' || !corpo.event) return out({ azione: 'ignora', codice: 200 });\n\nconst ev = corpo.event;\nif (ev.bot_id || ev.app_id) return out({ azione: 'ignora', codice: 200 });\nif (ev.subtype && ev.subtype !== 'file_share') return out({ azione: 'ignora', codice: 200 });\nconst privato = ev.type === 'message' && ev.channel_type === 'im';\nconst menzione = ev.type === 'app_mention';\nif (!privato && !menzione) return out({ azione: 'ignora', codice: 200 });\n\nconst testo = String(ev.text || '').replace(/<@[A-Z0-9]+>/g, '').trim();\nconst vocale = (ev.files || []).find(f => f.subtype === 'slack_audio' || /^audio\\//.test(f.mimetype || '') || (/^video\\//.test(f.mimetype || '') && f.subtype === 'slack_video'));\nconst base = {\n  codice: 200,\n  canale: ev.channel,\n  thread: ev.thread_ts || ev.ts,\n  utente: ev.user,\n  testo,\n};\nconst vocaliAttivi = VOCALI_ATTIVI;\n\nif (vocale && vocaliAttivi) {\n  return out({ ...base, azione: 'elabora', vocale: true, fileUrl: vocale.url_private_download || vocale.url_private, fileNome: vocale.name || 'vocale.m4a',\n    avviso: ':hourglass_flowing_sand: Ricevuto il vocale. Lo trascrivo e preparo la bozza, ci vogliono circa 20 secondi.' });\n}\nif (testo.length >= 15) {\n  return out({ ...base, azione: 'elabora', vocale: false,\n    avviso: ':hourglass_flowing_sand: Ricevuto. Preparo la bozza del preventivo, ci vogliono circa 15 secondi.' });\n}\nconst aiuto = vocale\n  ? 'I vocali non sono ancora attivi in questa demo. Scrivimi il sopralluogo come lo racconteresti a un collega e ti preparo la bozza.'\n  : 'Ciao! Raccontami il sopralluogo come lo diresti a un collega (lavorazioni, misure, materiali) e ti preparo la bozza del preventivo da controllare dal telefono.' + (vocaliAttivi ? ' Va bene anche una clip audio.' : '');\nreturn out({ ...base, azione: 'aiuto', vocale: false, avviso: aiuto });"
+      }
+    },
+    {
+      "id": "63188798-7a0e-49d6-96a6-ad869dd1d206",
+      "name": "Rispondi a Slack entro 3 secondi",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json.azione === 'sfida' ? { challenge: $json.challenge } : { ok: $json.codice === 200 } }}",
+        "options": {
+          "responseCode": "={{ $json.codice }}"
+        }
+      }
+    },
+    {
+      "id": "670be888-a9a1-4302-9126-a72b11c1bdbc",
+      "name": "Serve una risposta?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "2ef61601-e40e-4e1e-b16c-20a02cc88369",
+              "leftValue": "={{ ['elabora', 'aiuto'].includes($('Verifica e smista').first().json.azione) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "5045a994-a795-4c6d-a1e9-1bac0bd68094",
+      "name": "Slack: ricevuto",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        200
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://slack.com/api' + '/chat.postMessage' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ channel: $('Verifica e smista').first().json.canale, thread_ts: $('Verifica e smista').first().json.thread, text: $('Verifica e smista').first().json.avviso, unfurl_links: false }) }}",
+        "options": {},
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "slackApi"
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "SLACKCRED00000001",
+          "name": "Slack · PreventivoLampo"
+        }
+      }
+    },
+    {
+      "id": "521e21fc-39a4-43c5-8b98-46562a207b82",
+      "name": "Da elaborare?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        200
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "abbb6c05-a990-44a5-9870-ba04a5a05562",
+              "leftValue": "={{ $('Verifica e smista').first().json.azione }}",
+              "rightValue": "elabora",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "e995d302-a259-4bff-92af-aa5b657be321",
+      "name": "È un vocale?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        120
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "447fddb8-08e7-4429-8d07-29bd45a307dd",
+              "leftValue": "={{ $('Verifica e smista').first().json.vocale }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "8de677da-f28f-4038-9625-946e12448116",
+      "name": "Scarica il vocale da Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        0
+      ],
+      "parameters": {
+        "url": "={{ $('Verifica e smista').first().json.fileUrl }}",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        },
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "slackApi"
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "SLACKCRED00000001",
+          "name": "Slack · PreventivoLampo"
+        }
+      }
+    },
+    {
+      "id": "2fc12ecc-b395-4f84-a156-a77135501459",
+      "name": "Trascrivi il vocale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://api.openai.com' + '/v1/audio/transcriptions' }}",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "model",
+              "value": "={{ 'whisper-1' }}"
+            },
+            {
+              "name": "language",
+              "value": "it"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        },
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "OPENAICRED0000001",
+          "name": "OpenAI · trascrizione"
+        }
+      }
+    },
+    {
+      "id": "534de74b-9121-469b-928f-1ccda2e7e5df",
+      "name": "Testo dal vocale",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Unisce la trascrizione al testo scritto nello stesso messaggio, se c'è.\nconst scritto = $('Verifica e smista').first().json.testo || '';\nconst trascritto = String($input.first().json.text || '').trim();\nreturn [{ json: { testo: [trascritto, scritto].filter(Boolean).join('\\n') } }];"
+      }
+    },
+    {
+      "id": "75a56b08-a4b6-454c-92e8-61e86cbf3db1",
+      "name": "PreventivoLampo: crea la bozza",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        160
+      ],
+      "onError": "continueErrorOutput",
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://preventivolampo.vercel.app' + '/api/elabora' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ testo: $json.testo || $('Verifica e smista').first().json.testo }) }}",
+        "options": {
+          "timeout": 60000
+        },
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLHEADER000000001",
+          "name": "PreventivoLampo · segreto n8n"
+        }
+      }
+    },
+    {
+      "id": "506a1b4a-13be-46f7-bae8-23aef4623edb",
+      "name": "Slack: bozza pronta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2420,
+        80
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://slack.com/api' + '/chat.postMessage' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ channel: $('Verifica e smista').first().json.canale, thread_ts: $('Verifica e smista').first().json.thread, text: ':white_check_mark: Bozza pronta: ' + $json.righe + ' righe. Controlla le voci evidenziate e approva dal telefono: ' + 'https://preventivolampo.vercel.app' + $json.revisione, unfurl_links: false }) }}",
+        "options": {},
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "slackApi"
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "SLACKCRED00000001",
+          "name": "Slack · PreventivoLampo"
+        }
+      }
+    },
+    {
+      "id": "42abe956-d849-4f8d-8be4-6403f9077e21",
+      "name": "Slack: qualcosa non va",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2420,
+        260
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "={{ 'https://slack.com/api' + '/chat.postMessage' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ channel: $('Verifica e smista').first().json.canale, thread_ts: $('Verifica e smista').first().json.thread, text: ':warning: Non sono riuscito a preparare la bozza. Riprova tra un minuto; se succede ancora, scrivi il sopralluogo in un unico messaggio.', unfurl_links: false }) }}",
+        "options": {},
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "slackApi"
+      },
+      "credentials": {
+        "slackApi": {
+          "id": "SLACKCRED00000001",
+          "name": "Slack · PreventivoLampo"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Slack: evento in arrivo": {
+      "main": [
+        [
+          {
+            "node": "Verifica e smista",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verifica e smista": {
+      "main": [
+        [
+          {
+            "node": "Rispondi a Slack entro 3 secondi",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rispondi a Slack entro 3 secondi": {
+      "main": [
+        [
+          {
+            "node": "Serve una risposta?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Serve una risposta?": {
+      "main": [
+        [
+          {
+            "node": "Slack: ricevuto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Slack: ricevuto": {
+      "main": [
+        [
+          {
+            "node": "Da elaborare?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Da elaborare?": {
+      "main": [
+        [
+          {
+            "node": "È un vocale?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "È un vocale?": {
+      "main": [
+        [
+          {
+            "node": "Scarica il vocale da Slack",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarica il vocale da Slack": {
+      "main": [
+        [
+          {
+            "node": "Trascrivi il vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trascrivi il vocale": {
+      "main": [
+        [
+          {
+            "node": "Testo dal vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Testo dal vocale": {
+      "main": [
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PreventivoLampo: crea la bozza": {
+      "main": [
+        [
+          {
+            "node": "Slack: bozza pronta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Slack: qualcosa non va",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "all"
+  },
+  "pinData": {},
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": [],
+  "id": "PLslackCloud00001"
+}

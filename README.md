@@ -101,7 +101,7 @@ Su `/prova` si incolla il testo di un vocale (o si sceglie uno dei 30 sopralluog
 
 ## Limiti dichiarati
 
-- **Ingresso testuale.** I numeri sono misurati sulle trascrizioni dei copioni. La trascrizione degli audio (fase F4) e il canale WhatsApp (F6) non sono ancora collegati: il servizio di trascrizione sta dietro un'interfaccia unica e si sceglie misurandolo sugli stessi 30 casi.
+- **Ingresso testuale.** I numeri sono misurati sulle trascrizioni dei copioni. Il canale è collegato su Slack con n8n (F6, 8/10/2026): si scrive il sopralluogo al bot e la bozza torna nel thread con il link di revisione. Il flusso per WhatsApp Cloud API è pronto e provato su un banco di 17 eventi (flussi, app Slack e banco di prova in [`n8n/`](n8n/LEGGIMI.md)). La trascrizione degli audio (F4) è predisposta nel flusso: il servizio si sceglie misurandolo sugli stessi 30 casi.
 - **Banco piccolo e scritto da noi.** 30 casi, una sola impresa inventata, attesi scritti da un agente AI e rivisti: misurano il motore su questo listino, non su qualunque artigiano.
 - **Prezzi da prezzario pubblico**, non i prezzi di un'impresa reale.
 - **Non è consulenza fiscale.** Il regime IVA dipende dalle risposte dell'artigiano.

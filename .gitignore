@@ -48,3 +48,7 @@ next-env.d.ts
 
 # candidature ricevute in sviluppo dal modulo della home (dati personali): mai nel repository
 /archivio-locale/
+
+# n8n: segreti locali
+n8n/.segreto-elabora.txt
+n8n/server/.env

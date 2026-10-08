@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { TestataApp } from "@/components/TestataApp";
 import { CHIAVI, reportMisure, valori } from "@/lib/misure";
@@ -24,6 +25,13 @@ const SCELTE: { titolo: string; testo: string }[] = [
   { titolo: "Meglio una domanda che una stima", testo: "Se la misura non è detta, la bozza chiede. Il banco conta anche le domande in più, perché anche chiedere troppo è un costo." },
   { titolo: "L'errore pericoloso si conta a parte", testo: "Un abbinamento sbagliato con un prezzo vero sembra giusto. Per questo è una riga a sé nel report, ed è quella che ho fatto scendere di più." },
   { titolo: "L'IVA edile sta nel codice", testo: "22%, 10% e 10% con beni significativi (DM 29/12/1999), con la ripartizione dell'Agenzia delle Entrate. Il modello raccoglie le risposte; il calcolo è deterministico e testato." },
+];
+
+const CANALE: { titolo: string; testo: string }[] = [
+  { titolo: "Solo richieste firmate", testo: "Ogni messaggio deve avere la firma HMAC di Slack o di Meta, non più vecchia di 5 minuti. Le altre ricevono un 401 e non arrivano al motore." },
+  { titolo: "Risposta subito, lavoro dopo", testo: "Slack vuole una risposta entro 3 secondi, il motore ne impiega circa 14: n8n risponde prima e lavora dopo, così Slack non ripete l'evento." },
+  { titolo: "Niente doppioni né cicli", testo: "Le ripetizioni dell'evento, i messaggi dei bot e gli stati di consegna vengono ignorati: un sopralluogo, una bozza." },
+  { titolo: "Le chiavi restano fuori dal flusso", testo: "Token e segreti stanno nelle credenziali cifrate di n8n; il flusso esportato nel repository non ne contiene." },
 ];
 
 export default function Progetto() {
@@ -155,9 +163,42 @@ export default function Progetto() {
         </section>
 
         <section className="mt-14">
+          <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">Il canale: Slack oggi, WhatsApp pronto</h2>
+          <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-testo-2">
+            Il motore non sa da dove arriva il messaggio: lo porta n8n. Su Slack funziona dal vivo: si scrive il sopralluogo al
+            bot e la bozza torna nel thread con il link di revisione. Il flusso per WhatsApp Cloud API fa lo stesso partendo dal
+            vocale, che trascrive prima di passarlo al motore: è provato contro un finto Meta e aspetta solo il numero.
+          </p>
+          <figure className="mt-6 overflow-hidden rounded-card bg-superficie ring-1 ring-linea">
+            <Image
+              src="/progetto/slack-bozza.png"
+              width={662}
+              height={215}
+              alt="Conversazione su Slack: il sopralluogo scritto al bot, la risposta «Ricevuto» e dopo pochi secondi «Bozza pronta: 5 righe» con il link di revisione"
+              className="h-auto w-full"
+            />
+            <figcaption className="border-t border-linea px-4 py-3 text-[14px] text-testo-3">
+              Prova dal vivo su Slack, 8 ottobre 2026: dal messaggio alla bozza in circa 15 secondi.
+            </figcaption>
+          </figure>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2">
+            {CANALE.map((s) => (
+              <article key={s.titolo} className="rounded-card bg-superficie p-5 ring-1 ring-linea">
+                <h3 className="text-[19px] font-extrabold leading-snug">{s.titolo}</h3>
+                <p className="mt-2 text-[16px] leading-relaxed text-testo-2">{s.testo}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-3 text-[15px] text-testo-3">
+            I due flussi hanno un banco di prova con eventi firmati e servizi finti: 16 casi per Slack e 17 per WhatsApp, tutti
+            superati su n8n 2.42. Flussi, app Slack e banco sono nella cartella <code className="font-mono">n8n/</code> del repository.
+          </p>
+        </section>
+
+        <section className="mt-14">
           <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">Cosa non fa ancora</h2>
           <ul className="mt-4 max-w-[62ch] list-disc space-y-2 pl-5 text-[17px] leading-relaxed text-testo-2">
-            <li>Il canale WhatsApp e la trascrizione degli audio non sono collegati: la demo parte dal testo, o dalla dettatura del browser.</li>
+            <li>WhatsApp aspetta il numero di Meta e la trascrizione dei vocali non è ancora misurata sul banco: i numeri qui sopra partono dal testo, come la demo e Slack.</li>
             <li>L&apos;IVA al centesimo è il punto più debole: dipende da righe e quantità tutte giuste, e quando una sbaglia sbaglia anche lei.</li>
             <li>Il banco è piccolo e scritto da me con un agente AI: misura il motore su questo listino, non su qualunque artigiano.</li>
             <li>I prezzi vengono da un prezzario pubblico (Regione Lombardia 2026), non da un&apos;impresa vera.</li>
@@ -168,7 +209,7 @@ export default function Progetto() {
           <h2 className="text-[26px] font-black [font-stretch:80%]">Stack</h2>
           <p className="mt-2 text-[16px] leading-relaxed text-scuro-testo">
             Next.js 16 (App Router) e TypeScript, Claude API con uscite strutturate, zod, pdf-lib, Vitest (oltre 200 test, Claude
-            sostituito da un finto), Vercel con Blob privato a Francoforte. Costruito con Claude Code e una squadra di agenti;
+            sostituito da un finto), Vercel con Blob privato a Francoforte, n8n per i canali (Slack e WhatsApp Cloud API). Costruito con Claude Code e una squadra di agenti;
             architettura, regole e verifiche sono mie.
           </p>
           <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">

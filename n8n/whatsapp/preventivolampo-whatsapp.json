@@ -1,0 +1,624 @@
+{
+  "id": "PLwhatsapp0000001",
+  "name": "PreventivoLampo · WhatsApp",
+  "nodes": [
+    {
+      "id": "55b655e9-c489-4c55-8214-e74fdec8e916",
+      "name": "Meta: verifica indirizzo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "6bc1cc0f-3cb3-4659-9841-b9f941f94ae4",
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "preventivolampo-whatsapp",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "27c74904-2864-49fb-b74b-937ee5ceac48",
+      "name": "Controlla token",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Meta verifica l'indirizzo una volta con una GET: risponde la sfida solo se il token coincide.\n// ⚙️ Token di verifica: lo stesso che scrivi in Meta → WhatsApp → Configurazione → Webhook → «Token di verifica».\nconst TOKEN_VERIFICA = '';\nconst q = $input.first().json.query || {};\nconst ok = TOKEN_VERIFICA && q['hub.mode'] === 'subscribe' && q['hub.verify_token'] === TOKEN_VERIFICA;\nreturn [{ json: { codice: ok ? 200 : 403, corpo: ok ? String(q['hub.challenge'] || '') : 'no' } }];"
+      }
+    },
+    {
+      "id": "28e11616-0c35-4523-97cf-934e71b61db9",
+      "name": "Rispondi a Meta (sfida)",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.corpo }}",
+        "options": {
+          "responseCode": "={{ $json.codice }}"
+        }
+      }
+    },
+    {
+      "id": "1baae25f-e7d1-4458-96cb-d604be26f45c",
+      "name": "WhatsApp: messaggio in arrivo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "8912832c-5278-4c43-a809-f185a2e4c340",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "preventivolampo-whatsapp",
+        "responseMode": "responseNode",
+        "options": {
+          "rawBody": true
+        }
+      }
+    },
+    {
+      "id": "a1a2c14d-2643-42cd-98b7-70f78c7d80ea",
+      "name": "Verifica e smista",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ⚙️ IMPOSTAZIONI (si compilano una volta, solo in n8n)\n// App Secret dell'app Meta: developers.facebook.com → la tua app → Impostazioni dell'app → Di base → Chiave segreta\nconst SEGRETO_APP = '';\n// Vocali: true se nel nodo «Trascrivi il vocale» c'è la credenziale del servizio di trascrizione\nconst VOCALI_ATTIVI = true;\nconst GRAPH = 'https://graph.facebook.com/v25.0';\nconst TRASCRIZIONE_URL = 'https://api.openai.com/v1/audio/transcriptions';\nconst TRASCRIZIONE_MODELLO = 'whisper-1';\n\n// Verifica che la richiesta venga davvero da Meta (firma HMAC sul corpo grezzo) e decide cosa fare.\nconst crypto = require('crypto');\nconst item = $input.first();\nconst headers = item.json.headers || {};\nlet grezzo = '';\ntry { grezzo = (await this.helpers.getBinaryDataBuffer(0, 'data')).toString('utf8'); } catch (e) { grezzo = ''; }\nlet corpo = item.json.body;\nif ((!corpo || typeof corpo !== 'object' || !Object.keys(corpo).length) && grezzo) {\n  try { corpo = JSON.parse(grezzo); } catch (e) { corpo = {}; }\n}\ncorpo = corpo || {};\nconst out = (o) => [{ json: { GRAPH, TRASCRIZIONE_URL, TRASCRIZIONE_MODELLO, ...o } }];\n\nfunction firmaValida() {\n  if (!SEGRETO_APP || !grezzo) return false;\n  const firma = String(headers['x-hub-signature-256'] || '');\n  const attesa = 'sha256=' + crypto.createHmac('sha256', SEGRETO_APP).update(grezzo).digest('hex');\n  const a = Buffer.from(attesa), b = Buffer.from(firma);\n  return a.length === b.length && crypto.timingSafeEqual(a, b);\n}\nif (!firmaValida()) return out({ azione: 'rifiuta', codice: 401 });\nif (corpo.object !== 'whatsapp_business_account') return out({ azione: 'ignora', codice: 200 });\n\nconst value = corpo.entry?.[0]?.changes?.[0]?.value || {};\nconst msg = (value.messages || [])[0];\n// Le notifiche di stato (inviato, consegnato, letto) delle nostre risposte non richiedono nulla.\nif (!msg) return out({ azione: 'ignora', codice: 200 });\n// Meta può ripetere un evento: un messaggio più vecchio di 10 minuti non si rielabora.\nif (Math.abs(Date.now() / 1000 - Number(msg.timestamp || 0)) > 600) return out({ azione: 'ignora', codice: 200 });\n\nconst base = {\n  codice: 200,\n  numeroId: value.metadata?.phone_number_id,\n  a: msg.from,\n  messaggioId: msg.id,\n  nome: value.contacts?.[0]?.profile?.name || '',\n  testo: msg.type === 'text' ? String(msg.text?.body || '').trim() : '',\n};\nconst vocale = msg.type === 'audio' ? msg.audio : null;\n\nif (vocale && VOCALI_ATTIVI) {\n  return out({ ...base, azione: 'elabora', vocale: true, mediaId: vocale.id, mime: vocale.mime_type || 'audio/ogg',\n    avviso: '⏳ Ricevuto il vocale. Lo trascrivo e preparo la bozza del preventivo, ci vogliono circa 20 secondi.' });\n}\nif (base.testo.length >= 15) {\n  return out({ ...base, azione: 'elabora', vocale: false,\n    avviso: '⏳ Ricevuto. Preparo la bozza del preventivo, ci vogliono circa 15 secondi.' });\n}\nconst aiuto = vocale\n  ? 'I vocali non sono ancora attivi in questa demo: scrivimi il sopralluogo come lo racconteresti a un collega e ti preparo la bozza.'\n  : 'Ciao' + (base.nome ? ' ' + base.nome.split(' ')[0] : '') + '! Sono PreventivoLampo. ' + (VOCALI_ATTIVI ? 'Mandami un vocale' : 'Scrivimi') + ' dopo il sopralluogo, come lo racconteresti a un collega (lavorazioni, misure, materiali), e ti preparo la bozza del preventivo da controllare dal telefono.';\nreturn out({ ...base, azione: 'aiuto', vocale: false, avviso: aiuto });"
+      }
+    },
+    {
+      "id": "964b5c87-9a7d-44d4-a816-4d0ab66dc01a",
+      "name": "Rispondi a Meta subito",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.codice === 200 ? 'ok' : 'firma non valida' }}",
+        "options": {
+          "responseCode": "={{ $json.codice }}"
+        }
+      }
+    },
+    {
+      "id": "0706627b-b3da-4b9c-803a-f05ded872168",
+      "name": "Serve una risposta?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f6140fb4-4541-4815-9396-cf463d89f8b1",
+              "leftValue": "={{ ['elabora', 'aiuto'].includes($('Verifica e smista').first().json.azione) }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "519f6537-7ef3-4b6d-9301-34563789168e",
+      "name": "WhatsApp: ricevuto",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "WATOKEN0000000001",
+          "name": "WhatsApp · token"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "method": "POST",
+        "url": "={{ $('Verifica e smista').first().json.GRAPH + '/' + $('Verifica e smista').first().json.numeroId + '/messages' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', recipient_type: 'individual', to: $('Verifica e smista').first().json.a, context: { message_id: $('Verifica e smista').first().json.messaggioId }, type: 'text', text: { preview_url: true, body: $('Verifica e smista').first().json.avviso } }) }}"
+      }
+    },
+    {
+      "id": "4aa1a7d0-09f5-4c71-abba-8b29bd9b1500",
+      "name": "Da elaborare?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1100,
+        200
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c8bbcf4e-a6a9-4b9f-b55b-95e22328a215",
+              "leftValue": "={{ $('Verifica e smista').first().json.azione }}",
+              "rightValue": "elabora",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "c9404708-7284-4eeb-9963-78f9f05b6a4d",
+      "name": "È un vocale?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        120
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "072274fd-f5ed-48fd-a8a0-db628ca0b1f4",
+              "leftValue": "={{ $('Verifica e smista').first().json.vocale }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "3429f957-9c6a-4f74-abe6-58deab95ffa8",
+      "name": "Chiedi il vocale a Meta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "WATOKEN0000000001",
+          "name": "WhatsApp · token"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "url": "={{ $('Verifica e smista').first().json.GRAPH + '/' + $('Verifica e smista').first().json.mediaId }}"
+      }
+    },
+    {
+      "id": "91af84d3-c7e6-4eb7-85fe-dddb0e089b62",
+      "name": "Scarica il vocale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1760,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "WATOKEN0000000001",
+          "name": "WhatsApp · token"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        },
+        "url": "={{ $json.url }}"
+      }
+    },
+    {
+      "id": "e215dcb4-ef54-4d5c-9ed2-15d7c2f1836a",
+      "name": "Nome del file audio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// WhatsApp manda i vocali in OGG/Opus senza estensione: il servizio di trascrizione la vuole nel nome del file.\nconst it = $input.first();\nconst mime = $('Verifica e smista').first().json.mime || 'audio/ogg';\nconst est = mime.includes('ogg') ? 'ogg' : mime.includes('mpeg') ? 'mp3' : mime.includes('mp4') || mime.includes('aac') ? 'm4a' : mime.includes('amr') ? 'amr' : 'ogg';\nit.binary.data.fileName = 'vocale.' + est;\nit.binary.data.mimeType = mime.split(';')[0];\nit.binary.data.fileExtension = est;\nreturn [it];"
+      }
+    },
+    {
+      "id": "20f195ce-e11f-4864-8209-fe224adcb334",
+      "name": "Trascrivi il vocale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2200,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TRASCR00000000001",
+          "name": "Trascrizione · chiave"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        },
+        "method": "POST",
+        "url": "={{ $('Verifica e smista').first().json.TRASCRIZIONE_URL }}",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "model",
+              "value": "={{ $('Verifica e smista').first().json.TRASCRIZIONE_MODELLO }}"
+            },
+            {
+              "name": "language",
+              "value": "it"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a8d41c41-f63c-45b0-8e05-d09be7ab79f2",
+      "name": "Testo dal vocale",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2420,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const trascritto = String($input.first().json.text || '').trim();\nreturn [{ json: { testo: trascritto } }];"
+      }
+    },
+    {
+      "id": "84525b0a-06b6-44b9-a9b3-0ca07d0375d5",
+      "name": "PreventivoLampo: crea la bozza",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2640,
+        160
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLHEADER000000001",
+          "name": "PreventivoLampo · segreto n8n"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        },
+        "method": "POST",
+        "url": "https://preventivolampo.vercel.app/api/elabora",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ testo: $json.testo || $('Verifica e smista').first().json.testo }) }}"
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "id": "8cf026d6-11b2-4fdc-b4d0-2820184e7293",
+      "name": "WhatsApp: bozza pronta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2860,
+        80
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "WATOKEN0000000001",
+          "name": "WhatsApp · token"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "method": "POST",
+        "url": "={{ $('Verifica e smista').first().json.GRAPH + '/' + $('Verifica e smista').first().json.numeroId + '/messages' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', recipient_type: 'individual', to: $('Verifica e smista').first().json.a, context: { message_id: $('Verifica e smista').first().json.messaggioId }, type: 'text', text: { preview_url: true, body: '✅ Bozza pronta: ' + $json.righe + ' righe. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + $json.revisione } }) }}"
+      }
+    },
+    {
+      "id": "c33f49eb-8c8f-430b-ae38-35b493fdb920",
+      "name": "WhatsApp: qualcosa non va",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2860,
+        260
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "WATOKEN0000000001",
+          "name": "WhatsApp · token"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {},
+        "method": "POST",
+        "url": "={{ $('Verifica e smista').first().json.GRAPH + '/' + $('Verifica e smista').first().json.numeroId + '/messages' }}",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', recipient_type: 'individual', to: $('Verifica e smista').first().json.a, context: { message_id: $('Verifica e smista').first().json.messaggioId }, type: 'text', text: { preview_url: true, body: '⚠️ Non sono riuscito a preparare la bozza. Riprova tra un minuto; se succede ancora, scrivimi il sopralluogo in un unico messaggio.' } }) }}"
+      }
+    }
+  ],
+  "connections": {
+    "Meta: verifica indirizzo": {
+      "main": [
+        [
+          {
+            "node": "Controlla token",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Controlla token": {
+      "main": [
+        [
+          {
+            "node": "Rispondi a Meta (sfida)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp: messaggio in arrivo": {
+      "main": [
+        [
+          {
+            "node": "Verifica e smista",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verifica e smista": {
+      "main": [
+        [
+          {
+            "node": "Rispondi a Meta subito",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rispondi a Meta subito": {
+      "main": [
+        [
+          {
+            "node": "Serve una risposta?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Serve una risposta?": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp: ricevuto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp: ricevuto": {
+      "main": [
+        [
+          {
+            "node": "Da elaborare?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Da elaborare?": {
+      "main": [
+        [
+          {
+            "node": "È un vocale?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "È un vocale?": {
+      "main": [
+        [
+          {
+            "node": "Chiedi il vocale a Meta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Chiedi il vocale a Meta": {
+      "main": [
+        [
+          {
+            "node": "Scarica il vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarica il vocale": {
+      "main": [
+        [
+          {
+            "node": "Nome del file audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nome del file audio": {
+      "main": [
+        [
+          {
+            "node": "Trascrivi il vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trascrivi il vocale": {
+      "main": [
+        [
+          {
+            "node": "Testo dal vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Testo dal vocale": {
+      "main": [
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PreventivoLampo: crea la bozza": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp: bozza pronta",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "WhatsApp: qualcosa non va",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "all"
+  },
+  "pinData": {},
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}

@@ -1,0 +1,40 @@
+# n8n dietro Caddy (HTTPS automatico con Let's Encrypt). Avvio: docker compose up -d
+services:
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    env_file: .env
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n:2.42.5
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - N8N_HOST=${N8N_DOMINIO}
+      - N8N_PROTOCOL=https
+      - N8N_PORT=5678
+      - WEBHOOK_URL=https://${N8N_DOMINIO}/
+      - N8N_PROXY_HOPS=1
+      - GENERIC_TIMEZONE=Europe/Rome
+      - TZ=Europe/Rome
+      # Il flusso legge segreti e indirizzi da qui sotto ($env), non li tiene dentro di sé.
+      - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
+      # Serve alla verifica della firma di Slack nel nodo Code.
+      - NODE_FUNCTION_ALLOW_BUILTIN=crypto
+      - N8N_DIAGNOSTICS_ENABLED=false
+    volumes:
+      - n8n_data:/home/node/.n8n
+    expose:
+      - "5678"
+
+volumes:
+  caddy_data:
+  caddy_config:
+  n8n_data:

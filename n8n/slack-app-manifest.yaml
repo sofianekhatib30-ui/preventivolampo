@@ -1,0 +1,31 @@
+# App Slack di PreventivoLampo (demo). Si crea da https://api.slack.com/apps → Create New App → From a manifest.
+# Prima di crearla il flusso n8n deve essere già pubblicato: Slack verifica subito l'indirizzo qui sotto.
+# Per il server Hetzner sostituisci l'indirizzo con https://n8n.kdigitalsolution.it/webhook/preventivolampo-slack
+display_information:
+  name: PreventivoLampo
+  description: Dal sopralluogo alla bozza di preventivo. Progetto dimostrativo di K Digital Solution.
+  background_color: "#343645"
+features:
+  app_home:
+    home_tab_enabled: false
+    messages_tab_enabled: true
+    messages_tab_read_only_enabled: false
+  bot_user:
+    display_name: PreventivoLampo
+    always_online: true
+oauth_config:
+  scopes:
+    bot:
+      - app_mentions:read
+      - chat:write
+      - files:read
+      - im:history
+settings:
+  event_subscriptions:
+    request_url: https://kdigitalsolution.app.n8n.cloud/webhook/preventivolampo-slack
+    bot_events:
+      - app_mention
+      - message.im
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false
