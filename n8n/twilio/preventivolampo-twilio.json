@@ -362,7 +362,7 @@
             },
             {
               "name": "Body",
-              "value": "={{ '✅ Bozza pronta: ' + $json.righe + ' righe. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + $json.revisione }}"
+              "value": "={{ '✅ Bozza pronta: ' + $json.righe + ($json.righe == 1 ? ' riga' : ' righe') + '. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + $json.revisione }}"
             }
           ]
         }

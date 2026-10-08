@@ -163,11 +163,13 @@ export default function Progetto() {
         </section>
 
         <section className="mt-14">
-          <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">Il canale: Slack oggi, WhatsApp pronto</h2>
+          <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">Il canale: Slack e WhatsApp</h2>
           <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-testo-2">
             Il motore non sa da dove arriva il messaggio: lo porta n8n. Su Slack funziona dal vivo: si scrive il sopralluogo al
-            bot e la bozza torna nel thread con il link di revisione. Il flusso per WhatsApp Cloud API fa lo stesso partendo dal
-            vocale, che trascrive prima di passarlo al motore: è provato contro un finto Meta e aspetta solo il numero.
+            bot e la bozza torna nel thread con il link di revisione. Su WhatsApp funziona dal vivo con la sandbox gratuita di Twilio:
+            la risposta «ricevuto» arriva subito e il link della bozza quando l&apos;artigiano scrive «ok», perché l&apos;account di prova
+            permette solo risposte entro 15 secondi. Il flusso per WhatsApp Cloud API di Meta, con i vocali trascritti, è pronto e
+            aspetta il numero.
           </p>
           <figure className="mt-6 overflow-hidden rounded-card bg-superficie ring-1 ring-linea">
             <Image
@@ -190,15 +192,15 @@ export default function Progetto() {
             ))}
           </div>
           <p className="mt-3 text-[15px] text-testo-3">
-            I due flussi hanno un banco di prova con eventi firmati e servizi finti: 16 casi per Slack e 17 per WhatsApp, tutti
-            superati su n8n 2.42. Flussi, app Slack e banco sono nella cartella <code className="font-mono">n8n/</code> del repository.
+            Ogni flusso ha un banco di prova con eventi firmati e servizi finti: 16 casi per Slack, 17 per WhatsApp con Meta, 11 per
+            Twilio e 10 per la sua versione gratuita, tutti superati su n8n 2.42. Flussi, app Slack e banco sono nella cartella <code className="font-mono">n8n/</code> del repository.
           </p>
         </section>
 
         <section className="mt-14">
           <h2 className="text-[28px] font-black [font-stretch:80%] sm:text-[34px]">Cosa non fa ancora</h2>
           <ul className="mt-4 max-w-[62ch] list-disc space-y-2 pl-5 text-[17px] leading-relaxed text-testo-2">
-            <li>WhatsApp aspetta il numero di Meta e la trascrizione dei vocali non è ancora misurata sul banco: i numeri qui sopra partono dal testo, come la demo e Slack.</li>
+            <li>Su WhatsApp, con l&apos;account gratuito di Twilio, la bozza si ritira scrivendo «ok»; i vocali aspettano il numero di Meta o il piano a consumo, e la loro trascrizione non è ancora misurata sul banco.</li>
             <li>L&apos;IVA al centesimo è il punto più debole: dipende da righe e quantità tutte giuste, e quando una sbaglia sbaglia anche lei.</li>
             <li>Il banco è piccolo e scritto da me con un agente AI: misura il motore su questo listino, non su qualunque artigiano.</li>
             <li>I prezzi vengono da un prezzario pubblico (Regione Lombardia 2026), non da un&apos;impresa vera.</li>
@@ -209,7 +211,7 @@ export default function Progetto() {
           <h2 className="text-[26px] font-black [font-stretch:80%]">Stack</h2>
           <p className="mt-2 text-[16px] leading-relaxed text-scuro-testo">
             Next.js 16 (App Router) e TypeScript, Claude API con uscite strutturate, zod, pdf-lib, Vitest (oltre 200 test, Claude
-            sostituito da un finto), Vercel con Blob privato a Francoforte, n8n per i canali (Slack e WhatsApp Cloud API). Costruito con Claude Code e una squadra di agenti;
+            sostituito da un finto), Vercel con Blob privato a Francoforte, n8n per i canali (Slack, WhatsApp con Twilio o Meta), Supabase per l&apos;area delle imprese. Costruito con Claude Code e una squadra di agenti;
             architettura, regole e verifiche sono mie.
           </p>
           <div className="mt-5 flex flex-col gap-2.5 sm:flex-row">

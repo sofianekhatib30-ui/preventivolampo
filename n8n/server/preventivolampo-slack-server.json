@@ -319,7 +319,7 @@
         },
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ channel: $('Verifica e smista').first().json.canale, thread_ts: $('Verifica e smista').first().json.thread, text: ':white_check_mark: Bozza pronta: ' + $json.righe + ' righe. Controlla le voci evidenziate e approva dal telefono: ' + ($env.PL_BASE_URL || 'https://preventivolampo.vercel.app') + $json.revisione, unfurl_links: false }) }}",
+        "jsonBody": "={{ JSON.stringify({ channel: $('Verifica e smista').first().json.canale, thread_ts: $('Verifica e smista').first().json.thread, text: ':white_check_mark: Bozza pronta: ' + $json.righe + ($json.righe == 1 ? ' riga' : ' righe') + '. Controlla le voci evidenziate e approva dal telefono: ' + ($env.PL_BASE_URL || 'https://preventivolampo.vercel.app') + $json.revisione, unfurl_links: false }) }}",
         "options": {}
       }
     },

@@ -16,6 +16,7 @@ Slack ──► Webhook n8n ──► Verifica e smista ──► risposta a Sla
 ## File
 - `preventivolampo-slack.json`: il flusso per **n8n Cloud** (chiavi nelle credenziali di n8n).
 - `slack-app-manifest.yaml`: crea l'app Slack con un clic.
+- `twilio/`: WhatsApp con Twilio, anche gratis con la sandbox: vedi [`twilio/LEGGIMI.md`](twilio/LEGGIMI.md).
 - `server/`: la stessa cosa su un server proprio (Hetzner + Docker + Caddy), con le chiavi nel file `.env` del server.
 - `prova/`: banco di prova. `node prova/mock.js` simula Slack, OpenAI e PreventivoLampo; `node prova/prova.js` manda 16 eventi firmati e controlla cosa succede. Esito al 08/10/2026: 16 su 16, su n8n 2.42.5, sia la versione cloud sia quella server.
 

@@ -398,7 +398,7 @@
         "url": "={{ $('Verifica e smista').first().json.GRAPH + '/' + $('Verifica e smista').first().json.numeroId + '/messages' }}",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', recipient_type: 'individual', to: $('Verifica e smista').first().json.a, context: { message_id: $('Verifica e smista').first().json.messaggioId }, type: 'text', text: { preview_url: true, body: '✅ Bozza pronta: ' + $json.righe + ' righe. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + $json.revisione } }) }}"
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', recipient_type: 'individual', to: $('Verifica e smista').first().json.a, context: { message_id: $('Verifica e smista').first().json.messaggioId }, type: 'text', text: { preview_url: true, body: '✅ Bozza pronta: ' + $json.righe + ($json.righe == 1 ? ' riga' : ' righe') + '. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + $json.revisione } }) }}"
       }
     },
     {

@@ -3,7 +3,7 @@
   "name": "PreventivoLampo · WhatsApp (Twilio gratis)",
   "nodes": [
     {
-      "id": "6d5bafc4-3eaf-4f3b-9931-1192f51d18d0",
+      "id": "cbc57487-3ae7-45db-9c49-ff74acb9bfa3",
       "name": "Twilio: messaggio in arrivo",
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
@@ -11,7 +11,7 @@
         0,
         300
       ],
-      "webhookId": "55e40ae6-7ad7-4131-8f07-4a2fbb1f8e53",
+      "webhookId": "7f3aa4de-ed33-42f2-b090-ff04bb2994be",
       "parameters": {
         "httpMethod": "POST",
         "path": "preventivolampo-twilio",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "id": "d8762105-1fdb-4be0-a2e7-ed22241ea72f",
+      "id": "036ba74c-bf40-49b4-be1c-d65eb8ed8b31",
       "name": "Verifica e smista",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -29,11 +29,11 @@
         300
       ],
       "parameters": {
-        "jsCode": "// ⚙️ IMPOSTAZIONI (si compilano una volta, solo in n8n)\n// Auth Token di Twilio: console.twilio.com → Account Info → Auth Token (lo stesso della credenziale «Twilio · account»).\nconst AUTH_TOKEN = '';\n// L'indirizzo esatto che hai incollato in Twilio (Sandbox settings → «When a message comes in»): serve per la firma.\nconst INDIRIZZO = 'https://kdigitalsolution.app.n8n.cloud/webhook/preventivolampo-twilio';\n// Vocali: true dopo aver messo la credenziale del servizio di trascrizione nel nodo «Trascrivi il vocale».\nconst VOCALI_ATTIVI = false;\nconst TWILIO = 'https://api.twilio.com';\nconst TRASCRIZIONE_URL = 'https://api.openai.com/v1/audio/transcriptions';\nconst TRASCRIZIONE_MODELLO = 'whisper-1';\n\n// Twilio firma ogni richiesta: HMAC-SHA1 con l'Auth Token su indirizzo + parametri in ordine alfabetico.\nconst crypto = require('crypto');\nconst item = $input.first();\nconst headers = item.json.headers || {};\nconst p = item.json.body || {};\nconst out = (o) => [{ json: { TWILIO, TRASCRIZIONE_URL, TRASCRIZIONE_MODELLO, ...o } }];\n\nfunction firmaValida() {\n  if (!AUTH_TOKEN) return false;\n  const dati = INDIRIZZO + Object.keys(p).sort().map((k) => k + p[k]).join('');\n  const attesa = crypto.createHmac('sha1', AUTH_TOKEN).update(Buffer.from(dati, 'utf8')).digest('base64');\n  const a = Buffer.from(attesa), b = Buffer.from(String(headers['x-twilio-signature'] || ''));\n  return a.length === b.length && crypto.timingSafeEqual(a, b);\n}\nif (!firmaValida()) return out({ azione: 'rifiuta', codice: 403, twiml: 'firma non valida' });\nif (!String(p.From || '').startsWith('whatsapp:')) return out({ azione: 'ignora', codice: 200, twiml: '<Response></Response>' });\n\nconst base = {\n  codice: 200,\n  sid: p.AccountSid,\n  a: p.From,\n  da: p.To,\n  nome: String(p.ProfileName || ''),\n  testo: String(p.Body || '').trim(),\n};\n// L'account di prova di Twilio accetta solo risposte nel TwiML, entro 15 secondi. La bozza ne richiede ~20:\n// si risponde subito «ricevuto», la si prepara dopo e la si consegna quando l'artigiano scrive «ok».\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nconst mia = memoria.bozze[base.a];\nconst chiedeLaBozza = /^(ok+|okay|pronta\\??|bozza|link|si|sì|vai)[.!?]*$/i.test(base.testo);\nconst xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst rispondi = (o) => out({ ...o, twiml: '<Response><Message>' + xml(o.avviso) + '</Message></Response>' });\n\nif (chiedeLaBozza) {\n  if (mia && mia.testo) {\n    delete memoria.bozze[base.a];\n    return rispondi({ ...base, azione: 'consegna', avviso: mia.testo });\n  }\n  return rispondi({ ...base, azione: 'attesa', avviso: '⏳ Ci sto ancora lavorando: riscrivimi «ok» tra qualche secondo.' });\n}\n\nconst media = Number(p.NumMedia || 0) > 0 ? { url: p.MediaUrl0, tipo: String(p.MediaContentType0 || '') } : null;\nconst vocale = media && media.tipo.startsWith('audio/') ? media : null;\nconst pronta = 'tra circa 20 secondi scrivimi «ok» e ti mando il link della bozza.';\n\nif (vocale && VOCALI_ATTIVI) {\n  return rispondi({ ...base, azione: 'elabora', vocale: true, mediaUrl: vocale.url, mime: vocale.tipo,\n    avviso: '⏳ Ricevuto il vocale. Lo trascrivo e preparo la bozza: ' + pronta });\n}\nif (base.testo.length >= 15) {\n  return rispondi({ ...base, azione: 'elabora', vocale: false, avviso: '⏳ Ricevuto. Preparo la bozza del preventivo: ' + pronta });\n}\nconst aiuto = vocale\n  ? 'I vocali non sono ancora attivi: scrivimi il sopralluogo come lo racconteresti a un collega e ti preparo la bozza.'\n  : 'Ciao' + (base.nome ? ' ' + base.nome.split(' ')[0] : '') + '! Sono PreventivoLampo. ' + (VOCALI_ATTIVI ? 'Mandami un vocale' : 'Scrivimi') + ' dopo il sopralluogo, come lo racconteresti a un collega (lavorazioni, misure, materiali), e ti preparo la bozza del preventivo da controllare dal telefono.';\nreturn rispondi({ ...base, azione: 'aiuto', vocale: false, avviso: aiuto });"
+        "jsCode": "// ⚙️ IMPOSTAZIONI (si compilano una volta, solo in n8n)\n// Auth Token di Twilio: console.twilio.com → Account Info → Auth Token (lo stesso della credenziale «Twilio · account»).\nconst AUTH_TOKEN = '';\n// L'indirizzo esatto che hai incollato in Twilio (Sandbox settings → «When a message comes in»): serve per la firma.\nconst INDIRIZZO = 'https://kdigitalsolution.app.n8n.cloud/webhook/preventivolampo-twilio';\n// Vocali: true dopo aver messo la credenziale del servizio di trascrizione nel nodo «Trascrivi il vocale».\nconst VOCALI_ATTIVI = false;\nconst TWILIO = 'https://api.twilio.com';\nconst TRASCRIZIONE_URL = 'https://api.openai.com/v1/audio/transcriptions';\nconst TRASCRIZIONE_MODELLO = 'whisper-1';\n\n// Twilio firma ogni richiesta: HMAC-SHA1 con l'Auth Token su indirizzo + parametri in ordine alfabetico.\nconst crypto = require('crypto');\nconst item = $input.first();\nconst headers = item.json.headers || {};\nconst p = item.json.body || {};\nconst out = (o) => [{ json: { TWILIO, TRASCRIZIONE_URL, TRASCRIZIONE_MODELLO, ...o } }];\n\nfunction firmaValida() {\n  if (!AUTH_TOKEN) return false;\n  const dati = INDIRIZZO + Object.keys(p).sort().map((k) => k + p[k]).join('');\n  const attesa = crypto.createHmac('sha1', AUTH_TOKEN).update(Buffer.from(dati, 'utf8')).digest('base64');\n  const a = Buffer.from(attesa), b = Buffer.from(String(headers['x-twilio-signature'] || ''));\n  return a.length === b.length && crypto.timingSafeEqual(a, b);\n}\nif (!firmaValida()) return out({ azione: 'rifiuta', codice: 403, twiml: 'firma non valida' });\nif (!String(p.From || '').startsWith('whatsapp:')) return out({ azione: 'ignora', codice: 200, twiml: '<Response></Response>' });\n\nconst base = {\n  codice: 200,\n  sid: p.AccountSid,\n  a: p.From,\n  da: p.To,\n  nome: String(p.ProfileName || ''),\n  testo: String(p.Body || '').trim(),\n};\n// L'account di prova di Twilio accetta solo risposte nel TwiML, entro 15 secondi. La bozza ne richiede ~20:\n// si risponde subito «ricevuto», la si prepara dopo e la si consegna quando l'artigiano scrive «ok».\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nconst mia = memoria.bozze[base.a];\nconst chiedeLaBozza = /^(ok+|okay|pronta\\??|bozza|link|si|sì|vai)[.!?]*$/i.test(base.testo);\nconst xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst rispondi = (o) => out({ ...o, twiml: '<Response><Message>' + xml(o.avviso) + '</Message></Response>' });\n\nif (chiedeLaBozza) {\n  // Una bozza non ritirata entro un'ora non si consegna più: vale l'ultimo sopralluogo.\n  if (mia && mia.testo && Date.now() - (mia.il || 0) < 3600000) {\n    delete memoria.bozze[base.a];\n    return rispondi({ ...base, azione: 'consegna', avviso: mia.testo });\n  }\n  return rispondi({ ...base, azione: 'attesa', avviso: '⏳ Ci sto ancora lavorando: riscrivimi «ok» tra qualche secondo.' });\n}\n\nconst media = Number(p.NumMedia || 0) > 0 ? { url: p.MediaUrl0, tipo: String(p.MediaContentType0 || '') } : null;\nconst vocale = media && media.tipo.startsWith('audio/') ? media : null;\nconst pronta = 'tra circa 20 secondi scrivimi «ok» e ti mando il link della bozza.';\n\nif (vocale && VOCALI_ATTIVI) {\n  return rispondi({ ...base, azione: 'elabora', vocale: true, mediaUrl: vocale.url, mime: vocale.tipo,\n    avviso: '⏳ Ricevuto il vocale. Lo trascrivo e preparo la bozza: ' + pronta });\n}\nif (base.testo.length >= 15) {\n  return rispondi({ ...base, azione: 'elabora', vocale: false, avviso: '⏳ Ricevuto. Preparo la bozza del preventivo: ' + pronta });\n}\nconst aiuto = vocale\n  ? 'I vocali non sono ancora attivi: scrivimi il sopralluogo come lo racconteresti a un collega e ti preparo la bozza.'\n  : 'Ciao' + (base.nome ? ' ' + base.nome.split(' ')[0] : '') + '! Sono PreventivoLampo. ' + (VOCALI_ATTIVI ? 'Mandami un vocale' : 'Scrivimi') + ' dopo il sopralluogo, come lo racconteresti a un collega (lavorazioni, misure, materiali), e ti preparo la bozza del preventivo da controllare dal telefono.';\nreturn rispondi({ ...base, azione: 'aiuto', vocale: false, avviso: aiuto });"
       }
     },
     {
-      "id": "d98e05e6-5132-4b07-8cf4-1f5f3a381e7e",
+      "id": "a33ca1b1-4eae-4a0c-9702-affe2f8f5747",
       "name": "Rispondi a Twilio subito",
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.1,
@@ -58,7 +58,7 @@
       }
     },
     {
-      "id": "ae495563-d9e7-445b-98aa-73f006eafad6",
+      "id": "5871a948-a94c-40e7-a33b-22fa451c98b5",
       "name": "Da elaborare?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
@@ -76,7 +76,7 @@
           },
           "conditions": [
             {
-              "id": "6039ce4d-34ee-42ee-a1e5-b3b84be87f93",
+              "id": "8a2182bb-3b22-4c58-920b-6e3744ce82b3",
               "leftValue": "={{ $('Verifica e smista').first().json.azione }}",
               "rightValue": "elabora",
               "operator": {
@@ -91,7 +91,7 @@
       }
     },
     {
-      "id": "028b7b98-bb3f-49f8-a896-3fee900317dc",
+      "id": "8684b197-e3f3-4735-aedf-c14bb50f5207",
       "name": "È un vocale?",
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
@@ -109,7 +109,7 @@
           },
           "conditions": [
             {
-              "id": "05bb69f0-e271-417c-995d-4d10e241ec74",
+              "id": "7b85dfc0-4268-497c-9cc3-e9b8a3338806",
               "leftValue": "={{ $('Verifica e smista').first().json.vocale }}",
               "rightValue": "",
               "operator": {
@@ -125,7 +125,7 @@
       }
     },
     {
-      "id": "42012c8a-1e19-4f1b-a5a6-2db88e17fe73",
+      "id": "6cba713a-3def-45e6-a8ef-d214bdc42008",
       "name": "Scarica il vocale",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -154,7 +154,7 @@
       }
     },
     {
-      "id": "ca9200fd-6c99-4e59-b706-43eb77404eeb",
+      "id": "6c3e3c4f-f35a-43ec-808e-f5f8f2c0f39e",
       "name": "Nome del file audio",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -167,7 +167,7 @@
       }
     },
     {
-      "id": "cc0b91fd-0685-4d63-8ab0-d53de263e6c1",
+      "id": "0129fc9c-ec6d-4537-885d-99b6dfe4c64a",
       "name": "Trascrivi il vocale",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -211,7 +211,7 @@
       }
     },
     {
-      "id": "85a3085e-51f3-41a1-b062-af518db3d96f",
+      "id": "02ab65a4-3a4c-4591-8552-c6d6453621f9",
       "name": "Testo dal vocale",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -224,7 +224,7 @@
       }
     },
     {
-      "id": "70fa2bcc-d61e-4cc2-8828-947b923647fe",
+      "id": "f55f4790-cdf4-428b-8726-fb2da02ee6da",
       "name": "PreventivoLampo: crea la bozza",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
@@ -253,7 +253,7 @@
       "onError": "continueErrorOutput"
     },
     {
-      "id": "83825dfc-d35f-48df-b40c-e7eb182be416",
+      "id": "c9ffd436-97b1-40f5-a3b8-2bd42513e51c",
       "name": "Tieni la bozza per «ok»",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -262,11 +262,11 @@
         80
       ],
       "parameters": {
-        "jsCode": "// La bozza è pronta: la tengo da parte per quando l'artigiano scrive «ok».\nconst s = $('Verifica e smista').first().json;\nconst r = $input.first().json;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nmemoria.bozze[s.a] = { testo: '✅ Bozza pronta: ' + r.righe + ' righe. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + r.revisione, il: Date.now() };\nreturn [{ json: { salvata: true } }];"
+        "jsCode": "// La bozza è pronta: la tengo da parte per quando l'artigiano scrive «ok».\nconst s = $('Verifica e smista').first().json;\nconst r = $input.first().json;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nmemoria.bozze[s.a] = { testo: '✅ Bozza pronta: ' + r.righe + (r.righe == 1 ? ' riga' : ' righe') + '. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + r.revisione, il: Date.now() };\nreturn [{ json: { salvata: true } }];"
       }
     },
     {
-      "id": "47256d3f-3cc4-4834-8592-78dc737f459b",
+      "id": "007f1285-3f76-44b3-aa4d-c3ef7930f0a6",
       "name": "Tieni l'errore per «ok»",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
