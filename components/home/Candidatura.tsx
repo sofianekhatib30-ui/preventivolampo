@@ -13,7 +13,7 @@ export function Candidatura() {
         <h2 className="titolo-finale m-0 lg:col-start-1">Il prossimo preventivo mandalo dal furgone.</h2>
         <p className="m-0 max-w-[520px] text-[17px] leading-normal lg:col-start-1 lg:text-xl">
           Cerchiamo 10 artigiani per il programma pilota, di qualunque mestiere della casa. Lasciaci i tuoi dati:
-          ti richiamiamo noi<SoloDesktop> per capire se fa per te</SoloDesktop>.
+          ti richiamiamo noi, in ordine di arrivo<SoloDesktop>, per capire se fa per te</SoloDesktop>.
         </p>
         <div className="lg:col-start-2 lg:row-span-3 lg:row-start-1">
           <ModuloCandidatura />

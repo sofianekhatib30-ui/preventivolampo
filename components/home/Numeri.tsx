@@ -1,12 +1,11 @@
 // I numeri del motore, con il metodo accanto. Vengono da misure/2026-10-08.md e
 // misure/2026-10-08-verifica.md (generati da `npm run misura`, non scritti a mano). Si pubblicano
-// solo i 100% che reggono a ogni misura; la percentuale di voci giuste varia da una misura
+// solo i 100% che reggono a ogni misura (l'IVA resta nel testo, per scelta di Sofiane del 9/10); la percentuale di voci giuste varia da una misura
 // all'altra (97-99%) e sta nel testo, non in una cifra grande:
 // quando una nuova misura li cambia, si cambiano qui e nella tabella delle promesse della SPEC.
 
 const CIFRE = [
   { cifra: "100%", cosa: "dei prezzi dal tuo listino", dettaglio: "Zero prezzi inventati, in ogni prova. Quello che manca resta da prezzare" },
-  { cifra: "100%", cosa: "IVA giusta", dettaglio: "In tutti i casi in cui il racconto bastava. Negli altri decidi tu" },
   { cifra: "100%", cosa: "preventivi nuovi senza niente da correggere", dettaglio: "6 sopralluoghi mai visti prima: tutte le 26 voci giuste" },
   { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del sopralluogo alla bozza completa" },
 ];
@@ -21,7 +20,7 @@ export function Numeri() {
           il cliente. Per ognuno, prima di provare, il preventivo giusto. Poi abbiamo confrontato riga per riga.
         </p>
       </div>
-      <dl className="m-0 grid gap-px overflow-hidden rounded-[20px] bg-scuro-linea sm:grid-cols-2 xl:grid-cols-4">
+      <dl className="m-0 grid gap-px overflow-hidden rounded-[20px] bg-scuro-linea md:grid-cols-3">
         {CIFRE.map((c) => (
           <div key={c.cosa} className="flex flex-col gap-2 bg-ardesia-2 p-6 lg:p-8">
             <dt className="order-2 text-[18px] font-bold lg:text-[19px]">{c.cosa}</dt>
