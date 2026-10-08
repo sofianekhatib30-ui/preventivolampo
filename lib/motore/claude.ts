@@ -17,7 +17,8 @@ export function modelName(): string {
 export function anthropicCaller(apiKey = process.env.ANTHROPIC_API_KEY, model = modelName()): ToolCaller {
   if (!apiKey) throw new Error("Manca ANTHROPIC_API_KEY in .env.local");
   return async ({ system, user, tool, maxTokens = 8192 }) => {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
+    // CLAUDE_API_URL: solo per i banchi di prova (un finto server), in produzione resta vuoto.
+    const res = await fetch(`${process.env.CLAUDE_API_URL || "https://api.anthropic.com"}/v1/messages`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
