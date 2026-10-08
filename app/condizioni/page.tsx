@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Condizioni · PreventivoLampo" };
 
 export default function Page() {
   return (
-    <PaginaLegale titolo="Condizioni del servizio" aggiornata="8 ottobre 2026">
+    <PaginaLegale titolo="Condizioni del servizio" aggiornata="9 ottobre 2026">
       <p>
         PreventivoLampo è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani e imprese edili a
         preparare i preventivi: dal racconto del sopralluogo prepara una bozza con i prezzi del listino dell&apos;impresa, che
@@ -17,8 +17,8 @@ export default function Page() {
       <h2>Programma pilota</h2>
       <ul>
         <li>Dieci posti, assegnati da noi dopo una telefonata.</li>
-        <li>60 giorni gratuiti dall&apos;avvio, con preventivi illimitati. Il listino lo carichi tu (Excel, PDF o foto); se ti serve, ti assistiamo noi.</li>
-        <li>Nessun rinnovo automatico: alla fine dei 60 giorni decidi tu se restare. Se non ci dici niente, il pilota finisce lì.</li>
+        <li>30 giorni gratuiti dall&apos;avvio, con preventivi illimitati. Il listino lo carichi tu (Excel, PDF o foto); se ti serve, ti assistiamo noi.</li>
+        <li>Nessun rinnovo automatico: alla fine dei 30 giorni decidi tu se restare. Se non ci dici niente, il pilota finisce lì.</li>
         <li>In cambio ti chiediamo di usarlo sui tuoi lavori veri e di dirci cosa funziona e cosa no.</li>
       </ul>
 

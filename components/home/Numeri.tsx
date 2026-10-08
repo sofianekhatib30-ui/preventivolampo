@@ -1,12 +1,14 @@
 // I numeri del motore, con il metodo accanto. Vengono da misure/2026-10-08.md e
-// misure/2026-10-08-verifica.md (generati da `npm run misura`, non scritti a mano):
+// misure/2026-10-08-verifica.md (generati da `npm run misura`, non scritti a mano). Si pubblicano
+// solo i 100% che reggono a ogni misura; la percentuale di voci giuste varia da una misura
+// all'altra (97-99%) e sta nel testo, non in una cifra grande:
 // quando una nuova misura li cambia, si cambiano qui e nella tabella delle promesse della SPEC.
 
 const CIFRE = [
-  { cifra: "99,4%", cosa: "righe giuste senza correzioni", dettaglio: "158 su 159: voce, quantità e unità" },
-  { cifra: "0", cosa: "prezzi inventati", dettaglio: "ogni prezzo viene dal listino, o resta da prezzare" },
-  { cifra: "26/26", cosa: "righe giuste su sopralluoghi nuovi", dettaglio: "26 su 26, su sopralluoghi scritti dopo e mai visti prima" },
-  { cifra: "13 s", cosa: "in media per la bozza", dettaglio: "dal testo del sopralluogo alla bozza completa" },
+  { cifra: "100%", cosa: "dei prezzi dal tuo listino", dettaglio: "Zero prezzi inventati, in ogni prova. Quello che manca resta da prezzare" },
+  { cifra: "100%", cosa: "IVA giusta", dettaglio: "In tutti i casi in cui il racconto bastava. Negli altri decidi tu" },
+  { cifra: "100%", cosa: "preventivi nuovi senza niente da correggere", dettaglio: "6 sopralluoghi mai visti prima: tutte le 26 voci giuste" },
+  { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del sopralluogo alla bozza completa" },
 ];
 
 export function Numeri() {
@@ -32,9 +34,9 @@ export function Numeri() {
       </dl>
       <div className="grid gap-4 text-[15px] leading-[1.6] text-scuro-testo lg:grid-cols-2 lg:gap-16 lg:text-base">
         <p className="m-0">
-          I mestieri provati sono cinque: muratore, imbianchino, idraulico, elettricista e piastrellista. Le domande su quello che
-          mancava sono state fatte tutte, e nessuna di troppo. Il regime IVA è risultato giusto in tutti i casi in cui il racconto
-          bastava a stabilirlo; negli altri non ha deciso da solo: ha lasciato la scelta all&apos;artigiano.
+          I mestieri provati sono cinque: muratore, imbianchino, idraulico, elettricista e piastrellista. Sui 30 sopralluoghi del
+          banco principale, fra il 97 e il 99% delle voci esce giusto senza toccare niente; le altre le vedi e le sistemi tu
+          prima di approvare. Al cliente non arriva niente che tu non abbia visto.
         </p>
         <p className="m-0">
           È un campione piccolo, e lo diciamo: sopralluoghi scritti, non ancora registrati a voce, e lavori inventati. Con il

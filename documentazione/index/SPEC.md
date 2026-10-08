@@ -52,7 +52,7 @@ Raggi: bottoni 999px, card 24px (20 su mobile), campi 12px. Margini laterali 120
 3. **Come funziona** `#come` — fondo scuro, H2 + frase, `ol` di 4 passi.
 4. **Cosa cambia** `#perche` — 5 `article`: listino (con tabella di esempio), nessun prezzo inventato (lista con voce gialla «da prezzare»), IVA edile (a tutta larghezza, con scontrino), impostazione di persona, ultima parola tua.
 5. **Confronto** — tabella vera (`table`, `th scope`), 3 colonne. Su mobile diventa una lista di coppie o una tabella scorrevole orizzontalmente con indicazione.
-6. **Prezzi** `#prezzi` — pilota (0 € per 60 giorni, 10 posti), nessun costo di avvio, canone 19,90 €/mese oppure 199 €/anno (deciso da Sofiane l'8/10/2026). «Prezzi IVA esclusa».
+6. **Prezzi** `#prezzi` — pilota (0 € per 30 giorni, 10 posti; 30 giorni e non più 60 deciso da Sofiane il 9/10/2026), nessun costo di avvio, canone 19,90 €/mese oppure 199 €/anno (deciso da Sofiane l'8/10/2026). «Prezzi IVA esclusa».
 7. **Domande** `#domande` — 6 domande. Accordion con `details`/`summary` (aperte tutte su desktop è accettabile; su mobile chiuse tranne la prima).
 8. **Candidatura** `#candidatura` — fondo giallo, H2, testo, email, **modulo**, footer.
 
@@ -86,7 +86,7 @@ La home promette cose precise. **Non va online in produzione finché ognuna non 
 | «Ai nostri server arriva solo il testo, non l'audio» | La dettatura avviene nel browser; nessun audio salvato | `components/preventivo/Dettatura.tsx` |
 | «firmiamo l'accordo per il trattamento dei dati» | Modello DPA pronto | Notaio |
 | «Nessun rinnovo automatico» / «Disdici quando vuoi» | Condizioni coerenti | Notaio |
-| «99,4%» / «26 su 26» | Numeri pubblicati = misure generate da `npm run misura`; si aggiornano a ogni nuova misura, anche se peggiori | `misure/2026-10-08.md`, `misure/2026-10-08-verifica.md` |
+| «100% dei prezzi dal tuo listino» / «tutte le 26 voci giuste» | Numeri pubblicati = misure generate da `npm run misura`: si pubblicano in grande solo i 100% che reggono a ogni misura (prezzi inventati, IVA, banco di verifica); le voci giuste del banco principale variano fra 97 e 99% e stanno nel testo. Si aggiornano a ogni nuova misura, anche se peggiori | `misure/2026-10-08.md`, `misure/2026-10-08-verifica.md` |
 
 Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Mandi un vocale su WhatsApp» è diventata «Lo racconti a voce o lo scrivi» (il canale WhatsApp con i vocali non è ancora attivo per gli artigiani), e «audio cancellati dopo 30 giorni» è diventata «Ai nostri server arriva solo il testo, non l'audio» (la dettatura avviene nel browser, nessun audio viene salvato).
 
@@ -121,7 +121,7 @@ Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Man
 
 - **Privacy** del modulo: titolare K Digital Solution (dati societari da `per-sofiane.md`), finalità (ricontatto per il programma pilota), base giuridica (misure precontrattuali su richiesta dell'interessato), conservazione 12 mesi, diritti, contatto
 - **Cookie**: solo tecnici, elenco
-- **Condizioni** del servizio e del programma pilota: 60 giorni gratuiti senza rinnovo automatico, canone mensile disdicibile, l'artigiano resta responsabile del preventivo che approva, IVA indicativa da verificare col commercialista, recesso per contratti fuori dai locali commerciali (da verificare)
+- **Condizioni** del servizio e del programma pilota: 30 giorni gratuiti senza rinnovo automatico, canone mensile disdicibile, l'artigiano resta responsabile del preventivo che approva, IVA indicativa da verificare col commercialista, recesso per contratti fuori dai locali commerciali (da verificare)
 
 ## Collaudo prima di dire «fatto»
 

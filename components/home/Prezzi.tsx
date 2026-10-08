@@ -29,11 +29,11 @@ export function Prezzi() {
           </h3>
           <p className="m-0 flex items-baseline gap-2 lg:gap-2.5">
             <span className={`${cifra} text-[56px] lg:text-[72px]`}>0 €</span>
-            <span className="text-base text-scuro-testo lg:text-lg">per 60 giorni</span>
+            <span className="text-base text-scuro-testo lg:text-lg">per 30 giorni</span>
           </p>
           <p className="m-0 text-base leading-[1.55] text-scuro-testo lg:text-[17px]">
             Preventivi illimitati e assistenza se ti serve. In cambio ci dici cosa non funziona.{" "}
-            Dal 61° giorno 19,90 € al mese o 199 € l&apos;anno, solo se decidi di restare: nessun rinnovo automatico.
+            Dal 31° giorno 19,90 € al mese o 199 € l&apos;anno, solo se decidi di restare: nessun rinnovo automatico.
           </p>
           <a
             href={aperte ? "#candidatura" : "/prova"}

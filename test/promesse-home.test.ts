@@ -91,10 +91,10 @@ const PROMESSE: Promessa[] = [
     prova: { file: "app/condizioni/page.tsx", contiene: "Nessun rinnovo automatico" },
   },
   {
-    rigaSpec: "«99,4%» / «26 su 26»",
-    frasi: ["99,4%", "26 su 26"],
+    rigaSpec: "«100% dei prezzi dal tuo listino» / «tutte le 26 voci giuste»",
+    frasi: ["dei prezzi dal tuo listino", "tutte le 26 voci giuste"],
     requisito: "Numeri pubblicati = misure generate da npm run misura",
-    prova: { file: "misure/2026-10-08.md", contiene: "| 158 su 159 (99,4%) |" },
+    prova: { file: "misure/2026-10-08-verifica.md", contiene: "| 26 su 26 (100,0%) |" },
   },
 ];
 
