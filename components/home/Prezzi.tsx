@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { etichettaPosti, leggiPostiLiberi, POSTI_PILOTA } from "@/lib/impresa/posti";
 import { candidatureAperte } from "@/lib/sito";
 
 const cardChiara =
@@ -19,9 +21,9 @@ export function Prezzi() {
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-5">
         <article className="su-scuro flex flex-col gap-3 rounded-[20px] bg-ardesia p-6 text-fondo lg:gap-[18px] lg:rounded-card lg:p-10">
-          <p className="m-0 self-start rounded-full border border-cielo px-2.5 py-[5px] font-mono text-xs font-semibold text-cielo lg:px-3 lg:py-1.5 lg:text-[13px]">
-            10 posti · Monza e Brianza
-          </p>
+          <Suspense fallback={<PostiPilota posti={null} />}>
+            <PostiDalDatabase />
+          </Suspense>
           <h3 className="m-0 text-[26px] font-extrabold [font-stretch:78%] lg:text-[32px]">
             Programma pilota
           </h3>
@@ -87,5 +89,31 @@ export function Prezzi() {
       </div>
       <p className="m-0 text-[13px] text-testo-3 lg:hidden">Prezzi IVA esclusa.</p>
     </section>
+  );
+}
+
+// Contatore dei posti del pilota. Il numero viene dal database (imprese accettate nel pilota);
+// se non è disponibile resta la scritta fissa, senza numero inventato.
+async function PostiDalDatabase() {
+  return <PostiPilota posti={await leggiPostiLiberi()} />;
+}
+
+function PostiPilota({ posti }: { posti: number | null }) {
+  return (
+    <>
+      <p className="m-0 self-start rounded-full border border-cielo px-2.5 py-[5px] font-mono text-xs font-semibold text-cielo lg:px-3 lg:py-1.5 lg:text-[13px]">
+        {posti === null ? `${POSTI_PILOTA} posti · Monza e Brianza` : etichettaPosti(posti)}
+      </p>
+      {posti !== null && (
+        <div className="flex gap-1.5" aria-hidden="true">
+          {Array.from({ length: POSTI_PILOTA }, (_, i) => (
+            <span
+              key={i}
+              className={`h-2 flex-1 rounded-full ${i < POSTI_PILOTA - posti ? "bg-cielo" : "border border-cielo/50"}`}
+            />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

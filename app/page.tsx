@@ -14,6 +14,9 @@ import { candidatureAperte } from "@/lib/sito";
 // Home di vendita: documentazione/index/SPEC.md. Server Components; JavaScript nel browser
 // solo per il menu mobile e il modulo di candidatura. Nella demo pubblica (candidature chiuse)
 // un banner in cima e la sezione Demo al posto del modulo.
+// Il contatore dei posti del pilota si rilegge al massimo ogni 10 minuti.
+export const revalidate = 600;
+
 export default function Home() {
   const aperte = candidatureAperte();
   return (

@@ -1,4 +1,4 @@
-import { REPO_URL } from "@/lib/sito";
+import { linkWhatsAppProva, REPO_URL, WHATSAPP_PROVA } from "@/lib/sito";
 import { PiePagina } from "./PiePagina";
 
 // Chiusura della home nella demo pubblica, al posto del modulo di candidatura.
@@ -13,12 +13,30 @@ export function Demo() {
             mercato; la parte che conta gira davvero. Incolli il testo di un sopralluogo e ricevi la bozza con i prezzi di un
             listino di prova, le domande su quello che manca, l&apos;IVA edile ripartita e il PDF per il cliente.
           </p>
+          <ol className="m-0 flex max-w-[520px] list-decimal flex-col gap-1.5 pl-5 text-[15px] leading-normal text-scuro-testo lg:text-base">
+            <li>
+              Premi «Provalo su WhatsApp»: il messaggio «{WHATSAPP_PROVA.accesso}» è già scritto, tu premi invio.
+            </li>
+            <li>Scrivi il sopralluogo come lo racconteresti a un collega: misure, lavori, cosa porta il cliente.</li>
+            <li>Ti arriva il riepilogo della bozza: rispondi «ok» e ricevi il link per aprirla.</li>
+          </ol>
+          <p className="m-0 max-w-[520px] text-sm text-scuro-testo">
+            È il numero di prova di Twilio: per ora solo messaggi scritti, i vocali arrivano con il numero definitivo.
+          </p>
           <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3.5">
             <a
               href="/prova"
               className="bottone bottone-azione-scuro py-4 text-[17px]"
             >
               Prova con un esempio
+            </a>
+            <a
+              href={linkWhatsAppProva()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro"
+            >
+              Provalo su WhatsApp
             </a>
             <a
               href="/progetto"
@@ -51,6 +69,9 @@ export function BannerDemo() {
         </a>
         <a href="/prova" className="font-bold underline">
           Prova con un esempio
+        </a>
+        <a href={linkWhatsAppProva()} target="_blank" rel="noopener noreferrer" className="font-bold underline">
+          Provalo su WhatsApp
         </a>
       </span>
     </aside>

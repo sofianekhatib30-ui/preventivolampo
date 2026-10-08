@@ -129,3 +129,23 @@ describe("dettagli dell'impresa", () => {
     expect(sicuro("Bagno 🛁 – 3×2 m² “ok”\tŁ")).toBe("Bagno ? – 3×2 m² “ok” ?");
   });
 });
+
+describe("posti del programma pilota", () => {
+  it("conta i posti liberi senza andare sotto zero", async () => {
+    const { postiLiberi, etichettaPosti } = await import("@/lib/impresa/posti");
+    expect(postiLiberi(0)).toBe(10);
+    expect(postiLiberi(3)).toBe(7);
+    expect(postiLiberi(12)).toBe(0);
+    expect(postiLiberi(-1)).toBe(10);
+    expect(etichettaPosti(7)).toBe("7 posti liberi su 10 · Monza e Brianza");
+    expect(etichettaPosti(1)).toBe("Ultimo posto su 10 · Monza e Brianza");
+    expect(etichettaPosti(0)).toBe("Posti esauriti · Monza e Brianza");
+  });
+});
+
+describe("prova su WhatsApp", () => {
+  it("apre la chat del numero di prova con la parola di accesso già scritta", async () => {
+    const { linkWhatsAppProva } = await import("@/lib/sito");
+    expect(linkWhatsAppProva()).toBe("https://wa.me/14155238886?text=join%20law-valuable");
+  });
+});

@@ -27,4 +27,16 @@ export function candidatureAperte(): boolean {
   return process.env.CANDIDATURE_APERTE === "1";
 }
 
+// Prova del bot su WhatsApp: oggi è il numero di prova (sandbox) di Twilio, dove ognuno deve prima
+// mandare la parola di accesso. Quando ci sarà il numero verificato da Meta si cambiano le due variabili.
+export const WHATSAPP_PROVA = {
+  numero: process.env.WHATSAPP_PROVA_NUMERO ?? "14155238886",
+  accesso: process.env.WHATSAPP_PROVA_ACCESSO ?? "join law-valuable",
+};
+
+export function linkWhatsAppProva(): string {
+  const { numero, accesso } = WHATSAPP_PROVA;
+  return `https://wa.me/${numero.replace(/\D/g, "")}${accesso ? `?text=${encodeURIComponent(accesso)}` : ""}`;
+}
+
 export const REPO_URL = "https://github.com/sofianekhatib30-ui/preventivolampo";
