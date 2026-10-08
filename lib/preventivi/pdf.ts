@@ -5,6 +5,7 @@ import { conti, importoRiga } from "./calcolo";
 import type { Azienda } from "./contesto";
 import { LOCALE, linguaDi, prevalenzaItaliana, TESTI, traduzioneAllineata } from "./lingua";
 import type { Preventivo } from "./modello";
+import { recesso, type Recesso } from "./recesso";
 
 // PDF del preventivo approvato: A4, Helvetica (codifica WinAnsi): unità scritte «mq» e «mc», come nei preventivi italiani.
 // Con un cliente straniero il PDF è bilingue: il testo italiano sempre, sopra; la traduzione sotto, in grigio
@@ -247,6 +248,32 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   }
   y -= 6;
   if (company.avviso) para(company.avviso, 7.5);
+
+  // Ultima pagina: informazioni sul recesso e modulo tipo, in italiano e, se c'è, nella lingua del cliente.
+  page = doc.addPage([595.28, 841.89]);
+  y = 841.89 - M;
+  const contatti = { nome: company.name, indirizzo: company.address, telefono: company.phone, email: company.email };
+  const bloccoRecesso = (r: Recesso, font: PDFFont, colore = INK) => {
+    para(r.titolo, 11, bold, ARDESIA);
+    y -= 2;
+    for (const t of r.paragrafi) para(t, 8.5, font, colore);
+    y -= 4;
+    para(r.effettiTitolo, 9, bold, INK);
+    for (const t of r.effetti) para(t, 8.5, font, colore);
+    y -= 6;
+    para(r.modulo.titolo, 9, bold, INK);
+    para(r.modulo.istruzione, 8, font, GREY);
+    for (const t of r.modulo.righe) {
+      y -= 2;
+      para(t, 8.5, font, colore);
+    }
+  };
+  bloccoRecesso(recesso("it", contatti, p.numero), reg);
+  if (tr) {
+    page = doc.addPage([595.28, 841.89]);
+    y = 841.89 - M;
+    bloccoRecesso(recesso(tr.lingua, contatti, p.numero), ital, GREY);
+  }
 
   return doc.save();
 }

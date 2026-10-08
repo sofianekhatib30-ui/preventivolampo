@@ -4,6 +4,7 @@ import Accetta from "@/components/preventivo/Accetta";
 import { euro, UNITA_BREVE } from "@/components/preventivo/formato";
 import { conti, importoRiga } from "@/lib/preventivi/calcolo";
 import { LOCALE, linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
+import { recesso } from "@/lib/preventivi/recesso";
 import { perToken } from "@/lib/preventivi/risolvi";
 
 export const metadata: Metadata = { title: "Il tuo preventivo", robots: { index: false, follow: false } };
@@ -54,17 +55,27 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
       </header>
       <main lang={L} className="mx-auto max-w-2xl px-4 py-6 sm:py-10">
         {tr && (
-          <p className="mb-4 flex flex-wrap gap-x-4 gap-y-1 text-[15px]">
-            {L === "it" ? (
-              <a href="?" className="font-semibold text-cielo-scuro" lang={tr.lingua}>
-                {TESTI[tr.lingua].pagina.leggiQui}
-              </a>
-            ) : (
-              <a href="?lingua=it" className="font-semibold text-cielo-scuro" lang="it">
-                Leggi in italiano (il testo che fa fede)
-              </a>
-            )}
-          </p>
+          <nav aria-label="Lingua / Language" className="mb-5 flex items-center justify-end gap-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5 text-testo-3" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9Z" />
+            </svg>
+            <span className="inline-flex rounded-full bg-superficie p-1 ring-1 ring-linea">
+              {([[tr.lingua, "?"], ["it", "?lingua=it"]] as const).map(([l, href]) => (
+                <a
+                  key={l}
+                  href={href}
+                  lang={l}
+                  aria-current={L === l ? "true" : undefined}
+                  className={`flex min-h-10 items-center rounded-full px-4 text-[15px] font-semibold no-underline ${
+                    L === l ? "bg-ardesia text-fondo" : "text-testo-2 hover:text-inchiostro"
+                  }`}
+                >
+                  {NOME_LINGUA[l].proprio}
+                </a>
+              ))}
+            </span>
+          </nav>
         )}
         <p className="text-sm text-testo-3">
           {T ? T.preventivoN : "Preventivo n."} <span className="font-mono">{p.numero}</span>
@@ -128,6 +139,16 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
           </a>
         </p>
 
+        <RecessoBox r={recesso(L, { nome: company.name, indirizzo: company.address, telefono: company.phone, email: company.email }, p.numero)} />
+        {tr && L !== "it" && (
+          <p className="mt-2 text-[14px] text-testo-3" lang="it">
+            In caso di discordanza tra le due lingue prevale il testo italiano.{" "}
+            <a href="?lingua=it" className="font-semibold text-cielo-scuro">
+              Versione italiana
+            </a>
+          </p>
+        )}
+
         {p.stato === "approvato" ? (
           <Accetta token={token} testi={T?.accetta} />
         ) : (
@@ -146,5 +167,37 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
         </footer>
       </main>
     </>
+  );
+}
+
+// Informazioni sul recesso e modulo tipo, nella lingua della pagina (lib/preventivi/recesso.ts).
+function RecessoBox({ r }: { r: ReturnType<typeof recesso> }) {
+  return (
+    <details className="group mt-4 rounded-card bg-superficie ring-1 ring-linea">
+      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between px-5 text-[17px] font-bold [&::-webkit-details-marker]:hidden">
+        {r.titolo}
+        <svg viewBox="0 0 20 20" aria-hidden="true" className="size-5 motion-safe:transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+          <path d="M5 8l5 5 5-5" />
+        </svg>
+      </summary>
+      <div className="space-y-3 border-t border-linea px-5 py-4 text-[15px] leading-relaxed text-testo-2">
+        {r.paragrafi.map((t, i) => (
+          <p key={i}>{t}</p>
+        ))}
+        <h3 className="pt-1 text-[16px] font-bold text-inchiostro">{r.effettiTitolo}</h3>
+        {r.effetti.map((t, i) => (
+          <p key={i}>{t}</p>
+        ))}
+        <div className="rounded-campo bg-fondo p-4">
+          <h3 className="text-[16px] font-bold text-inchiostro">{r.modulo.titolo}</h3>
+          <p className="text-[14px] text-testo-3">{r.modulo.istruzione}</p>
+          <ul className="mt-2 space-y-1.5">
+            {r.modulo.righe.map((t, i) => (
+              <li key={i}>{t}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </details>
   );
 }

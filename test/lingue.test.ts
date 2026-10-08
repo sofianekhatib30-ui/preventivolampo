@@ -9,6 +9,7 @@ import { leggi } from "@/lib/preventivi/archivio";
 import { demo } from "@/lib/preventivi/demo";
 import { LINGUE, mancanzaTraduzione, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
 import { generaPdf } from "@/lib/preventivi/pdf";
+import { recesso } from "@/lib/preventivi/recesso";
 import { aggiornaBozza, approvaIn, creaDaTesto, traduciIn } from "@/lib/preventivi/servizio";
 import { istruzioni, traduciVoci } from "@/lib/preventivi/traduzione";
 
@@ -71,6 +72,18 @@ describe("testi fissi per lingua", () => {
   });
 });
 
+describe("recesso", () => {
+  const k = { nome: "Edil Prova", indirizzo: "via Roma 1", telefono: "+39 333 0000000", email: "info@example.com" };
+  it.each([...LINGUE])("%s: informazioni complete, contatti dell'impresa e numero del preventivo nel modulo", (l) => {
+    const r = recesso(l, k, "2026-007");
+    expect(r.paragrafi.join(" ")).toMatch(/14|vierzehn|quatorze/);
+    expect(r.paragrafi.join(" ")).toContain("info@example.com");
+    expect(r.effetti).toHaveLength(2);
+    expect(r.modulo.righe.join(" ")).toContain("2026-007");
+    expect(r.modulo.righe[0]).toContain("Edil Prova");
+  });
+});
+
 describe("traduzione allineata alle voci", () => {
   const base = { righe: [{ work: "tinteggiatura pareti" }], esclusioni: [] as string[] };
   it("in italiano non serve", () => {
@@ -115,7 +128,8 @@ describe("dal sopralluogo al PDF bilingue", () => {
     const salvato = (await leggi(p.id))!;
     const bytes = await generaPdf(salvato, await demo.azienda());
     const doc = await PDFDocument.load(bytes);
-    expect(doc.getPageCount()).toBeGreaterThanOrEqual(1);
+    // Preventivo, recesso in italiano, recesso nella lingua del cliente.
+    expect(doc.getPageCount()).toBeGreaterThanOrEqual(3);
     await writeFile(path.join(dir, "bilingue.pdf"), bytes);
     if (process.env.PDF_PROVA) await writeFile(process.env.PDF_PROVA, bytes);
 
