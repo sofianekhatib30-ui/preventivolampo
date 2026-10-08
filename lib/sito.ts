@@ -21,10 +21,10 @@ export const CONTACT_EMAIL = "studio@kdigitalsolution.it";
 // Finché la pagina non è in produzione (SPEC, «Promesse della pagina»), nessuna indicizzazione.
 export const INDEXABLE = false;
 
-// Demo da portfolio: il servizio non è in vendita. Il modulo di candidatura resta spento
-// finché CANDIDATURE_APERTE non vale 1; al suo posto la home porta alla prova del motore.
+// Programma pilota aperto (8/10/2026): la home porta al modulo di candidatura. Con
+// CANDIDATURE_APERTE=0 torna la versione dimostrativa (banner e prova del motore).
 export function candidatureAperte(): boolean {
-  return process.env.CANDIDATURE_APERTE === "1";
+  return process.env.CANDIDATURE_APERTE !== "0";
 }
 
 // Prova del bot su WhatsApp: oggi è il numero di prova (sandbox) di Twilio, dove ognuno deve prima

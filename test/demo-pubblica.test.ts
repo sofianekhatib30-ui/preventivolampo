@@ -34,21 +34,24 @@ describe("codice d'accesso della demo", () => {
   });
 });
 
-describe("home in modalità demo", () => {
-  it("senza CANDIDATURE_APERTE: banner, niente modulo, CTA verso la prova", () => {
+describe("home: pilota aperto, demo solo su richiesta", () => {
+  it("senza CANDIDATURE_APERTE: home di vendita con il modulo e nessun riferimento tecnico", () => {
+    const html = renderToStaticMarkup(createElement(Home));
+    expect(html).toContain('id="candidatura"');
+    expect(html).not.toContain("Progetto dimostrativo");
+    for (const parola of [/github/i, /twilio/i, /href="\/progetto"/]) expect(html).not.toMatch(parola);
+  });
+  it("con CANDIDATURE_APERTE=0 torna la demo: banner, niente modulo, CTA verso la prova", () => {
+    process.env.CANDIDATURE_APERTE = "0";
     const html = renderToStaticMarkup(createElement(Home));
     expect(html).toContain("Progetto dimostrativo");
     expect(html).toContain('href="/prova"');
     expect(html).not.toContain('id="candidatura"');
     expect(html).not.toContain("application/ld+json");
+    for (const parola of [/github/i, /twilio/i]) expect(html).not.toMatch(parola);
   });
-  it("con CANDIDATURE_APERTE=1 torna la home di vendita", () => {
-    process.env.CANDIDATURE_APERTE = "1";
-    const html = renderToStaticMarkup(createElement(Home));
-    expect(html).toContain('id="candidatura"');
-    expect(html).not.toContain("Progetto dimostrativo");
-  });
-  it("il modulo di candidatura è spento", async () => {
+  it("nella demo il modulo di candidatura è spento", async () => {
+    process.env.CANDIDATURE_APERTE = "0";
     const res = await candidatura(new Request("http://localhost/api/candidatura", { method: "POST" }));
     expect(res.status).toBe(404);
   });
