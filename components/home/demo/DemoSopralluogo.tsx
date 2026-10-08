@@ -262,7 +262,7 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
                   </span>
                 </span>
                 <span className="whitespace-nowrap text-right font-semibold">
-                  {daPrezzare ? "da prezzare" : qta === null || prezzo === null ? "—" : euro(Math.round(qta * prezzo))}
+                  {daPrezzare ? "da prezzare" : qta === null || prezzo === null ? "?" : euro(Math.round(qta * prezzo))}
                 </span>
                 {r.prezzo === null && prezzato && (
                   <span className="col-span-2 text-[11.5px] text-lime-scuro">prezzo tuo: lo puoi aggiungere al listino</span>

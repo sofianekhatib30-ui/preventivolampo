@@ -9,8 +9,8 @@ const DOMANDE: Domanda[] = [
     domanda: "E se sbaglia?",
     risposta: (
       <>
-        Al cliente non arriva niente senza la tua approvazione: le voci incerte le vedi evidenziate e i prezzi vengono solo dal
-        tuo listino. Sulle nostre prove fra il 97 e il 99% delle voci esce giusto al primo colpo, e nessun prezzo è mai inventato.
+        Al cliente non arriva niente senza la tua approvazione. Le voci incerte le vedi evidenziate, quelle che non sono nel
+        listino restano da prezzare, e nessun prezzo è mai inventato.
       </>
     ),
   },

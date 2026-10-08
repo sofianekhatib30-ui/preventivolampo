@@ -6,7 +6,7 @@ import { richiediImpresa } from "@/lib/impresa/pagine";
 import { elencoPreventivi, type Riassunto } from "@/lib/impresa/preventivi";
 import { elencoVoci } from "@/lib/impresa/voci";
 
-export const metadata: Metadata = { title: "I tuoi preventivi — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "I tuoi preventivi · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 const STATO: Record<Riassunto["stato"], { nome: string; classe: string }> = {

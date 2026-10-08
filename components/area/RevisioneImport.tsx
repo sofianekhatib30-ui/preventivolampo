@@ -194,7 +194,7 @@ export default function RevisioneImport({
                           value={r.unita ?? ""}
                           onChange={(e) => set(r.n, { unita: e.target.value || null })}
                         >
-                          <option value="">—</option>
+                          <option value="">Scegli</option>
                           {Object.entries(UNITA).map(([k, v]) => (
                             <option key={k} value={k}>
                               {v}

@@ -442,7 +442,7 @@ export default function Revisione({
                       <Icona tipo="ok" /> Pronta
                     </span>
                   )}
-                  <span className="font-mono text-[17px] font-semibold">{imp === null ? "—" : euro(imp)}</span>
+                  <span className="font-mono text-[17px] font-semibold">{imp === null ? "da completare" : euro(imp)}</span>
                 </div>
                 {manca && r.flag && <p className="mt-2 text-[15px] text-ambra-testo">{r.flag}</p>}
                 {r.spoken && (
@@ -482,7 +482,7 @@ export default function Revisione({
                       value={r.unit ?? ""}
                       onChange={(e) => setRiga(i, { unit: (e.target.value || null) as RigaPreventivo["unit"] })}
                     >
-                      <option value="">—</option>
+                      <option value="">Scegli</option>
                       {Object.entries(UNITA).map(([k, v]) => (
                         <option key={k} value={k}>
                           {v}

@@ -5,7 +5,7 @@ import { TestataArea } from "@/components/area/TestataArea";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 import { elencoVoci } from "@/lib/impresa/voci";
 
-export const metadata: Metadata = { title: "Nuovo preventivo — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Nuovo preventivo · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function Nuovo() {

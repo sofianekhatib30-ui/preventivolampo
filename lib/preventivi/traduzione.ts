@@ -42,7 +42,7 @@ Regole:
 - Traduci il significato tecnico, non le parole una per una: il cliente deve capire che lavoro è.
 - Non aggiungere niente che non c'è (materiali, marche, garanzie, spiegazioni) e non togliere niente.
 - Misure, numeri, formati (80x80, 30x30, Ø 16), sigle e marche restano identici.
-- Registro cortese e neutro, testo breve come l'originale. Niente note tra parentesi tue.
+- Registro cortese e neutro, testo breve come l'originale. Niente note tra parentesi tue. Mai la lineetta lunga (—): usa virgole, due punti o parentesi.
 
 ${GLOSSARIO}`;
 }

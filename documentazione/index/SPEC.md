@@ -86,7 +86,7 @@ La home promette cose precise. **Non va online in produzione finché ognuna non 
 | «Ai nostri server arriva solo il testo, non l'audio» | La dettatura avviene nel browser; nessun audio salvato | `components/preventivo/Dettatura.tsx` |
 | «firmiamo l'accordo per il trattamento dei dati» | Modello DPA pronto | Notaio |
 | «Nessun rinnovo automatico» / «Disdici quando vuoi» | Condizioni coerenti | Notaio |
-| «100% dei prezzi dal tuo listino» / «tutte le 26 voci giuste» | Numeri pubblicati = misure generate da `npm run misura`: si pubblicano in grande solo i 100% che reggono a ogni misura (prezzi inventati, IVA, banco di verifica); le voci giuste del banco principale variano fra 97 e 99% e stanno nel testo. Si aggiornano a ogni nuova misura, anche se peggiori | `misure/2026-10-08.md`, `misure/2026-10-08-verifica.md` |
+| «dei prezzi dal tuo listino» / «6 lingue» | Nessun prezzo fuori listino (per costruzione, misura F3: prezzi inventati = 0); lingue del cliente = `LINGUE` in `lib/preventivi/lingua.ts` (decisione di Sofiane del 9/10/2026: in grande solo garanzie, niente percentuali di voci giuste né dettagli del banco di prova) | `misure/2026-10-08.md`, `lib/preventivi/lingua.ts` |
 | «la bozza esce in italiano» | Racconto in un'altra lingua: le voci della bozza sempre in italiano (regola nel prompt di estrazione) | `test/lingue.test.ts` |
 | «gli mandi il preventivo nella sua lingua» | Traduzione delle voci controllata dall'artigiano; PDF e pagina bilingui con l'italiano che prevale; niente approvazione se la traduzione manca o non corrisponde alle voci | `test/lingue.test.ts` |
 

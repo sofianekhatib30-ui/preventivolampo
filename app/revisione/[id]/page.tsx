@@ -6,7 +6,7 @@ import { TestataApp } from "@/components/TestataApp";
 import { leggi } from "@/lib/preventivi/archivio";
 import { listino } from "@/lib/preventivi/servizio";
 
-export const metadata: Metadata = { title: "Revisione del preventivo — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Revisione del preventivo · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 // Il link di revisione è l'id del preventivo: 128 bit casuali, non indovinabile.

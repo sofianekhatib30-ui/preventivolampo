@@ -3,7 +3,7 @@ import { MARCHIO } from "@/lib/brand/marchio";
 
 // Immagine di anteprima 1200×630: ardesia, titolo chiaro, il lime solo sul marchio e sul filetto.
 // Usa il carattere predefinito di next/og (Archivo non è un file locale del repository).
-export const alt = "PreventivoLampo — Finisci il sopralluogo. Il preventivo parte dal furgone.";
+export const alt = "PreventivoLampo. Finisci il sopralluogo, il preventivo parte dal furgone.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

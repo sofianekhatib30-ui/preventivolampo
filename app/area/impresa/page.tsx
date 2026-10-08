@@ -4,7 +4,7 @@ import ModuloImpresa from "@/components/area/ModuloImpresa";
 import { TestataArea } from "@/components/area/TestataArea";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 
-export const metadata: Metadata = { title: "Dati dell'impresa — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Dati dell'impresa · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function PaginaImpresa() {

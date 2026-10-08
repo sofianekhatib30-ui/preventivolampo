@@ -6,7 +6,7 @@ import { TestataArea } from "@/components/area/TestataArea";
 import { anteprima, leggiImport } from "@/lib/impresa/importa";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 
-export const metadata: Metadata = { title: "Controlla l'import — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Controlla l'import · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function RevisioneImportPagina({ params }: { params: Promise<{ id: string }> }) {

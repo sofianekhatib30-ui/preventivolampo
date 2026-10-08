@@ -8,7 +8,7 @@ import Revisione from "@/components/preventivo/Revisione";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 import { contestoImpresa, storia } from "@/lib/impresa/preventivi";
 
-export const metadata: Metadata = { title: "Preventivo — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Preventivo · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 const quando = (iso: string) =>

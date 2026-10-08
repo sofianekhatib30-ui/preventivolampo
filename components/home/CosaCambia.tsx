@@ -70,17 +70,17 @@ export function CosaCambia() {
           <div className="flex flex-col gap-3 lg:col-start-1 lg:row-start-1 lg:gap-[18px]">
             <h3 className={titoloCard}>L&apos;IVA edile fatta bene, da sola</h3>
             <p className={`${testoCard} hidden lg:block`}>
-              Manutenzione su un&apos;abitazione? Il 10% vale per il lavoro, ma i beni significativi
-              — sanitari, rubinetteria, infissi, caldaie — ci rientrano solo fino al valore del resto
-              dell&apos;intervento. La parte che eccede va al 22%.
+              Manutenzione su un&apos;abitazione? Il 10% vale per il lavoro, ma i beni significativi (sanitari,
+              rubinetteria, infissi, caldaie) ci rientrano solo fino al valore del resto dell&apos;intervento. La
+              parte che eccede va al 22%.
             </p>
             <p className={`${testoCard} hidden lg:block`}>
-              Ti facciamo tre domande — tipo di immobile, tipo di lavoro, chi compra i materiali — e
-              sul PDF l&apos;IVA 10% e 22% esce ripartita giusta, con la dicitura.
+              Ti facciamo tre domande: che immobile è, che lavoro è, chi compra i materiali. Sul PDF
+              l&apos;IVA 10% e 22% esce ripartita giusta, con la dicitura.
             </p>
             <p className={`${testoCard} lg:hidden`}>
-              Il 10% sui lavori in casa, ma i beni significativi — sanitari, rubinetteria, infissi,
-              caldaie — ci rientrano solo fino al valore del resto. La parte che eccede va al 22%.
+              Il 10% sui lavori in casa, ma i beni significativi (sanitari, rubinetteria, infissi,
+              caldaie) ci rientrano solo fino al valore del resto. La parte che eccede va al 22%.
               Tre domande, e sul PDF l&apos;IVA 10% e 22% esce ripartita giusta.
             </p>
           </div>

@@ -8,7 +8,7 @@ import { TestataApp } from "@/components/TestataApp";
 import { provaAttiva, serveCodice } from "@/lib/preventivi/http";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Prova il motore — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Prova il motore · PreventivoLampo", robots: { index: false, follow: false } };
 
 // Pagina di prova: incolli il testo di un vocale (o scegli uno dei 30 sopralluoghi inventati del banco di prova)
 // e ricevi la bozza da rivedere. Al posto del vocale WhatsApp, finché il canale non è attivo.

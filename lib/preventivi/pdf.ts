@@ -130,7 +130,7 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   y -= 22;
   text(T ? `Cliente / ${T.cliente}` : "Cliente", M, 8, bold, GREY);
   y -= 12;
-  text(p.cliente.name ?? "—", M, 10, bold);
+  text(p.cliente.name ?? "", M, 10, bold);
   y -= 12;
   if (p.cliente.address) {
     text(p.cliente.address, M, 9);
@@ -205,7 +205,7 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
     y -= 6;
     para(T ? `Esclusi dal preventivo / ${T.esclusi}` : "Esclusi dal preventivo", 8.5, bold, INK);
     p.esclusioni.forEach((e, i) => {
-      para(`– ${e}`);
+      para(`• ${e}`);
       if (tr) para(`  ${tr.esclusioni[i]}`, 8, ital);
     });
   }

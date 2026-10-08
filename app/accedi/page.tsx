@@ -6,7 +6,7 @@ import { TestataArea } from "@/components/area/TestataArea";
 import { configurato } from "@/lib/impresa/db";
 import { sessione } from "@/lib/impresa/sessione";
 
-export const metadata: Metadata = { title: "Accedi — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Accedi · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function Accedi() {

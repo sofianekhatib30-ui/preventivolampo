@@ -5,7 +5,7 @@ import ModuloImpresa from "@/components/area/ModuloImpresa";
 import { richiediSessione } from "@/lib/impresa/pagine";
 import { membro } from "@/lib/impresa/sessione";
 
-export const metadata: Metadata = { title: "La tua impresa — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "La tua impresa · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 // Primo accesso: i dati dell'impresa, poi il listino.

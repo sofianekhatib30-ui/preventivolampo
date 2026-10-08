@@ -6,7 +6,7 @@ import { CHIAVI, reportMisure, valori } from "@/lib/misure";
 import { REPO_URL } from "@/lib/sito";
 
 export const metadata: Metadata = {
-  title: "Caso di studio — PreventivoLampo",
+  title: "Caso di studio · PreventivoLampo",
   description: "Come funziona PreventivoLampo: dal vocale del sopralluogo al preventivo, con i prezzi solo dal listino. Numeri misurati su 36 casi.",
   // Pagina tecnica per chi valuta il lavoro (link dal CV): nessun link dal sito, mai indicizzata.
   robots: { index: false, follow: false },
@@ -41,7 +41,7 @@ export default function Progetto() {
   const a = prima ? valori(prima) : new Map<string, string>();
   const b = ultima ? valori(ultima) : new Map<string, string>();
   const v = verifica ? valori(verifica) : new Map<string, string>();
-  const corto = (s?: string) => (s ?? "—").replace(/;.*$/, "").replace(/ \(token reali.*$/, "");
+  const corto = (s?: string) => (s ?? "n.d.").replace(/;.*$/, "").replace(/ \(token reali.*$/, "");
   const righe: { k: string; etichetta: string; evidenza?: boolean }[] = [
     { k: CHIAVI.righe, etichetta: "Righe giuste senza correzioni" },
     { k: CHIAVI.listino, etichetta: "Voci di listino abbinate bene" },

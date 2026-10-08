@@ -5,7 +5,7 @@ import { TestataArea } from "@/components/area/TestataArea";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 import { elencoVoci, vociDemo } from "@/lib/impresa/voci";
 
-export const metadata: Metadata = { title: "Listino — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Listino · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function PaginaListino({ searchParams }: { searchParams: Promise<{ nuovo?: string; aggiungi?: string; importate?: string }> }) {

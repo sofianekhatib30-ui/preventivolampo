@@ -4,7 +4,7 @@ import CaricaListino from "@/components/area/CaricaListino";
 import { TestataArea } from "@/components/area/TestataArea";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 
-export const metadata: Metadata = { title: "Importa il listino — PreventivoLampo", robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Importa il listino · PreventivoLampo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
 export default async function Importa() {

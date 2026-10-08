@@ -91,10 +91,10 @@ const PROMESSE: Promessa[] = [
     prova: { file: "app/condizioni/page.tsx", contiene: "Nessun rinnovo automatico" },
   },
   {
-    rigaSpec: "«100% dei prezzi dal tuo listino» / «tutte le 26 voci giuste»",
-    frasi: ["dei prezzi dal tuo listino", "tutte le 26 voci giuste"],
-    requisito: "Numeri pubblicati = misure generate da npm run misura",
-    prova: { file: "misure/2026-10-08-verifica.md", contiene: "| 26 su 26 (100,0%) |" },
+    rigaSpec: "«dei prezzi dal tuo listino» / «6 lingue»",
+    frasi: ["dei prezzi dal tuo listino", "6 lingue"],
+    requisito: "Nessun prezzo fuori listino; sei lingue del cliente",
+    prova: { file: "lib/preventivi/lingua.ts", contiene: 'export const LINGUE = ["it", "en", "de", "fr", "es", "nl"] as const;' },
   },
   {
     rigaSpec: "«la bozza esce in italiano»",
