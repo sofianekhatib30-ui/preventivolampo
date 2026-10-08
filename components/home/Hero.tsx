@@ -2,7 +2,7 @@ import { ctaPrincipale } from "./Header";
 import { Marchio } from "@/components/Marchio";
 import { SoloDesktop, SoloMobile } from "./Varianti";
 
-const PUNTI = ["Niente app da installare", "Il tuo listino, dal tuo Excel", "Decidi sempre tu"];
+const PUNTI = ["Niente app da installare", "Listino anche da una foto", "Decidi sempre tu"];
 
 export function Hero() {
   const CTA_PILOTA = ctaPrincipale();
@@ -17,8 +17,8 @@ export function Hero() {
             aria-hidden="true"
             className="size-[7px] shrink-0 rounded-full bg-lime lg:size-2"
           />
-          <SoloDesktop>Idraulici, piastrellisti, ristrutturazioni · Monza e Brianza</SoloDesktop>
-          <SoloMobile>Artigiani edili · Monza e Brianza</SoloMobile>
+          <SoloDesktop>Idraulici, piastrellisti, ristrutturazioni</SoloDesktop>
+          <SoloMobile>Artigiani edili</SoloMobile>
         </p>
         <h1 className="titolo-h1 m-0">
           Finisci il sopralluogo.
@@ -125,7 +125,7 @@ function ChatEsempio() {
           </div>
           <div className={`${bollaSua} flex max-w-[270px] flex-col gap-2.5 px-3 py-2.5 lg:max-w-[330px] lg:px-3.5 lg:py-3`}>
             <span>
-              Bagno sig.ra Colombo, Lissone. <SoloDesktop>Una sola domanda: il</SoloDesktop>
+              Bagno sig.ra Colombo. <SoloDesktop>Una sola domanda: il</SoloDesktop>
               <SoloMobile>Il</SoloMobile> rivestimento arriva fino al soffitto o a 1,20 m?
             </span>
             <div className="hidden gap-2 lg:flex">

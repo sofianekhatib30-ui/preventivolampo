@@ -94,6 +94,7 @@ describe("import da CSV ed Excel", () => {
     expect(["mq", "MQ", "m²", "ml", "Nr.", "pz", "ore", "q.li", "lt", "forfait"].map(unitaDa)).toEqual([
       "m2", "m2", "m2", "m", "cad", "cad", "h", "100kg", "l", "corpo",
     ]);
+    expect(["al metro", "€/ora", "euro al mq", "per pezzo", "a corpo", "all'ora"].map(unitaDa)).toEqual(["m", "h", "m2", "cad", "corpo", "h"]);
     expect([12.5, "12,50", "1.234,56", "1,234.56", "€ 7", "1.000", "abc", "", -3].map(prezzoDa)).toEqual([
       1250, 1250, 123456, 123456, 700, 100000, null, null, null,
     ]);
@@ -137,9 +138,9 @@ describe("posti del programma pilota", () => {
     expect(postiLiberi(3)).toBe(7);
     expect(postiLiberi(12)).toBe(0);
     expect(postiLiberi(-1)).toBe(10);
-    expect(etichettaPosti(7)).toBe("7 posti liberi su 10 · Monza e Brianza");
-    expect(etichettaPosti(1)).toBe("Ultimo posto su 10 · Monza e Brianza");
-    expect(etichettaPosti(0)).toBe("Posti esauriti · Monza e Brianza");
+    expect(etichettaPosti(7)).toBe("7 posti liberi su 10");
+    expect(etichettaPosti(1)).toBe("Ultimo posto su 10");
+    expect(etichettaPosti(0)).toBe("Posti esauriti");
   });
 });
 
@@ -147,5 +148,55 @@ describe("prova su WhatsApp", () => {
   it("apre la chat del numero di prova con la parola di accesso già scritta", async () => {
     const { linkWhatsAppProva } = await import("@/lib/sito");
     expect(linkWhatsAppProva()).toBe("https://wa.me/14155238886?text=join%20law-valuable");
+  });
+});
+
+describe("listino da PDF e foto", () => {
+  it("riconosce il tipo di file dai byte", async () => {
+    const { tipoFile } = await import("@/lib/impresa/importa");
+    expect(tipoFile(new TextEncoder().encode("%PDF-1.7 ..."))).toBe("application/pdf");
+    expect(tipoFile(new Uint8Array([0x89, 0x50, 0x4e, 0x47, 0, 0]))).toBe("image/png");
+    expect(tipoFile(new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 0, 0]))).toBe("image/jpeg");
+    expect(tipoFile(new TextEncoder().encode("Codice;Voce;Prezzo\nA;B;1"))).toBe("foglio");
+    expect(tipoFile(new Uint8Array([0x00, 0x01, 0x02, 0x03]))).toBeNull();
+  });
+
+  it("manda PDF e foto a Claude e ne fa righe da controllare, con le note", async () => {
+    const { leggiConAI, costruisciRighe } = await import("@/lib/impresa/importa");
+    let ricevuto: unknown = null;
+    const call = async (c: { user: unknown }) => {
+      ricevuto = c.user;
+      return {
+        input: {
+          voci: [
+            ["A.01", "Demolizione piastrelle", "mq", "18,50", ""],
+            ["", "Posa sanitario", "cad", "", "prezzo poco leggibile"],
+            ["", "Assistenza muraria", "a corpo", "300", "prezzo calcolato: totale diviso quantità"],
+            ["", "", "", "", ""],
+          ],
+        },
+        inputTokens: 1,
+        outputTokens: 1,
+      };
+    };
+    const pdf = { nome: "listino.pdf", bytes: new TextEncoder().encode("%PDF-1.7 finto") };
+    const foto = { nome: "foto.jpg", bytes: new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 1, 2, 3]) };
+    const { tabella, note } = await leggiConAI([pdf, foto], call);
+    const blocchi = ricevuto as Array<{ type: string }>;
+    expect(blocchi.map((b) => b.type)).toEqual(["document", "image", "text"]);
+    expect(tabella).toHaveLength(4);
+    const righe = costruisciRighe(tabella, 0, { codice: 0, nome: 1, unita: 2, prezzo: 3 }).map((r) =>
+      note.has(r.n) ? { ...r, problemi: [...r.problemi, note.get(r.n)!] } : r,
+    );
+    expect(righe[0]).toMatchObject({ codice: "A.01", unita: "m2", prezzo_cents: 1850, problemi: [] });
+    expect(righe[1].problemi).toEqual(["prezzo non leggibile", "prezzo poco leggibile"]);
+    expect(righe[2]).toMatchObject({ unita: "corpo", prezzo_cents: 30000 });
+    expect(righe[2].problemi).toEqual(["prezzo calcolato: totale diviso quantità"]);
+  });
+
+  it("rifiuta i file che non sono PDF né foto", async () => {
+    const { leggiConAI } = await import("@/lib/impresa/importa");
+    const call = async () => ({ input: { voci: [] }, inputTokens: 0, outputTokens: 0 });
+    await expect(leggiConAI([{ nome: "x.zip", bytes: new Uint8Array([0x50, 0x4b, 0x03, 0x04]) }], call)).rejects.toThrow(/non è un PDF/);
   });
 });

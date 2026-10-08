@@ -12,9 +12,9 @@ export function postiLiberi(occupati: number, totale = POSTI_PILOTA): number {
 }
 
 export function etichettaPosti(liberi: number, totale = POSTI_PILOTA): string {
-  if (liberi <= 0) return `Posti esauriti · Monza e Brianza`;
-  if (liberi === 1) return `Ultimo posto su ${totale} · Monza e Brianza`;
-  return `${liberi} posti liberi su ${totale} · Monza e Brianza`;
+  if (liberi <= 0) return "Posti esauriti";
+  if (liberi === 1) return `Ultimo posto su ${totale}`;
+  return `${liberi} posti liberi su ${totale}`;
 }
 
 export async function leggiPostiLiberi(): Promise<number | null> {

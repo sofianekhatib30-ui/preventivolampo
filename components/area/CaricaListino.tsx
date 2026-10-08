@@ -3,18 +3,37 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-// Carico il file: il server lo legge e prepara le righe da controllare.
+// Le foto del telefono pesano anche 5-10 MB: prima di mandarle le riduco nel browser
+// (lato lungo 2000 px, JPEG), così passano il limite di 4,5 MB e l'AI le legge bene lo stesso.
+async function riduci(f: File): Promise<File> {
+  if (!f.type.startsWith("image/") || f.size < 700_000) return f;
+  try {
+    const img = await createImageBitmap(f);
+    const scala = Math.min(1, 2000 / Math.max(img.width, img.height));
+    const tela = document.createElement("canvas");
+    tela.width = Math.round(img.width * scala);
+    tela.height = Math.round(img.height * scala);
+    tela.getContext("2d")!.drawImage(img, 0, 0, tela.width, tela.height);
+    const blob = await new Promise<Blob | null>((ok) => tela.toBlob(ok, "image/jpeg", 0.85));
+    return blob ? new File([blob], f.name.replace(/\.\w+$/, "") + ".jpg", { type: "image/jpeg" }) : f;
+  } catch {
+    return f;
+  }
+}
+
+// Carico il listino: il server lo legge e prepara le righe da controllare.
 export default function CaricaListino() {
   const router = useRouter();
   const [invio, setInvio] = useState(false);
   const [errore, setErrore] = useState("");
   const [trascina, setTrascina] = useState(false);
 
-  async function carica(f: File) {
+  async function carica(scelti: File[]) {
+    if (!scelti.length) return;
     setInvio(true);
     setErrore("");
     const form = new FormData();
-    form.set("file", f);
+    for (const f of await Promise.all(scelti.map(riduci))) form.append("file", f);
     const res = await fetch("/api/area/import", { method: "POST", body: form });
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
@@ -36,8 +55,7 @@ export default function CaricaListino() {
         onDrop={(e) => {
           e.preventDefault();
           setTrascina(false);
-          const f = e.dataTransfer.files?.[0];
-          if (f) carica(f);
+          carica(Array.from(e.dataTransfer.files ?? []));
         }}
         className={`flex min-h-48 cursor-pointer flex-col items-center justify-center gap-2 rounded-card border-2 border-dashed px-6 text-center ${
           trascina ? "border-ardesia bg-fondo-2" : "border-linea-2 bg-superficie"
@@ -47,18 +65,21 @@ export default function CaricaListino() {
           <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
           <path d="M14 3v5h5M9 13h6M9 17h6" />
         </svg>
-        <span className="text-[18px] font-bold">{invio ? "Leggo il file…" : "Scegli il file del listino"}</span>
-        <span className="text-[15px] text-testo-3">Excel (.xlsx) o CSV, fino a 5 MB</span>
+        <span className="text-[18px] font-bold">{invio ? "Leggo il listino…" : "Scegli il tuo listino"}</span>
+        <span className="text-[15px] text-testo-3">
+          Excel o CSV, oppure PDF e foto: anche più foto insieme, o qualche vecchio preventivo
+        </span>
+        {invio && <span className="text-[15px] text-testo-3">Da PDF e foto ci vuole fino a un minuto.</span>}
       </label>
       <input
         id="file-listino"
         type="file"
         className="sr-only"
         disabled={invio}
-        accept=".xlsx,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        multiple
+        accept=".xlsx,.csv,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,.pdf,application/pdf,image/*"
         onChange={(e) => {
-          const f = e.target.files?.[0];
-          if (f) carica(f);
+          carica(Array.from(e.target.files ?? []));
           e.target.value = "";
         }}
       />

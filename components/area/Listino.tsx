@@ -213,7 +213,7 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
       <p className="mt-3 text-[15px] text-testo-3" aria-live="polite">
         {cerca ? `${trovate.length} voci trovate su ${voci.length}` : `${voci.length} voci`} ·{" "}
         <Link href="/area/listino/importa" className="font-semibold text-cielo-scuro">
-          importa da Excel o CSV
+          importa da Excel, PDF o foto
         </Link>
       </p>
 

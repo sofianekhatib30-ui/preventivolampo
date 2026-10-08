@@ -18,7 +18,7 @@ const byCode = new Map(list.items.map((i) => [i.code, i]));
 function fakeClaude(extraction: unknown, choices: (lines: number) => unknown): ToolCaller {
   return async ({ tool, user }) => {
     if (tool.name === "registra_sopralluogo") return { input: extraction, inputTokens: 1000, outputTokens: 300 };
-    const n = (user.match(/^Riga \d+:/gm) ?? []).length;
+    const n = (String(user).match(/^Riga \d+:/gm) ?? []).length;
     return { input: { choices: choices(n) }, inputTokens: 2000, outputTokens: 200 };
   };
 }

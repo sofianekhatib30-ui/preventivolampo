@@ -1,6 +1,6 @@
 import { z } from "zod";
 import { CODICE, UNITS } from "@/lib/listino/schema";
-import type { ToolCaller } from "@/lib/motore/claude";
+import type { Blocco, ToolCaller, ToolSpec } from "@/lib/motore/claude";
 import { Rifiuto } from "@/lib/preventivi/rifiuto";
 import { db, ok } from "./db";
 import { DatiVoce } from "./schema";
@@ -8,7 +8,8 @@ import { inserisciVoci, MAX_VOCI } from "./voci";
 
 // Import del listino da Excel o CSV: leggo la tabella, capisco le colonne (regole, poi Claude
 // se le regole non bastano), normalizzo unità e prezzi, e ogni riga dubbia resta da controllare.
-// Nulla entra nel listino finché l'artigiano non conferma.
+// Da PDF, foto o vecchi preventivi: Claude trascrive le voci in una tabella, che poi segue la
+// stessa strada. Nulla entra nel listino finché l'artigiano non conferma.
 
 export const MAX_BYTES = 5 * 1024 * 1024;
 export const CAMPI = ["codice", "nome", "descrizione", "unita", "prezzo", "categoria"] as const;
@@ -226,7 +227,9 @@ const UNITA_DETTE: [RegExp, (typeof UNITS)[number]][] = [
 export function unitaDa(s: string): (typeof UNITS)[number] | null {
   const n = norm(s).replace(/\s*\.$/, "");
   if (!n) return null;
-  for (const [re, u] of UNITA_DETTE) if (re.test(n)) return u;
+  // Come la scrive chi prezza a mano: «al metro», «€/ora», «euro al mq», «per pezzo».
+  const senzaPrefisso = n.replace(/^(€|euro)\s*/, "").replace(/^(al|alla|allo|all|per|x)\s+/, "");
+  for (const candidato of [n, senzaPrefisso]) for (const [re, u] of UNITA_DETTE) if (re.test(candidato)) return u;
   return null;
 }
 
@@ -293,29 +296,138 @@ export function costruisciRighe(t: Cella[][], intestazione: number, m: Mappatura
   return out;
 }
 
+// --- PDF e foto: lettura con l'AI ------------------------------------------------------------------
+
+// Vercel accetta richieste fino a 4,5 MB: le foto le rimpicciolisce il browser prima di mandarle.
+export const MAX_BYTES_AI = 4_300_000;
+export const MAX_FILE_AI = 10;
+
+export type FileCaricato = { nome: string; bytes: Uint8Array };
+type Tipo = "foglio" | "application/pdf" | "image/png" | "image/jpeg" | "image/webp";
+
+export function tipoFile(b: Uint8Array): Tipo | null {
+  if (b[0] === 0x25 && b[1] === 0x50 && b[2] === 0x44 && b[3] === 0x46) return "application/pdf";
+  if (b[0] === 0x89 && b[1] === 0x50 && b[2] === 0x4e && b[3] === 0x47) return "image/png";
+  if (b[0] === 0xff && b[1] === 0xd8 && b[2] === 0xff) return "image/jpeg";
+  if (b[0] === 0x52 && b[1] === 0x49 && b[2] === 0x46 && b[3] === 0x46 && b[8] === 0x57 && b[9] === 0x45 && b[10] === 0x42 && b[11] === 0x50) return "image/webp";
+  if (isXlsx(b) || isXls(b) || !b.includes(0)) return "foglio";
+  return null;
+}
+
+export const LETTURA_TOOL: ToolSpec = {
+  name: "trascrivi_listino",
+  description: "Trascrive le voci di prezzo che compaiono nelle pagine: listino, foglio scritto a mano o vecchi preventivi.",
+  input_schema: {
+    type: "object",
+    additionalProperties: false,
+    required: ["voci"],
+    properties: {
+      voci: {
+        type: "array",
+        description: "Una voce per riga: [codice, voce, unità, prezzo, nota]",
+        items: { type: "array", items: { type: "string" } },
+      },
+    },
+  },
+};
+
+export const LETTURA_SYSTEM = `Leggi le pagine che ti manda un artigiano edile (listino, foglio scritto a mano, foto, PDF o vecchi preventivi) e trascrivi le sue voci di prezzo, per caricarle nel suo listino.
+
+Per ogni voce scrivi un array di 5 stringhe: [codice, voce, unità, prezzo, nota].
+- codice: il codice o numero della voce se c'è, altrimenti "".
+- voce: la lavorazione o il materiale, come è scritto, in breve (massimo 120 caratteri).
+- unità: come è scritta (mq, ml, cad, h, a corpo…); "" se non c'è.
+- prezzo: il prezzo unitario come è scritto (es. "18,50"), senza simbolo di valuta; "" se non si legge.
+- nota: "" se è tutto chiaro; altrimenti una frase breve su un dubbio vero (es. "prezzo poco leggibile", "prezzo calcolato: totale diviso quantità", "trovata due volte con prezzi diversi: 40 e 45"). Non scrivere note per spiegare come è scritta l'unità o per dire che manca: a quello pensa il programma.
+
+Regole:
+- Trascrivi solo quello che c'è scritto: non inventare voci né prezzi. Un prezzo che non leggi resta "".
+- Dai vecchi preventivi prendi il prezzo unitario. Se c'è solo il totale della riga e la quantità, calcola il prezzo unitario; se la quantità è diversa da 1, dillo nella nota. La stessa voce in più preventivi va una volta sola, con l'ultimo prezzo e gli altri nella nota.
+- Salta titoli, capitoli, totali, IVA, sconti, condizioni di pagamento e intestazioni.
+- Non trascrivere mai nomi, indirizzi o dati dei clienti.`;
+
+const Lettura = z.object({ voci: z.array(z.array(z.string()).min(2).max(6)).max(MAX_VOCI) });
+
+export async function leggiConAI(file: FileCaricato[], call: ToolCaller): Promise<{ tabella: Cella[][]; note: Map<number, string> }> {
+  const blocchi: Blocco[] = [];
+  for (const f of file) {
+    const tipo = tipoFile(f.bytes);
+    const data = Buffer.from(f.bytes).toString("base64");
+    if (tipo === "application/pdf") blocchi.push({ type: "document", source: { type: "base64", media_type: tipo, data } });
+    else if (tipo === "image/png" || tipo === "image/jpeg" || tipo === "image/webp") blocchi.push({ type: "image", source: { type: "base64", media_type: tipo, data } });
+    else throw new Rifiuto(`«${f.nome.slice(0, 60)}» non è un PDF né una foto.`, 400);
+  }
+  blocchi.push({ type: "text", text: `Trascrivi le voci di prezzo di ${file.length === 1 ? "questo file" : `questi ${file.length} file`}.` });
+  let uscita: unknown;
+  try {
+    uscita = (await call({ system: LETTURA_SYSTEM, user: blocchi, tool: LETTURA_TOOL, maxTokens: 16000 })).input;
+  } catch (e) {
+    const troppo = e instanceof Error && /troncata/.test(e.message);
+    throw new Rifiuto(
+      troppo
+        ? "Il listino è troppo lungo per leggerlo tutto in una volta: caricalo in più parti, o usa l'Excel se ce l'hai."
+        : "Non sono riuscito a leggere il file. Riprova, o con una foto più nitida.",
+      troppo ? 422 : 502,
+    );
+  }
+  const p = Lettura.safeParse(uscita);
+  if (!p.success) throw new Rifiuto("Non sono riuscito a leggere il file. Riprova, o con una foto più nitida.", 502);
+  const tabella: Cella[][] = [["Codice", "Voce", "Unità", "Prezzo"]];
+  const note = new Map<number, string>();
+  for (const v of p.data.voci) {
+    const [codice = "", voce = "", unita = "", prezzo = "", nota = ""] = v.map((x) => x.trim());
+    if (!voce) continue;
+    tabella.push([codice || null, voce, unita || null, prezzo || null]);
+    if (nota) note.set(tabella.length, nota.slice(0, 160)); // n della riga = posizione nella tabella (1 = intestazione)
+  }
+  return { tabella, note };
+}
+
 // --- Flusso completo -----------------------------------------------------------------------------
 
-export async function preparaImport(impresaId: string, nomeFile: string, bytes: Uint8Array, call: ToolCaller | null) {
-  const t = await leggiTabella(bytes);
-  if (t.length < 2) throw new Rifiuto("Il file non ha righe da importare.", 400);
-  let intestazione = trovaIntestazione(t);
-  let mappa = mappaConRegole(t[intestazione] ?? []);
-  let metodo: "regole" | "claude" = "regole";
-  if ((mappa.nome === undefined || mappa.prezzo === undefined || mappa.unita === undefined) && call) {
-    const c = await mappaConClaude(t, call).catch(() => null);
-    if (c && c.mappa.nome !== undefined && c.mappa.prezzo !== undefined) {
-      intestazione = c.intestazione;
-      mappa = c.mappa;
-      metodo = "claude";
+export async function preparaImport(impresaId: string, file: FileCaricato | FileCaricato[], call: ToolCaller | null) {
+  const elenco = Array.isArray(file) ? file : [file];
+  if (!elenco.length) throw new Rifiuto("Scegli il file del listino.", 400);
+  const fogli = elenco.filter((f) => tipoFile(f.bytes) === "foglio");
+  let t: Cella[][];
+  let intestazione: number;
+  let mappa: Mappatura;
+  let metodo: "regole" | "claude" | "lettura AI" = "regole";
+  let note = new Map<number, string>();
+  if (fogli.length) {
+    if (elenco.length > 1) throw new Rifiuto("Un file Excel o CSV va caricato da solo.", 400);
+    t = await leggiTabella(elenco[0].bytes);
+    if (t.length < 2) throw new Rifiuto("Il file non ha righe da importare.", 400);
+    intestazione = trovaIntestazione(t);
+    mappa = mappaConRegole(t[intestazione] ?? []);
+    if ((mappa.nome === undefined || mappa.prezzo === undefined || mappa.unita === undefined) && call) {
+      const c = await mappaConClaude(t, call).catch(() => null);
+      if (c && c.mappa.nome !== undefined && c.mappa.prezzo !== undefined) {
+        intestazione = c.intestazione;
+        mappa = c.mappa;
+        metodo = "claude";
+      }
     }
+    if (mappa.nome === undefined || mappa.prezzo === undefined) {
+      throw new Rifiuto("Non trovo le colonne della descrizione e del prezzo. Controlla che il file abbia i titoli delle colonne.", 422);
+    }
+  } else {
+    if (!call) throw new Rifiuto("La lettura di PDF e foto non è disponibile in questo momento: carica un Excel o un CSV.", 503);
+    if (elenco.length > MAX_FILE_AI) throw new Rifiuto(`Al massimo ${MAX_FILE_AI} file per volta.`, 400);
+    if (elenco.reduce((a, f) => a + f.bytes.length, 0) > MAX_BYTES_AI) throw new Rifiuto("I file sono troppo pesanti insieme (massimo 4 MB): caricali in più volte.", 400);
+    const letto = await leggiConAI(elenco, call);
+    t = letto.tabella;
+    note = letto.note;
+    intestazione = 0;
+    mappa = { codice: 0, nome: 1, unita: 2, prezzo: 3 };
+    metodo = "lettura AI";
+    if (t.length < 2) throw new Rifiuto("Non ho trovato voci con un prezzo nel file. Prova con una foto più nitida o più vicina.", 422);
   }
-  if (mappa.nome === undefined || mappa.prezzo === undefined) {
-    throw new Rifiuto("Non trovo le colonne della descrizione e del prezzo. Controlla che il file abbia i titoli delle colonne.", 422);
-  }
-  const righe = costruisciRighe(t, intestazione, mappa);
+  const righe = costruisciRighe(t, intestazione, mappa).map((r) => (note.has(r.n) ? { ...r, problemi: [...r.problemi, note.get(r.n)!] } : r));
   if (!righe.length) throw new Rifiuto("Non trovo voci con descrizione e prezzo nel file.", 422);
   // La tabella letta resta con l'import: se l'artigiano cambia le colonne, le righe si rifanno da qui.
   const tabella = t.slice(0, MAX_VOCI + 20).map((r) => r.slice(0, 20).map((c) => (typeof c === "string" ? c.slice(0, 600) : c)));
+  const nomeFile = elenco.length === 1 ? elenco[0].nome : `${elenco.length} file (${elenco[0].nome}…)`;
   const r = ok(
     await db()
       .from("pl_import")

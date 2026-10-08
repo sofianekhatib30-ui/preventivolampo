@@ -39,6 +39,10 @@ export default function Page() {
           Email di accesso, dati dell&apos;impresa che inserisci (ragione sociale, partita IVA, indirizzo, telefono, IBAN se lo
           indichi), logo, listino e preventivi.
         </li>
+        <li>
+          Se carichi il listino da PDF o foto, o da vecchi preventivi, l&apos;intelligenza artificiale ne legge solo le voci di
+          prezzo: i nomi dei clienti non vengono trascritti e il file non viene conservato.
+        </li>
         <li>Servono per fornirti il servizio (base giuridica: il contratto, anche durante il pilota gratuito).</li>
         <li>
           Restano finché usi il servizio. Quando smetti li cancelliamo entro 30 giorni, salvo quello che la legge ci obbliga a

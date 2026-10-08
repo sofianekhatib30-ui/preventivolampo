@@ -1,7 +1,7 @@
 const COLONNE = ["Le app di preventivi fai da te", "PreventivoLampo"] as const;
 
 const RIGHE: { tema: string; faiDaTe: string; noi: string }[] = [
-  { tema: "Il listino", faiDaTe: "Lo inserisci tu, voce per voce", noi: "Carichi il tuo Excel, lo legge lui" },
+  { tema: "Il listino", faiDaTe: "Lo inserisci tu, voce per voce", noi: "Carichi il tuo com'è, anche da foto" },
   {
     tema: "Le voci che mancano",
     faiDaTe: "Spesso stimate dall'AI",
@@ -12,7 +12,7 @@ const RIGHE: { tema: string; faiDaTe: string; noi: string }[] = [
     faiDaTe: "Da ripartire a mano",
     noi: "Ripartita in automatico, con dicitura",
   },
-  { tema: "Chi ti aiuta", faiDaTe: "Una chat di assistenza", noi: "Una persona, a Monza" },
+  { tema: "Chi ti aiuta", faiDaTe: "Una chat di assistenza", noi: "Una persona, non un bot" },
 ];
 
 // Sopra 1024 px una tabella vera; sotto, una lista di coppie (SPEC, sezione «Confronto»).

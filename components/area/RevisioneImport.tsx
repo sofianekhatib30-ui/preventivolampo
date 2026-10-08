@@ -104,7 +104,13 @@ export default function RevisioneImport({
 
   return (
     <div>
-      <details className="mt-6 rounded-card bg-superficie ring-1 ring-linea" open={metodo !== "regole" && metodo !== "a mano"}>
+      {metodo === "lettura AI" && (
+        <p className="mt-6 rounded-card bg-fondo-2 px-5 py-4 text-[16px] leading-relaxed text-testo-2 ring-1 ring-linea">
+          Queste voci le ha lette l&apos;AI dal tuo PDF o dalle foto. <strong className="text-inchiostro">Controlla ogni prezzo</strong>{" "}
+          prima di confermare: dove non era sicura trovi una nota.
+        </p>
+      )}
+      <details className={`mt-6 rounded-card bg-superficie ring-1 ring-linea ${metodo === "lettura AI" ? "hidden" : ""}`} open={metodo !== "regole" && metodo !== "a mano"}>
         <summary className="flex min-h-14 cursor-pointer items-center justify-between gap-3 px-5 text-[17px] font-bold">
           Colonne del file
           <span className="text-[14px] font-semibold text-testo-3">

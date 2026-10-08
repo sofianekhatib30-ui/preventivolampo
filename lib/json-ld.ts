@@ -19,9 +19,8 @@ export function serviceJsonLd() {
       "@type": "Organization",
       name: "K Digital Solution",
       email: "studio@kdigitalsolution.it",
-      address: { "@type": "PostalAddress", addressLocality: "Monza", addressRegion: "MB", addressCountry: "IT" },
     },
-    areaServed: { "@type": "AdministrativeArea", name: "Monza e Brianza" },
+    areaServed: { "@type": "Country", name: "Italia" },
     offers: [
       {
         "@type": "Offer",

@@ -68,8 +68,8 @@ const DOMANDE: Domanda[] = [
     domanda: "Va bene anche per elettricisti e imbianchini?",
     risposta: (
       <>
-        Sì, se lavori a voci e misure. Partiamo da bagni, impianti e ristrutturazioni
-        <SoloDesktop> in Monza e Brianza</SoloDesktop>: se fai altro, candidati lo stesso
+        Sì, se lavori a voci e misure. Partiamo da bagni, impianti e ristrutturazioni: se fai
+        altro, candidati lo stesso
         <SoloDesktop> e ne parliamo</SoloDesktop>.
       </>
     ),

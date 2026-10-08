@@ -11,10 +11,10 @@ export const SITE_URL =
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     : "http://localhost:3000");
 
-export const SITE_TITLE = "PreventivoLampo — Il preventivo parte dal furgone | Monza e Brianza";
+export const SITE_TITLE = "PreventivoLampo — Il preventivo parte dal furgone";
 
 export const SITE_DESCRIPTION =
-  "Mandi un vocale su WhatsApp dopo il sopralluogo: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Programma pilota per artigiani in Monza e Brianza.";
+  "Mandi un vocale su WhatsApp dopo il sopralluogo: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Programma pilota per artigiani edili.";
 
 export const CONTACT_EMAIL = "studio@kdigitalsolution.it";
 

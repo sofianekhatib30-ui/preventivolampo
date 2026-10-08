@@ -60,7 +60,7 @@ export default function Progetto() {
         </Link>
       </TestataApp>
       <main className="mx-auto max-w-3xl px-4 py-10 sm:py-16">
-        <p className="text-[15px] text-testo-3">Caso di studio · Sofiane Khatib · Monza, 2026</p>
+        <p className="text-[15px] text-testo-3">Caso di studio · Sofiane Khatib · 2026</p>
         <h1 className="mt-2 text-[40px] font-black leading-[1.02] [font-stretch:76%] sm:text-[60px]">
           Dal vocale del sopralluogo al preventivo, senza prezzi inventati.
         </h1>

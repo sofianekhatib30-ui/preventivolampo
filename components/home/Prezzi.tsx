@@ -103,7 +103,7 @@ function PostiPilota({ posti }: { posti: number | null }) {
   return (
     <>
       <p className="m-0 self-start rounded-full border border-cielo px-2.5 py-[5px] font-mono text-xs font-semibold text-cielo lg:px-3 lg:py-1.5 lg:text-[13px]">
-        {posti === null ? `${POSTI_PILOTA} posti · Monza e Brianza` : etichettaPosti(posti)}
+        {posti === null ? `${POSTI_PILOTA} posti` : etichettaPosti(posti)}
       </p>
       {posti !== null && (
         <div className="flex gap-1.5" aria-hidden="true">

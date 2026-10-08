@@ -24,7 +24,7 @@ export default function ListinoVuoto({ vociEsempio }: { vociEsempio: number }) {
     <div className="mt-6 grid gap-3 sm:grid-cols-3">
       <div className={`${scheda} ring-2 ring-ardesia`}>
         <h2 className="text-xl font-extrabold">Hai già un listino?</h2>
-        <p className="mt-1 flex-1 text-[16px] text-testo-2">Carica il file Excel o CSV: riconosciamo le colonne e tu controlli riga per riga.</p>
+        <p className="mt-1 flex-1 text-[16px] text-testo-2">Carica il listino che hai: Excel, PDF o una foto. Lo leggiamo noi e tu controlli riga per riga.</p>
         <Link href="/area/listino/importa" className="bottone bottone-azione mt-4 min-h-12 text-[16px]">
           Importa il file
         </Link>

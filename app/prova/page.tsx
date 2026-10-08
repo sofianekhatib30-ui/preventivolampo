@@ -19,7 +19,8 @@ function esempi() {
     .sort()
     .map((f) => {
       const id = f.slice(0, 2);
-      const titolo = JSON.parse(readFileSync(path.join(dir, "atteso", `${id}.json`), "utf8")).title as string;
+      // Nel titolo resta solo il mestiere: «(idraulico, Seregno)» → «(idraulico)».
+      const titolo = (JSON.parse(readFileSync(path.join(dir, "atteso", `${id}.json`), "utf8")).title as string).replace(/\(([^,()]+),[^()]*\)\s*$/, "($1)");
       const testo = readFileSync(path.join(dir, "copioni", f), "utf8").replace(/<!--[\s\S]*?-->/g, "").trim();
       return { id, titolo, testo };
     });

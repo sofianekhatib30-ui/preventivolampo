@@ -4,7 +4,12 @@
 // i vincoli veri li controlla zod sull'uscita, e un'uscita non valida è un errore.
 
 export type ToolSpec = { name: string; description: string; input_schema: Record<string, unknown> };
-export type ToolCall = { system: string; user: string; tool: ToolSpec; maxTokens?: number };
+// Il messaggio può essere solo testo, oppure testo più immagini e PDF (lettura del listino da foto).
+export type Blocco =
+  | { type: "text"; text: string }
+  | { type: "image"; source: { type: "base64"; media_type: "image/png" | "image/jpeg" | "image/webp"; data: string } }
+  | { type: "document"; source: { type: "base64"; media_type: "application/pdf"; data: string } };
+export type ToolCall = { system: string; user: string | Blocco[]; tool: ToolSpec; maxTokens?: number };
 export type ToolResult = { input: unknown; inputTokens: number; outputTokens: number };
 export type ToolCaller = (call: ToolCall) => Promise<ToolResult>;
 

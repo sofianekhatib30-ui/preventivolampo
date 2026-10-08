@@ -136,7 +136,7 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
               rows={9}
               value={testo}
               onChange={(e) => setTesto(e.target.value)}
-              placeholder="Bagno della signora Rossi, via Roma 3 a Monza. È casa sua. Togliamo vasca e piastrelle, alte due metri. Il bagno è due per uno e ottanta, piatto doccia 80x80, i sanitari li compro io…"
+              placeholder="Bagno della signora Rossi, via Roma 3. È casa sua. Togliamo vasca e piastrelle, alte due metri. Il bagno è due per uno e ottanta, piatto doccia 80x80, i sanitari li compro io…"
               className="mt-2 block w-full rounded-campo border border-linea-2 bg-superficie px-3 py-3 text-[17px] leading-relaxed"
             />
           </label>

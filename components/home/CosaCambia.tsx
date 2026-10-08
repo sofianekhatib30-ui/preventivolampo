@@ -25,11 +25,11 @@ export function CosaCambia() {
         </h2>
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card titolo="Il tuo listino, dal tuo Excel">
+        <Card titolo="Il tuo listino, com'è">
           <p className={testoCard}>
-            Carichi l&apos;Excel o il CSV che hai già: il sistema riconosce voci, unità di misura e
-            prezzi, e segna a parte i sanitari per l&apos;IVA. Tu controlli e confermi. Se ti blocchi,
-            ti aiutiamo noi.
+            Carichi il listino che hai: Excel, PDF, la foto del foglio scritto a mano o qualche
+            preventivo vecchio. Il sistema legge voci, unità di misura e prezzi, e tu controlli e
+            confermi. Nessun prezzo entra senza che tu l&apos;abbia visto. Se ti blocchi, ti aiutiamo noi.
           </p>
           <TabellaListino />
         </Card>
@@ -91,7 +91,7 @@ export function CosaCambia() {
           </p>
         </article>
 
-        <Card titolo="Un aiuto vero, a Monza">
+        <Card titolo="Un aiuto vero, da una persona">
           <p className={testoCard}>
             <SoloDesktop>
               Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti.
