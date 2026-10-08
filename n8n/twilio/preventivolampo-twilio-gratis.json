@@ -1,0 +1,420 @@
+{
+  "id": "PLtwilioGratis001",
+  "name": "PreventivoLampo · WhatsApp (Twilio gratis)",
+  "nodes": [
+    {
+      "id": "6d5bafc4-3eaf-4f3b-9931-1192f51d18d0",
+      "name": "Twilio: messaggio in arrivo",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "55e40ae6-7ad7-4131-8f07-4a2fbb1f8e53",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "preventivolampo-twilio",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "d8762105-1fdb-4be0-a2e7-ed22241ea72f",
+      "name": "Verifica e smista",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ],
+      "parameters": {
+        "jsCode": "// ⚙️ IMPOSTAZIONI (si compilano una volta, solo in n8n)\n// Auth Token di Twilio: console.twilio.com → Account Info → Auth Token (lo stesso della credenziale «Twilio · account»).\nconst AUTH_TOKEN = '';\n// L'indirizzo esatto che hai incollato in Twilio (Sandbox settings → «When a message comes in»): serve per la firma.\nconst INDIRIZZO = 'https://kdigitalsolution.app.n8n.cloud/webhook/preventivolampo-twilio';\n// Vocali: true dopo aver messo la credenziale del servizio di trascrizione nel nodo «Trascrivi il vocale».\nconst VOCALI_ATTIVI = false;\nconst TWILIO = 'https://api.twilio.com';\nconst TRASCRIZIONE_URL = 'https://api.openai.com/v1/audio/transcriptions';\nconst TRASCRIZIONE_MODELLO = 'whisper-1';\n\n// Twilio firma ogni richiesta: HMAC-SHA1 con l'Auth Token su indirizzo + parametri in ordine alfabetico.\nconst crypto = require('crypto');\nconst item = $input.first();\nconst headers = item.json.headers || {};\nconst p = item.json.body || {};\nconst out = (o) => [{ json: { TWILIO, TRASCRIZIONE_URL, TRASCRIZIONE_MODELLO, ...o } }];\n\nfunction firmaValida() {\n  if (!AUTH_TOKEN) return false;\n  const dati = INDIRIZZO + Object.keys(p).sort().map((k) => k + p[k]).join('');\n  const attesa = crypto.createHmac('sha1', AUTH_TOKEN).update(Buffer.from(dati, 'utf8')).digest('base64');\n  const a = Buffer.from(attesa), b = Buffer.from(String(headers['x-twilio-signature'] || ''));\n  return a.length === b.length && crypto.timingSafeEqual(a, b);\n}\nif (!firmaValida()) return out({ azione: 'rifiuta', codice: 403, twiml: 'firma non valida' });\nif (!String(p.From || '').startsWith('whatsapp:')) return out({ azione: 'ignora', codice: 200, twiml: '<Response></Response>' });\n\nconst base = {\n  codice: 200,\n  sid: p.AccountSid,\n  a: p.From,\n  da: p.To,\n  nome: String(p.ProfileName || ''),\n  testo: String(p.Body || '').trim(),\n};\n// L'account di prova di Twilio accetta solo risposte nel TwiML, entro 15 secondi. La bozza ne richiede ~20:\n// si risponde subito «ricevuto», la si prepara dopo e la si consegna quando l'artigiano scrive «ok».\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nconst mia = memoria.bozze[base.a];\nconst chiedeLaBozza = /^(ok+|okay|pronta\\??|bozza|link|si|sì|vai)[.!?]*$/i.test(base.testo);\nconst xml = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst rispondi = (o) => out({ ...o, twiml: '<Response><Message>' + xml(o.avviso) + '</Message></Response>' });\n\nif (chiedeLaBozza) {\n  if (mia && mia.testo) {\n    delete memoria.bozze[base.a];\n    return rispondi({ ...base, azione: 'consegna', avviso: mia.testo });\n  }\n  return rispondi({ ...base, azione: 'attesa', avviso: '⏳ Ci sto ancora lavorando: riscrivimi «ok» tra qualche secondo.' });\n}\n\nconst media = Number(p.NumMedia || 0) > 0 ? { url: p.MediaUrl0, tipo: String(p.MediaContentType0 || '') } : null;\nconst vocale = media && media.tipo.startsWith('audio/') ? media : null;\nconst pronta = 'tra circa 20 secondi scrivimi «ok» e ti mando il link della bozza.';\n\nif (vocale && VOCALI_ATTIVI) {\n  return rispondi({ ...base, azione: 'elabora', vocale: true, mediaUrl: vocale.url, mime: vocale.tipo,\n    avviso: '⏳ Ricevuto il vocale. Lo trascrivo e preparo la bozza: ' + pronta });\n}\nif (base.testo.length >= 15) {\n  return rispondi({ ...base, azione: 'elabora', vocale: false, avviso: '⏳ Ricevuto. Preparo la bozza del preventivo: ' + pronta });\n}\nconst aiuto = vocale\n  ? 'I vocali non sono ancora attivi: scrivimi il sopralluogo come lo racconteresti a un collega e ti preparo la bozza.'\n  : 'Ciao' + (base.nome ? ' ' + base.nome.split(' ')[0] : '') + '! Sono PreventivoLampo. ' + (VOCALI_ATTIVI ? 'Mandami un vocale' : 'Scrivimi') + ' dopo il sopralluogo, come lo racconteresti a un collega (lavorazioni, misure, materiali), e ti preparo la bozza del preventivo da controllare dal telefono.';\nreturn rispondi({ ...base, azione: 'aiuto', vocale: false, avviso: aiuto });"
+      }
+    },
+    {
+      "id": "d98e05e6-5132-4b07-8cf4-1f5f3a381e7e",
+      "name": "Rispondi a Twilio subito",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        440,
+        300
+      ],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.twiml }}",
+        "options": {
+          "responseCode": "={{ $json.codice }}",
+          "responseHeaders": {
+            "entries": [
+              {
+                "name": "Content-Type",
+                "value": "text/xml"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "ae495563-d9e7-445b-98aa-73f006eafad6",
+      "name": "Da elaborare?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "6039ce4d-34ee-42ee-a1e5-b3b84be87f93",
+              "leftValue": "={{ $('Verifica e smista').first().json.azione }}",
+              "rightValue": "elabora",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "028b7b98-bb3f-49f8-a896-3fee900317dc",
+      "name": "È un vocale?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1320,
+        120
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "05bb69f0-e271-417c-995d-4d10e241ec74",
+              "leftValue": "={{ $('Verifica e smista').first().json.vocale }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "42012c8a-1e19-4f1b-a5a6-2db88e17fe73",
+      "name": "Scarica il vocale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1540,
+        0
+      ],
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "TWILIOBASIC000001",
+          "name": "Twilio · account"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "data"
+            }
+          }
+        },
+        "url": "={{ $('Verifica e smista').first().json.mediaUrl }}"
+      }
+    },
+    {
+      "id": "ca9200fd-6c99-4e59-b706-43eb77404eeb",
+      "name": "Nome del file audio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1760,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// WhatsApp manda i vocali in OGG/Opus: il servizio di trascrizione vuole l'estensione nel nome del file.\nconst it = $input.first();\nconst mime = $('Verifica e smista').first().json.mime || 'audio/ogg';\nconst est = mime.includes('ogg') ? 'ogg' : mime.includes('mpeg') ? 'mp3' : mime.includes('mp4') || mime.includes('aac') ? 'm4a' : mime.includes('amr') ? 'amr' : 'ogg';\nit.binary.data.fileName = 'vocale.' + est;\nit.binary.data.mimeType = mime.split(';')[0];\nit.binary.data.fileExtension = est;\nreturn [it];"
+      }
+    },
+    {
+      "id": "cc0b91fd-0685-4d63-8ab0-d53de263e6c1",
+      "name": "Trascrivi il vocale",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1980,
+        0
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "TRASCR00000000001",
+          "name": "Trascrizione · chiave"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        },
+        "method": "POST",
+        "url": "={{ $('Verifica e smista').first().json.TRASCRIZIONE_URL }}",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "file",
+              "inputDataFieldName": "data"
+            },
+            {
+              "name": "model",
+              "value": "={{ $('Verifica e smista').first().json.TRASCRIZIONE_MODELLO }}"
+            },
+            {
+              "name": "language",
+              "value": "it"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "85a3085e-51f3-41a1-b062-af518db3d96f",
+      "name": "Testo dal vocale",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2200,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const trascritto = String($input.first().json.text || '').trim();\nreturn [{ json: { testo: trascritto } }];"
+      }
+    },
+    {
+      "id": "70fa2bcc-d61e-4cc2-8828-947b923647fe",
+      "name": "PreventivoLampo: crea la bozza",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2420,
+        160
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "PLHEADER000000001",
+          "name": "PreventivoLampo · segreto n8n"
+        }
+      },
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 60000
+        },
+        "method": "POST",
+        "url": "https://preventivolampo.vercel.app/api/elabora",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ testo: $json.testo || $('Verifica e smista').first().json.testo }) }}"
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "id": "83825dfc-d35f-48df-b40c-e7eb182be416",
+      "name": "Tieni la bozza per «ok»",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        80
+      ],
+      "parameters": {
+        "jsCode": "// La bozza è pronta: la tengo da parte per quando l'artigiano scrive «ok».\nconst s = $('Verifica e smista').first().json;\nconst r = $input.first().json;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nmemoria.bozze[s.a] = { testo: '✅ Bozza pronta: ' + r.righe + ' righe. Controlla le voci evidenziate e approva da qui:\\nhttps://preventivolampo.vercel.app' + r.revisione, il: Date.now() };\nreturn [{ json: { salvata: true } }];"
+      }
+    },
+    {
+      "id": "47256d3f-3cc4-4834-8592-78dc737f459b",
+      "name": "Tieni l'errore per «ok»",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        260
+      ],
+      "parameters": {
+        "jsCode": "const s = $('Verifica e smista').first().json;\nconst memoria = $getWorkflowStaticData('global');\nmemoria.bozze = memoria.bozze || {};\nmemoria.bozze[s.a] = { testo: '⚠️ Non sono riuscito a preparare la bozza. Riprova; se succede ancora, scrivimi il sopralluogo in un unico messaggio.', il: Date.now() };\nreturn [{ json: { salvata: false } }];"
+      }
+    }
+  ],
+  "connections": {
+    "Twilio: messaggio in arrivo": {
+      "main": [
+        [
+          {
+            "node": "Verifica e smista",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verifica e smista": {
+      "main": [
+        [
+          {
+            "node": "Rispondi a Twilio subito",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rispondi a Twilio subito": {
+      "main": [
+        [
+          {
+            "node": "Da elaborare?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Da elaborare?": {
+      "main": [
+        [
+          {
+            "node": "È un vocale?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "È un vocale?": {
+      "main": [
+        [
+          {
+            "node": "Scarica il vocale",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scarica il vocale": {
+      "main": [
+        [
+          {
+            "node": "Nome del file audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Nome del file audio": {
+      "main": [
+        [
+          {
+            "node": "Trascrivi il vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Trascrivi il vocale": {
+      "main": [
+        [
+          {
+            "node": "Testo dal vocale",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Testo dal vocale": {
+      "main": [
+        [
+          {
+            "node": "PreventivoLampo: crea la bozza",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "PreventivoLampo: crea la bozza": {
+      "main": [
+        [
+          {
+            "node": "Tieni la bozza per «ok»",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Tieni l'errore per «ok»",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Rome",
+    "saveDataSuccessExecution": "none",
+    "saveDataErrorExecution": "all"
+  },
+  "pinData": {},
+  "active": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}
