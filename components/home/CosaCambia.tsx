@@ -91,16 +91,16 @@ export function CosaCambia() {
           </p>
         </article>
 
-        <Card titolo="Te lo impostiamo di persona">
+        <Card titolo="Un aiuto vero, a Monza">
           <p className={testoCard}>
             <SoloDesktop>
-              Siamo a Monza. Passiamo da te o ci sentiamo al telefono: logo, dati, condizioni di
-              pagamento, acconti, esclusioni. Un&apos;ora insieme, e il primo preventivo lo mandi tu,
-              dal furgone.
+              Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti.
+              Se ti blocchi, ci scrivi o ci chiami e ti risponde una persona, non un bot. E il primo
+              preventivo lo mandi tu, dal furgone.
             </SoloDesktop>
             <SoloMobile>
-              Siamo a Monza. Passiamo da te o ci sentiamo al telefono: logo, dati, pagamenti,
-              acconti, esclusioni. Un&apos;ora insieme e parti.
+              Logo, dati, pagamenti, acconti, esclusioni: li imposti tu in pochi minuti. Se ti blocchi,
+              ti risponde una persona, non un bot.
             </SoloMobile>
           </p>
         </Card>
