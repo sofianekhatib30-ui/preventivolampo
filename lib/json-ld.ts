@@ -31,18 +31,30 @@ export function serviceJsonLd() {
       {
         "@type": "Offer",
         name: "Avvio fatto per te",
-        priceSpecification: euro("290"),
+        priceSpecification: euro("150"),
       },
       {
         "@type": "Offer",
         name: "Canone",
         priceSpecification: {
           "@type": "UnitPriceSpecification",
-          price: "19",
+          price: "29",
           priceCurrency: "EUR",
           valueAddedTaxIncluded: false,
           unitCode: "MON",
           unitText: "mese",
+        },
+      },
+      {
+        "@type": "Offer",
+        name: "Canone annuale",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "290",
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+          unitCode: "ANN",
+          unitText: "anno",
         },
       },
     ],

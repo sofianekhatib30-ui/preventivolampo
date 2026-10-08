@@ -31,7 +31,7 @@ export function Prezzi() {
           </p>
           <p className="m-0 text-base leading-[1.55] text-scuro-testo lg:text-[17px]">
             Avvio completo incluso, preventivi illimitati. In cambio ci dici cosa non funziona.{" "}
-            Dal 61° giorno 19 € al mese, solo se decidi di restare: nessun rinnovo automatico.
+            Dal 61° giorno 29 € al mese o 290 € l&apos;anno, solo se decidi di restare: nessun rinnovo automatico.
           </p>
           <a
             href={aperte ? "#candidatura" : "/prova"}
@@ -45,7 +45,7 @@ export function Prezzi() {
           <div className="flex items-baseline justify-between gap-3 lg:flex-col lg:items-stretch lg:gap-[18px]">
             <h3 className={titoloCard}>Avvio fatto per te</h3>
             <p className="m-0 flex items-baseline gap-2.5">
-              <span className={`${cifra} text-4xl lg:text-[64px]`}>290 €</span>
+              <span className={`${cifra} text-4xl lg:text-[64px]`}>150 €</span>
               <span className="hidden text-base text-testo-3 lg:inline">una tantum</span>
             </p>
           </div>
@@ -54,10 +54,10 @@ export function Prezzi() {
             <li>Logo, dati e condizioni sul PDF</li>
             <li>Un&apos;ora di affiancamento</li>
           </ul>
-          <p className={notaDesktop}>Gratis per chi entra nel programma pilota.</p>
+          <p className={notaDesktop}>Gratis con l&apos;abbonamento annuale e per chi entra nel programma pilota.</p>
           <p className="m-0 text-[15px] leading-[1.55] text-testo-2 lg:hidden">
             Una tantum: caricamento del listino, logo, dati e condizioni sul PDF, un&apos;ora di
-            affiancamento. Gratis per chi entra nel programma pilota.
+            affiancamento. Gratis con l&apos;abbonamento annuale e per chi entra nel programma pilota.
           </p>
         </article>
 
@@ -66,21 +66,22 @@ export function Prezzi() {
             <h3 className={titoloCard}>Canone</h3>
             <p className="m-0 flex items-baseline gap-2.5">
               <span className={`${cifra} text-4xl lg:text-[64px]`}>
-                19 €
+                29 €
                 <span className="text-base font-medium [font-stretch:100%] lg:hidden"> /mese</span>
               </span>
               <span className="hidden text-base text-testo-3 lg:inline">al mese</span>
             </p>
           </div>
           <ul className={listaDesktop}>
+            <li>Oppure 290 € l&apos;anno: due mesi in regalo, si rinnova solo se lo chiedi tu</li>
             <li>Preventivi illimitati</li>
             <li>Link di accettazione per il cliente</li>
             <li>Assistenza da una persona</li>
           </ul>
           <p className={notaDesktop}>Prezzi IVA esclusa. Disdici quando vuoi, senza vincoli.</p>
           <p className="m-0 text-[15px] leading-[1.55] text-testo-2 lg:hidden">
-            Preventivi illimitati, link di accettazione per il cliente, assistenza da una persona.
-            Disdici quando vuoi.
+            Oppure 290 € l&apos;anno, due mesi in regalo, senza rinnovo automatico. Preventivi illimitati, link di accettazione
+            per il cliente, assistenza da una persona. Disdici quando vuoi.
           </p>
         </article>
       </div>

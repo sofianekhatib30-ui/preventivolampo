@@ -52,7 +52,7 @@ Raggi: bottoni 999px, card 24px (20 su mobile), campi 12px. Margini laterali 120
 3. **Come funziona** `#come` — fondo scuro, H2 + frase, `ol` di 4 passi.
 4. **Cosa cambia** `#perche` — 5 `article`: listino (con tabella di esempio), nessun prezzo inventato (lista con voce gialla «da prezzare»), IVA edile (a tutta larghezza, con scontrino), impostazione di persona, ultima parola tua.
 5. **Confronto** — tabella vera (`table`, `th scope`), 3 colonne. Su mobile diventa una lista di coppie o una tabella scorrevole orizzontalmente con indicazione.
-6. **Prezzi** `#prezzi` — pilota (0 € per 60 giorni, 10 posti), avvio 290 € una tantum (gratis per i piloti), canone 19 €/mese. «Prezzi IVA esclusa».
+6. **Prezzi** `#prezzi` — pilota (0 € per 60 giorni, 10 posti), avvio 150 € una tantum (gratis per i piloti e con l'annuale), canone 29 €/mese oppure 290 €/anno (aggiornato l'8/10/2026). «Prezzi IVA esclusa».
 7. **Domande** `#domande` — 6 domande. Accordion con `details`/`summary` (aperte tutte su desktop è accettabile; su mobile chiuse tranne la prima).
 8. **Candidatura** `#candidatura` — fondo giallo, H2, testo, email, **modulo**, footer.
 
