@@ -28,3 +28,38 @@ export const INFO_LINGUA: Record<LinguaSito, { nome: string; bandiera: string; d
 export function linguaValida(v: string | undefined | null): LinguaSito {
   return (LINGUE_SITO as readonly string[]).includes(v ?? "") ? (v as LinguaSito) : "it";
 }
+
+// Le pagine pubbliche hanno un indirizzo per lingua: l'italiano senza prefisso, le altre in
+// sottocartella (/ro/preventivo-idraulico). Così ogni lingua è una pagina che i motori di ricerca vedono.
+// Indicizzate (hreflang, sitemap, index) solo le lingue qui sotto: sono quelle degli artigiani
+// stranieri più numerosi nell'edilizia, più l'inglese. Le altre esistono per chi le sceglie, in noindex.
+export const LINGUE_INDICIZZATE: readonly LinguaSito[] = ["it", "en", "ro", "sq"];
+
+export const LOCALE_OG: Record<LinguaSito, string> = {
+  it: "it_IT",
+  en: "en_GB",
+  ro: "ro_RO",
+  sq: "sq_AL",
+  ar: "ar_MA",
+  uk: "uk_UA",
+  es: "es_ES",
+  fr: "fr_FR",
+  de: "de_DE",
+  nl: "nl_NL",
+};
+
+/** Indirizzo di una pagina pubblica nella lingua data: percorso("ro", "/prezzi") → "/ro/prezzi". */
+export function percorso(lingua: LinguaSito, p = "/"): string {
+  if (lingua === "it") return p;
+  const i = p.indexOf("#");
+  const base = i === -1 ? p : p.slice(0, i);
+  const ancora = i === -1 ? "" : p.slice(i);
+  return `/${lingua}${base === "/" ? "" : base}${ancora}`;
+}
+
+/** Separa il prefisso di lingua da un indirizzo: "/ro/prezzi" → { lingua: "ro", resto: "/prezzi" }. */
+export function togliLingua(pathname: string): { lingua: LinguaSito | null; resto: string } {
+  const m = /^\/([a-z]{2})(?=\/|$)(.*)$/.exec(pathname);
+  if (m && (LINGUE_SITO as readonly string[]).includes(m[1])) return { lingua: m[1] as LinguaSito, resto: m[2] || "/" };
+  return { lingua: null, resto: pathname };
+}

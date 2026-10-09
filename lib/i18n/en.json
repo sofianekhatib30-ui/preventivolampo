@@ -489,14 +489,21 @@
     "infoLegali": "Legal information",
     "servizioDi": "PreventivoLampo is a service by K Digital Solution",
     "aggiornata": "Updated on {data}",
-    "comeFunziona": "How it works"
+    "comeFunziona": "How it works",
+    "briciole": "You are here"
   },
   "nav": {
     "come": "How it works",
     "mestieri": "Trades",
     "numeri": "The numbers",
     "prezzi": "Prices",
-    "domande": "Questions"
+    "domande": "Questions",
+    "guide": "Guides",
+    "modelli": "Free templates",
+    "glossario": "Glossary",
+    "chiSiamo": "About us",
+    "tuttiIMestieri": "All trades",
+    "risorse": "Resources"
   },
   "hero": {
     "etichetta": "For every home trade",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: keeps you logged in to the tradespeople area after you enter the code you got by email. We only set it when you log in, it lasts 30 days and it is deleted when you press “Log out”.",
-            "**pl_lingua**: remembers the language you chose with the language selector. We only set it if you change language, and it lasts one year."
+            "**pl_lingua**: remembers the language of the site. We set it when you pick a language with the selector or when you open a page in a language other than Italian, and it lasts one year."
           ]
         },
         {

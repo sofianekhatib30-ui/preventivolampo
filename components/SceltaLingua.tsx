@@ -2,12 +2,12 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import { useLingua } from "@/lib/i18n/client";
-import { COOKIE_LINGUA, INFO_LINGUA, LINGUE_SITO, type LinguaSito } from "@/lib/i18n/lingue";
+import { COOKIE_LINGUA, INFO_LINGUA, LINGUE_SITO, type LinguaSito, percorso, togliLingua } from "@/lib/i18n/lingue";
 
 // Selettore della lingua dell'interfaccia: bandiera della lingua attuale; nell'elenco l'italiano in
 // cima, come lingua principale, poi le altre. La scelta resta in un cookie tecnico di preferenza.
 export function SceltaLingua({ scuro = true, compatto = false }: { scuro?: boolean; compatto?: boolean }) {
-  const { lingua, d } = useLingua();
+  const { lingua, d, pubblica } = useLingua();
   const [aperto, setAperto] = useState(false);
   const radice = useRef<HTMLDivElement>(null);
   const bottone = useRef<HTMLButtonElement>(null);
@@ -37,8 +37,12 @@ export function SceltaLingua({ scuro = true, compatto = false }: { scuro?: boole
     // eslint-disable-next-line react-hooks/immutability
     document.cookie = `${COOKIE_LINGUA}=${l}; path=/; max-age=31536000; samesite=lax`;
     setAperto(false);
-    // Ricarica la pagina: tutto, testi del server compresi, esce nella lingua scelta.
-    window.location.reload();
+    // Pagine pubbliche: la stessa pagina all'indirizzo della lingua scelta (/ro/prezzi).
+    // Area e pagine di servizio: si ricarica, e tutto esce nella lingua scelta.
+    if (pubblica) {
+      const { resto } = togliLingua(window.location.pathname);
+      window.location.assign(percorso(l, resto) + window.location.hash);
+    } else window.location.reload();
   }
 
   const info = INFO_LINGUA[lingua];

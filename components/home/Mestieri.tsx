@@ -1,5 +1,7 @@
 import { Frasi } from "@/components/Frasi";
+import { percorsoMestiere } from "@/lib/contenuti/registro";
 import type { Dizionario } from "@/lib/i18n/it";
+import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 import { GuardaEsempio } from "./demo/GuardaEsempio";
 
 // Tutti i mestieri della casa: per ognuno una frase come si dice in cantiere (nella lingua della
@@ -21,7 +23,7 @@ const RIGHE: { id: Chiave; riga: string; esempio?: string }[] = [
   { id: "impresa", riga: "Tutte le voci, una per riga" },
 ];
 
-export function Mestieri({ d }: { d: Dizionario }) {
+export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   const M = d.mestieri;
   return (
     <section id="mestieri" className="margini flex flex-col gap-8 py-14 lg:gap-14 lg:py-28">
@@ -37,7 +39,11 @@ export function Mestieri({ d }: { d: Dizionario }) {
         {RIGHE.map((m) => (
           <li key={m.id} className="flex w-[80%] shrink-0 snap-start flex-col gap-3 rounded-[18px] border border-linea-2 bg-superficie p-5 sm:w-auto sm:rounded-none sm:border-0 lg:p-6">
             <div className="flex items-baseline justify-between gap-3">
-              <h3 className="m-0 text-[22px] font-extrabold leading-none [font-stretch:78%] lg:text-[24px]">{M.voci[m.id].nome}</h3>
+              <h3 className="m-0 text-[22px] font-extrabold leading-none [font-stretch:78%] lg:text-[24px]">
+                <a href={percorso(lingua, percorsoMestiere(m.id))} className="decoration-lime-scuro decoration-2 underline-offset-4 hover:text-lime-scuro">
+                  {M.voci[m.id].nome}
+                </a>
+              </h3>
               {m.esempio && <GuardaEsempio id={m.esempio} testo={M.guarda} />}
             </div>
             <p className="m-0 text-[17px] leading-snug text-testo-2">«{M.voci[m.id].detto}»</p>

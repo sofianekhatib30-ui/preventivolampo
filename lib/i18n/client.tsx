@@ -5,11 +5,13 @@ import { type Dizionario, it } from "./it";
 import type { LinguaSito } from "./lingue";
 
 // Il dizionario della lingua scelta, per i componenti che girano nel browser.
+// pubblica: la pagina ha un indirizzo per lingua (/ro/…), e cambiare lingua vuol dire cambiare indirizzo.
 // Senza provider (test) vale l'italiano.
-const Contesto = createContext<{ lingua: LinguaSito; d: Dizionario }>({ lingua: "it", d: it });
+type Valore = { lingua: LinguaSito; d: Dizionario; pubblica: boolean };
+const Contesto = createContext<Valore>({ lingua: "it", d: it, pubblica: false });
 
-export function LinguaProvider({ lingua, d, children }: { lingua: LinguaSito; d: Dizionario; children: ReactNode }) {
-  return <Contesto.Provider value={{ lingua, d }}>{children}</Contesto.Provider>;
+export function LinguaProvider({ lingua, d, pubblica = false, children }: { lingua: LinguaSito; d: Dizionario; pubblica?: boolean; children: ReactNode }) {
+  return <Contesto.Provider value={{ lingua, d, pubblica }}>{children}</Contesto.Provider>;
 }
 
 export function useLingua() {

@@ -2,7 +2,9 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import Home from "@/app/page";
+import Home from "@/app/(sito)/[lang]/page";
+
+const homeIt = () => Home({ params: Promise.resolve({ lang: "it" }) } as Parameters<typeof Home>[0]);
 
 // Promesse della home = requisiti di prodotto (SPEC, sezione «Promesse della pagina =
 // requisiti di prodotto»). Per ogni riga della tabella della SPEC:
@@ -121,7 +123,7 @@ function normalizza(testo: string): string {
 }
 
 async function testoDellaPagina(): Promise<string> {
-  const html = renderToStaticMarkup(await Home());
+  const html = renderToStaticMarkup(await homeIt());
   const senzaScript = html.replace(/<script[^>]*>[^<]*<\/script>/g, " ");
   const testo = senzaScript
     .replace(/<[^>]*>/g, "")

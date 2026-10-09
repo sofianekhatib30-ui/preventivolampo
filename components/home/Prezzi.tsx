@@ -1,6 +1,7 @@
 import { Frasi } from "@/components/Frasi";
 import { Suspense } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
+import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 import { fmt } from "@/lib/i18n/testo";
 import { leggiPostiLiberi, POSTI_PILOTA } from "@/lib/impresa/posti";
 import { candidatureAperte } from "@/lib/sito";
@@ -11,7 +12,7 @@ const cifra = "whitespace-nowrap [font-weight:850] leading-none [font-stretch:68
 const listaDesktop = "m-0 hidden list-disc ps-5 text-base leading-[1.8] text-testo-2 lg:block";
 const notaDesktop = "m-0 mt-auto hidden text-sm leading-normal text-testo-3 lg:block";
 
-export function Prezzi({ d }: { d: Dizionario }) {
+export function Prezzi({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   const P = d.prezzi;
   const aperte = candidatureAperte();
   return (
@@ -31,7 +32,7 @@ export function Prezzi({ d }: { d: Dizionario }) {
             <span className="text-base text-scuro-testo lg:text-lg">{P.perGiorni}</span>
           </p>
           <p className="m-0 text-base leading-[1.55] text-scuro-testo lg:text-[17px]">{P.pilotaTesto}</p>
-          <a href={aperte ? "#candidatura" : "/prova"} className="bottone bottone-azione-scuro mt-auto py-[15px] text-[17px] lg:py-4">
+          <a href={aperte ? percorso(lingua, "/#candidatura") : "/prova"} className="bottone bottone-azione-scuro mt-auto py-[15px] text-[17px] lg:py-4">
             {aperte ? P.candidati : d.comune.ctaProva}
           </a>
         </article>

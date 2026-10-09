@@ -1,11 +1,12 @@
 import { Frasi } from "@/components/Frasi";
 import { Ricco } from "@/components/Ricco";
 import type { Dizionario } from "@/lib/i18n/it";
+import type { LinguaSito } from "@/lib/i18n/lingue";
 import { fmt } from "@/lib/i18n/testo";
 import { CONTACT_EMAIL } from "@/lib/sito";
 
 // Accordion con details/summary: la prima domanda aperta, le altre chiuse.
-export function Domande({ d }: { d: Dizionario }) {
+export function Domande({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   const D = d.domande;
   const nonTrovi = fmt(D.nonTrovi, { email: CONTACT_EMAIL });
   return (
@@ -35,7 +36,7 @@ export function Domande({ d }: { d: Dizionario }) {
               </svg>
             </summary>
             <p className="m-0 -mt-3 pb-[18px] text-[15.5px] leading-[1.55] text-testo-2 lg:-mt-3.5 lg:pb-6 lg:text-[17px]">
-              <Ricco testo={voce.r} />
+              <Ricco testo={voce.r} lingua={lingua} />
             </p>
           </details>
         ))}

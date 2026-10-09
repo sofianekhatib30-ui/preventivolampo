@@ -489,14 +489,21 @@
     "infoLegali": "Rechtliche Hinweise",
     "servizioDi": "PreventivoLampo ist ein Dienst von K Digital Solution",
     "aggiornata": "Aktualisiert am {data}",
-    "comeFunziona": "So funktioniert's"
+    "comeFunziona": "So funktioniert's",
+    "briciole": "Du bist hier"
   },
   "nav": {
     "come": "So funktioniert's",
     "mestieri": "Gewerke",
     "numeri": "Die Zahlen",
     "prezzi": "Preise",
-    "domande": "Fragen"
+    "domande": "Fragen",
+    "guide": "Ratgeber",
+    "modelli": "Kostenlose Vorlagen",
+    "glossario": "Glossar",
+    "chiSiamo": "Über uns",
+    "tuttiIMestieri": "Alle Gewerke",
+    "risorse": "Ressourcen"
   },
   "hero": {
     "etichetta": "Für alle Handwerke rund ums Haus",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: hält deinen Zugang zum Handwerkerbereich offen, nachdem du den per E-Mail erhaltenen Code eingegeben hast. Wir setzen es nur, wenn du dich anmeldest, es gilt 30 Tage und wird gelöscht, wenn du auf «Abmelden» drückst.",
-            "**pl_lingua**: merkt sich die Sprache, die du mit der Sprachauswahl gewählt hast. Wir setzen es nur, wenn du die Sprache wechselst, und es gilt ein Jahr."
+            "**pl_lingua**: merkt sich die Sprache der Website. Wir setzen es, wenn du über die Sprachauswahl eine Sprache wählst oder eine Seite in einer anderen Sprache als Italienisch öffnest. Es gilt ein Jahr lang."
           ]
         },
         {

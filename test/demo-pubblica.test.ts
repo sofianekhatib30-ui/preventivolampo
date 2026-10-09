@@ -2,7 +2,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it } from "vitest";
 import { POST as candidatura } from "@/app/api/candidatura/route";
 import { POST as elabora } from "@/app/api/elabora/route";
-import Home from "@/app/page";
+import Home from "@/app/(sito)/[lang]/page";
+
+const homeIt = () => Home({ params: Promise.resolve({ lang: "it" }) } as Parameters<typeof Home>[0]);
 import { codiceValido } from "@/lib/preventivi/http";
 
 afterEach(() => {
@@ -35,14 +37,14 @@ describe("codice d'accesso della demo", () => {
 
 describe("home: pilota aperto, demo solo su richiesta", () => {
   it("senza CANDIDATURE_APERTE: home di vendita con il modulo e nessun riferimento tecnico", async () => {
-    const html = renderToStaticMarkup(await Home());
+    const html = renderToStaticMarkup(await homeIt());
     expect(html).toContain('id="candidatura"');
     expect(html).not.toContain("Progetto dimostrativo");
     for (const parola of [/github/i, /twilio/i, /href="\/progetto"/]) expect(html).not.toMatch(parola);
   });
   it("con CANDIDATURE_APERTE=0 torna la demo: banner, niente modulo, CTA verso la prova", async () => {
     process.env.CANDIDATURE_APERTE = "0";
-    const html = renderToStaticMarkup(await Home());
+    const html = renderToStaticMarkup(await homeIt());
     expect(html).toContain("Progetto dimostrativo");
     expect(html).toContain('href="/prova"');
     expect(html).not.toContain('id="candidatura"');

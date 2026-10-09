@@ -489,14 +489,21 @@
     "infoLegali": "Informații legale",
     "servizioDi": "PreventivoLampo este un serviciu K Digital Solution",
     "aggiornata": "Actualizat la {data}",
-    "comeFunziona": "Cum funcționează"
+    "comeFunziona": "Cum funcționează",
+    "briciole": "Te afli aici"
   },
   "nav": {
     "come": "Cum funcționează",
     "mestieri": "Meserii",
     "numeri": "Cifrele",
     "prezzi": "Prețuri",
-    "domande": "Întrebări"
+    "domande": "Întrebări",
+    "guide": "Ghiduri",
+    "modelli": "Modele gratuite",
+    "glossario": "Glosar",
+    "chiSiamo": "Despre noi",
+    "tuttiIMestieri": "Toate meseriile",
+    "risorse": "Resurse"
   },
   "hero": {
     "etichetta": "Pentru toate meseriile din casă",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: ține accesul deschis în zona pentru meseriași după ce ai introdus codul primit prin email. Îl setăm doar când intri, durează 30 de zile și se șterge când apeși «Ieși».",
-            "**pl_lingua**: ține minte limba pe care ai ales-o cu selectorul de limbi. Îl setăm doar dacă schimbi limba și durează un an."
+            "**pl_lingua**: ține minte limba site-ului. Îl setăm când alegi o limbă din selector sau când deschizi o pagină într-o altă limbă decât italiana și durează un an."
           ]
         },
         {

@@ -1,0 +1,1012 @@
+{
+  "elettricista": {
+    "data": "2026-10-09",
+    "dettatura": "Allora, appartamento del signor Colombo, terzo piano. In soggiorno rifaccio tutto: sei prese normali, due prese TV e tre punti luce, uno deviato vicino alla portafinestra. In camera due punti luce semplici e le prese ai lati del letto, quante non l'ha ancora deciso. Il quadro è vecchio, lo cambio: centralino da dodici moduli con il differenziale e tre magnetotermici. Poi una linea dedicata per il forno, saranno otto metri. Le tracce le chiude il muratore, quelle non le metto. I lampadari li ha già comprati lui, sono quattro, glieli monto io. L'antenna non la tocco, la sistema l'antennista.",
+    "righe": [
+      {
+        "voce": "punti presa normali in soggiorno",
+        "quantita": 6,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "prese TV in soggiorno",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "punti luce semplici in soggiorno",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": "Tre punti luce in soggiorno, di cui uno deviato: restano due punti luce semplici.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "punto luce deviato in soggiorno vicino alla portafinestra",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "punti luce semplici in camera",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "prese ai lati del letto in camera",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di prese non ancora deciso dal cliente.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa centralino da 12 moduli",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "interruttore differenziale nel centralino",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "interruttori magnetotermici nel centralino",
+        "quantita": 3,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "linea elettrica dedicata per il forno",
+        "quantita": 8,
+        "unita": "m",
+        "nota": "Lunghezza detta a voce, circa otto metri.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "montaggio lampadari",
+        "quantita": 4,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «prese ai lati del letto in camera»?"
+    ],
+    "escluso": [
+      "Chiusura delle tracce (a cura del muratore)",
+      "Antenna (la sistema l'antennista)"
+    ],
+    "note": [
+      "Numero di prese ai lati del letto in camera ancora da definire con il cliente.",
+      "Appartamento al terzo piano."
+    ]
+  },
+  "idraulico": {
+    "data": "2026-10-09",
+    "dettatura": "Dunque, casa della signora Ferrari. Il bagno si rifà tutto: smonto i sanitari vecchi e tolgo la vasca, al posto della vasca va un piatto doccia ottanta per centoventi. Rifaccio carico e scarico per lavabo, vaso, bidet e doccia, quindi quattro attacchi. Lo scarico va rifatto fino alla colonna, saranno sei metri abbondanti. Vaso e bidet sospesi, con la rubinetteria, li ha già comprati lei: io li monto e metto i telai. In cucina sposto il lavello di un metro e mezzo verso la finestra. In lavanderia vuole gli attacchi per lavatrice e forse asciugatrice, quanti non l'ha ancora deciso. Piastrelle e ripristini dei muri li fa il piastrellista, non sono miei.",
+    "righe": [
+      {
+        "voce": "smontaggio sanitari esistenti del bagno",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "numero dei sanitari non detto",
+        "materialeCliente": false
+      },
+      {
+        "voce": "rimozione vasca da bagno",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa piatto doccia 80x120",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "rifacimento attacchi di carico e scarico per lavabo, vaso, bidet e doccia",
+        "quantita": 4,
+        "unita": "cad",
+        "nota": "quattro attacchi: lavabo, vaso, bidet e doccia",
+        "materialeCliente": false
+      },
+      {
+        "voce": "rifacimento linea di scarico fino alla colonna",
+        "quantita": 6,
+        "unita": "m",
+        "nota": "sei metri abbondanti: misura approssimata",
+        "materialeCliente": false
+      },
+      {
+        "voce": "montaggio vaso sospeso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      },
+      {
+        "voce": "montaggio bidet sospeso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      },
+      {
+        "voce": "montaggio rubinetteria",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "numero di rubinetti non detto",
+        "materialeCliente": true
+      },
+      {
+        "voce": "fornitura e posa telai per sanitari sospesi",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": "un telaio per il vaso e uno per il bidet sospesi",
+        "materialeCliente": false
+      },
+      {
+        "voce": "spostamento lavello in cucina verso la finestra",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "un lavello, spostamento di 1,5 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "attacchi per lavatrice ed eventuale asciugatrice in lavanderia",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "numero di attacchi non ancora deciso dal cliente",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «smontaggio sanitari esistenti del bagno»?",
+      "Quanti pezzi di «montaggio rubinetteria»?",
+      "Quanti pezzi di «attacchi per lavatrice ed eventuale asciugatrice in lavanderia»?"
+    ],
+    "escluso": [
+      "Piastrelle e ripristini dei muri: li fa il piastrellista"
+    ],
+    "note": [
+      "Attacchi lavanderia: il cliente non ha ancora deciso se serve anche l'asciugatrice, quindi il numero di attacchi è da definire",
+      "Spostamento lavello cucina: 1,5 m verso la finestra",
+      "Tipo di intervento ai fini IVA non detto esplicitamente (bagno rifatto tutto)",
+      "Vaso, bidet e rubinetteria sono già stati comprati dalla cliente; i telai li fornisce l'impresa"
+    ]
+  },
+  "imbianchino": {
+    "data": "2026-10-09",
+    "dettatura": "Appunto per i Galli, appartamento di tre locali. Soggiorno quattro e mezzo per tre e ottanta, altezza normale: pareti e soffitto, due mani di idropittura bianca. In camera grande c'è la muffa nell'angolo della finestra, una fascia di un metro e mezzo più o meno: la tratto e ci do l'antimuffa. La cameretta la vogliono azzurra, la tinta l'ha già presa la signora, quindi lì solo manodopera. Nel corridoio ci sono delle crepe da stuccare, saranno una quindicina di metri di parete. Il soffitto del bagno va raschiato perché si stacca, è un due per due. Le porte interne da smaltare, quante non l'hanno ancora deciso. Copro pavimenti e mobili io. Spostare i mobili no, lo fanno loro prima che arrivi.",
+    "righe": [
+      {
+        "voce": "Pittura con idropittura bianca a due mani delle pareti del soggiorno",
+        "quantita": null,
+        "unita": "m2",
+        "nota": "Altezza detta solo come «normale», senza misura: superficie delle pareti non calcolabile",
+        "materialeCliente": false
+      },
+      {
+        "voce": "Pittura con idropittura bianca a due mani del soffitto del soggiorno",
+        "quantita": 17.1,
+        "unita": "m2",
+        "nota": "Soffitto del soggiorno 4,5 x 3,8 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "Trattamento della muffa con antimuffa nell'angolo della finestra della camera grande",
+        "quantita": 1.5,
+        "unita": null,
+        "nota": "Fascia di circa un metro e mezzo, misura approssimata; non è chiaro se sia lunghezza o superficie",
+        "materialeCliente": false
+      },
+      {
+        "voce": "Pittura azzurra della cameretta (solo manodopera)",
+        "quantita": null,
+        "unita": "m2",
+        "nota": null,
+        "materialeCliente": true
+      },
+      {
+        "voce": "Stuccatura delle crepe nelle pareti del corridoio",
+        "quantita": 15,
+        "unita": "m",
+        "nota": "Circa quindici metri di parete, misura approssimata",
+        "materialeCliente": false
+      },
+      {
+        "voce": "Raschiatura del soffitto del bagno",
+        "quantita": 4,
+        "unita": "m2",
+        "nota": "Soffitto del bagno 2 x 2 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "Smaltatura delle porte interne",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di porte non ancora deciso dal cliente",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti m² di «Pittura con idropittura bianca a due mani delle pareti del soggiorno»?",
+      "«Trattamento della muffa con antimuffa nell'angolo della finestra della camera grande»: 1.5 in che unità?",
+      "Quanti m² di «Pittura azzurra della cameretta (solo manodopera)»?",
+      "Quanti pezzi di «Smaltatura delle porte interne»?"
+    ],
+    "escluso": [
+      "Spostamento dei mobili: lo fa il cliente prima dell'arrivo dell'impresa"
+    ],
+    "note": [
+      "Appartamento di tre locali",
+      "Copertura di pavimenti e mobili a carico dell'impresa",
+      "Altezza del soggiorno detta solo «normale»: serve la misura per le pareti",
+      "Dopo la raschiatura del soffitto del bagno non è detto se va ripitturato",
+      "Numero delle porte interne da smaltare ancora da decidere"
+    ]
+  },
+  "piastrellista": {
+    "data": "2026-10-09",
+    "dettatura": "Ecco, sono appena uscito dalla signora Esposito. In cucina tolgo il pavimento vecchio, la stanza è tre e venti per due e settanta, poi rasatura e posa del gres sessanta per sessanta, dritto. Le piastrelle le ha già prese lei, quindi solo posa. Battiscopa su tutto il giro della cucina, una dozzina di metri. In bagno demolisco il rivestimento fino a due metri d'altezza, il bagno è due per uno e ottanta. Il massetto del bagno va rifatto, cinque centimetri più o meno, poi guaina liquida nella doccia e pavimento e rivestimento nuovi. Profili in alluminio sugli spigoli, quanti ancora non lo so, devo vedere il disegno che vuole. Le macerie le porto via io. I sanitari non li tocco, li smonta e rimonta il suo idraulico.",
+    "righe": [
+      {
+        "voce": "rimozione pavimento esistente in cucina",
+        "quantita": 8.64,
+        "unita": "m2",
+        "nota": "Superficie cucina 3,20 x 2,70 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "rasatura del sottofondo in cucina",
+        "quantita": 8.64,
+        "unita": "m2",
+        "nota": "Superficie cucina 3,20 x 2,70 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa pavimento in gres 60x60 posa dritta in cucina (solo posa)",
+        "quantita": 8.64,
+        "unita": "m2",
+        "nota": "Superficie cucina 3,20 x 2,70 m",
+        "materialeCliente": true
+      },
+      {
+        "voce": "posa battiscopa in cucina",
+        "quantita": 12,
+        "unita": "m",
+        "nota": "Misura approssimata (circa una dozzina di metri)",
+        "materialeCliente": false
+      },
+      {
+        "voce": "demolizione rivestimento in bagno fino a 2 m di altezza",
+        "quantita": 15.2,
+        "unita": "m2",
+        "nota": "Pareti del bagno 2 x 1,80 m (perimetro) per altezza 2 m, senza detrarre porta e finestra",
+        "materialeCliente": false
+      },
+      {
+        "voce": "rifacimento massetto in bagno, spessore circa 5 cm",
+        "quantita": 3.6,
+        "unita": "m2",
+        "nota": "Superficie bagno 2 x 1,80 m; spessore circa 5 cm approssimato",
+        "materialeCliente": false
+      },
+      {
+        "voce": "guaina liquida impermeabilizzante nella doccia",
+        "quantita": null,
+        "unita": "m2",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa nuovo pavimento in bagno",
+        "quantita": 3.6,
+        "unita": "m2",
+        "nota": "Superficie bagno 2 x 1,80 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa nuovo rivestimento in bagno",
+        "quantita": null,
+        "unita": "m2",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa profili in alluminio sugli spigoli",
+        "quantita": null,
+        "unita": "m",
+        "nota": null,
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti m² di «guaina liquida impermeabilizzante nella doccia»?",
+      "Quanti m² di «posa nuovo rivestimento in bagno»?",
+      "Quanti metri di «posa profili in alluminio sugli spigoli»?"
+    ],
+    "escluso": [
+      "Smontaggio e rimontaggio dei sanitari: lo fa l'idraulico della signora, l'impresa non li tocca"
+    ],
+    "note": [
+      "Quantità dei profili in alluminio da definire dopo aver visto il disegno voluto dalla cliente",
+      "Altezza del nuovo rivestimento del bagno non detta: da confermare (demolizione fino a 2 m)",
+      "Macerie portate via dall'impresa, compreso nelle rimozioni",
+      "Superficie doccia per la guaina non detta",
+      "Spessore massetto bagno circa 5 cm, approssimato",
+      "Non è detto se il massetto bagno esistente venga demolito a parte"
+    ]
+  },
+  "muratore": {
+    "data": "2026-10-09",
+    "dettatura": "Senti, lavoro del signor Ricci. Tra cucina e soggiorno butto giù il tramezzo, sarà tre e sessanta per due e settanta, forato da otto. Poi ne tiro su uno nuovo in camera per fare la cabina armadio, due e quaranta più o meno, stessa altezza. Apro una porta nuova nel corridoio, con l'architrave, e chiudo quella vecchia del bagno. Tracce per l'elettricista e l'idraulico, una quarantina di metri in tutto, e poi le chiudo io. Intonaco civile sul tramezzo nuovo. In soggiorno c'è da rasare, quanti metri non lo so finché non tolgo la carta da parati. Il controtelaio della porta l'ha già comprato lui, io lo muro e basta. Le macerie le porto via io. La pratica in Comune la fa il suo geometra, non è roba mia.",
+    "righe": [
+      {
+        "voce": "demolizione tramezzo in forati da 8 cm tra cucina e soggiorno",
+        "quantita": 9.72,
+        "unita": "m2",
+        "nota": "Larghezza 3,60 m per altezza 2,70 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "realizzazione nuovo tramezzo in camera per cabina armadio",
+        "quantita": 6.48,
+        "unita": "m2",
+        "nota": "Larghezza 2,40 m (approssimata) per altezza 2,70 m, la stessa del tramezzo demolito",
+        "materialeCliente": false
+      },
+      {
+        "voce": "apertura nuova porta nel corridoio con posa architrave",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "chiusura con muratura della vecchia porta del bagno",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "esecuzione tracce a parete per impianti elettrico e idraulico",
+        "quantita": 40,
+        "unita": "m",
+        "nota": "Lunghezza approssimata, 'una quarantina di metri in tutto'",
+        "materialeCliente": false
+      },
+      {
+        "voce": "chiusura tracce a parete",
+        "quantita": 40,
+        "unita": "m",
+        "nota": "Stessa lunghezza delle tracce, circa 40 m approssimati",
+        "materialeCliente": false
+      },
+      {
+        "voce": "intonaco civile sul tramezzo nuovo",
+        "quantita": null,
+        "unita": "m2",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "rasatura pareti del soggiorno",
+        "quantita": null,
+        "unita": "m2",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa e muratura controtelaio porta",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      }
+    ],
+    "domande": [
+      "Quanti m² di «intonaco civile sul tramezzo nuovo»?",
+      "Quanti m² di «rasatura pareti del soggiorno»?"
+    ],
+    "escluso": [
+      "Pratica in Comune: la fa il geometra del cliente"
+    ],
+    "note": [
+      "Le macerie le porta via l'impresa: compreso nelle demolizioni, nessuna quantità detta",
+      "Quantità della rasatura in soggiorno da definire dopo aver tolto la carta da parati",
+      "Rimozione della carta da parati in soggiorno non indicata come lavorazione a parte",
+      "Intonaco civile sul tramezzo nuovo: non è detto se su una o su entrambe le facce, quantità da definire",
+      "Non è chiaro a quale porta si riferisca il controtelaio, probabilmente la porta nuova del corridoio"
+    ]
+  },
+  "impresa": {
+    "data": "2026-10-09",
+    "dettatura": "Ricapitolo il cantiere della famiglia Moretti. Bagno chiavi in mano: impianto idraulico nuovo, pavimento e rivestimenti, il bagno è circa due e mezzo per due. Piatto doccia a filo, vaso e bidet sospesi. La rubinetteria l'ha scelta e comprata la signora, noi la montiamo. In camera tinteggiamo pareti e soffitto, una cinquantina di metri. Cambiamo la finestra della camera, una e venti per uno e quaranta. Cassone per le macerie in cortile, è un terzo piano senza ascensore. Cambiamo anche le porte interne delle altre stanze, laccate bianche: quante non l'hanno ancora deciso. Il condizionatore lo fa il loro tecnico, è escluso.",
+    "righe": [
+      {
+        "voce": "impianto idraulico nuovo del bagno",
+        "quantita": null,
+        "unita": null,
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa pavimento bagno",
+        "quantita": 5,
+        "unita": "m2",
+        "nota": "Superficie del bagno, circa 2,5 x 2 m (misura approssimata)",
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa rivestimenti bagno",
+        "quantita": null,
+        "unita": "m2",
+        "nota": "Altezza del rivestimento non detta, superficie non calcolabile",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa piatto doccia a filo pavimento",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa vaso sospeso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa bidet sospeso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "montaggio rubinetteria bagno fornita dalla cliente",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di pezzi di rubinetteria non detto",
+        "materialeCliente": true
+      },
+      {
+        "voce": "tinteggiatura pareti e soffitto camera",
+        "quantita": 50,
+        "unita": "m2",
+        "nota": "Superficie approssimata, circa 50 m2",
+        "materialeCliente": false
+      },
+      {
+        "voce": "sostituzione finestra camera 120x140 cm",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Una finestra, misure 1,20 x 1,40 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "nolo cassone per macerie in cortile",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "sostituzione porte interne laccate bianche",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di porte non ancora deciso dal cliente",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanto «impianto idraulico nuovo del bagno»? Dimmi numero e unità.",
+      "Quanti m² di «posa rivestimenti bagno»?",
+      "Quanti pezzi di «montaggio rubinetteria bagno fornita dalla cliente»?",
+      "Quanti pezzi di «sostituzione porte interne laccate bianche»?"
+    ],
+    "escluso": [
+      "Condizionatore: lo fa il tecnico del cliente"
+    ],
+    "note": [
+      "Cantiere al terzo piano senza ascensore",
+      "Numero di porte interne da definire con il cliente",
+      "Altezza dei rivestimenti del bagno da definire"
+    ]
+  },
+  "termoidraulico": {
+    "data": "2026-10-09",
+    "dettatura": "Bene, casa Fontana, villetta su due piani. La caldaia vecchia la smonto e ne metto una a condensazione, stessa posizione in cucina, con lo scarico fumi nuovo: saranno quattro metri di tubo. Prima di attaccarla faccio il lavaggio dell'impianto, che è pieno di fanghi. Al piano di sopra cambio i radiatori, sono cinque. Quelli di sotto li tengo, ma ci metto le valvole termostatiche su tutti: quanti sono di preciso devo ricontarli. Il cronotermostato l'ha comprato lui, io lo collego e basta. Poi due split, uno in camera e uno in soggiorno, con il motore esterno sul balcone, una dozzina di metri di linea in tutto. Le tracce per le linee del clima le fa il muratore, e la vecchia canna fumaria sul tetto non la tocco.",
+    "righe": [
+      {
+        "voce": "smontaggio caldaia esistente",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Un solo oggetto al singolare",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa caldaia a condensazione",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Una caldaia, nella stessa posizione in cucina",
+        "materialeCliente": false
+      },
+      {
+        "voce": "scarico fumi nuovo",
+        "quantita": 4,
+        "unita": "m",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "lavaggio impianto di riscaldamento",
+        "quantita": 1,
+        "unita": "corpo",
+        "nota": "Lavaggio dell'impianto a corpo",
+        "materialeCliente": false
+      },
+      {
+        "voce": "sostituzione radiatori piano superiore",
+        "quantita": 5,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "valvole termostatiche sui radiatori del piano inferiore",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero dei radiatori del piano di sotto da ricontare",
+        "materialeCliente": false
+      },
+      {
+        "voce": "collegamento cronotermostato",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Un solo cronotermostato, fornito dal cliente",
+        "materialeCliente": true
+      },
+      {
+        "voce": "fornitura e posa condizionatori split con unità esterna sul balcone",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": "Uno in camera e uno in soggiorno",
+        "materialeCliente": false
+      },
+      {
+        "voce": "linee di collegamento impianto clima",
+        "quantita": 12,
+        "unita": "m",
+        "nota": "Misura approssimata: una dozzina di metri in tutto",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «valvole termostatiche sui radiatori del piano inferiore»?"
+    ],
+    "escluso": [
+      "Tracce per le linee del clima: le fa il muratore",
+      "Vecchia canna fumaria sul tetto: non viene toccata"
+    ],
+    "note": [
+      "Da ricontare i radiatori del piano inferiore per la quantità delle valvole termostatiche",
+      "Villetta su due piani; la nuova caldaia va nella stessa posizione in cucina"
+    ]
+  },
+  "cartongessista": {
+    "data": "2026-10-09",
+    "dettatura": "Vado col lavoro del signor Rinaldi, appartamento. Il soggiorno lo dividiamo: parete in cartongesso fra soggiorno e studio, quattro e venti per due e settanta, doppia lastra con la lana di roccia dentro. Nella parete va la porta scorrevole, il controtelaio l'ha già comprato lui, io lo inserisco. In bagno una controparete per chiudere i tubi, un metro e ottanta per tutta l'altezza, con la lastra idrorepellente. In corridoio controsoffitto ribassato, saranno una decina di metri quadri, con sei fori per i faretti. Sulla parete della camera che confina con i vicini una controparete isolante, tre e sessanta per due e settanta. In soggiorno le velette per le tende, quante finestre non l'ha ancora deciso. Stuccatura dei giunti compresa, la pittura no, e i faretti li monta l'elettricista.",
+    "righe": [
+      {
+        "voce": "parete divisoria in cartongesso a doppia lastra con isolante in lana di roccia",
+        "quantita": 11.34,
+        "unita": "m2",
+        "nota": "Parete tra soggiorno e studio: larghezza 4,20 m per altezza 2,70 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa del controtelaio per porta scorrevole nella parete in cartongesso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Una porta scorrevole, quantità non detta esplicitamente",
+        "materialeCliente": true
+      },
+      {
+        "voce": "controparete in cartongesso con lastra idrorepellente per chiusura tubi in bagno",
+        "quantita": null,
+        "unita": "m2",
+        "nota": "Larghezza 1,80 m, ma l'altezza ('tutta l'altezza') non è indicata in metri",
+        "materialeCliente": false
+      },
+      {
+        "voce": "controsoffitto ribassato in cartongesso nel corridoio",
+        "quantita": 10,
+        "unita": "m2",
+        "nota": "Misura approssimata: circa 10 m2",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fori nel controsoffitto per faretti",
+        "quantita": 6,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "controparete isolante in cartongesso sulla parete confinante in camera",
+        "quantita": 9.72,
+        "unita": "m2",
+        "nota": "Parete della camera: larghezza 3,60 m per altezza 2,70 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "velette in cartongesso per tende in soggiorno",
+        "quantita": null,
+        "unita": null,
+        "nota": "Numero di finestre non ancora deciso dal cliente",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti m² di «controparete in cartongesso con lastra idrorepellente per chiusura tubi in bagno»?",
+      "Quanto «velette in cartongesso per tende in soggiorno»? Dimmi numero e unità."
+    ],
+    "escluso": [
+      "Pittura",
+      "Montaggio dei faretti (lo fa l'elettricista)"
+    ],
+    "note": [
+      "Stuccatura dei giunti compresa nelle lavorazioni in cartongesso",
+      "Controparete bagno: manca l'altezza in metri ('tutta l'altezza'), da verificare",
+      "Controsoffitto corridoio: superficie approssimata, circa 10 m2",
+      "Velette soggiorno: numero di finestre ancora da decidere da parte del cliente",
+      "Tipo di intervento e chi acquista i materiali non detti"
+    ]
+  },
+  "serramentista": {
+    "data": "2026-10-09",
+    "dettatura": "Rilievo dai signori Marchetti. Cambiamo tutte le finestre, PVC bianco, doppio vetro basso emissivo. In cucina finestra a due ante, uno e venti per uno e quaranta. In soggiorno la portafinestra a due ante, uno e quaranta per due e venti circa. Le due camere hanno finestre a un'anta, ottanta per uno e trenta. La vasistas del bagno la lasciano. Smontaggio delle vecchie in legno e smaltimento, ci penso io. Tapparelle nuove in alluminio coibentato su tutte, con il motore solo in soggiorno. Le zanzariere le vogliono, ma su quante finestre non l'hanno ancora deciso. La porta blindata d'ingresso l'hanno già comprata loro, io la monto e basta. Le opere murarie sui davanzali non sono mie, le fa il loro muratore.",
+    "righe": [
+      {
+        "voce": "smontaggio e smaltimento delle vecchie finestre in legno",
+        "quantita": 4,
+        "unita": "cad",
+        "nota": "Quattro serramenti da sostituire: cucina, soggiorno e le due camere. Il bagno resta. Quantità ricavata dal racconto.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa finestra in PVC bianco a due ante, doppio vetro basso emissivo, 120x140 cm (cucina)",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa portafinestra in PVC bianco a due ante, doppio vetro basso emissivo, circa 140x220 cm (soggiorno)",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Misura approssimata (circa).",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa finestra in PVC bianco a un'anta, doppio vetro basso emissivo, 80x130 cm (camere)",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": "Una finestra per ciascuna delle due camere.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa tapparelle in alluminio coibentato",
+        "quantita": 4,
+        "unita": "cad",
+        "nota": "Una per ciascuno dei quattro serramenti sostituiti (cucina, soggiorno, due camere). Quantità ricavata da «su tutte».",
+        "materialeCliente": false
+      },
+      {
+        "voce": "motorizzazione tapparella del soggiorno",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Motore solo in soggiorno.",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa zanzariere",
+        "quantita": null,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "posa porta blindata d'ingresso",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «fornitura e posa zanzariere»?"
+    ],
+    "escluso": [
+      "Vasistas del bagno: i clienti la lasciano, non viene sostituita",
+      "Opere murarie sui davanzali: le esegue il muratore del cliente"
+    ],
+    "note": [
+      "Numero di zanzariere non ancora deciso dai clienti",
+      "Misura della portafinestra del soggiorno approssimata (circa 140x220)",
+      "Tapparelle contate su tutti e quattro i serramenti sostituiti: da confermare"
+    ]
+  },
+  "falegname": {
+    "data": "2026-10-09",
+    "dettatura": "Segno quello che abbiamo visto dalla signora Barbieri. In camera un armadio a muro nella nicchia, più o meno due e quaranta di larghezza per due e sessanta di altezza, ante scorrevoli in rovere e l'interno attrezzato. In corridoio cambio tre porte a battente, laccate bianche, e la quarta la faccio scorrevole a scomparsa, il controtelaio c'è già. La scala di legno la rivesto: sono quattordici gradini, pedata e alzata, e poi il corrimano, una quindicina di metri fra scala e soppalco. Sul soppalco una libreria su misura, tre metri per due e venti. In cucina vuole anche delle mensole in rovere, quante non l'ha ancora deciso. La cucina l'ha comprata lei, io la monto e taglio il top per lavello e fuochi. La tinteggiatura dopo i lavori non la faccio, la fa l'imbianchino.",
+    "righe": [
+      {
+        "voce": "armadio a muro in nicchia con ante scorrevoli in rovere e interno attrezzato",
+        "quantita": 6.24,
+        "unita": "m2",
+        "nota": "Larghezza 2,40 m per altezza 2,60 m, misure approssimate",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa porte a battente laccate bianche",
+        "quantita": 3,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "porta scorrevole a scomparsa su controtelaio esistente",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "rivestimento gradini scala in legno (pedata e alzata)",
+        "quantita": 14,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "corrimano scala e soppalco",
+        "quantita": 15,
+        "unita": "m",
+        "nota": "Lunghezza approssimata, circa quindici metri tra scala e soppalco",
+        "materialeCliente": false
+      },
+      {
+        "voce": "libreria su misura",
+        "quantita": 6.6,
+        "unita": "m2",
+        "nota": "Larghezza 3 m per altezza 2,20 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "mensole in rovere",
+        "quantita": null,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "montaggio cucina",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      },
+      {
+        "voce": "taglio del top per lavello e piano cottura",
+        "quantita": null,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «mensole in rovere»?",
+      "Quanti pezzi di «taglio del top per lavello e piano cottura»?"
+    ],
+    "escluso": [
+      "Tinteggiatura dopo i lavori: la fa l'imbianchino"
+    ],
+    "note": [
+      "Misure dell'armadio a muro approssimate (circa 2,40 x 2,60 m)",
+      "Numero di mensole in rovere in cucina ancora da decidere dalla cliente",
+      "Lunghezza del corrimano approssimata (circa 15 m)",
+      "Controtelaio della porta a scomparsa già presente"
+    ]
+  },
+  "fabbro": {
+    "data": "2026-10-09",
+    "dettatura": "Faccio il punto sui signori Mariani. Il cancello carraio scorrevole lo rifaccio nuovo, luce più o meno quattro e venti, alto un metro e sessanta, zincato e verniciato, da motorizzare con due fotocellule e il lampeggiante. Il motore l'ha già comprato lui su internet, io lo monto e lo collego. Il pedonale di fianco, novanta per uno e sessanta, con la serratura elettrica. Sulla recinzione cambio i pannelli, una quindicina di metri. Sul balcone smonto la ringhiera vecchia e ne metto una nuova a bacchette, tre e venti di lunghezza. Al piano terra vogliono le inferriate alle finestre, su quante non l'hanno ancora deciso. Lo scavo per la guida e il cordolo li fa il muratore, non li metto.",
+    "righe": [
+      {
+        "voce": "fornitura e posa cancello carraio scorrevole nuovo in ferro zincato e verniciato",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Un cancello; luce circa 4,20 m (misura approssimata), altezza 1,60 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "montaggio e collegamento motore per cancello scorrevole",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": true
+      },
+      {
+        "voce": "fornitura e posa fotocellule",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa lampeggiante",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa cancelletto pedonale",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Un cancelletto pedonale 0,90 x 1,60 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa serratura elettrica per cancelletto pedonale",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "sostituzione pannelli di recinzione",
+        "quantita": 15,
+        "unita": "m",
+        "nota": "Lunghezza approssimata, circa 15 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "smontaggio ringhiera esistente del balcone",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": "Una ringhiera; lunghezza non detta per la vecchia",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa ringhiera a bacchette per balcone",
+        "quantita": 3.2,
+        "unita": "m",
+        "nota": "Lunghezza 3,20 m",
+        "materialeCliente": false
+      },
+      {
+        "voce": "fornitura e posa inferriate alle finestre del piano terra",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di finestre non ancora deciso dal cliente",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti pezzi di «fornitura e posa inferriate alle finestre del piano terra»?"
+    ],
+    "escluso": [
+      "Scavo per la guida del cancello e cordolo: li fa il muratore"
+    ],
+    "note": [
+      "Il motore del cancello è già stato acquistato dal cliente; l'impresa lo monta e lo collega",
+      "Misure del cancello carraio e della recinzione approssimate",
+      "Numero di inferriate da definire con il cliente",
+      "Indirizzo del cliente non detto"
+    ]
+  },
+  "giardiniere": {
+    "data": "2026-10-09",
+    "dettatura": "Giro fatto dal signor Gatti. Il prato è sui trecento metri quadri, va arieggiato e riseminato dove si è diradato. La siepe di lauro lungo la recinzione è una quarantina di metri, alta sui due metri, va potata su tre lati. Ci sono due ulivi da potare e un pino secco da abbattere, la ceppaia la fresiamo. Vicino al portico vuole un'aiuola nuova, più o meno quattro per due: le piante le ha già comprate lui al vivaio, noi prepariamo il terreno e le mettiamo a dimora. Poi l'irrigazione a goccia per l'aiuola, con la centralina; quante piante ci vanno non l'ha ancora deciso. Le ramaglie le portiamo via noi. Il pino del vicino che sporge non lo tocchiamo.",
+    "righe": [
+      {
+        "voce": "arieggiatura del prato",
+        "quantita": 300,
+        "unita": "m2",
+        "nota": "Superficie approssimata detta dall'artigiano (sui trecento metri quadri)",
+        "materialeCliente": false
+      },
+      {
+        "voce": "risemina del prato nei punti diradati",
+        "quantita": null,
+        "unita": "m2",
+        "nota": "Superficie da riseminare non detta: solo dove il prato è diradato, dentro i circa 300 m2 totali",
+        "materialeCliente": false
+      },
+      {
+        "voce": "potatura siepe di lauro su tre lati",
+        "quantita": 40,
+        "unita": "m",
+        "nota": "Lunghezza approssimata (una quarantina di metri), altezza circa 2 m, potatura su tre lati",
+        "materialeCliente": false
+      },
+      {
+        "voce": "potatura ulivi",
+        "quantita": 2,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "abbattimento pino secco",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "fresatura della ceppaia",
+        "quantita": 1,
+        "unita": "cad",
+        "nota": null,
+        "materialeCliente": false
+      },
+      {
+        "voce": "preparazione del terreno per aiuola nuova",
+        "quantita": 8,
+        "unita": "m2",
+        "nota": "Aiuola più o meno 4x2 m, misura approssimata",
+        "materialeCliente": false
+      },
+      {
+        "voce": "messa a dimora delle piante nell'aiuola",
+        "quantita": null,
+        "unita": "cad",
+        "nota": "Numero di piante non ancora deciso dal cliente",
+        "materialeCliente": true
+      },
+      {
+        "voce": "impianto di irrigazione a goccia per l'aiuola con centralina",
+        "quantita": null,
+        "unita": null,
+        "nota": "Quantità non detta; dipende dal numero di piante, non ancora deciso",
+        "materialeCliente": false
+      }
+    ],
+    "domande": [
+      "Quanti m² di «risemina del prato nei punti diradati»?",
+      "Quanti pezzi di «messa a dimora delle piante nell'aiuola»?",
+      "Quanto «impianto di irrigazione a goccia per l'aiuola con centralina»? Dimmi numero e unità."
+    ],
+    "escluso": [
+      "Il pino del vicino che sporge non viene toccato"
+    ],
+    "note": [
+      "Le ramaglie vengono portate via dall'impresa (comprese nelle potature e nell'abbattimento)",
+      "Numero di piante dell'aiuola non ancora deciso dal cliente",
+      "Misure del prato, della siepe e dell'aiuola approssimate"
+    ]
+  }
+}

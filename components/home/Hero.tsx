@@ -1,11 +1,12 @@
 import { Frasi } from "@/components/Frasi";
 import { Ricco } from "@/components/Ricco";
 import type { Dizionario } from "@/lib/i18n/it";
+import type { LinguaSito } from "@/lib/i18n/lingue";
 import { DemoSopralluogo } from "./demo/DemoSopralluogo";
 import { ctaPrincipale } from "./Header";
 
-export function Hero({ d }: { d: Dizionario }) {
-  const CTA_PILOTA = ctaPrincipale(d);
+export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
+  const CTA_PILOTA = ctaPrincipale(d, lingua);
   const h = d.hero;
   return (
     <section

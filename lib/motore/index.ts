@@ -58,7 +58,7 @@ export async function elabora(transcript: string, list: ListinoMotore, call: Too
   const questions: DraftQuestion[] = [];
   lines.forEach((l, i) => {
     if (l.quantity === null) {
-      const text = l.unit ? `Quanti ${UNIT_LABEL[l.unit]} di «${l.work}»?` : `Quanto «${l.work}»? Dimmi numero e unità.`;
+      const text = l.unit ? `${l.unit === "h" ? "Quante" : "Quanti"} ${UNIT_LABEL[l.unit]} di «${l.work}»?` : `Quanto «${l.work}»? Dimmi numero e unità.`;
       questions.push({ lineIndex: i, kind: "quantita_mancante", text });
     }
     if (l.unit === null) questions.push({ lineIndex: i, kind: "unita_mancante", text: `«${l.work}»: ${l.quantity ?? "la quantità"} in che unità?` });

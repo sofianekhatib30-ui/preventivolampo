@@ -94,13 +94,15 @@ Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Man
 
 ## SEO, condivisione, dati strutturati
 
-- `title`: «PreventivoLampo — Il preventivo parte dal furgone | Monza e Brianza»
-- `description`: «Racconti il sopralluogo a voce o per iscritto: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Per tutti i mestieri della casa.»
-- `lang="it"`, `canonical` sul dominio definitivo (decisione aperta), `robots` `noindex` finché la pagina non è in produzione
-- Immagine Open Graph 1200×630 generata con `next/og`: fondo inchiostro, H1 in giallo, logo
-- Favicon e icona Apple dal fulmine (SVG + PNG 180)
-- JSON-LD `Service` con `provider` = Organization «K Digital Solution», `areaServed` Monza e Brianza, `offers` con i tre prezzi
-- `sitemap.xml` e `robots.txt`
+Aggiornata il 9/10/2026 con le pagine indicizzabili (ricerca SEO del 9/10/2026).
+
+- **Pagine pubbliche** in `app/(sito)/[lang]/`, generate statiche per ognuna delle 10 lingue: home, `/mestieri` e le 12 pagine `/preventivo-<mestiere>`, `/funzioni` e 4 funzioni, `/prezzi`, `/guide` e 5 guide, `/glossario`, `/modelli`, `/chi-siamo`, pagine legali. L'elenco vive in `lib/contenuti/registro.ts` (`percorsiPubblici`), non si ricopia.
+- **Testi** in `lib/contenuti/it/` (forma in `lib/contenuti/tipi.ts`); le altre lingue in `lib/contenuti/<lingua>.json`, generate con `npm run traduci:contenuti` e controllate da `test/contenuti.test.ts`. Le pagine mestiere mostrano la bozza che il sistema ha ricavato davvero dal racconto inventato della pagina (`npm run esempi:mestieri`, file `lib/contenuti/esempi/esempi.json`), senza prezzi. Modelli gratuiti in PDF ed Excel per mestiere: `npm run genera:modelli` → `public/modelli/`.
+- **Indirizzi per lingua**: italiano senza prefisso, le altre in sottocartella (`/ro/preventivo-idraulico`), gli indirizzi restano in italiano. Lo decide `proxy.ts`: riscrive le pagine italiane su `/it/…`, rimanda `/it/…` alla versione senza prefisso (301), porta alla lingua scelta solo chi ha il cookie `pl_lingua` (302). Area, accettazione, prova e API restano fuori (`app/(app)/`, lingua dal cookie).
+- **Indicizzazione**: solo con `INDEXABLE` acceso in `lib/sito.ts` (oggi spento: dominio definitivo da decidere) e solo per le lingue in `LINGUE_INDICIZZATE` (`it`, `en`, `ro`, `sq`): hreflang reciproci con `x-default` sull'italiano, canonical sulla propria lingua, sitemap con le alternative. Le altre lingue esistono in `noindex`. In anteprima Vercel `robots.txt` blocca sempre tutto.
+- **Metadata** da `lib/seo.ts`; immagini Open Graph per pagina con `lib/brand/immagine-og.tsx` (carattere incluso in `next/og`, nessuna richiesta a domini terzi).
+- **JSON-LD**: Organization, WebSite e SoftwareApplication con le tre offerte (home, solo a candidature aperte, e `/prezzi`); BreadcrumbList su tutte le pagine interne; Article sulle guide; DefinedTermSet sul glossario. Nessuna valutazione né recensione.
+- Prima di accendere `INDEXABLE`: dominio definitivo in `SITO_URL`, revisione madrelingua di rumeno e albanese, verifica dei volumi delle parole chiave, Search Console e Bing.
 
 ## Accessibilità (WCAG 2.1 AA, verificata con axe e a mano)
 

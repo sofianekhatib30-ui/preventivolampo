@@ -489,14 +489,21 @@
     "infoLegali": "Informacione ligjore",
     "servizioDi": "PreventivoLampo është një shërbim i K Digital Solution",
     "aggiornata": "Përditësuar më {data}",
-    "comeFunziona": "Si funksionon"
+    "comeFunziona": "Si funksionon",
+    "briciole": "Ti ndodhesh këtu"
   },
   "nav": {
     "come": "Si funksionon",
     "mestieri": "Profesionet",
     "numeri": "Numrat",
     "prezzi": "Çmimet",
-    "domande": "Pyetje"
+    "domande": "Pyetje",
+    "guide": "Udhëzues",
+    "modelli": "Modele falas",
+    "glossario": "Fjalor",
+    "chiSiamo": "Rreth nesh",
+    "tuttiIMestieri": "Të gjitha profesionet",
+    "risorse": "Burime"
   },
   "hero": {
     "etichetta": "Për të gjitha profesionet e shtëpisë",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: e mban të hapur hyrjen në zonën e artizanëve pasi ke futur kodin e marrë me email. E vendosim vetëm kur hyn, zgjat 30 ditë dhe fshihet kur shtyp «Dil».",
-            "**pl_lingua**: e mban mend gjuhën që ke zgjedhur me zgjedhësin e gjuhëve. E vendosim vetëm nëse e ndryshon gjuhën dhe zgjat një vit."
+            "**pl_lingua**: kujton gjuhën e faqes. E vendosim kur zgjedh një gjuhë me zgjedhësin ose kur hap një faqe në një gjuhë tjetër nga italishtja, dhe zgjat një vit."
           ]
         },
         {

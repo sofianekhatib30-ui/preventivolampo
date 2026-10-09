@@ -489,14 +489,21 @@
     "infoLegali": "Información legal",
     "servizioDi": "PreventivoLampo es un servicio de K Digital Solution",
     "aggiornata": "Actualizada el {data}",
-    "comeFunziona": "Cómo funciona"
+    "comeFunziona": "Cómo funciona",
+    "briciole": "Estás aquí"
   },
   "nav": {
     "come": "Cómo funciona",
     "mestieri": "Oficios",
     "numeri": "Los números",
     "prezzi": "Precios",
-    "domande": "Preguntas"
+    "domande": "Preguntas",
+    "guide": "Guías",
+    "modelli": "Modelos gratis",
+    "glossario": "Glosario",
+    "chiSiamo": "Quiénes somos",
+    "tuttiIMestieri": "Todos los oficios",
+    "risorse": "Recursos"
   },
   "hero": {
     "etichetta": "Para todos los oficios de la casa",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: mantiene abierto el acceso al área de artesanos después de que introduces el código recibido por email. Solo la creamos cuando entras, dura 30 días y se borra cuando pulsas «Salir».",
-            "**pl_lingua**: recuerda el idioma que elegiste con el selector de idiomas. Solo la creamos si cambias de idioma y dura un año."
+            "**pl_lingua**: recuerda el idioma del sitio. Lo guardamos cuando eliges un idioma con el selector o cuando abres una página en un idioma distinto del italiano, y dura un año."
           ]
         },
         {

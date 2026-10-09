@@ -489,14 +489,21 @@
     "infoLegali": "Juridische informatie",
     "servizioDi": "PreventivoLampo is een dienst van K Digital Solution",
     "aggiornata": "Bijgewerkt op {data}",
-    "comeFunziona": "Hoe het werkt"
+    "comeFunziona": "Hoe het werkt",
+    "briciole": "Je bent hier"
   },
   "nav": {
     "come": "Hoe het werkt",
     "mestieri": "Vakken",
     "numeri": "De cijfers",
     "prezzi": "Prijzen",
-    "domande": "Vragen"
+    "domande": "Vragen",
+    "guide": "Gidsen",
+    "modelli": "Gratis sjablonen",
+    "glossario": "Woordenlijst",
+    "chiSiamo": "Over ons",
+    "tuttiIMestieri": "Alle vakken",
+    "risorse": "Hulpmiddelen"
   },
   "hero": {
     "etichetta": "Voor alle vakken in en om het huis",
@@ -1100,7 +1107,7 @@
           "t": "ul",
           "voci": [
             "**pl_sessione**: houdt je ingelogd in het gedeelte voor vakmensen nadat je de code uit je e-mail hebt ingevuld. We plaatsen hem alleen als je inlogt, hij blijft 30 dagen staan en wordt gewist als je op «Esci» (Uitloggen) drukt.",
-            "**pl_lingua**: onthoudt de taal die je met de taalkeuze hebt gekozen. We plaatsen hem alleen als je van taal wisselt en hij blijft een jaar staan."
+            "**pl_lingua**: onthoudt de taal van de site. We zetten hem als je een taal kiest met de taalkiezer of als je een pagina opent in een andere taal dan het Italiaans. Hij blijft een jaar bewaard."
           ]
         },
         {

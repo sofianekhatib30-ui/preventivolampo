@@ -213,7 +213,7 @@ export function ModuloCandidatura() {
             className="mt-px size-[22px] shrink-0 accent-inchiostro lg:mt-0.5"
           />
           <label htmlFor={ID.privacy} className="text-sm leading-[1.45] text-testo-2 lg:text-[15px]">
-            <Ricco testo={T.privacy} />
+            <Ricco testo={T.privacy} lingua={lingua} />
           </label>
         </div>
         <Errore field="privacy" testo={msg("privacy", errori.privacy)} />

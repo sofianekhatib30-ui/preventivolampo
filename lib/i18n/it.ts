@@ -28,8 +28,21 @@ export const it = {
     servizioDi: "PreventivoLampo è un servizio di K Digital Solution",
     aggiornata: "Aggiornata il {data}",
     comeFunziona: "Come funziona",
+    briciole: "Sei qui",
   },
-  nav: { come: "Come funziona", mestieri: "Mestieri", numeri: "I numeri", prezzi: "Prezzi", domande: "Domande" },
+  nav: {
+    come: "Come funziona",
+    mestieri: "Mestieri",
+    numeri: "I numeri",
+    prezzi: "Prezzi",
+    domande: "Domande",
+    guide: "Guide",
+    modelli: "Modelli gratis",
+    glossario: "Glossario",
+    chiSiamo: "Chi siamo",
+    tuttiIMestieri: "Tutti i mestieri",
+    risorse: "Risorse",
+  },
   hero: {
     etichetta: "Per tutti i mestieri della casa",
     titolo: "Finisci il sopralluogo. Il preventivo parte dal furgone.",
@@ -472,7 +485,7 @@ export const it = {
           t: "ul",
           voci: [
             "**pl_sessione**: tiene aperto l'accesso all'area artigiani dopo che hai inserito il codice ricevuto via email. Lo mettiamo solo quando entri, dura 30 giorni e si cancella quando premi «Esci».",
-            "**pl_lingua**: ricorda la lingua che hai scelto con il selettore delle lingue. Lo mettiamo solo se cambi lingua e dura un anno.",
+            "**pl_lingua**: ricorda la lingua del sito. Lo mettiamo quando scegli una lingua con il selettore o quando apri una pagina in una lingua diversa dall'italiano, e dura un anno.",
           ],
         },
         {

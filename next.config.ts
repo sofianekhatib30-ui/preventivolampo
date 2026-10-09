@@ -5,6 +5,8 @@ import type { NextConfig } from "next";
 const listino = ["./dati/listino.json"];
 
 const nextConfig: NextConfig = {
+  // Due layout radice (pagine pubbliche per lingua e area): la 404 globale li scavalca.
+  experimental: { globalNotFound: true },
   outputFileTracingIncludes: {
     "/prova": ["./testset/copioni/**", "./testset/atteso/**"],
     "/api/elabora": [...listino, "./misure/uscite/**"],
