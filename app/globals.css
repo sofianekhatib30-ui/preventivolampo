@@ -104,7 +104,11 @@
 /* Titoli: Archivo 850–900, stretto, interlinea corta. Scala desktop → mobile con clamp() */
 @utility titolo-h1 {
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
+  /* Sillabazione solo dove le parole lunghe non entrerebbero nella colonna; in italiano mai. */
+  &:where(:lang(uk), :lang(de), :lang(nl)) {
+    hyphens: auto;
+  }
   font-size: clamp(3.375rem, 2.4rem + 4vw, 6rem); /* 54 → 96 px */
   line-height: 0.92;
   font-weight: 850;
@@ -113,7 +117,11 @@
 }
 @utility titolo-h2 {
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
+  /* Sillabazione solo dove le parole lunghe non entrerebbero nella colonna; in italiano mai. */
+  &:where(:lang(uk), :lang(de), :lang(nl)) {
+    hyphens: auto;
+  }
   font-size: clamp(2.625rem, 2.114rem + 2.095vw, 4rem); /* 42 → 64 px */
   line-height: 0.95;
   font-weight: 850;
@@ -122,7 +130,11 @@
 }
 @utility titolo-finale {
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
+  /* Sillabazione solo dove le parole lunghe non entrerebbero nella colonna; in italiano mai. */
+  &:where(:lang(uk), :lang(de), :lang(nl)) {
+    hyphens: auto;
+  }
   font-size: clamp(3.625rem, 2.371rem + 5.143vw, 7rem); /* 58 → 112 px */
   line-height: 0.88;
   font-weight: 900;
@@ -131,7 +143,11 @@
 }
 @utility titolo-confronto {
   overflow-wrap: break-word;
-  hyphens: auto;
+  text-wrap: balance;
+  /* Sillabazione solo dove le parole lunghe non entrerebbero nella colonna; in italiano mai. */
+  &:where(:lang(uk), :lang(de), :lang(nl)) {
+    hyphens: auto;
+  }
   font-size: clamp(2.25rem, 1.971rem + 1.143vw, 3rem); /* 36 → 48 px */
   line-height: 1;
   font-weight: 850;

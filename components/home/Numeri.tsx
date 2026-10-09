@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 // Le garanzie, in cifre. Ognuna è vera per costruzione o misurata:
 // - «100% dei prezzi dal tuo listino»: il motore non può mettere un prezzo che non viene dal listino
 //   (lib/motore, misure/2026-10-08.md: prezzi inventati 0);
@@ -13,7 +14,7 @@ export function Numeri({ d }: { d: Dizionario }) {
   return (
     <section id="numeri" className="su-scuro margini flex flex-col gap-9 bg-ardesia py-14 text-fondo lg:gap-14 lg:py-28">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
-        <h2 className="titolo-h2 m-0">{N.titolo}</h2>
+        <h2 className="titolo-h2 m-0"><Frasi testo={N.titolo} /></h2>
         <p className="testo-base m-0 max-w-[560px] text-scuro-testo">
           {N.testo}
         </p>

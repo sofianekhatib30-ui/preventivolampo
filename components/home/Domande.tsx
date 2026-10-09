@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import { Ricco } from "@/components/Ricco";
 import type { Dizionario } from "@/lib/i18n/it";
 import { fmt } from "@/lib/i18n/testo";
@@ -10,7 +11,7 @@ export function Domande({ d }: { d: Dizionario }) {
   return (
     <section id="domande" className="margini grid gap-5 py-14 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-20 lg:py-28">
       <div className="flex flex-col gap-6">
-        <h2 className="titolo-h2 m-0">{D.titolo}</h2>
+        <h2 className="titolo-h2 m-0"><Frasi testo={D.titolo} /></h2>
         <p className="m-0 hidden text-[17px] leading-[1.55] text-testo-2 lg:block">
           <Ricco testo={nonTrovi} classeLink="font-bold" />
         </p>

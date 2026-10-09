@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import type { ReactNode } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
 
@@ -19,7 +20,7 @@ export function CosaCambia({ d }: { d: Dizionario }) {
   return (
     <section id="perche" className="margini flex flex-col gap-6 py-14 lg:gap-14 lg:py-28">
       <div className="flex max-w-[860px] flex-col gap-2 lg:gap-4">
-        <h2 className="titolo-h2 m-0 mb-2 lg:mb-0">{C.titolo}</h2>
+        <h2 className="titolo-h2 m-0 mb-2 lg:mb-0"><Frasi testo={C.titolo} /></h2>
       </div>
       <div className="grid gap-6 lg:grid-cols-2">
         <Card titolo={C.listinoTitolo}>

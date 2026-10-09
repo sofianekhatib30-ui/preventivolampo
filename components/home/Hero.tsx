@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import { Ricco } from "@/components/Ricco";
 import type { Dizionario } from "@/lib/i18n/it";
 import { DemoSopralluogo } from "./demo/DemoSopralluogo";
@@ -17,7 +18,7 @@ export function Hero({ d }: { d: Dizionario }) {
           {h.etichetta}
         </p>
         <h1 className="titolo-h1 m-0">
-          {h.titolo}
+          <Frasi testo={h.titolo} />
         </h1>
         <p className="testo-hero m-0 max-w-[600px] text-scuro-testo">
           <Ricco testo={h.testo} classeGrassetto="text-fondo" />

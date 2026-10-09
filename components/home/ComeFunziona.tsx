@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import type { Dizionario } from "@/lib/i18n/it";
 
 export function ComeFunziona({ d }: { d: Dizionario }) {
@@ -5,7 +6,7 @@ export function ComeFunziona({ d }: { d: Dizionario }) {
   return (
     <section id="come" className="margini flex flex-col gap-7 bg-superficie py-14 lg:gap-14 lg:py-24">
       <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
-        <h2 className="titolo-h2 m-0 max-w-[720px]">{C.titolo}</h2>
+        <h2 className="titolo-h2 m-0 max-w-[720px]"><Frasi testo={C.titolo} /></h2>
         <p className="m-0 hidden max-w-[380px] text-lg leading-normal text-testo-2 lg:block">{C.sotto}</p>
       </div>
       <ol className="m-0 grid list-none gap-3 p-0 lg:grid-cols-2 lg:gap-5 xl:grid-cols-4">

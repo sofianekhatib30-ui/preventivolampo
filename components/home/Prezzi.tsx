@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import { Suspense } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
 import { fmt } from "@/lib/i18n/testo";
@@ -16,7 +17,7 @@ export function Prezzi({ d }: { d: Dizionario }) {
   return (
     <section id="prezzi" className="margini flex flex-col gap-4 bg-fondo-2 py-14 lg:gap-12 lg:py-28">
       <div className="flex max-w-[760px] flex-col gap-4">
-        <h2 className="titolo-h2 m-0 mb-2 lg:mb-0">{P.titolo}</h2>
+        <h2 className="titolo-h2 m-0 mb-2 lg:mb-0"><Frasi testo={P.titolo} /></h2>
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-5">

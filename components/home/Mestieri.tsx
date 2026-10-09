@@ -1,3 +1,4 @@
+import { Frasi } from "@/components/Frasi";
 import type { Dizionario } from "@/lib/i18n/it";
 import { GuardaEsempio } from "./demo/GuardaEsempio";
 
@@ -25,7 +26,7 @@ export function Mestieri({ d }: { d: Dizionario }) {
   return (
     <section id="mestieri" className="margini flex flex-col gap-8 py-14 lg:gap-14 lg:py-28">
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
-        <h2 className="titolo-h2 m-0">{M.titolo}</h2>
+        <h2 className="titolo-h2 m-0"><Frasi testo={M.titolo} /></h2>
         <p className="testo-base m-0 max-w-[560px] text-testo-2">{M.testo}</p>
       </div>
       <ul
