@@ -11,33 +11,34 @@ import { Mestieri } from "@/components/home/Mestieri";
 import { Numeri } from "@/components/home/Numeri";
 import { Prezzi } from "@/components/home/Prezzi";
 import { SaltaAlContenuto } from "@/components/SaltaAlContenuto";
+import { dizionario } from "@/lib/i18n/server";
 import { serviceJsonLd } from "@/lib/json-ld";
 import { candidatureAperte } from "@/lib/sito";
 
 // Home di vendita: documentazione/index/SPEC.md. Server Components; JavaScript nel browser
 // per la demo animata, il calcolo del tempo, il menu mobile e il modulo di candidatura. Nella demo pubblica (candidature chiuse)
 // un banner in cima e la sezione Demo al posto del modulo.
-// Il contatore dei posti del pilota si rilegge al massimo ogni 10 minuti.
-export const revalidate = 600;
+// La pagina dipende dalla lingua scelta (cookie): si genera a ogni richiesta, con il contatore dei posti aggiornato.
 
-export default function Home() {
+export default async function Home() {
+  const { d } = await dizionario();
   const aperte = candidatureAperte();
   return (
     <>
-      <SaltaAlContenuto />
+      <SaltaAlContenuto testo={d.comune.saltaAlContenuto} />
       {!aperte && <BannerDemo />}
-      <Header />
+      <Header d={d} />
       <main id="contenuto" tabIndex={-1} className="flex flex-col outline-none">
-        <Hero />
-        <Mestieri />
-        <ComeFunziona />
-        <Numeri />
-        <CosaCambia />
-        <Confronto />
+        <Hero d={d} />
+        <Mestieri d={d} />
+        <ComeFunziona d={d} />
+        <Numeri d={d} />
+        <CosaCambia d={d} />
+        <Confronto d={d} />
         <Calcolo />
-        <Prezzi />
-        <Domande />
-        {aperte ? <Candidatura /> : <Demo />}
+        <Prezzi d={d} />
+        <Domande d={d} />
+        {aperte ? <Candidatura d={d} /> : <Demo d={d} />}
       </main>
       {aperte && (
         <script

@@ -3,7 +3,9 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { centesimi, euro, PER_UNITA, UNITA } from "@/components/preventivo/formato";
+import { centesimi, euro } from "@/components/preventivo/formato";
+import { useLingua } from "@/lib/i18n/client";
+import { fmt } from "@/lib/i18n/testo";
 import type { Voce } from "@/lib/impresa/schema";
 
 const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal text-inchiostro";
@@ -48,12 +50,15 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
   const [invio, setInvio] = useState(false);
   const [errore, setErrore] = useState("");
   const [conferma, setConferma] = useState(false);
+  const { d } = useLingua();
+  const L = d.area.elencoListino;
+  const UNITA: Record<string, string> = d.area.formato.unita;
   const set = <K extends keyof Bozza>(k: K, x: Bozza[K]) => setB((p) => ({ ...p, [k]: x }));
 
   async function salva(e: React.FormEvent) {
     e.preventDefault();
     const prezzo = centesimi(b.prezzo);
-    if (prezzo === null) return setErrore("Scrivi il prezzo in euro, per esempio 18,50.");
+    if (prezzo === null) return setErrore(L.errorePrezzo);
     setInvio(true);
     setErrore("");
     const res = await fetch(id ? `/api/area/voci/${id}` : "/api/area/voci", {
@@ -76,7 +81,7 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
       }),
     });
     setInvio(false);
-    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? "Non sono riuscito a salvare.");
+    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? L.erroreSalva);
     onFatto();
   }
 
@@ -85,23 +90,23 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
     setInvio(true);
     const res = await fetch(`/api/area/voci/${id}`, { method: "DELETE" });
     setInvio(false);
-    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? "Non sono riuscito a togliere la voce.");
+    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? L.erroreTogli);
     onFatto();
   }
 
   return (
     <form onSubmit={salva} className="space-y-3 border-t border-linea bg-fondo px-4 py-4 sm:px-5" noValidate>
       <label className={etichetta}>
-        Nome della voce
+        {L.nomeVoce}
         <input className={campo} value={b.nome} onChange={(e) => set("nome", e.target.value)} autoFocus />
       </label>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         <label className={etichetta}>
-          Prezzo €
+          {L.prezzo}
           <input className={`${campo} font-mono`} inputMode="decimal" value={b.prezzo} onChange={(e) => set("prezzo", e.target.value)} />
         </label>
         <label className={etichetta}>
-          Unità
+          {L.unita}
           <select className={`${campo} px-2`} value={b.unita} onChange={(e) => set("unita", e.target.value)}>
             {Object.entries(UNITA).map(([k, v]) => (
               <option key={k} value={k}>
@@ -111,35 +116,35 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
           </select>
         </label>
         <label className={`${etichetta} col-span-2 sm:col-span-1`}>
-          Codice
+          {L.codice}
           <input className={`${campo} font-mono`} value={b.codice} onChange={(e) => set("codice", e.target.value)} autoCapitalize="characters" />
         </label>
       </div>
       <label className={etichetta}>
-        Descrizione per il preventivo (facoltativa)
+        {L.descrizione}
         <textarea className={`${campo} min-h-20 py-2`} value={b.descrizione} onChange={(e) => set("descrizione", e.target.value)} />
       </label>
       <label className={etichetta}>
-        Come la chiami a voce
-        <input className={campo} value={b.sinonimi} onChange={(e) => set("sinonimi", e.target.value)} placeholder="Es. rasare, rasatura, stuccatura pareti" />
-        <span className="mt-1 block text-[14px] font-normal text-testo-3">Parole separate da virgole: aiutano a riconoscere la voce nei vocali.</span>
+        {L.aVoce}
+        <input className={campo} value={b.sinonimi} onChange={(e) => set("sinonimi", e.target.value)} placeholder={L.aVoceSegnaposto} />
+        <span className="mt-1 block text-[14px] font-normal text-testo-3">{L.aVoceNota}</span>
       </label>
       <label className={etichetta}>
-        Categoria (facoltativa)
+        {L.categoria}
         <input className={campo} value={b.categoria} onChange={(e) => set("categoria", e.target.value)} />
       </label>
       <label className="flex min-h-11 items-start gap-3 text-[16px]">
         <input type="checkbox" className="mt-1 size-5 shrink-0 accent-[#343645]" checked={b.bene_significativo} onChange={(e) => set("bene_significativo", e.target.checked)} />
         <span>
-          Bene significativo per l&apos;IVA al 10%
-          <span className="block text-[14px] text-testo-3">Sanitari, rubinetteria, caldaie, infissi, ascensori… (DM 29/12/1999).</span>
+          {L.beneSignificativo}
+          <span className="block text-[14px] text-testo-3">{L.beneNota}</span>
         </span>
       </label>
       <label className="flex min-h-11 items-start gap-3 text-[16px]">
         <input type="checkbox" className="mt-1 size-5 shrink-0 accent-[#343645]" checked={b.fornibile_dal_cliente} onChange={(e) => set("fornibile_dal_cliente", e.target.checked)} />
         <span>
-          Il prezzo comprende il materiale
-          <span className="block text-[14px] text-testo-3">Se il cliente lo compra da sé, la riga resta da prezzare (solo posa).</span>
+          {L.materiale}
+          <span className="block text-[14px] text-testo-3">{L.materialeNota}</span>
         </span>
       </label>
       {errore && (
@@ -149,19 +154,19 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
       )}
       <div className="flex flex-wrap items-center gap-2 pt-1">
         <button type="submit" disabled={invio} className="bottone bottone-azione min-h-12 text-[16px] disabled:opacity-50">
-          {invio ? "Salvo…" : id ? "Salva" : "Aggiungi al listino"}
+          {invio ? L.salvo : id ? L.salva : L.aggiungi}
         </button>
         <button type="button" onClick={onAnnulla} className="bottone min-h-12 border-2 border-linea-2 text-[16px]">
-          Annulla
+          {L.annulla}
         </button>
         {id &&
           (conferma ? (
             <button type="button" onClick={togli} disabled={invio} className="min-h-12 px-3 text-[15px] font-bold text-errore underline">
-              Sì, togli la voce
+              {L.togliConferma}
             </button>
           ) : (
             <button type="button" onClick={() => setConferma(true)} className="ml-auto min-h-12 px-3 text-[15px] font-semibold text-testo-3 underline">
-              Togli dal listino
+              {L.togli}
             </button>
           ))}
       </div>
@@ -175,6 +180,9 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
   const [cerca, setCerca] = useState("");
   const [aperta, setAperta] = useState<string | null>(apriNuova ? "nuova" : null);
   const [quante, setQuante] = useState(MOSTRA);
+  const { d } = useLingua();
+  const L = d.area.elencoListino;
+  const PER_UNITA: Record<string, string> = d.area.formato.perUnita;
 
   const trovate = useMemo(() => {
     const parole = norm(cerca).split(/\s+/).filter(Boolean);
@@ -194,7 +202,7 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
     <div>
       <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-end">
         <label className={`${etichetta} flex-1`}>
-          Cerca nel listino
+          {L.cerca}
           <input
             type="search"
             className={campo}
@@ -203,23 +211,23 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
               setCerca(e.target.value);
               setQuante(MOSTRA);
             }}
-            placeholder="Nome, codice o parola detta"
+            placeholder={L.cercaSegnaposto}
           />
         </label>
         <button type="button" onClick={() => setAperta("nuova")} className="bottone bottone-azione min-h-12 text-[16px]">
-          Aggiungi una voce
+          {L.aggiungiVoce}
         </button>
       </div>
       <p className="mt-3 text-[15px] text-testo-3" aria-live="polite">
-        {cerca ? `${trovate.length} voci trovate su ${voci.length}` : `${voci.length} voci`} ·{" "}
+        {cerca ? fmt(L.trovate, { n: trovate.length, totale: voci.length }) : fmt(L.voci, { n: voci.length })} ·{" "}
         <Link href="/area/listino/importa" className="font-semibold text-cielo-scuro">
-          importa da Excel, PDF o foto
+          {L.importaLink}
         </Link>
       </p>
 
       {aperta === "nuova" && (
         <div className="mt-4 overflow-hidden rounded-card ring-2 ring-ardesia">
-          <p className="bg-superficie px-4 pt-4 text-lg font-extrabold sm:px-5">Nuova voce</p>
+          <p className="bg-superficie px-4 pt-4 text-lg font-extrabold sm:px-5">{L.nuovaVoce}</p>
           <Editor
             id={null}
             iniziale={{ codice: prossimoCodice(voci), nome: "", descrizione: "", unita: "m2", prezzo: "", categoria: "", sinonimi: "", bene_significativo: false, fornibile_dal_cliente: false }}
@@ -243,7 +251,7 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
                 <span className="block font-mono text-[14px] text-testo-3">
                   {v.codice}
                   {v.categoria ? ` · ${v.categoria}` : ""}
-                  {v.origine === "demo" ? " · prezzo d'esempio" : ""}
+                  {v.origine === "demo" ? ` · ${L.prezzoEsempio}` : ""}
                 </span>
               </span>
               <span className="shrink-0 text-right font-mono">
@@ -254,11 +262,11 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
             {aperta === v.id && <Editor id={v.id} iniziale={daVoce(v)} onFatto={fatto} onAnnulla={() => setAperta(null)} />}
           </li>
         ))}
-        {trovate.length === 0 && <li className="px-5 py-8 text-center text-[17px] text-testo-3">Nessuna voce con «{cerca}».</li>}
+        {trovate.length === 0 && <li className="px-5 py-8 text-center text-[17px] text-testo-3">{fmt(L.nessunaVoce, { cerca })}</li>}
       </ul>
       {trovate.length > quante && (
         <button type="button" onClick={() => setQuante((q) => q + MOSTRA * 2)} className="bottone mt-4 min-h-12 w-full border-2 border-linea-2 text-[16px]">
-          Mostra altre {Math.min(MOSTRA * 2, trovate.length - quante)} voci
+          {fmt(L.mostraAltre, { n: Math.min(MOSTRA * 2, trovate.length - quante) })}
         </button>
       )}
     </div>

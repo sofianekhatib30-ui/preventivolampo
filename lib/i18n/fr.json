@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Tes devis",
+      "benvenuto": "Ton entreprise",
+      "nuovo": "Nouveau devis",
+      "impresa": "Infos de l'entreprise",
+      "listino": "Liste de prix",
+      "importa": "Importe ta liste de prix",
+      "revisioneImport": "Vérifie l'import",
+      "daPrezzare": "À chiffrer",
+      "preventivo": "Devis",
+      "revisione": "Relecture du devis",
+      "prova": "Teste le moteur"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, tes devis",
+      "sezioni": "Sections",
+      "preventivi": "Devis",
+      "listino": "Liste de prix",
+      "daPrezzare": "À chiffrer",
+      "impresa": "Entreprise",
+      "proposte": "propositions",
+      "esci": "Déconnexion"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "pièces",
+        "h": "heures",
+        "100kg": "quintaux",
+        "kg": "kg",
+        "l": "litres",
+        "corpo": "au forfait"
+      },
+      "perUnita": {
+        "m2": "au m²",
+        "m": "au mètre",
+        "m3": "au m³",
+        "cad": "à la pièce",
+        "h": "à l'heure",
+        "100kg": "au quintal",
+        "kg": "au kg",
+        "l": "au litre",
+        "corpo": "au forfait"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% avec beni significativi"
+      }
+    },
+    "home": {
+      "h1": "Devis",
+      "nuovo": "Nouveau devis",
+      "mancaListino": "Il ne manque que la liste de prix.",
+      "mancaListinoTesto": "Importe ton fichier ou pars de l'exemple : ensuite, ton premier devis, c'est un message vocal.",
+      "preparaListino": "Prépare ta liste de prix",
+      "daControllare": "à vérifier",
+      "inAttesa": "en attente · {importo}",
+      "accettati": "acceptés · {importo}",
+      "rifiutati": "refusés",
+      "nessuno": "Aucun devis pour l'instant.",
+      "nessunoTesto": "Raconte ta prochaine visite de chantier : en trente secondes, tu as le brouillon.",
+      "clienteDaIndicare": "Client à indiquer",
+      "numeroDel": "n° {numero} du {data}",
+      "stati": {
+        "bozza": "À vérifier",
+        "approvato": "Envoyé",
+        "accettato": "Accepté",
+        "rifiutato": "Refusé"
+      }
+    },
+    "benvenuto": {
+      "passo": "Étape 1 sur 2",
+      "h1": "Ton entreprise",
+      "sotto": "Ces infos apparaissent en haut de chaque devis. Tu peux les changer quand tu veux."
+    },
+    "nuovo": {
+      "torna": "Retour aux devis",
+      "h1": "Nouveau devis",
+      "serveListino": "Il te faut d'abord ta liste de prix : les prix viennent uniquement de là.",
+      "preparaListino": "Prépare ta liste de prix",
+      "sotto": "Écris ou dicte ta visite sur place. Le brouillon utilise les {n} lignes de ta liste de prix ; ce qu'il ne trouve pas reste à chiffrer.",
+      "claude": "Le texte est traité par Claude d'Anthropic et enregistré avec le devis.",
+      "racconta": "Raconte le chantier comme tu le dirais dans un message vocal, en italien ou dans ta langue",
+      "segnaposto": "Client, adresse, s'il habite sur place. Ce qu'on enlève, ce qu'on pose, les mesures. Qui achète les matériaux.",
+      "attesa": "Compte environ 20 secondes…",
+      "prepara": "Prépare le brouillon",
+      "errore": "Je n'ai pas réussi à préparer le brouillon. Réessaie.",
+      "fasi": [
+        "Je lis ta visite sur place…",
+        "Je sépare les travaux, les mesures et les exclusions…",
+        "Je cherche chaque ligne dans ta liste de prix…",
+        "Je vérifie ce qui manque et le régime IVA…",
+        "Je prépare le brouillon à vérifier…"
+      ]
+    },
+    "impresa": {
+      "h1": "Données de l'entreprise",
+      "sotto": "Ce que ton client lit en haut et en bas du devis.",
+      "accessoCon": "Connexion avec {email}."
+    },
+    "modulo": {
+      "chiSiete": "Qui es-tu",
+      "ragioneSociale": "Raison sociale",
+      "piva": "Partita IVA",
+      "cf": "Codice fiscale (si différent)",
+      "indirizzo": "Siège (rue, numéro, ville)",
+      "telefono": "Téléphone",
+      "email": "E-mail sur le devis",
+      "cheLavori": "Quels travaux tu fais",
+      "cheLavoriNota": "Ça aide à mieux comprendre tes visites sur place.",
+      "mestieri": {
+        "impresaEdile": "Entreprise de bâtiment",
+        "muratore": "Maçon",
+        "idraulico": "Plombier",
+        "elettricista": "Électricien",
+        "imbianchino": "Peintre en bâtiment",
+        "piastrellista": "Carreleur",
+        "cartongessista": "Plaquiste",
+        "serramentista": "Poseur de menuiseries (fenêtres, portes)",
+        "termoidraulico": "Chauffagiste-plombier",
+        "giardiniere": "Jardinier"
+      },
+      "sulPreventivo": "Sur le devis",
+      "validita": "Validité du devis (jours)",
+      "validitaNota": "Passé ce délai, le client ne peut plus l'accepter depuis le lien.",
+      "condizioni": "Conditions de paiement",
+      "condizioniEsempio": "Ex. 30% à l'acceptation, solde en fin de chantier",
+      "iban": "IBAN pour les virements",
+      "salvo": "J'enregistre…",
+      "registra": "Enregistre ton entreprise",
+      "salva": "Enregistre les données",
+      "errore": "Je n'ai pas réussi à enregistrer. Réessaie.",
+      "salvati": "Données enregistrées. Les prochains PDF utiliseront celles-ci."
+    },
+    "logo": {
+      "titolo": "Logo",
+      "attuale": "Ton logo actuel",
+      "nessuno": "Aucun logo",
+      "carico": "Je charge…",
+      "cambia": "Change le logo",
+      "carica": "Charge ton logo",
+      "togli": "Enlever",
+      "nota": "PNG ou JPG, jusqu'à 1 MB. De préférence sur fond blanc ou transparent.",
+      "errore": "Je n'ai pas réussi à charger le logo."
+    },
+    "listino": {
+      "passo": "Étape 2 sur 2",
+      "h1": "Ta liste de prix",
+      "h1Vuoto": "Ton tarif est vide",
+      "sotto": "Les prix des devis viennent uniquement d'ici. Ce qui n'y est pas reste à chiffrer : c'est toi qui décides.",
+      "sottoVuoto": "Les prix des devis viennent uniquement de ton tarif, jamais inventés. Choisis comment le remplir.",
+      "importate": "{n} lignes importées. Vérifie les prix et ajoute les mots que tu utilises à l'oral : ça aide la reconnaissance.",
+      "esempio": "{n} lignes ont encore le prix d'exemple. Vérifie-les avant d'envoyer de vrais devis."
+    },
+    "elencoListino": {
+      "cerca": "Chercher dans le tarif",
+      "cercaSegnaposto": "Nom, code ou mot que tu dis",
+      "aggiungiVoce": "Ajouter une ligne",
+      "trovate": "{n} lignes trouvées sur {totale}",
+      "voci": "{n} lignes",
+      "importaLink": "importer depuis Excel, PDF ou photo",
+      "nuovaVoce": "Nouvelle ligne",
+      "prezzoEsempio": "prix d'exemple",
+      "nessunaVoce": "Aucune ligne avec «{cerca}».",
+      "mostraAltre": "Afficher {n} lignes de plus",
+      "nomeVoce": "Nom de la ligne",
+      "prezzo": "Prix €",
+      "unita": "Unité",
+      "codice": "Code",
+      "descrizione": "Description pour le devis (facultative)",
+      "aVoce": "Comment tu l'appelles à l'oral",
+      "aVoceSegnaposto": "Ex. enduire, enduit, ratissage des murs",
+      "aVoceNota": "Mots séparés par des virgules : ils aident à reconnaître la ligne dans les messages vocaux.",
+      "categoria": "Catégorie (facultative)",
+      "beneSignificativo": "« Bene significativo » pour l'IVA à 10 %",
+      "beneNota": "Sanitaires, robinetterie, chaudières, menuiseries, ascenseurs… (DM 29/12/1999).",
+      "materiale": "Le prix comprend le matériel",
+      "materialeNota": "Si le client l'achète lui-même, la ligne reste à chiffrer (pose seulement).",
+      "salvo": "Enregistrement…",
+      "salva": "Enregistrer",
+      "aggiungi": "Ajouter au tarif",
+      "annulla": "Annuler",
+      "togliConferma": "Oui, enlever la ligne",
+      "togli": "Enlever du tarif",
+      "errorePrezzo": "Écris le prix en euros, par exemple 18,50.",
+      "erroreSalva": "Je n'ai pas réussi à enregistrer.",
+      "erroreTogli": "Je n'ai pas réussi à enlever la ligne."
+    },
+    "listinoVuoto": {
+      "haiListino": "Tu as déjà un tarif ?",
+      "haiListinoTesto": "Charge le tarif que tu as : Excel, PDF ou une photo. On le lit pour toi et tu vérifies ligne par ligne.",
+      "importa": "Importer le fichier",
+      "esempio": "Pars d'un exemple",
+      "esempioTesto": "Les {n} lignes de la démo (salles de bain, cuisines, peintures, installations) avec des prix issus de barèmes publics. Ensuite, tu mets les tiens.",
+      "copio": "Copie en cours…",
+      "usaEsempio": "Utiliser l'exemple",
+      "unaAllaVolta": "Une ligne à la fois",
+      "unaAllaVoltaTesto": "Écris toi-même les travaux que tu fais le plus souvent, avec ton prix.",
+      "aMano": "Ajouter à la main",
+      "errore": "Je n'ai pas réussi à copier le tarif."
+    },
+    "importa": {
+      "torna": "Retour au tarif",
+      "h1": "Importe ton tarif",
+      "sotto": "Ce que tu as déjà convient : un Excel, un PDF, des photos d'un tarif écrit à la main ou quelques anciens devis. Rien n'entre dans le tarif avant que tu aies vérifié.",
+      "cosaLeggiamo": "Ce qu'on lit",
+      "punti": [
+        "Les colonnes se reconnaissent à leurs titres (Descrizione, U.M., Prezzo…). Si le fichier n'a pas de titres clairs, c'est l'intelligence artificielle qui les lit et tu peux les corriger.",
+        "Dans les PDF et les photos, c'est l'intelligence artificielle qui lit les lignes : elle te signale où elle n'est pas sûre, et elle ne recopie pas les noms des clients dans les anciens devis.",
+        "Les unités écrites de plein de façons (mq, ml, nr, pz, a corpo) deviennent celles du devis.",
+        "Les codes manquants ou en double, on les attribue nous-mêmes ; les lignes de titre sans prix sont ignorées.",
+        "Les codes déjà présents dans ton tarif ne sont pas écrasés."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Je lis le tarif…",
+      "scegli": "Choisis ton tarif",
+      "formati": "Excel ou CSV, ou bien PDF et photos : tu peux aussi envoyer plusieurs photos ensemble, ou quelques anciens devis",
+      "attesa": "Pour les PDF et les photos, ça peut prendre jusqu'à une minute.",
+      "errore": "Je n'ai pas réussi à lire le fichier."
+    },
+    "revisioneImport": {
+      "altroFile": "Charger un autre fichier",
+      "h1": "Vérifie avant d'importer",
+      "sotto": "Les lignes en jaune posent un doute : unité ou prix illisibles. Corrige-les ou décoche-les.",
+      "ilFile": "le fichier",
+      "letteAi": "Ces lignes ont été lues par l'IA dans ton PDF ou tes photos. **Vérifie chaque prix** avant de confirmer : quand elle n'était pas sûre, tu trouves une note.",
+      "colonne": "Colonnes du fichier",
+      "metodoAi": "reconnues par l'IA : vérifie-les",
+      "metodoMano": "choisies par toi",
+      "metodoTitoli": "reconnues d'après les titres",
+      "campi": {
+        "nome": "Description de la ligne",
+        "prezzo": "Prix",
+        "unita": "Unité de mesure",
+        "codice": "Code",
+        "descrizione": "Description détaillée",
+        "categoria": "Catégorie"
+      },
+      "scegliColonna": "Choisis…",
+      "nessuna": "Aucune",
+      "esempioColonna": "(ex. {testo})",
+      "rileggo": "Je relis le fichier…",
+      "rileggi": "Relire avec ces colonnes",
+      "rileggiNota": "Relire le fichier annule les corrections faites ci-dessous.",
+      "daImportare": "{n} lignes à importer depuis {file}",
+      "daSistemare": "{n} à corriger",
+      "soloDubbi": "Afficher seulement les lignes à vérifier",
+      "importaRiga": "Importer la ligne {n}",
+      "descrizione": "Description",
+      "rigaFile": "ligne {n} du fichier",
+      "rigaFileUnita": "ligne {n} du fichier, unité « {unita} »",
+      "prezzo": "Prix €",
+      "unita": "Unité",
+      "scegliUnita": "Choisis",
+      "codice": "Code",
+      "correggi": "Corriger",
+      "tutteAPosto": "Toutes les lignes sont bonnes.",
+      "mostraAltre": "Afficher d'autres lignes ({n})",
+      "importo": "J'importe…",
+      "importaN": "Importer {n} lignes",
+      "annulla": "Annuler l'import",
+      "sistemaNota": "Corrige les lignes en évidence ou décoche-les pour importer.",
+      "errore": "Il y a un problème. Réessaie."
+    },
+    "daPrezzare": {
+      "h1": "À ajouter au tarif",
+      "sotto": "Des travaux que tu as chiffrés à la main dans un devis, en cochant « propose de l'ajouter au tarif ». Si tu les ajoutes, la prochaine fois le prix arrive tout seul.",
+      "niente": "Rien à ajouter.",
+      "nienteTesto": "Quand tu chiffres à la main une ligne qui n'est pas dans ton tarif, coche la proposition et tu la retrouves ici.",
+      "torna": "Retour aux devis",
+      "dalPreventivo": "Du devis n° {numero}",
+      "haiMesso": "tu as mis {prezzo} {unita}",
+      "nomeListino": "Nom dans le tarif",
+      "prezzo": "Prix €",
+      "unita": "Unité",
+      "codice": "Code",
+      "errorePrezzo": "Écris le prix en euros, par exemple 18,50.",
+      "erroreSalva": "Je n'ai pas réussi à enregistrer.",
+      "aggiungi": "Ajouter au tarif",
+      "nonServe": "Pas besoin"
+    },
+    "preventivo": {
+      "tutti": "Tous les devis",
+      "registro": "Historique",
+      "eventi": {
+        "creato": "Brouillon créé",
+        "approvato": "Approuvé et prêt à envoyer",
+        "visto": "Ouvert par le client",
+        "accettato": "Accepté par le client",
+        "rifiutato": "Refusé par le client"
+      },
+      "da": "par {nome}",
+      "ip": "IP {ip}",
+      "impronta": "empreinte du PDF accepté {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Supprime ce brouillon",
+      "conferma": "La supprimer pour toujours ?",
+      "si": "Oui, supprime",
+      "no": "Non"
+    },
+    "revisione": {
+      "bozzaN": "Brouillon n° {numero}",
+      "origineEsempio": "exemple {caso} du banc d'essai, résultat enregistré du moteur",
+      "origineMotore": "préparé en {secondi} s",
+      "h1": "Vérifie et approuve",
+      "sotto": "Aucun prix n'est inventé : ceux que tu vois viennent de ta liste de prix, les prix vides, c'est à toi de les remplir.",
+      "statoRighe": "État des lignes",
+      "pronta": "{n} prête",
+      "pronte": "{n} prêtes",
+      "contaDaPrezzare": "{n} à chiffrer",
+      "contaSenzaMisura": "{n} sans mesure",
+      "contaSenzaValore": "{n} sans valeur du bien",
+      "domandaIva": "IVA : {n} question",
+      "domandeIva": "IVA : {n} questions",
+      "motivi": {
+        "prezzo": "À chiffrer",
+        "misura": "Mesure manquante",
+        "valore": "Valeur du bien manquante"
+      },
+      "rigaPronta": "Prête",
+      "daCompletare": "à compléter",
+      "cliente": "Client",
+      "nome": "Nom",
+      "indirizzo": "Adresse du chantier",
+      "linguaCliente": "Langue du client",
+      "inCheLingua": "Dans quelle langue tu lui envoies le devis ?",
+      "riceve": "Le client reçoit le message, la page et le PDF en {lingua}, avec le texte italien à côté : en cas de doute, c'est l'italien qui fait foi. Vérifie les lignes traduites, tu peux les corriger.",
+      "cambiate": "Tu as modifié les lignes après la traduction : refais-la, comme ça le client lit la même chose que toi.",
+      "traduco": "Je traduis…",
+      "rifai": "Refais la traduction",
+      "traduciIn": "Traduis en {lingua}",
+      "escluso": "Exclu : {testo}",
+      "ivaTitolo": "IVA : trois questions",
+      "abitazione": "C'est un logement ?",
+      "abitazioneSi": "Oui, quelqu'un y habite",
+      "abitazioneNo": "Non, magasin ou bureau",
+      "intervento": "Type d'intervention",
+      "ordinaria": "Entretien ordinaire",
+      "straordinaria": "Entretien extraordinaire",
+      "ristrutturazione": "Rénovation",
+      "materiali": "Qui achète les matériaux ?",
+      "materialiImpresa": "Je les achète",
+      "materialiCliente": "Le client",
+      "ripartizione": "10 % sur {a10}, 22 % sur {a22}",
+      "commercialista": "Vérifie toujours avec ton comptable.",
+      "rispondi": "Réponds aux trois questions et je calcule le bon taux.",
+      "lavorazioni": "Travaux · {n}",
+      "soloDaSistemare": "Seulement à corriger",
+      "haiDetto": "Tu as dit : « {testo} »",
+      "voceListino": "Ligne du tarif",
+      "fuoriListino": "Hors tarif : prix à saisir à la main",
+      "descrizione": "Description sur le devis",
+      "quantita": "Quantité",
+      "unita": "Unité",
+      "scegli": "Choisis",
+      "prezzo": "Prix €",
+      "valoreBene": "Dont valeur du bien (sanitaire, robinetterie…), pour l'IVA",
+      "proponi": "Propose de l'ajouter à ma liste de prix avec ce prix",
+      "togliRiga": "Enlève la ligne",
+      "aggiungiRiga": "Ajoute une ligne",
+      "esclusi": "Exclus du devis",
+      "unaPerRiga": "Un par ligne",
+      "note": "Notes de la visite sur place (elles ne vont pas sur le PDF)",
+      "riepilogo": "Récapitulatif",
+      "imponibile": "Base imposable",
+      "ivaSu": "IVA {aliquota}% sur {importo}",
+      "totale": "Total",
+      "primaManca": "Avant d'approuver, il manque :",
+      "righeManca": "(ligne {righe})",
+      "mancanze": {
+        "quantita": "il manque la quantité",
+        "unita": "il manque l'unité de mesure",
+        "prezzo": "il manque le prix",
+        "abitazione": "IVA : c'est un logement ?",
+        "intervento": "IVA : type d'intervention",
+        "materiali": "IVA : qui achète les matériaux",
+        "valoreBene": "valeur du bien significatif",
+        "valoreSupera": "la valeur du bien dépasse le montant de la ligne",
+        "traduzioneDaRifare": "traduction en {lingua} à refaire : les postes ont changé",
+        "traduci": "traduis le devis en {lingua}"
+      },
+      "salvaBozza": "Enregistre le brouillon",
+      "salvata": "Brouillon enregistré.",
+      "totaleIvaInclusa": "Total IVA incluse",
+      "imponibileFinora": "Base imposable jusqu'ici",
+      "sistemaDato": "Corrige {n} donnée",
+      "sistemaDati": "Corrige {n} données",
+      "approvaGenera": "Approuve et génère le PDF",
+      "approvi": "Tu approuves le devis ?",
+      "confermaTesto": "Total {totale} · {regime}. Après l'approbation, le brouillon ne peut plus être modifié : je génère le PDF et le lien pour le client.",
+      "controllato": "J'ai vérifié les prix et les quantités",
+      "genero": "Je génère le PDF…",
+      "torna": "Retourne au brouillon",
+      "erroreSalva": "Je n'ai pas réussi à enregistrer. Réessaie.",
+      "erroreApprova": "Je n'ai pas réussi à approuver. Réessaie.",
+      "erroreTraduci": "Je n'ai pas réussi à traduire. Réessaie."
+    },
+    "approvato": {
+      "preventivoN": "Devis n° {numero}",
+      "accettato": "Le client a accepté.",
+      "rifiutato": "Le client a refusé.",
+      "pronto": "Devis prêt. Envoie-le maintenant.",
+      "totaleIvaInclusa": "Total IVA incluse",
+      "riceve": "Le client reçoit le message, la page et le PDF en {lingua}, avec à côté le texte italien qui fait foi.",
+      "whatsapp": "Envoie sur WhatsApp",
+      "copiato": "Lien copié",
+      "copia": "Copie le lien",
+      "apriPdf": "Ouvre le PDF",
+      "paginaCliente": "Regarde la page que voit le client",
+      "aChePunto": "Où en est le devis",
+      "approvatoDaTe": "Approuvé par toi",
+      "vistoDalCliente": "Vu par le client",
+      "quandoApre": "quand il ouvre le lien",
+      "accettatoDa": "Accepté par {nome}",
+      "rifiutatoDa": "Refusé par {nome}",
+      "risposta": "Réponse du client",
+      "accettaCon": "accepte avec nom et date",
+      "fatto": "(fait)",
+      "inAttesa": "(en attente)",
+      "nota": "Le client ouvre le lien, voit le devis et l'accepte avec son nom et la date, sans créer de compte. Recharge la page pour voir s'il l'a ouvert."
+    },
+    "prova": {
+      "nuovaProva": "Nouvel essai",
+      "h1": "De la visite de chantier au brouillon",
+      "sotto": "Le moteur extrait les travaux, les associe à ton tarif et te prépare le brouillon à vérifier. Les prix viennent uniquement du tarif : ce qu'il ne trouve pas reste à chiffrer, ce qui manque, il te le demande.",
+      "avviso": "Données de test inventées : l'entreprise du tarif et les clients des exemples n'existent pas. Ne saisis pas de noms, d'adresses ou de numéros de personnes réelles : les brouillons restent 7 jours et toute personne qui a le lien peut les ouvrir. Le texte libre est traité avec Claude d'Anthropic. {privacy}",
+      "daDove": "Par où commencer",
+      "unEsempio": "Un exemple",
+      "tuoTesto": "Ton texte",
+      "esempiBanco": "Exemples du banc d'essai",
+      "esempiTesto": "Visites de chantier inventées du banc d'essai. Le brouillon sort tout de suite : c'est la sortie enregistrée du moteur sur ce cas.",
+      "lavori": {
+        "bagno": "Salle de bain complète",
+        "tinteggiatura": "Peinture d'un deux-pièces",
+        "cucina": "Installation de cuisine",
+        "pavimento": "Sol du séjour"
+      },
+      "tutti": "Ou choisis parmi les 30",
+      "vocale": "Le vocal, transcrit",
+      "preparo": "Je prépare le brouillon…",
+      "prepara": "Prépare le brouillon",
+      "racconta": "Raconte le chantier comme tu le dirais dans un vocal",
+      "segnaposto": "Salle de bain de Madame Rossi, via Roma 3. C'est chez elle. On enlève la baignoire et le carrelage, sur deux mètres de haut. La salle de bain fait deux mètres sur un mètre quatre-vingts, receveur de douche 80x80, les sanitaires, je les achète moi-même…",
+      "codice": "Code d'accès",
+      "codiceNota": "Ton texte passe par l'API de Claude et chaque essai a un coût : le code bloque les bots.",
+      "attesa": "Ça prend environ 20 secondes…",
+      "errore": "Je n'ai pas réussi à préparer le brouillon. Réessaie.",
+      "fasi": [
+        "Je lis la visite de chantier…",
+        "Je sépare travaux, mesures et exclusions…",
+        "Je cherche chaque ligne dans le tarif…",
+        "Je vérifie ce qui manque et le régime IVA…",
+        "Je prépare le brouillon à vérifier…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "Je parle en",
+      "ascolto": "J'écoute : touche pour arrêter",
+      "detta": "Dicte la visite de chantier",
+      "nota": "Utilise la reconnaissance vocale du navigateur : seul le texte arrive sur ce site. Quelle que soit la langue que tu parles, le brouillon sort en italien.",
+      "erroreMicrofono": "Le navigateur n'a pas l'autorisation d'utiliser le micro.",
+      "erroreLingua": "Sur ce téléphone, la dictée dans cette langue n'est pas disponible. Écris ton texte dans ta langue : le brouillon sort quand même en italien.",
+      "erroreInterrotta": "La dictée s'est arrêtée. Réessaie."
+    }
+  },
+  "comune": {
+    "lingua": "Langue",
+    "scegliLingua": "Choisis la langue",
+    "faFede": "Traduction de courtoisie : en cas de doute, c'est le texte italien qui fait foi.",
+    "saltaAlContenuto": "Aller au contenu",
+    "logoTop": "PreventivoLampo, retour en haut",
+    "logoHome": "PreventivoLampo, accueil",
+    "entra": "Connexion",
+    "apriMenu": "Ouvre le menu",
+    "chiudiMenu": "Ferme le menu",
+    "principale": "Principal",
+    "ctaPilota": "Deviens artisan pilote",
+    "ctaProva": "Essaie avec un exemple",
+    "privacy": "Confidentialité",
+    "cookie": "Cookies",
+    "condizioni": "Conditions",
+    "infoLegali": "Mentions légales",
+    "servizioDi": "PreventivoLampo est un service de K Digital Solution",
+    "aggiornata": "Mis à jour le {data}",
+    "comeFunziona": "Comment ça marche"
+  },
+  "nav": {
+    "come": "Comment ça marche",
+    "mestieri": "Métiers",
+    "numeri": "Les chiffres",
+    "prezzi": "Tarifs",
+    "domande": "Questions"
+  },
+  "hero": {
+    "etichetta": "Pour tous les métiers de la maison",
+    "titolo": "Finis ta visite. Le devis part depuis ta camionnette.",
+    "testo": "Tu le racontes à voix haute ou tu l'écris, comme avec un collègue. Tu reçois le brouillon avec les prix de **ta** liste de prix, la bonne IVA et les lignes douteuses signalées. Tu vérifies, tu valides, et le client reçoit le PDF à accepter en un clic.",
+    "garanzia": "Des prix uniquement de ta liste de prix. Si une ligne n'y est pas, elle reste à chiffrer : pas de montants inventés.",
+    "guarda": "Voir comment ça marche",
+    "punti": [
+      "Rien à installer",
+      "Ta liste de prix même depuis une photo",
+      "C'est toujours toi qui décides"
+    ]
+  },
+  "demo": {
+    "gruppo": "Choisis un métier pour l'exemple",
+    "altroMestiere": "Autre métier",
+    "didascalia": "Exemple : travaux et prix inventés, liste de prix de test",
+    "pausa": "Pause",
+    "riprendi": "Reprendre",
+    "riguarda": "Revoir",
+    "sig": "M.",
+    "bozza": "Brouillon à partir de ta liste de prix",
+    "voci": "{n} lignes",
+    "daPrezzare": "à chiffrer",
+    "prezzoTuo": "ton prix : tu peux l'ajouter à ta liste de prix",
+    "iva": "IVA {aliquota}% : habitation, entretien",
+    "stati": [
+      "Envoyé",
+      "Vu",
+      "Accepté"
+    ],
+    "accettato": "Accepté en ligne par M. {cliente} : nom, date, heure et copie du PDF restent chez toi.",
+    "altroTitolo": "Fenêtres, placo, chaudières, jardins, portails, cuisines sur mesure.",
+    "altroTesto": "Si tu travailles par lignes et par mesures, ça marche avec ta liste de prix : les mots de ton métier, il les trouve là, et ce qui n'y est pas reste à chiffrer. Tu charges la liste que tu as, même en photo, et tu l'essaies sur tes chantiers.",
+    "altroCta": "Essaie sur ton travail",
+    "mestieri": {
+      "elettricista": "Électricien",
+      "idraulico": "Plombier",
+      "imbianchino": "Peintre",
+      "piastrellista": "Carreleur",
+      "muratore": "Maçon"
+    },
+    "lavori": {
+      "elettricista": "Cuisine",
+      "idraulico": "Cuisine",
+      "imbianchino": "Deux-pièces",
+      "piastrellista": "Salon",
+      "muratore": "Chambre d'enfant"
+    },
+    "vocali": {
+      "elettricista": "Cuisine de M. Ferrari. Quatre points lumineux simples et deux va-et-vient au-dessus de la table. Les prises de 16 pour l'électroménager. Dans le tableau, il faut un nouveau différentiel. Et je lui monte le lustre qu'il a acheté.",
+      "idraulico": "Cuisine de Mme Rinaldi. On déplace l'évier sur le mur d'en face : nouvelle arrivée d'eau chaude et froide avec l'évacuation, trois mètres d'évacuation en 40. Je raccorde aussi le lave-vaisselle. Le mitigeur, elle l'a déjà, je le pose moi-même.",
+      "imbianchino": "Deux-pièces de M. Greco, salon et chambre : murs et plafonds, ça fait cent vingt mètres. Je gratte là où ça s'écaille, primaire d'accrochage partout et deux couches de peinture lavable. Six mètres d'antimoisissure sur le plafond de la salle de bain. Les meubles, c'est nous qui les déplaçons.",
+      "piastrellista": "Salon de Mme Marino, vingt-huit mètres carrés. J'enlève l'ancien carrelage et la plinthe, je refais la chape et je pose le grès cérame trente par trente qu'elle a acheté. Plinthe neuve en grès.",
+      "muratore": "Chambre de M. Conti. Je démolis l'ancienne cloison et je la refais décalée d'un mètre : briques creuses de 8, trois mètres vingt sur deux soixante-dix, enduit des deux côtés. Gravats, un mètre cube. Le précadre de la porte, je le mets moi-même."
+    }
+  },
+  "mestieri": {
+    "titolo": "Chaque métier a ses mots. Ta liste de prix les a déjà.",
+    "testo": "Tu n'as pas à apprendre à parler autrement : tu donnes les mesures à vue de nez, avec tes mots à toi, « celui qu'elle a acheté ». Le système cherche parmi les lignes de ta liste de prix, refait les calculs des mesures, et ce qu'il ne trouve pas, il te le signale.",
+    "guarda": "Voir l'exemple",
+    "scorri": "Fais défiler pour voir les autres métiers.",
+    "nota": "Lignes d'exemple. Ça marche avec n'importe quelle liste de prix par lignes et mesures : si ton métier n'est pas ici, c'est pareil.",
+    "etichettaLista": "Exemples par métier",
+    "voci": {
+      "elettricista": {
+        "nome": "Électricien",
+        "detto": "six points lumineux, deux va-et-vient"
+      },
+      "idraulico": {
+        "nome": "Plombier",
+        "detto": "je déplace l'évier d'un mètre et demi"
+      },
+      "imbianchino": {
+        "nome": "Peintre",
+        "detto": "deux couches de peinture lavable, cent vingt mètres"
+      },
+      "piastrellista": {
+        "nome": "Carreleur",
+        "detto": "je pose le grès qu'elle a acheté"
+      },
+      "muratore": {
+        "nome": "Maçon",
+        "detto": "trois mètres vingt sur deux soixante-dix"
+      },
+      "cartongessista": {
+        "nome": "Plaquiste",
+        "detto": "faux plafond dans le couloir, six mètres sur un mètre dix"
+      },
+      "serramentista": {
+        "nome": "Poseur de fenêtres",
+        "detto": "trois fenêtres à deux vantaux et une porte-fenêtre"
+      },
+      "termoidraulico": {
+        "nome": "Chauffagiste-plombier",
+        "detto": "je change la chaudière, les radiateurs restent"
+      },
+      "falegname": {
+        "nome": "Menuisier",
+        "detto": "placard encastré, deux quarante sur deux soixante"
+      },
+      "fabbro": {
+        "nome": "Métallier-serrurier",
+        "detto": "garde-corps du balcon, six mètres"
+      },
+      "giardiniere": {
+        "nome": "Jardinier",
+        "detto": "haie à tailler, quarante mètres"
+      },
+      "impresa": {
+        "nome": "Entreprise de bâtiment",
+        "detto": "salle de bain complète, clés en main"
+      }
+    }
+  },
+  "come": {
+    "titolo": "Du vocal au devis accepté, en quatre étapes.",
+    "sotto": "Toi, tu racontes et tu vérifies. Calculs, liste de prix, IVA, PDF et envoi, c'est le système qui s'en occupe.",
+    "passi": [
+      {
+        "titolo": "Tu racontes le chantier",
+        "testo": "À la voix ou par écrit, depuis ton téléphone, dès la fin de la visite du chantier : mesures, travaux, ce que fournit le client, ce qui est exclu.",
+        "nota": "«trois mètres sur deux et demi, à peu près»"
+      },
+      {
+        "titolo": "Il te demande ce qui manque",
+        "testo": "Si une quantité n'est pas claire, il ne devine pas : il te pose une question précise et attend ta réponse.",
+        "nota": "«Combien de m² de sol ?»"
+      },
+      {
+        "titolo": "Tu vérifies depuis ton téléphone",
+        "testo": "Ligne par ligne : tu corriges, tu enlèves, tu ajoutes. Ce qui n'est pas dans ta liste de prix est surligné.",
+        "nota": "Modifier · Approuver"
+      },
+      {
+        "titolo": "Le client accepte",
+        "testo": "Il reçoit le PDF avec ton logo et un lien pour l'accepter. Tu vois quand il l'ouvre et quand il dit oui.",
+        "nota": "Envoyé · Vu · Accepté"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "Ce que nous te garantissons, à chaque fois.",
+    "testo": "Le devis porte ton nom, donc il doit être juste. C'est pour ça que le système ne devine jamais : ce qu'il sait, il l'écrit ; ce qu'il ne sait pas, il te le demande.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "des prix viennent de ta liste de prix",
+        "dettaglio": "Aucun prix inventé. Ce qui manque reste à chiffrer tant que tu n'as pas décidé."
+      },
+      {
+        "cifra": "6 langues",
+        "cosa": "pour ton client",
+        "dettaglio": "Italien, anglais, allemand, français, espagnol et néerlandais. Et toi, tu peux aussi raconter en roumain, en albanais ou en arabe."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "pour avoir le brouillon",
+        "dettaglio": "Du récit de la visite au brouillon complet, avec les questions sur ce qui manque."
+      }
+    ],
+    "sotto1": "Avant d'arriver chez le client, chaque devis passe par toi. Les lignes à vérifier sont surlignées, les mesures qui manquent, il te les demande, et rien ne part sans ton accord.",
+    "sotto2": "Avec le programme pilote, nous le testons sur les vrais chantiers de dix artisans de métiers différents. Ce qui ne va pas, ils nous le disent, et nous le corrigeons."
+  },
+  "cosa": {
+    "titolo": "Transcrire un vocal, beaucoup de gens savent le faire. Nous, on s'occupe de ce qui te fait perdre de l'argent.",
+    "listinoTitolo": "Ta liste de prix, telle quelle",
+    "listinoTesto": "Tu charges la liste de prix que tu as : Excel, PDF, la photo de la feuille écrite à la main ou quelques anciens devis. Le système lit les lignes, les unités de mesure et les prix, et toi tu vérifies et tu confirmes. Aucun prix n'entre sans que tu l'aies vu. Si tu es bloqué, on t'aide.",
+    "tabella": {
+      "didascalia": "Exemple de liste de prix",
+      "voce": "Ligne",
+      "unita": "Unité",
+      "tipoIva": "Type d'IVA",
+      "prestazione": "prestation",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "Aucun prix inventé",
+    "prezzoTesto": "Beaucoup d'applis, quand elles ne trouvent pas une ligne, l'estiment avec des «prix du marché». Nous, non : si elle n'est pas dans ta liste de prix, on la marque à chiffrer, et c'est toi qui mets le prix. Un devis trop bas, c'est un chantier à perte.",
+    "dalListino": "depuis la liste de prix ✓",
+    "ivaTitolo": "L'IVA du bâtiment, bien faite, toute seule",
+    "ivaTesto1": "Entretien dans un logement ? Le 10% vaut pour la main-d'œuvre, mais les «beni significativi» (biens significatifs : sanitaires, robinetterie, menuiseries, chaudières) n'en bénéficient que jusqu'à la valeur du reste de l'intervention. La partie qui dépasse est à 22%.",
+    "ivaTesto2": "On te pose trois questions : quel type de bien, quel type de travaux, qui achète les matériaux. Sur le PDF, l'IVA à 10% et à 22% sort bien répartie, avec la mention obligatoire.",
+    "ivaNota": "Exemple tiré du guide de l'Agenzia delle Entrate. Pour les cas particuliers, il reste toujours ton comptable.",
+    "scontrino": {
+      "etichetta": "Exemple de répartition de l'IVA",
+      "titolo": "Manutenzione straordinaria (gros travaux d'entretien) · logement",
+      "manodopera": "Main-d'œuvre et autres matériaux",
+      "beni": "Beni significativi (matériaux principaux)",
+      "imp10": "Base imposable à 10 %",
+      "imp22": "Base imposable à 22 %",
+      "iva": "IVA 10 % + IVA 22 %",
+      "totale": "Total"
+    },
+    "lingueTitolo": "Tu racontes dans ta langue. Le client lit dans la sienne.",
+    "lingueTesto": "Tu écris ou tu dictes la visite du chantier en roumain, en albanais, en arabe ou dans une autre langue : le brouillon sort en italien. Si le client est étranger, le devis lui arrive en anglais, allemand, français, espagnol ou néerlandais, avec à côté le texte italien qui fait foi. La traduction, tu la vois et tu la corriges avant de l'envoyer.",
+    "lingueDalListino": "depuis ton barème, en italien",
+    "lingueAlCliente": "au client allemand, avec l'italien à côté",
+    "aiutoTitolo": "Une vraie aide, de la part d'une personne",
+    "aiutoTesto": "Logo, coordonnées, conditions de paiement, acomptes, exclusions : tu règles tout ça en quelques minutes. Si tu bloques, écris-nous ou appelle-nous : c'est une personne qui te répond, pas un bot. Et le premier devis, c'est toi qui l'envoies, depuis ta camionnette.",
+    "ultimaTitolo": "Le dernier mot, c'est toujours toi",
+    "ultimaTesto": "Le système propose, tu décides. Aucun devis n'arrive chez le client sans que tu l'aies ouvert et approuvé. Les nouvelles lignes que tu chiffres entrent dans ton barème, pour la prochaine fois."
+  },
+  "confronto": {
+    "titolo": "Trois façons de faire le même devis.",
+    "colonne": [
+      "Word ou Excel, le soir",
+      "Un chatbot quelconque",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "Les prix",
+        "celle": [
+          "Tu les copies toi-même depuis ton barème",
+          "Il les estime : il ne connaît pas ton barème",
+          "Uniquement depuis ton barème. Ce qui manque reste à chiffrer"
+        ]
+      },
+      {
+        "tema": "Les mesures qui manquent",
+        "celle": [
+          "Tu le remarques en écrivant",
+          "Souvent il les prend pour acquises",
+          "Il te les demande avant de faire les calculs"
+        ]
+      },
+      {
+        "tema": "IVA avec beni significativi",
+        "celle": [
+          "À la main, avec le doute",
+          "Ça dépend de comment tu lui demandes",
+          "10 % et 22 % répartis, avec la mention"
+        ]
+      },
+      {
+        "tema": "Le document",
+        "celle": [
+          "À mettre en page à chaque fois",
+          "Du texte à copier ailleurs",
+          "PDF avec ton logo, prêt à envoyer"
+        ]
+      },
+      {
+        "tema": "Le oui du client",
+        "celle": [
+          "Un message, si tout va bien",
+          "Il n'y en a pas",
+          "Acceptation en ligne : nom, date, heure et copie du PDF"
+        ]
+      },
+      {
+        "tema": "Où tu le fais",
+        "celle": [
+          "À l'ordinateur, après le dîner",
+          "Au téléphone, puis tu le refais",
+          "Depuis ton téléphone, dès que la visite est finie"
+        ]
+      }
+    ],
+    "etichettaLista": "Comparaison par thème",
+    "scorri": "Fais défiler pour voir les autres comparaisons.",
+    "nota": "« Chatbot quelconque » : un assistant généraliste utilisé sans ton barème, comme beaucoup le font aujourd'hui."
+  },
+  "calcolo": {
+    "titolo": "Combien te coûtent les devis aujourd'hui ?",
+    "preventivi": "Devis par semaine",
+    "minuti": "Minutes pour chacun, entre calculs, Word et envoi",
+    "min": "{n} min",
+    "passi": "Chaque mois, tu passes environ",
+    "ore": "{n} h",
+    "costa": "sur les devis, presque toujours le soir, après le chantier. PreventivoLampo coûte 19,90 € par mois :",
+    "allOra": "{n} € pour chacune de ces heures.",
+    "nota": "Les chiffres, c'est toi qui les mets. Le temps que ça te rend, on le mesure avec le pilote, sur de vrais chantiers."
+  },
+  "prezzi": {
+    "titolo": "Tu l'essaies d'abord sur tes vrais chantiers. Ensuite tu décides.",
+    "pilota": "Programme pilote",
+    "perGiorni": "pour 30 jours",
+    "pilotaTesto": "Devis illimités et assistance si tu en as besoin. En échange, tu nous dis ce qui ne marche pas. On rappelle dans l'ordre d'arrivée. À partir du 31e jour : 19,90 € par mois ou 199 € par an, seulement si tu décides de rester : pas de renouvellement automatique.",
+    "candidati": "Je me porte candidat",
+    "posti": "{n} places",
+    "postiLiberi": "{n} places libres sur {totale}",
+    "ultimoPosto": "Dernière place sur {totale}",
+    "esauriti": "Plus de places",
+    "mensile": "Mensuel",
+    "alMese": "par mois",
+    "perMese": "/mois",
+    "mensileVoci": [
+      "Devis illimités",
+      "Lien d'acceptation pour le client",
+      "Une vraie personne pour t'aider"
+    ],
+    "mensileNota": "Aucun frais de démarrage. Tu résilies quand tu veux, sans engagement.",
+    "annuale": "Annuel",
+    "allAnno": "par an",
+    "perAnno": "/an",
+    "annualeVoci": [
+      "Tout ce qui est dans le mensuel",
+      "Deux mois offerts",
+      "Ça ne se renouvelle que si tu le demandes"
+    ],
+    "ivaEsclusa": "Prix hors IVA."
+  },
+  "domande": {
+    "titolo": "Les questions que tout le monde nous pose",
+    "nonTrovi": "Tu ne trouves pas la tienne ? Écris-nous à [{email}](mailto:{email}) : c'est nous qui répondons, pas un bot.",
+    "lista": [
+      {
+        "d": "Et s'il se trompe ?",
+        "r": "Rien n'arrive au client sans ton accord. Les lignes incertaines sont surlignées, celles qui ne sont pas dans ton tarif restent à chiffrer, et aucun prix n'est jamais inventé."
+      },
+      {
+        "d": "Je ne suis pas doué avec l'ordinateur.",
+        "r": "Si tu sais envoyer un message vocal sur WhatsApp, tu sais l'utiliser. Ça s'ouvre dans le navigateur du téléphone, rien à installer, et si tu es bloqué, une vraie personne te répond."
+      },
+      {
+        "d": "Les prix, il n'y a que moi qui les connais.",
+        "r": "Justement : on utilise uniquement les tiens. Tu charges ton tarif tel quel, même en photo ou à partir d'anciens devis, et ce qui n'y est pas reste à chiffrer tant que tu n'as pas décidé."
+      },
+      {
+        "d": "Un chatbot ne suffit pas ?",
+        "r": "Un assistant générique ne connaît pas ton tarif, donc il estime les prix. Il ne répartit pas l'IVA avec les « beni significativi » (les biens significatifs, une règle fiscale italienne), il ne fait pas le PDF avec ton logo et il ne recueille pas le oui du client."
+      },
+      {
+        "d": "Est-ce que ça convient à mon métier ?",
+        "r": "Si tu travailles avec des lignes de prix et des mesures, oui : électriciens, plombiers, peintres, carreleurs, maçons, plaquistes, menuisiers, serruriers, jardiniers. Il retrouve les mots du métier dans ton tarif. Avec le pilote, on le teste aussi sur les métiers qu'on n'a pas encore essayés."
+      },
+      {
+        "d": "Je peux le raconter dans ma langue ? Et si le client est étranger ?",
+        "r": "Oui. Tu écris ou tu dictes la visite sur place en roumain, albanais, arabe, ukrainien, espagnol ou dans une autre langue, et le brouillon sort en italien avec les prix de ton tarif. À l'oral, ça dépend du téléphone : si ta langue n'y est pas, tu l'écris. Et si le client parle anglais, allemand, français, espagnol ou néerlandais, tu lui envoies le devis dans sa langue : la traduction, c'est toi qui la vérifies, et le texte italien reste à côté et fait foi."
+      },
+      {
+        "d": "Je parle vite, il y a du bruit, j'utilise mes propres mots.",
+        "r": "Le système connaît les lignes de ton tarif et les noms que tu utilises. Si une mesure n'est pas claire, il te la redemande au lieu de deviner."
+      },
+      {
+        "d": "Le client veut du papier.",
+        "r": "Le PDF s'imprime comme n'importe quel devis. Mais avec le lien, le client accepte en une minute, sans créer de compte, et toi tu as la preuve de ce qu'il a accepté."
+      },
+      {
+        "d": "Où vont mes vocaux et les données de mes clients ?",
+        "r": "Ton tarif et tes devis sont sur des serveurs dans l'Union européenne. Pour préparer le brouillon, le texte de la visite passe par un service d'intelligence artificielle, indiqué sur la [page Confidentialité](/privacy). Sur nos serveurs, il n'arrive que le texte, pas l'audio, et on signe avec toi l'accord sur le traitement des données de tes clients."
+      },
+      {
+        "d": "Je dois changer de logiciel de facturation ?",
+        "r": "Non, garde le tien. PreventivoLampo s'occupe des devis ; les factures restent là où elles sont."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "Ton prochain devis, envoie-le depuis ta camionnette.",
+    "testo": "On cherche 10 artisans pour le programme pilote, de n'importe quel métier du bâtiment et de la maison. Laisse-nous tes coordonnées : on te rappelle, dans l'ordre d'arrivée, pour voir si c'est fait pour toi.",
+    "vederlo": "Tu veux le voir avant de postuler ? [Essaie-le sur WhatsApp]({whatsapp}) : le premier message est déjà écrit, appuie sur envoyer puis raconte une visite sur place. Ou [essaie avec un exemple](/prova).",
+    "scrivere": "Tu préfères écrire ? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Candidature au programme pilote",
+      "nome": "Nom et prénom",
+      "mestiere": "Métier",
+      "scegli": "Choisis",
+      "comune": "Commune",
+      "cellulare": "Portable",
+      "volume": "Devis par semaine",
+      "privacy": "J'ai lu la [politique de confidentialité](/privacy) et j'accepte d'être recontacté pour le programme pilote.",
+      "invia": "Envoyer ma candidature",
+      "invio": "Envoi en cours…",
+      "conferma": "Merci, {nome}. On te rappelle sous deux jours ouvrés.",
+      "errore": "L'envoi n'a pas marché. Réessaie dans un instant ou écris-nous à studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Écris ton nom et ton prénom.",
+        "mestiere": "Choisis ton métier.",
+        "comune": "Écris ta commune.",
+        "telefono": "Écris un numéro de portable italien valide.",
+        "volume": "Choisis une des options.",
+        "privacy": "On a besoin de ton accord pour pouvoir te recontacter."
+      },
+      "mestieri": {
+        "Elettricista": "Électricien",
+        "Idraulico": "Plombier",
+        "Termoidraulico": "Plombier-chauffagiste",
+        "Imbianchino": "Peintre en bâtiment",
+        "Piastrellista": "Carreleur",
+        "Muratore": "Maçon",
+        "Cartongessista": "Plaquiste",
+        "Serramentista": "Poseur de fenêtres",
+        "Falegname": "Menuisier",
+        "Fabbro": "Serrurier-métallier",
+        "Giardiniere": "Jardinier",
+        "Impresa edile": "Entreprise de bâtiment",
+        "Impresa di ristrutturazioni": "Entreprise de rénovation",
+        "Altro": "Autre"
+      },
+      "volumi": {
+        "1 o 2": "1 ou 2",
+        "da 3 a 5": "de 3 à 5",
+        "più di 5": "plus de 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Confidentialité",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "Cette page explique quelles données personnelles PreventivoLampo traite, pourquoi, où elles vont et combien de temps elles restent."
+        },
+        {
+          "t": "h2",
+          "testo": "Qui traite les données"
+        },
+        {
+          "t": "p",
+          "testo": "Le responsable du traitement est Sofiane Khatib, K Digital Solution, Monza (MB). Pour toute demande sur tes données, écris à [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "Pour les données des clients d'un artisan (noms, adresses des chantiers, devis), le responsable du traitement est l'artisan : nous les traitons pour son compte, en tant que sous-traitant, selon l'accord que nous signons avec lui."
+        },
+        {
+          "t": "h2",
+          "testo": "Quelles données, pourquoi et combien de temps"
+        },
+        {
+          "t": "h3",
+          "testo": "Si tu postules au programme pilote"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Nom, métier, commune, portable et, si tu l'indiques, combien de devis tu fais par semaine.",
+            "Nous les utilisons seulement pour te rappeler et voir si le pilote est fait pour toi (base juridique : ta demande et ton accord).",
+            "Si tu n'entres pas dans le pilote, nous les supprimons sous 12 mois ; tu peux nous demander de le faire avant, à tout moment."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si tu utilises l'espace artisans"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Email de connexion, données de ton entreprise que tu saisis (raison sociale, partita IVA (numéro de TVA italien), adresse, téléphone, IBAN si tu l'indiques), logo, liste de prix et devis.",
+            "Si tu charges ta liste de prix depuis un PDF, une photo ou d'anciens devis, l'intelligence artificielle lit seulement les lignes de prix : les noms des clients ne sont pas recopiés et le fichier n'est pas conservé.",
+            "Elles servent à te fournir le service (base juridique : le contrat, même pendant le pilote gratuit).",
+            "Elles restent tant que tu utilises le service. Quand tu arrêtes, nous les supprimons sous 30 jours, sauf ce que la loi nous oblige à conserver (par exemple les factures, 10 ans)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si tu es le client d'un artisan et que tu ouvres son devis"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Quand tu acceptes ou refuses un devis, nous enregistrons le nom que tu écris, la date et l'heure, l'adresse IP et l'empreinte (hash) du PDF.",
+            "Elles servent à l'artisan comme preuve de l'acceptation. Nous les conservons pour son compte, tant qu'il utilise le service.",
+            "Pour voir, corriger ou supprimer ces données, tu peux t'adresser à l'artisan ou à nous : nous lui transmettons ta demande."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si tu essaies PreventivoLampo avec un exemple ou sur WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Le texte que tu écris, le brouillon qui en sort et, sur WhatsApp, le numéro depuis lequel tu écris.",
+            "Les brouillons d'essai se suppriment tout seuls après 7 jours ; sur WhatsApp, le brouillon qui attend ta réponse reste une heure au maximum.",
+            "Pour les essais, n'écris pas de données de personnes réelles : des travaux inventés suffisent.",
+            "Pour limiter les abus, nous conservons une empreinte (hash) de l'adresse IP, pas l'adresse en clair."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "À qui nous les confions"
+        },
+        {
+          "t": "p",
+          "testo": "Nous utilisons ces prestataires, chacun seulement pour sa partie :"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase : base de données, accès à l'espace et archive des PDF, en Irlande (UE).",
+            "Vercel : le site et ses fonctions, à Francfort (UE).",
+            "Anthropic (Claude) : lit le texte de la visite sur place et prépare le brouillon, et traduit les lignes du devis quand le client parle une autre langue, aux États-Unis.",
+            "Twilio et WhatsApp (Meta) : reçoivent et envoient les messages WhatsApp.",
+            "n8n : relie les messages WhatsApp à PreventivoLampo.",
+            "Resend : envoie les emails avec le code de connexion."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Quand les données sortent de l'Union européenne, nous nous appuyons sur les garanties prévues par le RGPD : la certification EU-US Data Privacy Framework ou les clauses contractuelles types de la Commission européenne. Nous ne vendons pas les données et nous ne les utilisons ni pour la publicité ni pour entraîner des modèles d'intelligence artificielle."
+        },
+        {
+          "t": "h2",
+          "testo": "Tes droits"
+        },
+        {
+          "t": "p",
+          "testo": "Tu peux nous demander de voir tes données, de les corriger, de les supprimer, d'en limiter l'usage, de t'opposer au traitement ou de les recevoir dans un format lisible, et retirer ton accord quand tu veux. Écris à l'adresse ci-dessus : nous répondons sous 30 jours. Tu peux aussi déposer une plainte auprès du Garante per la protezione dei dati personali (l'autorité italienne de protection des données, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Conditions du service",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo est un service de Sofiane Khatib, K Digital Solution, Monza (MB). Il aide les artisans et les entreprises du bâtiment à préparer leurs devis : à partir de ce que tu racontes de la visite sur place, il prépare un brouillon avec les prix de la liste de l'entreprise, que l'artisan vérifie, approuve et envoie au client. Le service est réservé aux entreprises et aux professionnels avec partita IVA (numéro de TVA italien)."
+        },
+        {
+          "t": "h2",
+          "testo": "Programme pilote"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Dix places, attribuées par nous après un appel téléphonique.",
+            "30 jours gratuits dès le démarrage, avec des devis illimités. Tu charges toi-même ta liste de prix (Excel, PDF ou photo) ; si tu as besoin, on t'aide.",
+            "Pas de renouvellement automatique : à la fin des 30 jours, c'est toi qui décides si tu restes. Si tu ne nous dis rien, le pilote s'arrête là.",
+            "En échange, on te demande de l'utiliser sur tes vrais chantiers et de nous dire ce qui marche et ce qui ne marche pas."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Après le pilote"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Abonnement : 19,90 € par mois ou 199 € par an, IVA non comprise, avec des devis illimités. Aucun frais de démarrage.",
+            "Tu peux résilier l'abonnement mensuel quand tu veux, avec effet à la fin du mois déjà payé. L'abonnement annuel dure 12 mois et ne se renouvelle que si tu le demandes.",
+            "Si nous changeons les prix, nous te prévenons au moins 30 jours avant, et ils ne valent qu'à partir du renouvellement suivant."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Le devis, c'est toi qui décides"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo propose, tu décides : aucun devis n'arrive chez le client sans que tu l'aies ouvert et approuvé. Avant d'approuver, vérifie les postes, les quantités et les prix.",
+            "Les prix viennent uniquement de ton tarif. Les postes qui n'y sont pas restent « à chiffrer » et c'est toi qui mets le prix.",
+            "Le calcul de l'IVA suit les réponses que tu donnes et les règles de l'Agenzia delle Entrate (l'administration fiscale italienne), mais ce n'est pas un conseil fiscal : pour les cas particuliers, ton commercialista (comptable) reste là pour ça.",
+            "La relation avec le client, les prix et les travaux restent à toi : PreventivoLampo n'est pas partie au contrat entre toi et lui."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Tes données restent à toi"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Le tarif, les devis et les données de l'entreprise sont à toi. Sur demande, nous t'envoyons ton tarif en Excel et les PDF des devis.",
+            "Les données de tes clients, nous les traitons pour ton compte, selon l'accord de traitement des données que nous signons au démarrage. La façon dont nous traitons les autres données est expliquée sur la page Privacy.",
+            "Ne saisis pas de données de santé ni d'autres données sensibles de tes clients : elles ne servent pas pour un devis."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Ce que nous garantissons et ce que nous ne garantissons pas"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Nous faisons tout pour que le service marche toujours et sans erreurs, mais la lecture de la visite sur place peut se tromper : c'est pour ça que chaque brouillon doit être vérifié avant d'être approuvé.",
+            "Il peut y avoir des interruptions pour maintenance ou des pannes chez nos fournisseurs ; les grosses maintenances, nous te les annonçons avant.",
+            "Dans les limites de la loi, et sauf dol ou faute grave, notre responsabilité ne dépasse pas ce que tu nous as payé au cours des 12 derniers mois. Pendant le pilote gratuit, le service est fourni tel quel."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Bon usage"
+        },
+        {
+          "t": "p",
+          "testo": "Utilise PreventivoLampo seulement pour les devis de ton entreprise. Ne partage pas ton accès avec des personnes extérieures et n'utilise pas le service pour envoyer des textes injurieux ou des demandes en masse. Si ces règles ne sont pas respectées, nous pouvons suspendre l'accès, après t'avoir prévenu."
+        },
+        {
+          "t": "h2",
+          "testo": "Modifications et loi applicable"
+        },
+        {
+          "t": "p",
+          "testo": "Si nous changeons ces conditions, nous te prévenons par email au moins 30 jours avant. La loi italienne s'applique et, pour les litiges, le foro di Monza (le tribunal de Monza). Pour toute question, écris à [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookies",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo utilise uniquement des cookies techniques : sans eux, l'espace artisans ne saurait pas que tu es connecté et le site ne se souviendrait pas de la langue que tu as choisie. Pas de cookies de profilage, pas de statistiques, pas d'outils tiers qui te suivent d'un site à l'autre. C'est pour ça qu'il n'y a pas de bandeau cookies."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione** : garde ta connexion ouverte à l'espace artisans après que tu as saisi le code reçu par email. Nous le déposons seulement quand tu te connectes, il dure 30 jours et il est supprimé quand tu cliques sur « Esci » (Se déconnecter).",
+            "**pl_lingua** : retient la langue que tu as choisie avec le sélecteur de langue. Nous le déposons seulement si tu changes de langue et il dure un an."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Les polices et les drapeaux sont fournis par le site lui-même, pas par des serveurs externes. Si un jour un autre cookie devenait nécessaire, cette page dira lequel, à quoi il sert et combien de temps il dure, et s'il n'est pas technique, nous te demanderons ton accord avant."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Connexion · PreventivoLampo",
+    "h1": "Accède à tes devis",
+    "sotto": "Ton tarif, tes prix, des devis avec ton nom dessus.",
+    "email": "Ton email",
+    "mandaCodice": "Envoie-moi le code",
+    "invioCodice": "J'envoie le code…",
+    "spiegazione": "Nous t'envoyons un code à 6 chiffres. Si c'est la première fois, avec le même code tu enregistres ton entreprise.",
+    "scritto": "Nous avons écrit à **{email}**. Si tu ne le trouves pas, regarde dans tes courriers indésirables.",
+    "codice": "Code",
+    "accedi": "Se connecter",
+    "controllo": "Vérification…",
+    "nuovoTra": "Nouveau code dans {n} s",
+    "nuovo": "Envoie-moi un nouveau code",
+    "cambiaEmail": "Changer d'email",
+    "errore": "Il y a un problème. Réessaie.",
+    "condizioni": "En te connectant, tu acceptes les [conditions](/condizioni) et la [politique de confidentialité](/privacy)."
+  },
+  "prova": {
+    "titolo": "Essaie le moteur",
+    "h1": "De la visite sur place au brouillon",
+    "testo": "Le moteur repère les travaux, les associe à ton tarif et te prépare le brouillon à vérifier. Les prix viennent uniquement du tarif : ce qu'il ne trouve pas reste à chiffrer, ce qui manque, il te le demande.",
+    "nota": "Données d'essai inventées : l'entreprise du tarif et les clients des exemples n'existent pas. Ne saisis pas de noms, d'adresses ou de numéros de personnes réelles : les brouillons restent 7 jours et toute personne qui a le lien peut les ouvrir. Le texte libre est traité par un service d'intelligence artificielle. [Privacy](/privacy)"
+  }
+}

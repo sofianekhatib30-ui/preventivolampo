@@ -1,8 +1,9 @@
 import { linkWhatsAppProva, WHATSAPP_PROVA } from "@/lib/sito";
+import type { Dizionario } from "@/lib/i18n/it";
 import { PiePagina } from "./PiePagina";
 
 // Chiusura della home nella demo pubblica, al posto del modulo di candidatura.
-export function Demo() {
+export function Demo({ d }: { d: Dizionario }) {
   return (
     <section id="demo" className="su-scuro margini flex flex-col gap-6 bg-ardesia pb-7 pt-14 text-fondo lg:gap-[72px] lg:pb-12 lg:pt-28">
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-[clamp(40px,5vw,72px)]">
@@ -41,7 +42,7 @@ export function Demo() {
           </div>
         </div>
       </div>
-      <PiePagina>Progetto dimostrativo di Sofiane Khatib. Listino, impresa e clienti degli esempi sono inventati.</PiePagina>
+      <PiePagina d={d}>Progetto dimostrativo di Sofiane Khatib. Listino, impresa e clienti degli esempi sono inventati.</PiePagina>
     </section>
   );
 }

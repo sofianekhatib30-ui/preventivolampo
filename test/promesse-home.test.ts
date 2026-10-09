@@ -1,6 +1,5 @@
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
-import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import Home from "@/app/page";
@@ -88,7 +87,7 @@ const PROMESSE: Promessa[] = [
     rigaSpec: "«Nessun rinnovo automatico» / «Disdici quando vuoi»",
     frasi: ["Nessun rinnovo automatico", "Disdici quando vuoi"],
     requisito: "Condizioni coerenti (Notaio)",
-    prova: { file: "app/condizioni/page.tsx", contiene: "Nessun rinnovo automatico" },
+    prova: { file: "lib/i18n/it.ts", contiene: "Nessun rinnovo automatico: alla fine dei 30 giorni decidi tu se restare." },
   },
   {
     rigaSpec: "«dei prezzi dal tuo listino» / «6 lingue»",
@@ -121,8 +120,8 @@ function normalizza(testo: string): string {
     .toLowerCase();
 }
 
-function testoDellaPagina(): string {
-  const html = renderToStaticMarkup(createElement(Home));
+async function testoDellaPagina(): Promise<string> {
+  const html = renderToStaticMarkup(await Home());
   const senzaScript = html.replace(/<script[^>]*>[^<]*<\/script>/g, " ");
   const testo = senzaScript
     .replace(/<[^>]*>/g, "")
@@ -151,8 +150,8 @@ function righeDellaSpec(): string[] {
     .filter((cella) => cella !== "" && !/^-+$/.test(cella) && cella !== "Promessa nella pagina");
 }
 
-describe("promesse della home", () => {
-  const pagina = testoDellaPagina();
+describe("promesse della home", async () => {
+  const pagina = await testoDellaPagina();
 
   it("ogni riga della tabella della SPEC ha la sua promessa qui, e nessuna in più", () => {
     const righe = righeDellaSpec();

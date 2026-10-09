@@ -3,10 +3,13 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
+import { fmt } from "@/lib/i18n/testo";
 
 // Listino vuoto: tre modi di partire. Il più veloce è il file che l'impresa ha già.
 export default function ListinoVuoto({ vociEsempio }: { vociEsempio: number }) {
   const router = useRouter();
+  const L = useLingua().d.area.listinoVuoto;
   const [invio, setInvio] = useState(false);
   const [errore, setErrore] = useState("");
 
@@ -15,7 +18,7 @@ export default function ListinoVuoto({ vociEsempio }: { vociEsempio: number }) {
     setErrore("");
     const res = await fetch("/api/area/listino/esempio", { method: "POST" });
     setInvio(false);
-    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? "Non sono riuscito a copiare il listino.");
+    if (!res.ok) return setErrore((await res.json().catch(() => ({}))).errore ?? L.errore);
     router.refresh();
   }
 
@@ -23,26 +26,26 @@ export default function ListinoVuoto({ vociEsempio }: { vociEsempio: number }) {
   return (
     <div className="mt-6 grid gap-3 sm:grid-cols-3">
       <div className={`${scheda} ring-2 ring-ardesia`}>
-        <h2 className="text-xl font-extrabold">Hai già un listino?</h2>
-        <p className="mt-1 flex-1 text-[16px] text-testo-2">Carica il listino che hai: Excel, PDF o una foto. Lo leggiamo noi e tu controlli riga per riga.</p>
+        <h2 className="text-xl font-extrabold">{L.haiListino}</h2>
+        <p className="mt-1 flex-1 text-[16px] text-testo-2">{L.haiListinoTesto}</p>
         <Link href="/area/listino/importa" className="bottone bottone-azione mt-4 min-h-12 text-[16px]">
-          Importa il file
+          {L.importa}
         </Link>
       </div>
       <div className={scheda}>
-        <h2 className="text-xl font-extrabold">Parti da un esempio</h2>
+        <h2 className="text-xl font-extrabold">{L.esempio}</h2>
         <p className="mt-1 flex-1 text-[16px] text-testo-2">
-          Le {vociEsempio} voci della demo (bagni, cucine, pitture, impianti) con prezzi da prezzari pubblici. Poi metti i tuoi.
+          {fmt(L.esempioTesto, { n: vociEsempio })}
         </p>
         <button type="button" onClick={esempio} disabled={invio} className="bottone mt-4 min-h-12 border-2 border-ardesia text-[16px] disabled:opacity-50">
-          {invio ? "Copio…" : "Usa l'esempio"}
+          {invio ? L.copio : L.usaEsempio}
         </button>
       </div>
       <div className={scheda}>
-        <h2 className="text-xl font-extrabold">Una voce alla volta</h2>
-        <p className="mt-1 flex-1 text-[16px] text-testo-2">Scrivi tu le lavorazioni che fai più spesso, con il tuo prezzo.</p>
+        <h2 className="text-xl font-extrabold">{L.unaAllaVolta}</h2>
+        <p className="mt-1 flex-1 text-[16px] text-testo-2">{L.unaAllaVoltaTesto}</p>
         <Link href="/area/listino?aggiungi=1" className="bottone mt-4 min-h-12 border-2 border-ardesia text-[16px]">
-          Aggiungi a mano
+          {L.aMano}
         </Link>
       </div>
       {errore && (

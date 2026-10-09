@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState, useSyncExternalStore } from "react";
+import { useLingua } from "@/lib/i18n/client";
 import { LINGUE_RACCONTO } from "@/lib/preventivi/lingua";
 
 // Dettatura con il riconoscimento vocale del browser (Web Speech API, italiano): niente chiavi,
@@ -26,6 +27,7 @@ function costruttore(): Costruttore | null {
 }
 
 export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => void }) {
+  const D = useLingua().d.area.dettatura;
   const supportata = useSyncExternalStore(
     () => () => {},
     () => costruttore() !== null,
@@ -64,10 +66,10 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
     r.onerror = (e) =>
       setErrore(
         e.error === "not-allowed"
-          ? "Il browser non ha il permesso di usare il microfono."
+          ? D.erroreMicrofono
           : e.error === "language-not-supported"
-            ? "Su questo telefono la dettatura in questa lingua non c'è. Scrivi pure il testo nella tua lingua: la bozza esce in italiano lo stesso."
-            : "La dettatura si è interrotta. Riprova.",
+            ? D.erroreLingua
+            : D.erroreInterrotta,
       );
     r.onend = () => {
       setAscolto(false);
@@ -91,7 +93,7 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
   return (
     <div className="mt-2">
       <label className="mb-2 flex flex-wrap items-center gap-2 text-[15px] font-semibold text-testo-2">
-        Parlo in
+        {D.parloIn}
         <select
           value={lingua}
           onChange={(e) => cambiaLingua(e.target.value)}
@@ -115,12 +117,12 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
           <rect x="9" y="3" width="6" height="11" rx="3" fill={ascolto ? "currentColor" : "none"} />
           <path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
         </svg>
-        {ascolto ? "Sto ascoltando: tocca per fermare" : "Detta il sopralluogo"}
+        {ascolto ? D.ascolto : D.detta}
       </button>
       {provvisorio && <p className="mt-2 text-[15px] italic text-testo-3">{provvisorio}…</p>}
       {errore && <p className="mt-2 text-[15px] text-errore">{errore}</p>}
       <p className="mt-1.5 text-sm text-testo-3">
-        Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo. In qualunque lingua parli, la bozza esce in italiano.
+        {D.nota}
       </p>
     </div>
   );

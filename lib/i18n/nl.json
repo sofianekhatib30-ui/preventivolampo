@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Jouw offertes",
+      "benvenuto": "Jouw bedrijf",
+      "nuovo": "Nieuwe offerte",
+      "impresa": "Bedrijfsgegevens",
+      "listino": "Prijslijst",
+      "importa": "Importeer je prijslijst",
+      "revisioneImport": "Controleer de import",
+      "daPrezzare": "Nog een prijs nodig",
+      "preventivo": "Offerte",
+      "revisione": "Offerte nakijken",
+      "prova": "Probeer de motor uit"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, jouw offertes",
+      "sezioni": "Onderdelen",
+      "preventivi": "Offertes",
+      "listino": "Prijslijst",
+      "daPrezzare": "Nog een prijs nodig",
+      "impresa": "Bedrijf",
+      "proposte": "voorstellen",
+      "esci": "Uitloggen"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "stuks",
+        "h": "uren",
+        "100kg": "honderd kilo",
+        "kg": "kg",
+        "l": "liter",
+        "corpo": "vaste prijs"
+      },
+      "perUnita": {
+        "m2": "per m²",
+        "m": "per meter",
+        "m3": "per m³",
+        "cad": "per stuk",
+        "h": "per uur",
+        "100kg": "per honderd kilo",
+        "kg": "per kg",
+        "l": "per liter",
+        "corpo": "vaste prijs"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% met beni significativi"
+      }
+    },
+    "home": {
+      "h1": "Offertes",
+      "nuovo": "Nieuwe offerte",
+      "mancaListino": "Alleen je prijslijst ontbreekt nog.",
+      "mancaListinoTesto": "Importeer je eigen bestand of begin met het voorbeeld. Daarna is je eerste offerte een spraakbericht.",
+      "preparaListino": "Maak je prijslijst klaar",
+      "daControllare": "nog na te kijken",
+      "inAttesa": "in afwachting · {importo}",
+      "accettati": "geaccepteerd · {importo}",
+      "rifiutati": "afgewezen",
+      "nessuno": "Nog geen offertes.",
+      "nessunoTesto": "Vertel over je volgende bezoek op de klus: binnen een halve minuut heb je de conceptofferte.",
+      "clienteDaIndicare": "Klant nog invullen",
+      "numeroDel": "nr. {numero} van {data}",
+      "stati": {
+        "bozza": "Nog na te kijken",
+        "approvato": "Verstuurd",
+        "accettato": "Geaccepteerd",
+        "rifiutato": "Afgewezen"
+      }
+    },
+    "benvenuto": {
+      "passo": "Stap 1 van 2",
+      "h1": "Jouw bedrijf",
+      "sotto": "Deze gegevens komen bovenaan elke offerte te staan. Je kunt ze altijd wijzigen."
+    },
+    "nuovo": {
+      "torna": "Terug naar de offertes",
+      "h1": "Nieuwe offerte",
+      "serveListino": "Eerst heb je de prijslijst nodig: de prijzen komen alleen daaruit.",
+      "preparaListino": "Maak je prijslijst klaar",
+      "sotto": "Schrijf of spreek de opname van het werk in. Het concept gebruikt de {n} posten uit je prijslijst; wat het niet vindt, blijft zonder prijs.",
+      "claude": "De tekst wordt verwerkt met Claude van Anthropic en samen met de offerte opgeslagen.",
+      "racconta": "Vertel over het werk zoals je het in een spraakbericht zou zeggen, in het Italiaans of in je eigen taal",
+      "segnaposto": "Klant, adres, of die er woont. Wat eruit gaat, wat erin komt, de maten. Wie de materialen koopt.",
+      "attesa": "Dit duurt ongeveer 20 seconden…",
+      "prepara": "Maak het concept",
+      "errore": "Het is niet gelukt om het concept te maken. Probeer het opnieuw.",
+      "fasi": [
+        "Ik lees de opname…",
+        "Ik scheid werkzaamheden, maten en uitsluitingen…",
+        "Ik zoek elke post in jouw prijslijst…",
+        "Ik controleer wat er ontbreekt en welk IVA-regime geldt…",
+        "Ik maak het concept klaar om te controleren…"
+      ]
+    },
+    "impresa": {
+      "h1": "Bedrijfsgegevens",
+      "sotto": "Dit leest de klant bovenaan en onderaan de offerte.",
+      "accessoCon": "Ingelogd met {email}."
+    },
+    "modulo": {
+      "chiSiete": "Wie ben je",
+      "ragioneSociale": "Bedrijfsnaam (ragione sociale)",
+      "piva": "Partita IVA",
+      "cf": "Codice fiscale (als dat anders is)",
+      "indirizzo": "Adres van het bedrijf (straat, nummer, plaats)",
+      "telefono": "Telefoon",
+      "email": "E-mail op de offerte",
+      "cheLavori": "Wat voor werk doe je",
+      "cheLavoriNota": "Zo kunnen we je opnames beter lezen.",
+      "mestieri": {
+        "impresaEdile": "Bouwbedrijf",
+        "muratore": "Metselaar",
+        "idraulico": "Loodgieter",
+        "elettricista": "Elektricien",
+        "imbianchino": "Schilder",
+        "piastrellista": "Tegelzetter",
+        "cartongessista": "Gipsplaatmonteur",
+        "serramentista": "Kozijnenmonteur",
+        "termoidraulico": "Installateur (verwarming en sanitair)",
+        "giardiniere": "Hovenier"
+      },
+      "sulPreventivo": "Op de offerte",
+      "validita": "Geldigheid van de offerte (dagen)",
+      "validitaNota": "Na deze dagen kan de klant de offerte niet meer accepteren via de link.",
+      "condizioni": "Betalingsvoorwaarden",
+      "condizioniEsempio": "Bijv. 30% bij acceptatie, de rest na afloop van het werk",
+      "iban": "IBAN voor overschrijvingen",
+      "salvo": "Bezig met opslaan…",
+      "registra": "Registreer je bedrijf",
+      "salva": "Gegevens opslaan",
+      "errore": "Het is niet gelukt om op te slaan. Probeer het opnieuw.",
+      "salvati": "Gegevens opgeslagen. De volgende PDF's gebruiken deze gegevens."
+    },
+    "logo": {
+      "titolo": "Logo",
+      "attuale": "Je huidige logo",
+      "nessuno": "Geen logo",
+      "carico": "Bezig met uploaden…",
+      "cambia": "Logo wijzigen",
+      "carica": "Logo uploaden",
+      "togli": "Verwijderen",
+      "nota": "PNG of JPG, tot 1 MB. Het beste op een witte of transparante achtergrond.",
+      "errore": "Het is niet gelukt om het logo te uploaden."
+    },
+    "listino": {
+      "passo": "Stap 2 van 2",
+      "h1": "Jouw prijslijst",
+      "h1Vuoto": "Je prijslijst is leeg",
+      "sotto": "De prijzen in je offertes komen alleen hiervandaan. Wat er niet in staat, blijft zonder prijs: dat bepaal jij.",
+      "sottoVuoto": "De prijzen in je offertes komen alleen uit je eigen prijslijst, nooit verzonnen. Kies hoe je hem vult.",
+      "importate": "{n} regels geïmporteerd. Controleer de prijzen en voeg toe hoe je ze hardop noemt: dat helpt bij het herkennen.",
+      "esempio": "{n} regels hebben nog de voorbeeldprijs. Controleer ze voordat je echte offertes verstuurt."
+    },
+    "elencoListino": {
+      "cerca": "Zoeken in de prijslijst",
+      "cercaSegnaposto": "Naam, code of gesproken woord",
+      "aggiungiVoce": "Regel toevoegen",
+      "trovate": "{n} regels gevonden van {totale}",
+      "voci": "{n} regels",
+      "importaLink": "importeren uit Excel, PDF of foto",
+      "nuovaVoce": "Nieuwe regel",
+      "prezzoEsempio": "voorbeeldprijs",
+      "nessunaVoce": "Geen regel met «{cerca}».",
+      "mostraAltre": "Toon nog {n} regels",
+      "nomeVoce": "Naam van de regel",
+      "prezzo": "Prijs €",
+      "unita": "Eenheid",
+      "codice": "Code",
+      "descrizione": "Omschrijving voor de offerte (niet verplicht)",
+      "aVoce": "Hoe je het hardop noemt",
+      "aVoceSegnaposto": "Bijv. stucen, stucwerk, muren plamuren",
+      "aVoceNota": "Woorden gescheiden door komma's: ze helpen om de regel in spraakberichten te herkennen.",
+      "categoria": "Categorie (niet verplicht)",
+      "beneSignificativo": "«Bene significativo» voor de IVA van 10% (belangrijk materiaal met verlaagd tarief)",
+      "beneNota": "Sanitair, kranen, ketels, kozijnen, liften… (DM 29/12/1999).",
+      "materiale": "De prijs is inclusief materiaal",
+      "materialeNota": "Koopt de klant het zelf, dan blijft de regel zonder prijs (alleen montage).",
+      "salvo": "Opslaan…",
+      "salva": "Opslaan",
+      "aggiungi": "Toevoegen aan de prijslijst",
+      "annulla": "Annuleren",
+      "togliConferma": "Ja, haal de regel weg",
+      "togli": "Haal uit de prijslijst",
+      "errorePrezzo": "Schrijf de prijs in euro, bijvoorbeeld 18,50.",
+      "erroreSalva": "Opslaan is niet gelukt.",
+      "erroreTogli": "Het weghalen van de regel is niet gelukt."
+    },
+    "listinoVuoto": {
+      "haiListino": "Heb je al een prijslijst?",
+      "haiListinoTesto": "Upload de prijslijst die je hebt: Excel, PDF of een foto. Wij lezen hem en jij controleert regel voor regel.",
+      "importa": "Importeer het bestand",
+      "esempio": "Begin met een voorbeeld",
+      "esempioTesto": "De {n} regels van de demo (badkamers, keukens, schilderwerk, installaties) met prijzen uit openbare prijslijsten. Daarna zet je er je eigen prijzen in.",
+      "copio": "Kopiëren…",
+      "usaEsempio": "Gebruik het voorbeeld",
+      "unaAllaVolta": "Eén regel per keer",
+      "unaAllaVoltaTesto": "Schrijf zelf het werk op dat je het vaakst doet, met jouw prijs.",
+      "aMano": "Zelf toevoegen",
+      "errore": "Het kopiëren van de prijslijst is niet gelukt."
+    },
+    "importa": {
+      "torna": "Terug naar de prijslijst",
+      "h1": "Importeer je prijslijst",
+      "sotto": "Alles wat je al hebt is goed: een Excel, een PDF, foto's van je handgeschreven prijslijst of een paar oude offertes. Er komt niets in de prijslijst voordat jij het gecontroleerd hebt.",
+      "cosaLeggiamo": "Wat wij lezen",
+      "punti": [
+        "De kolommen herkennen we aan de titels (Descrizione, U.M., Prezzo…). Heeft het bestand geen duidelijke titels, dan leest de kunstmatige intelligentie ze en kun jij ze verbeteren.",
+        "Uit PDF en foto's leest de kunstmatige intelligentie de regels: ze laat zien waar ze niet zeker is, en namen van klanten in oude offertes schrijft ze niet over.",
+        "Eenheden die op veel manieren geschreven zijn (mq, ml, nr, pz, a corpo) worden de eenheden van de offerte.",
+        "Codes die ontbreken of dubbel zijn, geven wij zelf; titelregels zonder prijs slaan we over.",
+        "Codes die al in je prijslijst staan, worden niet overschreven."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Ik lees de prijslijst…",
+      "scegli": "Kies je prijslijst",
+      "formati": "Excel of CSV, of PDF en foto's: ook meerdere foto's tegelijk, of een paar oude offertes",
+      "attesa": "Bij PDF en foto's duurt het tot een minuut.",
+      "errore": "Ik kon het bestand niet lezen."
+    },
+    "revisioneImport": {
+      "altroFile": "Upload een ander bestand",
+      "h1": "Controleer voordat je importeert",
+      "sotto": "De gele regels zijn niet zeker: de eenheid of de prijs is niet te lezen. Verbeter ze of haal het vinkje weg.",
+      "ilFile": "het bestand",
+      "letteAi": "Deze regels heeft de AI uit je PDF of foto's gelezen. **Controleer elke prijs** voordat je bevestigt: waar de AI niet zeker van was, staat een opmerking.",
+      "colonne": "Kolommen van het bestand",
+      "metodoAi": "herkend door de AI: controleer ze",
+      "metodoMano": "door jou gekozen",
+      "metodoTitoli": "herkend aan de titels",
+      "campi": {
+        "nome": "Omschrijving van de regel",
+        "prezzo": "Prijs",
+        "unita": "Maateenheid",
+        "codice": "Code",
+        "descrizione": "Lange omschrijving",
+        "categoria": "Categorie"
+      },
+      "scegliColonna": "Kies…",
+      "nessuna": "Geen",
+      "esempioColonna": "(bijv. {testo})",
+      "rileggo": "Ik lees het bestand opnieuw…",
+      "rileggi": "Lees opnieuw met deze kolommen",
+      "rileggiNota": "Als je het bestand opnieuw leest, gaan de correcties die je hieronder hebt gedaan verloren.",
+      "daImportare": "{n} regels om te importeren uit {file}",
+      "daSistemare": "{n} aan te passen",
+      "soloDubbi": "Toon alleen de regels die je moet controleren",
+      "importaRiga": "Importeer regel {n}",
+      "descrizione": "Omschrijving",
+      "rigaFile": "regel {n} van het bestand",
+      "rigaFileUnita": "regel {n} van het bestand, eenheid «{unita}»",
+      "prezzo": "Prijs €",
+      "unita": "Eenheid",
+      "scegliUnita": "Kies",
+      "codice": "Code",
+      "correggi": "Verbeter",
+      "tutteAPosto": "Alle regels zijn in orde.",
+      "mostraAltre": "Toon andere regels ({n})",
+      "importo": "Ik importeer…",
+      "importaN": "Importeer {n} regels",
+      "annulla": "Import annuleren",
+      "sistemaNota": "Pas de gemarkeerde regels aan of haal het vinkje weg om te importeren.",
+      "errore": "Er gaat iets mis. Probeer het opnieuw."
+    },
+    "daPrezzare": {
+      "h1": "Toe te voegen aan je prijslijst",
+      "sotto": "Werkzaamheden waar je in een offerte zelf een prijs voor hebt ingevuld, met het vinkje «stel voor om toe te voegen aan de prijslijst». Voeg je ze toe, dan komt de prijs de volgende keer vanzelf.",
+      "niente": "Niets toe te voegen.",
+      "nienteTesto": "Als je zelf een prijs invult voor een regel die niet in je prijslijst staat, vink dan het voorstel aan en je vindt het hier terug.",
+      "torna": "Terug naar de offertes",
+      "dalPreventivo": "Uit offerte nr. {numero}",
+      "haiMesso": "je hebt {prezzo} {unita} ingevuld",
+      "nomeListino": "Naam in de prijslijst",
+      "prezzo": "Prijs €",
+      "unita": "Eenheid",
+      "codice": "Code",
+      "errorePrezzo": "Schrijf de prijs in euro, bijvoorbeeld 18,50.",
+      "erroreSalva": "Opslaan is niet gelukt.",
+      "aggiungi": "Voeg toe aan de prijslijst",
+      "nonServe": "Niet nodig"
+    },
+    "preventivo": {
+      "tutti": "Alle offertes",
+      "registro": "Logboek",
+      "eventi": {
+        "creato": "Concept gemaakt",
+        "approvato": "Goedgekeurd en klaar om te versturen",
+        "visto": "Geopend door de klant",
+        "accettato": "Geaccepteerd door de klant",
+        "rifiutato": "Afgewezen door de klant"
+      },
+      "da": "door {nome}",
+      "ip": "IP {ip}",
+      "impronta": "vingerafdruk van de geaccepteerde PDF {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Verwijder dit concept",
+      "conferma": "Voorgoed verwijderen?",
+      "si": "Ja, verwijder",
+      "no": "Nee"
+    },
+    "revisione": {
+      "bozzaN": "Concept nr. {numero}",
+      "origineEsempio": "voorbeeld {caso} uit de testset, opgeslagen uitvoer van de motor",
+      "origineMotore": "klaargemaakt in {secondi} s",
+      "h1": "Controleer en keur goed",
+      "sotto": "Geen enkele prijs is verzonnen: de prijzen die je ziet komen uit je prijslijst, de lege vul je zelf in.",
+      "statoRighe": "Status van de regels",
+      "pronta": "{n} klaar",
+      "pronte": "{n} klaar",
+      "contaDaPrezzare": "{n} nog zonder prijs",
+      "contaSenzaMisura": "{n} zonder maat",
+      "contaSenzaValore": "{n} zonder waarde van het goed",
+      "domandaIva": "IVA: {n} vraag",
+      "domandeIva": "IVA: {n} vragen",
+      "motivi": {
+        "prezzo": "Prijs invullen",
+        "misura": "Maat ontbreekt",
+        "valore": "Waarde van het goed ontbreekt"
+      },
+      "rigaPronta": "Klaar",
+      "daCompletare": "nog invullen",
+      "cliente": "Klant",
+      "nome": "Naam",
+      "indirizzo": "Adres van de klus",
+      "linguaCliente": "Taal van de klant",
+      "inCheLingua": "In welke taal stuur je de offerte?",
+      "riceve": "De klant krijgt bericht, pagina en PDF in {lingua}, met de Italiaanse tekst ernaast: bij twijfel geldt het Italiaans. Controleer de vertaalde regels, je kunt ze aanpassen.",
+      "cambiate": "Je hebt de regels aangepast na de vertaling: vertaal opnieuw, dan leest de klant hetzelfde als jij.",
+      "traduco": "Ik vertaal…",
+      "rifai": "Vertaal opnieuw",
+      "traduciIn": "Vertaal naar {lingua}",
+      "escluso": "Niet inbegrepen: {testo}",
+      "ivaTitolo": "IVA: drie vragen",
+      "abitazione": "Is het een woning?",
+      "abitazioneSi": "Ja, er woont iemand",
+      "abitazioneNo": "Nee, winkel of kantoor",
+      "intervento": "Soort werk",
+      "ordinaria": "Gewoon onderhoud",
+      "straordinaria": "Buitengewoon onderhoud",
+      "ristrutturazione": "Verbouwing",
+      "materiali": "Wie koopt de materialen?",
+      "materialiImpresa": "Ik koop ze",
+      "materialiCliente": "De klant",
+      "ripartizione": "10% over {a10}, 22% over {a22}",
+      "commercialista": "Check het altijd bij je boekhouder (commercialista).",
+      "rispondi": "Beantwoord de drie vragen, dan reken ik het juiste tarief uit.",
+      "lavorazioni": "Werkzaamheden · {n}",
+      "soloDaSistemare": "Alleen wat nog moet",
+      "haiDetto": "Je zei: «{testo}»",
+      "voceListino": "Regel uit je prijslijst",
+      "fuoriListino": "Niet in de prijslijst: prijs zelf invullen",
+      "descrizione": "Omschrijving op de offerte",
+      "quantita": "Hoeveelheid",
+      "unita": "Eenheid",
+      "scegli": "Kies",
+      "prezzo": "Prijs €",
+      "valoreBene": "Waarvan waarde van het product (sanitair, kranen…), voor de IVA",
+      "proponi": "Stel voor om het met deze prijs aan mijn prijslijst toe te voegen",
+      "togliRiga": "Verwijder de regel",
+      "aggiungiRiga": "Voeg een regel toe",
+      "esclusi": "Niet inbegrepen in de offerte",
+      "unaPerRiga": "Eén per regel",
+      "note": "Notities van de opname ter plaatse (komen niet op de PDF)",
+      "riepilogo": "Overzicht",
+      "imponibile": "Bedrag excl. IVA (imponibile)",
+      "ivaSu": "IVA {aliquota}% over {importo}",
+      "totale": "Totaal",
+      "primaManca": "Voordat je goedkeurt ontbreekt nog:",
+      "righeManca": "(regel {righe})",
+      "mancanze": {
+        "quantita": "de hoeveelheid ontbreekt",
+        "unita": "de maateenheid ontbreekt",
+        "prezzo": "de prijs ontbreekt",
+        "abitazione": "IVA: is het een woning?",
+        "intervento": "IVA: soort werk",
+        "materiali": "IVA: wie koopt de materialen",
+        "valoreBene": "waarde van het \"bene significativo\" (belangrijk product)",
+        "valoreSupera": "de waarde van het product is hoger dan het bedrag van de regel",
+        "traduzioneDaRifare": "vertaling in het {lingua} opnieuw doen: de regels zijn veranderd",
+        "traduci": "vertaal de offerte in het {lingua}"
+      },
+      "salvaBozza": "Sla het concept op",
+      "salvata": "Concept opgeslagen.",
+      "totaleIvaInclusa": "Totaal incl. IVA",
+      "imponibileFinora": "Bedrag excl. IVA tot nu toe",
+      "sistemaDato": "Los {n} gegeven op",
+      "sistemaDati": "Los {n} gegevens op",
+      "approvaGenera": "Keur goed en maak de PDF",
+      "approvi": "Keur je de offerte goed?",
+      "confermaTesto": "Totaal {totale} · {regime}. Na goedkeuring kun je het concept niet meer wijzigen: ik maak de PDF en de link voor de klant.",
+      "controllato": "Ik heb prijzen en hoeveelheden gecontroleerd",
+      "genero": "Ik maak de PDF…",
+      "torna": "Terug naar het concept",
+      "erroreSalva": "Opslaan is niet gelukt. Probeer het opnieuw.",
+      "erroreApprova": "Goedkeuren is niet gelukt. Probeer het opnieuw.",
+      "erroreTraduci": "Vertalen is niet gelukt. Probeer het opnieuw."
+    },
+    "approvato": {
+      "preventivoN": "Offerte nr. {numero}",
+      "accettato": "De klant heeft de offerte geaccepteerd.",
+      "rifiutato": "De klant heeft de offerte afgewezen.",
+      "pronto": "De offerte is klaar. Stuur hem nu door.",
+      "totaleIvaInclusa": "Totaal incl. IVA",
+      "riceve": "De klant krijgt bericht, pagina en PDF in het {lingua}, met de Italiaanse tekst ernaast die leidend is.",
+      "whatsapp": "Stuur via WhatsApp",
+      "copiato": "Link gekopieerd",
+      "copia": "Kopieer de link",
+      "apriPdf": "Open de PDF",
+      "paginaCliente": "Bekijk de pagina die de klant ziet",
+      "aChePunto": "Hoe ver is het",
+      "approvatoDaTe": "Door jou goedgekeurd",
+      "vistoDalCliente": "Bekeken door de klant",
+      "quandoApre": "zodra de klant de link opent",
+      "accettatoDa": "Geaccepteerd door {nome}",
+      "rifiutatoDa": "Afgewezen door {nome}",
+      "risposta": "Antwoord van de klant",
+      "accettaCon": "accepteert met naam en datum",
+      "fatto": "(gedaan)",
+      "inAttesa": "(in afwachting)",
+      "nota": "De klant opent de link, ziet de offerte en accepteert hem met naam en datum, zonder zich te registreren. Ververs de pagina om te zien of hij hem heeft geopend."
+    },
+    "prova": {
+      "nuovaProva": "Nieuwe proef",
+      "h1": "Van werkbezoek naar concept",
+      "sotto": "Het systeem haalt de werkzaamheden eruit, koppelt ze aan je prijslijst en maakt een concept dat jij nog controleert. De prijzen komen alleen uit de prijslijst: wat het niet vindt, blijft zonder prijs staan, en wat er ontbreekt vraagt het aan jou.",
+      "avviso": "Verzonnen proefgegevens: het bedrijf van de prijslijst en de klanten in de voorbeelden bestaan niet. Voer geen namen, adressen of nummers van echte mensen in: de concepten blijven 7 dagen bewaard en iedereen met de link kan ze openen. De vrije tekst wordt verwerkt met Claude van Anthropic. {privacy}",
+      "daDove": "Waar wil je beginnen?",
+      "unEsempio": "Een voorbeeld",
+      "tuoTesto": "Jouw tekst",
+      "esempiBanco": "Voorbeelden uit de testomgeving",
+      "esempiTesto": "Verzonnen werkbezoeken uit de testomgeving. Het concept is meteen klaar: het is de opgeslagen uitkomst van het systeem voor dat geval.",
+      "lavori": {
+        "bagno": "Complete badkamer",
+        "tinteggiatura": "Schilderwerk tweekamerappartement",
+        "cucina": "Installatie keuken",
+        "pavimento": "Vloer woonkamer"
+      },
+      "tutti": "Of kies uit alle 30",
+      "vocale": "Het spraakbericht, uitgetypt",
+      "preparo": "Ik maak het concept…",
+      "prepara": "Maak het concept",
+      "racconta": "Vertel over het werk zoals je het in een spraakbericht zou zeggen",
+      "segnaposto": "Badkamer van mevrouw Rossi, via Roma 3. Het is haar eigen huis. We halen het bad en de tegels eruit, twee meter hoog. De badkamer is twee bij één meter tachtig, douchebak 80x80, het sanitair koop ik zelf…",
+      "codice": "Toegangscode",
+      "codiceNota": "Jouw tekst gaat via de API van Claude en elke proef kost geld: de code houdt bots tegen.",
+      "attesa": "Het duurt ongeveer 20 seconden…",
+      "errore": "Het is niet gelukt om het concept te maken. Probeer het nog eens.",
+      "fasi": [
+        "Ik lees het werkbezoek…",
+        "Ik scheid werkzaamheden, maten en uitsluitingen…",
+        "Ik zoek elke post in de prijslijst…",
+        "Ik kijk wat er ontbreekt en welk IVA-regime geldt…",
+        "Ik maak het concept om te controleren…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "Ik spreek",
+      "ascolto": "Ik luister: tik om te stoppen",
+      "detta": "Dicteer het werkbezoek",
+      "nota": "Dit gebruikt de spraakherkenning van de browser: naar deze site gaat alleen de tekst. Welke taal je ook spreekt, het concept komt in het Italiaans.",
+      "erroreMicrofono": "De browser mag de microfoon niet gebruiken.",
+      "erroreLingua": "Op deze telefoon kun je in deze taal niet dicteren. Schrijf de tekst gewoon in je eigen taal: het concept komt toch in het Italiaans.",
+      "erroreInterrotta": "Het dicteren is gestopt. Probeer het nog eens."
+    }
+  },
+  "comune": {
+    "lingua": "Taal",
+    "scegliLingua": "Kies de taal",
+    "faFede": "Vertaling als service: bij twijfel geldt de Italiaanse tekst.",
+    "saltaAlContenuto": "Ga naar de inhoud",
+    "logoTop": "PreventivoLampo, terug naar boven",
+    "logoHome": "PreventivoLampo, home",
+    "entra": "Inloggen",
+    "apriMenu": "Open het menu",
+    "chiudiMenu": "Sluit het menu",
+    "principale": "Hoofdmenu",
+    "ctaPilota": "Word pilotvakman",
+    "ctaProva": "Probeer met een voorbeeld",
+    "privacy": "Privacy",
+    "cookie": "Cookies",
+    "condizioni": "Voorwaarden",
+    "infoLegali": "Juridische informatie",
+    "servizioDi": "PreventivoLampo is een dienst van K Digital Solution",
+    "aggiornata": "Bijgewerkt op {data}",
+    "comeFunziona": "Hoe het werkt"
+  },
+  "nav": {
+    "come": "Hoe het werkt",
+    "mestieri": "Vakken",
+    "numeri": "De cijfers",
+    "prezzi": "Prijzen",
+    "domande": "Vragen"
+  },
+  "hero": {
+    "etichetta": "Voor alle vakken in en om het huis",
+    "titolo": "Bezichtiging klaar. De offerte vertrekt vanuit je bus.",
+    "testo": "Je vertelt het in een spraakbericht of je typt het, zoals je het tegen een collega zou zeggen. Je krijgt een concept terug met de prijzen uit **jouw** prijslijst, het juiste IVA-tarief en twijfelachtige posten gemarkeerd. Jij controleert en keurt goed, en de klant krijgt de PDF die hij met één klik kan accepteren.",
+    "garanzia": "Prijzen alleen uit jouw prijslijst. Staat een post er niet in, dan blijft die open: geen verzonnen bedragen.",
+    "guarda": "Bekijk hoe het werkt",
+    "punti": [
+      "Niets te installeren",
+      "Prijslijst ook vanaf een foto",
+      "Jij beslist altijd"
+    ]
+  },
+  "demo": {
+    "gruppo": "Kies een vak voor het voorbeeld",
+    "altroMestiere": "Ander vak",
+    "didascalia": "Voorbeeld: verzonnen klus en prijzen, proefprijslijst",
+    "pausa": "Pauze",
+    "riprendi": "Hervat",
+    "riguarda": "Bekijk opnieuw",
+    "sig": "dhr.",
+    "bozza": "Concept uit jouw prijslijst",
+    "voci": "{n} posten",
+    "daPrezzare": "nog te prijzen",
+    "prezzoTuo": "jouw prijs: je kunt hem aan je prijslijst toevoegen",
+    "iva": "IVA {aliquota}%: woning, onderhoud",
+    "stati": [
+      "Verstuurd",
+      "Gezien",
+      "Geaccepteerd"
+    ],
+    "accettato": "Online geaccepteerd door dhr. {cliente}: naam, datum, tijd en een kopie van de PDF blijven bij jou.",
+    "altroTitolo": "Kozijnen, gipsplaat, cv-ketels, tuinen, hekken, keukens op maat.",
+    "altroTesto": "Werk je met posten en maten, dan werkt het met jouw prijslijst: de vaktaal vindt het daar, en wat er niet in staat blijft nog te prijzen. Upload de prijslijst die je hebt, ook als foto, en probeer het op je eigen klussen.",
+    "altroCta": "Probeer het op jouw klus",
+    "mestieri": {
+      "elettricista": "Elektricien",
+      "idraulico": "Loodgieter",
+      "imbianchino": "Schilder",
+      "piastrellista": "Tegelzetter",
+      "muratore": "Metselaar"
+    },
+    "lavori": {
+      "elettricista": "Keuken",
+      "idraulico": "Keuken",
+      "imbianchino": "Appartement",
+      "piastrellista": "Woonkamer",
+      "muratore": "Kinderkamer"
+    },
+    "vocali": {
+      "elettricista": "Keuken van meneer Ferrari. Vier gewone lichtpunten en twee wisselschakelingen boven de tafel. De 16A-stopcontacten voor de apparaten. In de meterkast komt een nieuwe aardlekschakelaar. En ik hang de lamp op die hij zelf gekocht heeft.",
+      "idraulico": "Keuken van mevrouw Rinaldi. We verplaatsen de spoelbak naar de overkant: nieuwe aansluiting voor warm en koud water met afvoer, drie meter afvoer van 40. Ik sluit ook de vaatwasser aan. De mengkraan heeft ze al, die monteer ik.",
+      "imbianchino": "Appartement van meneer Greco, woonkamer en slaapkamer: wanden en plafonds samen honderdtwintig meter. Ik schraap waar het loslaat, voorstrijk overal en twee lagen afwasbare muurverf. Zes meter schimmelwerende verf op het plafond van de badkamer. De meubels verschuiven wij zelf.",
+      "piastrellista": "Woonkamer van mevrouw Marino, achtentwintig vierkante meter. Ik haal de oude vloer en de plinten eruit, maak de dekvloer opnieuw en leg de grestegels van dertig bij dertig die zij zelf gekocht heeft. Nieuwe plinten in gres.",
+      "muratore": "Kinderkamer van meneer Conti. Ik breek de oude scheidingswand af en bouw hem een meter verschoven weer op: holle blokken van acht, drie twintig bij twee zeventig, stucwerk aan beide kanten. Puin, een kubieke meter. Het blindkozijn van de deur plaats ik zelf."
+    }
+  },
+  "mestieri": {
+    "titolo": "Elk vak heeft zijn eigen woorden. Jouw prijslijst kent ze al.",
+    "testo": "Je hoeft niet anders te leren praten: je noemt de maten ruwweg, met de namen die jij gebruikt, «wat zij zelf heeft gekocht». Het systeem zoekt tussen de posten in jouw prijslijst, rekent de maten opnieuw na en wat het niet vindt, markeert het voor je.",
+    "guarda": "Bekijk het voorbeeld",
+    "scorri": "Scroll om de andere vakken te zien.",
+    "nota": "Voorbeeldregels. Het werkt met elke prijslijst met posten en maten: staat jouw vak er niet bij, dan geldt hetzelfde.",
+    "etichettaLista": "Voorbeelden per vak",
+    "voci": {
+      "elettricista": {
+        "nome": "Elektricien",
+        "detto": "zes lichtpunten, twee wisselschakelaars"
+      },
+      "idraulico": {
+        "nome": "Loodgieter",
+        "detto": "ik verplaats de spoelbak anderhalve meter"
+      },
+      "imbianchino": {
+        "nome": "Schilder",
+        "detto": "twee lagen afwasbare muurverf, honderdtwintig meter"
+      },
+      "piastrellista": {
+        "nome": "Tegelzetter",
+        "detto": "ik leg de grestegels die zij zelf gekocht heeft"
+      },
+      "muratore": {
+        "nome": "Metselaar",
+        "detto": "drie twintig bij twee zeventig"
+      },
+      "cartongessista": {
+        "nome": "Droogbouwer",
+        "detto": "verlaagd plafond in de gang, zes bij één tien"
+      },
+      "serramentista": {
+        "nome": "Kozijnenmonteur",
+        "detto": "drie ramen met twee vleugels en een openslaande deur"
+      },
+      "termoidraulico": {
+        "nome": "Loodgieter en cv-installateur",
+        "detto": "ik vervang de ketel, de radiatoren blijven"
+      },
+      "falegname": {
+        "nome": "Timmerman",
+        "detto": "inbouwkast, twee veertig bij twee zestig"
+      },
+      "fabbro": {
+        "nome": "Smid",
+        "detto": "balkonhek, zes meter"
+      },
+      "giardiniere": {
+        "nome": "Hovenier",
+        "detto": "haag snoeien, veertig meter"
+      },
+      "impresa": {
+        "nome": "Bouwbedrijf",
+        "detto": "complete badkamer, sleutelklaar"
+      }
+    }
+  },
+  "come": {
+    "titolo": "Van spraakbericht tot geaccepteerde offerte, in vier stappen.",
+    "sotto": "Jij vertelt en controleert. Berekeningen, prijslijst, IVA, PDF en verzenden doet het systeem.",
+    "passi": [
+      {
+        "titolo": "Je vertelt over de klus",
+        "testo": "Met je stem of schriftelijk, vanaf je telefoon, direct na het bezoek ter plaatse: maten, werkzaamheden, wat de klant zelf levert, wat niet is inbegrepen.",
+        "nota": "«drie bij twee en een half, ongeveer»"
+      },
+      {
+        "titolo": "Het vraagt wat er ontbreekt",
+        "testo": "Als een hoeveelheid niet duidelijk is, gokt het niet: het stelt je een korte, duidelijke vraag en wacht op je antwoord.",
+        "nota": "«Hoeveel m² vloer?»"
+      },
+      {
+        "titolo": "Je controleert op je telefoon",
+        "testo": "Regel voor regel: aanpassen, schrappen, toevoegen. Wat niet in jouw prijslijst staat, is gemarkeerd.",
+        "nota": "Wijzigen · Goedkeuren"
+      },
+      {
+        "titolo": "De klant accepteert",
+        "testo": "Hij krijgt de PDF met jouw logo en een link om te accepteren. Jij ziet wanneer hij hem opent en wanneer hij ja zegt.",
+        "nota": "Verstuurd · Bekeken · Geaccepteerd"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "Dit garanderen we je, elke keer.",
+    "testo": "De offerte draagt jouw naam, dus hij moet kloppen. Daarom gokt het systeem nooit: wat het weet, schrijft het op, wat het niet weet, vraagt het aan jou.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "van de prijzen komt uit jouw prijslijst",
+        "dettaglio": "Geen verzonnen prijzen. Wat ontbreekt, blijft zonder prijs tot jij beslist."
+      },
+      {
+        "cifra": "6 talen",
+        "cosa": "voor je klant",
+        "dettaglio": "Italiaans, Engels, Duits, Frans, Spaans en Nederlands. En jij vertelt ook in het Roemeens, Albanees of Arabisch."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "tot je conceptofferte",
+        "dettaglio": "Van je verhaal over het bezoek tot een compleet concept, met vragen over wat er ontbreekt."
+      }
+    ],
+    "sotto1": "Voordat een offerte bij de klant komt, gaat hij langs jou. De regels die je moet checken zijn gemarkeerd, ontbrekende maten vraagt het aan je, en er gaat niets weg zonder jouw goedkeuring.",
+    "sotto2": "Met het pilotprogramma testen we het op echte klussen van tien vakmensen uit verschillende beroepen. Wat niet goed gaat, horen we van hen, en dat lossen we op."
+  },
+  "cosa": {
+    "titolo": "Een spraakbericht uitschrijven kunnen er veel. Wij pakken aan wat jou geld kost.",
+    "listinoTitolo": "Jouw prijslijst, zoals die is",
+    "listinoTesto": "Je uploadt de prijslijst die je hebt: Excel, PDF, de foto van een met de hand geschreven blad of een paar oude offertes. Het systeem leest de regels, eenheden en prijzen, en jij controleert en bevestigt. Er komt geen prijs binnen zonder dat jij hem hebt gezien. Kom je er niet uit, dan helpen wij je.",
+    "tabella": {
+      "didascalia": "Voorbeeld van een prijslijst",
+      "voce": "Post",
+      "unita": "Eenheid",
+      "tipoIva": "IVA-type",
+      "prestazione": "prestazione (dienst)",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "Geen verzonnen prijzen",
+    "prezzoTesto": "Veel apps schatten een post met «marktprijzen» als ze hem niet vinden. Wij niet: staat hij niet in jouw prijslijst, dan markeren we hem als nog te prijzen, en de prijs vul jij in. Een offerte die te laag is, betekent een klus met verlies.",
+    "dalListino": "uit prijslijst ✓",
+    "ivaTitolo": "IVA in de bouw goed geregeld, vanzelf",
+    "ivaTesto1": "Onderhoud aan een woning? De 10% geldt voor het werk, maar de «beni significativi» (belangrijke goederen: sanitair, kranen, kozijnen, ketels) vallen er alleen onder tot de waarde van de rest van de klus. Het deel dat daarboven uitkomt, gaat naar 22%.",
+    "ivaTesto2": "We stellen je drie vragen: wat voor pand het is, wat voor werk het is, wie de materialen koopt. Op de PDF staat de IVA van 10% en 22% goed verdeeld, met de verplichte vermelding.",
+    "ivaNota": "Voorbeeld uit de gids van de Agenzia delle Entrate (de Italiaanse belastingdienst). Voor bijzondere gevallen blijft er altijd je commercialista (boekhouder).",
+    "scontrino": {
+      "etichetta": "Voorbeeld van IVA-verdeling",
+      "titolo": "Buitengewoon onderhoud · woning",
+      "manodopera": "Arbeidsloon en overige materialen",
+      "beni": "Beni significativi (belangrijke goederen)",
+      "imp10": "Belastbaar bedrag 10%",
+      "imp22": "Belastbaar bedrag 22%",
+      "iva": "IVA 10% + IVA 22%",
+      "totale": "Totaal"
+    },
+    "lingueTitolo": "Jij vertelt in jouw taal. De klant leest in de zijne.",
+    "lingueTesto": "Je schrijft of spreekt de opname van de klus in het Roemeens, Albanees, Arabisch of een andere taal: het concept komt in het Italiaans uit de bus. Is je klant buitenlander, dan krijgt hij de offerte in het Engels, Duits, Frans, Spaans of Nederlands, met de Italiaanse tekst ernaast, want die is leidend. De vertaling zie je en kun je verbeteren voordat je hem verstuurt.",
+    "lingueDalListino": "uit jouw prijslijst, in het Italiaans",
+    "lingueAlCliente": "naar de Duitse klant, met het Italiaans ernaast",
+    "aiutoTitolo": "Echte hulp, van een mens",
+    "aiutoTesto": "Logo, gegevens, betalingsvoorwaarden, aanbetalingen, uitsluitingen: je stelt het zelf in, in een paar minuten. Kom je er niet uit, dan schrijf of bel je ons en antwoordt er een mens, geen bot. En de eerste offerte stuur jij zelf, vanuit je bus.",
+    "ultimaTitolo": "Jij hebt altijd het laatste woord",
+    "ultimaTesto": "Het systeem stelt voor, jij beslist. Geen enkele offerte gaat naar de klant zonder dat jij hem hebt geopend en goedgekeurd. Nieuwe posten waar jij een prijs voor invult, komen in jouw prijslijst, voor de volgende keer."
+  },
+  "confronto": {
+    "titolo": "Drie manieren om dezelfde offerte te maken.",
+    "colonne": [
+      "Word of Excel, 's avonds",
+      "Een of andere chatbot",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "De prijzen",
+        "celle": [
+          "Je kopieert ze zelf uit je prijslijst",
+          "Hij schat ze: jouw prijslijst kent hij niet",
+          "Alleen uit jouw prijslijst. Wat ontbreekt, moet je nog prijzen"
+        ]
+      },
+      {
+        "tema": "Maten die ontbreken",
+        "celle": [
+          "Je merkt het pas als je zit te schrijven",
+          "Hij neemt ze vaak zomaar aan",
+          "Hij vraagt ernaar voordat hij gaat rekenen"
+        ]
+      },
+      {
+        "tema": "IVA met beni significativi",
+        "celle": [
+          "Met de hand, met twijfel",
+          "Hangt af van hoe je het vraagt",
+          "10% en 22% verdeeld, met de juiste vermelding"
+        ]
+      },
+      {
+        "tema": "Het document",
+        "celle": [
+          "Elke keer opnieuw opmaken",
+          "Tekst die je ergens anders moet plakken",
+          "PDF met jouw logo, klaar om te versturen"
+        ]
+      },
+      {
+        "tema": "De ja van de klant",
+        "celle": [
+          "Een berichtje, als het meezit",
+          "Bestaat niet",
+          "Online akkoord: naam, datum, tijd en kopie van de PDF"
+        ]
+      },
+      {
+        "tema": "Waar je het doet",
+        "celle": [
+          "Achter de computer, na het eten",
+          "Op je telefoon, daarna doe je het over",
+          "Op je telefoon, meteen na de opname van de klus"
+        ]
+      }
+    ],
+    "etichettaLista": "Vergelijking per onderwerp",
+    "scorri": "Scroll voor de andere vergelijkingen.",
+    "nota": "«Een of andere chatbot»: een algemene assistent die je gebruikt zonder jouw prijslijst, zoals veel mensen nu doen."
+  },
+  "calcolo": {
+    "titolo": "Wat kosten offertes je nu?",
+    "preventivi": "Offertes per week",
+    "minuti": "Minuten per offerte, met rekenen, Word en versturen",
+    "min": "{n} min",
+    "passi": "Elke maand besteed je ongeveer aan offertes",
+    "ore": "{n} uur",
+    "costa": "meestal 's avonds, na de klus. PreventivoLampo kost € 19,90 per maand:",
+    "allOra": "€ {n} voor elk van die uren.",
+    "nota": "De cijfers vul jij in. Hoeveel tijd je terugkrijgt, meten we met de pilot, op echte klussen."
+  },
+  "prezzi": {
+    "titolo": "Eerst probeer je het op je eigen echte klussen. Daarna beslis je.",
+    "pilota": "Pilotprogramma",
+    "perGiorni": "voor 30 dagen",
+    "pilotaTesto": "Onbeperkt offertes en hulp als je die nodig hebt. In ruil daarvoor vertel je ons wat niet werkt. We bellen terug in volgorde van aanmelding. Vanaf dag 31 € 19,90 per maand of € 199 per jaar, alleen als je wilt blijven: geen automatische verlenging.",
+    "candidati": "Meld je aan",
+    "posti": "{n} plekken",
+    "postiLiberi": "{n} van de {totale} plekken vrij",
+    "ultimoPosto": "Laatste plek van {totale}",
+    "esauriti": "Alle plekken zijn bezet",
+    "mensile": "Maandelijks",
+    "alMese": "per maand",
+    "perMese": "/maand",
+    "mensileVoci": [
+      "Onbeperkt offertes",
+      "Acceptatielink voor de klant",
+      "Hulp van een echt persoon"
+    ],
+    "mensileNota": "Geen opstartkosten. Zeg op wanneer je wilt, zonder verplichtingen.",
+    "annuale": "Jaarlijks",
+    "allAnno": "per jaar",
+    "perAnno": "/jaar",
+    "annualeVoci": [
+      "Alles van maandelijks",
+      "Twee maanden cadeau",
+      "Wordt alleen verlengd als jij dat vraagt"
+    ],
+    "ivaEsclusa": "Prijzen exclusief IVA."
+  },
+  "domande": {
+    "titolo": "De vragen die iedereen ons stelt",
+    "nonTrovi": "Staat jouw vraag er niet bij? Mail ons op [{email}](mailto:{email}): wij antwoorden, geen bot.",
+    "lista": [
+      {
+        "d": "En als hij een fout maakt?",
+        "r": "Naar de klant gaat niets zonder jouw goedkeuring. Onzekere regels zie je gemarkeerd, wat niet in je prijslijst staat blijft open om te prijzen, en er wordt nooit een prijs verzonnen."
+      },
+      {
+        "d": "Ik ben niet goed met computers.",
+        "r": "Als je een spraakbericht op WhatsApp kunt sturen, kun je dit ook gebruiken. Het opent in de browser van je telefoon, je hoeft niets te installeren, en als je vastloopt antwoordt er een echt persoon."
+      },
+      {
+        "d": "De prijzen ken alleen ik.",
+        "r": "Precies: wij gebruiken alleen die van jou. Je prijslijst upload je zoals hij is, ook als foto of uit oude offertes, en wat er niet in staat blijft open totdat jij beslist."
+      },
+      {
+        "d": "Is een chatbot niet genoeg?",
+        "r": "Een algemene assistent kent jouw prijslijst niet, dus hij schat de prijzen. Hij verdeelt de IVA niet over de «beni significativi» (de belangrijke materialen met verlaagd tarief), maakt geen PDF met jouw logo en haalt het ja van de klant niet op."
+      },
+      {
+        "d": "Is het geschikt voor mijn vak?",
+        "r": "Als je met posten en maten werkt, ja: elektriciens, loodgieters, schilders, tegelzetters, metselaars, gipsplaatmonteurs, kozijnmonteurs, smeden, hoveniers. De vaktaal haalt het uit jouw prijslijst. Met de pilot meten we het ook uit bij vakken die we nog niet hebben getest."
+      },
+      {
+        "d": "Kan ik het in mijn eigen taal vertellen? En als de klant een buitenlander is?",
+        "r": "Ja. Je schrijft of dicteert de bezichtiging in het Roemeens, Albanees, Arabisch, Oekraïens, Spaans of een andere taal, en het concept komt in het Italiaans met de prijzen uit jouw prijslijst. Inspreken hangt af van je telefoon: als jouw taal er niet bij zit, typ je het. En spreekt de klant Engels, Duits, Frans, Spaans of Nederlands, dan stuur je de offerte in zijn taal: de vertaling controleer jij, en de Italiaanse tekst staat ernaast en is bepalend."
+      },
+      {
+        "d": "Ik praat snel, er is lawaai, ik gebruik mijn eigen woorden.",
+        "r": "Het systeem kent de posten uit jouw prijslijst en de namen die jij gebruikt. Als een maat niet duidelijk is, vraagt het erom in plaats van te gokken."
+      },
+      {
+        "d": "De klant wil papier.",
+        "r": "De PDF print je zoals elke offerte. Met de link accepteert hij het in een minuut, zonder zich te registreren, en jij hebt het bewijs van wat hij heeft geaccepteerd."
+      },
+      {
+        "d": "Waar komen de spraakberichten en gegevens van mijn klanten terecht?",
+        "r": "Prijslijst en offertes staan op servers in de Europese Unie. Om het concept te maken gaat de tekst van de bezichtiging via een AI-dienst, vermeld op de [privacypagina](/privacy). Naar onze servers komt alleen de tekst, niet de audio, en met jou sluiten we de overeenkomst voor de verwerking van de gegevens van je klanten."
+      },
+      {
+        "d": "Moet ik mijn factuurprogramma wisselen?",
+        "r": "Nee, hou je eigen programma. PreventivoLampo doet de offertes; de facturen blijven waar ze zijn."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "Stuur je volgende offerte vanuit de bestelbus.",
+    "testo": "We zoeken 10 vakmensen voor het pilotprogramma, uit elk bouwvak in en om het huis. Laat je gegevens achter: wij bellen je terug, in volgorde van binnenkomst, om te kijken of het bij je past.",
+    "vederlo": "Wil je het eerst zien voordat je je aanmeldt? [Probeer het op WhatsApp]({whatsapp}): het eerste bericht staat al klaar, druk op verzenden en vertel dan over een klus. Of [probeer met een voorbeeld](/prova).",
+    "scrivere": "Schrijf je liever? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Aanmelding voor het pilotprogramma",
+      "nome": "Voor- en achternaam",
+      "mestiere": "Vak",
+      "scegli": "Kies",
+      "comune": "Woonplaats",
+      "cellulare": "Mobiel nummer",
+      "volume": "Offertes per week",
+      "privacy": "Ik heb de [privacyverklaring](/privacy) gelezen en geef toestemming om gebeld te worden over het pilotprogramma.",
+      "invia": "Verstuur je aanmelding",
+      "invio": "Bezig met verzenden…",
+      "conferma": "Bedankt, {nome}. We bellen je binnen twee werkdagen terug.",
+      "errore": "Verzenden mislukt. Probeer het zo nog eens of mail ons op studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Vul je voor- en achternaam in.",
+        "mestiere": "Kies je vak.",
+        "comune": "Vul je woonplaats in.",
+        "telefono": "Vul een geldig Italiaans mobiel nummer in.",
+        "volume": "Kies een van de opties.",
+        "privacy": "We hebben je toestemming nodig om contact met je op te nemen."
+      },
+      "mestieri": {
+        "Elettricista": "Elektricien",
+        "Idraulico": "Loodgieter",
+        "Termoidraulico": "Installateur (verwarming en sanitair)",
+        "Imbianchino": "Schilder",
+        "Piastrellista": "Tegelzetter",
+        "Muratore": "Metselaar",
+        "Cartongessista": "Gipsplaatmonteur",
+        "Serramentista": "Kozijnenmonteur",
+        "Falegname": "Timmerman",
+        "Fabbro": "Smid",
+        "Giardiniere": "Hovenier",
+        "Impresa edile": "Bouwbedrijf",
+        "Impresa di ristrutturazioni": "Verbouwbedrijf",
+        "Altro": "Anders"
+      },
+      "volumi": {
+        "1 o 2": "1 of 2",
+        "da 3 a 5": "3 tot 5",
+        "più di 5": "meer dan 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Privacy",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "Op deze pagina leggen we uit welke persoonsgegevens PreventivoLampo verwerkt, waarom, waar ze terechtkomen en hoe lang we ze bewaren."
+        },
+        {
+          "t": "h2",
+          "testo": "Wie de gegevens verwerkt"
+        },
+        {
+          "t": "p",
+          "testo": "Verwerkingsverantwoordelijke is Sofiane Khatib, K Digital Solution, Monza (MB). Heb je een vraag over jouw gegevens? Schrijf dan naar [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "Bij de gegevens van klanten van een vakman (namen, adressen van werven, offertes) is de vakman zelf de verantwoordelijke. Wij verwerken ze in zijn opdracht, als verwerker, volgens de overeenkomst die we met hem sluiten."
+        },
+        {
+          "t": "h2",
+          "testo": "Welke gegevens, waarom en hoe lang"
+        },
+        {
+          "t": "h3",
+          "testo": "Als je je aanmeldt voor het pilotprogramma"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Naam, beroep, gemeente, mobiel nummer en, als je dat invult, hoeveel offertes je per week maakt.",
+            "We gebruiken ze alleen om je terug te bellen en te kijken of de pilot bij je past (rechtsgrond: jouw aanvraag en jouw toestemming).",
+            "Als je niet in de pilot komt, verwijderen we ze binnen 12 maanden. Je kunt ons ook altijd vragen ze eerder te verwijderen."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Als je het vakmannengedeelte gebruikt"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "E-mailadres voor inloggen, gegevens van je bedrijf die je invult (bedrijfsnaam, partita IVA (Italiaans btw-nummer), adres, telefoon, IBAN als je die opgeeft), logo, prijslijst en offertes.",
+            "Als je je prijslijst uploadt als PDF of foto, of via oude offertes, leest de kunstmatige intelligentie alleen de prijsregels: namen van klanten worden niet overgenomen en het bestand wordt niet bewaard.",
+            "We hebben ze nodig om je de dienst te leveren (rechtsgrond: de overeenkomst, ook tijdens de gratis pilot).",
+            "Ze blijven staan zolang je de dienst gebruikt. Als je stopt, verwijderen we ze binnen 30 dagen, behalve wat we volgens de wet moeten bewaren (bijvoorbeeld facturen, 10 jaar)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Als je klant bent van een vakman en zijn offerte opent"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Als je een offerte accepteert of afwijst, leggen we de naam vast die je invult, datum en tijd, het IP-adres en de vingerafdruk van de PDF.",
+            "De vakman heeft ze nodig als bewijs van de acceptatie. Wij bewaren ze in zijn opdracht, zolang hij de dienst gebruikt.",
+            "Wil je deze gegevens inzien, laten corrigeren of laten verwijderen? Dan kun je je tot de vakman of tot ons richten: wij sturen het verzoek aan hem door."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Als je PreventivoLampo uitprobeert met een voorbeeld of via WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "De tekst die je schrijft, de conceptofferte die daaruit komt en, op WhatsApp, het nummer waarmee je schrijft.",
+            "Proefconcepten worden na 7 dagen automatisch verwijderd. Op WhatsApp blijft het concept dat op jouw antwoord wacht hooguit een uur staan.",
+            "Schrijf bij proeven geen gegevens van echte personen: verzonnen klussen zijn genoeg.",
+            "Om misbruik tegen te gaan bewaren we een vingerafdruk (hash) van het IP-adres, niet het adres zelf."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Aan wie we ze toevertrouwen"
+        },
+        {
+          "t": "p",
+          "testo": "We gebruiken deze leveranciers, elk alleen voor zijn eigen onderdeel:"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase: database, toegang tot het gedeelte voor vakmensen en opslag van de PDF's, in Ierland (EU).",
+            "Vercel: de website en de functies ervan, in Frankfurt (EU).",
+            "Anthropic (Claude): leest de tekst van de opname op de werf en maakt het concept. Vertaalt ook de regels van de offerte als de klant een andere taal spreekt, in de Verenigde Staten.",
+            "Twilio en WhatsApp (Meta): ontvangen en versturen de WhatsApp-berichten.",
+            "n8n: koppelt de WhatsApp-berichten aan PreventivoLampo.",
+            "Resend: verstuurt de e-mails met de inlogcode."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Als gegevens buiten de Europese Unie terechtkomen, vertrouwen we op de waarborgen van de AVG (GDPR): de certificering EU-US Data Privacy Framework of de standaardcontractbepalingen van de Europese Commissie. We verkopen geen gegevens en gebruiken ze niet voor reclame of om modellen van kunstmatige intelligentie te trainen."
+        },
+        {
+          "t": "h2",
+          "testo": "Jouw rechten"
+        },
+        {
+          "t": "p",
+          "testo": "Je kunt ons vragen om je gegevens in te zien, te corrigeren of te verwijderen, het gebruik ervan te beperken, bezwaar te maken tegen de verwerking of ze in een leesbaar formaat te krijgen. Je kunt je toestemming ook altijd intrekken. Schrijf naar het adres hierboven: we antwoorden binnen 30 dagen. Je kunt ook een klacht indienen bij het Garante per la protezione dei dati personali (de Italiaanse toezichthouder voor gegevensbescherming, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Voorwaarden van de dienst",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo is een dienst van Sofiane Khatib, K Digital Solution, Monza (MB). De dienst helpt vakmensen en bouwbedrijven met het maken van offertes: uit het verhaal over de opname op de werf maakt hij een concept met de prijzen uit de prijslijst van het bedrijf. De vakman controleert het, keurt het goed en stuurt het naar de klant. De dienst is alleen voor bedrijven en zelfstandigen met partita IVA (Italiaans btw-nummer)."
+        },
+        {
+          "t": "h2",
+          "testo": "Pilotprogramma"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Tien plekken, die wij toewijzen na een telefoongesprek.",
+            "30 dagen gratis vanaf de start, met onbeperkt veel offertes. De prijslijst upload je zelf (Excel, PDF of foto). Heb je hulp nodig, dan helpen wij je.",
+            "Geen automatische verlenging: na de 30 dagen beslis jij of je blijft. Hoor je niets van je, dan stopt de pilot daar.",
+            "In ruil vragen we je om de dienst te gebruiken voor je echte klussen en ons te vertellen wat wel en wat niet werkt."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Na de pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Abonnement: € 19,90 per maand of € 199 per jaar, exclusief IVA, met onbeperkt veel offertes. Geen opstartkosten.",
+            "Het maandabonnement zeg je op wanneer je wilt, met ingang aan het einde van de maand die je al betaald hebt. Het jaarabonnement loopt 12 maanden en wordt alleen verlengd als jij dat vraagt.",
+            "Als we de prijzen veranderen, zeggen we dat minstens 30 dagen van tevoren, en de nieuwe prijzen gelden pas vanaf de volgende verlenging."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "De offerte bepaal jij"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo stelt voor, jij beslist: geen enkele offerte gaat naar de klant zonder dat jij hem hebt geopend en goedgekeurd. Controleer vóór het goedkeuren de posten, de hoeveelheden en de prijzen.",
+            "De prijzen komen alleen uit jouw eigen prijslijst. Posten die er niet in staan, blijven «da prezzare» (nog te prijzen) en de prijs vul jij zelf in.",
+            "De berekening van de IVA volgt jouw antwoorden en de regels van de Agenzia delle Entrate (de Italiaanse belastingdienst), maar het is geen fiscaal advies: bij bijzondere gevallen blijft je commercialista (boekhouder) de juiste persoon.",
+            "De relatie met de klant, de prijzen en het werk blijven van jou: PreventivoLampo is geen partij in het contract tussen jou en je klant."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Jouw gegevens blijven van jou"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Prijslijst, offertes en bedrijfsgegevens zijn van jou. Op verzoek sturen we je de prijslijst in Excel en de PDF's van de offertes.",
+            "De gegevens van jouw klanten verwerken we in jouw opdracht, volgens de verwerkersovereenkomst die we bij de start ondertekenen. Hoe we met de andere gegevens omgaan, staat op de pagina Privacy.",
+            "Vul geen gezondheidsgegevens of andere bijzondere gegevens van je klanten in: voor een offerte heb je ze niet nodig."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Wat we wel en niet garanderen"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "We doen ons best dat de dienst altijd en zonder fouten werkt, maar het verslag van de opname ter plaatse kan verkeerd worden gelezen: daarom moet je elke conceptofferte controleren voordat je hem goedkeurt.",
+            "Er kunnen onderbrekingen zijn door onderhoud of storingen bij leveranciers; groot onderhoud kondigen we vooraf aan.",
+            "Binnen de grenzen van de wet, en behalve bij opzet of grove schuld, is onze aansprakelijkheid niet hoger dan wat je ons de afgelopen 12 maanden hebt betaald. Tijdens de gratis pilot wordt de dienst geleverd zoals hij is."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Juist gebruik"
+        },
+        {
+          "t": "p",
+          "testo": "Gebruik PreventivoLampo alleen voor de offertes van je eigen bedrijf. Deel je toegang niet met anderen en gebruik de dienst niet om beledigende teksten of massale verzoeken te uploaden. Als deze regels niet worden nageleefd, kunnen we je toegang blokkeren, nadat we je gewaarschuwd hebben."
+        },
+        {
+          "t": "h2",
+          "testo": "Wijzigingen en toepasselijk recht"
+        },
+        {
+          "t": "p",
+          "testo": "Als we deze voorwaarden veranderen, laten we het je minstens 30 dagen van tevoren per e-mail weten. Het Italiaanse recht is van toepassing en voor geschillen is het foro di Monza (de rechtbank van Monza) bevoegd. Heb je een vraag? Schrijf naar [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookies",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo gebruikt alleen technische cookies: zonder die weet het ambachtsgedeelte niet dat je bent ingelogd en onthoudt de site de taal niet die je hebt gekozen. Geen tracking-cookies, geen statistieken, geen tools van derden die je van de ene site naar de andere volgen. Daarom zie je ook geen cookiebanner."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione**: houdt je ingelogd in het gedeelte voor vakmensen nadat je de code uit je e-mail hebt ingevuld. We plaatsen hem alleen als je inlogt, hij blijft 30 dagen staan en wordt gewist als je op «Esci» (Uitloggen) drukt.",
+            "**pl_lingua**: onthoudt de taal die je met de taalkeuze hebt gekozen. We plaatsen hem alleen als je van taal wisselt en hij blijft een jaar staan."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "De lettertypen en de vlaggen komen van de site zelf, niet van externe servers. Als we ooit een ander cookie nodig hebben, staat op deze pagina welk cookie, waarvoor en hoe lang. En als het niet technisch is, vragen we het je eerst."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Inloggen · PreventivoLampo",
+    "h1": "Ga naar je offertes",
+    "sotto": "Je prijslijst, je prijzen, offertes met jouw naam erop.",
+    "email": "Je e-mailadres",
+    "mandaCodice": "Stuur me de code",
+    "invioCodice": "Ik stuur de code…",
+    "spiegazione": "We sturen je een code van 6 cijfers. Als het de eerste keer is, registreer je met dezelfde code je bedrijf.",
+    "scritto": "We hebben een mail gestuurd naar **{email}**. Zie je hem niet, kijk dan in je spam.",
+    "codice": "Code",
+    "accedi": "Inloggen",
+    "controllo": "Ik controleer…",
+    "nuovoTra": "Nieuwe code over {n} s",
+    "nuovo": "Stuur me een nieuwe code",
+    "cambiaEmail": "E-mailadres wijzigen",
+    "errore": "Er gaat iets mis. Probeer het opnieuw.",
+    "condizioni": "Door in te loggen ga je akkoord met de [voorwaarden](/condizioni) en de [privacyverklaring](/privacy)."
+  },
+  "prova": {
+    "titolo": "Probeer de motor",
+    "h1": "Van opname ter plaatse tot conceptofferte",
+    "testo": "De motor haalt het werk eruit, koppelt het aan je prijslijst en maakt een concept dat jij kunt controleren. De prijzen komen alleen uit je prijslijst: wat hij niet vindt, blijft nog te prijzen, en wat er ontbreekt, vraagt hij je.",
+    "nota": "Verzonnen testgegevens: het bedrijf van de prijslijst en de klanten in de voorbeelden bestaan niet. Vul geen namen, adressen of nummers van echte mensen in: concepten blijven 7 dagen bewaard en iedereen met de link kan ze openen. De vrije tekst wordt verwerkt door een dienst voor kunstmatige intelligentie. [Privacy](/privacy)"
+  }
+}

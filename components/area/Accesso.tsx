@@ -2,12 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { Ricco } from "@/components/Ricco";
+import { useLingua } from "@/lib/i18n/client";
+import { fmt } from "@/lib/i18n/testo";
 
 const campo = "mt-1 block min-h-14 w-full rounded-campo border border-linea-2 bg-superficie px-4 text-[19px]";
 
 // Accesso in due passi: email, poi il codice arrivato per email. Niente password da ricordare.
 export default function Accesso() {
   const router = useRouter();
+  const { d } = useLingua();
+  const A = d.accesso;
   const [passo, setPasso] = useState<"email" | "codice">("email");
   const [email, setEmail] = useState("");
   const [codice, setCodice] = useState("");
@@ -32,10 +37,10 @@ export default function Accesso() {
     try {
       const res = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(dati) });
       const body = await res.json().catch(() => ({}));
-      if (!res.ok) throw new Error(body.errore ?? "Qualcosa non va. Riprova.");
+      if (!res.ok) throw new Error(body.errore ?? A.errore);
       return body as { vai?: string };
     } catch (e) {
-      setErrore(e instanceof Error ? e.message : "Qualcosa non va. Riprova.");
+      setErrore(e instanceof Error ? e.message : A.errore);
       return null;
     } finally {
       setInvio(false);
@@ -63,7 +68,7 @@ export default function Accesso() {
   return passo === "email" ? (
     <form onSubmit={mandaCodice} className="mt-8" noValidate>
       <label className="block text-[16px] font-semibold text-testo-2">
-        La tua email
+        {A.email}
         <input
           type="email"
           inputMode="email"
@@ -81,19 +86,19 @@ export default function Accesso() {
         </p>
       )}
       <button type="submit" disabled={invio || !email.includes("@")} className="bottone bottone-azione mt-5 min-h-14 w-full text-[18px] disabled:opacity-50">
-        {invio ? "Invio il codice…" : "Mandami il codice"}
+        {invio ? A.invioCodice : A.mandaCodice}
       </button>
       <p className="mt-4 text-[15px] leading-relaxed text-testo-3">
-        Ti mandiamo un codice di 6 cifre. Se è la prima volta, con lo stesso codice registri la tua impresa.
+        {A.spiegazione}
       </p>
     </form>
   ) : (
     <form onSubmit={entra} className="mt-8" noValidate>
       <p className="text-[17px] text-testo-2">
-        Abbiamo scritto a <strong className="text-inchiostro">{email}</strong>. Se non lo trovi, guarda nella posta indesiderata.
+        <Ricco testo={fmt(A.scritto, { email })} classeGrassetto="text-inchiostro" />
       </p>
       <label className="mt-5 block text-[16px] font-semibold text-testo-2">
-        Codice
+        {A.codice}
         <input
           ref={campoCodice}
           inputMode="numeric"
@@ -112,14 +117,14 @@ export default function Accesso() {
         </p>
       )}
       <button type="submit" disabled={invio || codice.length < 6} className="bottone bottone-azione mt-5 min-h-14 w-full text-[18px] disabled:opacity-50">
-        {invio ? "Controllo…" : "Entra"}
+        {invio ? A.controllo : A.accedi}
       </button>
       <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1">
         <button type="button" disabled={invio || nuovoTra > 0} onClick={() => mandaCodice()} className="min-h-11 text-[15px] font-semibold text-cielo-scuro underline disabled:text-testo-3 disabled:no-underline">
-          {nuovoTra > 0 ? `Nuovo codice tra ${nuovoTra} s` : "Mandami un codice nuovo"}
+          {nuovoTra > 0 ? fmt(A.nuovoTra, { n: nuovoTra }) : A.nuovo}
         </button>
         <button type="button" onClick={() => setPasso("email")} className="min-h-11 text-[15px] font-semibold text-testo-3 underline">
-          Cambia email
+          {A.cambiaEmail}
         </button>
       </div>
     </form>

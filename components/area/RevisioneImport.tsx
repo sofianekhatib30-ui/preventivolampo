@@ -2,17 +2,12 @@
 
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-import { centesimi, euro, PER_UNITA, UNITA } from "@/components/preventivo/formato";
+import { centesimi, euro } from "@/components/preventivo/formato";
+import { ConNodi, Ricco } from "@/components/Ricco";
+import { useLingua } from "@/lib/i18n/client";
+import { fmt } from "@/lib/i18n/testo";
 import type { Campo, Mappatura, RigaImport } from "@/lib/impresa/importa";
 
-const NOMI: Record<Campo, string> = {
-  nome: "Descrizione della voce",
-  prezzo: "Prezzo",
-  unita: "Unità di misura",
-  codice: "Codice",
-  descrizione: "Descrizione lunga",
-  categoria: "Categoria",
-};
 const ORDINE: Campo[] = ["nome", "prezzo", "unita", "codice", "descrizione", "categoria"];
 const piccolo = "block min-h-11 w-full rounded-campo border border-linea-2 bg-superficie px-2 text-[16px]";
 const PAGINA = 80;
@@ -37,6 +32,11 @@ export default function RevisioneImport({
   righe: RigaImport[];
 }) {
   const router = useRouter();
+  const { d } = useLingua();
+  const R = d.area.revisioneImport;
+  const NOMI: Record<Campo, string> = R.campi;
+  const UNITA: Record<string, string> = d.area.formato.unita;
+  const PER_UNITA: Record<string, string> = d.area.formato.perUnita;
   const [righe, setRighe] = useState<Stato[]>(() =>
     iniziali.map((r) => ({ ...r, prezzoTesto: r.prezzo_cents === null ? "" : (r.prezzo_cents / 100).toFixed(2).replace(".", ","), aperta: false })),
   );
@@ -62,7 +62,7 @@ export default function RevisioneImport({
       body: corpo ? JSON.stringify(corpo) : undefined,
     });
     const b = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(b.errore ?? "Qualcosa non va. Riprova.");
+    if (!res.ok) throw new Error(b.errore ?? R.errore);
     return b as { vai?: string; inserite?: number };
   }
 
@@ -106,15 +106,14 @@ export default function RevisioneImport({
     <div>
       {metodo === "lettura AI" && (
         <p className="mt-6 rounded-card bg-fondo-2 px-5 py-4 text-[16px] leading-relaxed text-testo-2 ring-1 ring-linea">
-          Queste voci le ha lette l&apos;AI dal tuo PDF o dalle foto. <strong className="text-inchiostro">Controlla ogni prezzo</strong>{" "}
-          prima di confermare: dove non era sicura trovi una nota.
+          <Ricco testo={R.letteAi} classeGrassetto="text-inchiostro" />
         </p>
       )}
       <details className={`mt-6 rounded-card bg-superficie ring-1 ring-linea ${metodo === "lettura AI" ? "hidden" : ""}`} open={metodo !== "regole" && metodo !== "a mano"}>
         <summary className="flex min-h-14 cursor-pointer items-center justify-between gap-3 px-5 text-[17px] font-bold">
-          Colonne del file
+          {R.colonne}
           <span className="text-[14px] font-semibold text-testo-3">
-            {metodo === "claude" ? "riconosciute dall'AI: controllale" : metodo === "a mano" ? "scelte da te" : "riconosciute dai titoli"}
+            {metodo === "claude" ? R.metodoAi : metodo === "a mano" ? R.metodoMano : R.metodoTitoli}
           </span>
         </summary>
         <div className="border-t border-linea px-5 py-4">
@@ -123,11 +122,11 @@ export default function RevisioneImport({
               <label key={c} className="block text-[15px] font-semibold text-testo-2">
                 {NOMI[c]}
                 <select className={`${piccolo} mt-1`} value={scelta[c]} onChange={(e) => setScelta((s) => ({ ...s, [c]: e.target.value }))}>
-                  <option value="">{c === "nome" || c === "prezzo" ? "Scegli…" : "Nessuna"}</option>
+                  <option value="">{c === "nome" || c === "prezzo" ? R.scegliColonna : R.nessuna}</option>
                   {colonne.map((nome, i) => (
                     <option key={i} value={i}>
                       {nome}
-                      {esempi[0]?.[i] ? ` (es. ${esempi[0][i].slice(0, 28)})` : ""}
+                      {esempi[0]?.[i] ? ` ${fmt(R.esempioColonna, { testo: esempi[0][i].slice(0, 28) })}` : ""}
                     </option>
                   ))}
                 </select>
@@ -135,22 +134,22 @@ export default function RevisioneImport({
             ))}
           </div>
           <button type="button" onClick={cambiaColonne} disabled={invio !== ""} className="bottone mt-4 min-h-12 border-2 border-ardesia text-[16px] disabled:opacity-50">
-            {invio === "colonne" ? "Rileggo il file…" : "Rileggi con queste colonne"}
+            {invio === "colonne" ? R.rileggo : R.rileggi}
           </button>
-          <p className="mt-2 text-[14px] text-testo-3">Rileggere il file annulla le correzioni fatte qui sotto.</p>
+          <p className="mt-2 text-[14px] text-testo-3">{R.rileggiNota}</p>
         </div>
       </details>
 
       <div className="sticky top-0 z-10 -mx-4 mt-6 border-b border-linea bg-fondo/95 px-4 py-3 backdrop-blur">
         <p className="text-[17px]">
-          <strong>{incluse}</strong> voci da importare da <span className="font-semibold">{nomeFile}</span>
+          <ConNodi testo={R.daImportare} valori={{ n: <strong>{incluse}</strong>, file: <span className="font-semibold">{nomeFile}</span> }} />
           {daSistemare > 0 && (
-            <span className="ml-2 whitespace-nowrap rounded-full bg-ambra px-2.5 py-0.5 text-[15px] font-bold text-ambra-testo">{daSistemare} da sistemare</span>
+            <span className="ml-2 whitespace-nowrap rounded-full bg-ambra px-2.5 py-0.5 text-[15px] font-bold text-ambra-testo">{fmt(R.daSistemare, { n: daSistemare })}</span>
           )}
         </p>
         <label className="mt-2 flex min-h-11 items-center gap-2.5 text-[16px]">
           <input type="checkbox" className="size-5 accent-[#343645]" checked={soloDubbi} onChange={(e) => setSoloDubbi(e.target.checked)} />
-          Mostra solo le righe da controllare
+          {R.soloDubbi}
         </label>
       </div>
 
@@ -163,23 +162,23 @@ export default function RevisioneImport({
               <div className="flex items-start gap-3">
                 <input
                   type="checkbox"
-                  aria-label={`Importa la riga ${r.n}`}
+                  aria-label={fmt(R.importaRiga, { n: r.n })}
                   className="mt-1 size-6 shrink-0 accent-[#343645]"
                   checked={r.includi}
                   onChange={(e) => set(r.n, { includi: e.target.checked })}
                 />
                 <div className="min-w-0 flex-1">
                   {modifica ? (
-                    <input aria-label="Descrizione" className={piccolo} value={r.nome} onChange={(e) => set(r.n, { nome: e.target.value })} />
+                    <input aria-label={R.descrizione} className={piccolo} value={r.nome} onChange={(e) => set(r.n, { nome: e.target.value })} />
                   ) : (
                     <p className="text-[16px] font-semibold leading-snug">{r.nome}</p>
                   )}
-                  <p className="mt-0.5 font-mono text-[13px] text-testo-3">riga {r.n} del file{r.unitaLetta ? `, unità «${r.unitaLetta}»` : ""}</p>
+                  <p className="mt-0.5 font-mono text-[13px] text-testo-3">{r.unitaLetta ? fmt(R.rigaFileUnita, { n: r.n, unita: r.unitaLetta }) : fmt(R.rigaFile, { n: r.n })}</p>
                   {r.problemi.length > 0 && <p className="mt-1 text-[14px] font-semibold text-ambra-testo">{r.problemi.join("; ")}</p>}
                   {modifica ? (
                     <div className="mt-2 grid grid-cols-3 gap-2">
                       <label className="text-[13px] font-semibold text-testo-3">
-                        Prezzo €
+                        {R.prezzo}
                         <input
                           inputMode="decimal"
                           className={`${piccolo} font-mono ${centesimi(r.prezzoTesto) === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
@@ -188,13 +187,13 @@ export default function RevisioneImport({
                         />
                       </label>
                       <label className="text-[13px] font-semibold text-testo-3">
-                        Unità
+                        {R.unita}
                         <select
                           className={`${piccolo} ${r.unita === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
                           value={r.unita ?? ""}
                           onChange={(e) => set(r.n, { unita: e.target.value || null })}
                         >
-                          <option value="">Scegli</option>
+                          <option value="">{R.scegliUnita}</option>
                           {Object.entries(UNITA).map(([k, v]) => (
                             <option key={k} value={k}>
                               {v}
@@ -203,7 +202,7 @@ export default function RevisioneImport({
                         </select>
                       </label>
                       <label className="text-[13px] font-semibold text-testo-3">
-                        Codice
+                        {R.codice}
                         <input className={`${piccolo} font-mono`} value={r.codice} onChange={(e) => set(r.n, { codice: e.target.value })} />
                       </label>
                     </div>
@@ -213,7 +212,7 @@ export default function RevisioneImport({
                       <span className="text-testo-3">{PER_UNITA[r.unita!]}</span>
                       <span className="text-testo-3">{r.codice}</span>
                       <button type="button" onClick={() => set(r.n, { aperta: true })} className="min-h-11 font-sans text-[14px] font-semibold text-cielo-scuro underline">
-                        Correggi
+                        {R.correggi}
                       </button>
                     </p>
                   )}
@@ -222,11 +221,11 @@ export default function RevisioneImport({
             </li>
           );
         })}
-        {visibili.length === 0 && <li className="px-5 py-8 text-center text-[17px] text-testo-3">Tutte le righe sono a posto.</li>}
+        {visibili.length === 0 && <li className="px-5 py-8 text-center text-[17px] text-testo-3">{R.tutteAPosto}</li>}
       </ul>
       {visibili.length > quante && (
         <button type="button" onClick={() => setQuante((q) => q + PAGINA)} className="bottone mt-4 min-h-12 w-full border-2 border-linea-2 text-[16px]">
-          Mostra altre righe ({visibili.length - quante})
+          {fmt(R.mostraAltre, { n: visibili.length - quante })}
         </button>
       )}
 
@@ -237,13 +236,13 @@ export default function RevisioneImport({
       )}
       <div className="mt-6 flex flex-col gap-2 sm:flex-row">
         <button type="button" onClick={conferma} disabled={invio !== "" || daSistemare > 0 || incluse === 0} className="bottone bottone-azione min-h-14 text-[18px] disabled:opacity-50">
-          {invio === "conferma" ? "Importo…" : `Importa ${incluse} voci`}
+          {invio === "conferma" ? R.importo : fmt(R.importaN, { n: incluse })}
         </button>
         <button type="button" onClick={annulla} disabled={invio !== ""} className="bottone min-h-14 border-2 border-linea-2 text-[16px]">
-          Annulla l&apos;import
+          {R.annulla}
         </button>
       </div>
-      {daSistemare > 0 && <p className="mt-2 text-[15px] text-testo-3">Sistema le righe evidenziate o togli la spunta per importare.</p>}
+      {daSistemare > 0 && <p className="mt-2 text-[15px] text-testo-3">{R.sistemaNota}</p>}
     </div>
   );
 }

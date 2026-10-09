@@ -2,29 +2,26 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
+import type { Dizionario } from "@/lib/i18n/it";
 import Dettatura from "./Dettatura";
 
 type Esempio = { id: string; titolo: string; testo: string };
 
-// Quattro esempi in evidenza, uno per mestiere; gli altri 26 restano nel menu.
-const IN_EVIDENZA: { id: string; mestiere: string; lavoro: string }[] = [
-  { id: "01", mestiere: "Muratore", lavoro: "Bagno completo" },
-  { id: "02", mestiere: "Imbianchino", lavoro: "Tinteggiatura bilocale" },
-  { id: "04", mestiere: "Elettricista", lavoro: "Impianto cucina" },
-  { id: "06", mestiere: "Piastrellista", lavoro: "Pavimento soggiorno" },
-];
-
-// Cosa sta facendo il motore, in ordine. Sono le fasi vere della pipeline, non numeri inventati.
-const FASI = [
-  "Leggo il sopralluogo…",
-  "Separo lavorazioni, misure ed esclusioni…",
-  "Cerco ogni voce nel listino…",
-  "Controllo cosa manca e il regime IVA…",
-  "Preparo la bozza da controllare…",
+// Quattro esempi in evidenza, uno per mestiere; gli altri 26 restano nel menu. Le parole vengono dal dizionario.
+const IN_EVIDENZA: { id: string; mestiere: keyof Dizionario["area"]["modulo"]["mestieri"]; lavoro: keyof Dizionario["area"]["prova"]["lavori"] }[] = [
+  { id: "01", mestiere: "muratore", lavoro: "bagno" },
+  { id: "02", mestiere: "imbianchino", lavoro: "tinteggiatura" },
+  { id: "04", mestiere: "elettricista", lavoro: "cucina" },
+  { id: "06", mestiere: "piastrellista", lavoro: "pavimento" },
 ];
 
 export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[]; chiediCodice: boolean }) {
   const router = useRouter();
+  const { d } = useLingua();
+  const P = d.area.prova;
+  // Cosa sta facendo il motore, in ordine. Sono le fasi vere della pipeline, non numeri inventati.
+  const FASI = P.fasi;
   const [modo, setModo] = useState<"esempio" | "testo">("esempio");
   const [scelto, setScelto] = useState<string>("01");
   const [testo, setTesto] = useState("");
@@ -39,7 +36,7 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
     if (!invio || modo !== "testo") return;
     const t = window.setInterval(() => setFase((f) => Math.min(f + 1, FASI.length - 1)), 4500);
     return () => window.clearInterval(t);
-  }, [invio, modo]);
+  }, [invio, modo, FASI.length]);
 
   async function invia(corpo: Record<string, string>) {
     setFase(0);
@@ -52,10 +49,10 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
         body: JSON.stringify(corpo),
       });
       const body = await res.json();
-      if (!res.ok) throw new Error(body.errore ?? "Non sono riuscito a preparare la bozza. Riprova.");
+      if (!res.ok) throw new Error(body.errore ?? P.errore);
       router.push(body.revisione);
     } catch (err) {
-      setErrore(err instanceof Error ? err.message : "Non sono riuscito a preparare la bozza. Riprova.");
+      setErrore(err instanceof Error ? err.message : P.errore);
       setInvio(false);
     }
   }
@@ -64,19 +61,19 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
 
   return (
     <div className="mt-8">
-      <div role="tablist" aria-label="Da dove partire" className="flex gap-1 rounded-full bg-fondo-2 p-1">
+      <div role="tablist" aria-label={P.daDove} className="flex gap-1 rounded-full bg-fondo-2 p-1">
         <button type="button" role="tab" aria-selected={modo === "esempio"} onClick={() => setModo("esempio")} className={`${schede} ${modo === "esempio" ? "bg-ardesia text-fondo" : "text-testo-2"}`}>
-          Un esempio
+          {P.unEsempio}
         </button>
         <button type="button" role="tab" aria-selected={modo === "testo"} onClick={() => setModo("testo")} className={`${schede} ${modo === "testo" ? "bg-ardesia text-fondo" : "text-testo-2"}`}>
-          Il tuo testo
+          {P.tuoTesto}
         </button>
       </div>
 
       {modo === "esempio" ? (
-        <section className="mt-6" aria-label="Esempi del banco di prova">
+        <section className="mt-6" aria-label={P.esempiBanco}>
           <p className="text-[17px] text-testo-2">
-            Sopralluoghi inventati del banco di prova. La bozza esce subito: è l&apos;uscita registrata del motore su quel caso.
+            {P.esempiTesto}
           </p>
           <ul className="mt-4 grid grid-cols-2 gap-2.5">
             {IN_EVIDENZA.map((x) => (
@@ -89,14 +86,14 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
                     scelto === x.id ? "border-ardesia bg-superficie shadow-[inset_4px_0_0_var(--color-lime-scuro)]" : "border-linea bg-superficie"
                   }`}
                 >
-                  <span className="text-[17px] font-extrabold leading-tight">{x.lavoro}</span>
-                  <span className="text-sm text-testo-3">{x.mestiere}</span>
+                  <span className="text-[17px] font-extrabold leading-tight">{P.lavori[x.lavoro]}</span>
+                  <span className="text-sm text-testo-3">{d.area.modulo.mestieri[x.mestiere]}</span>
                 </button>
               </li>
             ))}
           </ul>
           <label className="mt-4 block">
-            <span className="text-sm font-semibold text-testo-2">Oppure scegli fra tutti i 30</span>
+            <span className="text-sm font-semibold text-testo-2">{P.tutti}</span>
             <select
               className="mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[16px]"
               value={scelto}
@@ -111,12 +108,12 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
           </label>
           {esempio && (
             <figure className="mt-4 rounded-campo border border-linea bg-superficie p-4">
-              <figcaption className="text-sm font-semibold text-testo-3">Il vocale, trascritto</figcaption>
+              <figcaption className="text-sm font-semibold text-testo-3">{P.vocale}</figcaption>
               <blockquote className="mt-1 line-clamp-6 text-[16px] leading-relaxed text-testo-2">{esempio.testo}</blockquote>
             </figure>
           )}
           <button type="button" disabled={invio} onClick={() => invia({ esempio: scelto })} className="bottone bottone-azione mt-5 w-full text-[17px] disabled:opacity-60 sm:w-auto">
-            {invio ? "Preparo la bozza…" : "Prepara la bozza"}
+            {invio ? P.preparo : P.prepara}
           </button>
         </section>
       ) : (
@@ -128,7 +125,7 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
           }}
         >
           <label className="block">
-            <span className="text-[17px] font-semibold">Racconta il lavoro come lo diresti nel vocale</span>
+            <span className="text-[17px] font-semibold">{P.racconta}</span>
             <textarea
               required
               minLength={30}
@@ -136,15 +133,15 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
               rows={9}
               value={testo}
               onChange={(e) => setTesto(e.target.value)}
-              placeholder="Bagno della signora Rossi, via Roma 3. È casa sua. Togliamo vasca e piastrelle, alte due metri. Il bagno è due per uno e ottanta, piatto doccia 80x80, i sanitari li compro io…"
+              placeholder={P.segnaposto}
               className="mt-2 block w-full rounded-campo border border-linea-2 bg-superficie px-3 py-3 text-[17px] leading-relaxed"
             />
           </label>
           <Dettatura onTesto={(pezzo) => setTesto((t) => (t ? `${t.trimEnd()} ${pezzo}` : pezzo))} />
           {chiediCodice && (
             <label className="block">
-              <span className="text-[17px] font-semibold">Codice d&apos;accesso</span>
-              <span className="block text-sm text-testo-3">Il tuo testo passa dall&apos;API di Claude e ogni prova ha un costo: il codice ferma i bot.</span>
+              <span className="text-[17px] font-semibold">{P.codice}</span>
+              <span className="block text-sm text-testo-3">{P.codiceNota}</span>
               <input
                 required
                 autoComplete="off"
@@ -155,7 +152,7 @@ export default function ProvaForm({ esempi, chiediCodice }: { esempi: Esempio[];
             </label>
           )}
           <button type="submit" disabled={invio} className="bottone bottone-azione w-full text-[17px] disabled:opacity-60 sm:w-auto">
-            {invio ? "Ci vogliono circa 20 secondi…" : "Prepara la bozza"}
+            {invio ? P.attesa : P.prepara}
           </button>
           {invio && (
             <ol aria-live="polite" className="space-y-1.5 rounded-campo bg-ardesia p-4 text-[16px] text-scuro-testo">

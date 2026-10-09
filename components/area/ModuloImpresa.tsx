@@ -2,7 +2,24 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import type { Dizionario } from "@/lib/i18n/it";
+import { useLingua } from "@/lib/i18n/client";
 import { MESTIERI } from "@/lib/impresa/schema";
+
+// Il valore salvato è il nome italiano del mestiere; l'etichetta viene dal dizionario. La mappa è completa
+// per costruzione: un mestiere nuovo in MESTIERI senza la sua voce qui non compila.
+const CHIAVE_MESTIERE: Record<(typeof MESTIERI)[number], keyof Dizionario["area"]["modulo"]["mestieri"]> = {
+  "Impresa edile": "impresaEdile",
+  Muratore: "muratore",
+  Idraulico: "idraulico",
+  Elettricista: "elettricista",
+  Imbianchino: "imbianchino",
+  Piastrellista: "piastrellista",
+  Cartongessista: "cartongessista",
+  Serramentista: "serramentista",
+  Termoidraulico: "termoidraulico",
+  Giardiniere: "giardiniere",
+};
 
 export type ValoriImpresa = {
   ragione_sociale: string;
@@ -40,6 +57,7 @@ function Campo({
 // Registrazione (modo «nuova») e modifica dei dati dell'impresa: sono quelli che finiscono sul PDF.
 export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpresa; modo: "nuova" | "modifica" }) {
   const router = useRouter();
+  const M = useLingua().d.area.modulo;
   const [v, setV] = useState(iniziali);
   const [invio, setInvio] = useState(false);
   const [esito, setEsito] = useState<{ tipo: "ok" | "errore"; testo: string } | null>(null);
@@ -57,14 +75,14 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
     const body = await res.json().catch(() => ({}));
     setInvio(false);
     if (!res.ok) {
-      setEsito({ tipo: "errore", testo: body.errore ?? "Non sono riuscito a salvare. Riprova." });
+      setEsito({ tipo: "errore", testo: body.errore ?? M.errore });
       return;
     }
     if (modo === "nuova") {
       router.replace(body.vai ?? "/area/listino");
       router.refresh();
     } else {
-      setEsito({ tipo: "ok", testo: "Dati salvati. I prossimi PDF useranno questi." });
+      setEsito({ tipo: "ok", testo: M.salvati });
       router.refresh();
     }
   }
@@ -72,22 +90,22 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
   return (
     <form onSubmit={salva} className="mt-6 space-y-8" noValidate>
       <fieldset className="space-y-4">
-        <legend className="text-xl font-extrabold">Chi siete</legend>
-        <Campo nome="ragione_sociale" etichetta="Ragione sociale" valore={v.ragione_sociale} cambia={set("ragione_sociale")} autoComplete="organization" required />
+        <legend className="text-xl font-extrabold">{M.chiSiete}</legend>
+        <Campo nome="ragione_sociale" etichetta={M.ragioneSociale} valore={v.ragione_sociale} cambia={set("ragione_sociale")} autoComplete="organization" required />
         <div className="grid gap-4 sm:grid-cols-2">
-          <Campo nome="piva" etichetta="Partita IVA" valore={v.piva} cambia={set("piva")} inputMode="numeric" required />
-          <Campo nome="cf" etichetta="Codice fiscale (se diverso)" valore={v.cf} cambia={set("cf")} autoCapitalize="characters" />
+          <Campo nome="piva" etichetta={M.piva} valore={v.piva} cambia={set("piva")} inputMode="numeric" required />
+          <Campo nome="cf" etichetta={M.cf} valore={v.cf} cambia={set("cf")} autoCapitalize="characters" />
         </div>
-        <Campo nome="indirizzo" etichetta="Sede (via, numero, città)" valore={v.indirizzo} cambia={set("indirizzo")} autoComplete="street-address" required />
+        <Campo nome="indirizzo" etichetta={M.indirizzo} valore={v.indirizzo} cambia={set("indirizzo")} autoComplete="street-address" required />
         <div className="grid gap-4 sm:grid-cols-2">
-          <Campo nome="telefono" etichetta="Telefono" valore={v.telefono} cambia={set("telefono")} type="tel" autoComplete="tel" required />
-          <Campo nome="email" etichetta="Email sul preventivo" valore={v.email} cambia={set("email")} type="email" autoComplete="email" required />
+          <Campo nome="telefono" etichetta={M.telefono} valore={v.telefono} cambia={set("telefono")} type="tel" autoComplete="tel" required />
+          <Campo nome="email" etichetta={M.email} valore={v.email} cambia={set("email")} type="email" autoComplete="email" required />
         </div>
       </fieldset>
 
       <fieldset>
-        <legend className="text-xl font-extrabold">Che lavori fate</legend>
-        <p className="mt-1 text-[15px] text-testo-3">Aiuta a leggere meglio i vostri sopralluoghi.</p>
+        <legend className="text-xl font-extrabold">{M.cheLavori}</legend>
+        <p className="mt-1 text-[15px] text-testo-3">{M.cheLavoriNota}</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {MESTIERI.map((m) => {
             const scelto = v.mestieri.includes(m);
@@ -99,7 +117,7 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
                   checked={scelto}
                   onChange={() => setV((p) => ({ ...p, mestieri: scelto ? p.mestieri.filter((x) => x !== m) : [...p.mestieri, m] }))}
                 />
-                {m}
+                {M.mestieri[CHIAVE_MESTIERE[m]]}
               </label>
             );
           })}
@@ -107,17 +125,17 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
       </fieldset>
 
       <fieldset className="space-y-4">
-        <legend className="text-xl font-extrabold">Sul preventivo</legend>
+        <legend className="text-xl font-extrabold">{M.sulPreventivo}</legend>
         <Campo
           nome="validita_giorni"
-          etichetta="Validità del preventivo (giorni)"
+          etichetta={M.validita}
           valore={v.validita_giorni}
           cambia={set("validita_giorni")}
           inputMode="numeric"
-          nota="Dopo questi giorni il cliente non può più accettarlo dal link."
+          nota={M.validitaNota}
         />
-        <Campo nome="condizioni_pagamento" etichetta="Condizioni di pagamento" valore={v.condizioni_pagamento} cambia={set("condizioni_pagamento")} placeholder="Es. 30% all'accettazione, saldo a fine lavori" />
-        <Campo nome="iban" etichetta="IBAN per i bonifici" valore={v.iban} cambia={set("iban")} autoCapitalize="characters" />
+        <Campo nome="condizioni_pagamento" etichetta={M.condizioni} valore={v.condizioni_pagamento} cambia={set("condizioni_pagamento")} placeholder={M.condizioniEsempio} />
+        <Campo nome="iban" etichetta={M.iban} valore={v.iban} cambia={set("iban")} autoCapitalize="characters" />
       </fieldset>
 
       {esito && (
@@ -126,7 +144,7 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
         </p>
       )}
       <button type="submit" disabled={invio} className="bottone bottone-azione min-h-14 w-full text-[18px] disabled:opacity-50 sm:w-auto">
-        {invio ? "Salvo…" : modo === "nuova" ? "Registra l'impresa" : "Salva i dati"}
+        {invio ? M.salvo : modo === "nuova" ? M.registra : M.salva}
       </button>
     </form>
   );

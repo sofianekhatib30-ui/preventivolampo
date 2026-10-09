@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Preventivat e tu",
+      "benvenuto": "Biznesi yt",
+      "nuovo": "Preventiv i ri",
+      "impresa": "Të dhënat e biznesit",
+      "listino": "Lista e çmimeve",
+      "importa": "Importo listën e çmimeve",
+      "revisioneImport": "Kontrollo importin",
+      "daPrezzare": "Për t'u çmuar",
+      "preventivo": "Preventiv",
+      "revisione": "Kontrolli i preventivit",
+      "prova": "Provo motorin"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, preventivat e tu",
+      "sezioni": "Seksionet",
+      "preventivi": "Preventivat",
+      "listino": "Lista e çmimeve",
+      "daPrezzare": "Për t'u çmuar",
+      "impresa": "Biznesi",
+      "proposte": "propozime",
+      "esci": "Dil"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "copë",
+        "h": "orë",
+        "100kg": "kuintalë",
+        "kg": "kg",
+        "l": "litra",
+        "corpo": "çmim fiks"
+      },
+      "perUnita": {
+        "m2": "për m²",
+        "m": "për metër",
+        "m3": "për m³",
+        "cad": "për copë",
+        "h": "për orë",
+        "100kg": "për kuintal",
+        "kg": "për kg",
+        "l": "për litër",
+        "corpo": "çmim fiks"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% me beni significativi"
+      }
+    },
+    "home": {
+      "h1": "Preventivat",
+      "nuovo": "Preventiv i ri",
+      "mancaListino": "Mungon vetëm lista e çmimeve.",
+      "mancaListinoTesto": "Importo skedarin tënd ose nis nga shembulli: pastaj preventivi i parë është një mesazh zanor.",
+      "preparaListino": "Përgatit listën e çmimeve",
+      "daControllare": "për t'u kontrolluar",
+      "inAttesa": "në pritje · {importo}",
+      "accettati": "të pranuar · {importo}",
+      "rifiutati": "të refuzuar",
+      "nessuno": "Ende asnjë preventiv.",
+      "nessunoTesto": "Tregoje vizitën e radhës në kantier: për gjysmë minute e ke skicën gati.",
+      "clienteDaIndicare": "Klienti nuk është shënuar",
+      "numeroDel": "nr. {numero}, datë {data}",
+      "stati": {
+        "bozza": "Për t'u kontrolluar",
+        "approvato": "Dërguar",
+        "accettato": "Pranuar",
+        "rifiutato": "Refuzuar"
+      }
+    },
+    "benvenuto": {
+      "passo": "Hapi 1 nga 2",
+      "h1": "Biznesi yt",
+      "sotto": "Këto të dhëna shkojnë në krye të çdo preventivi. Mund t'i ndryshosh kur të duash."
+    },
+    "nuovo": {
+      "torna": "Kthehu te preventivat",
+      "h1": "Preventiv i ri",
+      "serveListino": "Fillimisht të duhet lista e çmimeve: çmimet vijnë vetëm prej andej.",
+      "preparaListino": "Përgatit listën e çmimeve",
+      "sotto": "Shkruaj ose diktoje vizitën në objekt. Drafti përdor {n} zërat e listës tënde të çmimeve; ajo që nuk gjen mbetet pa çmim.",
+      "claude": "Teksti përpunohet me Claude të Anthropic dhe ruhet bashkë me preventivin.",
+      "racconta": "Trego punën siç do ta thoshe në mesazhin zanor, në italisht ose në gjuhën tënde",
+      "segnaposto": "Klienti, adresa, nëse banon aty. Çfarë hiqet, çfarë vendoset, përmasat. Kush i blen materialet.",
+      "attesa": "Duhen rreth 20 sekonda…",
+      "prepara": "Përgatit draftin",
+      "errore": "Nuk munda ta përgatis draftin. Provo përsëri.",
+      "fasi": [
+        "Po e lexoj vizitën në objekt…",
+        "Po ndaj punimet, përmasat dhe përjashtimet…",
+        "Po e kërkoj çdo zë në listën tënde të çmimeve…",
+        "Po kontrolloj çfarë mungon dhe regjimin e IVA-s…",
+        "Po e përgatis draftin që ta kontrollosh…"
+      ]
+    },
+    "impresa": {
+      "h1": "Të dhënat e ndërmarrjes",
+      "sotto": "Ato që klienti lexon në krye dhe në fund të preventivit.",
+      "accessoCon": "Hyrje me {email}."
+    },
+    "modulo": {
+      "chiSiete": "Kush je",
+      "ragioneSociale": "Emri i biznesit (ragione sociale)",
+      "piva": "Numri i IVA-s (Partita IVA)",
+      "cf": "Kodi fiskal (codice fiscale), nëse ndryshon",
+      "indirizzo": "Selia (rruga, numri, qyteti)",
+      "telefono": "Telefoni",
+      "email": "Emaili në preventiv",
+      "cheLavori": "Çfarë punësh bën",
+      "cheLavoriNota": "Na ndihmon t'i lexojmë më mirë vizitat e tua në objekt.",
+      "mestieri": {
+        "impresaEdile": "Ndërmarrje ndërtimi",
+        "muratore": "Murator",
+        "idraulico": "Hidraulik",
+        "elettricista": "Elektricist",
+        "imbianchino": "Bojaxhi",
+        "piastrellista": "Vendosës pllakash",
+        "cartongessista": "Punues kartongjipsi",
+        "serramentista": "Montues dyersh e dritaresh",
+        "termoidraulico": "Termohidraulik",
+        "giardiniere": "Kopshtar"
+      },
+      "sulPreventivo": "Në preventiv",
+      "validita": "Vlefshmëria e preventivit (ditë)",
+      "validitaNota": "Pas këtyre ditëve klienti nuk mund ta pranojë më nga linku.",
+      "condizioni": "Kushtet e pagesës",
+      "condizioniEsempio": "P.sh. 30% në pranim, pjesa tjetër në fund të punimeve",
+      "iban": "IBAN për transfertat bankare",
+      "salvo": "Po ruaj…",
+      "registra": "Regjistro ndërmarrjen",
+      "salva": "Ruaj të dhënat",
+      "errore": "Nuk munda ta ruaj. Provo përsëri.",
+      "salvati": "Të dhënat u ruajtën. PDF-të e radhës do t'i përdorin këto."
+    },
+    "logo": {
+      "titolo": "Logoja",
+      "attuale": "Logoja aktuale",
+      "nessuno": "Asnjë logo",
+      "carico": "Po ngarkoj…",
+      "cambia": "Ndrysho logon",
+      "carica": "Ngarko logon",
+      "togli": "Hiqe",
+      "nota": "PNG ose JPG, deri në 1 MB. Më mirë me sfond të bardhë ose transparent.",
+      "errore": "Nuk munda ta ngarkoj logon."
+    },
+    "listino": {
+      "passo": "Hapi 2 nga 2",
+      "h1": "Lista jote e çmimeve",
+      "h1Vuoto": "Lista jote e çmimeve është bosh",
+      "sotto": "Çmimet e preventivave vijnë vetëm që këtu. Ato që nuk janë këtu mbeten pa çmim: e vendos ti.",
+      "sottoVuoto": "Çmimet e preventivave vijnë vetëm nga lista jote, asnjëherë të shpikura. Zgjidh si ta mbushësh.",
+      "importate": "{n} zëra të importuar. Kontrollo çmimet dhe shto si i quan me gojë: ndihmon njohjen.",
+      "esempio": "{n} zëra kanë ende çmimin shembull. Kontrolloji përpara se të dërgosh preventiva të vërtetë."
+    },
+    "elencoListino": {
+      "cerca": "Kërko në listë",
+      "cercaSegnaposto": "Emri, kodi ose fjala që thua",
+      "aggiungiVoce": "Shto një zë",
+      "trovate": "U gjetën {n} zëra nga {totale}",
+      "voci": "{n} zëra",
+      "importaLink": "importo nga Excel, PDF ose foto",
+      "nuovaVoce": "Zë i ri",
+      "prezzoEsempio": "çmim shembull",
+      "nessunaVoce": "Asnjë zë me «{cerca}».",
+      "mostraAltre": "Shfaq edhe {n} zëra të tjerë",
+      "nomeVoce": "Emri i zërit",
+      "prezzo": "Çmimi €",
+      "unita": "Njësia",
+      "codice": "Kodi",
+      "descrizione": "Përshkrimi për preventivin (opsional)",
+      "aVoce": "Si e quan me gojë",
+      "aVoceSegnaposto": "P.sh. stukim, shtrirje stuko, stukimi i mureve",
+      "aVoceNota": "Fjalë të ndara me presje: ndihmojnë të njihet zëri në mesazhet zanore.",
+      "categoria": "Kategoria (opsionale)",
+      "beneSignificativo": "«Bene significativo» (mall i rëndësishëm) për IVA-n 10%",
+      "beneNota": "Sanitarë, rubineta, kaldaja, dyer e dritare, ashensorë… (DM 29/12/1999).",
+      "materiale": "Çmimi përfshin materialin",
+      "materialeNota": "Nëse klienti e blen vetë, rreshti mbetet pa çmim (vetëm montimi).",
+      "salvo": "Po ruaj…",
+      "salva": "Ruaj",
+      "aggiungi": "Shto në listë",
+      "annulla": "Anulo",
+      "togliConferma": "Po, hiqe zërin",
+      "togli": "Hiq nga lista",
+      "errorePrezzo": "Shkruaj çmimin në euro, për shembull 18,50.",
+      "erroreSalva": "Nuk munda ta ruaj.",
+      "erroreTogli": "Nuk munda ta heq zërin."
+    },
+    "listinoVuoto": {
+      "haiListino": "Ke tashmë një listë çmimesh?",
+      "haiListinoTesto": "Ngarko listën që ke: Excel, PDF ose një foto. E lexojmë ne dhe ti kontrollon rresht pas rreshti.",
+      "importa": "Importo skedarin",
+      "esempio": "Fillo nga një shembull",
+      "esempioTesto": "{n} zërat e demos (banjo, kuzhina, lyerje, instalime) me çmime nga lista publike çmimesh. Pastaj vendos të tuat.",
+      "copio": "Po kopjoj…",
+      "usaEsempio": "Përdor shembullin",
+      "unaAllaVolta": "Një zë në herë",
+      "unaAllaVoltaTesto": "Shkruaj vetë punimet që bën më shpesh, me çmimin tënd.",
+      "aMano": "Shto me dorë",
+      "errore": "Nuk munda ta kopjoj listën."
+    },
+    "importa": {
+      "torna": "Kthehu te lista",
+      "h1": "Importo listën tënde",
+      "sotto": "Mirë është çdo gjë që ke: një Excel, një PDF, foto të listës të shkruar me dorë ose disa preventiva të vjetër. Asgjë nuk hyn në listë para se ta kontrollosh ti.",
+      "cosaLeggiamo": "Çfarë lexojmë",
+      "punti": [
+        "Kolonat njihen nga titujt (Përshkrimi, U.M., Çmimi…). Nëse skedari nuk ka tituj të qartë, i lexon inteligjenca artificiale dhe ti mund t'i korrigjosh.",
+        "Nga PDF dhe fotot zërat i lexon inteligjenca artificiale: të shënon ku nuk është e sigurt, dhe emrat e klientëve në preventivat e vjetër nuk i transkripton.",
+        "Njësitë e shkruara në shumë mënyra (mq, ml, nr, pz, a corpo) bëhen ato të preventivit.",
+        "Kodet që mungojnë ose përsëriten i japim ne; rreshtat e titujve pa çmim kapërcehen.",
+        "Kodet që janë tashmë në listën tënde nuk mbishkruhen."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Po e lexoj listën…",
+      "scegli": "Zgjidh listën tënde",
+      "formati": "Excel ose CSV, ose PDF dhe foto: edhe disa foto bashkë, ose disa preventiva të vjetër",
+      "attesa": "Nga PDF-të dhe fotot duhet deri në një minutë.",
+      "errore": "Nuk arrita ta lexoj skedarin."
+    },
+    "revisioneImport": {
+      "altroFile": "Ngarko një skedar tjetër",
+      "h1": "Kontrollo para se të importosh",
+      "sotto": "Rreshtat në të verdhë kanë një dyshim: njësi ose çmim që nuk lexohen. Korrigjoji ose hiq shenjën.",
+      "ilFile": "skedari",
+      "letteAi": "Këto zëra i ka lexuar AI nga PDF-ja ose nga fotot e tua. **Kontrollo çdo çmim** përpara se të konfirmosh: aty ku nuk ishte e sigurt, do të gjesh një shënim.",
+      "colonne": "Kolonat e skedarit",
+      "metodoAi": "të njohura nga AI: kontrolloji",
+      "metodoMano": "të zgjedhura nga ti",
+      "metodoTitoli": "të njohura nga titujt",
+      "campi": {
+        "nome": "Përshkrimi i zërit",
+        "prezzo": "Çmimi",
+        "unita": "Njësia matëse",
+        "codice": "Kodi",
+        "descrizione": "Përshkrim i gjatë",
+        "categoria": "Kategoria"
+      },
+      "scegliColonna": "Zgjidh…",
+      "nessuna": "Asnjë",
+      "esempioColonna": "(p.sh. {testo})",
+      "rileggo": "Po e rilexoj skedarin…",
+      "rileggi": "Rilexo me këto kolona",
+      "rileggiNota": "Nëse e rilexon skedarin, korrigjimet e bëra më poshtë humbasin.",
+      "daImportare": "{n} zëra për t'u importuar nga {file}",
+      "daSistemare": "{n} për t'u rregulluar",
+      "soloDubbi": "Shfaq vetëm rreshtat për t'u kontrolluar",
+      "importaRiga": "Importo rreshtin {n}",
+      "descrizione": "Përshkrimi",
+      "rigaFile": "rreshti {n} i skedarit",
+      "rigaFileUnita": "rreshti {n} i skedarit, njësia «{unita}»",
+      "prezzo": "Çmimi €",
+      "unita": "Njësia",
+      "scegliUnita": "Zgjidh",
+      "codice": "Kodi",
+      "correggi": "Korrigjo",
+      "tutteAPosto": "Të gjithë rreshtat janë në rregull.",
+      "mostraAltre": "Shfaq rreshta të tjerë ({n})",
+      "importo": "Po importoj…",
+      "importaN": "Importo {n} zëra",
+      "annulla": "Anulo importin",
+      "sistemaNota": "Rregullo rreshtat e theksuar ose hiq shenjën për të importuar.",
+      "errore": "Diçka nuk shkon. Provo përsëri."
+    },
+    "daPrezzare": {
+      "h1": "Për t'u shtuar në listën e çmimeve",
+      "sotto": "Punime që i ke çmuar me dorë në një preventiv, duke shënuar «propozo ta shtosh në listën e çmimeve». Nëse i shton, herën tjetër çmimi vjen vetë.",
+      "niente": "Asgjë për të shtuar.",
+      "nienteTesto": "Kur çmon me dorë një rresht jashtë listës, shëno propozimin dhe e gjen këtu.",
+      "torna": "Kthehu te preventivat",
+      "dalPreventivo": "Nga preventivi nr. {numero}",
+      "haiMesso": "ke vënë {prezzo} {unita}",
+      "nomeListino": "Emri në listë",
+      "prezzo": "Çmimi €",
+      "unita": "Njësia",
+      "codice": "Kodi",
+      "errorePrezzo": "Shkruaje çmimin në euro, për shembull 18,50.",
+      "erroreSalva": "Nuk arrita ta ruaj.",
+      "aggiungi": "Shto në listën e çmimeve",
+      "nonServe": "Nuk duhet"
+    },
+    "preventivo": {
+      "tutti": "Të gjitha preventivat",
+      "registro": "Regjistri",
+      "eventi": {
+        "creato": "Skica u krijua",
+        "approvato": "Miratuar dhe gati për t'u dërguar",
+        "visto": "Hapur nga klienti",
+        "accettato": "Pranuar nga klienti",
+        "rifiutato": "Refuzuar nga klienti"
+      },
+      "da": "nga {nome}",
+      "ip": "IP {ip}",
+      "impronta": "gjurma e PDF-së së pranuar {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Fshije këtë draft",
+      "conferma": "Ta fshish përgjithmonë?",
+      "si": "Po, fshije",
+      "no": "Jo"
+    },
+    "revisione": {
+      "bozzaN": "Drafti nr. {numero}",
+      "origineEsempio": "shembulli {caso} nga banka e provës, dalje e regjistruar e motorit",
+      "origineMotore": "përgatitur në {secondi} s",
+      "h1": "Kontrollo dhe miratoje",
+      "sotto": "Asnjë çmim nuk është shpikur: ata që sheh vijnë nga lista jote e çmimeve, ata bosh i vendos ti.",
+      "statoRighe": "Gjendja e rreshtave",
+      "pronta": "{n} gati",
+      "pronte": "{n} gati",
+      "contaDaPrezzare": "{n} pa çmim",
+      "contaSenzaMisura": "{n} pa masë",
+      "contaSenzaValore": "{n} pa vlerën e mallit",
+      "domandaIva": "IVA: {n} pyetje",
+      "domandeIva": "IVA: {n} pyetje",
+      "motivi": {
+        "prezzo": "Pa çmim",
+        "misura": "Mungon masa",
+        "valore": "Mungon vlera e mallit"
+      },
+      "rigaPronta": "Gati",
+      "daCompletare": "për t'u plotësuar",
+      "cliente": "Klienti",
+      "nome": "Emri",
+      "indirizzo": "Adresa e punës",
+      "linguaCliente": "Gjuha e klientit",
+      "inCheLingua": "Në çfarë gjuhe ia dërgon preventivin?",
+      "riceve": "Klienti merr mesazhin, faqen dhe PDF-në në {lingua}, me tekstin italisht pranë: në rast dyshimi vlen italishtja. Kontrollo zërat e përkthyer, mund t'i korrigjosh.",
+      "cambiate": "I ke ndryshuar zërat pas përkthimit: bëje përsëri përkthimin, që klienti të lexojë të njëjtat gjëra që lexon ti.",
+      "traduco": "Po përkthej…",
+      "rifai": "Ripërkthe",
+      "traduciIn": "Përkthe në {lingua}",
+      "escluso": "Përjashtuar: {testo}",
+      "ivaTitolo": "IVA: tre pyetje",
+      "abitazione": "A është banesë?",
+      "abitazioneSi": "Po, banon dikush",
+      "abitazioneNo": "Jo, dyqan ose zyrë",
+      "intervento": "Lloji i ndërhyrjes",
+      "ordinaria": "E zakonshme",
+      "straordinaria": "E jashtëzakonshme",
+      "ristrutturazione": "Rinovim",
+      "materiali": "Kush i blen materialet?",
+      "materialiImpresa": "I blej unë",
+      "materialiCliente": "Klienti",
+      "ripartizione": "10% mbi {a10}, 22% mbi {a22}",
+      "commercialista": "Kontrollo gjithmonë me kontabilistin tënd.",
+      "rispondi": "Përgjigju tre pyetjeve dhe normën e saktë e llogaris unë.",
+      "lavorazioni": "Punime · {n}",
+      "soloDaSistemare": "Vetëm ato për t'u rregulluar",
+      "haiDetto": "Ti the: «{testo}»",
+      "voceListino": "Zë i listës së çmimeve",
+      "fuoriListino": "Jashtë listës: çmim me dorë",
+      "descrizione": "Përshkrimi në preventiv",
+      "quantita": "Sasia",
+      "unita": "Njësia",
+      "scegli": "Zgjidh",
+      "prezzo": "Çmimi €",
+      "valoreBene": "Nga kjo, vlera e mallit (sanitare, rubineta…), për IVA-n",
+      "proponi": "Propozo ta shtosh në listën time me këtë çmim",
+      "togliRiga": "Hiqe rreshtin",
+      "aggiungiRiga": "Shto një rresht",
+      "esclusi": "Të përjashtuara nga preventivi",
+      "unaPerRiga": "Një për rresht",
+      "note": "Shënime nga vizita në objekt (nuk shkojnë në PDF)",
+      "riepilogo": "Përmbledhje",
+      "imponibile": "Baza e tatueshme",
+      "ivaSu": "IVA {aliquota}% mbi {importo}",
+      "totale": "Totali",
+      "primaManca": "Para se ta miratosh mungon:",
+      "righeManca": "(rreshti {righe})",
+      "mancanze": {
+        "quantita": "mungon sasia",
+        "unita": "mungon njësia e matjes",
+        "prezzo": "mungon çmimi",
+        "abitazione": "IVA: është banesë?",
+        "intervento": "IVA: lloji i ndërhyrjes",
+        "materiali": "IVA: kush i blen materialet",
+        "valoreBene": "vlera e «bene significativo» (malli i rëndësishëm)",
+        "valoreSupera": "vlera e mallit e kalon shumën e rreshtit",
+        "traduzioneDaRifare": "përkthimi në {lingua} duhet bërë përsëri: zërat kanë ndryshuar",
+        "traduci": "përktheje preventivin në {lingua}"
+      },
+      "salvaBozza": "Ruaj skicën",
+      "salvata": "Skica u ruajt.",
+      "totaleIvaInclusa": "Totali me IVA",
+      "imponibileFinora": "Baza e tatueshme deri tani",
+      "sistemaDato": "Rregullo {n} të dhënë",
+      "sistemaDati": "Rregullo {n} të dhëna",
+      "approvaGenera": "Miratoje dhe krijo PDF-në",
+      "approvi": "Ta miratosh preventivin?",
+      "confermaTesto": "Totali {totale} · {regime}. Pas miratimit skica nuk ndryshohet më: krijoj PDF-në dhe linkun për klientin.",
+      "controllato": "I kam kontrolluar çmimet dhe sasitë",
+      "genero": "Po krijoj PDF-në…",
+      "torna": "Kthehu te skica",
+      "erroreSalva": "Nuk munda ta ruaj. Provo përsëri.",
+      "erroreApprova": "Nuk munda ta miratoj. Provo përsëri.",
+      "erroreTraduci": "Nuk munda ta përkthej. Provo përsëri."
+    },
+    "approvato": {
+      "preventivoN": "Preventivi nr. {numero}",
+      "accettato": "Klienti e ka pranuar.",
+      "rifiutato": "Klienti e ka refuzuar.",
+      "pronto": "Preventivi është gati. Tani dërgoje.",
+      "totaleIvaInclusa": "Totali me IVA",
+      "riceve": "Klienti merr mesazhin, faqen dhe PDF-në në {lingua}, me tekstin italisht pranë, që është ai që vlen.",
+      "whatsapp": "Dërgo në WhatsApp",
+      "copiato": "Linku u kopjua",
+      "copia": "Kopjo linkun",
+      "apriPdf": "Hap PDF-në",
+      "paginaCliente": "Shiko faqen që sheh klienti",
+      "aChePunto": "Ku ka mbetur",
+      "approvatoDaTe": "Miratuar nga ti",
+      "vistoDalCliente": "Parë nga klienti",
+      "quandoApre": "kur e hap linkun",
+      "accettatoDa": "Pranuar nga {nome}",
+      "rifiutatoDa": "Refuzuar nga {nome}",
+      "risposta": "Përgjigjja e klientit",
+      "accettaCon": "e pranon me emër dhe datë",
+      "fatto": "(bërë)",
+      "inAttesa": "(në pritje)",
+      "nota": "Klienti hap linkun, e sheh preventivin dhe e pranon me emër dhe datë, pa u regjistruar. Rifresko faqen që të shohësh nëse e ka hapur."
+    },
+    "prova": {
+      "nuovaProva": "Provë e re",
+      "h1": "Nga vizita në objekt te drafti",
+      "sotto": "Motori nxjerr punimet, i përputh me listën e çmimeve dhe të përgatit draftin për ta kontrolluar. Çmimet vijnë vetëm nga lista e çmimeve: çfarë nuk gjen mbetet pa çmim, çfarë mungon ta pyet ty.",
+      "avviso": "Të dhëna prove të shpikura: firma e listës së çmimeve dhe klientët e shembujve nuk ekzistojnë. Mos shkruaj emra, adresa ose numra personash realë: draftet qëndrojnë 7 ditë dhe kushdo që ka linkun mund t'i hapë. Teksti i lirë përpunohet me Claude të Anthropic. {privacy}",
+      "daDove": "Nga të nisësh",
+      "unEsempio": "Një shembull",
+      "tuoTesto": "Teksti yt",
+      "esempiBanco": "Shembuj të bankës së provës",
+      "esempiTesto": "Vizita të shpikura në objekt, të bankës së provës. Drafti del menjëherë: është dalja e regjistruar e motorit për atë rast.",
+      "lavori": {
+        "bagno": "Banjo e plotë",
+        "tinteggiatura": "Lyerje apartamenti me dy dhoma",
+        "cucina": "Instalim kuzhine",
+        "pavimento": "Dysheme e dhomës së ndenjes"
+      },
+      "tutti": "Ose zgjidh mes të gjithë 30-ve",
+      "vocale": "Mesazhi zanor, i transkriptuar",
+      "preparo": "Po e përgatis draftin…",
+      "prepara": "Përgatit draftin",
+      "racconta": "Trego punën ashtu siç do ta thoshe në mesazhin zanor",
+      "segnaposto": "Banjoja e zonjës Rossi, via Roma 3. Është shtëpia e saj. Heqim vaskën dhe pllakat, dy metra të larta. Banjoja është dy me një e tetëdhjetë, tabaka dushi 80x80, sanitarët i blej unë…",
+      "codice": "Kodi i hyrjes",
+      "codiceNota": "Teksti yt kalon nga API i Claude dhe çdo provë ka një kosto: kodi ndalon botët.",
+      "attesa": "Duhen rreth 20 sekonda…",
+      "errore": "Nuk munda ta përgatis draftin. Provo përsëri.",
+      "fasi": [
+        "Po lexoj vizitën në objekt…",
+        "Po ndaj punimet, masat dhe përjashtimet…",
+        "Po kërkoj çdo zë në listën e çmimeve…",
+        "Po kontrolloj çfarë mungon dhe regjimin IVA…",
+        "Po përgatis draftin për ta kontrolluar…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "Po flas në",
+      "ascolto": "Po dëgjoj: prek për ta ndalur",
+      "detta": "Diktoje vizitën në objekt",
+      "nota": "Përdor njohjen e zërit të shfletuesit: te kjo faqe vjen vetëm teksti. Në çfarëdo gjuhe që flet, drafti del në italisht.",
+      "erroreMicrofono": "Shfletuesi nuk ka leje të përdorë mikrofonin.",
+      "erroreLingua": "Në këtë telefon diktimi në këtë gjuhë nuk ka. Shkruaje tekstin në gjuhën tënde: drafti del në italisht njësoj.",
+      "erroreInterrotta": "Diktimi u ndërpre. Provo përsëri."
+    }
+  },
+  "comune": {
+    "lingua": "Gjuha",
+    "scegliLingua": "Zgjidh gjuhën",
+    "faFede": "Përkthim kortezie: në rast dyshimi vlen teksti në italisht.",
+    "saltaAlContenuto": "Kalo te përmbajtja",
+    "logoTop": "PreventivoLampo, kthehu në fillim",
+    "logoHome": "PreventivoLampo, faqja kryesore",
+    "entra": "Hyr",
+    "apriMenu": "Hap menunë",
+    "chiudiMenu": "Mbyll menunë",
+    "principale": "Kryesore",
+    "ctaPilota": "Bëhu artizan pilot",
+    "ctaProva": "Provo me një shembull",
+    "privacy": "Privatësia",
+    "cookie": "Cookie",
+    "condizioni": "Kushtet",
+    "infoLegali": "Informacione ligjore",
+    "servizioDi": "PreventivoLampo është një shërbim i K Digital Solution",
+    "aggiornata": "Përditësuar më {data}",
+    "comeFunziona": "Si funksionon"
+  },
+  "nav": {
+    "come": "Si funksionon",
+    "mestieri": "Profesionet",
+    "numeri": "Numrat",
+    "prezzi": "Çmimet",
+    "domande": "Pyetje"
+  },
+  "hero": {
+    "etichetta": "Për të gjitha profesionet e shtëpisë",
+    "titolo": "Mbaron vizitën në objekt. Preventivi niset nga furgoni.",
+    "testo": "Ia tregon me zë ose e shkruan, ashtu siç do t'ia thoshe një kolegu. Të kthehet drafti me çmimet e **listës tënde**, me IVA-n e saktë dhe me zërat e dyshimtë të shënuar. Kontrollon, miraton, dhe klienti merr PDF-në për ta pranuar me një klik.",
+    "garanzia": "Çmime vetëm nga lista jote. Nëse një zë nuk ka, mbetet pa çmim: asnjë shifër e shpikur.",
+    "guarda": "Shih si funksionon",
+    "punti": [
+      "Nuk instalon asgjë",
+      "Lista e çmimeve edhe nga një foto",
+      "Vendos gjithmonë ti"
+    ]
+  },
+  "demo": {
+    "gruppo": "Zgjidh një profesion për shembull",
+    "altroMestiere": "Profesion tjetër",
+    "didascalia": "Shembull: punë dhe çmime të shpikura, listë provë",
+    "pausa": "Pauzë",
+    "riprendi": "Vazhdo",
+    "riguarda": "Shiko përsëri",
+    "sig": "z.",
+    "bozza": "Draft nga lista jote",
+    "voci": "{n} zëra",
+    "daPrezzare": "për t'u çmuar",
+    "prezzoTuo": "çmimi yt: mund ta shtosh te lista",
+    "iva": "IVA {aliquota}%: banesë, mirëmbajtje",
+    "stati": [
+      "Dërguar",
+      "Parë",
+      "Pranuar"
+    ],
+    "accettato": "Pranuar online nga z. {cliente}: emri, data, ora dhe kopja e PDF-së mbeten te ti.",
+    "altroTitolo": "Dyer e dritare, kartongjes, kaldaja, kopshte, kangjella, kuzhina sipas masës.",
+    "altroTesto": "Nëse punon me zëra dhe masa, funksionon me listën tënde: fjalët e zanatit i gjen aty, dhe ç'nuk ka mbetet pa çmim. Ngarkon listën që ke, edhe me foto, dhe e provon me punët e tua.",
+    "altroCta": "Provoje me punën tënde",
+    "mestieri": {
+      "elettricista": "Elektricist",
+      "idraulico": "Hidraulik",
+      "imbianchino": "Bojaxhi",
+      "piastrellista": "Pllakaxhi",
+      "muratore": "Murator"
+    },
+    "lavori": {
+      "elettricista": "Kuzhina",
+      "idraulico": "Kuzhina",
+      "imbianchino": "Apartament dy dhomash",
+      "piastrellista": "Dhoma e ndenjes",
+      "muratore": "Dhoma e vogël"
+    },
+    "vocali": {
+      "elettricista": "Kuzhina e z. Ferrari. Katër pika drite të thjeshta dhe dy me deviator mbi tavolinë. Prizat nga gjashtëmbëdhjetë për pajisjet elektroshtëpiake. Në kuadër vihet një diferencial i ri. Dhe ia montoj llambadarin që ka blerë vetë.",
+      "idraulico": "Kuzhina e zonjës Rinaldi. E zhvendosim lavamanin në murin përballë: lidhje e re uji të ngrohtë e të ftohtë me shkarkimin, tre metra shkarkim nga dyzet. Lidh edhe larësen e enëve. Rubinetin e ka tashmë ajo, e montoj unë.",
+      "imbianchino": "Apartamenti dy dhomash i z. Greco, salloni dhe dhoma e gjumit: muret dhe tavanet bëjnë njëqind e njëzet metra. Gërvisht ku zhvishet, fiksativ kudo dhe dy duar bojë të larshme. Gjashtë metra bojë kundër mykut në tavanin e banjës. Mobiljet i zhvendosim ne.",
+      "piastrellista": "Dhoma e ndenjes e zonjës Marino, njëzet e tetë metra katrorë. Heq dyshemenë e vjetër dhe plintusin, ribëj masetin dhe vendos gresin tridhjetë me tridhjetë që ka blerë ajo. Plintus i ri prej gresi.",
+      "muratore": "Dhoma e vogël e z. Conti. E rrëzoj murin ndarës të vjetër dhe e ndërtoj përsëri një metër më tutje: tulla të zbrazëta nga tetë, tre e njëzet me dy e shtatëdhjetë, suva nga të dyja anët. Mbetje, një metër kub. Kornizën e derës e vë unë."
+    }
+  },
+  "mestieri": {
+    "titolo": "Çdo zanat ka fjalët e veta. Lista jote i ka tashmë.",
+    "testo": "Nuk duhet të mësosh të flasësh ndryshe: i thua masat afërsisht, emrat që përdor ti, «atë që ka blerë ajo». Sistemi kërkon mes zërave të listës sate, i bën përsëri llogaritë e masave dhe ç'nuk gjen ta shënon për ty.",
+    "guarda": "Shih shembullin",
+    "scorri": "Rrëshqit për të parë profesionet e tjera.",
+    "nota": "Rreshta shembull. Funksionon me çdo listë me zëra dhe masa: nëse profesioni yt nuk është këtu, vlen njësoj.",
+    "etichettaLista": "Shembuj sipas profesionit",
+    "voci": {
+      "elettricista": {
+        "nome": "Elektricist",
+        "detto": "gjashtë pika drite, dy me deviator"
+      },
+      "idraulico": {
+        "nome": "Hidraulik",
+        "detto": "e zhvendos lavamanin një metër e gjysmë"
+      },
+      "imbianchino": {
+        "nome": "Bojaxhi",
+        "detto": "dy duar bojë të larshme, njëqind e njëzet metra"
+      },
+      "piastrellista": {
+        "nome": "Pllakaxhi",
+        "detto": "vendos gresin që ka blerë ajo"
+      },
+      "muratore": {
+        "nome": "Murator",
+        "detto": "tre e njëzet me dy e shtatëdhjetë"
+      },
+      "cartongessista": {
+        "nome": "Punues gips-kartoni",
+        "detto": "tavan i varur në korridor, gjashtë me një e dhjetë"
+      },
+      "serramentista": {
+        "nome": "Montues dyersh e dritaresh",
+        "detto": "tre dritare me dy kanate dhe një derë ballkoni"
+      },
+      "termoidraulico": {
+        "nome": "Termohidraulik",
+        "detto": "ndërroj kaldajën, radiatorët mbeten"
+      },
+      "falegname": {
+        "nome": "Marangoz",
+        "detto": "gardërobë në mur, dy e dyzet me dy e gjashtëdhjetë"
+      },
+      "fabbro": {
+        "nome": "Hekurpunues",
+        "detto": "parmakët e ballkonit, gjashtë metra"
+      },
+      "giardiniere": {
+        "nome": "Kopshtar",
+        "detto": "gardhi i gjallë për t'u prerë, dyzet metra"
+      },
+      "impresa": {
+        "nome": "Ndërmarrje ndërtimi",
+        "detto": "banjë e plotë, çelësa në dorë"
+      }
+    }
+  },
+  "come": {
+    "titolo": "Nga zëri te preventivi i pranuar, në katër hapa.",
+    "sotto": "Ti tregon dhe kontrollon. Llogaritë, listën e çmimeve, IVA-n, PDF-në dhe dërgimin i bën sistemi.",
+    "passi": [
+      {
+        "titolo": "Ti tregon punën",
+        "testo": "Me zë ose me shkrim, nga telefoni, sapo mbaron vizita në objekt: masat, punët, çfarë sjell klienti, çfarë nuk hyn në preventiv.",
+        "nota": "«tre me dy e gjysmë, afërsisht»"
+      },
+      {
+        "titolo": "Të pyet çfarë mungon",
+        "testo": "Nëse një sasi nuk është e qartë, nuk e hamendëson: të bën një pyetje të shkurtër dhe pret përgjigjen.",
+        "nota": "«Sa m² dysheme?»"
+      },
+      {
+        "titolo": "Kontrollon nga telefoni",
+        "testo": "Zë pas zëri: korrigjon, heq, shton. Ajo që nuk është në listën tënde të çmimeve është e theksuar.",
+        "nota": "Ndrysho · Aprovo"
+      },
+      {
+        "titolo": "Klienti pranon",
+        "testo": "Merr PDF-në me logon tënde dhe një link për ta pranuar. Ti sheh kur e hap dhe kur thotë po.",
+        "nota": "Dërguar · Parë · Pranuar"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "Ajo që të garantojmë, çdo herë.",
+    "testo": "Preventivi mban emrin tënd, prandaj duhet të jetë i saktë. Për këtë sistemi nuk hamendëson kurrë: atë që e di e shkruan, atë që nuk e di ta pyet ty.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "e çmimeve nga lista jote",
+        "dettaglio": "Asnjë çmim i shpikur. Ajo që mungon mbetet pa çmim derisa e vendos ti."
+      },
+      {
+        "cifra": "6 gjuhë",
+        "cosa": "për klientin tënd",
+        "dettaglio": "Italisht, anglisht, gjermanisht, frëngjisht, spanjisht dhe holandisht. Ti mund të tregosh edhe në rumanisht, shqip ose arabisht."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "për të marrë draftin",
+        "dettaglio": "Nga tregimi i vizitës në objekt te drafti i plotë, me pyetjet për atë që mungon."
+      }
+    ],
+    "sotto1": "Përpara se të arrijë te klienti, çdo preventiv kalon nga ti. Zërat që duhen kontrolluar janë të theksuar, masat që mungojnë të pyet sistemi, dhe asgjë nuk niset pa miratimin tënd.",
+    "sotto2": "Me programin pilot e testojmë në punë të vërteta të dhjetë artizanëve me profesione të ndryshme. Çfarë nuk shkon na e thonë, dhe e rregullojmë."
+  },
+  "cosa": {
+    "titolo": "Të transkriptosh një zë e dinë shumë. Ne merremi me atë që të bën të humbasësh para.",
+    "listinoTitolo": "Lista jote e çmimeve, siç është",
+    "listinoTesto": "Ngarkon listën që ke: Excel, PDF, foton e fletës të shkruar me dorë ose disa preventivë të vjetër. Sistemi lexon zërat, njësitë matëse dhe çmimet, dhe ti kontrollon e konfirmon. Asnjë çmim nuk hyn pa e parë ti. Nëse ngecësh, të ndihmojmë ne.",
+    "tabella": {
+      "didascalia": "Shembull liste çmimesh",
+      "voce": "Zëri",
+      "unita": "Njësia",
+      "tipoIva": "Lloji i IVA-s",
+      "prestazione": "shërbim",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "Asnjë çmim i shpikur",
+    "prezzoTesto": "Disa aplikacione, kur nuk gjejnë një zë, e vlerësojnë me «çmime tregu». Ne jo: nëse nuk është në listën tënde, e shënojmë si pa çmim, dhe çmimin e vendos ti. Një preventiv i gabuar nga ana e ulët është punë me humbje.",
+    "dalListino": "nga lista ✓",
+    "ivaTitolo": "IVA e ndërtimit e bërë mirë, vetvetiu",
+    "ivaTesto1": "Mirëmbajtje në një banesë? 10% vlen për punën, por beni significativi (mallra të rëndësishëm: sanitare, rubinetë, dyer e dritare, kaldaja) hyjnë aty vetëm deri në vlerën e pjesës tjetër të ndërhyrjes. Pjesa që e tejkalon shkon me 22%.",
+    "ivaTesto2": "Të bëjmë tre pyetje: çfarë prone është, çfarë pune është, kush blen materialet. Në PDF, IVA 10% dhe 22% del e ndarë saktë, me shënimin përkatës.",
+    "ivaNota": "Shembull marrë nga udhëzuesi i Agenzia delle Entrate. Për rastet e veçanta mbetet gjithmonë kontabilisti yt.",
+    "scontrino": {
+      "etichetta": "Shembull ndarjeje të IVA-s",
+      "titolo": "Mirëmbajtje e jashtëzakonshme · banesë",
+      "manodopera": "Krahu i punës dhe materiale të tjera",
+      "beni": "Beni significativi (mallra të rëndësishëm)",
+      "imp10": "Baza e tatueshme me 10%",
+      "imp22": "Baza e tatueshme me 22%",
+      "iva": "IVA 10% + IVA 22%",
+      "totale": "Totali"
+    },
+    "lingueTitolo": "Ti tregon në gjuhën tënde. Klienti lexon në të tijën.",
+    "lingueTesto": "Shkruaje ose diktoje vizitën në objekt në rumanisht, shqip, arabisht ose në një gjuhë tjetër: skica del në italisht. Nëse klienti është i huaj, preventivi i vjen në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me tekstin italian pranë, që është ai që vlen. Përkthimin e sheh dhe e korrigjon para se ta dërgosh.",
+    "lingueDalListino": "nga lista jote e çmimeve, në italisht",
+    "lingueAlCliente": "te klienti gjerman, me italishten pranë",
+    "aiutoTitolo": "Ndihmë e vërtetë, nga një njeri",
+    "aiutoTesto": "Logo, të dhëna, kushtet e pagesës, parapagimet, përjashtimet: i vendos ti vetë për pak minuta. Nëse ngec, na shkruan ose na merr në telefon dhe të përgjigjet një njeri, jo një bot. Dhe preventivin e parë e dërgon ti vetë, nga furgoni.",
+    "ultimaTitolo": "Fjala e fundit është gjithmonë e jotja",
+    "ultimaTesto": "Sistemi propozon, ti vendos. Asnjë preventiv nuk i arrin klientit pa e hapur dhe miratuar ti. Zërat e rinj që çmon ti hyjnë në listën tënde, për herën tjetër."
+  },
+  "confronto": {
+    "titolo": "Tri mënyra për të bërë të njëjtin preventiv.",
+    "colonne": [
+      "Word ose Excel, në mbrëmje",
+      "Një chatbot çfarëdo",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "Çmimet",
+        "celle": [
+          "I kopjon ti vetë nga lista",
+          "I vlerëson: listën tënde nuk e njeh",
+          "Vetëm nga lista jote. Ç'mungon mbetet pa çmim"
+        ]
+      },
+      {
+        "tema": "Masat që mungojnë",
+        "celle": [
+          "E kupton kur po shkruan",
+          "Shpesh i merr si të mira",
+          "Ta kërkon para se të bëjë llogaritë"
+        ]
+      },
+      {
+        "tema": "IVA me beni significativi",
+        "celle": [
+          "Me dorë, me dyshim",
+          "Varet se si e pyet",
+          "10% dhe 22% të ndara, me shënimin përkatës"
+        ]
+      },
+      {
+        "tema": "Dokumenti",
+        "celle": [
+          "Duhet formatuar çdo herë",
+          "Tekst për ta kopjuar diku tjetër",
+          "PDF me logon tënde, gati për dërgim"
+        ]
+      },
+      {
+        "tema": "Pëlqimi i klientit",
+        "celle": [
+          "Një mesazh, po shkoi mirë",
+          "Nuk ka",
+          "Pranim online: emri, data, ora dhe kopja e PDF-së"
+        ]
+      },
+      {
+        "tema": "Ku e bën",
+        "celle": [
+          "Në kompjuter, pas darke",
+          "Në telefon, pastaj e bën përsëri",
+          "Nga telefoni, sapo mbaron vizita në objekt"
+        ]
+      }
+    ],
+    "etichettaLista": "Krahasim sipas temës",
+    "scorri": "Rrëshqit për krahasimet e tjera.",
+    "nota": "«Chatbot çfarëdo»: një asistent i përgjithshëm që përdoret pa listën tënde, siç bëjnë shumë njerëz sot."
+  },
+  "calcolo": {
+    "titolo": "Sa të kushtojnë sot preventivat?",
+    "preventivi": "Preventivë në javë",
+    "minuti": "Minuta për secilin, mes llogarive, Word-it dhe dërgimit",
+    "min": "{n} min",
+    "passi": "Çdo muaj kalon me preventivat afërsisht",
+    "ore": "{n} orë",
+    "costa": "pothuajse gjithmonë në mbrëmje, pas kantierit. PreventivoLampo kushton 19,90 € në muaj:",
+    "allOra": "{n} € për secilën nga ato orë.",
+    "nota": "Numrat i vendos ti. Sa kohë të kthen e masim me pilotin, në punë të vërteta."
+  },
+  "prezzi": {
+    "titolo": "Së pari e provon në punët e tua të vërteta. Pastaj vendos.",
+    "pilota": "Programi pilot",
+    "perGiorni": "për 30 ditë",
+    "pilotaTesto": "Preventivë pa limit dhe ndihmë nëse të duhet. Në këmbim na tregon çfarë nuk funksionon. Të thërrasim sipas radhës së ardhjes. Nga dita e 31-të 19,90 € në muaj ose 199 € në vit, vetëm nëse vendos të qëndrosh: pa rinovim automatik.",
+    "candidati": "Apliko",
+    "posti": "{n} vende",
+    "postiLiberi": "{n} vende të lira nga {totale}",
+    "ultimoPosto": "Vendi i fundit nga {totale}",
+    "esauriti": "Vendet kanë mbaruar",
+    "mensile": "Mujor",
+    "alMese": "në muaj",
+    "perMese": "/muaj",
+    "mensileVoci": [
+      "Preventiva pa limit",
+      "Link pranimi për klientin",
+      "Asistencë nga një person"
+    ],
+    "mensileNota": "Pa kosto nisjeje. Anuloje kur të duash, pa detyrime.",
+    "annuale": "Vjetor",
+    "allAnno": "në vit",
+    "perAnno": "/vit",
+    "annualeVoci": [
+      "Gjithçka që ka paketa mujore",
+      "Dy muaj falas",
+      "Rinovohet vetëm nëse e kërkon ti"
+    ],
+    "ivaEsclusa": "Çmimet nuk e përfshijnë IVA-n."
+  },
+  "domande": {
+    "titolo": "Pyetjet që na bëjnë të gjithë",
+    "nonTrovi": "Nuk e gjen pyetjen tënde? Na shkruaj te [{email}](mailto:{email}): të përgjigjemi ne, jo një bot.",
+    "lista": [
+      {
+        "d": "Po nëse gabon?",
+        "r": "Klientit nuk i arrin asgjë pa miratimin tënd. Zërat e pasigurt i sheh të theksuar, ato që nuk janë në listë mbeten pa çmim, dhe asnjë çmim nuk është shpikur kurrë."
+      },
+      {
+        "d": "Nuk jam i mirë me kompjuterin.",
+        "r": "Nëse di të dërgosh një zë në WhatsApp, di ta përdorësh. Hapet nga shfletuesi i telefonit, nuk ka asgjë për të instaluar, dhe nëse ngec të përgjigjet një person."
+      },
+      {
+        "d": "Çmimet i di vetëm unë.",
+        "r": "Pikërisht: përdorim vetëm çmimet e tua. Listën e çmimeve e ngarkon siç është, edhe me foto ose nga preventivat e vjetër, dhe ajo që nuk është aty mbetet pa çmim derisa ta vendosësh ti."
+      },
+      {
+        "d": "A nuk mjafton një chatbot?",
+        "r": "Një asistent i përgjithshëm nuk e njeh listën tënde të çmimeve, ndaj çmimet i llogarit përafërsisht. Nuk e ndan IVA-n me «beni significativi» (materialet kryesore, ku IVA llogaritet ndryshe), nuk e bën PDF-në me logon tënde dhe nuk merr pëlqimin e klientit."
+      },
+      {
+        "d": "A shkon për profesionin tim?",
+        "r": "Nëse punon me zëra dhe masa, po: elektricistë, hidraulikë, bojaxhinj, pllakaxhinj, murator, punëtorë kartongjipsi, montues dyersh e dritaresh, farkëtarë, kopshtarë. Fjalët e profesionit i gjen në listën tënde të çmimeve. Me pilotin e provojmë edhe në profesione që nuk i kemi provuar ende."
+      },
+      {
+        "d": "A mund ta tregoj në gjuhën time? Po nëse klienti është i huaj?",
+        "r": "Po. E shkruan ose e diktoni sopralluogon në rumanisht, shqip, arabisht, ukrainisht, spanjisht ose në një gjuhë tjetër, dhe drafti dalin në italisht me çmimet e listës tënde. Me zë varet nga telefoni: aty ku gjuha jote nuk ka, e shkruan. Dhe nëse klienti flet anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, ia dërgon preventivin në gjuhën e tij: përkthimin e kontrollon ti, dhe teksti italisht qëndron pranë dhe vlen si tekst zyrtar."
+      },
+      {
+        "d": "Flas shpejt, ka zhurmë, përdor fjalët e mia.",
+        "r": "Sistemi i njeh zërat e listës tënde dhe emrat që përdor ti. Nëse një masë nuk është e qartë, ta kërkon përsëri në vend që të hamendësojë."
+      },
+      {
+        "d": "Klienti e do në letër.",
+        "r": "PDF-ja shtypet si çdo preventiv tjetër. Me linkun, megjithatë, klienti pranon për një minutë, pa u regjistruar, dhe ti ke provën se çfarë ka pranuar."
+      },
+      {
+        "d": "Ku përfundojnë zërat dhe të dhënat e klientëve të mi?",
+        "r": "Lista e çmimeve dhe preventivat qëndrojnë në serverë në Bashkimin Evropian. Për të përgatitur draftin, teksti i sopralluogos kalon nga një shërbim i inteligjencës artificiale, i treguar te [faqja Privacy](/privacy). Te serverët tanë arrin vetëm teksti, jo audioja, dhe me ty nënshkruajmë marrëveshjen për trajtimin e të dhënave të klientëve të tu."
+      },
+      {
+        "d": "Duhet ta ndryshoj programin e faturave?",
+        "r": "Jo, mbaje të tuajin. PreventivoLampo merret me preventivat; faturat mbeten aty ku janë."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "Preventivin tjetër dërgoje nga furgoni.",
+    "testo": "Po kërkojmë 10 zanatçinj për programin pilot, nga çdo profesion i shtëpisë. Na lër të dhënat e tua: të telefonojmë ne, sipas radhës së ardhjes, për të kuptuar nëse të ka punë.",
+    "vederlo": "Do ta shohësh përpara se të aplikosh? [Provoje në WhatsApp]({whatsapp}): mesazhi i parë është shkruar tashmë, shtyp dërgo dhe pastaj tregoji një sopralluogo. Ose [provo me një shembull](/prova).",
+    "scrivere": "Preferon të shkruash? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Aplikim për programin pilot",
+      "nome": "Emri dhe mbiemri",
+      "mestiere": "Profesioni",
+      "scegli": "Zgjidh",
+      "comune": "Komuna (qyteti)",
+      "cellulare": "Celulari",
+      "volume": "Preventiva në javë",
+      "privacy": "E kam lexuar [informativën e privatësisë](/privacy) dhe jam dakord të më kontaktoni për programin pilot.",
+      "invia": "Dërgo aplikimin",
+      "invio": "Po dërgohet…",
+      "conferma": "Faleminderit, {nome}. Të telefonojmë brenda dy ditëve të punës.",
+      "errore": "Dërgimi nuk u krye. Provo përsëri pas pak ose na shkruaj te studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Shkruaj emrin dhe mbiemrin.",
+        "mestiere": "Zgjidh profesionin tënd.",
+        "comune": "Shkruaj komunën.",
+        "telefono": "Shkruaj një numër celulari italian të vlefshëm.",
+        "volume": "Zgjidh një nga opsionet.",
+        "privacy": "Duhet pëlqimi yt që të mund të të kontaktojmë përsëri."
+      },
+      "mestieri": {
+        "Elettricista": "Elektricist",
+        "Idraulico": "Hidraulik",
+        "Termoidraulico": "Termohidraulik",
+        "Imbianchino": "Bojaxhi",
+        "Piastrellista": "Pllakaxhi",
+        "Muratore": "Murator",
+        "Cartongessista": "Punëtor kartongjipsi",
+        "Serramentista": "Montues dyersh dhe dritaresh",
+        "Falegname": "Zdrukthëtar",
+        "Fabbro": "Hekurpunues",
+        "Giardiniere": "Kopshtar",
+        "Impresa edile": "Firmë ndërtimi",
+        "Impresa di ristrutturazioni": "Firmë ristrukturimesh",
+        "Altro": "Tjetër"
+      },
+      "volumi": {
+        "1 o 2": "1 ose 2",
+        "da 3 a 5": "nga 3 deri në 5",
+        "più di 5": "më shumë se 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Privatësia",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "Kjo faqe shpjegon cilat të dhëna personale përpunon PreventivoLampo, pse, ku përfundojnë dhe sa kohë ruhen."
+        },
+        {
+          "t": "h2",
+          "testo": "Kush i përpunon të dhënat"
+        },
+        {
+          "t": "p",
+          "testo": "Kontrollues i të dhënave (titolare del trattamento) është Sofiane Khatib, K Digital Solution, Monza (MB). Për çdo kërkesë mbi të dhënat e tua shkruaj te [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "Për të dhënat e klientëve të një zanatçiu (emra, adresa kantierësh, preventivë) kontrollues është zanatçiu: ne i përpunojmë në emër të tij, si përpunues i të dhënave, sipas marrëveshjes që nënshkruajmë me të."
+        },
+        {
+          "t": "h2",
+          "testo": "Çfarë të dhënash, pse dhe sa kohë"
+        },
+        {
+          "t": "h3",
+          "testo": "Nëse aplikon për programin pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Emri, zanati, komuna, celulari dhe, nëse e tregon, sa preventivë bën në javë.",
+            "I përdorim vetëm për të të thirrur dhe për të kuptuar nëse piloti të leverdis (baza juridike: kërkesa jote dhe pëlqimi yt).",
+            "Nëse nuk hyn në pilot, i fshijmë brenda 12 muajve; mund të kërkosh që ta bëjmë më herët, në çdo moment."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Nëse përdor zonën e zanatçinjve"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Email-i i hyrjes, të dhënat e ndërmarrjes që fut (emri i firmës, partita IVA, adresa, telefoni, IBAN nëse e tregon), logoja, lista e çmimeve dhe preventivat.",
+            "Nëse e ngarkon listën e çmimeve nga PDF ose foto, ose nga preventiva të vjetra, inteligjenca artificiale lexon vetëm zërat e çmimeve: emrat e klientëve nuk transkriptohen dhe skedari nuk ruhet.",
+            "Duhen për të të ofruar shërbimin (baza juridike: kontrata, edhe gjatë pilotit falas).",
+            "Ruhen për sa kohë e përdor shërbimin. Kur ndalon, i fshijmë brenda 30 ditëve, përveç asaj që ligji na detyron ta ruajmë (për shembull faturat, 10 vjet)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Nëse je klient i një zanatçiu dhe e hap preventivin e tij"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Kur pranon ose refuzon një preventiv, regjistrojmë emrin që shkruan, datën dhe orën, adresën IP dhe shenjën digjitale (impronta) të PDF-së.",
+            "I duhen zanatçiut si provë e pranimit. I ruajmë në emër të tij, për sa kohë ai përdor shërbimin.",
+            "Për t'i parë, korrigjuar ose fshirë këto të dhëna mund t'i drejtohesh zanatçiut ose neve: ia përcjellim kërkesën."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Nëse provon PreventivoLampo me një shembull ose në WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Teksti që shkruan, drafti që del prej tij dhe, në WhatsApp, numri nga ku shkruan.",
+            "Draftet e provës fshihen vetë pas 7 ditësh; në WhatsApp drafti që pret përgjigjen tënde qëndron maksimumi një orë.",
+            "Për provat mos shkruaj të dhëna personash realë: mjaftojnë punë të shpikura.",
+            "Për të kufizuar abuzimet ruajmë një shenjë (hash) të adresës IP, jo adresën të qartë."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Kujt ua besojmë"
+        },
+        {
+          "t": "p",
+          "testo": "Përdorim këta ofrues, secili vetëm për pjesën e vet:"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase: baza e të dhënave, hyrja në zonë dhe arkivi i PDF-ve, në Irlandë (BE).",
+            "Vercel: faqja e internetit dhe funksionet e saj, në Frankfurt (BE).",
+            "Anthropic (Claude): lexon tekstin e vizitës në kantier dhe përgatit draftin, dhe përkthen zërat e preventivit kur klienti flet një gjuhë tjetër, në Shtetet e Bashkuara.",
+            "Twilio dhe WhatsApp (Meta): marrin dhe dërgojnë mesazhet e WhatsApp.",
+            "n8n: lidh mesazhet e WhatsApp me PreventivoLampo.",
+            "Resend: dërgon email-et me kodin e hyrjes."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Kur të dhënat dalin jashtë Bashkimit Evropian, mbështetemi te garancitë e parashikuara nga GDPR: certifikimi EU-US Data Privacy Framework ose klauzolat standarde kontraktore të Komisionit Evropian. Nuk i shesim të dhënat dhe nuk i përdorim për reklama, as për të stërvitur modele të inteligjencës artificiale."
+        },
+        {
+          "t": "h2",
+          "testo": "Të drejtat e tua"
+        },
+        {
+          "t": "p",
+          "testo": "Mund të na kërkosh t'i shohësh të dhënat e tua, t'i korrigjosh, t'i fshish, t'i kufizosh, të kundërshtosh përpunimin ose t'i marrësh në një format të lexueshëm, dhe ta tërheqësh pëlqimin kur të duash. Shkruaj në adresën më sipër: përgjigjemi brenda 30 ditëve. Mund të paraqesësh edhe ankesë te Garante per la protezione dei dati personali (autoriteti italian për mbrojtjen e të dhënave personale, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Kushtet e shërbimit",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë dhe firmat e ndërtimit të përgatisin preventivat: nga rrëfimi i vizitës në kantier përgatit një draft me çmimet e listës së firmës, që zanatçiu e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
+        },
+        {
+          "t": "h2",
+          "testo": "Programi pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Dhjetë vende, që i japim ne pas një telefonate.",
+            "30 ditë falas nga nisja, me preventivë pa limit. Listën e çmimeve e ngarkon ti (Excel, PDF ose foto); nëse të duhet, të ndihmojmë ne.",
+            "Pa rinovim automatik: në fund të 30 ditëve vendos ti nëse mbetesh. Nëse nuk na thua gjë, piloti mbaron aty.",
+            "Në këmbim të kërkojmë ta përdorësh në punët e tua të vërteta dhe të na thuash çfarë funksionon dhe çfarë jo."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Pas fazës pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Abonimi: 19,90 € në muaj ose 199 € në vit, pa IVA, me preventivë pa limit. Pa kosto nisjeje.",
+            "Abonimin mujor mund ta anulosh kur të duash, me efekt në fund të muajit që ke paguar tashmë. Vjetori vlen 12 muaj dhe rinovohet vetëm nëse e kërkon ti.",
+            "Nëse ndryshojmë çmimet, ta themi të paktën 30 ditë përpara, dhe vlejnë vetëm nga rinovimi i radhës."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Preventivin e vendos ti"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo propozon, ti vendos: asnjë preventiv nuk shkon te klienti pa e hapur dhe miratuar ti. Para se ta miratosh, kontrollo zërat, sasitë dhe çmimet.",
+            "Çmimet vijnë vetëm nga lista jote e çmimeve. Zërat që nuk ka mbeten «për t'u çmuar» dhe çmimin e vendos ti.",
+            "Llogaritja e IVA-s ndjek përgjigjet që jep ti dhe rregullat e Agenzia delle Entrate (Agjencisë së të Ardhurave), por nuk është këshillim fiskal: për rastet e veçanta mbetet kontabilisti yt (commercialista).",
+            "Marrëdhënia me klientin, çmimet dhe punimet mbeten të tuat: PreventivoLampo nuk është palë në kontratën mes teje dhe tij."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Të dhënat e tua mbeten të tuat"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Lista e çmimeve, preventivat dhe të dhënat e firmës janë të tuat. Me kërkesë të dërgojmë listën në Excel dhe PDF-të e preventivave.",
+            "Të dhënat e klientëve të tu i përpunojmë për llogari të tëndën, sipas marrëveshjes për përpunimin e të dhënave që nënshkruajmë në nisje. Si i përpunojmë të dhënat e tjera është shkruar në faqen Privacy.",
+            "Mos fut të dhëna shëndetësore ose të dhëna të tjera të veçanta të klientëve të tu: preventivit nuk i duhen."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Çfarë garantojmë dhe çfarë jo"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Bëjmë maksimumin që shërbimi të funksionojë gjithmonë dhe pa gabime, por leximi i inspektimit në objekt mund të gabojë: për këtë çdo draft duhet kontrolluar para se ta miratosh.",
+            "Mund të ketë ndërprerje për mirëmbajtje ose defekte te furnizuesit; mirëmbajtjet e mëdha ta njoftojmë përpara.",
+            "Brenda kufijve të ligjit, dhe me përjashtim të dashjes ose pakujdesisë së rëndë, përgjegjësia jonë nuk e kalon atë që na ke paguar në 12 muajt e fundit. Gjatë pilotit falas shërbimi ofrohet siç është."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Përdorim i drejtë"
+        },
+        {
+          "t": "p",
+          "testo": "Përdore PreventivoLampo vetëm për preventivat e firmës sate. Mos e ndaj aksesin tënd me persona të jashtëm dhe mos e përdor shërbimin për të ngarkuar tekste fyese ose kërkesa në masë. Nëse këto rregulla nuk respektohen, mund ta pezullojmë aksesin, pasi të kemi njoftuar."
+        },
+        {
+          "t": "h2",
+          "testo": "Ndryshime dhe ligji i zbatueshëm"
+        },
+        {
+          "t": "p",
+          "testo": "Nëse i ndryshojmë këto kushte, ta themi me email të paktën 30 ditë përpara. Vlen ligji italian dhe, për mosmarrëveshjet, foro di Monza (gjykata e Monzës). Për çdo pyetje shkruaj te [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookie",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo përdor vetëm cookie teknike: pa to, zona e artizanëve nuk do ta dinte që ke hyrë dhe faqja nuk do ta mbante mend gjuhën që ke zgjedhur. Pa cookie profilizimi, pa statistika, pa mjete të palëve të treta që të ndjekin nga një faqe te tjetra. Prandaj nuk gjen banner për cookie."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione**: e mban të hapur hyrjen në zonën e artizanëve pasi ke futur kodin e marrë me email. E vendosim vetëm kur hyn, zgjat 30 ditë dhe fshihet kur shtyp «Dil».",
+            "**pl_lingua**: e mban mend gjuhën që ke zgjedhur me zgjedhësin e gjuhëve. E vendosim vetëm nëse e ndryshon gjuhën dhe zgjat një vit."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Shkronjat dhe flamujt shërbehen nga vetë faqja, jo nga serverë të jashtëm. Nëse një ditë do të duhet një cookie tjetër, kjo faqe do të thotë cilën, për çfarë shërben dhe sa zgjat, dhe nëse nuk është teknike, do të ta kërkojmë përpara."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Hyr · PreventivoLampo",
+    "h1": "Hyr te preventivat e tu",
+    "sotto": "Lista jote e çmimeve, çmimet e tua, preventivat me emrin tënd sipër.",
+    "email": "Emaili yt",
+    "mandaCodice": "Më dërgo kodin",
+    "invioCodice": "Po e dërgoj kodin…",
+    "spiegazione": "Të dërgojmë një kod me 6 shifra. Nëse është hera e parë, me të njëjtin kod regjistron firmën tënde.",
+    "scritto": "Të kemi shkruar te **{email}**. Nëse nuk e gjen, shiko te posta e padëshiruar.",
+    "codice": "Kodi",
+    "accedi": "Hyr",
+    "controllo": "Po kontrolloj…",
+    "nuovoTra": "Kod i ri pas {n} s",
+    "nuovo": "Më dërgo një kod të ri",
+    "cambiaEmail": "Ndrysho emailin",
+    "errore": "Diçka nuk shkon. Provo përsëri.",
+    "condizioni": "Duke hyrë pranon [kushtet](/condizioni) dhe [informativën e privatësisë](/privacy)."
+  },
+  "prova": {
+    "titolo": "Provo motorin",
+    "h1": "Nga inspektimi te drafti",
+    "testo": "Motori nxjerr punimet, i përputh me listën e çmimeve dhe të përgatit draftin për ta kontrolluar. Çmimet vijnë vetëm nga lista: ç'nuk gjen mbetet për t'u çmuar, ç'mungon ta pyet.",
+    "nota": "Të dhëna prove të shpikura: firma e listës dhe klientët e shembujve nuk ekzistojnë. Mos fut emra, adresa ose numra personash realë: draftet qëndrojnë 7 ditë dhe kushdo që ka lidhjen mund t'i hapë. Teksti i lirë përpunohet nga një shërbim i inteligjencës artificiale. [Privacy](/privacy)"
+  }
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useLingua } from "@/lib/i18n/client";
 
 export default function Esci({ className = "" }: { className?: string }) {
   const router = useRouter();
+  const { d } = useLingua();
   return (
     <button
       type="button"
@@ -14,7 +16,7 @@ export default function Esci({ className = "" }: { className?: string }) {
         router.refresh();
       }}
     >
-      Esci
+      {d.area.testata.esci}
     </button>
   );
 }

@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Your quotes",
+      "benvenuto": "Your business",
+      "nuovo": "New quote",
+      "impresa": "Business details",
+      "listino": "Price list",
+      "importa": "Import your price list",
+      "revisioneImport": "Check the import",
+      "daPrezzare": "To be priced",
+      "preventivo": "Quote",
+      "revisione": "Quote review",
+      "prova": "Try the engine"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, your quotes",
+      "sezioni": "Sections",
+      "preventivi": "Quotes",
+      "listino": "Price list",
+      "daPrezzare": "To be priced",
+      "impresa": "Business",
+      "proposte": "suggestions",
+      "esci": "Log out"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "pieces",
+        "h": "hours",
+        "100kg": "100 kg",
+        "kg": "kg",
+        "l": "litres",
+        "corpo": "lump sum"
+      },
+      "perUnita": {
+        "m2": "per m²",
+        "m": "per metre",
+        "m3": "per m³",
+        "cad": "per piece",
+        "h": "per hour",
+        "100kg": "per 100 kg",
+        "kg": "per kg",
+        "l": "per litre",
+        "corpo": "lump sum"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% con beni significativi (significant goods)"
+      }
+    },
+    "home": {
+      "h1": "Quotes",
+      "nuovo": "New quote",
+      "mancaListino": "Only the price list is missing.",
+      "mancaListinoTesto": "Import your file or start from the example: then your first quote is just a voice message.",
+      "preparaListino": "Set up your price list",
+      "daControllare": "to check",
+      "inAttesa": "pending · {importo}",
+      "accettati": "accepted · {importo}",
+      "rifiutati": "declined",
+      "nessuno": "No quotes yet.",
+      "nessunoTesto": "Tell us about your next site visit: you get the draft in half a minute.",
+      "clienteDaIndicare": "Customer to be added",
+      "numeroDel": "No. {numero} dated {data}",
+      "stati": {
+        "bozza": "To check",
+        "approvato": "Sent",
+        "accettato": "Accepted",
+        "rifiutato": "Declined"
+      }
+    },
+    "benvenuto": {
+      "passo": "Step 1 of 2",
+      "h1": "Your business",
+      "sotto": "These details go at the top of every quote. You can change them whenever you like."
+    },
+    "nuovo": {
+      "torna": "Back to quotes",
+      "h1": "New quote",
+      "serveListino": "You need your price list first: the prices only come from there.",
+      "preparaListino": "Set up your price list",
+      "sotto": "Write or dictate your site visit. The draft uses the {n} items in your price list; anything it can't find is left for you to price.",
+      "claude": "The text is processed with Claude by Anthropic and saved with the quote.",
+      "racconta": "Describe the job as you would in a voice message, in Italian or in your own language",
+      "segnaposto": "Customer, address, whether they live there. What comes out, what goes in, the measurements. Who buys the materials.",
+      "attesa": "It takes about 20 seconds…",
+      "prepara": "Prepare the draft",
+      "errore": "I couldn't prepare the draft. Try again.",
+      "fasi": [
+        "Reading your site visit…",
+        "Separating the work, measurements and exclusions…",
+        "Looking for each item in your price list…",
+        "Checking what's missing and the IVA rate…",
+        "Preparing the draft for you to check…"
+      ]
+    },
+    "impresa": {
+      "h1": "Business details",
+      "sotto": "What the customer reads at the top and bottom of the quote.",
+      "accessoCon": "Signed in with {email}."
+    },
+    "modulo": {
+      "chiSiete": "Who you are",
+      "ragioneSociale": "Business name",
+      "piva": "VAT number (Partita IVA)",
+      "cf": "Tax code (Codice fiscale, if different)",
+      "indirizzo": "Registered address (street, number, town)",
+      "telefono": "Phone",
+      "email": "Email on the quote",
+      "cheLavori": "What work you do",
+      "cheLavoriNota": "It helps us read your site visits better.",
+      "mestieri": {
+        "impresaEdile": "Building firm",
+        "muratore": "Bricklayer",
+        "idraulico": "Plumber",
+        "elettricista": "Electrician",
+        "imbianchino": "Painter and decorator",
+        "piastrellista": "Tiler",
+        "cartongessista": "Plasterboard fitter",
+        "serramentista": "Window and door fitter",
+        "termoidraulico": "Heating and plumbing engineer",
+        "giardiniere": "Gardener"
+      },
+      "sulPreventivo": "On the quote",
+      "validita": "How long the quote is valid (days)",
+      "validitaNota": "After these days the customer can no longer accept it from the link.",
+      "condizioni": "Payment terms",
+      "condizioniEsempio": "E.g. 30% on acceptance, balance when the work is finished",
+      "iban": "IBAN for bank transfers",
+      "salvo": "Saving…",
+      "registra": "Register your business",
+      "salva": "Save details",
+      "errore": "I couldn't save. Try again.",
+      "salvati": "Details saved. Your next PDFs will use these."
+    },
+    "logo": {
+      "titolo": "Logo",
+      "attuale": "Your current logo",
+      "nessuno": "No logo",
+      "carico": "Uploading…",
+      "cambia": "Change logo",
+      "carica": "Upload your logo",
+      "togli": "Remove",
+      "nota": "PNG or JPG, up to 1 MB. Best on a white or transparent background.",
+      "errore": "I couldn't upload the logo."
+    },
+    "listino": {
+      "passo": "Step 2 of 2",
+      "h1": "Your price list",
+      "h1Vuoto": "Your price list is empty",
+      "sotto": "Prices in your quotes come only from here. Anything that isn't here stays unpriced: you decide.",
+      "sottoVuoto": "Prices in your quotes come only from your price list, never made up. Choose how to fill it.",
+      "importate": "{n} items imported. Check the prices and add the names you use when you speak: it helps the app recognise them.",
+      "esempio": "{n} items still have the example price. Check them before you send real quotes."
+    },
+    "elencoListino": {
+      "cerca": "Search your price list",
+      "cercaSegnaposto": "Name, code or spoken word",
+      "aggiungiVoce": "Add an item",
+      "trovate": "{n} items found out of {totale}",
+      "voci": "{n} items",
+      "importaLink": "import from Excel, PDF or photo",
+      "nuovaVoce": "New item",
+      "prezzoEsempio": "example price",
+      "nessunaVoce": "No items matching «{cerca}».",
+      "mostraAltre": "Show {n} more items",
+      "nomeVoce": "Item name",
+      "prezzo": "Price €",
+      "unita": "Unit",
+      "codice": "Code",
+      "descrizione": "Description for the quote (optional)",
+      "aVoce": "What you call it when you speak",
+      "aVoceSegnaposto": "E.g. skim, skimming, wall filling",
+      "aVoceNota": "Words separated by commas: they help recognise the item in voice messages.",
+      "categoria": "Category (optional)",
+      "beneSignificativo": "Significant good for 10% IVA",
+      "beneNota": "Sanitaryware, taps and fittings, boilers, windows and doors, lifts… (DM 29/12/1999).",
+      "materiale": "The price includes the materials",
+      "materialeNota": "If the customer buys them himself, the line stays unpriced (fitting only).",
+      "salvo": "Saving…",
+      "salva": "Save",
+      "aggiungi": "Add to price list",
+      "annulla": "Cancel",
+      "togliConferma": "Yes, remove the item",
+      "togli": "Remove from price list",
+      "errorePrezzo": "Write the price in euros, for example 18.50.",
+      "erroreSalva": "I couldn't save.",
+      "erroreTogli": "I couldn't remove the item."
+    },
+    "listinoVuoto": {
+      "haiListino": "Do you already have a price list?",
+      "haiListinoTesto": "Upload the price list you have: Excel, PDF or a photo. We read it and you check it line by line.",
+      "importa": "Import the file",
+      "esempio": "Start from an example",
+      "esempioTesto": "The {n} items from the demo (bathrooms, kitchens, painting, wiring and plumbing) with prices from public price lists. Then you put in your own.",
+      "copio": "Copying…",
+      "usaEsempio": "Use the example",
+      "unaAllaVolta": "One item at a time",
+      "unaAllaVoltaTesto": "Write down the jobs you do most often, with your own price.",
+      "aMano": "Add by hand",
+      "errore": "I couldn't copy the price list."
+    },
+    "importa": {
+      "torna": "Back to price list",
+      "h1": "Import your price list",
+      "sotto": "Whatever you already have is fine: an Excel file, a PDF, photos of a handwritten price list or a few old quotes. Nothing goes into your price list until you've checked it.",
+      "cosaLeggiamo": "What we read",
+      "punti": [
+        "Columns are recognised from their headings (Description, Unit, Price…). If the file has no clear headings, the artificial intelligence reads them and you can correct them.",
+        "From PDFs and photos, the artificial intelligence reads the items: it marks where it isn't sure, and it doesn't copy customers' names from old quotes.",
+        "Units written in all sorts of ways (mq, ml, nr, pz, a corpo) become the ones used in the quote.",
+        "Codes that are missing or repeated are assigned by us; heading rows with no price are skipped.",
+        "Codes already in your price list are not overwritten."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Reading the price list…",
+      "scegli": "Choose your price list",
+      "formati": "Excel or CSV, or PDF and photos: you can even add several photos together, or a few old quotes",
+      "attesa": "PDFs and photos can take up to a minute.",
+      "errore": "I couldn't read the file."
+    },
+    "revisioneImport": {
+      "altroFile": "Upload another file",
+      "h1": "Check before you import",
+      "sotto": "Rows in yellow have a doubt: a unit or price that can't be read properly. Fix them or untick them.",
+      "ilFile": "the file",
+      "letteAi": "The AI read these items from your PDF or photos. **Check every price** before you confirm: where it wasn't sure, you'll find a note.",
+      "colonne": "File columns",
+      "metodoAi": "recognised by the AI: check them",
+      "metodoMano": "chosen by you",
+      "metodoTitoli": "recognised from the headings",
+      "campi": {
+        "nome": "Item description",
+        "prezzo": "Price",
+        "unita": "Unit of measure",
+        "codice": "Code",
+        "descrizione": "Long description",
+        "categoria": "Category"
+      },
+      "scegliColonna": "Choose…",
+      "nessuna": "None",
+      "esempioColonna": "(e.g. {testo})",
+      "rileggo": "Re-reading the file…",
+      "rileggi": "Re-read with these columns",
+      "rileggiNota": "Re-reading the file wipes the corrections you've made below.",
+      "daImportare": "{n} items to import from {file}",
+      "daSistemare": "{n} to fix",
+      "soloDubbi": "Show only the rows to check",
+      "importaRiga": "Import row {n}",
+      "descrizione": "Description",
+      "rigaFile": "row {n} of the file",
+      "rigaFileUnita": "row {n} of the file, unit «{unita}»",
+      "prezzo": "Price €",
+      "unita": "Unit",
+      "scegliUnita": "Choose",
+      "codice": "Code",
+      "correggi": "Fix",
+      "tutteAPosto": "All rows are fine.",
+      "mostraAltre": "Show more rows ({n})",
+      "importo": "Importing…",
+      "importaN": "Import {n} items",
+      "annulla": "Cancel the import",
+      "sistemaNota": "Fix the highlighted rows or untick them to import.",
+      "errore": "Something went wrong. Try again."
+    },
+    "daPrezzare": {
+      "h1": "To add to your price list",
+      "sotto": "Jobs you priced by hand in a quote by ticking «suggest adding it to the price list». If you add them, next time the price comes up on its own.",
+      "niente": "Nothing to add.",
+      "nienteTesto": "When you price a row that isn't in your price list by hand, tick the suggestion and you'll find it here.",
+      "torna": "Back to quotes",
+      "dalPreventivo": "From quote no. {numero}",
+      "haiMesso": "you put {prezzo} {unita}",
+      "nomeListino": "Name in the price list",
+      "prezzo": "Price €",
+      "unita": "Unit",
+      "codice": "Code",
+      "errorePrezzo": "Write the price in euros, for example 18.50.",
+      "erroreSalva": "I couldn't save.",
+      "aggiungi": "Add to price list",
+      "nonServe": "No need"
+    },
+    "preventivo": {
+      "tutti": "All quotes",
+      "registro": "Log",
+      "eventi": {
+        "creato": "Draft created",
+        "approvato": "Approved and ready to send",
+        "visto": "Opened by the customer",
+        "accettato": "Accepted by the customer",
+        "rifiutato": "Declined by the customer"
+      },
+      "da": "from {nome}",
+      "ip": "IP {ip}",
+      "impronta": "fingerprint of the accepted PDF {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Delete this draft",
+      "conferma": "Delete it for good?",
+      "si": "Yes, delete",
+      "no": "No"
+    },
+    "revisione": {
+      "bozzaN": "Draft no. {numero}",
+      "origineEsempio": "example {caso} from the test bench, recorded output of the engine",
+      "origineMotore": "prepared in {secondi} s",
+      "h1": "Check and approve",
+      "sotto": "No price is made up: the ones you see come from your price list, the empty ones are for you to fill in.",
+      "statoRighe": "Line status",
+      "pronta": "{n} ready",
+      "pronte": "{n} ready",
+      "contaDaPrezzare": "{n} to price",
+      "contaSenzaMisura": "{n} without a measurement",
+      "contaSenzaValore": "{n} without the value of the item",
+      "domandaIva": "IVA: {n} question",
+      "domandeIva": "IVA: {n} questions",
+      "motivi": {
+        "prezzo": "To price",
+        "misura": "Measurement missing",
+        "valore": "Value of the item missing"
+      },
+      "rigaPronta": "Ready",
+      "daCompletare": "to complete",
+      "cliente": "Customer",
+      "nome": "Name",
+      "indirizzo": "Job address",
+      "linguaCliente": "Customer's language",
+      "inCheLingua": "What language do you send the quote in?",
+      "riceve": "The customer gets the message, page and PDF in {lingua}, with the Italian text next to it: if in doubt, the Italian counts. Check the translated items, you can correct them.",
+      "cambiate": "You changed the items after the translation: do it again, so the customer reads the same things you read.",
+      "traduco": "Translating…",
+      "rifai": "Translate again",
+      "traduciIn": "Translate into {lingua}",
+      "escluso": "Not included: {testo}",
+      "ivaTitolo": "IVA: three questions",
+      "abitazione": "Is it a home?",
+      "abitazioneSi": "Yes, someone lives there",
+      "abitazioneNo": "No, shop or office",
+      "intervento": "Type of work",
+      "ordinaria": "Ordinary maintenance",
+      "straordinaria": "Extraordinary maintenance",
+      "ristrutturazione": "Renovation",
+      "materiali": "Who buys the materials?",
+      "materialiImpresa": "I buy them",
+      "materialiCliente": "The customer",
+      "ripartizione": "10% on {a10}, 22% on {a22}",
+      "commercialista": "Always check with your accountant.",
+      "rispondi": "Answer the three questions and I'll work out the right rate.",
+      "lavorazioni": "Jobs · {n}",
+      "soloDaSistemare": "Only those to fix",
+      "haiDetto": "You said: «{testo}»",
+      "voceListino": "Price list item",
+      "fuoriListino": "Not in the price list: price by hand",
+      "descrizione": "Description on the quote",
+      "quantita": "Quantity",
+      "unita": "Unit",
+      "scegli": "Choose",
+      "prezzo": "Price €",
+      "valoreBene": "Of which value of the item (sanitaryware, taps…), for IVA",
+      "proponi": "Suggest adding it to my price list at this price",
+      "togliRiga": "Remove the line",
+      "aggiungiRiga": "Add a line",
+      "esclusi": "Not included in the quote",
+      "unaPerRiga": "One per line",
+      "note": "Notes from the site visit (not shown on the PDF)",
+      "riepilogo": "Summary",
+      "imponibile": "Taxable amount",
+      "ivaSu": "IVA {aliquota}% on {importo}",
+      "totale": "Total",
+      "primaManca": "Before you approve, this is missing:",
+      "righeManca": "(line {righe})",
+      "mancanze": {
+        "quantita": "quantity is missing",
+        "unita": "unit of measure is missing",
+        "prezzo": "price is missing",
+        "abitazione": "IVA: is it a home?",
+        "intervento": "IVA: type of work",
+        "materiali": "IVA: who buys the materials",
+        "valoreBene": "value of the significant item (\"beni significativi\")",
+        "valoreSupera": "the value of the item is higher than the line amount",
+        "traduzioneDaRifare": "{lingua} translation needs redoing: the items have changed",
+        "traduci": "translate the quote into {lingua}"
+      },
+      "salvaBozza": "Save the draft",
+      "salvata": "Draft saved.",
+      "totaleIvaInclusa": "Total including IVA",
+      "imponibileFinora": "Taxable amount so far",
+      "sistemaDato": "Fix {n} item",
+      "sistemaDati": "Fix {n} items",
+      "approvaGenera": "Approve and create the PDF",
+      "approvi": "Approve the quote?",
+      "confermaTesto": "Total {totale} · {regime}. Once approved, the draft can't be changed any more: I'll create the PDF and the link for the customer.",
+      "controllato": "I've checked prices and quantities",
+      "genero": "Creating the PDF…",
+      "torna": "Back to the draft",
+      "erroreSalva": "I couldn't save. Try again.",
+      "erroreApprova": "I couldn't approve. Try again.",
+      "erroreTraduci": "I couldn't translate. Try again."
+    },
+    "approvato": {
+      "preventivoN": "Quote no. {numero}",
+      "accettato": "The customer has accepted.",
+      "rifiutato": "The customer has declined.",
+      "pronto": "Quote ready. Now send it.",
+      "totaleIvaInclusa": "Total including IVA",
+      "riceve": "The customer gets the message, page and PDF in {lingua}, with the Italian text alongside, which is the one that counts.",
+      "whatsapp": "Send on WhatsApp",
+      "copiato": "Link copied",
+      "copia": "Copy the link",
+      "apriPdf": "Open the PDF",
+      "paginaCliente": "See the page your customer sees",
+      "aChePunto": "Where things stand",
+      "approvatoDaTe": "Approved by you",
+      "vistoDalCliente": "Seen by the customer",
+      "quandoApre": "when they open the link",
+      "accettatoDa": "Accepted by {nome}",
+      "rifiutatoDa": "Declined by {nome}",
+      "risposta": "Customer's reply",
+      "accettaCon": "accepts with name and date",
+      "fatto": "(done)",
+      "inAttesa": "(waiting)",
+      "nota": "The customer opens the link, sees the quote and accepts it with their name and the date, without signing up. Reload the page to see if they've opened it."
+    },
+    "prova": {
+      "nuovaProva": "New test",
+      "h1": "From site visit to draft",
+      "sotto": "The engine picks out the jobs, matches them to your price list and prepares a draft for you to check. Prices come only from the price list: anything it can't find is left to be priced, and anything missing, it asks you.",
+      "avviso": "Made-up test data: the price list company and the customers in the examples don't exist. Don't enter names, addresses or numbers of real people: drafts are kept for 7 days and anyone with the link can open them. Free text is processed with Claude by Anthropic. {privacy}",
+      "daDove": "Where to start",
+      "unEsempio": "An example",
+      "tuoTesto": "Your text",
+      "esempiBanco": "Test bench examples",
+      "esempiTesto": "Made-up site visits for the test bench. The draft appears straight away: it's the engine's recorded output for that case.",
+      "lavori": {
+        "bagno": "Full bathroom",
+        "tinteggiatura": "Painting a two-room flat",
+        "cucina": "Kitchen installation",
+        "pavimento": "Living room floor"
+      },
+      "tutti": "Or pick from all 30",
+      "vocale": "The voice message, transcribed",
+      "preparo": "Preparing the draft…",
+      "prepara": "Prepare the draft",
+      "racconta": "Describe the job as you would in a voice message",
+      "segnaposto": "Mrs Rossi's bathroom, via Roma 3. It's her own home. We're taking out the bath and the tiles, two metres high. The bathroom is two metres by one eighty, 80x80 shower tray, I'm buying the sanitaryware myself…",
+      "codice": "Access code",
+      "codiceNota": "Your text goes through the Claude API and every test costs money: the code keeps the bots out.",
+      "attesa": "It takes about 20 seconds…",
+      "errore": "I couldn't prepare the draft. Try again.",
+      "fasi": [
+        "Reading the site visit…",
+        "Separating jobs, measurements and exclusions…",
+        "Looking up each item in the price list…",
+        "Checking what's missing and the IVA regime…",
+        "Preparing the draft for you to check…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "I'm speaking in",
+      "ascolto": "I'm listening: tap to stop",
+      "detta": "Dictate the site visit",
+      "nota": "It uses your browser's speech recognition: only the text reaches this site. Whatever language you speak, the draft comes out in Italian.",
+      "erroreMicrofono": "The browser doesn't have permission to use the microphone.",
+      "erroreLingua": "Dictation in this language isn't available on this phone. Just type the text in your own language: the draft still comes out in Italian.",
+      "erroreInterrotta": "Dictation stopped. Try again."
+    }
+  },
+  "comune": {
+    "lingua": "Language",
+    "scegliLingua": "Choose your language",
+    "faFede": "Courtesy translation: if in doubt, the Italian text is the one that counts.",
+    "saltaAlContenuto": "Skip to content",
+    "logoTop": "PreventivoLampo, back to the top",
+    "logoHome": "PreventivoLampo, home",
+    "entra": "Log in",
+    "apriMenu": "Open the menu",
+    "chiudiMenu": "Close the menu",
+    "principale": "Main",
+    "ctaPilota": "Become a pilot tradesperson",
+    "ctaProva": "Try it with an example",
+    "privacy": "Privacy",
+    "cookie": "Cookies",
+    "condizioni": "Terms",
+    "infoLegali": "Legal information",
+    "servizioDi": "PreventivoLampo is a service by K Digital Solution",
+    "aggiornata": "Updated on {data}",
+    "comeFunziona": "How it works"
+  },
+  "nav": {
+    "come": "How it works",
+    "mestieri": "Trades",
+    "numeri": "The numbers",
+    "prezzi": "Prices",
+    "domande": "Questions"
+  },
+  "hero": {
+    "etichetta": "For every home trade",
+    "titolo": "Finish the site visit. The quote leaves from the van.",
+    "testo": "You say it out loud or type it, like you would to a colleague. You get back a draft with prices from **your** price list, the right IVA and any doubtful items flagged. You check it, approve it, and the customer gets the PDF to accept with one click.",
+    "garanzia": "Prices only from your price list. If an item isn't there, it stays unpriced: no made-up figures.",
+    "guarda": "See how it works",
+    "punti": [
+      "Nothing to install",
+      "Price list even from a photo",
+      "You always decide"
+    ]
+  },
+  "demo": {
+    "gruppo": "Pick a trade for the example",
+    "altroMestiere": "Another trade",
+    "didascalia": "Example: made-up job and prices, test price list",
+    "pausa": "Pause",
+    "riprendi": "Resume",
+    "riguarda": "Watch again",
+    "sig": "Mr",
+    "bozza": "Draft from your price list",
+    "voci": "{n} items",
+    "daPrezzare": "to be priced",
+    "prezzoTuo": "your own price: you can add it to your price list",
+    "iva": "IVA {aliquota}%: home, maintenance",
+    "stati": [
+      "Sent",
+      "Seen",
+      "Accepted"
+    ],
+    "accettato": "Accepted online by Mr {cliente}: name, date, time and a copy of the PDF stay with you.",
+    "altroTitolo": "Windows and doors, plasterboard, boilers, gardens, gates, made-to-measure kitchens.",
+    "altroTesto": "If you work with items and measurements, it works with your price list: it finds the words of your trade there, and anything that isn't there stays unpriced. Upload the price list you have, even as a photo, and try it on your own jobs.",
+    "altroCta": "Try it on your own job",
+    "mestieri": {
+      "elettricista": "Electrician",
+      "idraulico": "Plumber",
+      "imbianchino": "Painter and decorator",
+      "piastrellista": "Tiler",
+      "muratore": "Bricklayer"
+    },
+    "lavori": {
+      "elettricista": "Kitchen",
+      "idraulico": "Kitchen",
+      "imbianchino": "Two-room flat",
+      "piastrellista": "Living room",
+      "muratore": "Small bedroom"
+    },
+    "vocali": {
+      "elettricista": "Mr Ferrari's kitchen. Four simple light points and two two-way switches over the table. The 16 amp sockets for the appliances. A new RCD goes in the consumer unit. And I'll hang the light fitting he bought himself.",
+      "idraulico": "Mrs Rinaldi's kitchen. We're moving the sink to the opposite wall: new hot and cold supply with the waste, three metres of 40 mm waste pipe. I'll connect the dishwasher too. She already has the mixer tap, I'll fit it.",
+      "imbianchino": "Mr Greco's two-room flat, living room and bedroom: walls and ceilings come to a hundred and twenty square metres. I'll scrape where it's flaking, primer everywhere and two coats of washable emulsion. Six metres of anti-mould on the bathroom ceiling. We'll move the furniture ourselves.",
+      "piastrellista": "Mrs Marino's living room, twenty-eight square metres. I'll take up the old floor and the skirting, redo the screed and lay the 30 by 30 porcelain tiles she bought. New porcelain skirting.",
+      "muratore": "Mr Conti's small bedroom. I'm knocking down the old partition wall and rebuilding it a metre over: 8 cm hollow blocks, three twenty by two seventy, plaster on both sides. Rubble, one cubic metre. I'll fit the door lining myself."
+    }
+  },
+  "mestieri": {
+    "titolo": "Every trade has its own words. Your price list already has them.",
+    "testo": "You don't have to learn to talk a different way: you give rough measurements, use your own names for things, say ‘the one she bought herself’. The system looks through the items in your price list, redoes the sums on the measurements, and flags what it can't find.",
+    "guarda": "See the example",
+    "scorri": "Scroll to see the other trades.",
+    "nota": "Example lines. It works with any price list based on items and measurements: if your trade isn't here, it works just the same.",
+    "etichettaLista": "Examples by trade",
+    "voci": {
+      "elettricista": {
+        "nome": "Electrician",
+        "detto": "six light points, two two-way switches"
+      },
+      "idraulico": {
+        "nome": "Plumber",
+        "detto": "I'm moving the sink a metre and a half"
+      },
+      "imbianchino": {
+        "nome": "Painter and decorator",
+        "detto": "two coats of washable emulsion, a hundred and twenty metres"
+      },
+      "piastrellista": {
+        "nome": "Tiler",
+        "detto": "I'm laying the porcelain tiles she bought"
+      },
+      "muratore": {
+        "nome": "Bricklayer",
+        "detto": "three twenty by two seventy"
+      },
+      "cartongessista": {
+        "nome": "Plasterboard fitter",
+        "detto": "suspended ceiling in the hallway, six by one ten"
+      },
+      "serramentista": {
+        "nome": "Window fitter",
+        "detto": "three two-casement windows and a French door"
+      },
+      "termoidraulico": {
+        "nome": "Plumber and heating engineer",
+        "detto": "swapping the boiler, the radiators stay"
+      },
+      "falegname": {
+        "nome": "Joiner",
+        "detto": "built-in wardrobe, two forty by two sixty"
+      },
+      "fabbro": {
+        "nome": "Metalworker",
+        "detto": "balcony railing, six metres"
+      },
+      "giardiniere": {
+        "nome": "Gardener",
+        "detto": "hedge to trim, forty metres"
+      },
+      "impresa": {
+        "nome": "Building firm",
+        "detto": "full bathroom, turnkey"
+      }
+    }
+  },
+  "come": {
+    "titolo": "From voice note to accepted quote, in four steps.",
+    "sotto": "You tell it and you check it. The system does the sums, the price list, IVA, the PDF and the sending.",
+    "passi": [
+      {
+        "titolo": "You tell it about the job",
+        "testo": "By voice or in writing, from your phone, as soon as the site visit is done: measurements, work, what the customer supplies, what's not included.",
+        "nota": "‘three by two and a half, give or take’"
+      },
+      {
+        "titolo": "It asks what's missing",
+        "testo": "If a quantity isn't clear, it doesn't guess: it asks you a straight question and waits for your answer.",
+        "nota": "‘How many m² of flooring?’"
+      },
+      {
+        "titolo": "You check on your phone",
+        "testo": "Line by line: correct, remove, add. Anything that's not in your price list is highlighted.",
+        "nota": "Edit · Approve"
+      },
+      {
+        "titolo": "The customer accepts",
+        "testo": "They get the PDF with your logo and a link to accept it. You see when they open it and when they say yes.",
+        "nota": "Sent · Seen · Accepted"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "What we guarantee, every time.",
+    "testo": "The quote has your name on it, so it has to be right. That's why the system never guesses: what it knows, it writes; what it doesn't know, it asks you.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "of prices from your price list",
+        "dettaglio": "No invented prices. Anything missing stays unpriced until you decide."
+      },
+      {
+        "cifra": "6 languages",
+        "cosa": "for your customer",
+        "dettaglio": "Italian, English, German, French, Spanish and Dutch. And you can tell it about the job in Romanian, Albanian or Arabic too."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "to get the draft",
+        "dettaglio": "From your account of the site visit to a complete draft, with questions about anything that's missing."
+      }
+    ],
+    "sotto1": "Before it reaches the customer, every quote goes through you. The items to check are highlighted, it asks you for any missing measurements, and nothing goes out without your approval.",
+    "sotto2": "With the pilot programme, we test it on the real jobs of ten tradespeople from different trades. Whatever doesn't work, they tell us, and we fix it."
+  },
+  "cosa": {
+    "titolo": "Plenty of people can transcribe a voice note. We deal with the things that lose you money.",
+    "listinoTitolo": "Your price list, as it is",
+    "listinoTesto": "Upload the price list you already have: Excel, PDF, a photo of the handwritten sheet or a few old quotes. The system reads the items, units and prices, and you check and confirm. No price goes in without you seeing it. If you get stuck, we'll help you.",
+    "tabella": {
+      "didascalia": "Price list example",
+      "voce": "Item",
+      "unita": "Unit",
+      "tipoIva": "IVA type",
+      "prestazione": "service",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "No invented prices",
+    "prezzoTesto": "Plenty of apps, when they can't find an item, guess it with ‘market prices’. We don't: if it's not in your price list, we mark it as still to be priced, and you set the price. A quote that comes in too low means a job at a loss.",
+    "dalListino": "from price list ✓",
+    "ivaTitolo": "Building IVA done right, on its own",
+    "ivaTesto1": "Maintenance work on a home? The 10% applies to the labour, but the beni significativi (significant goods: sanitaryware, taps and fittings, windows and doors, boilers) only count at 10% up to the value of the rest of the work. The part above that goes at 22%.",
+    "ivaTesto2": "We ask you three questions: what kind of property it is, what kind of work it is, and who buys the materials. On the PDF the 10% and 22% IVA come out split correctly, with the required wording.",
+    "ivaNota": "Example taken from the Agenzia delle Entrate guide. For special cases, your accountant is always the one to ask.",
+    "scontrino": {
+      "etichetta": "IVA split example",
+      "titolo": "Extraordinary maintenance · home",
+      "manodopera": "Labour and other materials",
+      "beni": "Beni significativi (key materials)",
+      "imp10": "Taxable amount at 10%",
+      "imp22": "Taxable amount at 22%",
+      "iva": "IVA 10% + IVA 22%",
+      "totale": "Total"
+    },
+    "lingueTitolo": "You tell it in your language. Your customer reads it in theirs.",
+    "lingueTesto": "Write or dictate the site visit in Romanian, Albanian, Arabic or another language, and the draft comes out in Italian. If your customer is a foreigner, the quote reaches them in English, German, French, Spanish or Dutch, with the Italian text alongside, which is the one that counts. You see the translation and fix it before you send it.",
+    "lingueDalListino": "from your price list, in Italian",
+    "lingueAlCliente": "to the German customer, with the Italian alongside",
+    "aiutoTitolo": "Real help, from a real person",
+    "aiutoTesto": "Logo, details, payment terms, deposits, exclusions: you set them up in a few minutes. If you get stuck, write to us or call us and a person answers, not a bot. And you send the first quote yourself, from the van.",
+    "ultimaTitolo": "The last word is always yours",
+    "ultimaTesto": "The system suggests, you decide. No quote reaches your customer unless you have opened it and approved it. The new items you price go into your price list, ready for next time."
+  },
+  "confronto": {
+    "titolo": "Three ways to do the same quote.",
+    "colonne": [
+      "Word or Excel, in the evening",
+      "Any chatbot",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "Prices",
+        "celle": [
+          "You copy them from your price list yourself",
+          "It guesses them: it doesn't know your price list",
+          "Only from your price list. Anything missing is left for you to price"
+        ]
+      },
+      {
+        "tema": "Missing measurements",
+        "celle": [
+          "You notice when you write it up",
+          "It often takes them as given",
+          "It asks you before it does the sums"
+        ]
+      },
+      {
+        "tema": "IVA with beni significativi (key materials)",
+        "celle": [
+          "By hand, with doubts",
+          "Depends on how you ask it",
+          "10% and 22% split correctly, with the required wording"
+        ]
+      },
+      {
+        "tema": "The document",
+        "celle": [
+          "You have to lay it out every time",
+          "Text to copy somewhere else",
+          "PDF with your logo, ready to send"
+        ]
+      },
+      {
+        "tema": "The customer's yes",
+        "celle": [
+          "A message, if you're lucky",
+          "There isn't one",
+          "Online acceptance: name, date, time and a copy of the PDF"
+        ]
+      },
+      {
+        "tema": "Where you do it",
+        "celle": [
+          "On the computer, after dinner",
+          "On the phone, then you do it again",
+          "From your phone, right after the site visit"
+        ]
+      }
+    ],
+    "etichettaLista": "Comparison by topic",
+    "scorri": "Scroll for more comparisons.",
+    "nota": "\"Any chatbot\": a general-purpose assistant used without your price list, as many people do today."
+  },
+  "calcolo": {
+    "titolo": "How much do quotes cost you today?",
+    "preventivi": "Quotes per week",
+    "minuti": "Minutes for each one, including sums, Word and sending",
+    "min": "{n} min",
+    "passi": "Every month you spend about this much time on quotes:",
+    "ore": "{n} hours",
+    "costa": "almost always in the evening, after the job. PreventivoLampo costs €19.90 a month:",
+    "allOra": "€{n} for each of those hours.",
+    "nota": "You enter the numbers. How much time it gives you back, we measure with the pilot, on real jobs."
+  },
+  "prezzi": {
+    "titolo": "First you try it on your real jobs. Then you decide.",
+    "pilota": "Pilot programme",
+    "perGiorni": "for 30 days",
+    "pilotaTesto": "Unlimited quotes and support if you need it. In return, you tell us what doesn't work. We call back in the order people apply. From day 31 it's €19.90 a month or €199 a year, only if you decide to stay: no automatic renewal.",
+    "candidati": "Apply",
+    "posti": "{n} places",
+    "postiLiberi": "{n} places left out of {totale}",
+    "ultimoPosto": "Last place out of {totale}",
+    "esauriti": "No places left",
+    "mensile": "Monthly",
+    "alMese": "a month",
+    "perMese": "/month",
+    "mensileVoci": [
+      "Unlimited quotes",
+      "Acceptance link for your customer",
+      "Support from a real person"
+    ],
+    "mensileNota": "No set-up fee. Cancel whenever you like, no strings attached.",
+    "annuale": "Yearly",
+    "allAnno": "a year",
+    "perAnno": "/year",
+    "annualeVoci": [
+      "Everything in Monthly",
+      "Two months free",
+      "Renews only if you ask us to"
+    ],
+    "ivaEsclusa": "Prices exclude IVA (Italian VAT)."
+  },
+  "domande": {
+    "titolo": "The questions everyone asks us",
+    "nonTrovi": "Can't find yours? Write to us at [{email}](mailto:{email}): we answer, not a bot.",
+    "lista": [
+      {
+        "d": "What if it gets it wrong?",
+        "r": "Nothing goes to your customer without your approval. You see the uncertain items highlighted, anything not in your price list is left for you to price, and no price is ever made up."
+      },
+      {
+        "d": "I'm not good with computers.",
+        "r": "If you can send a voice message on WhatsApp, you can use it. It opens in your phone's browser, there's nothing to install, and if you get stuck a real person will answer."
+      },
+      {
+        "d": "Only I know my prices.",
+        "r": "Exactly: we only use yours. You upload your price list as it is, even as a photo or from old quotes, and anything that isn't in it is left for you to price until you decide."
+      },
+      {
+        "d": "Isn't a chatbot enough?",
+        "r": "A general-purpose assistant doesn't know your price list, so it guesses the prices. It doesn't split the IVA (Italian VAT) using the \"beni significativi\" (significant goods) rules, it doesn't make a PDF with your logo and it doesn't collect your customer's yes."
+      },
+      {
+        "d": "Is it right for my trade?",
+        "r": "If you work with items and measurements, yes: electricians, plumbers, painters, tilers, bricklayers, plasterboard fitters, window and door fitters, metalworkers, gardeners. It picks up the words of your trade from your price list. With the pilot we'll also test it on trades we haven't tried yet."
+      },
+      {
+        "d": "Can I tell it in my own language? What if my customer is foreign?",
+        "r": "Yes. Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian, Spanish or another language, and the draft comes out in Italian with the prices from your price list. For voice it depends on your phone: if your language isn't available, type it. And if your customer speaks English, German, French, Spanish or Dutch, you send the quote in their language: you check the translation, and the Italian text stays alongside and is the one that counts."
+      },
+      {
+        "d": "I talk fast, there's noise, I use my own words.",
+        "r": "The system knows the items in your price list and the names you use. If a measurement isn't clear, it asks you again instead of guessing."
+      },
+      {
+        "d": "My customer wants paper.",
+        "r": "The PDF prints like any other quote. With the link, though, your customer accepts in a minute, with no sign-up, and you have proof of what they accepted."
+      },
+      {
+        "d": "Where do my voice messages and my customers' data end up?",
+        "r": "Your price list and quotes are kept on servers in the European Union. To prepare the draft, the text of the site visit goes through an artificial intelligence service, named on the [Privacy page](/privacy). Only the text reaches our servers, not the audio, and we sign a data processing agreement with you for your customers' data."
+      },
+      {
+        "d": "Do I have to change my invoicing software?",
+        "r": "No, keep yours. PreventivoLampo takes care of quotes; invoices stay where they are."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "Send your next quote from the van.",
+    "testo": "We're looking for 10 tradespeople for the pilot programme, from any home trade. Leave us your details: we'll call you back, in order of arrival, to see if it's right for you.",
+    "vederlo": "Want to see it before you apply? [Try it on WhatsApp]({whatsapp}): the first message is already written, press send and then describe a site visit. Or [try an example](/prova).",
+    "scrivere": "Prefer to write? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Pilot programme application",
+      "nome": "First name and surname",
+      "mestiere": "Trade",
+      "scegli": "Choose",
+      "comune": "Town",
+      "cellulare": "Mobile",
+      "volume": "Quotes per week",
+      "privacy": "I have read the [privacy notice](/privacy) and I agree to be contacted about the pilot programme.",
+      "invia": "Send your application",
+      "invio": "Sending…",
+      "conferma": "Thank you, {nome}. We'll call you back within two working days.",
+      "errore": "Couldn't send it. Try again in a moment or write to us at studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Enter your first name and surname.",
+        "mestiere": "Choose your trade.",
+        "comune": "Enter your town.",
+        "telefono": "Enter a valid Italian mobile number.",
+        "volume": "Choose one of the options.",
+        "privacy": "We need your consent so we can contact you."
+      },
+      "mestieri": {
+        "Elettricista": "Electrician",
+        "Idraulico": "Plumber",
+        "Termoidraulico": "Heating and plumbing engineer",
+        "Imbianchino": "Painter and decorator",
+        "Piastrellista": "Tiler",
+        "Muratore": "Bricklayer",
+        "Cartongessista": "Plasterboard fitter",
+        "Serramentista": "Window and door fitter",
+        "Falegname": "Joiner",
+        "Fabbro": "Metalworker",
+        "Giardiniere": "Gardener",
+        "Impresa edile": "Building firm",
+        "Impresa di ristrutturazioni": "Renovation firm",
+        "Altro": "Other"
+      },
+      "volumi": {
+        "1 o 2": "1 or 2",
+        "da 3 a 5": "3 to 5",
+        "più di 5": "more than 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Privacy",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "This page explains what personal data PreventivoLampo handles, why, where it goes and how long it stays."
+        },
+        {
+          "t": "h2",
+          "testo": "Who handles your data"
+        },
+        {
+          "t": "p",
+          "testo": "The data controller is Sofiane Khatib, K Digital Solution, Monza (MB). For any request about your data, write to [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "For the data of a tradesperson's customers (names, job site addresses, quotes), the data controller is the tradesperson. We handle it on their behalf, as data processor, under the agreement we sign with them."
+        },
+        {
+          "t": "h2",
+          "testo": "What data, why and for how long"
+        },
+        {
+          "t": "h3",
+          "testo": "If you apply for the pilot programme"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Name, trade, town, mobile number and, if you tell us, how many quotes you do each week.",
+            "We only use it to call you back and see if the pilot is right for you (legal basis: your request and your consent).",
+            "If you don't join the pilot, we delete it within 12 months. You can ask us to do it sooner at any time."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "If you use the tradespeople area"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Login email, the business details you enter (company name, partita IVA (Italian VAT number), address, phone, IBAN if you give it), logo, price list and quotes.",
+            "If you upload your price list from a PDF, a photo or old quotes, the artificial intelligence only reads the price items. Customer names are not copied and the file is not kept.",
+            "We need it to provide the service (legal basis: the contract, even during the free pilot).",
+            "It stays for as long as you use the service. When you stop, we delete it within 30 days, except what the law requires us to keep (for example invoices, 10 years)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "If you are a tradesperson's customer and you open their quote"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "When you accept or decline a quote, we record the name you type, the date and time, your IP address and the fingerprint of the PDF.",
+            "The tradesperson needs this as proof of acceptance. We keep it on their behalf, for as long as they use the service.",
+            "To see, correct or delete this data, you can contact the tradesperson or us. We will pass your request on to them."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "If you try PreventivoLampo with an example or on WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "The text you write, the draft it produces and, on WhatsApp, the number you write from.",
+            "Test drafts delete themselves after 7 days. On WhatsApp, a draft waiting for your reply stays for one hour at most.",
+            "For tests, don't write data about real people. Made-up jobs are enough.",
+            "To limit abuse, we keep a fingerprint (hash) of the IP address, not the address itself."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Who we share it with"
+        },
+        {
+          "t": "p",
+          "testo": "We use these providers, each one only for its own part:"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase: database, login to the area and PDF storage, in Ireland (EU).",
+            "Vercel: the website and its functions, in Frankfurt (EU).",
+            "Anthropic (Claude): reads the site visit text and prepares the draft, and translates the quote items when the customer speaks another language, in the United States.",
+            "Twilio and WhatsApp (Meta): receive and send the WhatsApp messages.",
+            "n8n: connects the WhatsApp messages to PreventivoLampo.",
+            "Resend: sends the emails with the login code."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "When data leaves the European Union, we rely on the safeguards set out in the GDPR: the EU-US Data Privacy Framework certification or the European Commission's standard contractual clauses. We don't sell data, and we don't use it for advertising or to train artificial intelligence models."
+        },
+        {
+          "t": "h2",
+          "testo": "Your rights"
+        },
+        {
+          "t": "p",
+          "testo": "You can ask us to show you your data, correct it, delete it, limit its use, object to its processing or give it to you in a readable format. You can also withdraw your consent whenever you want. Write to the address above and we will reply within 30 days. You can also complain to the Garante per la protezione dei dati personali (the Italian data protection authority, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Terms of service",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople and building firms prepare quotes: from your account of the site visit, it prepares a draft with the prices from the firm's price list. The tradesperson checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
+        },
+        {
+          "t": "h2",
+          "testo": "Pilot programme"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Ten places, assigned by us after a phone call.",
+            "30 days free from the start, with unlimited quotes. You upload the price list (Excel, PDF or photo). If you need it, we help you.",
+            "No automatic renewal: at the end of the 30 days, you decide whether to stay. If you tell us nothing, the pilot just ends.",
+            "In return, we ask you to use it on your real jobs and to tell us what works and what doesn't."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "After the pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Fee: €19.90 a month or €199 a year, plus IVA, with unlimited quotes. No setup fee.",
+            "You can cancel the monthly plan whenever you want, and it ends when the month you've already paid for is over. The yearly plan lasts 12 months and only renews if you ask for it.",
+            "If we change our prices, we'll tell you at least 30 days before, and the new prices only apply from the next renewal."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "You decide the quote"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo suggests, you decide: no quote goes to your customer unless you have opened and approved it. Before you approve, check the items, quantities and prices.",
+            "Prices come only from your price list. Items that aren't in it stay “to be priced” (da prezzare), and you add the price yourself.",
+            "The IVA calculation follows the answers you give and the rules of the Agenzia delle Entrate (the Italian tax authority), but it isn't tax advice: for special cases, ask your accountant.",
+            "Your relationship with the customer, your prices and your jobs stay yours: PreventivoLampo is not a party to the contract between you and your customer."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Your data stays yours"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Your price list, your quotes and your business details are yours. If you ask, we'll send you your price list in Excel and your quotes as PDFs.",
+            "We handle your customers' data on your behalf, under the data processing agreement we sign when you start. How we handle other data is explained on the Privacy page.",
+            "Don't enter health data or other special categories of data about your customers: you don't need them for a quote."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "What we guarantee and what we don't"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "We do our best to make sure the service always works without errors, but it can misread a site visit. That's why you must check every draft before you approve it.",
+            "There can be interruptions for maintenance or because of problems with our suppliers. We'll tell you in advance about any major maintenance.",
+            "Within the limits of the law, and except in cases of wilful misconduct or gross negligence, our liability does not go beyond what you have paid us in the last 12 months. During the free pilot, the service is provided as it is."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Fair use"
+        },
+        {
+          "t": "p",
+          "testo": "Use PreventivoLampo only for your own business's quotes. Don't share your login with people outside your business, and don't use the service to upload offensive text or bulk requests. If these rules aren't followed, we can suspend your access, after warning you."
+        },
+        {
+          "t": "h2",
+          "testo": "Changes and governing law"
+        },
+        {
+          "t": "p",
+          "testo": "If we change these terms, we'll tell you by email at least 30 days before. Italian law applies and, for disputes, the foro di Monza (the court of Monza). If you have any questions, write to [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookies",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo only uses technical cookies: without them, the tradespeople area wouldn't know you're logged in and the site wouldn't remember the language you chose. No profiling cookies, no statistics, no third-party tools that follow you from one site to another. That's why you won't see a cookie banner."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione**: keeps you logged in to the tradespeople area after you enter the code you got by email. We only set it when you log in, it lasts 30 days and it is deleted when you press “Log out”.",
+            "**pl_lingua**: remembers the language you chose with the language selector. We only set it if you change language, and it lasts one year."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "The fonts and flags are served by the site itself, not by outside servers. If we ever need another cookie, this page will say which one it is, what it's for and how long it lasts, and if it isn't technical, we'll ask you first."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Log in · PreventivoLampo",
+    "h1": "Get into your quotes",
+    "sotto": "Your price list, your prices, quotes with your name on them.",
+    "email": "Your email",
+    "mandaCodice": "Send me the code",
+    "invioCodice": "Sending the code…",
+    "spiegazione": "We'll send you a 6-digit code. If it's your first time, you can use the same code to register your business.",
+    "scritto": "We've written to **{email}**. If you can't find it, check your spam folder.",
+    "codice": "Code",
+    "accedi": "Log in",
+    "controllo": "Checking…",
+    "nuovoTra": "New code in {n} s",
+    "nuovo": "Send me a new code",
+    "cambiaEmail": "Change email",
+    "errore": "Something's wrong. Try again.",
+    "condizioni": "By logging in you accept the [terms](/condizioni) and the [privacy notice](/privacy)."
+  },
+  "prova": {
+    "titolo": "Try the engine",
+    "h1": "From site visit to draft",
+    "testo": "The engine picks out the jobs, matches them to your price list and prepares a draft for you to check. Prices come only from your price list: what it can't find stays to be priced, and if something is missing, it asks you.",
+    "nota": "The data here is made up: the price list's business and the customers in the examples don't exist. Don't enter names, addresses or numbers of real people: drafts are kept for 7 days and anyone with the link can open them. Free text is processed by an artificial intelligence service. [Privacy](/privacy)"
+  }
+}

@@ -4,6 +4,8 @@ import Accetta from "@/components/preventivo/Accetta";
 import { euro, UNITA_BREVE } from "@/components/preventivo/formato";
 import { conti, importoRiga } from "@/lib/preventivi/calcolo";
 import { LOCALE, linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
+import { Bandiera } from "@/components/SceltaLingua";
+import { INFO_LINGUA } from "@/lib/i18n/lingue";
 import { recesso } from "@/lib/preventivi/recesso";
 import { perToken } from "@/lib/preventivi/risolvi";
 
@@ -61,16 +63,17 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
               <path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9Z" />
             </svg>
             <span className="inline-flex rounded-full bg-superficie p-1 ring-1 ring-linea">
-              {([[tr.lingua, "?"], ["it", "?lingua=it"]] as const).map(([l, href]) => (
+              {([["it", "?lingua=it"], [tr.lingua, "?"]] as const).map(([l, href]) => (
                 <a
                   key={l}
                   href={href}
                   lang={l}
                   aria-current={L === l ? "true" : undefined}
-                  className={`flex min-h-10 items-center rounded-full px-4 text-[15px] font-semibold no-underline ${
+                  className={`flex min-h-10 items-center gap-2 rounded-full px-3.5 text-[15px] font-semibold no-underline ${
                     L === l ? "bg-ardesia text-fondo" : "text-testo-2 hover:text-inchiostro"
                   }`}
                 >
+                  <Bandiera codice={INFO_LINGUA[l].bandiera} />
                   {NOME_LINGUA[l].proprio}
                 </a>
               ))}

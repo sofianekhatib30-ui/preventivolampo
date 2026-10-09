@@ -5,7 +5,11 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { conti, importoRiga, imponibileParziale, mancanze, regimeDi, type Mancanza } from "@/lib/preventivi/calcolo";
 import { LINGUE, linguaDi, mancanzaTraduzione, NOME_LINGUA, traduzioneAllineata, type Lingua } from "@/lib/preventivi/lingua";
 import type { Preventivo, RigaPreventivo } from "@/lib/preventivi/modello";
-import { centesimi, euro, numero, REGIME, UNITA } from "./formato";
+import { ConNodi } from "@/components/Ricco";
+import { useLingua } from "@/lib/i18n/client";
+import type { Dizionario } from "@/lib/i18n/it";
+import { fmt } from "@/lib/i18n/testo";
+import { centesimi, euro, numero } from "./formato";
 
 type Voce = { code: string; name: string; unit: string; priceCents: number; significantGood: boolean };
 
@@ -13,17 +17,32 @@ const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg
 const etichetta = "block text-[15px] font-semibold text-testo-2";
 
 // Lo stato di una riga, in parole: è quello che l'artigiano deve sapere a colpo d'occhio.
-type StatoRiga = { tipo: "pronta" } | { tipo: "manca"; motivi: string[] };
+// I motivi sono chiavi; le parole vengono dal dizionario (area.revisione.motivi).
+type Motivo = "prezzo" | "misura" | "valore";
+type StatoRiga = { tipo: "pronta" } | { tipo: "manca"; motivi: Motivo[] };
 
 function statoRiga(m: Mancanza[], i: number): StatoRiga {
   const mie = m.filter((x) => x.riga === i).map((x) => x.testo);
   if (!mie.length) return { tipo: "pronta" };
-  const motivi: string[] = [];
-  if (mie.includes("manca il prezzo")) motivi.push("Da prezzare");
-  if (mie.includes("manca la quantità") || mie.includes("manca l'unità di misura")) motivi.push("Manca la misura");
-  if (mie.some((t) => t.includes("valore del bene"))) motivi.push("Manca il valore del bene");
+  const motivi: Motivo[] = [];
+  if (mie.includes("manca il prezzo")) motivi.push("prezzo");
+  if (mie.includes("manca la quantità") || mie.includes("manca l'unità di misura")) motivi.push("misura");
+  if (mie.some((t) => t.includes("valore del bene"))) motivi.push("valore");
   return { tipo: "manca", motivi };
 }
+
+// Le mancanze arrivano in italiano da lib/preventivi/calcolo.ts: qui le si riconosce per mostrarle nella
+// lingua dell'interfaccia. Un testo nuovo che non è in questa mappa si vede com'è, in italiano.
+const MANCANZA: Record<string, keyof Dizionario["area"]["revisione"]["mancanze"]> = {
+  "manca la quantità": "quantita",
+  "manca l'unità di misura": "unita",
+  "manca il prezzo": "prezzo",
+  "IVA: è un'abitazione?": "abitazione",
+  "IVA: tipo di intervento": "intervento",
+  "IVA: chi compra i materiali": "materiali",
+  "valore del bene significativo": "valoreBene",
+  "il valore del bene supera l'importo della riga": "valoreSupera",
+};
 
 function vaiA(id: string) {
   const el = document.getElementById(id);
@@ -94,6 +113,10 @@ export default function Revisione({
   traduzioni?: boolean;
 }) {
   const router = useRouter();
+  const { d } = useLingua();
+  const R = d.area.revisione;
+  const UNITA: Record<string, string> = d.area.formato.unita;
+  const REGIME: Record<string, string> = d.area.formato.regime;
   const [p, setP] = useState<Preventivo>(iniziale);
   const [testiPrezzo, setTestiPrezzo] = useState<string[]>(iniziale.righe.map((r) => (r.unitPriceCents === null ? "" : (r.unitPriceCents / 100).toFixed(2).replace(".", ","))));
   const [stato, setStato] = useState<"pronto" | "invio">("pronto");
@@ -116,10 +139,10 @@ export default function Revisione({
   const regime = regimeDi(p);
   const stati = p.righe.map((_, i) => statoRiga(m, i));
   const pronte = stati.filter((s) => s.tipo === "pronta").length;
-  const daPrezzare = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Da prezzare")).length;
-  const senzaMisura = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Manca la misura")).length;
+  const daPrezzare = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("prezzo")).length;
+  const senzaMisura = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("misura")).length;
   const domandeIva = mDati.filter((x) => x.riga === null).length;
-  const senzaValore = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("Manca il valore del bene")).length;
+  const senzaValore = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("valore")).length;
 
   useEffect(() => {
     if (!conferma) return;
@@ -176,7 +199,7 @@ export default function Revisione({
       }),
     });
     if (!res.ok) {
-      setMessaggio((await res.json()).errore ?? "Non sono riuscito a salvare. Riprova.");
+      setMessaggio((await res.json()).errore ?? R.erroreSalva);
       return false;
     }
     return true;
@@ -191,7 +214,7 @@ export default function Revisione({
         router.refresh();
         return;
       }
-      setMessaggio((await res.json()).errore ?? "Non sono riuscito ad approvare. Riprova.");
+      setMessaggio((await res.json()).errore ?? R.erroreApprova);
     }
     setConferma(false);
     setStato("pronto");
@@ -208,7 +231,7 @@ export default function Revisione({
       });
       const b = await res.json().catch(() => ({}));
       if (res.ok) setP((prev) => ({ ...prev, lingua: b.lingua, traduzione: b.traduzione }));
-      else setMessaggio(b.errore ?? "Non sono riuscito a tradurre. Riprova.");
+      else setMessaggio(b.errore ?? R.erroreTraduci);
     }
     setTraduco(false);
   }
@@ -220,7 +243,7 @@ export default function Revisione({
 
   async function soloSalva() {
     setStato("invio");
-    setMessaggio((await salva()) ? "Bozza salvata." : "");
+    setMessaggio((await salva()) ? R.salvata : "");
     setStato("pronto");
   }
 
@@ -228,58 +251,65 @@ export default function Revisione({
   const gruppi = new Map<string, number[]>();
   for (const x of m) gruppi.set(x.testo, [...(gruppi.get(x.testo) ?? []), ...(x.riga === null ? [] : [x.riga])]);
   const vaiAlGruppo = (testo: string, righe: number[]) => vaiA(righe.length ? `riga-${righe[0]}` : testo === mTrad ? "sezione-lingua" : "sezione-iva");
+  // La mancanza nella lingua dell'interfaccia; quella della traduzione la ricostruisce da sé.
+  const nomeMancanza = (testo: string) =>
+    testo === mTrad
+      ? fmt(p.traduzione?.lingua === lingua ? R.mancanze.traduzioneDaRifare : R.mancanze.traduci, { lingua: NOME_LINGUA[lingua].italiano })
+      : MANCANZA[testo]
+        ? R.mancanze[MANCANZA[testo]]
+        : testo;
 
   const origine =
     p.origine?.tipo === "esempio"
-      ? `esempio ${p.origine.caso} del banco di prova, uscita registrata del motore`
-      : `preparata in ${(p.motore.elapsedMs / 1000).toFixed(0)} s`;
+      ? fmt(R.origineEsempio, { caso: String(p.origine.caso) })
+      : fmt(R.origineMotore, { secondi: (p.motore.elapsedMs / 1000).toFixed(0) });
 
   return (
     <div>
       <p className="text-sm text-testo-3">
-        Bozza n. <span className="font-mono">{p.numero}</span> · {origine}
+        <ConNodi testo={R.bozzaN} valori={{ numero: <span className="font-mono">{p.numero}</span> }} /> · {origine}
       </p>
-      <h1 className="mt-1 text-[34px] font-black leading-[1.05] [font-stretch:80%] sm:text-[44px]">Controlla e approva</h1>
+      <h1 className="mt-1 text-[34px] font-black leading-[1.05] [font-stretch:80%] sm:text-[44px]">{R.h1}</h1>
       <p className="mt-2 text-[17px] text-testo-2">
-        Nessun prezzo è inventato: quelli che vedi vengono dal listino, quelli vuoti li metti tu.
+        {R.sotto}
       </p>
 
       {/* Riepilogo dello stato: cosa è pronto, cosa va sistemato */}
-      <div className="mt-5 flex flex-wrap items-center gap-2" aria-label="Stato delle righe">
+      <div className="mt-5 flex flex-wrap items-center gap-2" aria-label={R.statoRighe}>
         <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-superficie px-3.5 text-[15px] font-semibold text-lime-scuro ring-1 ring-linea">
-          <Icona tipo="ok" /> {pronte} {pronte === 1 ? "pronta" : "pronte"}
+          <Icona tipo="ok" /> {fmt(pronte === 1 ? R.pronta : R.pronte, { n: pronte })}
         </span>
         {daPrezzare > 0 && (
           <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-ambra px-3.5 text-[15px] font-semibold text-ambra-testo">
-            <Icona tipo="euro" /> {daPrezzare} da prezzare
+            <Icona tipo="euro" /> {fmt(R.contaDaPrezzare, { n: daPrezzare })}
           </span>
         )}
         {senzaMisura > 0 && (
           <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-ambra px-3.5 text-[15px] font-semibold text-ambra-testo">
-            <Icona tipo="metro" /> {senzaMisura} senza misura
+            <Icona tipo="metro" /> {fmt(R.contaSenzaMisura, { n: senzaMisura })}
           </span>
         )}
         {senzaValore > 0 && (
           <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-ambra px-3.5 text-[15px] font-semibold text-ambra-testo">
-            <Icona tipo="avviso" /> {senzaValore} senza valore del bene
+            <Icona tipo="avviso" /> {fmt(R.contaSenzaValore, { n: senzaValore })}
           </span>
         )}
         {domandeIva > 0 && (
           <span className="inline-flex min-h-10 items-center gap-1.5 rounded-full bg-ambra px-3.5 text-[15px] font-semibold text-ambra-testo">
-            <Icona tipo="avviso" /> IVA: {domandeIva} {domandeIva === 1 ? "domanda" : "domande"}
+            <Icona tipo="avviso" /> {fmt(domandeIva === 1 ? R.domandaIva : R.domandeIva, { n: domandeIva })}
           </span>
         )}
       </div>
 
       <section id="sezione-cliente" className="mt-6 rounded-card bg-superficie p-5 ring-1 ring-linea">
-        <h2 className="text-xl font-extrabold">Cliente</h2>
+        <h2 className="text-xl font-extrabold">{R.cliente}</h2>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <label className={etichetta}>
-            Nome
+            {R.nome}
             <input className={campo} value={p.cliente.name ?? ""} onChange={(e) => setP({ ...p, cliente: { ...p.cliente, name: e.target.value || null } })} />
           </label>
           <label className={etichetta}>
-            Indirizzo del lavoro
+            {R.indirizzo}
             <input className={campo} value={p.cliente.address ?? ""} onChange={(e) => setP({ ...p, cliente: { ...p.cliente, address: e.target.value || null } })} />
           </label>
         </div>
@@ -287,13 +317,13 @@ export default function Revisione({
 
       {traduzioni && (
         <section id="sezione-lingua" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${mTrad ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
-          <h2 className="text-xl font-extrabold">Lingua del cliente</h2>
+          <h2 className="text-xl font-extrabold">{R.linguaCliente}</h2>
           <label className={`${etichetta} mt-3`}>
-            In che lingua gli mandi il preventivo?
+            {R.inCheLingua}
             <select className={campo} value={lingua} onChange={(e) => setP({ ...p, lingua: e.target.value as Lingua })}>
               {LINGUE.map((l) => (
                 <option key={l} value={l}>
-                  {l === "it" ? "Italiano" : `${NOME_LINGUA[l].proprio} (${NOME_LINGUA[l].italiano})`}
+                  {l === "it" ? NOME_LINGUA.it.proprio : `${NOME_LINGUA[l].proprio} (${NOME_LINGUA[l].italiano})`}
                 </option>
               ))}
             </select>
@@ -301,17 +331,16 @@ export default function Revisione({
           {lingua !== "it" && (
             <>
               <p className="mt-3 text-[15px] leading-relaxed text-testo-2">
-                Il cliente riceve messaggio, pagina e PDF in {NOME_LINGUA[lingua].italiano}, con il testo italiano accanto: in caso di
-                dubbio vale l&apos;italiano. Controlla le voci tradotte, puoi correggerle.
+                {fmt(R.riceve, { lingua: NOME_LINGUA[lingua].italiano })}
               </p>
               {!allineata && p.traduzione?.lingua === lingua && (
                 <p className="mt-3 rounded-campo bg-ambra px-4 py-3 text-[15px] font-semibold text-ambra-testo">
-                  Hai cambiato le voci dopo la traduzione: rifalla, così il cliente legge le stesse cose che leggi tu.
+                  {R.cambiate}
                 </p>
               )}
               {(!allineata || traduco) && (
                 <button type="button" onClick={traduci} disabled={traduco} className="bottone bottone-azione mt-4 min-h-12 text-[16px] disabled:opacity-60">
-                  {traduco ? "Traduco…" : p.traduzione?.lingua === lingua ? "Rifai la traduzione" : `Traduci in ${NOME_LINGUA[lingua].italiano}`}
+                  {traduco ? R.traduco : p.traduzione?.lingua === lingua ? R.rifai : fmt(R.traduciIn, { lingua: NOME_LINGUA[lingua].italiano })}
                 </button>
               )}
               {allineata && p.traduzione && (
@@ -332,7 +361,7 @@ export default function Revisione({
                   {p.esclusioni.map((e, i) => (
                     <li key={`e${i}`}>
                       <label className="block text-[14px] text-testo-3">
-                        Escluso: {e}
+                        {fmt(R.escluso, { testo: e })}
                         <input
                           lang={lingua}
                           className={campo}
@@ -350,41 +379,41 @@ export default function Revisione({
       )}
 
       <section id="sezione-iva" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${domandeIva ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
-        <h2 className="text-xl font-extrabold">IVA: tre domande</h2>
+        <h2 className="text-xl font-extrabold">{R.ivaTitolo}</h2>
         <div className="mt-3 space-y-4">
           <div data-manca={p.iva.dwelling === null || undefined}>
-            <p className={etichetta}>È un&apos;abitazione?</p>
+            <p className={etichetta}>{R.abitazione}</p>
             <Scelta
-              nome="È un'abitazione?"
+              nome={R.abitazione}
               valore={p.iva.dwelling === null ? null : p.iva.dwelling ? "si" : "no"}
               opzioni={[
-                { v: "si", testo: "Sì, ci abita qualcuno" },
-                { v: "no", testo: "No, negozio o ufficio" },
+                { v: "si", testo: R.abitazioneSi },
+                { v: "no", testo: R.abitazioneNo },
               ]}
               onScegli={(v) => setP({ ...p, iva: { ...p.iva, dwelling: v === "si" } })}
             />
           </div>
           <div data-manca={p.iva.intervention === null || undefined}>
-            <p className={etichetta}>Tipo di intervento</p>
+            <p className={etichetta}>{R.intervento}</p>
             <Scelta
-              nome="Tipo di intervento"
+              nome={R.intervento}
               valore={p.iva.intervention}
               opzioni={[
-                { v: "manutenzione_ordinaria", testo: "Ordinaria" },
-                { v: "manutenzione_straordinaria", testo: "Straordinaria" },
-                { v: "ristrutturazione", testo: "Ristrutturazione" },
+                { v: "manutenzione_ordinaria", testo: R.ordinaria },
+                { v: "manutenzione_straordinaria", testo: R.straordinaria },
+                { v: "ristrutturazione", testo: R.ristrutturazione },
               ]}
               onScegli={(v) => setP({ ...p, iva: { ...p.iva, intervention: v } })}
             />
           </div>
           <div data-manca={p.iva.goodsBoughtBy === null || undefined}>
-            <p className={etichetta}>Chi compra i materiali?</p>
+            <p className={etichetta}>{R.materiali}</p>
             <Scelta
-              nome="Chi compra i materiali?"
+              nome={R.materiali}
               valore={p.iva.goodsBoughtBy}
               opzioni={[
-                { v: "impresa", testo: "Li compro io" },
-                { v: "cliente", testo: "Il cliente" },
+                { v: "impresa", testo: R.materialiImpresa },
+                { v: "cliente", testo: R.materialiCliente },
               ]}
               onScegli={(v) => setP({ ...p, iva: { ...p.iva, goodsBoughtBy: v } })}
             />
@@ -397,24 +426,28 @@ export default function Revisione({
               {c && c.at10Cents > 0 && c.at22Cents > 0 && (
                 <>
                   {" "}
-                  · 10% su <span className="font-mono">{euro(c.at10Cents)}</span>, 22% su <span className="font-mono">{euro(c.at22Cents)}</span>
+                  ·{" "}
+                  <ConNodi
+                    testo={R.ripartizione}
+                    valori={{ a10: <span className="font-mono">{euro(c.at10Cents)}</span>, a22: <span className="font-mono">{euro(c.at22Cents)}</span> }}
+                  />
                 </>
               )}
-              . Verifica sempre con il tuo commercialista.
+              . {R.commercialista}
             </>
           ) : (
-            "Rispondi alle tre domande e calcolo io l'aliquota giusta."
+            R.rispondi
           )}
         </p>
       </section>
 
       <section className="mt-8">
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 className="text-xl font-extrabold">Lavorazioni · {p.righe.length}</h2>
+          <h2 className="text-xl font-extrabold">{fmt(R.lavorazioni, { n: p.righe.length })}</h2>
           {pronte < p.righe.length && (
             <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[15px] font-semibold">
               <input type="checkbox" className="size-5 accent-[#343645]" checked={soloDaSistemare} onChange={(e) => setSoloDaSistemare(e.target.checked)} />
-              Solo da sistemare
+              {R.soloDaSistemare}
             </label>
           )}
         </div>
@@ -434,26 +467,26 @@ export default function Revisione({
                 <div className="flex items-start justify-between gap-3">
                   {manca ? (
                     <span className="inline-flex flex-wrap items-center gap-1.5 rounded-full bg-ambra px-3 py-1 text-[14px] font-bold text-ambra-testo">
-                      <Icona tipo={st.motivi[0] === "Da prezzare" ? "euro" : st.motivi[0] === "Manca la misura" ? "metro" : "avviso"} />
-                      {st.motivi.join(" · ")}
+                      <Icona tipo={st.motivi[0] === "prezzo" ? "euro" : st.motivi[0] === "misura" ? "metro" : "avviso"} />
+                      {st.motivi.map((x) => R.motivi[x]).join(" · ")}
                     </span>
                   ) : (
                     <span className="inline-flex items-center gap-1.5 text-[14px] font-bold text-lime-scuro">
-                      <Icona tipo="ok" /> Pronta
+                      <Icona tipo="ok" /> {R.rigaPronta}
                     </span>
                   )}
-                  <span className="font-mono text-[17px] font-semibold">{imp === null ? "da completare" : euro(imp)}</span>
+                  <span className="font-mono text-[17px] font-semibold">{imp === null ? R.daCompletare : euro(imp)}</span>
                 </div>
                 {manca && r.flag && <p className="mt-2 text-[15px] text-ambra-testo">{r.flag}</p>}
                 {r.spoken && (
                   <p className="mt-3 border-l-2 border-linea-2 pl-3 text-[15px] leading-snug text-testo-3">
-                    Hai detto: «{r.spoken}»
+                    {fmt(R.haiDetto, { testo: r.spoken })}
                   </p>
                 )}
                 <label className={`${etichetta} mt-3`}>
-                  Voce del listino
+                  {R.voceListino}
                   <select className={campo} value={r.code ?? ""} onChange={(e) => scegliVoce(i, e.target.value)}>
-                    <option value="">Fuori listino: prezzo a mano</option>
+                    <option value="">{R.fuoriListino}</option>
                     {voci.map((v) => (
                       <option key={v.code} value={v.code}>
                         {v.code} · {v.name} · {euro(v.priceCents)}/{UNITA[v.unit]}
@@ -462,12 +495,12 @@ export default function Revisione({
                   </select>
                 </label>
                 <label className={`${etichetta} mt-3`}>
-                  Descrizione sul preventivo
+                  {R.descrizione}
                   <input className={campo} value={r.work} onChange={(e) => setRiga(i, { work: e.target.value })} />
                 </label>
                 <div className="mt-3 grid grid-cols-3 gap-2">
                   <label className={etichetta} data-manca={r.quantity === null || undefined}>
-                    Quantità
+                    {R.quantita}
                     <input
                       inputMode="decimal"
                       className={`${campo} ${r.quantity === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
@@ -476,13 +509,13 @@ export default function Revisione({
                     />
                   </label>
                   <label className={etichetta} data-manca={r.unit === null || undefined}>
-                    Unità
+                    {R.unita}
                     <select
                       className={`${campo} px-2 ${r.unit === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
                       value={r.unit ?? ""}
                       onChange={(e) => setRiga(i, { unit: (e.target.value || null) as RigaPreventivo["unit"] })}
                     >
-                      <option value="">Scegli</option>
+                      <option value="">{R.scegli}</option>
                       {Object.entries(UNITA).map(([k, v]) => (
                         <option key={k} value={k}>
                           {v}
@@ -491,7 +524,7 @@ export default function Revisione({
                     </select>
                   </label>
                   <label className={etichetta} data-manca={r.unitPriceCents === null || undefined}>
-                    Prezzo €
+                    {R.prezzo}
                     <input
                       inputMode="decimal"
                       className={`${campo} ${r.unitPriceCents === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
@@ -508,7 +541,7 @@ export default function Revisione({
                 </div>
                 {regime === "agevolata_10_beni_significativi" && r.significantGood && r.code && (
                   <label className={`${etichetta} mt-3`} data-manca={r.goodsValueCents === null || undefined}>
-                    Di cui valore del bene (sanitario, rubinetteria…), per l&apos;IVA
+                    {R.valoreBene}
                     <input
                       inputMode="decimal"
                       className={`${campo} ${r.goodsValueCents === null ? "border-2 border-ambra-bordo bg-ambra" : ""}`}
@@ -520,33 +553,33 @@ export default function Revisione({
                 {r.code === null && r.priceSource === "artigiano" && (
                   <label className="mt-3 flex min-h-11 items-center gap-2.5 text-[15px]">
                     <input type="checkbox" className="size-5 accent-[#343645]" checked={r.addToPriceList} onChange={(e) => setRiga(i, { addToPriceList: e.target.checked })} />
-                    Proponi di aggiungerla al mio listino con questo prezzo
+                    {R.proponi}
                   </label>
                 )}
                 <button type="button" onClick={() => togliRiga(i)} className="mt-2 min-h-11 text-[15px] font-semibold text-testo-3 underline">
-                  Togli la riga
+                  {R.togliRiga}
                 </button>
               </li>
             );
           })}
         </ol>
         <button type="button" onClick={aggiungiRiga} className="bottone mt-4 border-2 border-ardesia text-[16px]">
-          Aggiungi una riga
+          {R.aggiungiRiga}
         </button>
       </section>
 
       <section className="mt-8 rounded-card bg-superficie p-5 ring-1 ring-linea">
-        <h2 className="text-xl font-extrabold">Esclusi dal preventivo</h2>
+        <h2 className="text-xl font-extrabold">{R.esclusi}</h2>
         <textarea
           rows={3}
           className={`${campo} py-3`}
           value={p.esclusioni.join("\n")}
           onChange={(e) => setP({ ...p, esclusioni: e.target.value.split("\n").filter((x) => x.trim()) })}
-          placeholder="Una per riga"
+          placeholder={R.unaPerRiga}
         />
         {p.note.length > 0 && (
           <>
-            <h3 className="mt-4 font-bold">Note dal sopralluogo (non vanno sul PDF)</h3>
+            <h3 className="mt-4 font-bold">{R.note}</h3>
             <ul className="mt-1 list-disc pl-5 text-[15px] text-testo-2">
               {p.note.map((n, i) => (
                 <li key={i}>{n}</li>
@@ -557,34 +590,34 @@ export default function Revisione({
       </section>
 
       <section className="su-scuro mt-6 rounded-card bg-ardesia p-5 text-fondo">
-        <h2 className="text-xl font-extrabold">Riepilogo</h2>
+        <h2 className="text-xl font-extrabold">{R.riepilogo}</h2>
         <div className="mt-3 flex items-baseline justify-between">
-          <span>Imponibile</span>
+          <span>{R.imponibile}</span>
           <span className="font-mono text-lg font-semibold">{euro(c ? c.taxableCents : imponibileParziale(p.righe))}</span>
         </div>
         {c && (
           <>
             {c.at10Cents > 0 && (
               <div className="flex justify-between text-[15px] text-scuro-testo">
-                <span>IVA 10% su {euro(c.at10Cents)}</span>
+                <span>{fmt(R.ivaSu, { aliquota: 10, importo: euro(c.at10Cents) })}</span>
                 <span className="font-mono">{euro(Math.round(c.at10Cents * 0.1))}</span>
               </div>
             )}
             {c.at22Cents > 0 && (
               <div className="flex justify-between text-[15px] text-scuro-testo">
-                <span>IVA 22% su {euro(c.at22Cents)}</span>
+                <span>{fmt(R.ivaSu, { aliquota: 22, importo: euro(c.at22Cents) })}</span>
                 <span className="font-mono">{euro(Math.round(c.at22Cents * 0.22))}</span>
               </div>
             )}
             <div className="mt-2 flex justify-between border-t border-scuro-linea pt-2 text-xl font-bold">
-              <span>Totale</span>
+              <span>{R.totale}</span>
               <span className="font-mono">{euro(c.totalCents)}</span>
             </div>
           </>
         )}
         {m.length > 0 && (
           <>
-            <p className="mt-5 font-bold">Prima di approvare manca:</p>
+            <p className="mt-5 font-bold">{R.primaManca}</p>
             <ul className="mt-2 space-y-1.5">
               {[...gruppi].map(([testo, righe]) => (
                 <li key={testo}>
@@ -593,8 +626,8 @@ export default function Revisione({
                     onClick={() => vaiAlGruppo(testo, righe)}
                     className="min-h-10 text-left text-[15px] text-cielo underline underline-offset-2"
                   >
-                    {testo}
-                    {righe.length ? ` (riga ${righe.map((r) => r + 1).join(", ")})` : ""}
+                    {nomeMancanza(testo)}
+                    {righe.length ? ` ${fmt(R.righeManca, { righe: righe.map((r) => r + 1).join(", ") })}` : ""}
                   </button>
                 </li>
               ))}
@@ -602,7 +635,7 @@ export default function Revisione({
           </>
         )}
         <button type="button" onClick={soloSalva} disabled={stato === "invio"} className="bottone mt-5 border-2 border-scuro-linea text-[16px]">
-          Salva la bozza
+          {R.salvaBozza}
         </button>
         {messaggio && (
           <p role="status" className="mt-3 text-[15px]">
@@ -614,16 +647,16 @@ export default function Revisione({
       {/* Barra sempre visibile: totale e un solo pulsante, che porta al prossimo dato mancante o all'approvazione */}
       <div className="su-scuro sticky bottom-0 z-30 -mx-4 mt-6 flex items-center gap-3 bg-ardesia px-4 py-3 text-fondo shadow-[0_-8px_24px_rgba(31,32,41,0.18)] sm:bottom-4 sm:mx-0 sm:rounded-card">
         <div className="min-w-0 flex-1 leading-tight">
-          <span className="block text-[13px] text-scuro-nota">{c ? "Totale IVA inclusa" : "Imponibile finora"}</span>
+          <span className="block text-[13px] text-scuro-nota">{c ? R.totaleIvaInclusa : R.imponibileFinora}</span>
           <span className="font-mono text-[19px] font-semibold">{euro(c ? c.totalCents : imponibileParziale(p.righe))}</span>
         </div>
         {m.length > 0 ? (
           <button type="button" onClick={primoDaSistemare} className="bottone min-h-14 bg-ambra px-5 text-[16px] text-ambra-testo">
-            Sistema {m.length} {m.length === 1 ? "dato" : "dati"}
+            {fmt(m.length === 1 ? R.sistemaDato : R.sistemaDati, { n: m.length })}
           </button>
         ) : (
           <button type="button" onClick={() => setConferma(true)} disabled={stato === "invio"} className="bottone bottone-azione-scuro min-h-14 px-5 text-[16px]">
-            Approva e genera il PDF
+            {R.approvaGenera}
           </button>
         )}
       </div>
@@ -638,22 +671,24 @@ export default function Revisione({
             className="w-full max-w-md rounded-t-card bg-superficie p-6 sm:rounded-card"
           >
             <h2 id="titolo-conferma" className="text-2xl font-black [font-stretch:85%]">
-              Approvi il preventivo?
+              {R.approvi}
             </h2>
             <p className="mt-2 text-[16px] text-testo-2">
-              Totale <span className="font-mono font-semibold text-inchiostro">{euro(c.totalCents)}</span> · {REGIME[c.regime!]}. Dopo
-              l&apos;approvazione la bozza non si modifica più: genero il PDF e il link per il cliente.
+              <ConNodi
+                testo={R.confermaTesto}
+                valori={{ totale: <span className="font-mono font-semibold text-inchiostro">{euro(c.totalCents)}</span>, regime: REGIME[c.regime!] }}
+              />
             </p>
             <label className="mt-5 flex min-h-12 cursor-pointer items-center gap-3 rounded-campo bg-fondo px-4 text-[16px] font-semibold">
               <input ref={spunta} type="checkbox" className="size-6 accent-[#343645]" checked={controllato} onChange={(e) => setControllato(e.target.checked)} />
-              Ho controllato prezzi e quantità
+              {R.controllato}
             </label>
             <div className="mt-5 flex flex-col gap-2">
               <button type="button" disabled={!controllato || stato === "invio"} onClick={approva} className="bottone bottone-azione min-h-14 text-[17px] disabled:opacity-50">
-                {stato === "invio" ? "Genero il PDF…" : "Approva e genera il PDF"}
+                {stato === "invio" ? R.genero : R.approvaGenera}
               </button>
               <button type="button" onClick={() => setConferma(false)} className="bottone min-h-12 text-[16px] font-semibold text-testo-2">
-                Torna alla bozza
+                {R.torna}
               </button>
             </div>
           </div>

@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
 
 // Le foto del telefono pesano anche 5-10 MB: prima di mandarle le riduco nel browser
 // (lato lungo 2000 px, JPEG), così passano il limite di 4,5 MB e l'AI le legge bene lo stesso.
@@ -24,6 +25,7 @@ async function riduci(f: File): Promise<File> {
 // Carico il listino: il server lo legge e prepara le righe da controllare.
 export default function CaricaListino() {
   const router = useRouter();
+  const C = useLingua().d.area.caricaListino;
   const [invio, setInvio] = useState(false);
   const [errore, setErrore] = useState("");
   const [trascina, setTrascina] = useState(false);
@@ -38,7 +40,7 @@ export default function CaricaListino() {
     const body = await res.json().catch(() => ({}));
     if (!res.ok) {
       setInvio(false);
-      return setErrore(body.errore ?? "Non sono riuscito a leggere il file.");
+      return setErrore(body.errore ?? C.errore);
     }
     router.push(body.vai);
   }
@@ -65,11 +67,9 @@ export default function CaricaListino() {
           <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
           <path d="M14 3v5h5M9 13h6M9 17h6" />
         </svg>
-        <span className="text-[18px] font-bold">{invio ? "Leggo il listino…" : "Scegli il tuo listino"}</span>
-        <span className="text-[15px] text-testo-3">
-          Excel o CSV, oppure PDF e foto: anche più foto insieme, o qualche vecchio preventivo
-        </span>
-        {invio && <span className="text-[15px] text-testo-3">Da PDF e foto ci vuole fino a un minuto.</span>}
+        <span className="text-[18px] font-bold">{invio ? C.leggo : C.scegli}</span>
+        <span className="text-[15px] text-testo-3">{C.formati}</span>
+        {invio && <span className="text-[15px] text-testo-3">{C.attesa}</span>}
       </label>
       <input
         id="file-listino"

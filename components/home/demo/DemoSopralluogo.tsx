@@ -1,6 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
+import type { Dizionario } from "@/lib/i18n/it";
+import { fmt } from "@/lib/i18n/testo";
 import { conti, euro, EVENTO_MESTIERE, numero, SCENARI, type Scenario } from "./scenari";
 
 // La demo in cima alla home: il vocale si trascrive, le righe arrivano dal listino, una domanda
@@ -34,7 +37,11 @@ function riduciMovimento(): boolean {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
+type IdScenario = keyof Dizionario["demo"]["vocali"];
+
 export function DemoSopralluogo({ cta }: { cta: string }) {
+  const { d: diz } = useLingua();
+  const D = diz.demo;
   const [indice, setIndice] = useState(0);
   const [altro, setAltro] = useState(false);
   // Sul server lo stato finale: la demo completa, leggibile anche senza JavaScript.
@@ -49,7 +56,9 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
   const sceltoDaTe = useRef(false);
   const radice = useRef<HTMLDivElement>(null);
 
-  const scenario = SCENARI[indice];
+  // Il racconto nella lingua della pagina; voci, prezzi e domanda restano quelli italiani del motore.
+  const base = SCENARI[indice];
+  const scenario: Scenario = { ...base, vocale: D.vocali[base.id as IdScenario] ?? base.vocale };
   const t = tempiDi(scenario);
 
   const scegli = useCallback((id: string, daTe: boolean) => {
@@ -135,7 +144,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
 
   return (
     <div ref={radice} id="esempio" className="flex min-w-0 flex-col gap-3 lg:gap-4">
-      <div role="group" aria-label="Scegli un mestiere per l'esempio" className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none]">
+      <div role="group" aria-label={D.gruppo} className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none]">
         {SCENARI.map((s, i) => {
           const attivo = !altro && i === indice;
           return (
@@ -148,7 +157,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
                 attivo ? "border-lime bg-lime text-inchiostro" : "border-scuro-linea bg-transparent text-fondo hover:border-lime"
               }`}
             >
-              {s.mestiere}
+              {D.mestieri[s.id as IdScenario] ?? s.mestiere}
             </button>
           );
         })}
@@ -160,14 +169,14 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
             altro ? "border-lime bg-lime text-inchiostro" : "border-scuro-linea bg-transparent text-fondo hover:border-lime"
           }`}
         >
-          Altro mestiere
+          {D.altroMestiere}
         </button>
       </div>
 
       <figure className="relative m-0 flex min-w-0 flex-col rounded-[26px] bg-ardesia-2 p-2.5 ring-1 ring-scuro-linea lg:rounded-[34px] lg:p-3.5">
-        {altro ? <PannelloAltro cta={cta} /> : <Pannello s={scenario} t={t} e={trascorso} />}
+        {altro ? <PannelloAltro cta={cta} D={D} /> : <Pannello s={scenario} t={t} e={trascorso} D={D} />}
         <figcaption className="flex min-h-11 items-center justify-between gap-3 px-2 pt-2 text-[12.5px] text-scuro-nota lg:text-[13px]">
-          <span>Esempio: lavoro e prezzi inventati, listino di prova</span>
+          <span>{D.didascalia}</span>
           {!altro && (
             <button
               type="button"
@@ -179,7 +188,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
               }}
               className="flex min-h-10 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border border-scuro-linea bg-transparent px-3 font-semibold text-fondo hover:border-lime"
             >
-              {inPausa ? (finito ? "Riguarda" : "Riprendi") : "Pausa"}
+              {inPausa ? (finito ? D.riguarda : D.riprendi) : D.pausa}
             </button>
           )}
         </figcaption>
@@ -188,7 +197,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
   );
 }
 
-function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
+function Pannello({ s, t, e, D }: { s: Scenario; t: Tempi; e: number; D: Dizionario["demo"] }) {
   const parole = s.vocale.split(" ");
   const visteParole = e === Number.POSITIVE_INFINITY ? parole.length : Math.max(0, Math.floor((e - t.inizioParole) / t.parolaOgni));
   const scrive = visteParole > 0 && visteParole < parole.length;
@@ -209,7 +218,7 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
       <div className="flex flex-col gap-2.5 border-b border-linea bg-superficie px-3.5 py-3 lg:px-5 lg:py-4">
         <div className="flex items-center justify-between gap-3">
           <span className="text-[13px] font-semibold text-testo-3 lg:text-sm">
-            {s.mestiere} · {s.lavoro} sig. {s.cliente}
+            {D.mestieri[s.id as IdScenario] ?? s.mestiere} · {D.lavori[s.id as IdScenario] ?? s.lavoro} {D.sig} {s.cliente}
           </span>
           <span className="font-mono text-[12px] text-testo-3">{s.durata}</span>
         </div>
@@ -232,10 +241,10 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
       {/* La bozza */}
       <div className="flex flex-col gap-2 px-3.5 py-3 lg:px-5 lg:py-4">
         <div className="flex items-baseline justify-between gap-2">
-          <span className="text-[14px] font-bold lg:text-[15px]">Bozza dal tuo listino</span>
-          <span className="font-mono text-[12px] text-testo-3">{s.righe.length} voci</span>
+          <span className="text-[14px] font-bold lg:text-[15px]">{D.bozza}</span>
+          <span className="font-mono text-[12px] text-testo-3">{fmt(D.voci, { n: s.righe.length })}</span>
         </div>
-        <ul className="m-0 flex list-none flex-col gap-1 p-0">
+        <ul lang="it" dir="ltr" className="m-0 flex list-none flex-col gap-1 p-0">
           {s.righe.map((r, i) => {
             const vista = i < righeViste;
             const qta = r.quantita ?? (risposto ? s.domanda.quantita : null);
@@ -262,10 +271,10 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
                   </span>
                 </span>
                 <span className="whitespace-nowrap text-right font-semibold">
-                  {daPrezzare ? "da prezzare" : qta === null || prezzo === null ? "?" : euro(Math.round(qta * prezzo))}
+                  {daPrezzare ? D.daPrezzare : qta === null || prezzo === null ? "?" : euro(Math.round(qta * prezzo))}
                 </span>
                 {r.prezzo === null && prezzato && (
-                  <span className="col-span-2 text-[11.5px] text-lime-scuro">prezzo tuo: lo puoi aggiungere al listino</span>
+                  <span className="col-span-2 text-[11.5px] text-lime-scuro">{D.prezzoTuo}</span>
                 )}
               </li>
             );
@@ -294,12 +303,12 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
       <div className="flex flex-col gap-2.5 border-t border-dashed border-linea-2 bg-scontrino px-3.5 py-3 lg:px-5 lg:py-4">
         <div className={`flex items-baseline justify-between gap-3 transition-opacity duration-300 ${conIva ? "opacity-100" : "opacity-0"}`}>
           <span className="text-[12.5px] text-testo-2 lg:text-[13px]">
-            IVA {s.iva.aliquota}%: {s.iva.perche}
+            {fmt(D.iva, { aliquota: s.iva.aliquota })}
           </span>
           <span className="whitespace-nowrap font-mono text-[17px] font-bold lg:text-[19px]">{euro(totaleMostrato)}</span>
         </div>
         <ol className="m-0 grid list-none grid-cols-3 gap-1.5 p-0 text-center text-[12px] font-semibold lg:text-[13px]">
-          {["Inviato", "Visto", "Accettato"].map((nome, i) => (
+          {D.stati.map((nome, i) => (
             <li
               key={nome}
               className={`rounded-full px-2 py-1.5 transition-colors duration-300 ${
@@ -311,7 +320,7 @@ function Pannello({ s, t, e }: { s: Scenario; t: Tempi; e: number }) {
           ))}
         </ol>
         <p className={`m-0 text-center text-[12px] text-testo-2 transition-opacity duration-300 lg:text-[12.5px] ${stato === 3 ? "opacity-100" : "opacity-0"}`}>
-          Accettato online dal sig. {s.cliente}: nome, data, ora e copia del PDF restano a te.
+          {fmt(D.accettato, { cliente: s.cliente })}
         </p>
       </div>
     </div>
@@ -330,18 +339,17 @@ function Onda({ avanzamento }: { avanzamento: number }) {
   );
 }
 
-function PannelloAltro({ cta }: { cta: string }) {
+function PannelloAltro({ cta, D }: { cta: string; D: Dizionario["demo"] }) {
   return (
     <div className="flex min-h-[420px] flex-col justify-center gap-4 rounded-[18px] bg-chat p-5 text-inchiostro lg:min-h-[520px] lg:rounded-[24px] lg:p-8">
       <p className="m-0 text-[26px] font-extrabold leading-[1.02] [font-stretch:75%] lg:text-[34px]">
-        Serramenti, cartongesso, caldaie, giardini, cancelli, cucine su misura.
+        {D.altroTitolo}
       </p>
       <p className="m-0 text-[16px] leading-[1.55] text-testo-2 lg:text-[17px]">
-        Se lavori a voci e misure, funziona con il tuo listino: le parole del mestiere le trova lì, e quello che non c&apos;è
-        resta da prezzare. Carichi il listino che hai, anche in foto, e lo provi sui tuoi lavori.
+        {D.altroTesto}
       </p>
       <a href={cta} className="bottone bottone-azione self-start py-3.5 text-[16px]">
-        Provalo sul tuo lavoro
+        {D.altroCta}
       </a>
     </div>
   );

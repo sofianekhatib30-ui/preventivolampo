@@ -1,6 +1,8 @@
 "use client";
 
 import { useId, useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
+import { fmt } from "@/lib/i18n/testo";
 
 // «Quanto ti costano oggi i preventivi»: i numeri li mette chi legge. Non promettiamo quanto
 // tempo restituisce PreventivoLampo: quello si misura con il pilota, sui lavori veri.
@@ -13,6 +15,8 @@ function virgola(n: number, decimali = 0): string {
 }
 
 export function Calcolo() {
+  const { d } = useLingua();
+  const C = d.calcolo;
   const [preventivi, setPreventivi] = useState(5);
   const [minuti, setMinuti] = useState(45);
   const idP = useId();
@@ -26,11 +30,11 @@ export function Calcolo() {
       <div className="grid gap-8 rounded-[24px] border-2 border-ardesia bg-superficie p-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16 lg:rounded-[32px] lg:p-12">
         <div className="flex flex-col gap-7">
           <h2 id="calcolo-titolo" className="titolo-confronto m-0">
-            Quanto ti costano oggi i preventivi?
+            {C.titolo}
           </h2>
           <Cursore
             id={idP}
-            etichetta="Preventivi a settimana"
+            etichetta={C.preventivi}
             valore={preventivi}
             min={1}
             max={20}
@@ -40,26 +44,25 @@ export function Calcolo() {
           />
           <Cursore
             id={idM}
-            etichetta="Minuti per ognuno, fra conti, Word e invio"
+            etichetta={C.minuti}
             valore={minuti}
             min={10}
             max={120}
             passo={5}
-            mostra={`${minuti} min`}
+            mostra={fmt(C.min, { n: minuti })}
             onCambia={setMinuti}
           />
         </div>
         <div className="flex flex-col justify-center gap-4 rounded-[18px] bg-fondo p-6 lg:p-9">
-          <p className="m-0 text-[17px] text-testo-2 lg:text-lg">Ogni mese passi sui preventivi circa</p>
+          <p className="m-0 text-[17px] text-testo-2 lg:text-lg">{C.passi}</p>
           <p className="m-0 font-sans text-[72px] leading-[0.9] [font-weight:900] [font-stretch:62%] lg:text-[104px]">
-            {virgola(ore)} ore
+            {fmt(C.ore, { n: virgola(ore) })}
           </p>
           <p className="m-0 text-[17px] leading-normal text-testo-2 lg:text-lg">
-            quasi sempre la sera, dopo il cantiere. PreventivoLampo costa 19,90 € al mese:{" "}
-            <strong className="text-inchiostro">{virgola(allOra, 2)} € per ognuna di quelle ore.</strong>
+            {C.costa} <strong className="text-inchiostro">{fmt(C.allOra, { n: virgola(allOra, 2) })}</strong>
           </p>
           <p className="m-0 text-[14px] leading-normal text-testo-3">
-            I numeri li metti tu. Quanto tempo ti restituisce lo misuriamo con il pilota, sui lavori veri.
+            {C.nota}
           </p>
         </div>
       </div>

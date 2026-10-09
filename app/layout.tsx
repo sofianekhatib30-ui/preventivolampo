@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Archivo, Inter } from "next/font/google";
 import { FaviconAnimata } from "@/components/FaviconAnimata";
+import { LinguaProvider } from "@/lib/i18n/client";
+import { INFO_LINGUA } from "@/lib/i18n/lingue";
+import { dizionario } from "@/lib/i18n/server";
 import { INDEXABLE, SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "@/lib/sito";
 import "./globals.css";
 
@@ -33,11 +36,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+// La lingua dell'interfaccia arriva dal cookie di preferenza (lib/i18n): lang e dir sull'html,
+// e il dizionario ai componenti che girano nel browser.
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const { lingua, d } = await dizionario();
   return (
-    <html lang="it" className={`${archivo.variable} ${inter.variable} antialiased`}>
+    <html lang={lingua} dir={INFO_LINGUA[lingua].dir} className={`${archivo.variable} ${inter.variable} antialiased`}>
       <body className="min-h-dvh">
-        {children}
+        <LinguaProvider lingua={lingua} d={d}>
+          {children}
+        </LinguaProvider>
         <FaviconAnimata />
       </body>
     </html>

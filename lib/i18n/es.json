@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Tus presupuestos",
+      "benvenuto": "Tu empresa",
+      "nuovo": "Nuevo presupuesto",
+      "impresa": "Datos de la empresa",
+      "listino": "Tarifas",
+      "importa": "Importa tus tarifas",
+      "revisioneImport": "Revisa la importación",
+      "daPrezzare": "Por poner precio",
+      "preventivo": "Presupuesto",
+      "revisione": "Revisión del presupuesto",
+      "prova": "Prueba el motor"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, tus presupuestos",
+      "sezioni": "Secciones",
+      "preventivi": "Presupuestos",
+      "listino": "Tarifas",
+      "daPrezzare": "Por poner precio",
+      "impresa": "Empresa",
+      "proposte": "propuestas",
+      "esci": "Salir"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "piezas",
+        "h": "horas",
+        "100kg": "quintales (100 kg)",
+        "kg": "kg",
+        "l": "litros",
+        "corpo": "a tanto alzado"
+      },
+      "perUnita": {
+        "m2": "por m²",
+        "m": "por metro",
+        "m3": "por m³",
+        "cad": "por pieza",
+        "h": "por hora",
+        "100kg": "por quintal (100 kg)",
+        "kg": "por kg",
+        "l": "por litro",
+        "corpo": "a tanto alzado"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% con beni significativi"
+      }
+    },
+    "home": {
+      "h1": "Presupuestos",
+      "nuovo": "Nuevo presupuesto",
+      "mancaListino": "Solo falta la tarifa.",
+      "mancaListinoTesto": "Importa tu archivo o empieza con el ejemplo: después, el primer presupuesto es un audio.",
+      "preparaListino": "Prepara tus tarifas",
+      "daControllare": "por revisar",
+      "inAttesa": "pendientes · {importo}",
+      "accettati": "aceptados · {importo}",
+      "rifiutati": "rechazados",
+      "nessuno": "Todavía no hay ningún presupuesto.",
+      "nessunoTesto": "Cuenta tu próxima visita a la obra: en medio minuto tienes el borrador.",
+      "clienteDaIndicare": "Cliente por indicar",
+      "numeroDel": "n.º {numero} del {data}",
+      "stati": {
+        "bozza": "Por revisar",
+        "approvato": "Enviado",
+        "accettato": "Aceptado",
+        "rifiutato": "Rechazado"
+      }
+    },
+    "benvenuto": {
+      "passo": "Paso 1 de 2",
+      "h1": "Tu empresa",
+      "sotto": "Estos datos van al principio de cada presupuesto. Los puedes cambiar cuando quieras."
+    },
+    "nuovo": {
+      "torna": "Volver a los presupuestos",
+      "h1": "Nuevo presupuesto",
+      "serveListino": "Primero hace falta la lista de precios: los precios salen solo de ahí.",
+      "preparaListino": "Prepara la lista de precios",
+      "sotto": "Escribe o dicta la visita de obra. El borrador usa las {n} partidas de tu lista de precios; lo que no encuentra queda sin precio.",
+      "claude": "El texto se procesa con Claude de Anthropic y se guarda con el presupuesto.",
+      "racconta": "Cuenta el trabajo como lo dirías en un audio, en italiano o en tu idioma",
+      "segnaposto": "Cliente, dirección, si vive allí. Qué se quita, qué se pone, las medidas. Quién compra los materiales.",
+      "attesa": "Tarda unos 20 segundos…",
+      "prepara": "Prepara el borrador",
+      "errore": "No he podido preparar el borrador. Inténtalo otra vez.",
+      "fasi": [
+        "Leo la visita de obra…",
+        "Separo trabajos, medidas y exclusiones…",
+        "Busco cada partida en tu lista de precios…",
+        "Compruebo qué falta y el régimen de IVA…",
+        "Preparo el borrador para que lo revises…"
+      ]
+    },
+    "impresa": {
+      "h1": "Datos de la empresa",
+      "sotto": "Lo que el cliente lee al principio y al final del presupuesto.",
+      "accessoCon": "Acceso con {email}."
+    },
+    "modulo": {
+      "chiSiete": "Quién eres",
+      "ragioneSociale": "Razón social",
+      "piva": "Partita IVA",
+      "cf": "Codice fiscale (si es distinto)",
+      "indirizzo": "Sede (calle, número, ciudad)",
+      "telefono": "Teléfono",
+      "email": "Email en el presupuesto",
+      "cheLavori": "Qué trabajos haces",
+      "cheLavoriNota": "Ayuda a entender mejor tus visitas de obra.",
+      "mestieri": {
+        "impresaEdile": "Empresa de construcción",
+        "muratore": "Albañil",
+        "idraulico": "Fontanero",
+        "elettricista": "Electricista",
+        "imbianchino": "Pintor",
+        "piastrellista": "Solador y alicatador",
+        "cartongessista": "Instalador de pladur",
+        "serramentista": "Instalador de ventanas y puertas",
+        "termoidraulico": "Instalador de calefacción y fontanería",
+        "giardiniere": "Jardinero"
+      },
+      "sulPreventivo": "En el presupuesto",
+      "validita": "Validez del presupuesto (días)",
+      "validitaNota": "Pasados estos días, el cliente ya no puede aceptarlo desde el enlace.",
+      "condizioni": "Condiciones de pago",
+      "condizioniEsempio": "Ej. 30% al aceptar, el resto al terminar la obra",
+      "iban": "IBAN para las transferencias",
+      "salvo": "Guardando…",
+      "registra": "Registra la empresa",
+      "salva": "Guarda los datos",
+      "errore": "No he podido guardar. Inténtalo otra vez.",
+      "salvati": "Datos guardados. Los próximos PDF usarán estos."
+    },
+    "logo": {
+      "titolo": "Logo",
+      "attuale": "El logo actual",
+      "nessuno": "Sin logo",
+      "carico": "Subiendo…",
+      "cambia": "Cambia el logo",
+      "carica": "Sube el logo",
+      "togli": "Quitar",
+      "nota": "PNG o JPG, hasta 1 MB. Mejor con fondo blanco o transparente.",
+      "errore": "No he podido subir el logo."
+    },
+    "listino": {
+      "passo": "Paso 2 de 2",
+      "h1": "Tu lista de precios",
+      "h1Vuoto": "Tu lista de precios está vacía",
+      "sotto": "Los precios de los presupuestos salen solo de aquí. Lo que no está queda sin precio: lo decides tú.",
+      "sottoVuoto": "Los precios de los presupuestos salen solo de tu lista de precios, nunca inventados. Elige cómo llenarla.",
+      "importate": "{n} partidas importadas. Revisa los precios y añade cómo las llamas de viva voz: ayuda a reconocerlas.",
+      "esempio": "{n} partidas todavía tienen el precio de ejemplo. Revísalas antes de mandar presupuestos de verdad."
+    },
+    "elencoListino": {
+      "cerca": "Buscar en la lista de precios",
+      "cercaSegnaposto": "Nombre, código o palabra que dices",
+      "aggiungiVoce": "Añadir una partida",
+      "trovate": "{n} partidas encontradas de {totale}",
+      "voci": "{n} partidas",
+      "importaLink": "importar desde Excel, PDF o foto",
+      "nuovaVoce": "Nueva partida",
+      "prezzoEsempio": "precio de ejemplo",
+      "nessunaVoce": "Ninguna partida con «{cerca}».",
+      "mostraAltre": "Mostrar otras {n} partidas",
+      "nomeVoce": "Nombre de la partida",
+      "prezzo": "Precio €",
+      "unita": "Unidad",
+      "codice": "Código",
+      "descrizione": "Descripción para el presupuesto (opcional)",
+      "aVoce": "Cómo la llamas de viva voz",
+      "aVoceSegnaposto": "Ej. enlucir, enlucido, emplastecer paredes",
+      "aVoceNota": "Palabras separadas por comas: ayudan a reconocer la partida en los audios.",
+      "categoria": "Categoría (opcional)",
+      "beneSignificativo": "Bien significativo para el IVA al 10%",
+      "beneNota": "Sanitarios, grifería, calderas, ventanas y puertas, ascensores… (DM 29/12/1999).",
+      "materiale": "El precio incluye el material",
+      "materialeNota": "Si el cliente lo compra por su cuenta, la línea queda sin precio (solo colocación).",
+      "salvo": "Guardando…",
+      "salva": "Guardar",
+      "aggiungi": "Añadir a la lista de precios",
+      "annulla": "Cancelar",
+      "togliConferma": "Sí, quitar la partida",
+      "togli": "Quitar de la lista de precios",
+      "errorePrezzo": "Escribe el precio en euros, por ejemplo 18,50.",
+      "erroreSalva": "No he podido guardar.",
+      "erroreTogli": "No he podido quitar la partida."
+    },
+    "listinoVuoto": {
+      "haiListino": "¿Ya tienes una lista de precios?",
+      "haiListinoTesto": "Sube la lista que tengas: Excel, PDF o una foto. La leemos nosotros y tú la revisas línea por línea.",
+      "importa": "Importar el archivo",
+      "esempio": "Empieza con un ejemplo",
+      "esempioTesto": "Las {n} partidas de la demo (baños, cocinas, pinturas, instalaciones) con precios de tarifas públicas. Después pones los tuyos.",
+      "copio": "Copiando…",
+      "usaEsempio": "Usar el ejemplo",
+      "unaAllaVolta": "Una partida cada vez",
+      "unaAllaVoltaTesto": "Escribe tú los trabajos que haces más a menudo, con tu precio.",
+      "aMano": "Añadir a mano",
+      "errore": "No he podido copiar la lista de precios."
+    },
+    "importa": {
+      "torna": "Volver a la lista de precios",
+      "h1": "Importa tu lista de precios",
+      "sotto": "Vale lo que ya tengas: un Excel, un PDF, fotos de la lista escrita a mano o algunos presupuestos antiguos. Nada entra en la lista de precios antes de que lo hayas revisado.",
+      "cosaLeggiamo": "Qué leemos",
+      "punti": [
+        "Las columnas se reconocen por los títulos (Descripción, U.M., Precio…). Si el archivo no tiene títulos claros, las lee la inteligencia artificial y tú puedes corregirlas.",
+        "De los PDF y las fotos, las partidas las lee la inteligencia artificial: te marca dónde no está segura, y los nombres de los clientes de los presupuestos antiguos no los copia.",
+        "Las unidades escritas de mil maneras (mq, ml, nr, pz, a corpo) pasan a las del presupuesto.",
+        "Los códigos que faltan o se repiten los asignamos nosotros; las líneas de título sin precio se saltan.",
+        "Los códigos que ya están en tu lista de precios no se sobrescriben."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Leyendo la lista de precios…",
+      "scegli": "Elige tu lista de precios",
+      "formati": "Excel o CSV, o bien PDF y fotos: también varias fotos juntas, o algún presupuesto antiguo",
+      "attesa": "Con PDF y fotos tarda hasta un minuto.",
+      "errore": "No he podido leer el archivo."
+    },
+    "revisioneImport": {
+      "altroFile": "Sube otro archivo",
+      "h1": "Revisa antes de importar",
+      "sotto": "Las filas en amarillo tienen alguna duda: la unidad o el precio no se leen bien. Corrígelas o quita la marca.",
+      "ilFile": "el archivo",
+      "letteAi": "Estas partidas las ha leído la IA en tu PDF o en las fotos. **Revisa cada precio** antes de confirmar: donde no estaba segura, verás una nota.",
+      "colonne": "Columnas del archivo",
+      "metodoAi": "reconocidas por la IA: revísalas",
+      "metodoMano": "elegidas por ti",
+      "metodoTitoli": "reconocidas por los títulos",
+      "campi": {
+        "nome": "Descripción de la partida",
+        "prezzo": "Precio",
+        "unita": "Unidad de medida",
+        "codice": "Código",
+        "descrizione": "Descripción larga",
+        "categoria": "Categoría"
+      },
+      "scegliColonna": "Elige…",
+      "nessuna": "Ninguna",
+      "esempioColonna": "(p. ej. {testo})",
+      "rileggo": "Estoy leyendo el archivo otra vez…",
+      "rileggi": "Volver a leer con estas columnas",
+      "rileggiNota": "Si vuelves a leer el archivo, se pierden las correcciones que has hecho más abajo.",
+      "daImportare": "{n} partidas para importar de {file}",
+      "daSistemare": "{n} por arreglar",
+      "soloDubbi": "Mostrar solo las filas que hay que revisar",
+      "importaRiga": "Importar la fila {n}",
+      "descrizione": "Descripción",
+      "rigaFile": "fila {n} del archivo",
+      "rigaFileUnita": "fila {n} del archivo, unidad «{unita}»",
+      "prezzo": "Precio €",
+      "unita": "Unidad",
+      "scegliUnita": "Elige",
+      "codice": "Código",
+      "correggi": "Corregir",
+      "tutteAPosto": "Todas las filas están bien.",
+      "mostraAltre": "Mostrar más filas ({n})",
+      "importo": "Importando…",
+      "importaN": "Importar {n} partidas",
+      "annulla": "Cancelar la importación",
+      "sistemaNota": "Arregla las filas marcadas o quita la marca para poder importar.",
+      "errore": "Algo ha fallado. Inténtalo de nuevo."
+    },
+    "daPrezzare": {
+      "h1": "Para añadir a la tarifa",
+      "sotto": "Trabajos que has puesto precio a mano en un presupuesto, marcando «proponer añadirlo a la tarifa». Si los añades, la próxima vez el precio sale solo.",
+      "niente": "No hay nada que añadir.",
+      "nienteTesto": "Cuando pones precio a mano a una línea que no está en la tarifa, marca la propuesta y la encontrarás aquí.",
+      "torna": "Volver a los presupuestos",
+      "dalPreventivo": "Del presupuesto n.º {numero}",
+      "haiMesso": "has puesto {prezzo} {unita}",
+      "nomeListino": "Nombre en la tarifa",
+      "prezzo": "Precio €",
+      "unita": "Unidad",
+      "codice": "Código",
+      "errorePrezzo": "Escribe el precio en euros, por ejemplo 18,50.",
+      "erroreSalva": "No he podido guardar.",
+      "aggiungi": "Añadir a la tarifa",
+      "nonServe": "No hace falta"
+    },
+    "preventivo": {
+      "tutti": "Todos los presupuestos",
+      "registro": "Registro",
+      "eventi": {
+        "creato": "Borrador creado",
+        "approvato": "Aprobado y listo para enviar",
+        "visto": "Abierto por el cliente",
+        "accettato": "Aceptado por el cliente",
+        "rifiutato": "Rechazado por el cliente"
+      },
+      "da": "de {nome}",
+      "ip": "IP {ip}",
+      "impronta": "huella del PDF aceptado {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Eliminar este borrador",
+      "conferma": "¿Eliminarlo para siempre?",
+      "si": "Sí, eliminar",
+      "no": "No"
+    },
+    "revisione": {
+      "bozzaN": "Borrador n.º {numero}",
+      "origineEsempio": "ejemplo {caso} del banco de pruebas, salida registrada del motor",
+      "origineMotore": "preparado en {secondi} s",
+      "h1": "Revisa y aprueba",
+      "sotto": "Ningún precio es inventado: los que ves vienen de tu tarifa, los vacíos los pones tú.",
+      "statoRighe": "Estado de las líneas",
+      "pronta": "{n} lista",
+      "pronte": "{n} listas",
+      "contaDaPrezzare": "{n} sin precio",
+      "contaSenzaMisura": "{n} sin medida",
+      "contaSenzaValore": "{n} sin valor del bien",
+      "domandaIva": "IVA: {n} pregunta",
+      "domandeIva": "IVA: {n} preguntas",
+      "motivi": {
+        "prezzo": "Falta el precio",
+        "misura": "Falta la medida",
+        "valore": "Falta el valor del bien"
+      },
+      "rigaPronta": "Lista",
+      "daCompletare": "por completar",
+      "cliente": "Cliente",
+      "nome": "Nombre",
+      "indirizzo": "Dirección de la obra",
+      "linguaCliente": "Idioma del cliente",
+      "inCheLingua": "¿En qué idioma le mandas el presupuesto?",
+      "riceve": "El cliente recibe el mensaje, la página y el PDF en {lingua}, con el texto en italiano al lado: en caso de duda vale el italiano. Revisa las partidas traducidas, puedes corregirlas.",
+      "cambiate": "Has cambiado las partidas después de la traducción: hazla otra vez, así el cliente lee lo mismo que lees tú.",
+      "traduco": "Traduciendo…",
+      "rifai": "Repite la traducción",
+      "traduciIn": "Traduce al {lingua}",
+      "escluso": "Excluido: {testo}",
+      "ivaTitolo": "IVA: tres preguntas",
+      "abitazione": "¿Es una vivienda?",
+      "abitazioneSi": "Sí, vive alguien",
+      "abitazioneNo": "No, es un local o una oficina",
+      "intervento": "Tipo de intervención",
+      "ordinaria": "Ordinaria",
+      "straordinaria": "Extraordinaria",
+      "ristrutturazione": "Reforma",
+      "materiali": "¿Quién compra los materiales?",
+      "materialiImpresa": "Los compro yo",
+      "materialiCliente": "El cliente",
+      "ripartizione": "10 % sobre {a10}, 22 % sobre {a22}",
+      "commercialista": "Compruébalo siempre con tu gestor (commercialista).",
+      "rispondi": "Responde a las tres preguntas y yo calculo el tipo correcto.",
+      "lavorazioni": "Trabajos · {n}",
+      "soloDaSistemare": "Solo los que faltan por arreglar",
+      "haiDetto": "Dijiste: «{testo}»",
+      "voceListino": "Partida de la tarifa",
+      "fuoriListino": "Fuera de tarifa: precio a mano",
+      "descrizione": "Descripción en el presupuesto",
+      "quantita": "Cantidad",
+      "unita": "Unidad",
+      "scegli": "Elige",
+      "prezzo": "Precio €",
+      "valoreBene": "De los cuales valor del bien (sanitario, grifería…), para el IVA",
+      "proponi": "Propón añadirla a mi lista de precios con este precio",
+      "togliRiga": "Quita la línea",
+      "aggiungiRiga": "Añade una línea",
+      "esclusi": "Excluido del presupuesto",
+      "unaPerRiga": "Una por línea",
+      "note": "Notas de la visita a la obra (no van en el PDF)",
+      "riepilogo": "Resumen",
+      "imponibile": "Base imponible",
+      "ivaSu": "IVA {aliquota}% sobre {importo}",
+      "totale": "Total",
+      "primaManca": "Antes de aprobar falta:",
+      "righeManca": "(línea {righe})",
+      "mancanze": {
+        "quantita": "falta la cantidad",
+        "unita": "falta la unidad de medida",
+        "prezzo": "falta el precio",
+        "abitazione": "IVA: ¿es una vivienda?",
+        "intervento": "IVA: tipo de intervención",
+        "materiali": "IVA: quién compra los materiales",
+        "valoreBene": "valor del bien significativo",
+        "valoreSupera": "el valor del bien supera el importe de la línea",
+        "traduzioneDaRifare": "hay que rehacer la traducción al {lingua}: las partidas han cambiado",
+        "traduci": "traduce el presupuesto al {lingua}"
+      },
+      "salvaBozza": "Guarda el borrador",
+      "salvata": "Borrador guardado.",
+      "totaleIvaInclusa": "Total con IVA incluido",
+      "imponibileFinora": "Base imponible hasta ahora",
+      "sistemaDato": "Arregla {n} dato",
+      "sistemaDati": "Arregla {n} datos",
+      "approvaGenera": "Aprueba y genera el PDF",
+      "approvi": "¿Apruebas el presupuesto?",
+      "confermaTesto": "Total {totale} · {regime}. Después de aprobarlo, el borrador ya no se puede modificar: genero el PDF y el enlace para el cliente.",
+      "controllato": "He revisado precios y cantidades",
+      "genero": "Generando el PDF…",
+      "torna": "Volver al borrador",
+      "erroreSalva": "No he podido guardar. Inténtalo otra vez.",
+      "erroreApprova": "No he podido aprobar. Inténtalo otra vez.",
+      "erroreTraduci": "No he podido traducir. Inténtalo otra vez."
+    },
+    "approvato": {
+      "preventivoN": "Presupuesto n.º {numero}",
+      "accettato": "El cliente ha aceptado.",
+      "rifiutato": "El cliente ha rechazado.",
+      "pronto": "Presupuesto listo. Ahora envíalo.",
+      "totaleIvaInclusa": "Total con IVA incluido",
+      "riceve": "El cliente recibe mensaje, página y PDF en {lingua}, con el texto en italiano al lado, que es el que vale.",
+      "whatsapp": "Enviar por WhatsApp",
+      "copiato": "Enlace copiado",
+      "copia": "Copiar el enlace",
+      "apriPdf": "Abrir el PDF",
+      "paginaCliente": "Mira la página que ve el cliente",
+      "aChePunto": "Cómo va",
+      "approvatoDaTe": "Aprobado por ti",
+      "vistoDalCliente": "Visto por el cliente",
+      "quandoApre": "cuando abre el enlace",
+      "accettatoDa": "Aceptado por {nome}",
+      "rifiutatoDa": "Rechazado por {nome}",
+      "risposta": "Respuesta del cliente",
+      "accettaCon": "acepta con nombre y fecha",
+      "fatto": "(hecho)",
+      "inAttesa": "(pendiente)",
+      "nota": "El cliente abre el enlace, ve el presupuesto y lo acepta con nombre y fecha, sin registrarse. Recarga la página para ver si lo ha abierto."
+    },
+    "prova": {
+      "nuovaProva": "Nueva prueba",
+      "h1": "De la visita al borrador",
+      "sotto": "El motor extrae los trabajos, los empareja con tu tarifa y te prepara el borrador para revisar. Los precios salen solo de tu tarifa: lo que no encuentra queda sin precio, y lo que falta te lo pregunta.",
+      "avviso": "Datos de prueba inventados: la empresa de la tarifa y los clientes de los ejemplos no existen. No escribas nombres, direcciones ni números de personas reales: los borradores se guardan 7 días y cualquiera que tenga el enlace puede abrirlos. El texto libre se procesa con Claude de Anthropic. {privacy}",
+      "daDove": "Por dónde empezar",
+      "unEsempio": "Un ejemplo",
+      "tuoTesto": "Tu texto",
+      "esempiBanco": "Ejemplos del banco de pruebas",
+      "esempiTesto": "Visitas inventadas del banco de pruebas. El borrador sale al instante: es el resultado grabado del motor en ese caso.",
+      "lavori": {
+        "bagno": "Baño completo",
+        "tinteggiatura": "Pintura de piso de dos habitaciones",
+        "cucina": "Instalación de cocina",
+        "pavimento": "Suelo del salón"
+      },
+      "tutti": "O elige entre los 30",
+      "vocale": "El audio, transcrito",
+      "preparo": "Preparo el borrador…",
+      "prepara": "Prepara el borrador",
+      "racconta": "Cuenta el trabajo como lo dirías en el audio",
+      "segnaposto": "Baño de la señora Rossi, calle Roma 3. Es su casa. Quitamos la bañera y los azulejos, de dos metros de alto. El baño mide dos por uno ochenta, plato de ducha de 80x80, los sanitarios los compro yo…",
+      "codice": "Código de acceso",
+      "codiceNota": "Tu texto pasa por la API de Claude y cada prueba tiene un coste: el código frena a los bots.",
+      "attesa": "Tarda unos 20 segundos…",
+      "errore": "No he podido preparar el borrador. Inténtalo de nuevo.",
+      "fasi": [
+        "Leo la visita…",
+        "Separo trabajos, medidas y exclusiones…",
+        "Busco cada partida en la tarifa…",
+        "Compruebo qué falta y el régimen de IVA…",
+        "Preparo el borrador para revisar…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "Hablo en",
+      "ascolto": "Estoy escuchando: toca para parar",
+      "detta": "Dicta la visita",
+      "nota": "Usa el reconocimiento de voz del navegador: a este sitio solo llega el texto. Hables en el idioma que hables, el borrador sale en italiano.",
+      "erroreMicrofono": "El navegador no tiene permiso para usar el micrófono.",
+      "erroreLingua": "En este móvil no hay dictado en este idioma. Escribe el texto en tu idioma: el borrador sale en italiano igualmente.",
+      "erroreInterrotta": "El dictado se ha interrumpido. Inténtalo de nuevo."
+    }
+  },
+  "comune": {
+    "lingua": "Idioma",
+    "scegliLingua": "Elige el idioma",
+    "faFede": "Traducción de cortesía: en caso de duda, vale el texto italiano.",
+    "saltaAlContenuto": "Saltar al contenido",
+    "logoTop": "PreventivoLampo, volver al principio",
+    "logoHome": "PreventivoLampo, inicio",
+    "entra": "Entrar",
+    "apriMenu": "Abrir el menú",
+    "chiudiMenu": "Cerrar el menú",
+    "principale": "Principal",
+    "ctaPilota": "Hazte artesano piloto",
+    "ctaProva": "Prueba con un ejemplo",
+    "privacy": "Privacidad",
+    "cookie": "Cookies",
+    "condizioni": "Condiciones",
+    "infoLegali": "Información legal",
+    "servizioDi": "PreventivoLampo es un servicio de K Digital Solution",
+    "aggiornata": "Actualizada el {data}",
+    "comeFunziona": "Cómo funciona"
+  },
+  "nav": {
+    "come": "Cómo funciona",
+    "mestieri": "Oficios",
+    "numeri": "Los números",
+    "prezzi": "Precios",
+    "domande": "Preguntas"
+  },
+  "hero": {
+    "etichetta": "Para todos los oficios de la casa",
+    "titolo": "Termina la visita a la obra. El presupuesto sale desde la furgoneta.",
+    "testo": "Lo cuentas de viva voz o lo escribes, como harías con un compañero. Te llega el borrador con los precios de **tu** lista, el IVA correcto y las partidas dudosas marcadas. Revisas, apruebas y el cliente recibe el PDF para aceptarlo con un clic.",
+    "garanzia": "Precios solo de tu lista. Si una partida no está, queda sin precio: nada de cifras inventadas.",
+    "guarda": "Mira cómo funciona",
+    "punti": [
+      "Nada que instalar",
+      "Lista de precios incluso desde una foto",
+      "Siempre decides tú"
+    ]
+  },
+  "demo": {
+    "gruppo": "Elige un oficio para ver el ejemplo",
+    "altroMestiere": "Otro oficio",
+    "didascalia": "Ejemplo: trabajo y precios inventados, lista de prueba",
+    "pausa": "Pausa",
+    "riprendi": "Seguir",
+    "riguarda": "Volver a ver",
+    "sig": "Sr.",
+    "bozza": "Borrador con tu lista de precios",
+    "voci": "{n} partidas",
+    "daPrezzare": "sin precio",
+    "prezzoTuo": "precio tuyo: puedes añadirlo a tu lista",
+    "iva": "IVA {aliquota}%: vivienda, mantenimiento",
+    "stati": [
+      "Enviado",
+      "Visto",
+      "Aceptado"
+    ],
+    "accettato": "Aceptado online por el Sr. {cliente}: nombre, fecha, hora y copia del PDF se quedan contigo.",
+    "altroTitolo": "Carpintería, pladur, calderas, jardines, cancelas, cocinas a medida.",
+    "altroTesto": "Si trabajas por partidas y medidas, funciona con tu lista de precios: las palabras de tu oficio las encuentra ahí, y lo que no está queda sin precio. Subes la lista que tengas, incluso en foto, y la pruebas con tus trabajos.",
+    "altroCta": "Pruébalo con tu trabajo",
+    "mestieri": {
+      "elettricista": "Electricista",
+      "idraulico": "Fontanero",
+      "imbianchino": "Pintor",
+      "piastrellista": "Alicatador",
+      "muratore": "Albañil"
+    },
+    "lavori": {
+      "elettricista": "Cocina",
+      "idraulico": "Cocina",
+      "imbianchino": "Piso de dos habitaciones",
+      "piastrellista": "Salón",
+      "muratore": "Habitación"
+    },
+    "vocali": {
+      "elettricista": "Cocina del señor Ferrari. Cuatro puntos de luz sencillos y dos conmutados encima de la mesa. Las tomas de dieciséis para los electrodomésticos. En el cuadro va un diferencial nuevo. Y le monto la lámpara que ha comprado él.",
+      "idraulico": "Cocina de la señora Rinaldi. Pasamos el fregadero a la pared de enfrente: nueva toma de agua caliente y fría con el desagüe, tres metros de desagüe de cuarenta. Conecto también el lavavajillas. El grifo ya lo tiene ella, lo monto yo.",
+      "imbianchino": "Piso del señor Greco, salón y dormitorio: paredes y techos suman ciento veinte metros. Rasco donde se descascarilla, fijador en todo y dos manos de pintura lavable. Seis metros de antimoho en el techo del baño. Los muebles los movemos nosotros.",
+      "piastrellista": "Salón de la señora Marino, veintiocho metros cuadrados. Quito el suelo viejo y el rodapié, rehago la solera y coloco el gres de treinta por treinta que ha comprado ella. Rodapié nuevo de gres.",
+      "muratore": "Habitación del señor Conti. Tiro el tabique viejo y lo rehago desplazado un metro: ladrillo hueco del ocho, tres y veinte por dos setenta, enlucido por las dos caras. Escombros, un metro cúbico. El premarco de la puerta lo pongo yo."
+    }
+  },
+  "mestieri": {
+    "titolo": "Cada oficio tiene sus palabras. Tu lista de precios ya las tiene.",
+    "testo": "No tienes que aprender a hablar de otra manera: dices las medidas a ojo, los nombres que usas tú, «lo que ha comprado ella». El sistema busca entre las partidas de tu lista, rehace las cuentas de las medidas y lo que no encuentra te lo marca.",
+    "guarda": "Mira el ejemplo",
+    "scorri": "Desliza para ver los otros oficios.",
+    "nota": "Líneas de ejemplo. Funciona con cualquier lista de precios por partidas y medidas: si tu oficio no está aquí, vale igual.",
+    "etichettaLista": "Ejemplos por oficio",
+    "voci": {
+      "elettricista": {
+        "nome": "Electricista",
+        "detto": "seis puntos de luz, dos conmutados"
+      },
+      "idraulico": {
+        "nome": "Fontanero",
+        "detto": "muevo el fregadero metro y medio"
+      },
+      "imbianchino": {
+        "nome": "Pintor",
+        "detto": "dos manos de lavable, ciento veinte metros"
+      },
+      "piastrellista": {
+        "nome": "Alicatador",
+        "detto": "coloco el gres que ha comprado ella"
+      },
+      "muratore": {
+        "nome": "Albañil",
+        "detto": "tres veinte por dos setenta"
+      },
+      "cartongessista": {
+        "nome": "Instalador de pladur",
+        "detto": "falso techo en el pasillo, seis por uno diez"
+      },
+      "serramentista": {
+        "nome": "Instalador de ventanas",
+        "detto": "tres ventanas de dos hojas y una puerta balconera"
+      },
+      "termoidraulico": {
+        "nome": "Fontanero y calefactor",
+        "detto": "cambio la caldera, los radiadores se quedan"
+      },
+      "falegname": {
+        "nome": "Carpintero",
+        "detto": "armario empotrado, dos cuarenta por dos sesenta"
+      },
+      "fabbro": {
+        "nome": "Herrero",
+        "detto": "barandilla del balcón, seis metros"
+      },
+      "giardiniere": {
+        "nome": "Jardinero",
+        "detto": "hay que cortar el seto, cuarenta metros"
+      },
+      "impresa": {
+        "nome": "Empresa de reformas",
+        "detto": "baño completo, llave en mano"
+      }
+    }
+  },
+  "come": {
+    "titolo": "De la nota de voz al presupuesto aceptado, en cuatro pasos.",
+    "sotto": "Tú cuentas y revisas. Las cuentas, la lista de precios, el IVA, el PDF y el envío los hace el sistema.",
+    "passi": [
+      {
+        "titolo": "Cuentas el trabajo",
+        "testo": "De viva voz o por escrito, desde el móvil, nada más terminar la visita: medidas, trabajos, qué pone el cliente, qué queda fuera.",
+        "nota": "«tres por dos y medio, más o menos»"
+      },
+      {
+        "titolo": "Te pregunta lo que falta",
+        "testo": "Si una cantidad no está clara, no se la inventa: te hace una pregunta concreta y espera tu respuesta.",
+        "nota": "«¿Cuántos m² de suelo?»"
+      },
+      {
+        "titolo": "Revisas desde el móvil",
+        "testo": "Partida por partida: corriges, quitas, añades. Lo que no está en tu lista de precios aparece resaltado.",
+        "nota": "Editar · Aprobar"
+      },
+      {
+        "titolo": "El cliente acepta",
+        "testo": "Recibe el PDF con tu logo y un enlace para aceptarlo. Tú ves cuándo lo abre y cuándo dice que sí.",
+        "nota": "Enviado · Visto · Aceptado"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "Lo que te garantizamos, siempre.",
+    "testo": "El presupuesto lleva tu nombre, así que tiene que estar bien. Por eso el sistema nunca adivina: lo que sabe, lo escribe; lo que no sabe, te lo pregunta.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "de los precios, de tu lista",
+        "dettaglio": "Ningún precio inventado. Lo que falta se queda sin precio hasta que lo decidas tú."
+      },
+      {
+        "cifra": "6 idiomas",
+        "cosa": "para tu cliente",
+        "dettaglio": "Italiano, inglés, alemán, francés, español y neerlandés. Y tú puedes contar el trabajo también en rumano, albanés o árabe."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "para tener el borrador",
+        "dettaglio": "Del relato de la visita al borrador completo, con las preguntas sobre lo que falta."
+      }
+    ],
+    "sotto1": "Antes de llegar al cliente, todos los presupuestos pasan por ti. Las partidas que hay que revisar están resaltadas, las medidas que faltan te las pregunta, y nada sale sin tu aprobación.",
+    "sotto2": "Con el programa piloto lo ponemos a prueba con trabajos reales de diez artesanos de oficios distintos. Lo que no funciona, nos lo dicen y lo arreglamos."
+  },
+  "cosa": {
+    "titolo": "Transcribir una nota de voz lo sabe hacer mucha gente. Nosotros nos ocupamos de lo que te hace perder dinero.",
+    "listinoTitolo": "Tu lista de precios, tal como es",
+    "listinoTesto": "Subes la lista de precios que tienes: Excel, PDF, la foto de la hoja escrita a mano o algunos presupuestos antiguos. El sistema lee partidas, unidades de medida y precios, y tú revisas y confirmas. Ningún precio entra sin que lo hayas visto. Si te atascas, te ayudamos nosotros.",
+    "tabella": {
+      "didascalia": "Ejemplo de lista de precios",
+      "voce": "Concepto",
+      "unita": "Unidad",
+      "tipoIva": "Tipo de IVA",
+      "prestazione": "servicio",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "Ningún precio inventado",
+    "prezzoTesto": "Muchas apps, cuando no encuentran una partida, la estiman con «precios de mercado». Nosotros no: si no está en tu lista de precios, la marcamos como pendiente de precio, y el precio lo pones tú. Un presupuesto equivocado a la baja es un trabajo a pérdidas.",
+    "dalListino": "de tu lista ✓",
+    "ivaTitolo": "El IVA de obras bien hecho, y solo",
+    "ivaTesto1": "¿Mantenimiento en una vivienda? El 10% vale para la mano de obra, pero los «beni significativi» (bienes significativos: sanitarios, grifería, ventanas y puertas, calderas) entran solo hasta el valor del resto de la intervención. La parte que sobra va al 22%.",
+    "ivaTesto2": "Te hacemos tres preguntas: qué inmueble es, qué trabajo es, quién compra los materiales. En el PDF el IVA del 10% y del 22% sale repartido correctamente, con la leyenda.",
+    "ivaNota": "Ejemplo sacado de la guía de la Agenzia delle Entrate (la Agencia Tributaria italiana). Para los casos particulares, sigue mandando tu commercialista (asesor fiscal).",
+    "scontrino": {
+      "etichetta": "Ejemplo de reparto del IVA",
+      "titolo": "Mantenimiento extraordinario · vivienda",
+      "manodopera": "Mano de obra y otros materiales",
+      "beni": "Beni significativi (materiales y equipos de valor significativo)",
+      "imp10": "Base imponible al 10%",
+      "imp22": "Base imponible al 22%",
+      "iva": "IVA 10% + IVA 22%",
+      "totale": "Total"
+    },
+    "lingueTitolo": "Tú cuentas en tu idioma. El cliente lee en el suyo.",
+    "lingueTesto": "Escribes o dictas la visita a la obra en rumano, albanés, árabe o en otro idioma: el borrador sale en italiano. Si el cliente es extranjero, el presupuesto le llega en inglés, alemán, francés, español u holandés, con el texto italiano al lado, que es el que vale. La traducción la ves y la corriges antes de enviarla.",
+    "lingueDalListino": "de tu lista de precios, en italiano",
+    "lingueAlCliente": "al cliente alemán, con el italiano al lado",
+    "aiutoTitolo": "Una ayuda de verdad, de una persona",
+    "aiutoTesto": "Logo, datos, condiciones de pago, anticipos, exclusiones: lo configuras tú en pocos minutos. Si te atascas, nos escribes o nos llamas y te responde una persona, no un bot. Y el primer presupuesto lo mandas tú, desde la furgoneta.",
+    "ultimaTitolo": "La última palabra es siempre tuya",
+    "ultimaTesto": "El sistema propone, tú decides. Ningún presupuesto llega al cliente sin que lo hayas abierto y aprobado. Las partidas nuevas a las que pones precio entran en tu lista de precios, para la próxima vez."
+  },
+  "confronto": {
+    "titolo": "Tres formas de hacer el mismo presupuesto.",
+    "colonne": [
+      "Word o Excel, por la noche",
+      "Un chatbot cualquiera",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "Los precios",
+        "celle": [
+          "Los copias tú de tu lista de precios",
+          "Los estima: no conoce tu lista de precios",
+          "Solo de tu lista de precios. Lo que falta queda sin precio"
+        ]
+      },
+      {
+        "tema": "Las medidas que faltan",
+        "celle": [
+          "Te das cuenta al escribir",
+          "Muchas veces las da por buenas",
+          "Te las pide antes de hacer las cuentas"
+        ]
+      },
+      {
+        "tema": "IVA con beni significativi",
+        "celle": [
+          "A mano, con la duda",
+          "Depende de cómo se lo preguntes",
+          "10% y 22% repartidos, con la leyenda"
+        ]
+      },
+      {
+        "tema": "El documento",
+        "celle": [
+          "Hay que maquetarlo cada vez",
+          "Texto para copiar a otro sitio",
+          "PDF con tu logo, listo para enviar"
+        ]
+      },
+      {
+        "tema": "El sí del cliente",
+        "celle": [
+          "Un mensaje, si hay suerte",
+          "No existe",
+          "Aceptación online: nombre, fecha, hora y copia del PDF"
+        ]
+      },
+      {
+        "tema": "Dónde lo haces",
+        "celle": [
+          "En el ordenador, después de cenar",
+          "En el móvil, y luego lo rehaces",
+          "Desde el móvil, nada más acabar la visita"
+        ]
+      }
+    ],
+    "etichettaLista": "Comparación por tema",
+    "scorri": "Desliza para ver las demás comparaciones.",
+    "nota": "«Chatbot cualquiera»: un asistente genérico usado sin tu lista de precios, como hacen muchos hoy."
+  },
+  "calcolo": {
+    "titolo": "¿Cuánto te cuestan hoy los presupuestos?",
+    "preventivi": "Presupuestos a la semana",
+    "minuti": "Minutos por cada uno, entre cuentas, Word y envío",
+    "min": "{n} min",
+    "passi": "Cada mes dedicas a los presupuestos unas",
+    "ore": "{n} horas",
+    "costa": "casi siempre por la noche, después de la obra. PreventivoLampo cuesta 19,90 € al mes:",
+    "allOra": "{n} € por cada una de esas horas.",
+    "nota": "Los números los pones tú. Cuánto tiempo te devuelve lo medimos con el piloto, en trabajos reales."
+  },
+  "prezzi": {
+    "titolo": "Primero lo pruebas en tus trabajos reales. Después decides.",
+    "pilota": "Programa piloto",
+    "perGiorni": "durante 30 días",
+    "pilotaTesto": "Presupuestos ilimitados y ayuda si la necesitas. A cambio, nos cuentas qué no funciona. Te llamamos por orden de llegada. Desde el día 31, 19,90 € al mes o 199 € al año, solo si decides quedarte: sin renovación automática.",
+    "candidati": "Apúntate",
+    "posti": "{n} plazas",
+    "postiLiberi": "{n} plazas libres de {totale}",
+    "ultimoPosto": "Última plaza de {totale}",
+    "esauriti": "Plazas agotadas",
+    "mensile": "Mensual",
+    "alMese": "al mes",
+    "perMese": "/mes",
+    "mensileVoci": [
+      "Presupuestos ilimitados",
+      "Enlace de aceptación para el cliente",
+      "Atención de una persona"
+    ],
+    "mensileNota": "Sin costes de puesta en marcha. Cancelas cuando quieras, sin permanencia.",
+    "annuale": "Anual",
+    "allAnno": "al año",
+    "perAnno": "/año",
+    "annualeVoci": [
+      "Todo lo del plan mensual",
+      "Dos meses de regalo",
+      "Solo se renueva si tú lo pides"
+    ],
+    "ivaEsclusa": "Precios sin IVA."
+  },
+  "domande": {
+    "titolo": "Las preguntas que nos hacen todos",
+    "nonTrovi": "¿No encuentras la tuya? Escríbenos a [{email}](mailto:{email}): te respondemos nosotros, no un bot.",
+    "lista": [
+      {
+        "d": "¿Y si se equivoca?",
+        "r": "Al cliente no le llega nada sin tu aprobación. Las partidas dudosas las ves resaltadas, las que no están en tu tarifa quedan sin precio y ningún precio se inventa nunca."
+      },
+      {
+        "d": "No se me dan bien los ordenadores.",
+        "r": "Si sabes mandar un audio por WhatsApp, sabes usarlo. Se abre desde el navegador del móvil, no hay nada que instalar, y si te atascas te responde una persona."
+      },
+      {
+        "d": "Los precios solo los sé yo.",
+        "r": "Justo por eso: usamos solo los tuyos. Subes tu tarifa tal como es, incluso en foto o desde presupuestos antiguos, y lo que no está queda sin precio hasta que lo decidas tú."
+      },
+      {
+        "d": "¿No basta con un chatbot?",
+        "r": "Un asistente genérico no conoce tu tarifa, así que estima los precios. No reparte el IVA con los «beni significativi» (bienes significativos, una norma italiana del IVA en obras), no hace el PDF con tu logo y no recoge el sí del cliente."
+      },
+      {
+        "d": "¿Sirve para mi oficio?",
+        "r": "Si trabajas por partidas y medidas, sí: electricistas, fontaneros, pintores, alicatadores, albañiles, instaladores de pladur, instaladores de ventanas y puertas, herreros, jardineros. Las palabras de tu oficio las encuentra en tu tarifa. Con el piloto lo medimos también en oficios que aún no hemos probado."
+      },
+      {
+        "d": "¿Puedo contarlo en mi idioma? ¿Y si el cliente es extranjero?",
+        "r": "Sí. Escribes o dictas la visita en rumano, albanés, árabe, ucraniano, español u otro idioma, y el borrador sale en italiano con los precios de tu tarifa. Por voz depende del móvil: si tu idioma no está, lo escribes. Y si el cliente habla inglés, alemán, francés, español o neerlandés, le mandas el presupuesto en su idioma: la traducción la revisas tú, y el texto italiano queda al lado y es el que vale."
+      },
+      {
+        "d": "Hablo rápido, hay ruido, uso mis propios términos.",
+        "r": "El sistema conoce las partidas de tu tarifa y los nombres que usas tú. Si una medida no queda clara, te la vuelve a preguntar en vez de adivinar."
+      },
+      {
+        "d": "El cliente quiere papel.",
+        "r": "El PDF se imprime como cualquier presupuesto. Pero con el enlace acepta en un minuto, sin registrarse, y tú tienes la prueba de lo que ha aceptado."
+      },
+      {
+        "d": "¿Dónde acaban los audios y los datos de mis clientes?",
+        "r": "La tarifa y los presupuestos están en servidores de la Unión Europea. Para preparar el borrador, el texto de la visita pasa por un servicio de inteligencia artificial, indicado en la [página de Privacidad](/privacy). A nuestros servidores solo llega el texto, no el audio, y firmamos contigo el acuerdo para el tratamiento de los datos de tus clientes."
+      },
+      {
+        "d": "¿Tengo que cambiar el programa de facturas?",
+        "r": "No, quédate con el tuyo. PreventivoLampo se ocupa de los presupuestos; las facturas se quedan donde están."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "El próximo presupuesto, mándalo desde la furgoneta.",
+    "testo": "Buscamos 10 artesanos para el programa piloto, de cualquier oficio de la casa. Déjanos tus datos: te llamamos nosotros, por orden de llegada, para ver si es para ti.",
+    "vederlo": "¿Quieres verlo antes de apuntarte? [Pruébalo en WhatsApp]({whatsapp}): el primer mensaje ya está escrito, dale a enviar y luego cuenta una visita. O [prueba con un ejemplo](/prova).",
+    "scrivere": "¿Prefieres escribir? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Solicitud para el programa piloto",
+      "nome": "Nombre y apellidos",
+      "mestiere": "Oficio",
+      "scegli": "Elige",
+      "comune": "Localidad",
+      "cellulare": "Móvil",
+      "volume": "Presupuestos por semana",
+      "privacy": "He leído la [información de privacidad](/privacy) y acepto que me contactéis para el programa piloto.",
+      "invia": "Enviar la solicitud",
+      "invio": "Enviando…",
+      "conferma": "Gracias, {nome}. Te llamamos en un máximo de dos días laborables.",
+      "errore": "No se ha podido enviar. Inténtalo de nuevo en un rato o escríbenos a studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Escribe tu nombre y apellidos.",
+        "mestiere": "Elige tu oficio.",
+        "comune": "Escribe la localidad.",
+        "telefono": "Escribe un móvil italiano válido.",
+        "volume": "Elige una de las opciones.",
+        "privacy": "Necesitamos tu consentimiento para poder volver a contactarte."
+      },
+      "mestieri": {
+        "Elettricista": "Electricista",
+        "Idraulico": "Fontanero",
+        "Termoidraulico": "Instalador de calefacción y fontanería",
+        "Imbianchino": "Pintor",
+        "Piastrellista": "Alicatador",
+        "Muratore": "Albañil",
+        "Cartongessista": "Instalador de pladur",
+        "Serramentista": "Instalador de ventanas y puertas",
+        "Falegname": "Carpintero",
+        "Fabbro": "Cerrajero",
+        "Giardiniere": "Jardinero",
+        "Impresa edile": "Empresa de construcción",
+        "Impresa di ristrutturazioni": "Empresa de reformas",
+        "Altro": "Otro"
+      },
+      "volumi": {
+        "1 o 2": "1 o 2",
+        "da 3 a 5": "de 3 a 5",
+        "più di 5": "más de 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Privacidad",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "Esta página explica qué datos personales trata PreventivoLampo, para qué, dónde acaban y cuánto tiempo se guardan."
+        },
+        {
+          "t": "h2",
+          "testo": "Quién trata los datos"
+        },
+        {
+          "t": "p",
+          "testo": "El responsable del tratamiento es Sofiane Khatib, K Digital Solution, Monza (MB). Para cualquier consulta sobre tus datos escribe a [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "Con los datos de los clientes de un artesano (nombres, direcciones de las obras, presupuestos) el responsable es el artesano: nosotros los tratamos por su cuenta, como encargado del tratamiento, según el acuerdo que firmamos con él."
+        },
+        {
+          "t": "h2",
+          "testo": "Qué datos, para qué y por cuánto tiempo"
+        },
+        {
+          "t": "h3",
+          "testo": "Si te apuntas al programa piloto"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Nombre, oficio, municipio, móvil y, si lo indicas, cuántos presupuestos haces a la semana.",
+            "Los usamos solo para llamarte y ver si el piloto es para ti (base jurídica: tu solicitud y tu consentimiento).",
+            "Si no entras en el piloto, los borramos en un plazo de 12 meses; puedes pedirnos que lo hagamos antes en cualquier momento."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si usas el área de artesanos"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Email de acceso, datos de tu empresa que introduces (razón social, partita IVA (número de IVA italiano), dirección, teléfono, IBAN si lo indicas), logo, tarifas y presupuestos.",
+            "Si subes tu lista de precios en PDF o foto, o a partir de presupuestos antiguos, la inteligencia artificial lee solo las líneas de precio: los nombres de los clientes no se transcriben y el archivo no se guarda.",
+            "Hacen falta para darte el servicio (base jurídica: el contrato, también durante el piloto gratuito).",
+            "Se quedan mientras uses el servicio. Cuando lo dejas, los borramos en 30 días, salvo lo que la ley nos obliga a conservar (por ejemplo las facturas, 10 años)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si eres cliente de un artesano y abres su presupuesto"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Cuando aceptas o rechazas un presupuesto, registramos el nombre que escribes, la fecha y la hora, la dirección IP y la huella del PDF.",
+            "Le sirven al artesano como prueba de la aceptación. Los guardamos por su cuenta, mientras él use el servicio.",
+            "Para ver, corregir o borrar estos datos puedes dirigirte al artesano o a nosotros: le pasamos la solicitud."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Si pruebas PreventivoLampo con un ejemplo o por WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "El texto que escribes, el borrador que sale de él y, en WhatsApp, el número desde el que escribes.",
+            "Los borradores de prueba se borran solos a los 7 días; en WhatsApp, el borrador que espera tu respuesta se queda como máximo una hora.",
+            "En las pruebas no escribas datos de personas reales: bastan trabajos inventados.",
+            "Para limitar los abusos guardamos una huella (hash) de la dirección IP, no la dirección en claro."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "A quién se los confiamos"
+        },
+        {
+          "t": "p",
+          "testo": "Usamos estos proveedores, cada uno solo para su parte:"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase: base de datos, acceso al área y archivo de los PDF, en Irlanda (UE).",
+            "Vercel: la web y sus funciones, en Fráncfort (UE).",
+            "Anthropic (Claude): lee el texto de la visita a la obra y prepara el borrador, y traduce las líneas del presupuesto cuando el cliente habla otro idioma, en Estados Unidos.",
+            "Twilio y WhatsApp (Meta): reciben y envían los mensajes de WhatsApp.",
+            "n8n: conecta los mensajes de WhatsApp con PreventivoLampo.",
+            "Resend: envía los emails con el código de acceso."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Cuando los datos salen de la Unión Europea, nos basamos en las garantías que prevé el RGPD: la certificación EU-US Data Privacy Framework o las cláusulas contractuales tipo de la Comisión Europea. No vendemos los datos y no los usamos para publicidad ni para entrenar modelos de inteligencia artificial."
+        },
+        {
+          "t": "h2",
+          "testo": "Tus derechos"
+        },
+        {
+          "t": "p",
+          "testo": "Puedes pedirnos ver tus datos, corregirlos, borrarlos, limitar su uso, oponerte al tratamiento o recibirlos en un formato legible, y retirar tu consentimiento cuando quieras. Escribe a la dirección de arriba: respondemos en 30 días. También puedes presentar una reclamación ante el Garante per la protezione dei dati personali (la autoridad italiana de protección de datos, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Condiciones del servicio",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo es un servicio de Sofiane Khatib, K Digital Solution, Monza (MB). Ayuda a artesanos y empresas de construcción a preparar presupuestos: a partir de lo que cuentas de la visita a la obra, prepara un borrador con los precios de la tarifa de la empresa, que el artesano revisa, aprueba y envía al cliente. El servicio es solo para empresas y profesionales con partita IVA (número de IVA italiano)."
+        },
+        {
+          "t": "h2",
+          "testo": "Programa piloto"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Diez plazas, que asignamos nosotros después de una llamada.",
+            "30 días gratis desde el inicio, con presupuestos ilimitados. La lista de precios la subes tú (Excel, PDF o foto); si lo necesitas, te ayudamos nosotros.",
+            "Sin renovación automática: al acabar los 30 días decides tú si te quedas. Si no nos dices nada, el piloto termina ahí.",
+            "A cambio te pedimos que lo uses en tus trabajos de verdad y que nos digas qué funciona y qué no."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Después del piloto"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Cuota: 19,90 € al mes o 199 € al año, IVA no incluido, con presupuestos ilimitados. Sin costes de puesta en marcha.",
+            "El plan mensual lo cancelas cuando quieras, con efecto al final del mes ya pagado. El anual dura 12 meses y solo se renueva si tú lo pides.",
+            "Si cambiamos los precios, te avisamos al menos 30 días antes, y solo valen a partir de la siguiente renovación."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "El presupuesto lo decides tú"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo propone, tú decides: ningún presupuesto llega al cliente sin que lo hayas abierto y aprobado. Antes de aprobar, revisa las partidas, las cantidades y los precios.",
+            "Los precios salen solo de tu tarifa. Las partidas que no están quedan «pendientes de precio» y el precio lo pones tú.",
+            "El cálculo del IVA sigue las respuestas que das y las reglas de la Agenzia delle Entrate (la Hacienda italiana), pero no es asesoramiento fiscal: para los casos particulares, consulta a tu asesor (commercialista).",
+            "La relación con el cliente, los precios y las obras siguen siendo tuyos: PreventivoLampo no es parte del contrato entre tú y él."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Tus datos son tuyos"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "La tarifa, los presupuestos y los datos de la empresa son tuyos. Si lo pides, te mandamos la tarifa en Excel y los PDF de los presupuestos.",
+            "Los datos de tus clientes los tratamos por cuenta tuya, según el acuerdo de tratamiento de datos que firmamos al empezar. Cómo tratamos el resto de los datos está explicado en la página de Privacidad.",
+            "No introduzcas datos de salud ni otros datos especiales de tus clientes: no hacen falta para el presupuesto."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Qué garantizamos y qué no"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Hacemos todo lo posible para que el servicio funcione siempre y sin errores, pero la lectura de la visita a la obra puede fallar: por eso cada borrador hay que revisarlo antes de aprobarlo.",
+            "Puede haber interrupciones por mantenimiento o por averías de los proveedores; los mantenimientos grandes te los avisamos antes.",
+            "Dentro de los límites de la ley, y salvo dolo o negligencia grave, nuestra responsabilidad no supera lo que nos has pagado en los últimos 12 meses. Durante el piloto gratuito el servicio se ofrece tal cual."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Uso correcto"
+        },
+        {
+          "t": "p",
+          "testo": "Usa PreventivoLampo solo para los presupuestos de tu empresa. No compartas tu acceso con personas ajenas y no uses el servicio para subir textos ofensivos ni peticiones masivas. Si no se respetan estas reglas, podemos suspender el acceso, después de avisarte."
+        },
+        {
+          "t": "h2",
+          "testo": "Cambios y ley aplicable"
+        },
+        {
+          "t": "p",
+          "testo": "Si cambiamos estas condiciones, te lo decimos por email al menos 30 días antes. Se aplica la ley italiana y, para las controversias, el foro di Monza (el tribunal de Monza). Para cualquier duda escribe a [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookies",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo usa solo cookies técnicas: sin ellas, el área de artesanos no sabría que has entrado y la web no recordaría el idioma que elegiste. Nada de cookies de perfilado, nada de estadísticas, nada de herramientas de terceros que te sigan de una web a otra. Por eso no ves ningún banner de cookies."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione**: mantiene abierto el acceso al área de artesanos después de que introduces el código recibido por email. Solo la creamos cuando entras, dura 30 días y se borra cuando pulsas «Salir».",
+            "**pl_lingua**: recuerda el idioma que elegiste con el selector de idiomas. Solo la creamos si cambias de idioma y dura un año."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Las fuentes y las banderas las sirve la propia web, no servidores externos. Si algún día hiciera falta otra cookie, esta página dirá cuál es, para qué sirve y cuánto dura, y si no es técnica te lo preguntaremos antes."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Entrar · PreventivoLampo",
+    "h1": "Entra en tus presupuestos",
+    "sotto": "Tu tarifa, tus precios, los presupuestos con tu nombre arriba.",
+    "email": "Tu email",
+    "mandaCodice": "Envíame el código",
+    "invioCodice": "Enviando el código…",
+    "spiegazione": "Te mandamos un código de 6 cifras. Si es la primera vez, con el mismo código registras tu empresa.",
+    "scritto": "Te hemos escrito a **{email}**. Si no lo encuentras, mira en el correo no deseado.",
+    "codice": "Código",
+    "accedi": "Entrar",
+    "controllo": "Comprobando…",
+    "nuovoTra": "Código nuevo en {n} s",
+    "nuovo": "Envíame un código nuevo",
+    "cambiaEmail": "Cambiar email",
+    "errore": "Algo no va bien. Inténtalo otra vez.",
+    "condizioni": "Al entrar aceptas las [condiciones](/condizioni) y la [política de privacidad](/privacy)."
+  },
+  "prova": {
+    "titolo": "Prueba el motor",
+    "h1": "De la visita a la obra al borrador",
+    "testo": "El motor extrae los trabajos, los empareja con la tarifa y te prepara el borrador para revisar. Los precios salen solo de la tarifa: lo que no encuentra queda pendiente de precio, y lo que falta te lo pregunta.",
+    "nota": "Datos de prueba inventados: la empresa de la tarifa y los clientes de los ejemplos no existen. No introduzcas nombres, direcciones ni números de personas reales: los borradores se quedan 7 días y cualquiera que tenga el enlace puede abrirlos. El texto libre lo procesa un servicio de inteligencia artificial. [Privacidad](/privacy)"
+  }
+}

@@ -1,10 +1,10 @@
 import { Marchio } from "@/components/Marchio";
 
-export function Logo({ href = "#top", suScuro = true }: { href?: string; suScuro?: boolean }) {
+export function Logo({ href = "#top", suScuro = true, etichetta }: { href?: string; suScuro?: boolean; etichetta?: string }) {
   return (
     <a
       href={href}
-      aria-label={href === "#top" ? "PreventivoLampo, torna all'inizio" : "PreventivoLampo, home"}
+      aria-label={etichetta ?? (href === "#top" ? "PreventivoLampo, torna all'inizio" : "PreventivoLampo, home")}
       className={`flex min-h-11 items-center gap-2.5 no-underline lg:gap-3 ${suScuro ? "text-fondo" : "text-inchiostro"}`}
     >
       <Marchio className="size-9 lg:size-10" />

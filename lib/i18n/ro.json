@@ -1,0 +1,1137 @@
+{
+  "area": {
+    "titoli": {
+      "preventivi": "Ofertele tale",
+      "benvenuto": "Firma ta",
+      "nuovo": "Ofertă nouă",
+      "impresa": "Datele firmei",
+      "listino": "Listă de prețuri",
+      "importa": "Importă lista de prețuri",
+      "revisioneImport": "Verifică importul",
+      "daPrezzare": "De prețuit",
+      "preventivo": "Ofertă",
+      "revisione": "Revizuirea ofertei",
+      "prova": "Încearcă motorul"
+    },
+    "testata": {
+      "logo": "PreventivoLampo, ofertele tale",
+      "sezioni": "Secțiuni",
+      "preventivi": "Oferte",
+      "listino": "Listă de prețuri",
+      "daPrezzare": "De prețuit",
+      "impresa": "Firma",
+      "proposte": "propuneri",
+      "esci": "Ieși"
+    },
+    "formato": {
+      "unita": {
+        "m2": "m²",
+        "m": "m",
+        "m3": "m³",
+        "cad": "buc.",
+        "h": "ore",
+        "100kg": "chintale",
+        "kg": "kg",
+        "l": "litri",
+        "corpo": "forfetar"
+      },
+      "perUnita": {
+        "m2": "la m²",
+        "m": "la metru",
+        "m3": "la m³",
+        "cad": "la bucată",
+        "h": "pe oră",
+        "100kg": "la chintal",
+        "kg": "la kg",
+        "l": "la litru",
+        "corpo": "forfetar"
+      },
+      "regime": {
+        "ordinaria_22": "IVA 22%",
+        "agevolata_10": "IVA 10%",
+        "agevolata_10_beni_significativi": "IVA 10% cu «beni significativi»"
+      }
+    },
+    "home": {
+      "h1": "Oferte",
+      "nuovo": "Ofertă nouă",
+      "mancaListino": "Mai lipsește doar lista de prețuri.",
+      "mancaListinoTesto": "Importă fișierul tău sau pornește de la exemplu: apoi prima ofertă e un mesaj vocal.",
+      "preparaListino": "Pregătește lista de prețuri",
+      "daControllare": "de verificat",
+      "inAttesa": "în așteptare · {importo}",
+      "accettati": "acceptate · {importo}",
+      "rifiutati": "refuzate",
+      "nessuno": "Încă nicio ofertă.",
+      "nessunoTesto": "Povestește următoarea vizită la fața locului: în jumătate de minut ai schița.",
+      "clienteDaIndicare": "Client de completat",
+      "numeroDel": "nr. {numero} din {data}",
+      "stati": {
+        "bozza": "De verificat",
+        "approvato": "Trimisă",
+        "accettato": "Acceptată",
+        "rifiutato": "Refuzată"
+      }
+    },
+    "benvenuto": {
+      "passo": "Pasul 1 din 2",
+      "h1": "Firma ta",
+      "sotto": "Aceste date apar în capul fiecărei oferte. Le poți schimba oricând."
+    },
+    "nuovo": {
+      "torna": "Înapoi la devize",
+      "h1": "Deviz nou",
+      "serveListino": "Mai întâi ai nevoie de lista de prețuri: prețurile vin doar de acolo.",
+      "preparaListino": "Pregătește lista de prețuri",
+      "sotto": "Scrie sau dictează ce ai văzut la fața locului. Ciorna folosește cele {n} poziții din lista ta de prețuri; ce nu găsește rămâne de prețuit.",
+      "claude": "Textul este prelucrat cu Claude de la Anthropic și salvat împreună cu devizul.",
+      "racconta": "Povestește lucrarea așa cum ai spune-o într-un mesaj vocal, în italiană sau în limba ta",
+      "segnaposto": "Clientul, adresa, dacă locuiește acolo. Ce se scoate, ce se pune, măsurile. Cine cumpără materialele.",
+      "attesa": "Durează cam 20 de secunde…",
+      "prepara": "Pregătește ciorna",
+      "errore": "Nu am reușit să pregătesc ciorna. Încearcă din nou.",
+      "fasi": [
+        "Citesc ce ai spus de la fața locului…",
+        "Separ lucrările, măsurile și excluderile…",
+        "Caut fiecare poziție în lista ta de prețuri…",
+        "Verific ce lipsește și regimul IVA…",
+        "Pregătesc ciorna pentru verificare…"
+      ]
+    },
+    "impresa": {
+      "h1": "Datele firmei",
+      "sotto": "Ce citește clientul la începutul și la sfârșitul devizului.",
+      "accessoCon": "Te-ai conectat cu {email}."
+    },
+    "modulo": {
+      "chiSiete": "Cine sunteți",
+      "ragioneSociale": "Denumirea firmei",
+      "piva": "Partita IVA (cod de TVA)",
+      "cf": "Codice fiscale (dacă este diferit)",
+      "indirizzo": "Sediu (stradă, număr, oraș)",
+      "telefono": "Telefon",
+      "email": "Email pe deviz",
+      "cheLavori": "Ce lucrări faceți",
+      "cheLavoriNota": "Ne ajută să înțelegem mai bine ce povestești de la fața locului.",
+      "mestieri": {
+        "impresaEdile": "Firmă de construcții",
+        "muratore": "Zidar",
+        "idraulico": "Instalator",
+        "elettricista": "Electrician",
+        "imbianchino": "Zugrav",
+        "piastrellista": "Faianțar",
+        "cartongessista": "Montator gips-carton",
+        "serramentista": "Montator tâmplărie",
+        "termoidraulico": "Instalator termic",
+        "giardiniere": "Grădinar"
+      },
+      "sulPreventivo": "Pe deviz",
+      "validita": "Valabilitatea devizului (zile)",
+      "validitaNota": "După aceste zile, clientul nu îl mai poate accepta din link.",
+      "condizioni": "Condiții de plată",
+      "condizioniEsempio": "Ex. 30% la acceptare, restul la sfârșitul lucrărilor",
+      "iban": "IBAN pentru transferuri bancare",
+      "salvo": "Se salvează…",
+      "registra": "Înregistrează firma",
+      "salva": "Salvează datele",
+      "errore": "Nu am reușit să salvez. Încearcă din nou.",
+      "salvati": "Datele au fost salvate. Următoarele PDF-uri le vor folosi pe acestea."
+    },
+    "logo": {
+      "titolo": "Logo",
+      "attuale": "Logoul actual",
+      "nessuno": "Niciun logo",
+      "carico": "Se încarcă…",
+      "cambia": "Schimbă logoul",
+      "carica": "Încarcă logoul",
+      "togli": "Șterge",
+      "nota": "PNG sau JPG, până la 1 MB. Mai bine pe fundal alb sau transparent.",
+      "errore": "Nu am reușit să încarc logoul."
+    },
+    "listino": {
+      "passo": "Pasul 2 din 2",
+      "h1": "Lista ta de prețuri",
+      "h1Vuoto": "Lista ta de prețuri este goală",
+      "sotto": "Prețurile din devize vin doar de aici. Ce nu e în listă rămâne de prețuit: tu decizi.",
+      "sottoVuoto": "Prețurile din devize vin doar din lista ta de prețuri, niciodată inventate. Alege cum o completezi.",
+      "importate": "{n} poziții importate. Verifică prețurile și adaugă cum le spui tu când vorbești: ajută la recunoaștere.",
+      "esempio": "{n} poziții au încă prețul de exemplu. Verifică-le înainte să trimiți devize adevărate."
+    },
+    "elencoListino": {
+      "cerca": "Caută în listă",
+      "cercaSegnaposto": "Nume, cod sau cuvânt spus",
+      "aggiungiVoce": "Adaugă o poziție",
+      "trovate": "{n} poziții găsite din {totale}",
+      "voci": "{n} poziții",
+      "importaLink": "importă din Excel, PDF sau poză",
+      "nuovaVoce": "Poziție nouă",
+      "prezzoEsempio": "preț de exemplu",
+      "nessunaVoce": "Nicio poziție cu «{cerca}».",
+      "mostraAltre": "Arată încă {n} poziții",
+      "nomeVoce": "Numele poziției",
+      "prezzo": "Preț €",
+      "unita": "Unitate",
+      "codice": "Cod",
+      "descrizione": "Descriere pentru deviz (opțională)",
+      "aVoce": "Cum o numești vorbind",
+      "aVoceSegnaposto": "Ex. gletuit, glet, gletuire pereți",
+      "aVoceNota": "Cuvinte separate prin virgulă: ajută la recunoașterea poziției în mesajele vocale.",
+      "categoria": "Categorie (opțională)",
+      "beneSignificativo": "Bene significativo (bun important) pentru IVA 10%",
+      "beneNota": "Obiecte sanitare, baterii, centrale termice, tâmplărie, lifturi… (DM 29/12/1999).",
+      "materiale": "Prețul include materialul",
+      "materialeNota": "Dacă îl cumpără clientul, rândul rămâne de prețuit (doar manoperă).",
+      "salvo": "Se salvează…",
+      "salva": "Salvează",
+      "aggiungi": "Adaugă în listă",
+      "annulla": "Anulează",
+      "togliConferma": "Da, scoate poziția",
+      "togli": "Scoate din listă",
+      "errorePrezzo": "Scrie prețul în euro, de exemplu 18,50.",
+      "erroreSalva": "Nu am reușit să salvez.",
+      "erroreTogli": "Nu am reușit să scot poziția."
+    },
+    "listinoVuoto": {
+      "haiListino": "Ai deja o listă de prețuri?",
+      "haiListinoTesto": "Încarcă lista pe care o ai: Excel, PDF sau o poză. O citim noi, iar tu verifici rând cu rând.",
+      "importa": "Importă fișierul",
+      "esempio": "Pornește de la un exemplu",
+      "esempioTesto": "Cele {n} poziții din demo (băi, bucătării, vopsitorii, instalații) cu prețuri din liste de prețuri publice. Apoi pui prețurile tale.",
+      "copio": "Copiez…",
+      "usaEsempio": "Folosește exemplul",
+      "unaAllaVolta": "O poziție pe rând",
+      "unaAllaVoltaTesto": "Scrie tu lucrările pe care le faci cel mai des, cu prețul tău.",
+      "aMano": "Adaugă manual",
+      "errore": "Nu am reușit să copiez lista."
+    },
+    "importa": {
+      "torna": "Înapoi la listă",
+      "h1": "Importă-ți lista de prețuri",
+      "sotto": "Merge orice ai deja: un Excel, un PDF, pozele listei scrise de mână sau câteva devize vechi. Nimic nu intră în listă înainte să verifici tu.",
+      "cosaLeggiamo": "Ce citim",
+      "punti": [
+        "Coloanele se recunosc după titluri (Descriere, U.M., Preț…). Dacă fișierul nu are titluri clare, le citește inteligența artificială, iar tu le poți corecta.",
+        "Din PDF și poze, pozițiile le citește inteligența artificială: îți arată unde nu e sigură, iar numele clienților din devizele vechi nu le transcrie.",
+        "Unitățile scrise în multe feluri (mq, ml, nr, pz, a corpo) devin cele din deviz.",
+        "Codurile care lipsesc sau se repetă le atribuim noi; rândurile de titlu fără preț se sar.",
+        "Codurile care există deja în lista ta nu se suprascriu."
+      ]
+    },
+    "caricaListino": {
+      "leggo": "Citesc lista…",
+      "scegli": "Alege lista ta de prețuri",
+      "formati": "Excel sau CSV, ori PDF și poze: și mai multe poze deodată, sau câteva devize vechi",
+      "attesa": "Din PDF și poze durează până la un minut.",
+      "errore": "Nu am reușit să citesc fișierul."
+    },
+    "revisioneImport": {
+      "altroFile": "Încarcă alt fișier",
+      "h1": "Verifică înainte să imporți",
+      "sotto": "Rândurile galbene au o problemă: unitatea sau prețul nu se citesc. Corectează-le sau debifează-le.",
+      "ilFile": "fișierul",
+      "letteAi": "Aceste poziții au fost citite de AI din PDF-ul sau din pozele tale. **Verifică fiecare preț** înainte să confirmi: unde AI-ul nu a fost sigur, găsești o notă.",
+      "colonne": "Coloanele fișierului",
+      "metodoAi": "recunoscute de AI: verifică-le",
+      "metodoMano": "alese de tine",
+      "metodoTitoli": "recunoscute după titluri",
+      "campi": {
+        "nome": "Descrierea poziției",
+        "prezzo": "Preț",
+        "unita": "Unitate de măsură",
+        "codice": "Cod",
+        "descrizione": "Descriere lungă",
+        "categoria": "Categorie"
+      },
+      "scegliColonna": "Alege…",
+      "nessuna": "Niciuna",
+      "esempioColonna": "(ex. {testo})",
+      "rileggo": "Recitesc fișierul…",
+      "rileggi": "Recitește cu aceste coloane",
+      "rileggiNota": "Dacă recitești fișierul, corecturile făcute mai jos se pierd.",
+      "daImportare": "{n} poziții de importat din {file}",
+      "daSistemare": "{n} de corectat",
+      "soloDubbi": "Arată doar rândurile de verificat",
+      "importaRiga": "Importă rândul {n}",
+      "descrizione": "Descriere",
+      "rigaFile": "rândul {n} din fișier",
+      "rigaFileUnita": "rândul {n} din fișier, unitatea «{unita}»",
+      "prezzo": "Preț €",
+      "unita": "Unitate",
+      "scegliUnita": "Alege",
+      "codice": "Cod",
+      "correggi": "Corectează",
+      "tutteAPosto": "Toate rândurile sunt în regulă.",
+      "mostraAltre": "Arată alte rânduri ({n})",
+      "importo": "Import în curs…",
+      "importaN": "Importă {n} poziții",
+      "annulla": "Anulează importul",
+      "sistemaNota": "Corectează rândurile marcate sau debifează-le ca să imporți.",
+      "errore": "Ceva nu merge. Încearcă din nou."
+    },
+    "daPrezzare": {
+      "h1": "De adăugat în lista de prețuri",
+      "sotto": "Lucrări pe care le-ai evaluat manual într-un deviz, bifând «propune adăugarea în lista de prețuri». Dacă le adaugi, data viitoare prețul apare singur.",
+      "niente": "Nimic de adăugat.",
+      "nienteTesto": "Când pui manual prețul unui rând din afara listei, bifează propunerea și o găsești aici.",
+      "torna": "Înapoi la devize",
+      "dalPreventivo": "Din devizul nr. {numero}",
+      "haiMesso": "ai pus {prezzo} {unita}",
+      "nomeListino": "Nume în listă",
+      "prezzo": "Preț €",
+      "unita": "Unitate",
+      "codice": "Cod",
+      "errorePrezzo": "Scrie prețul în euro, de exemplu 18,50.",
+      "erroreSalva": "Nu am reușit să salvez.",
+      "aggiungi": "Adaugă în listă",
+      "nonServe": "Nu e nevoie"
+    },
+    "preventivo": {
+      "tutti": "Toate devizele",
+      "registro": "Istoric",
+      "eventi": {
+        "creato": "Ciornă creată",
+        "approvato": "Aprobat și gata de trimis",
+        "visto": "Deschis de client",
+        "accettato": "Acceptat de client",
+        "rifiutato": "Refuzat de client"
+      },
+      "da": "de {nome}",
+      "ip": "IP {ip}",
+      "impronta": "amprenta PDF-ului acceptat {impronta}"
+    },
+    "eliminaBozza": {
+      "elimina": "Șterge această ciornă",
+      "conferma": "O ștergi definitiv?",
+      "si": "Da, șterge",
+      "no": "Nu"
+    },
+    "revisione": {
+      "bozzaN": "Ciornă nr. {numero}",
+      "origineEsempio": "exemplul {caso} din banc de probă, rezultat înregistrat al motorului",
+      "origineMotore": "pregătită în {secondi} s",
+      "h1": "Verifică și aprobă",
+      "sotto": "Niciun preț nu e inventat: cele pe care le vezi vin din listă, cele goale le completezi tu.",
+      "statoRighe": "Starea pozițiilor",
+      "pronta": "{n} pregătită",
+      "pronte": "{n} pregătite",
+      "contaDaPrezzare": "{n} fără preț",
+      "contaSenzaMisura": "{n} fără măsură",
+      "contaSenzaValore": "{n} fără valoarea bunului",
+      "domandaIva": "IVA: {n} întrebare",
+      "domandeIva": "IVA: {n} întrebări",
+      "motivi": {
+        "prezzo": "Lipsește prețul",
+        "misura": "Lipsește măsura",
+        "valore": "Lipsește valoarea bunului"
+      },
+      "rigaPronta": "Pregătită",
+      "daCompletare": "de completat",
+      "cliente": "Client",
+      "nome": "Nume",
+      "indirizzo": "Adresa lucrării",
+      "linguaCliente": "Limba clientului",
+      "inCheLingua": "În ce limbă îi trimiți devizul?",
+      "riceve": "Clientul primește mesajul, pagina și PDF-ul în {lingua}, cu textul italian alături: în caz de dubiu, valabil este cel italian. Verifică pozițiile traduse, le poți corecta.",
+      "cambiate": "Ai schimbat pozițiile după traducere: refă traducerea, ca să citească clientul aceleași lucruri ca tine.",
+      "traduco": "Traduc…",
+      "rifai": "Refă traducerea",
+      "traduciIn": "Tradu în {lingua}",
+      "escluso": "Exclus: {testo}",
+      "ivaTitolo": "IVA: trei întrebări",
+      "abitazione": "Este locuință?",
+      "abitazioneSi": "Da, locuiește cineva acolo",
+      "abitazioneNo": "Nu, magazin sau birou",
+      "intervento": "Tipul intervenției",
+      "ordinaria": "Ordinară",
+      "straordinaria": "Extraordinară",
+      "ristrutturazione": "Renovare",
+      "materiali": "Cine cumpără materialele?",
+      "materialiImpresa": "Le cumpăr eu",
+      "materialiCliente": "Clientul",
+      "ripartizione": "10% pe {a10}, 22% pe {a22}",
+      "commercialista": "Verifică întotdeauna cu contabilul tău (commercialista).",
+      "rispondi": "Răspunde la cele trei întrebări și calculez eu cota corectă.",
+      "lavorazioni": "Lucrări · {n}",
+      "soloDaSistemare": "Doar cele de rezolvat",
+      "haiDetto": "Ai spus: «{testo}»",
+      "voceListino": "Poziție din listă de prețuri",
+      "fuoriListino": "În afara listei: preț introdus manual",
+      "descrizione": "Descriere pe deviz",
+      "quantita": "Cantitate",
+      "unita": "Unitate",
+      "scegli": "Alege",
+      "prezzo": "Preț €",
+      "valoreBene": "Din care valoarea bunului (obiecte sanitare, baterii…), pentru IVA",
+      "proponi": "Propune să o adaugi în lista mea de prețuri cu acest preț",
+      "togliRiga": "Șterge rândul",
+      "aggiungiRiga": "Adaugă un rând",
+      "esclusi": "Excluse din ofertă",
+      "unaPerRiga": "Una pe rând",
+      "note": "Notițe de la vizita pe șantier (nu apar în PDF)",
+      "riepilogo": "Rezumat",
+      "imponibile": "Baza de calcul (imponibile)",
+      "ivaSu": "IVA {aliquota}% pe {importo}",
+      "totale": "Total",
+      "primaManca": "Înainte să aprobi, lipsește:",
+      "righeManca": "(rândul {righe})",
+      "mancanze": {
+        "quantita": "lipsește cantitatea",
+        "unita": "lipsește unitatea de măsură",
+        "prezzo": "lipsește prețul",
+        "abitazione": "IVA: este o locuință?",
+        "intervento": "IVA: tipul de intervenție",
+        "materiali": "IVA: cine cumpără materialele",
+        "valoreBene": "valoarea bunului semnificativ",
+        "valoreSupera": "valoarea bunului depășește suma rândului",
+        "traduzioneDaRifare": "traducerea în {lingua} trebuie refăcută: s-au schimbat pozițiile",
+        "traduci": "tradu oferta în {lingua}"
+      },
+      "salvaBozza": "Salvează ciorna",
+      "salvata": "Ciorna a fost salvată.",
+      "totaleIvaInclusa": "Total cu IVA inclus",
+      "imponibileFinora": "Baza de calcul până acum",
+      "sistemaDato": "Rezolvă {n} dată",
+      "sistemaDati": "Rezolvă {n} date",
+      "approvaGenera": "Aprobă și generează PDF-ul",
+      "approvi": "Aprobi oferta?",
+      "confermaTesto": "Total {totale} · {regime}. După aprobare, ciorna nu mai poate fi modificată: generez PDF-ul și linkul pentru client.",
+      "controllato": "Am verificat prețurile și cantitățile",
+      "genero": "Generez PDF-ul…",
+      "torna": "Înapoi la ciornă",
+      "erroreSalva": "Nu am reușit să salvez. Încearcă din nou.",
+      "erroreApprova": "Nu am reușit să aprob. Încearcă din nou.",
+      "erroreTraduci": "Nu am reușit să traduc. Încearcă din nou."
+    },
+    "approvato": {
+      "preventivoN": "Oferta nr. {numero}",
+      "accettato": "Clientul a acceptat.",
+      "rifiutato": "Clientul a refuzat.",
+      "pronto": "Oferta e gata. Acum trimite-o.",
+      "totaleIvaInclusa": "Total cu IVA inclus",
+      "riceve": "Clientul primește mesajul, pagina și PDF-ul în {lingua}, cu textul în italiană alături, care are valoare juridică.",
+      "whatsapp": "Trimite pe WhatsApp",
+      "copiato": "Link copiat",
+      "copia": "Copiază linkul",
+      "apriPdf": "Deschide PDF-ul",
+      "paginaCliente": "Vezi pagina pe care o vede clientul",
+      "aChePunto": "Unde a ajuns",
+      "approvatoDaTe": "Aprobată de tine",
+      "vistoDalCliente": "Văzută de client",
+      "quandoApre": "când deschide linkul",
+      "accettatoDa": "Acceptată de {nome}",
+      "rifiutatoDa": "Refuzată de {nome}",
+      "risposta": "Răspunsul clientului",
+      "accettaCon": "acceptă cu nume și dată",
+      "fatto": "(făcut)",
+      "inAttesa": "(în așteptare)",
+      "nota": "Clientul deschide linkul, vede devizul și îl acceptă cu nume și dată, fără să-și facă cont. Reîncarcă pagina ca să vezi dacă l'a deschis."
+    },
+    "prova": {
+      "nuovaProva": "Probă nouă",
+      "h1": "De la vizita pe șantier la ciornă",
+      "sotto": "Motorul extrage lucrările, le potrivește cu lista ta de prețuri și îți pregătește ciorna de verificat. Prețurile vin doar din listă: ce nu găsește rămâne de prețuit, ce lipsește te întreabă.",
+      "avviso": "Date de probă inventate: firma din listă și clienții din exemple nu există. Nu introduce nume, adrese sau numere de persoane reale: ciornele rămân 7 zile și oricine are linkul le poate deschide. Textul liber este procesat cu Claude de la Anthropic. {privacy}",
+      "daDove": "De unde pornești",
+      "unEsempio": "Un exemplu",
+      "tuoTesto": "Textul tău",
+      "esempiBanco": "Exemple din banc de probă",
+      "esempiTesto": "Vizite pe șantier inventate, din banc de probă. Ciorna apare imediat: este rezultatul înregistrat al motorului pe cazul respectiv.",
+      "lavori": {
+        "bagno": "Baie completă",
+        "tinteggiatura": "Zugrăvit garsonieră cu două camere",
+        "cucina": "Instalație bucătărie",
+        "pavimento": "Pardoseală living"
+      },
+      "tutti": "Sau alege dintre toate cele 30",
+      "vocale": "Mesajul vocal, transcris",
+      "preparo": "Pregătesc ciorna…",
+      "prepara": "Pregătește ciorna",
+      "racconta": "Povestește lucrarea așa cum ai spune-o în mesajul vocal",
+      "segnaposto": "Baia doamnei Rossi, via Roma 3. E casa ei. Scoatem cada și faianța, care e de doi metri înălțime. Baia e doi pe unu optzeci, cădiță de duș 80x80, obiectele sanitare le cumpăr eu…",
+      "codice": "Cod de acces",
+      "codiceNota": "Textul tău trece prin API-ul Claude și fiecare probă costă bani: codul oprește boții.",
+      "attesa": "Durează cam 20 de secunde…",
+      "errore": "Nu am reușit să pregătesc ciorna. Încearcă din nou.",
+      "fasi": [
+        "Citesc vizita pe șantier…",
+        "Despart lucrările, măsurile și excluderile…",
+        "Caut fiecare poziție în listă…",
+        "Verific ce lipsește și regimul IVA…",
+        "Pregătesc ciorna de verificat…"
+      ]
+    },
+    "dettatura": {
+      "parloIn": "Vorbesc în",
+      "ascolto": "Te ascult: atinge ca să oprești",
+      "detta": "Dictează vizita pe șantier",
+      "nota": "Folosește recunoașterea vocală a browserului: pe acest site ajunge doar textul. În orice limbă vorbești, ciorna iese în italiană.",
+      "erroreMicrofono": "Browserul nu are permisiunea de a folosi microfonul.",
+      "erroreLingua": "Pe acest telefon dictarea în această limbă nu există. Scrie textul în limba ta: ciorna iese în italiană oricum.",
+      "erroreInterrotta": "Dictarea s-a întrerupt. Încearcă din nou."
+    }
+  },
+  "comune": {
+    "lingua": "Limba",
+    "scegliLingua": "Alege limba",
+    "faFede": "Traducere de curtoazie: în caz de dubiu, face fidei textul în italiană.",
+    "saltaAlContenuto": "Treci la conținut",
+    "logoTop": "PreventivoLampo, înapoi sus",
+    "logoHome": "PreventivoLampo, pagina principală",
+    "entra": "Intră în cont",
+    "apriMenu": "Deschide meniul",
+    "chiudiMenu": "Închide meniul",
+    "principale": "Principal",
+    "ctaPilota": "Devino meseriaș pilot",
+    "ctaProva": "Încearcă cu un exemplu",
+    "privacy": "Confidențialitate",
+    "cookie": "Cookie-uri",
+    "condizioni": "Condiții",
+    "infoLegali": "Informații legale",
+    "servizioDi": "PreventivoLampo este un serviciu K Digital Solution",
+    "aggiornata": "Actualizat la {data}",
+    "comeFunziona": "Cum funcționează"
+  },
+  "nav": {
+    "come": "Cum funcționează",
+    "mestieri": "Meserii",
+    "numeri": "Cifrele",
+    "prezzi": "Prețuri",
+    "domande": "Întrebări"
+  },
+  "hero": {
+    "etichetta": "Pentru toate meseriile din casă",
+    "titolo": "Termini vizita la client. Oferta pleacă din dubă.",
+    "testo": "O povestești cu vocea sau o scrii, ca și cum ai vorbi cu un coleg. Primești ciorna cu prețurile din lista **ta** de prețuri, cu IVA corect și cu pozițiile nesigure marcate. Verifici, aprobi, iar clientul primește PDF-ul și îl acceptă dintr-un clic.",
+    "garanzia": "Prețuri doar din lista ta. Dacă o poziție lipsește, rămâne de prețuit: fără cifre inventate.",
+    "guarda": "Vezi cum funcționează",
+    "punti": [
+      "Nu instalezi nimic",
+      "Lista de prețuri și dintr-o poză",
+      "Decizi mereu tu"
+    ]
+  },
+  "demo": {
+    "gruppo": "Alege o meserie pentru exemplu",
+    "altroMestiere": "Altă meserie",
+    "didascalia": "Exemplu: lucrare și prețuri inventate, listă de probă",
+    "pausa": "Pauză",
+    "riprendi": "Continuă",
+    "riguarda": "Vezi din nou",
+    "sig": "dl.",
+    "bozza": "Ciornă din lista ta de prețuri",
+    "voci": "{n} poziții",
+    "daPrezzare": "de prețuit",
+    "prezzoTuo": "prețul tău: îl poți adăuga în listă",
+    "iva": "IVA {aliquota}%: locuință, întreținere",
+    "stati": [
+      "Trimisă",
+      "Văzută",
+      "Acceptată"
+    ],
+    "accettato": "Acceptată online de dl. {cliente}: numele, data, ora și copia PDF rămân la tine.",
+    "altroTitolo": "Tâmplărie, gips-carton, centrale termice, grădini, porți, bucătării la comandă.",
+    "altroTesto": "Dacă lucrezi pe poziții și măsurători, merge cu lista ta de prețuri: cuvintele meseriei le găsește acolo, iar ce nu există rămâne de prețuit. Încarci lista pe care o ai, chiar și în poză, și o încerci pe lucrările tale.",
+    "altroCta": "Încearcă pe lucrarea ta",
+    "mestieri": {
+      "elettricista": "Electrician",
+      "idraulico": "Instalator",
+      "imbianchino": "Zugrav",
+      "piastrellista": "Faianțar",
+      "muratore": "Zidar"
+    },
+    "lavori": {
+      "elettricista": "Bucătărie",
+      "idraulico": "Bucătărie",
+      "imbianchino": "Apartament cu 2 camere",
+      "piastrellista": "Living",
+      "muratore": "Cameră de copii"
+    },
+    "vocali": {
+      "elettricista": "Bucătăria domnului Ferrari. Patru puncte de lumină simple și două cu cap scară deasupra mesei. Prizele de 16 pentru electrocasnice. În tablou intră un diferențial nou. Și îi montez candelabrul pe care l-a cumpărat el.",
+      "idraulico": "Bucătăria doamnei Rinaldi. Mutăm chiuveta pe peretele din față: racord nou de apă caldă și rece cu scurgere, trei metri de țeavă de scurgere de 40. Racordez și mașina de spălat vase. Bateria o are deja dumneaei, o montez eu.",
+      "imbianchino": "Apartamentul domnului Greco, living și dormitor: pereții și tavanele fac o sută douăzeci de metri. Răzuiesc unde se cojește, grund peste tot și două straturi de lavabilă. Șase metri de vopsea antimucegai pe tavanul băii. Mobila o mutăm noi.",
+      "piastrellista": "Living-ul doamnei Marino, douăzeci și opt de metri pătrați. Scot pardoseala veche și plinta, refac șapa și montez gresia de treizeci pe treizeci pe care a cumpărat-o dumneaei. Plintă nouă din gresie.",
+      "muratore": "Camera de copii a domnului Conti. Dărâm peretele vechi și îl refac mutat cu un metru: cărămidă de opt, trei și douăzeci pe doi și șaptezeci, tencuială pe ambele părți. Moloz, un metru cub. Tocul ușii îl pun eu."
+    }
+  },
+  "mestieri": {
+    "titolo": "Fiecare meserie are cuvintele ei. Lista ta de prețuri le știe deja.",
+    "testo": "Nu trebuie să înveți să vorbești altfel: spui măsurile din ochi, numele pe care le folosești tu, «ce a cumpărat dumneaei». Sistemul caută printre pozițiile din lista ta, reface calculele măsurilor, iar ce nu găsește îți marchează.",
+    "guarda": "Vezi exemplul",
+    "scorri": "Derulează ca să vezi celelalte meserii.",
+    "nota": "Rânduri de exemplu. Merge cu orice listă pe poziții și măsurători: dacă meseria ta nu e aici, merge la fel.",
+    "etichettaLista": "Exemple pe meserii",
+    "voci": {
+      "elettricista": {
+        "nome": "Electrician",
+        "detto": "șase puncte de lumină, două cu cap scară"
+      },
+      "idraulico": {
+        "nome": "Instalator",
+        "detto": "mut chiuveta cu un metru și jumătate"
+      },
+      "imbianchino": {
+        "nome": "Zugrav",
+        "detto": "două straturi de lavabilă, o sută douăzeci de metri"
+      },
+      "piastrellista": {
+        "nome": "Faianțar",
+        "detto": "montez gresia pe care a cumpărat-o dumneaei"
+      },
+      "muratore": {
+        "nome": "Zidar",
+        "detto": "trei douăzeci pe doi șaptezeci"
+      },
+      "cartongessista": {
+        "nome": "Montator gips-carton",
+        "detto": "tavan fals pe hol, șase pe unu zece"
+      },
+      "serramentista": {
+        "nome": "Montator de tâmplărie",
+        "detto": "trei ferestre cu două canate și o ușă de balcon"
+      },
+      "termoidraulico": {
+        "nome": "Instalator termic și sanitar",
+        "detto": "schimb centrala, caloriferele rămân"
+      },
+      "falegname": {
+        "nome": "Tâmplar",
+        "detto": "dulap încastrat în perete, doi patruzeci pe doi șaizeci"
+      },
+      "fabbro": {
+        "nome": "Lăcătuș",
+        "detto": "balustrada de la balcon, șase metri"
+      },
+      "giardiniere": {
+        "nome": "Grădinar",
+        "detto": "gard viu de tuns, patruzeci de metri"
+      },
+      "impresa": {
+        "nome": "Firmă de construcții",
+        "detto": "baie completă, la cheie"
+      }
+    }
+  },
+  "come": {
+    "titolo": "De la mesajul vocal la devizul acceptat, în patru pași.",
+    "sotto": "Tu povestești și verifici. Calculele, lista de prețuri, IVA, PDF-ul și trimiterea le face sistemul.",
+    "passi": [
+      {
+        "titolo": "Povestești lucrarea",
+        "testo": "Cu vocea sau în scris, de pe telefon, imediat după vizita la fața locului: măsuri, lucrări, ce aduce clientul, ce este exclus.",
+        "nota": "„trei pe doi și jumate, cam așa”"
+      },
+      {
+        "titolo": "Te întreabă ce lipsește",
+        "testo": "Dacă o cantitate nu e clară, nu ghicește: îți pune o întrebare scurtă și așteaptă răspunsul.",
+        "nota": "„Câți m² de pardoseală?”"
+      },
+      {
+        "titolo": "Verifici de pe telefon",
+        "testo": "Poziție cu poziție: corectezi, ștergi, adaugi. Ce nu e în lista ta de prețuri apare evidențiat.",
+        "nota": "Modifică · Aprobă"
+      },
+      {
+        "titolo": "Clientul acceptă",
+        "testo": "Primește PDF-ul cu logo-ul tău și un link ca să-l accepte. Tu vezi când îl deschide și când spune da.",
+        "nota": "Trimis · Văzut · Acceptat"
+      }
+    ]
+  },
+  "numeri": {
+    "titolo": "Ce îți garantăm, de fiecare dată.",
+    "testo": "Devizul poartă numele tău, deci trebuie să fie corect. De aceea sistemul nu ghicește niciodată: ce știe scrie, ce nu știe te întreabă.",
+    "cifre": [
+      {
+        "cifra": "100%",
+        "cosa": "din prețuri vin din lista ta",
+        "dettaglio": "Niciun preț inventat. Ce lipsește rămâne de prețuit până decizi tu."
+      },
+      {
+        "cifra": "6 limbi",
+        "cosa": "pentru clientul tău",
+        "dettaglio": "Italiană, engleză, germană, franceză, spaniolă și olandeză. Iar tu poți povesti și în română, albaneză sau arabă."
+      },
+      {
+        "cifra": "13 s",
+        "cosa": "ca să ai ciorna",
+        "dettaglio": "De la povestea vizitei la ciorna completă, cu întrebările despre ce lipsește."
+      }
+    ],
+    "sotto1": "Înainte să ajungă la client, fiecare deviz trece pe la tine. Pozițiile de verificat sunt evidențiate, măsurile care lipsesc ți le cere, iar nimic nu pleacă fără aprobarea ta.",
+    "sotto2": "Cu programul pilot îl testăm pe lucrări reale ale zece meseriași din meserii diferite. Ce nu merge ne spun ei, și reparăm."
+  },
+  "cosa": {
+    "titolo": "Să transcrie un mesaj vocal știu mulți. Noi ne ocupăm de ce te face să pierzi bani.",
+    "listinoTitolo": "Lista ta de prețuri, așa cum e",
+    "listinoTesto": "Încarci lista pe care o ai: Excel, PDF, poza foii scrise de mână sau câteva devize vechi. Sistemul citește pozițiile, unitățile de măsură și prețurile, iar tu verifici și confirmi. Niciun preț nu intră fără să-l fi văzut tu. Dacă te blochezi, te ajutăm noi.",
+    "tabella": {
+      "didascalia": "Exemplu de listă de prețuri",
+      "voce": "Poziție",
+      "unita": "Unitate",
+      "tipoIva": "Tip IVA",
+      "prestazione": "manoperă",
+      "beneSign": "bene sign."
+    },
+    "prezzoTitolo": "Niciun preț inventat",
+    "prezzoTesto": "Multe aplicații, când nu găsesc o poziție, o estimează cu „prețuri de piață”. Noi nu: dacă nu e în lista ta, o marcăm ca de prețuit, iar prețul îl pui tu. Un deviz greșit în minus înseamnă o lucrare pe pierdere.",
+    "dalListino": "din lista ta ✓",
+    "ivaTitolo": "IVA pentru construcții, făcută corect, de la sine",
+    "ivaTesto1": "Întreținere la o locuință? Cota de 10% se aplică pentru manoperă, dar „beni significativi” (bunuri semnificative: obiecte sanitare, robineți, tâmplărie, centrale) intră aici doar până la valoarea restului lucrării. Partea care depășește merge la 22%.",
+    "ivaTesto2": "Îți punem trei întrebări: ce fel de imobil e, ce lucrare e, cine cumpără materialele. În PDF, IVA de 10% și de 22% apare împărțită corect, cu mențiunea.",
+    "ivaNota": "Exemplu preluat din ghidul Agenzia delle Entrate. Pentru cazurile speciale rămâne mereu contabilul tău.",
+    "scontrino": {
+      "etichetta": "Exemplu de împărțire a IVA",
+      "titolo": "Întreținere extraordinară · locuință",
+      "manodopera": "Manoperă și alte materiale",
+      "beni": "Beni significativi (echipamente și materiale principale)",
+      "imp10": "Bază impozabilă la 10%",
+      "imp22": "Bază impozabilă la 22%",
+      "iva": "IVA 10% + IVA 22%",
+      "totale": "Total"
+    },
+    "lingueTitolo": "Tu povestești în limba ta. Clientul citește în a lui.",
+    "lingueTesto": "Scrii sau dictezi vizita la fața locului în română, albaneză, arabă sau în altă limbă: ciorna iese în italiană. Dacă clientul e străin, devizul ajunge la el în engleză, germană, franceză, spaniolă sau olandeză, cu textul italian alături, care este cel valabil. Traducerea o vezi și o corectezi înainte să o trimiți.",
+    "lingueDalListino": "din lista ta de prețuri, în italiană",
+    "lingueAlCliente": "către clientul german, cu textul italian alături",
+    "aiutoTitolo": "Un ajutor adevărat, de la un om",
+    "aiutoTesto": "Logo, date, condiții de plată, avansuri, excluderi: le setezi tu în câteva minute. Dacă te blochezi, ne scrii sau ne suni și îți răspunde un om, nu un bot. Iar primul deviz îl trimiți tu, din dubă.",
+    "ultimaTitolo": "Ultimul cuvânt este mereu al tău",
+    "ultimaTesto": "Sistemul propune, tu decizi. Niciun deviz nu ajunge la client fără să-l fi deschis și aprobat tu. Pozițiile noi pe care le prețuiești intră în lista ta de prețuri, pentru data viitoare."
+  },
+  "confronto": {
+    "titolo": "Trei moduri de a face același deviz.",
+    "colonne": [
+      "Word sau Excel, seara",
+      "Un chatbot oarecare",
+      "PreventivoLampo"
+    ],
+    "righe": [
+      {
+        "tema": "Prețurile",
+        "celle": [
+          "Le copiezi tu din lista de prețuri",
+          "Le estimează: lista ta de prețuri nu o cunoaște",
+          "Doar din lista ta de prețuri. Ce lipsește rămâne de prețuit"
+        ]
+      },
+      {
+        "tema": "Măsurile care lipsesc",
+        "celle": [
+          "Îți dai seama când scrii",
+          "Deseori le consideră bune",
+          "Ți le cere înainte să facă calculele"
+        ]
+      },
+      {
+        "tema": "IVA cu beni significativi",
+        "celle": [
+          "De mână, cu îndoiala",
+          "Depinde cum îl întrebi",
+          "10% și 22% repartizate, cu mențiunea"
+        ]
+      },
+      {
+        "tema": "Documentul",
+        "celle": [
+          "De pus în pagină de fiecare dată",
+          "Text de copiat în altă parte",
+          "PDF cu logo-ul tău, gata de trimis"
+        ]
+      },
+      {
+        "tema": "Acordul clientului",
+        "celle": [
+          "Un mesaj, dacă ai noroc",
+          "Nu există",
+          "Acceptare online: nume, dată, oră și copie a PDF-ului"
+        ]
+      },
+      {
+        "tema": "Unde îl faci",
+        "celle": [
+          "La calculator, după cină",
+          "Pe telefon, apoi îl refaci",
+          "De pe telefon, imediat după vizita la fața locului"
+        ]
+      }
+    ],
+    "etichettaLista": "Comparație pe teme",
+    "scorri": "Derulează pentru celelalte comparații.",
+    "nota": "«Chatbot oarecare»: un asistent general folosit fără lista ta de prețuri, cum fac mulți astăzi."
+  },
+  "calcolo": {
+    "titolo": "Cât te costă azi devizele?",
+    "preventivi": "Devize pe săptămână",
+    "minuti": "Minute pentru fiecare, între calcule, Word și trimitere",
+    "min": "{n} min",
+    "passi": "În fiecare lună petreci cu devizele aproximativ",
+    "ore": "{n} ore",
+    "costa": "aproape mereu seara, după șantier. PreventivoLampo costă 19,90 € pe lună:",
+    "allOra": "{n} € pentru fiecare dintre orele acelea.",
+    "nota": "Numerele le pui tu. Cât timp îți redă măsurăm cu pilotul, pe lucrări reale."
+  },
+  "prezzi": {
+    "titolo": "Mai întâi îl încerci pe lucrările tale reale. Apoi decizi.",
+    "pilota": "Program pilot",
+    "perGiorni": "pentru 30 de zile",
+    "pilotaTesto": "Devize nelimitate și asistență dacă ai nevoie. În schimb ne spui ce nu merge. Sunăm în ordinea sosirii. Din a 31-a zi, 19,90 € pe lună sau 199 € pe an, doar dacă decizi să rămâi: fără reînnoire automată.",
+    "candidati": "Înscrie-te",
+    "posti": "{n} locuri",
+    "postiLiberi": "{n} locuri libere din {totale}",
+    "ultimoPosto": "Ultimul loc din {totale}",
+    "esauriti": "Locuri epuizate",
+    "mensile": "Lunar",
+    "alMese": "pe lună",
+    "perMese": "/lună",
+    "mensileVoci": [
+      "Devize nelimitate",
+      "Link de acceptare pentru client",
+      "Asistență din partea unui om"
+    ],
+    "mensileNota": "Fără costuri de pornire. Renunți când vrei, fără obligații.",
+    "annuale": "Anual",
+    "allAnno": "pe an",
+    "perAnno": "/an",
+    "annualeVoci": [
+      "Tot ce include planul lunar",
+      "Două luni cadou",
+      "Se reînnoiește doar dacă ceri tu"
+    ],
+    "ivaEsclusa": "Prețurile nu includ IVA."
+  },
+  "domande": {
+    "titolo": "Întrebările pe care ni le pun toți",
+    "nonTrovi": "Nu o găsești pe a ta? Scrie-ne la [{email}](mailto:{email}): îți răspundem noi, nu un bot.",
+    "lista": [
+      {
+        "d": "Și dacă greșește?",
+        "r": "Clientului nu-i ajunge nimic fără aprobarea ta. Pozițiile nesigure le vezi evidențiate, cele care nu sunt în lista ta de prețuri rămân fără preț, iar niciun preț nu e inventat."
+      },
+      {
+        "d": "Nu mă pricep la calculator.",
+        "r": "Dacă știi să trimiți un mesaj vocal pe WhatsApp, știi să-l folosești. Se deschide din browserul telefonului, nu instalezi nimic, iar dacă te blochezi îți răspunde o persoană."
+      },
+      {
+        "d": "Prețurile le știu doar eu.",
+        "r": "Exact: folosim doar prețurile tale. Lista de prețuri o încarci așa cum e, chiar și din poză sau din devize vechi, iar ce nu e în ea rămâne fără preț până decizi tu."
+      },
+      {
+        "d": "Nu ajunge un chatbot?",
+        "r": "Un asistent generic nu îți cunoaște lista de prețuri, așa că estimează prețurile. Nu împarte IVA pe «beni significativi» (bunuri semnificative, termen fiscal italian), nu face PDF cu logoul tău și nu strânge acceptul clientului."
+      },
+      {
+        "d": "Merge pentru meseria mea?",
+        "r": "Dacă lucrezi pe poziții și măsurători, da: electricieni, instalatori, zugravi, faianțari, zidari, gipscartoniști, montatori de uși și ferestre, lăcătuși, grădinari. Termenii meseriei îi găsește în lista ta de prețuri. Cu programul pilot măsurăm asta și pe meserii pe care nu le-am încercat încă."
+      },
+      {
+        "d": "Pot să povestesc în limba mea? Și dacă clientul e străin?",
+        "r": "Da. Scrii sau dictezi inspecția în română, albaneză, arabă, ucraineană, spaniolă sau în altă limbă, iar ciorna iese în italiană, cu prețurile din lista ta. Cu vocea depinde de telefon: unde limba ta nu există, scrii. Iar dacă clientul vorbește engleză, germană, franceză, spaniolă sau olandeză, îi trimiți devizul în limba lui: traducerea o verifici tu, iar textul italian rămâne alături și prevalează."
+      },
+      {
+        "d": "Vorbesc repede, e zgomot, folosesc termeni de-ai mei.",
+        "r": "Sistemul cunoaște pozițiile din lista ta și denumirile pe care le folosești tu. Dacă o măsură nu e clară, te întreabă din nou în loc să ghicească."
+      },
+      {
+        "d": "Clientul vrea hârtie.",
+        "r": "PDF-ul se printează ca orice deviz. Cu linkul însă clientul acceptă într-un minut, fără să-și facă cont, iar tu ai dovada a ceea ce a acceptat."
+      },
+      {
+        "d": "Unde ajung mesajele vocale și datele clienților mei?",
+        "r": "Lista de prețuri și devizele stau pe servere din Uniunea Europeană. Pentru a pregăti ciorna, textul inspecției trece printr-un serviciu de inteligență artificială, indicat în [pagina Privacy](/privacy). La serverele noastre ajunge doar textul, nu și audio, iar cu tine semnăm acordul pentru prelucrarea datelor clienților tăi."
+      },
+      {
+        "d": "Trebuie să schimb programul de facturi?",
+        "r": "Nu, îl păstrezi pe al tău. PreventivoLampo se ocupă de devize; facturile rămân unde sunt."
+      }
+    ]
+  },
+  "candidatura": {
+    "titolo": "Următorul deviz trimite-l din furgonetă.",
+    "testo": "Căutăm 10 meseriași pentru programul pilot, din orice meserie a casei. Lasă-ne datele tale: te sunăm noi, în ordinea sosirii, ca să vedem dacă e potrivit pentru tine.",
+    "vederlo": "Vrei să-l vezi înainte să te înscrii? [Încearcă-l pe WhatsApp]({whatsapp}): primul mesaj e deja scris, apeși trimite și apoi povestești o inspecție. Sau [încearcă cu un exemplu](/prova).",
+    "scrivere": "Preferi să scrii? [{email}](mailto:{email})",
+    "modulo": {
+      "etichetta": "Înscriere în programul pilot",
+      "nome": "Nume și prenume",
+      "mestiere": "Meserie",
+      "scegli": "Alege",
+      "comune": "Localitate",
+      "cellulare": "Telefon mobil",
+      "volume": "Devize pe săptămână",
+      "privacy": "Am citit [informarea de confidențialitate](/privacy) și sunt de acord să fiu contactat pentru programul pilot.",
+      "invia": "Trimite înscrierea",
+      "invio": "Se trimite…",
+      "conferma": "Mulțumim, {nome}. Te sunăm în două zile lucrătoare.",
+      "errore": "Trimiterea nu a reușit. Încearcă din nou în scurt timp sau scrie-ne la studio@kdigitalsolution.it.",
+      "errori": {
+        "nome": "Scrie numele și prenumele.",
+        "mestiere": "Alege meseria.",
+        "comune": "Scrie localitatea.",
+        "telefono": "Scrie un număr de mobil italian valid.",
+        "volume": "Alege una dintre opțiuni.",
+        "privacy": "Avem nevoie de acordul tău ca să te putem contacta."
+      },
+      "mestieri": {
+        "Elettricista": "Electrician",
+        "Idraulico": "Instalator",
+        "Termoidraulico": "Instalator termic",
+        "Imbianchino": "Zugrav",
+        "Piastrellista": "Faianțar",
+        "Muratore": "Zidar",
+        "Cartongessista": "Montator gips-carton",
+        "Serramentista": "Montator uși și ferestre",
+        "Falegname": "Tâmplar",
+        "Fabbro": "Lăcătuș",
+        "Giardiniere": "Grădinar",
+        "Impresa edile": "Firmă de construcții",
+        "Impresa di ristrutturazioni": "Firmă de renovări",
+        "Altro": "Altceva"
+      },
+      "volumi": {
+        "1 o 2": "1 sau 2",
+        "da 3 a 5": "de la 3 la 5",
+        "più di 5": "peste 5"
+      }
+    }
+  },
+  "legale": {
+    "privacy": {
+      "titolo": "Confidențialitate",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "Pe această pagină explicăm ce date personale prelucrează PreventivoLampo, de ce, unde ajung și cât timp rămân."
+        },
+        {
+          "t": "h2",
+          "testo": "Cine prelucrează datele"
+        },
+        {
+          "t": "p",
+          "testo": "Operatorul datelor (titolare del trattamento) este Sofiane Khatib, K Digital Solution, Monza (MB). Pentru orice cerere despre datele tale scrie la [{email}](mailto:{email})."
+        },
+        {
+          "t": "p",
+          "testo": "Pentru datele clienților unui meseriaș (nume, adrese de șantier, devize) operatorul este meseriașul: noi le prelucrăm în numele lui, ca persoană împuternicită (responsabile del trattamento), conform acordului pe care îl semnăm cu el."
+        },
+        {
+          "t": "h2",
+          "testo": "Ce date, de ce și cât timp"
+        },
+        {
+          "t": "h3",
+          "testo": "Dacă te înscrii în programul pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Nume, meserie, localitate, număr de mobil și, dacă vrei să ne spui, câte devize faci pe săptămână.",
+            "Le folosim doar ca să te sunăm și să vedem dacă pilotul e potrivit pentru tine (temei juridic: cererea ta și acordul tău).",
+            "Dacă nu intri în pilot, le ștergem în 12 luni; poți cere să le ștergem mai devreme, oricând."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Dacă folosești zona pentru meseriași"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Emailul de acces, datele firmei pe care le introduci (denumire, partita IVA, adresă, telefon, IBAN dacă îl treci), logo, listă de prețuri și devize.",
+            "Dacă încarci lista de prețuri din PDF sau din poze, sau din devize vechi, inteligența artificială citește doar pozițiile cu prețuri: numele clienților nu sunt transcrise, iar fișierul nu este păstrat.",
+            "Sunt necesare ca să îți oferim serviciul (temei juridic: contractul, chiar și în timpul pilotului gratuit).",
+            "Rămân cât timp folosești serviciul. Când te oprești, le ștergem în 30 de zile, cu excepția a ceea ce legea ne obligă să păstrăm (de exemplu facturile, 10 ani)."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Dacă ești clientul unui meseriaș și deschizi devizul lui"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Când accepți sau refuzi un deviz, salvăm numele pe care îl scrii, data și ora, adresa IP și amprenta PDF-ului.",
+            "Îi servesc meseriașului ca dovadă a acceptării. Le păstrăm în numele lui, cât timp el folosește serviciul.",
+            "Ca să vezi, corectezi sau ștergi aceste date te poți adresa meseriașului sau nouă: îi transmitem noi cererea."
+          ]
+        },
+        {
+          "t": "h3",
+          "testo": "Dacă încerci PreventivoLampo cu un exemplu sau pe WhatsApp"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Textul pe care îl scrii, ciorna care rezultă și, pe WhatsApp, numărul de la care scrii.",
+            "Ciornele de probă se șterg singure după 7 zile; pe WhatsApp, ciorna care așteaptă răspunsul tău rămâne cel mult o oră.",
+            "La probe nu scrie date ale unor persoane reale: ajung lucrări inventate.",
+            "Ca să limităm abuzurile, păstrăm o amprentă (hash) a adresei IP, nu adresa în clar."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Cui le încredințăm"
+        },
+        {
+          "t": "p",
+          "testo": "Folosim acești furnizori, fiecare doar pentru partea lui:"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Supabase: baza de date, accesul în zona de lucru și arhiva de PDF-uri, în Irlanda (UE).",
+            "Vercel: site-ul și funcțiile lui, la Frankfurt (UE).",
+            "Anthropic (Claude): citește textul de la vizita pe șantier și pregătește ciorna, iar când clientul vorbește altă limbă traduce pozițiile din deviz, în Statele Unite.",
+            "Twilio și WhatsApp (Meta): primesc și trimit mesajele WhatsApp.",
+            "n8n: leagă mesajele WhatsApp de PreventivoLampo.",
+            "Resend: trimite emailurile cu codul de acces."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Când datele ies din Uniunea Europeană, ne bazăm pe garanțiile prevăzute de GDPR: certificarea EU-US Data Privacy Framework sau clauzele contractuale standard ale Comisiei Europene. Nu vindem datele și nu le folosim pentru reclame, nici pentru antrenarea unor modele de inteligență artificială."
+        },
+        {
+          "t": "h2",
+          "testo": "Drepturile tale"
+        },
+        {
+          "t": "p",
+          "testo": "Poți cere să-ți vezi datele, să le corectezi, să le ștergi, să le limitezi folosirea, să te opui prelucrării sau să le primești într-un format ușor de citit, și îți poți retrage acordul oricând. Scrie la adresa de mai sus: răspundem în 30 de zile. Poți depune plângere și la Garante per la protezione dei dati personali (autoritatea italiană pentru protecția datelor, garanteprivacy.it)."
+        }
+      ]
+    },
+    "condizioni": {
+      "titolo": "Condițiile serviciului",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo este un serviciu al lui Sofiane Khatib, K Digital Solution, Monza (MB). Îi ajută pe meseriași și pe firmele de construcții să pregătească devizele: din povestea vizitei pe șantier face o ciornă cu prețurile din lista firmei, pe care meseriașul o verifică, o aprobă și o trimite clientului. Serviciul este rezervat firmelor și profesioniștilor cu partita IVA (înregistrați ca plătitori de TVA în Italia)."
+        },
+        {
+          "t": "h2",
+          "testo": "Program pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Zece locuri, atribuite de noi după o convorbire telefonică.",
+            "30 de zile gratuite de la start, cu devize nelimitate. Lista de prețuri o încarci tu (Excel, PDF sau poze); dacă ai nevoie, te ajutăm noi.",
+            "Fără reînnoire automată: la sfârșitul celor 30 de zile hotărăști tu dacă rămâi. Dacă nu ne spui nimic, pilotul se oprește acolo.",
+            "În schimb îți cerem să-l folosești la lucrările tale reale și să ne spui ce merge și ce nu."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "După pilot"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Abonament: 19,90 € pe lună sau 199 € pe an, fără IVA, cu devize nelimitate. Fără costuri de pornire.",
+            "Abonamentul lunar îl poți anula oricând, cu efect la sfârșitul lunii deja plătite. Cel anual are valabilitate de 12 luni și se reînnoiește doar dacă ceri tu.",
+            "Dacă schimbăm prețurile, te anunțăm cu cel puțin 30 de zile înainte, iar noile prețuri se aplică doar de la reînnoirea următoare."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Devizul îl decizi tu"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "PreventivoLampo propune, tu decizi: niciun deviz nu ajunge la client fără să-l fi deschis și aprobat tu. Înainte să aprobi, verifică pozițiile, cantitățile și prețurile.",
+            "Prețurile vin doar din lista ta de prețuri. Pozițiile care lipsesc rămân «de prețuit», iar prețul îl pui tu.",
+            "Calculul IVA urmează răspunsurile tale și regulile Agenzia delle Entrate (fiscul italian), dar nu este consultanță fiscală: pentru cazurile speciale rămâne contabilul tău (commercialista).",
+            "Relația cu clientul, prețurile și lucrările rămân ale tale: PreventivoLampo nu face parte din contractul dintre tine și client."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Datele tale rămân ale tale"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Lista de prețuri, devizele și datele firmei sunt ale tale. La cerere îți trimitem lista în Excel și devizele în PDF.",
+            "Datele clienților tăi le prelucrăm în numele tău, conform acordului de prelucrare a datelor pe care îl semnăm la început. Cum prelucrăm celelalte date este scris în pagina Confidențialitate.",
+            "Nu introduce date despre sănătate sau alte date speciale ale clienților tăi: pentru deviz nu sunt necesare."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Ce garantăm și ce nu"
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "Facem tot posibilul ca serviciul să funcționeze mereu și fără erori, dar interpretarea descrierii tale de pe șantier poate greși: de aceea fiecare ciornă trebuie verificată înainte de aprobare.",
+            "Pot apărea întreruperi pentru mentenanță sau din cauza defecțiunilor la furnizori; mentenanțele mari ți le anunțăm din timp.",
+            "În limitele legii și cu excepția dolului sau culpei grave, răspunderea noastră nu depășește suma pe care ne-ai plătit-o în ultimele 12 luni. În perioada pilotului gratuit, serviciul este oferit așa cum este."
+          ]
+        },
+        {
+          "t": "h2",
+          "testo": "Utilizare corectă"
+        },
+        {
+          "t": "p",
+          "testo": "Folosește PreventivoLampo doar pentru devizele firmei tale. Nu da accesul tău altor persoane și nu folosi serviciul pentru a încărca texte jignitoare sau cereri în masă. Dacă aceste reguli nu sunt respectate, putem suspenda accesul, după ce te avertizăm."
+        },
+        {
+          "t": "h2",
+          "testo": "Modificări și legea aplicabilă"
+        },
+        {
+          "t": "p",
+          "testo": "Dacă schimbăm aceste condiții, îți spunem prin email cu cel puțin 30 de zile înainte. Se aplică legea italiană și, pentru litigii, foro di Monza (instanța din Monza). Pentru orice întrebare scrie la [{email}](mailto:{email})."
+        }
+      ]
+    },
+    "cookie": {
+      "titolo": "Cookie-uri",
+      "blocchi": [
+        {
+          "t": "p",
+          "testo": "PreventivoLampo folosește doar cookie-uri tehnice: fără ele, zona pentru meseriași nu ar ști că ai intrat, iar site-ul nu ar ține minte limba pe care ai ales-o. Fără cookie-uri de profilare, fără statistici, fără instrumente ale unor terți care te urmăresc de pe un site pe altul. De aceea nu vei găsi un banner de cookie-uri."
+        },
+        {
+          "t": "ul",
+          "voci": [
+            "**pl_sessione**: ține accesul deschis în zona pentru meseriași după ce ai introdus codul primit prin email. Îl setăm doar când intri, durează 30 de zile și se șterge când apeși «Ieși».",
+            "**pl_lingua**: ține minte limba pe care ai ales-o cu selectorul de limbi. Îl setăm doar dacă schimbi limba și durează un an."
+          ]
+        },
+        {
+          "t": "p",
+          "testo": "Fonturile și steagurile sunt oferite de site însuși, nu de servere externe. Dacă într-o zi ar fi nevoie de un alt cookie, această pagină va spune care este, la ce folosește și cât durează, iar dacă nu este tehnic, te vom întreba înainte."
+        }
+      ]
+    }
+  },
+  "accesso": {
+    "titolo": "Autentificare · PreventivoLampo",
+    "h1": "Intră în devizele tale",
+    "sotto": "Lista ta de prețuri, prețurile tale, devize cu numele tău pe ele.",
+    "email": "Emailul tău",
+    "mandaCodice": "Trimite-mi codul",
+    "invioCodice": "Trimit codul…",
+    "spiegazione": "Îți trimitem un cod din 6 cifre. Dacă e prima dată, cu același cod îți înregistrezi firma.",
+    "scritto": "Ți-am scris la **{email}**. Dacă nu-l găsești, uită-te în spam.",
+    "codice": "Cod",
+    "accedi": "Intră",
+    "controllo": "Verific…",
+    "nuovoTra": "Cod nou în {n} s",
+    "nuovo": "Trimite-mi un cod nou",
+    "cambiaEmail": "Schimbă emailul",
+    "errore": "Ceva nu merge. Încearcă din nou.",
+    "condizioni": "Dacă intri, accepți [condițiile](/condizioni) și [informarea privind confidențialitatea](/privacy)."
+  },
+  "prova": {
+    "titolo": "Încearcă motorul",
+    "h1": "De la vizita pe șantier la ciornă",
+    "testo": "Motorul extrage lucrările, le potrivește cu lista ta de prețuri și îți pregătește ciorna de verificat. Prețurile vin doar din listă: ce nu găsește rămâne de prețuit, ce lipsește te întreabă.",
+    "nota": "Date de test inventate: firma din listă și clienții din exemple nu există. Nu introduce nume, adrese sau numere ale unor persoane reale: ciornele rămân 7 zile și oricine are linkul le poate deschide. Textul liber este procesat de un serviciu de inteligență artificială. [Confidențialitate](/privacy)"
+  }
+}

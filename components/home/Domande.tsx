@@ -1,140 +1,25 @@
-import type { ReactNode } from "react";
+import { Ricco } from "@/components/Ricco";
+import type { Dizionario } from "@/lib/i18n/it";
+import { fmt } from "@/lib/i18n/testo";
 import { CONTACT_EMAIL } from "@/lib/sito";
-import { SoloDesktop, SoloMobile } from "./Varianti";
 
-type Domanda = { domanda: ReactNode; risposta: ReactNode };
-
-const DOMANDE: Domanda[] = [
-  {
-    domanda: "E se sbaglia?",
-    risposta: (
-      <>
-        Al cliente non arriva niente senza la tua approvazione. Le voci incerte le vedi evidenziate, quelle che non sono nel
-        listino restano da prezzare, e nessun prezzo è mai inventato.
-      </>
-    ),
-  },
-  {
-    domanda: "Non sono bravo con il computer.",
-    risposta: (
-      <>
-        Se sai mandare un vocale su WhatsApp, sai usarlo. Si apre dal browser del telefono, niente da installare, e se ti blocchi
-        ti risponde una persona.
-      </>
-    ),
-  },
-  {
-    domanda: "I prezzi li so solo io.",
-    risposta: (
-      <>
-        Appunto: usiamo solo i tuoi. Il listino lo carichi com&apos;è, anche in foto o da vecchi preventivi, e quello che non c&apos;è
-        resta da prezzare finché non lo decidi tu.
-      </>
-    ),
-  },
-  {
-    domanda: "Non basta un chatbot?",
-    risposta: (
-      <>
-        Un assistente generico non conosce il tuo listino, quindi i prezzi li stima. Non ripartisce l&apos;IVA con i beni
-        significativi, non fa il PDF con il tuo logo e non raccoglie il sì del cliente.
-      </>
-    ),
-  },
-  {
-    domanda: "Va bene per il mio mestiere?",
-    risposta: (
-      <>
-        Se lavori a voci e misure, sì: elettricisti, idraulici, imbianchini, piastrellisti, muratori, cartongessisti,
-        serramentisti, fabbri, giardinieri. Le parole del mestiere le trova nel tuo listino. Con il pilota lo misuriamo anche sui
-        mestieri che non abbiamo ancora provato.
-      </>
-    ),
-  },
-  {
-    domanda: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
-    risposta: (
-      <>
-        Sì. Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino, spagnolo o un&apos;altra lingua, e la bozza esce in
-        italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c&apos;è, la scrivi. E se il cliente
-        parla inglese, tedesco, francese, spagnolo o olandese, gli mandi il preventivo nella sua lingua: la traduzione la controlli
-        tu, e il testo italiano resta accanto e fa fede.
-      </>
-    ),
-  },
-  {
-    domanda: "Parlo veloce, c'è rumore, uso termini miei.",
-    risposta: (
-      <>
-        Il sistema conosce le voci del tuo listino<SoloDesktop> e i nomi che usi tu</SoloDesktop>. Se una misura non è chiara,
-        te la richiede invece di tirare a indovinare.
-      </>
-    ),
-  },
-  {
-    domanda: "Il cliente vuole la carta.",
-    risposta: (
-      <>
-        Il PDF si stampa come qualunque preventivo. Con il link però accetta in un minuto, senza registrarsi, e tu hai la prova
-        di che cosa ha accettato.
-      </>
-    ),
-  },
-  {
-    domanda: (
-      <>
-        <SoloDesktop>Dove finiscono i vocali e i dati dei miei clienti?</SoloDesktop>
-        <SoloMobile>Dove finiscono vocali e dati?</SoloMobile>
-      </>
-    ),
-    risposta: (
-      <>
-        Listino e preventivi stanno su server nell&apos;Unione Europea. Per preparare la bozza il testo del sopralluogo passa da
-        un servizio di intelligenza artificiale, indicato nella <a href="/privacy">pagina Privacy</a>. Ai nostri server arriva solo il testo, non
-        l&apos;audio, e con te firmiamo l&apos;accordo per il trattamento dei dati<SoloDesktop> dei tuoi clienti</SoloDesktop>.
-      </>
-    ),
-  },
-  {
-    domanda: (
-      <>
-        Devo cambiare <SoloDesktop>il </SoloDesktop>programma delle fatture?
-      </>
-    ),
-    risposta: (
-      <>
-        No, tieni il tuo. PreventivoLampo si occupa dei preventivi<SoloDesktop>; le fatture restano dove sono</SoloDesktop>.
-      </>
-    ),
-  },
-];
-
-// Accordion con details/summary: la prima domanda aperta, le altre chiuse (SPEC, «Domande»).
-export function Domande() {
+// Accordion con details/summary: la prima domanda aperta, le altre chiuse.
+export function Domande({ d }: { d: Dizionario }) {
+  const D = d.domande;
+  const nonTrovi = fmt(D.nonTrovi, { email: CONTACT_EMAIL });
   return (
-    <section
-      id="domande"
-      className="margini grid gap-5 py-14 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-20 lg:py-28"
-    >
+    <section id="domande" className="margini grid gap-5 py-14 lg:grid-cols-[minmax(0,380px)_minmax(0,1fr)] lg:gap-20 lg:py-28">
       <div className="flex flex-col gap-6">
-        <h2 className="titolo-h2 m-0">Le domande che ci fanno tutti</h2>
+        <h2 className="titolo-h2 m-0">{D.titolo}</h2>
         <p className="m-0 hidden text-[17px] leading-[1.55] text-testo-2 lg:block">
-          Non trovi la tua? Scrivici a{" "}
-          <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold">
-            {CONTACT_EMAIL}
-          </a>
-          : rispondiamo noi, non un bot.
+          <Ricco testo={nonTrovi} classeLink="font-bold" />
         </p>
       </div>
       <div className="flex flex-col border-b border-linea-2">
-        {DOMANDE.map((voce, indice) => (
-          <details
-            key={indice}
-            open={indice === 0}
-            className={`group ${indice === 0 ? "border-t-2 border-ardesia" : "border-t border-linea-2"}`}
-          >
+        {D.lista.map((voce, indice) => (
+          <details key={indice} open={indice === 0} className={`group ${indice === 0 ? "border-t-2 border-ardesia" : "border-t border-linea-2"}`}>
             <summary className="flex min-h-11 cursor-pointer list-none items-start justify-between gap-4 py-[18px] lg:py-6 [&::-webkit-details-marker]:hidden">
-              <h3 className="m-0 text-xl [font-weight:750] [font-stretch:85%] lg:text-2xl">{voce.domanda}</h3>
+              <h3 className="m-0 text-xl [font-weight:750] [font-stretch:85%] lg:text-2xl">{voce.d}</h3>
               <svg
                 viewBox="0 0 20 20"
                 aria-hidden="true"
@@ -149,17 +34,13 @@ export function Domande() {
               </svg>
             </summary>
             <p className="m-0 -mt-3 pb-[18px] text-[15.5px] leading-[1.55] text-testo-2 lg:-mt-3.5 lg:pb-6 lg:text-[17px]">
-              {voce.risposta}
+              <Ricco testo={voce.r} />
             </p>
           </details>
         ))}
       </div>
       <p className="m-0 text-[15.5px] leading-[1.55] text-testo-2 lg:hidden">
-        Non trovi la tua?{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`} className="font-bold">
-          Scrivici
-        </a>
-        : rispondiamo noi, non un bot.
+        <Ricco testo={nonTrovi} classeLink="font-bold" />
       </p>
     </section>
   );

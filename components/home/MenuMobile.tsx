@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useId, useRef, useState } from "react";
+import { useLingua } from "@/lib/i18n/client";
 
 type Link = { readonly href: string; readonly label: string };
 
 // Menu sotto 1024 px: disclosure con aria-expanded, si chiude con Esc e al click su una voce.
 export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }) {
+  const { d } = useLingua();
   const [open, setOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelId = useId();
@@ -29,7 +31,7 @@ export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={open ? "Chiudi il menu" : "Apri il menu"}
+        aria-label={open ? d.comune.chiudiMenu : d.comune.apriMenu}
         onClick={() => setOpen((value) => !value)}
         className="flex size-11 items-center justify-center rounded-campo border-[1.5px] border-scuro-linea bg-transparent text-fondo"
       >
@@ -48,7 +50,7 @@ export function MenuMobile({ links, cta }: { links: readonly Link[]; cta: Link }
       </button>
       <nav
         id={panelId}
-        aria-label="Principale"
+        aria-label={d.comune.principale}
         hidden={!open}
         className="margini absolute inset-x-0 top-full border-b border-scuro-linea bg-ardesia pb-6 pt-2 text-fondo"
       >
