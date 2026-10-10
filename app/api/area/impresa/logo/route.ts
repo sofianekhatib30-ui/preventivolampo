@@ -1,6 +1,7 @@
 import { conMembro } from "@/lib/impresa/api";
 import { leggiImpresa, leggiLogo, salvaLogo, togliLogo } from "@/lib/impresa/imprese";
 import { Rifiuto } from "@/lib/preventivi/rifiuto";
+import type { Membro } from "@/lib/impresa/sessione";
 
 export async function GET(request: Request): Promise<Response> {
   return conMembro(request, async (m) => {
@@ -11,8 +12,14 @@ export async function GET(request: Request): Promise<Response> {
   });
 }
 
+// Il logo va su ogni PDF mandato ai clienti: lo cambia solo chi cambia i dati dell'impresa.
+function soloTitolare(m: Membro): void {
+  if (m.ruolo !== "titolare") throw new Rifiuto("Solo il titolare o un amministratore cambia il logo dell'impresa.", 403);
+}
+
 export async function POST(request: Request): Promise<Response> {
   return conMembro(request, async (m) => {
+    soloTitolare(m);
     const form = await request.formData().catch(() => null);
     const file = form?.get("logo");
     if (!(file instanceof File)) throw new Rifiuto("Scegli un'immagine.", 400);
@@ -24,6 +31,7 @@ export async function POST(request: Request): Promise<Response> {
 
 export async function DELETE(request: Request): Promise<Response> {
   return conMembro(request, async (m) => {
+    soloTitolare(m);
     await togliLogo(m.impresaId);
     return Response.json({ ok: true });
   });
