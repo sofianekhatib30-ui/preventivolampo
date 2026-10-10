@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
+import { avvisoIn } from "@/lib/i18n/avvisi";
 import { useLingua } from "@/lib/i18n/client";
 import { profiloDa } from "@/lib/fisco/profilo";
 import { ELENCO_MESTIERI, FAMIGLIE } from "@/lib/impresa/mestieri";
@@ -50,7 +51,8 @@ function Campo({
 // Registrazione (modo «nuova») e modifica dei dati dell'impresa: sono quelli che finiscono sul PDF.
 export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpresa; modo: "nuova" | "modifica" }) {
   const router = useRouter();
-  const M = useLingua().d.area.modulo;
+  const dz = useLingua().d;
+  const M = dz.area.modulo;
   const [v, setV] = useState(iniziali);
   const [invio, setInvio] = useState(false);
   const [esito, setEsito] = useState<{ tipo: "ok" | "errore"; testo: string } | null>(null);
@@ -178,9 +180,9 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
         {avvisi.length > 0 && (
           <div className="mt-4 rounded-card border border-linea-2 bg-superficie p-4">
             <p className="text-[15px] font-bold">{M.daSapere}</p>
-            <ul className="mt-2 list-disc space-y-1 pl-5 text-[15px] text-testo-2" lang="it">
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-[15px] text-testo-2">
               {avvisi.map((a) => (
-                <li key={a}>{a}</li>
+                <li key={a}>{avvisoIn(dz, a)}</li>
               ))}
             </ul>
           </div>

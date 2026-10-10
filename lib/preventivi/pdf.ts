@@ -176,7 +176,9 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
 
   // Totali
   ensure(90);
+  // Ogni riga dei totali si assicura il suo spazio: con rivalsa, più gruppi IVA, bollo e netto il blocco è lungo.
   const right = (label: string, value: string, tradotta?: string) => {
+    ensure(tradotta ? 28 : 18);
     text(label, col.pu - 150, 9, reg);
     page.drawText(value, { x: col.imp - 6 - reg.widthOfTextAtSize(value, 9), y, size: 9, font: reg, color: INK });
     if (tradotta) {
@@ -201,6 +203,7 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   }
   if (c.bolloCents > 0) right("Marca da bollo", euro(c.bolloCents), T?.bollo);
   y -= 2;
+  ensure(34);
   page.drawRectangle({ x: col.pu - 156, y: y - 6, width: col.imp - (col.pu - 156), height: 22, color: ARDESIA });
   text(T ? `Totale / ${T.totale}` : "Totale", col.pu - 150, 12, bold, WHITE);
   page.drawText(euro(c.totaleCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.totaleCents), 12), y, size: 12, font: bold, color: WHITE });
@@ -209,6 +212,7 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   if (c.scissione) right("IVA versata dall'ente (scissione dei pagamenti)", `-${euro(c.ivaCents)}`, T?.scissione);
   if (c.ritenuta) right(`Ritenuta d'acconto ${c.ritenuta.percento}%`, `-${euro(c.ritenuta.importoCents)}`, T?.ritenuta(c.ritenuta.percento));
   if (c.nettoCents !== c.totaleCents) {
+    ensure(24);
     text(T ? `Netto da pagare / ${T.netto}` : "Netto da pagare", col.pu - 150, 10, bold);
     page.drawText(euro(c.nettoCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.nettoCents), 10), y, size: 10, font: bold, color: INK });
     y -= 22;
@@ -230,11 +234,14 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   }
   y -= 6;
   para(T ? `Condizioni / ${T.condizioniTitolo}` : "Condizioni", 8.5, bold, INK);
-  para(
+  // Senza IVA sul documento (forfettario, esenti, inversione contabile) la frase sui prezzi IVA esclusa non ha senso.
+  const conIva = c.ivaCents > 0;
+  const senzaPrimaFrase = (t: string) => t.slice(t.indexOf(". ") + 2);
+  const condizioni =
     `Prezzi IVA esclusa salvo dove indicato. Lavori non elencati e varianti richieste in corso d'opera si preventivano a parte. ` +
-      `Se il cliente è un consumatore e accetta a distanza (link), ha diritto di recesso entro 14 giorni dall'accettazione, salvo esecuzione dei lavori richiesta prima della scadenza.`,
-  );
-  if (T) para(T.condizioni, 8, ital);
+    `Se il cliente è un consumatore e accetta a distanza (link), ha diritto di recesso entro 14 giorni dall'accettazione, salvo esecuzione dei lavori richiesta prima della scadenza.`;
+  para(conIva ? condizioni : senzaPrimaFrase(condizioni));
+  if (T) para(conIva ? T.condizioni : senzaPrimaFrase(T.condizioni), 8, ital);
   if (company.condizioniPagamento || company.iban) {
     y -= 2;
     para(T ? `Pagamento / ${T.pagamento}` : "Pagamento", 8.5, bold, INK);

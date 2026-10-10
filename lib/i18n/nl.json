@@ -411,6 +411,41 @@
       "si": "Ja, verwijder",
       "no": "Nee"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Beschermde gebouwen en cultureel erfgoed: btw-tarief en verlegging bevestigen met uw boekhouder.",
+        "falegname": "Maatmeubels en meubilair zijn goederen: 22% btw, ook in een woning. Deuren en ramen binnen werk aan de woning volgen de btw voor de bouw.",
+        "piscine": "Zwembaden zijn geen gebouwen: geen verlegging voor schoonmaak en afwerking. Verlaagde btw alleen als onderdeel van een renovatie: bevestigen met uw boekhouder.",
+        "spurghi": "Ontstopping is een dienst tegen 22%; werk aan het eigen rioolnet kan onderhoud zijn: bevestigen met uw boekhouder.",
+        "giardiniere": "Verkochte planten en bloemen tegen 10%: vul het tarief in bij de posten van de prijslijst. Metselwerk in de tuin kan de btw voor de bouw volgen.",
+        "tende": "Alleen levering met montage: 22%. Binnen onderhoud of renovatie van de woning: 10%. Bevestigen met uw boekhouder.",
+        "vetraio": "Vervangen van ruiten van een woning: 10% als onderhoud (te bevestigen). Spiegels en glas voor meubels: 22%.",
+        "officina": "Aanpassen van voertuigen voor mensen met een beperking: 4% (te bevestigen).",
+        "catering": "10% voor eten met bediening (nr. 121 Tab. A deel III). Alleen bezorgen zonder bediening volgt het tarief van de producten.",
+        "pasticceria": "De meeste banketproducten zijn tegen 10%: controleer het tarief van elk product.",
+        "allestimenti": "Verkochte bloemen, stukken en planten tegen 10%; de aankleding als dienst tegen 22%. Vul het tarief in bij de posten van de prijslijst.",
+        "noleggio": "Verhuur volgt het btw-tarief van het verhuurde goed.",
+        "musica": "Liveconcerten tegen 10% (nr. 123 Tab. A deel III); dj en opgenomen muziek tegen 22%.",
+        "organizzazioneEventi": "Pakketten met reis en verblijf kunnen onder de regeling voor reisbureaus vallen (art. 74-ter): bevestigen met uw boekhouder.",
+        "stampa": "Gedrukte boeken en kranten tegen 4% (nr. 18 Tab. A deel II), ook als u ze voor een klant drukt.",
+        "formazione": "Alleen vrijgesteld van btw als de instelling en de cursus erkend zijn (art. 10, nr. 20): vul dan «vrijgesteld» in bij de posten.",
+        "ripetizioni": "Persoonlijk gegeven lessen in school- of universiteitsvakken zijn vrijgesteld; andere lessen tegen 22%.",
+        "onoranze": "De eigen diensten van uitvaartondernemingen zijn vrijgesteld; bloemen, drukwerk en andere leveringen hebben hun eigen tarief. Bevestigen met uw boekhouder.",
+        "ncc": "Personenvervoer: 10% (nr. 127-novies Tab. A deel III). De stadstaxi is vrijgesteld.",
+        "agricoltura": "10% alleen voor werk met landbouwmachines voor landbouwbedrijven; handwerk en klanten zonder agrarisch btw-nummer: 22%."
+      },
+      "contesto": {
+        "primaCasa": "4% btw hoofdwoning: nodig is een schriftelijke verklaring van de klant over de voorwaarden, en de woning mag geen luxewoning zijn (A/1, A/8, A/9).",
+        "nuovaCostruzione": "10% btw op nieuwbouw: geldt voor woningen die geen luxewoning zijn. Controleer de kadastrale categorie.",
+        "barriere": "4% btw voor architectonische drempels: nodig zijn een aannemingscontract en werk volgens DM 236/1989. Alleen verkoop met montage volstaat niet.",
+        "ristrutturazione": "10% btw voor renovatie: nodig is de bouwvergunning (CILA, SCIA of vergunning).",
+        "esterno": "Tuinen en buitenruimtes: 22% btw. Metselwerk op een bij de woning horend terrein kan tegen 10%: controleer met uw boekhouder.",
+        "subappalto": "Verlegging bij onderaanneming in de bouw: geldt als de klant een bouwbedrijf of de hoofdaannemer van het werk is.",
+        "edificio": "Verlegging bij schoonmaak, sloop, installaties of afwerking: geldt alleen als het werk een gebouw betreft.",
+        "condominio": "De VvE houdt 4% in als voorschot: het netto dat u ontvangt is lager dan het totaal.",
+        "aliquoteDiverse": "Uw vakken hebben verschillende tarieven: regels zonder eigen tarief gaan tegen 22%. Vul het tarief in bij de posten van de prijslijst die een ander hebben."
+      }
+    },
     "revisione": {
       "bozzaN": "Concept nr. {numero}",
       "origineEsempio": "voorbeeld {caso} uit de testset, opgeslagen uitvoer van de motor",

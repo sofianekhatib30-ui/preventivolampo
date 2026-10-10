@@ -65,9 +65,9 @@ export const DatiImpresa = z.strictObject({
     .max(MESTIERI.length * 2)
     .transform((ms) => normalizzaMestieri(ms) as NomeMestiere[]),
   // Il profilo fiscale: decide IVA, bollo, ritenute e rivalsa di ogni preventivo (lib/fisco).
-  regime_fiscale: z.enum(REGIMI_FISCALI).default("ordinario"),
-  ritenuta: z.boolean().default(false),
-  rivalsa_inps: z.boolean().default(false),
+  regime_fiscale: z.enum(REGIMI_FISCALI),
+  ritenuta: z.boolean(),
+  rivalsa_inps: z.boolean(),
 });
 export type DatiImpresa = z.infer<typeof DatiImpresa>;
 

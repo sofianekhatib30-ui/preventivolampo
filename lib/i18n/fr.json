@@ -411,6 +411,41 @@
       "si": "Oui, supprime",
       "no": "Non"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Bâtiments protégés et patrimoine culturel : taux de TVA et autoliquidation à confirmer avec votre comptable.",
+        "falegname": "Les meubles sur mesure et le mobilier sont des biens : TVA 22 % même dans un logement. Portes et fenêtres dans des travaux sur le logement suivent la TVA du bâtiment.",
+        "piscine": "Les piscines ne sont pas des bâtiments : pas d'autoliquidation pour le nettoyage et la finition. TVA réduite seulement si elles font partie d'une rénovation : à confirmer avec votre comptable.",
+        "spurghi": "Le curage est un service à 22 % ; les travaux sur le réseau d'égout privé peuvent être de l'entretien : à confirmer avec votre comptable.",
+        "giardiniere": "Les plantes et fleurs vendues sont à 10 % : indiquez le taux sur les articles du tarif. La maçonnerie dans un jardin peut suivre la TVA du bâtiment.",
+        "tende": "Fourniture et pose seules : 22 %. Dans des travaux d'entretien ou de rénovation du logement : 10 %. À confirmer avec votre comptable.",
+        "vetraio": "Remplacement des vitres des fenêtres d'un logement : 10 % comme entretien (à confirmer). Miroirs et vitres pour meubles : 22 %.",
+        "officina": "Adaptation de véhicules pour personnes handicapées : 4 % (à confirmer).",
+        "catering": "10 % pour la restauration avec service (n. 121 Tab. A partie III). La simple livraison de repas sans service suit le taux des produits.",
+        "pasticceria": "La plupart des produits de pâtisserie sont à 10 % : vérifiez le taux de chaque produit.",
+        "allestimenti": "Les fleurs, compositions et plantes vendues sont à 10 % ; le service de décoration à 22 %. Indiquez le taux sur les articles du tarif.",
+        "noleggio": "La location suit le taux de TVA du bien loué.",
+        "musica": "Les concerts en direct sont à 10 % (n. 123 Tab. A partie III) ; DJ et musique enregistrée à 22 %.",
+        "organizzazioneEventi": "Les forfaits avec voyage et séjour peuvent relever du régime des agences de voyage (art. 74-ter) : à confirmer avec votre comptable.",
+        "stampa": "Les livres et journaux imprimés sont à 4 % (n. 18 Tab. A partie II), même quand vous les imprimez pour un client.",
+        "formazione": "Exonéré de TVA seulement si l'organisme et la formation sont reconnus (art. 10, n. 20) : dans ce cas indiquez «exonéré» sur les articles.",
+        "ripetizioni": "Les cours sur des matières scolaires ou universitaires donnés à titre personnel sont exonérés ; les autres cours sont à 22 %.",
+        "onoranze": "Les prestations propres aux pompes funèbres sont exonérées ; fleurs, impressions et autres fournitures ont leur propre taux. À confirmer avec votre comptable.",
+        "ncc": "Transport de personnes : 10 % (n. 127-novies Tab. A partie III). Le taxi urbain est exonéré.",
+        "agricoltura": "10 % seulement pour les travaux avec machines agricoles pour les exploitations agricoles ; travaux manuels et clients sans numéro de TVA agricole : 22 %."
+      },
+      "contesto": {
+        "primaCasa": "TVA 4 % résidence principale : il faut la déclaration écrite du client sur les conditions, et le logement ne doit pas être de luxe (A/1, A/8, A/9).",
+        "nuovaCostruzione": "TVA 10 % sur les constructions neuves : vaut pour les logements qui ne sont pas de luxe. Vérifiez la catégorie cadastrale.",
+        "barriere": "TVA 4 % pour les barrières architecturales : il faut un contrat d'entreprise et des travaux conformes au DM 236/1989. La simple vente avec pose ne suffit pas.",
+        "ristrutturazione": "TVA 10 % pour la rénovation : il faut l'autorisation d'urbanisme (CILA, SCIA ou permis de construire).",
+        "esterno": "Jardins et espaces extérieurs : TVA 22 %. La maçonnerie sur une zone rattachée au logement peut être à 10 % : vérifiez avec votre comptable.",
+        "subappalto": "Autoliquidation pour sous-traitance dans le bâtiment : vaut si le client est une entreprise de construction ou l'entrepreneur principal du chantier.",
+        "edificio": "Autoliquidation pour nettoyage, démolition, installations ou finition : vaut seulement si les travaux concernent un bâtiment.",
+        "condominio": "La copropriété retient 4 % à titre d'acompte : le net que vous encaissez est inférieur au total.",
+        "aliquoteDiverse": "Vos métiers ont des taux différents : les lignes sans taux propre vont à 22 %. Indiquez le taux sur les articles du tarif qui en ont un autre."
+      }
+    },
     "revisione": {
       "bozzaN": "Brouillon n° {numero}",
       "origineEsempio": "exemple {caso} du banc d'essai, résultat enregistré du moteur",

@@ -39,8 +39,15 @@ describe("partita IVA e IBAN", () => {
       condizioni_pagamento: "",
       validita_giorni: "30",
       mestieri: ["Muratore"],
+      regime_fiscale: "ordinario",
+      ritenuta: false,
+      rivalsa_inps: false,
     };
     const ok = DatiImpresa.parse(base);
+    // Senza il profilo fiscale il modulo non passa: niente ritorno silenzioso al regime ordinario.
+    const { regime_fiscale: _r, ...senzaRegime } = base;
+    void _r;
+    expect(DatiImpresa.safeParse(senzaRegime).success).toBe(false);
     expect(ok).toMatchObject({ piva: "01234567897", email: "info@esempio.it", iban: null, cf: null, validita_giorni: 30 });
     const ko = DatiImpresa.safeParse({ ...base, piva: "01234567890" });
     expect(ko.success).toBe(false);
@@ -269,5 +276,17 @@ describe("listino da PDF e foto", () => {
     const { leggiConAI } = await import("@/lib/impresa/importa");
     const call = async () => ({ input: { voci: [] }, inputTokens: 0, outputTokens: 0 });
     await expect(leggiConAI([{ nome: "x.zip", bytes: new Uint8Array([0x50, 0x4b, 0x03, 0x04]) }], call)).rejects.toThrow(/non è un PDF/);
+  });
+});
+
+describe("motore edile misurato", () => {
+  it("strumento e prompt edili restano quelli del banco; il tipo di cliente solo nel generale", async () => {
+    const { EXTRACTION_TOOL, EXTRACTION_TOOL_GENERALE } = await import("@/lib/motore/estrazione");
+    const s = (t: typeof EXTRACTION_TOOL) => JSON.stringify(t.input_schema);
+    expect(s(EXTRACTION_TOOL)).not.toContain("clientKind");
+    expect(s(EXTRACTION_TOOL)).toContain('"enum":["m2","m","m3","cad","h","100kg","kg","l","corpo","giorno","km","non_detto"]');
+    expect(EXTRACTION_SYSTEM).not.toContain("clientKind");
+    expect(s(EXTRACTION_TOOL_GENERALE)).toContain("clientKind");
+    expect(s(EXTRACTION_TOOL_GENERALE)).toContain('"kWp"');
   });
 });

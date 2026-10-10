@@ -20,7 +20,59 @@ function notSaidToNull(raw: unknown): unknown {
   return raw === NOT_SAID ? null : raw;
 }
 
+// Lo strumento e il prompt edili sono quelli misurati sul banco di prova (misure/): unità di allora e niente
+// tipo di cliente, che per l'edilizia si chiede nella revisione. Cambiarli vuol dire rimisurare il banco.
+const UNITS_MISURATE = ["m2", "m", "m3", "cad", "h", "100kg", "kg", "l", "corpo", "giorno", "km"] as const satisfies readonly (typeof UNITS)[number][];
+
 export const EXTRACTION_TOOL: ToolSpec = {
+  name: "registra_sopralluogo",
+  description: "Registra le lavorazioni, il cliente e il contesto IVA ricavati dal vocale del sopralluogo.",
+  input_schema: {
+    type: "object",
+    additionalProperties: false,
+    required: ["customer", "vat", "lines", "exclusions", "notes"],
+    properties: {
+      customer: {
+        type: "object",
+        additionalProperties: false,
+        required: ["name", "address"],
+        properties: { name: nullable({ type: "string" }), address: nullable({ type: "string" }) },
+      },
+      vat: {
+        type: "object",
+        additionalProperties: false,
+        required: ["dwelling", "intervention", "goodsBoughtBy"],
+        properties: {
+          dwelling: nullable({ type: "boolean" }),
+          intervention: nullable({ type: "string", enum: [...INTERVENTIONS] }),
+          goodsBoughtBy: nullable({ type: "string", enum: ["impresa", "cliente"] }),
+        },
+      },
+      lines: {
+        type: "array",
+        items: {
+          type: "object",
+          additionalProperties: false,
+          required: ["spoken", "work", "quantity", "unit", "calc", "quantityNote", "clientSuppliesMaterial"],
+          properties: {
+            spoken: { type: "string", description: "Le parole dell'artigiano per questa sola lavorazione, quasi alla lettera" },
+            work: { type: "string", description: "La lavorazione in italiano tecnico, breve (es. «rimozione rivestimento in piastrelle»)" },
+            quantity: nullable({ type: "number", description: "Maggiore di zero" }),
+            unit: nullable({ type: "string", enum: [...UNITS_MISURATE] }),
+            calc: nullable({ type: "string", description: "Se la quantità è calcolata da misure: l'espressione con soli numeri, + - * / e parentesi (es. «5*4 + 3.5*3»)" }),
+            quantityNote: nullable({ type: "string", description: "Come si arriva alla quantità, se calcolata" }),
+            clientSuppliesMaterial: { type: "boolean" },
+          },
+        },
+      },
+      exclusions: { type: "array", items: { type: "string" } },
+      notes: { type: "array", items: { type: "string" } },
+    },
+  },
+};
+
+// Per i mestieri fuori dall'edilizia: tutte le unità e il tipo di cliente letto dal racconto.
+export const EXTRACTION_TOOL_GENERALE: ToolSpec = {
   name: "registra_sopralluogo",
   description: "Registra le lavorazioni, il cliente e il contesto IVA ricavati dal vocale del sopralluogo.",
   input_schema: {
@@ -88,7 +140,6 @@ Regole:
 - unit: m2, m, m3, cad (pezzi), h (ore), 100kg, kg, l (litri), corpo (lavoro a corpo, quantità 1). Usa l'unità in cui la quantità è detta; «metri» detto di una superficie (pittura, intonaco, piastrelle, muffa) sono m2. Se il numero detto non ha un'unità chiara, unit = non_detto. Se la quantità manca, unit è l'unità con cui quella lavorazione si misura senza dubbi (pittura e rivestimenti m2, tubi e cavi m, prese e sanitari cad); se potrebbe essere misurata in più modi (crepe, ripristini), unit = non_detto.
 - clientSuppliesMaterial = true solo se l'artigiano dice che il materiale di quella riga lo compra o lo fornisce il cliente, compreso il caso in cui si rimonta un pezzo che il cliente ha già («rimonto il suo lavello», «il suo rubinetto vecchio, niente da comprare»): vale per ogni riga a cui si riferisce, anche se è detto una volta sola.
 - Contesto IVA, solo se detto o evidente dalle parole: dwelling (abitazione: «ci abita», «casa sua»; negozio o ufficio = false), intervention (manutenzione_ordinaria, manutenzione_straordinaria, ristrutturazione), goodsBoughtBy (chi compra i materiali: «li compro io» = impresa, «li ha comprati lei» = cliente). Se non è detto, null (per gli elenchi: non_detto).
-- clientKind, solo se detto o evidente: privato (una persona, una famiglia), impresa (una ditta, una società, un negozio, un ristorante, un professionista con partita IVA), condominio («l'amministratore», «il condominio»), pa (un comune, una scuola pubblica, un'ASL, un ente pubblico). Se non è detto: non_detto.
 - Termini dialettali lombardi: «el cess» = water, «caldana» = massetto, «sciura» = signora, «magütt» = muratore, «minga» = non.
 - Non scrivere prezzi.`;
 
@@ -133,7 +184,8 @@ export function extractionSystem(impresa?: string, regime: "edile" | "ordinario"
 }
 
 export async function extract(transcript: string, call: ToolCaller, impresa?: string, regime: "edile" | "ordinario" = "edile", chiedere?: string) {
-  const result = await call({ system: extractionSystem(impresa, regime, chiedere), user: transcript, tool: EXTRACTION_TOOL });
+  const tool = regime === "ordinario" ? EXTRACTION_TOOL_GENERALE : EXTRACTION_TOOL;
+  const result = await call({ system: extractionSystem(impresa, regime, chiedere), user: transcript, tool });
   const parsed = EstrazioneGrezza.safeParse(notSaidToNull(result.input));
   if (!parsed.success) {
     throw new Error(`Uscita dell'estrazione non valida: ${parsed.error.issues.map((i) => i.path.join(".")).join(", ")}`);

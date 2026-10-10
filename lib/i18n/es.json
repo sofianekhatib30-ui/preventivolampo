@@ -411,6 +411,41 @@
       "si": "Sí, eliminar",
       "no": "No"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Edificios protegidos y patrimonio cultural: tipo de IVA e inversión del sujeto pasivo a confirmar con tu asesor.",
+        "falegname": "Los muebles a medida y el mobiliario son bienes: IVA 22% también en una vivienda. Puertas y ventanas dentro de una obra en la vivienda siguen el IVA de construcción.",
+        "piscine": "Las piscinas no son edificios: sin inversión del sujeto pasivo para limpieza y terminación. IVA reducido solo si forman parte de una reforma: a confirmar con tu asesor.",
+        "spurghi": "El desatasco es un servicio al 22%; las obras en la red de saneamiento privada pueden ser mantenimiento: a confirmar con tu asesor.",
+        "giardiniere": "Plantas y flores vendidas van al 10%: indica el tipo en las partidas del listado. Las obras de albañilería en el jardín pueden seguir el IVA de construcción.",
+        "tende": "Solo suministro con instalación: 22%. Dentro de una obra de mantenimiento o reforma de la vivienda: 10%. A confirmar con tu asesor.",
+        "vetraio": "Sustitución de cristales de ventanas de una vivienda: 10% como mantenimiento (a confirmar). Espejos y cristales para muebles: 22%.",
+        "officina": "Adaptación de vehículos para personas con discapacidad: 4% (a confirmar).",
+        "catering": "10% para la comida servida con servicio (n. 121 Tab. A parte III). La simple entrega de comida sin servicio sigue el tipo de los productos.",
+        "pasticceria": "La mayoría de los productos de pastelería van al 10%: comprueba el tipo de cada producto.",
+        "allestimenti": "Flores, composiciones y plantas vendidas van al 10%; el servicio de decoración al 22%. Indica el tipo en las partidas del listado.",
+        "noleggio": "El alquiler sigue el tipo de IVA del bien alquilado.",
+        "musica": "Los conciertos en directo van al 10% (n. 123 Tab. A parte III); DJ y música grabada al 22%.",
+        "organizzazioneEventi": "Los paquetes con viaje y alojamiento pueden entrar en el régimen de las agencias de viaje (art. 74-ter): a confirmar con tu asesor.",
+        "stampa": "Libros y periódicos impresos van al 4% (n. 18 Tab. A parte II), también cuando los imprimes para un cliente.",
+        "formazione": "Exento de IVA solo si el centro y el curso están reconocidos (art. 10, n. 20): en ese caso indica «exento» en las partidas.",
+        "ripetizioni": "Están exentas las clases de materias escolares o universitarias dadas a título personal; las demás clases van al 22%.",
+        "onoranze": "Están exentos los servicios propios de las funerarias; flores, impresos y otros suministros tienen su propio tipo. A confirmar con tu asesor.",
+        "ncc": "Transporte de personas: 10% (n. 127-novies Tab. A parte III). El taxi urbano está exento.",
+        "agricoltura": "10% solo para trabajos con maquinaria agrícola para explotaciones agrícolas; trabajos manuales y clientes sin número de IVA agrícola: 22%."
+      },
+      "contesto": {
+        "primaCasa": "IVA 4% primera vivienda: hace falta la declaración escrita del cliente sobre los requisitos, y la vivienda no debe ser de lujo (A/1, A/8, A/9).",
+        "nuovaCostruzione": "IVA 10% en obra nueva: vale para viviendas que no son de lujo. Comprueba la categoría catastral.",
+        "barriere": "IVA 4% para barreras arquitectónicas: hace falta un contrato de obra y trabajos conformes al DM 236/1989. La simple venta con instalación no basta.",
+        "ristrutturazione": "IVA 10% para reforma: hace falta la licencia de obras (CILA, SCIA o permiso de construcción).",
+        "esterno": "Jardines y zonas exteriores: IVA 22%. Las obras de albañilería en una zona perteneciente a la vivienda pueden ir al 10%: compruébalo con tu asesor.",
+        "subappalto": "Inversión del sujeto pasivo por subcontrata de construcción: vale si el cliente es una constructora o el contratista principal de la obra.",
+        "edificio": "Inversión del sujeto pasivo por limpieza, demolición, instalaciones o terminación: vale solo si el trabajo afecta a un edificio.",
+        "condominio": "La comunidad de propietarios retiene el 4% a cuenta: el neto que cobras es menor que el total.",
+        "aliquoteDiverse": "Tus oficios tienen tipos de IVA distintos: las líneas sin tipo propio van al 22%. Indica el tipo en las partidas del listado que tienen uno distinto."
+      }
+    },
     "revisione": {
       "bozzaN": "Borrador n.º {numero}",
       "origineEsempio": "ejemplo {caso} del banco de pruebas, salida registrada del motor",

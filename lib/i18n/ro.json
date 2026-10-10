@@ -411,6 +411,41 @@
       "si": "Da, șterge",
       "no": "Nu"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Clădiri protejate și patrimoniu cultural: cota TVA și taxarea inversă de confirmat cu contabilul.",
+        "falegname": "Mobilierul la comandă și mobilele sunt bunuri: TVA 22% și în locuință. Ușile și ferestrele într-o lucrare la casă urmează TVA-ul pentru construcții.",
+        "piscine": "Piscinele nu sunt clădiri: fără taxare inversă pentru curățenie și finisare. TVA redus doar dacă fac parte dintr-o renovare: de confirmat cu contabilul.",
+        "spurghi": "Vidanjarea este un serviciu cu 22%; lucrările la rețeaua privată de canalizare pot fi întreținere: de confirmat cu contabilul.",
+        "giardiniere": "Plantele și florile vândute au 10%: indicați cota pe articolele din listă. Lucrările de zidărie din grădină pot urma TVA-ul pentru construcții.",
+        "tende": "Doar furnizare cu montaj: 22%. În cadrul unei lucrări de întreținere sau renovare a locuinței: 10%. De confirmat cu contabilul.",
+        "vetraio": "Înlocuirea geamurilor ferestrelor unei locuințe: 10% ca întreținere (de confirmat). Oglinzi și geamuri pentru mobilă: 22%.",
+        "officina": "Adaptarea vehiculelor pentru persoane cu dizabilități: 4% (de confirmat).",
+        "catering": "10% pentru servirea mâncării cu serviciu (nr. 121 Tab. A partea III). Simpla livrare de mâncare fără serviciu urmează cota produselor.",
+        "pasticceria": "Majoritatea produselor de cofetărie au 10%: verificați cota fiecărui produs.",
+        "allestimenti": "Florile, aranjamentele și plantele vândute au 10%; serviciul de decor 22%. Indicați cota pe articolele din listă.",
+        "noleggio": "Închirierea urmează cota bunului închiriat.",
+        "musica": "Concertele live au 10% (nr. 123 Tab. A partea III); DJ și muzica înregistrată 22%.",
+        "organizzazioneEventi": "Pachetele cu călătorie și cazare pot intra în regimul agențiilor de turism (art. 74-ter): de confirmat cu contabilul.",
+        "stampa": "Cărțile și ziarele tipărite au 4% (nr. 18 Tab. A partea II), și când le tipăriți pentru un client.",
+        "formazione": "Scutit de TVA doar dacă instituția și cursul sunt recunoscute (art. 10, nr. 20): în acest caz indicați «scutit» pe articole.",
+        "ripetizioni": "Sunt scutite lecțiile la materii școlare sau universitare date cu titlu personal; celelalte lecții au 22%.",
+        "onoranze": "Sunt scutite serviciile proprii pompelor funebre; florile, tipăriturile și alte furnizări au cota lor. De confirmat cu contabilul.",
+        "ncc": "Transport de persoane: 10% (nr. 127-novies Tab. A partea III). Taxiul urban este scutit.",
+        "agricoltura": "10% doar pentru lucrările cu utilaje agricole pentru ferme; lucrările manuale și clienții fără cod TVA agricol: 22%."
+      },
+      "contesto": {
+        "primaCasa": "TVA 4% prima casă: este nevoie de declarația scrisă a clientului privind condițiile, iar casa nu trebuie să fie de lux (A/1, A/8, A/9).",
+        "nuovaCostruzione": "TVA 10% la construcțiile noi: se aplică locuințelor care nu sunt de lux. Verificați categoria cadastrală.",
+        "barriere": "TVA 4% pentru barierele arhitecturale: este nevoie de un contract de antrepriză și lucrări conforme cu DM 236/1989. Simpla vânzare cu montaj nu ajunge.",
+        "ristrutturazione": "TVA 10% pentru renovare: este nevoie de autorizația de construire (CILA, SCIA sau autorizație).",
+        "esterno": "Grădini și spații exterioare: TVA 22%. Lucrările de zidărie pe o zonă aferentă locuinței pot avea 10%: verificați cu contabilul.",
+        "subappalto": "Taxare inversă pentru subcontractare în construcții: se aplică dacă clientul este o firmă de construcții sau antreprenorul principal al lucrării.",
+        "edificio": "Taxare inversă pentru curățenie, demolare, instalații sau finisare: se aplică doar dacă lucrarea privește o clădire.",
+        "condominio": "Condominiul reține 4% ca avans: netul încasat este mai mic decât totalul.",
+        "aliquoteDiverse": "Meseriile voastre au cote diferite: rândurile fără cotă proprie merg la 22%. Indicați cota pe articolele din listă care au una diferită."
+      }
+    },
     "revisione": {
       "bozzaN": "Ciornă nr. {numero}",
       "origineEsempio": "exemplul {caso} din banc de probă, rezultat înregistrat al motorului",

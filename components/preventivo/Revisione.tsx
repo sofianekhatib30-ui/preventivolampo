@@ -8,6 +8,7 @@ import { importoRiga, imponibileParziale, mancanze, riepilogo, type Mancanza } f
 import { LINGUE, linguaDi, mancanzaTraduzione, NOME_LINGUA, traduzioneAllineata, type Lingua } from "@/lib/preventivi/lingua";
 import type { Preventivo, RigaPreventivo } from "@/lib/preventivi/modello";
 import { ConNodi } from "@/components/Ricco";
+import { avvisoIn } from "@/lib/i18n/avvisi";
 import { useLingua } from "@/lib/i18n/client";
 import type { Dizionario } from "@/lib/i18n/it";
 import { fmt } from "@/lib/i18n/testo";
@@ -510,9 +511,9 @@ export default function Revisione({
           {c && c.avvisi.length > 0 && (
             <>
               <p className="mt-3 font-bold text-inchiostro">{R.daSapere}</p>
-              <ul className="mt-1 list-disc space-y-1 pl-5" lang="it">
+              <ul className="mt-1 list-disc space-y-1 pl-5">
                 {c.avvisi.map((a) => (
-                  <li key={a}>{a}</li>
+                  <li key={a}>{avvisoIn(d, a)}</li>
                 ))}
               </ul>
             </>

@@ -108,8 +108,10 @@ export async function aggiornaBozza(id: string, body: unknown): Promise<Preventi
 }
 
 export async function approvaIn(ctx: Contesto, id: string, adesso = new Date()): Promise<Preventivo> {
-  const p = await ctx.leggi(id);
-  if (!p) throw new Rifiuto("Preventivo non trovato.", 404);
+  const letto = await ctx.leggi(id);
+  if (!letto) throw new Rifiuto("Preventivo non trovato.", 404);
+  // Una bozza nata prima del fisco si approva con le regole che la pagina mostra, non con quelle di allora.
+  const p = conFisco(letto, ctx.profilo ?? profiloDemo());
   if (p.stato !== "bozza") throw new Rifiuto("Il preventivo è già approvato.", 409);
   const m = mancanze(p).map((x) => x.testo);
   const t = mancanzaTraduzione(p);

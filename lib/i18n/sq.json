@@ -411,6 +411,41 @@
       "si": "Po, fshije",
       "no": "Jo"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Ndërtesa të mbrojtura dhe trashëgimi kulturore: norma e TVSH-së dhe ngarkesa e kundërt për t'u konfirmuar me kontabilistin.",
+        "falegname": "Mobiliet me porosi dhe mobiliet janë mallra: TVSH 22% edhe në shtëpi. Dyert dhe dritaret në një punë në shtëpi ndjekin TVSH-në e ndërtimit.",
+        "piscine": "Pishinat nuk janë ndërtesa: pa ngarkesë të kundërt për pastrimin dhe përfundimin. TVSH e ulur vetëm nëse janë pjesë e një rikonstruksioni: për t'u konfirmuar me kontabilistin.",
+        "spurghi": "Pastrimi i kanalizimeve është shërbim me 22%; punët në rrjetin privat të kanalizimit mund të jenë mirëmbajtje: për t'u konfirmuar me kontabilistin.",
+        "giardiniere": "Bimët dhe lulet e shitura kanë 10%: tregoni normën te zërat e listës. Punët e muraturës në kopsht mund të ndjekin TVSH-në e ndërtimit.",
+        "tende": "Vetëm furnizim me montim: 22%. Brenda një pune mirëmbajtjeje ose rikonstruksioni të shtëpisë: 10%. Për t'u konfirmuar me kontabilistin.",
+        "vetraio": "Zëvendësimi i xhamave të dritareve të një banese: 10% si mirëmbajtje (për t'u konfirmuar). Pasqyra dhe xhama për mobilie: 22%.",
+        "officina": "Përshtatja e automjeteve për persona me aftësi të kufizuara: 4% (për t'u konfirmuar).",
+        "catering": "10% për shërbimin e ushqimit me shërbim (nr. 121 Tab. A pjesa III). Vetëm dorëzimi i ushqimit pa shërbim ndjek normën e produkteve.",
+        "pasticceria": "Shumica e produkteve të ëmbëlsirave kanë 10%: kontrolloni normën e çdo produkti.",
+        "allestimenti": "Lulet, kompozimet dhe bimët e shitura kanë 10%; shërbimi i dekorimit 22%. Tregoni normën te zërat e listës.",
+        "noleggio": "Qiraja ndjek normën e sendit që jepet me qira.",
+        "musica": "Koncertet live kanë 10% (nr. 123 Tab. A pjesa III); DJ dhe muzika e regjistruar 22%.",
+        "organizzazioneEventi": "Paketat me udhëtim dhe akomodim mund të hyjnë në regjimin e agjencive të udhëtimit (neni 74-ter): për t'u konfirmuar me kontabilistin.",
+        "stampa": "Librat dhe gazetat e shtypura kanë 4% (nr. 18 Tab. A pjesa II), edhe kur i shtypni për një klient.",
+        "formazione": "E përjashtuar nga TVSH vetëm nëse enti dhe kursi janë të njohur (neni 10, nr. 20): në atë rast tregoni «e përjashtuar» te zërat.",
+        "ripetizioni": "Janë të përjashtuara mësimet për lëndë shkollore ose universitare të dhëna personalisht; mësimet e tjera kanë 22%.",
+        "onoranze": "Janë të përjashtuara shërbimet e veçanta të shërbimeve funerale; lulet, shtypjet dhe furnizimet e tjera kanë normën e tyre. Për t'u konfirmuar me kontabilistin.",
+        "ncc": "Transport personash: 10% (nr. 127-novies Tab. A pjesa III). Taksia urbane është e përjashtuar.",
+        "agricoltura": "10% vetëm për punët me makineri bujqësore për ferma; punët me dorë dhe klientët pa numër TVSH bujqësor: 22%."
+      },
+      "contesto": {
+        "primaCasa": "TVSH 4% shtëpia e parë: duhet deklarata me shkrim e klientit për kushtet, dhe shtëpia nuk duhet të jetë luksoze (A/1, A/8, A/9).",
+        "nuovaCostruzione": "TVSH 10% për ndërtimet e reja: vlen për shtëpitë jo luksoze. Kontrolloni kategorinë kadastrale.",
+        "barriere": "TVSH 4% për barrierat arkitektonike: duhet një kontratë sipërmarrjeje dhe punë në përputhje me DM 236/1989. Vetëm shitja me montim nuk mjafton.",
+        "ristrutturazione": "TVSH 10% për rikonstruksion: duhet leja e ndërtimit (CILA, SCIA ose leje ndërtimi).",
+        "esterno": "Kopshte dhe zona të jashtme: TVSH 22%. Punët e muraturës në një zonë që i përket banesës mund të kenë 10%: kontrolloni me kontabilistin.",
+        "subappalto": "Ngarkesë e kundërt për nënkontraktim ndërtimi: vlen nëse klienti është firmë ndërtimi ose sipërmarrësi kryesor i punës.",
+        "edificio": "Ngarkesë e kundërt për pastrim, shembje, impiante ose përfundim: vlen vetëm nëse puna ka të bëjë me një ndërtesë.",
+        "condominio": "Kondominiumi mban 4% si paradhënie: neto që arkëtoni është më e ulët se totali.",
+        "aliquoteDiverse": "Zanatet tuaja kanë norma të ndryshme: rreshtat pa normë të vetën shkojnë me 22%. Tregoni normën te zërat e listës që kanë një tjetër."
+      }
+    },
     "revisione": {
       "bozzaN": "Drafti nr. {numero}",
       "origineEsempio": "shembulli {caso} nga banka e provës, dalje e regjistruar e motorit",

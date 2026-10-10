@@ -162,3 +162,31 @@ describe("profilo dell'impresa dai mestieri", () => {
     expect(normalizzaMestieri(["Termoidraulico", "Idraulico", "Restauro", "Inventato"])).toEqual(["Idraulico", "Restauro edifici"]);
   });
 });
+
+describe("avvertenze nelle lingue dell'interfaccia", () => {
+  it("ogni avvertenza del codice si ritrova nel dizionario", async () => {
+    const { avvisoIn } = await import("@/lib/i18n/avvisi");
+    const { DIZIONARI } = await import("@/lib/i18n/dizionari");
+    const { ELENCO_MESTIERI } = await import("@/lib/impresa/mestieri");
+    const testi = [
+      ...ELENCO_MESTIERI.flatMap((m) => ("avviso" in m && m.avviso ? [m.avviso] : [])),
+      ...profiloDa({ regime_fiscale: "ordinario", ritenuta: false, rivalsa_inps: false, mestieri: ["Catering", "Fotografo e video"] }).avvisi,
+      ...riepilogoFiscale(fisco({ cliente: "condominio", oggetto: "nuova_costruzione", primaCasa: true }), [riga(100)])!.avvisi,
+    ];
+    for (const t of testi) expect(avvisoIn(DIZIONARI.en, t), t).not.toBe(t);
+    expect(avvisoIn(DIZIONARI.it, testi[0])).toBe(testi[0]);
+  });
+});
+
+describe("rilievi della verifica del 11/10/2026", () => {
+  it("un'inversione rimasta da prima non toglie l'IVA a un lavoro che non la prevede", () => {
+    const f = fisco({ cliente: "impresa", oggetto: "esterno", inversione: "edificio" });
+    expect(riepilogoFiscale(f, [riga(1000)])!.gruppi[0]).toMatchObject({ codice: "22", ivaCents: 22000 });
+    const catering = fisco({ cliente: "impresa", inversione: "edificio" }, { edifici: false, pulizie: false, aliquotaBase: "10" });
+    expect(riepilogoFiscale(catering, [riga(1000)])!.gruppi[0]).toMatchObject({ codice: "10", ivaCents: 10000 });
+  });
+  it("i fiori al 10% non prendono la dicitura della manutenzione", () => {
+    const f = fisco({ oggetto: "non_abitativo", lavoro: "manutenzione_ordinaria" });
+    expect(riepilogoFiscale(f, [riga(100), riga(50, { aliquota: "10" })])!.diciture.join(" ")).not.toMatch(/488\/1999/);
+  });
+});

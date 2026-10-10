@@ -1,4 +1,7 @@
+import { area } from "@/lib/i18n/it-area";
 import type { Aliquota, ContestoFiscale, Fisco, ProfiloFiscale } from "./schema";
+
+const AVV = area.avvisi.contesto;
 
 // I conti fiscali del preventivo. Funzioni pure: le usano il server (approvazione, PDF) e la pagina
 // di revisione, dal telefono. Il codice non indovina: una risposta che manca diventa una domanda.
@@ -46,9 +49,14 @@ export function oggettoDi(f: Fisco): ContestoFiscale["oggetto"] {
   return f.profilo.edifici ? f.contesto.oggetto : "nessuno";
 }
 
+// Vale solo quando la domanda ha senso adesso: una risposta rimasta da prima (l'oggetto è cambiato, o arriva
+// da una richiesta costruita a mano) non toglie l'IVA a un lavoro che non la prevede.
 function inversioneAttiva(f: Fisco): boolean {
-  if (f.profilo.regime === "forfettario" || f.contesto.cliente !== "impresa") return false;
-  return f.contesto.inversione === "subappalto" || f.contesto.inversione === "edificio";
+  if (!chiedeInversione(f)) return false;
+  const suEdificio = EDIFICIO.has(oggettoDi(f));
+  if (f.contesto.inversione === "subappalto") return suEdificio;
+  if (f.contesto.inversione === "edificio") return suEdificio || f.profilo.pulizie;
+  return false;
 }
 
 export function chiedeInversione(f: Fisco): boolean {
@@ -152,20 +160,20 @@ function avvisiContesto(f: Fisco): string[] {
   const o = oggettoDi(f);
   const l = f.contesto.lavoro;
   if (o === "nuova_costruzione" && f.contesto.primaCasa === true)
-    out.push("IVA 4% prima casa: serve la dichiarazione scritta del cliente sui requisiti, e la casa non deve essere di lusso (A/1, A/8, A/9).");
-  if (o === "nuova_costruzione" && f.contesto.primaCasa === false) out.push("IVA 10% sulle nuove costruzioni: vale per le case non di lusso. Controlla la categoria catastale.");
+    out.push(AVV.primaCasa);
+  if (o === "nuova_costruzione" && f.contesto.primaCasa === false) out.push(AVV.nuovaCostruzione);
   if ((o === "abitazione" || o === "non_abitativo") && l === "barriere")
-    out.push("IVA 4% per le barriere architettoniche: serve un contratto d'appalto e opere conformi al DM 236/1989. La sola vendita con posa non basta.");
-  if ((o === "abitazione" || o === "non_abitativo") && l === "ristrutturazione") out.push("IVA 10% per ristrutturazione: serve il titolo edilizio (CILA, SCIA o permesso di costruire).");
-  if (o === "esterno") out.push("Giardini e aree esterne: IVA 22%. Le opere murarie su un'area di pertinenza dell'abitazione possono andare al 10%: verifica con il commercialista.");
+    out.push(AVV.barriere);
+  if ((o === "abitazione" || o === "non_abitativo") && l === "ristrutturazione") out.push(AVV.ristrutturazione);
+  if (o === "esterno") out.push(AVV.esterno);
   if (inversioneAttiva(f))
     out.push(
       f.contesto.inversione === "subappalto"
-        ? "Inversione contabile per subappalto edile: vale se il cliente è un'impresa di costruzioni o l'appaltatore principale del lavoro."
-        : "Inversione contabile per pulizia, demolizione, impianti o completamento: vale solo se il lavoro riguarda un edificio.",
+        ? AVV.subappalto
+        : AVV.edificio,
     );
   if (f.contesto.cliente === "condominio" && f.profilo.regime === "ordinario" && !f.profilo.ritenuta)
-    out.push("Il condominio trattiene il 4% a titolo di acconto: il netto che incassi è più basso del totale.");
+    out.push(AVV.condominio);
   return out;
 }
 
@@ -187,10 +195,12 @@ export function riepilogoFiscale(f: Fisco, righe: RigaFiscale[]): Riepilogo | nu
   const aggiungi = (k: CodiceGruppo, v: number) => basi.set(k, (basi.get(k) ?? 0) + v);
   if (p.regime === "forfettario") aggiungi("forfettario", compenso);
   else if (inversioneAttiva(f)) aggiungi("inversione", compenso);
-  else {
+  const daEdilizia = new Set<CodiceGruppo>();
+  if (p.regime === "ordinario" && !inversioneAttiva(f)) {
     let edile10 = 0;
     righe.forEach((r) => {
       const a = aliquotaRiga(f, r).aliquota!;
+      if (aliquotaRiga(f, r).edile) daEdilizia.add(a);
       if (eBeneSignificativo(f, r)) beni += r.goodsValueCents!;
       if (a === "10" && aliquotaRiga(f, r).edile) edile10 += r.importoCents!;
       aggiungi(a, r.importoCents!);
@@ -244,7 +254,8 @@ export function riepilogoFiscale(f: Fisco, righe: RigaFiscale[]): Riepilogo | nu
   } else {
     for (const g of gruppi) {
       if (g.codice === "esente") diciture.push(`Operazione esente da IVA ai sensi dell'${p.esenzione ?? "art. 10 del DPR 633/1972"}.`);
-      else if (g.codice === "10" || g.codice === "4") {
+      // Il riferimento dell'edilizia solo se nel gruppo ci sono righe che seguono l'edilizia (non i fiori al 10%).
+      else if ((g.codice === "10" || g.codice === "4") && daEdilizia.has(g.codice)) {
         const d = dicituraEdile(f, g.codice);
         if (d) diciture.push(d);
       }

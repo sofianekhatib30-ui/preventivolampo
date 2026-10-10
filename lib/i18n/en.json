@@ -411,6 +411,41 @@
       "si": "Yes, delete",
       "no": "No"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Listed buildings and cultural heritage: VAT rate and reverse charge to be confirmed with your accountant.",
+        "falegname": "Custom furniture and furnishings are goods: 22% VAT even in a home. Doors and windows within work on the home follow building VAT.",
+        "piscine": "Swimming pools are not buildings: no reverse charge for cleaning and completion. Reduced VAT only if part of a renovation: to be confirmed with your accountant.",
+        "spurghi": "Drain cleaning is a service at 22%; work on the private sewer line may count as maintenance: to be confirmed with your accountant.",
+        "giardiniere": "Plants and flowers sold are at 10%: set the rate on the price list items. Masonry work in a garden may follow building VAT.",
+        "tende": "Supply and fitting only: 22%. Within maintenance or renovation work on the home: 10%. To be confirmed with your accountant.",
+        "vetraio": "Replacing window glass in a home: 10% as maintenance (to be confirmed). Mirrors and glass for furniture: 22%.",
+        "officina": "Adapting vehicles for people with disabilities: 4% (to be confirmed).",
+        "catering": "10% for food and drink served with service (no. 121 Table A part III). Food delivery without service follows the rate of the products.",
+        "pasticceria": "Most confectionery products are at 10%: check the rate of each product.",
+        "allestimenti": "Flowers, arrangements and plants sold are at 10%; the decoration service at 22%. Set the rate on the price list items.",
+        "noleggio": "Rental follows the VAT rate of the item rented.",
+        "musica": "Live concerts are at 10% (no. 123 Table A part III); DJs and recorded music at 22%.",
+        "organizzazioneEventi": "Packages with travel and accommodation may fall under the travel agency scheme (art. 74-ter): to be confirmed with your accountant.",
+        "stampa": "Printed books and newspapers are at 4% (no. 18 Table A part II), also when you print them for a client.",
+        "formazione": "VAT exempt only if the provider and the course are recognised (art. 10, no. 20): in that case set «exempt» on the items.",
+        "ripetizioni": "Lessons on school or university subjects given personally are exempt; other lessons are at 22%.",
+        "onoranze": "Services specific to funeral homes are exempt; flowers, printing and other supplies have their own rate. To be confirmed with your accountant.",
+        "ncc": "Passenger transport: 10% (no. 127-novies Table A part III). Urban taxis are exempt.",
+        "agricoltura": "10% only for work with farm machinery for farms; manual work and clients without an agricultural VAT number: 22%."
+      },
+      "contesto": {
+        "primaCasa": "4% VAT main home: you need the client's written statement on the requirements, and the home must not be a luxury one (A/1, A/8, A/9).",
+        "nuovaCostruzione": "10% VAT on new buildings: applies to non-luxury homes. Check the cadastral category.",
+        "barriere": "4% VAT for architectural barriers: you need a works contract and work compliant with Ministerial Decree 236/1989. Sale with fitting alone is not enough.",
+        "ristrutturazione": "10% VAT for renovation: you need the building permit (CILA, SCIA or building permit).",
+        "esterno": "Gardens and outdoor areas: 22% VAT. Masonry work on an area belonging to the home may be at 10%: check with your accountant.",
+        "subappalto": "Reverse charge for building subcontracts: applies if the client is a construction company or the main contractor for the job.",
+        "edificio": "Reverse charge for cleaning, demolition, systems or completion: applies only if the work concerns a building.",
+        "condominio": "The condominium withholds 4% as an advance: the net you receive is lower than the total.",
+        "aliquoteDiverse": "Your trades have different VAT rates: lines without their own rate go at 22%. Set the rate on the price list items that have a different one."
+      }
+    },
     "revisione": {
       "bozzaN": "Draft no. {numero}",
       "origineEsempio": "example {caso} from the test bench, recorded output of the engine",

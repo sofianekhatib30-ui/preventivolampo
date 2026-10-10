@@ -147,3 +147,40 @@ describe("dal sopralluogo al PDF bilingue", () => {
     expect(it.traduzione).toBeNull();
   });
 });
+
+describe("totali lunghi nel PDF", () => {
+  it("con molte righe, rivalsa, più aliquote e netto nulla esce dalla pagina", async () => {
+    const { profiloDa } = await import("@/lib/fisco/profilo");
+    const { CONTESTO_VUOTO } = await import("@/lib/fisco/schema");
+    const base = await creaDaTesto("Sopralluogo inventato con tante voci da mettere in pagina.", motore);
+    const profilo = profiloDa({ regime_fiscale: "ordinario", ritenuta: true, rivalsa_inps: true, mestieri: ["Grafica e siti web"] });
+    // Il blocco dei totali cade in punti diversi della pagina secondo quante righe ci sono: si provano tutti.
+    const casi = Array.from({ length: 24 }, (_, k) => {
+      const righe = Array.from({ length: 26 + k }, (_, i) => ({ ...base.righe[0], work: `voce ${i}`, quantity: 1, unit: "cad" as const, unitPriceCents: 1000, aliquota: (["22", "10", "4", "esente"] as const)[i % 4] }));
+      return {
+        ...base,
+        righe,
+        stato: "approvato" as const,
+        approvatoIl: new Date().toISOString(),
+        lingua: "de" as const,
+        traduzione: { lingua: "de" as const, righe: righe.map((r) => `${r.work} DE`), esclusioni: base.esclusioni.map((e) => `${e} DE`), sorgente: { righe: righe.map((r) => r.work), esclusioni: base.esclusioni } },
+        fisco: { contesto: { ...CONTESTO_VUOTO, cliente: "impresa" as const, oggetto: "nessuno" as const }, profilo },
+      };
+    });
+    // Ogni testo scritto nel PDF sta dentro la pagina: si registrano le coordinate di ogni drawText.
+    const { PDFPage } = await import("pdf-lib");
+    const ys: number[] = [];
+    const originale = PDFPage.prototype.drawText;
+    PDFPage.prototype.drawText = function (t, o) {
+      ys.push(o?.y ?? 0);
+      return originale.call(this, t, o);
+    };
+    try {
+      for (const p of casi) await generaPdf(p, await demo.azienda());
+    } finally {
+      PDFPage.prototype.drawText = originale;
+    }
+    expect(ys.length).toBeGreaterThan(100);
+    expect(Math.min(...ys)).toBeGreaterThan(0);
+  });
+});

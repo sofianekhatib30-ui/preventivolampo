@@ -411,6 +411,41 @@
       "si": "Ja, löschen",
       "no": "Nein"
     },
+    "avvisi": {
+      "mestieri": {
+        "restauro": "Denkmalgeschützte Gebäude und Kulturgüter: MwSt.-Satz und Umkehr der Steuerschuld mit dem Steuerberater klären.",
+        "falegname": "Maßmöbel und Möbel sind Waren: 22 % MwSt. auch in einer Wohnung. Türen und Fenster im Rahmen von Arbeiten an der Wohnung folgen der Bau-MwSt.",
+        "piscine": "Schwimmbäder sind keine Gebäude: keine Umkehr der Steuerschuld bei Reinigung und Fertigstellung. Ermäßigte MwSt. nur als Teil einer Sanierung: mit dem Steuerberater klären.",
+        "spurghi": "Kanalreinigung ist eine Leistung zu 22 %; Arbeiten am privaten Abwassernetz können Instandhaltung sein: mit dem Steuerberater klären.",
+        "giardiniere": "Verkaufte Pflanzen und Blumen zu 10 %: geben Sie den Satz bei den Listenpositionen an. Maurerarbeiten im Garten können der Bau-MwSt. folgen.",
+        "tende": "Nur Lieferung mit Montage: 22 %. Im Rahmen einer Instandhaltung oder Sanierung der Wohnung: 10 %. Mit dem Steuerberater klären.",
+        "vetraio": "Austausch von Fensterglas einer Wohnung: 10 % als Instandhaltung (zu klären). Spiegel und Möbelglas: 22 %.",
+        "officina": "Umbau von Fahrzeugen für Menschen mit Behinderung: 4 % (zu klären).",
+        "catering": "10 % für Speisen mit Service (Nr. 121 Tab. A Teil III). Reine Lieferung ohne Service folgt dem Satz der Produkte.",
+        "pasticceria": "Die meisten Konditoreiwaren sind zu 10 %: prüfen Sie den Satz jedes Produkts.",
+        "allestimenti": "Verkaufte Blumen, Gestecke und Pflanzen zu 10 %; die Dekorationsleistung zu 22 %. Geben Sie den Satz bei den Listenpositionen an.",
+        "noleggio": "Die Vermietung folgt dem MwSt.-Satz des vermieteten Gegenstands.",
+        "musica": "Live-Konzerte zu 10 % (Nr. 123 Tab. A Teil III); DJ und aufgezeichnete Musik zu 22 %.",
+        "organizzazioneEventi": "Pakete mit Reise und Unterkunft können unter die Regelung für Reisebüros fallen (Art. 74-ter): mit dem Steuerberater klären.",
+        "stampa": "Gedruckte Bücher und Zeitungen zu 4 % (Nr. 18 Tab. A Teil II), auch wenn Sie sie für einen Kunden drucken.",
+        "formazione": "MwSt.-befreit nur, wenn Anbieter und Kurs anerkannt sind (Art. 10, Nr. 20): dann geben Sie «befreit» bei den Positionen an.",
+        "ripetizioni": "Befreit sind persönlich erteilte Stunden in Schul- oder Universitätsfächern; andere Stunden zu 22 %.",
+        "onoranze": "Befreit sind die typischen Leistungen von Bestattungsunternehmen; Blumen, Drucksachen und andere Lieferungen haben ihren eigenen Satz. Mit dem Steuerberater klären.",
+        "ncc": "Personenbeförderung: 10 % (Nr. 127-novies Tab. A Teil III). Das städtische Taxi ist befreit.",
+        "agricoltura": "10 % nur für Arbeiten mit Landmaschinen für landwirtschaftliche Betriebe; Handarbeit und Kunden ohne landwirtschaftliche MwSt.-Nummer: 22 %."
+      },
+      "contesto": {
+        "primaCasa": "4 % MwSt. Erstwohnsitz: nötig ist eine schriftliche Erklärung des Kunden zu den Voraussetzungen, und die Wohnung darf keine Luxuswohnung sein (A/1, A/8, A/9).",
+        "nuovaCostruzione": "10 % MwSt. auf Neubauten: gilt für Wohnungen, die keine Luxuswohnungen sind. Prüfen Sie die Katasterkategorie.",
+        "barriere": "4 % MwSt. für Barrierefreiheit: nötig sind ein Werkvertrag und Arbeiten nach DM 236/1989. Reiner Verkauf mit Montage reicht nicht.",
+        "ristrutturazione": "10 % MwSt. für Sanierung: nötig ist die Baugenehmigung (CILA, SCIA oder Baugenehmigung).",
+        "esterno": "Gärten und Außenflächen: 22 % MwSt. Maurerarbeiten auf einer zur Wohnung gehörenden Fläche können zu 10 % sein: mit dem Steuerberater klären.",
+        "subappalto": "Umkehr der Steuerschuld bei Bau-Subunternehmen: gilt, wenn der Kunde ein Bauunternehmen oder der Hauptauftragnehmer ist.",
+        "edificio": "Umkehr der Steuerschuld bei Reinigung, Abbruch, Haustechnik oder Fertigstellung: gilt nur, wenn die Arbeit ein Gebäude betrifft.",
+        "condominio": "Die Eigentümergemeinschaft behält 4 % als Vorauszahlung ein: Ihr Nettobetrag ist niedriger als der Gesamtbetrag.",
+        "aliquoteDiverse": "Ihre Gewerke haben unterschiedliche Sätze: Zeilen ohne eigenen Satz gehen zu 22 %. Geben Sie den Satz bei den Listenpositionen an, die einen anderen haben."
+      }
+    },
     "revisione": {
       "bozzaN": "Entwurf Nr. {numero}",
       "origineEsempio": "Beispiel {caso} aus dem Testlauf, aufgezeichnete Ausgabe der Engine",

@@ -12,16 +12,17 @@ export const STATI = ["bozza", "approvato", "accettato", "rifiutato"] as const;
 export const RigaPreventivo = z.strictObject({
   work: z.string().min(2).max(200),
   spoken: z.string().max(400),
-  quantity: z.number().positive().nullable(),
+  // Tetti larghi ma finiti: un numero assurdo non deve rompere i conti né il PDF.
+  quantity: z.number().positive().max(1_000_000).nullable(),
   unit: Unit.nullable(),
-  unitPriceCents: z.number().int().nonnegative().nullable(),
+  unitPriceCents: z.number().int().nonnegative().max(1_000_000_000).nullable(),
   code: z.string().regex(CODICE).nullable(),
   // «listino» se il prezzo è quello della voce; «artigiano» se l'ha scritto lui; null se manca ancora.
   priceSource: z.enum(["listino", "artigiano"]).nullable(),
   flag: z.string().max(300).nullable(), // perché la riga è evidenziata (dubbia, solo posa, domanda)
   significantGood: z.boolean(),
   // Valore del bene significativo compreso nella riga (serve per la ripartizione 10%/22%): lo dice l'artigiano.
-  goodsValueCents: z.number().int().nonnegative().nullable(),
+  goodsValueCents: z.number().int().nonnegative().max(100_000_000_000).nullable(),
   addToPriceList: z.boolean(),
   // Aliquota propria della riga (dal listino o scelta dall'artigiano). Assente o null: la decide il fisco
   // del preventivo (regole dell'edilizia o aliquota del mestiere).

@@ -1,3 +1,4 @@
+import { area } from "@/lib/i18n/it-area";
 import { mestiere } from "@/lib/impresa/mestieri";
 import type { Aliquota, ProfiloFiscale } from "./schema";
 
@@ -19,7 +20,7 @@ export function profiloDa(imp: DatiFiscaliImpresa): ProfiloFiscale {
   const aliquotaBase: Aliquota = aliquote.length === 1 ? aliquote[0] : "22";
   const esenzione = ms.find((m) => m.aliquota === "esente" && "esenzione" in m)?.esenzione ?? null;
   const avvisi = ms.flatMap((m) => ("avviso" in m && m.avviso ? [m.avviso] : []));
-  if (aliquote.length > 1) avvisi.unshift("I tuoi mestieri hanno aliquote diverse: le righe senza un'aliquota propria vanno al 22%. Indica l'aliquota sulle voci del listino che ne hanno una diversa.");
+  if (aliquote.length > 1) avvisi.unshift(area.avvisi.contesto.aliquoteDiverse);
   return {
     regime: imp.regime_fiscale,
     ritenuta: imp.ritenuta,
