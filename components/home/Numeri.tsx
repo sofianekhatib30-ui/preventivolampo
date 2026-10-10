@@ -2,7 +2,7 @@ import { Frasi } from "@/components/Frasi";
 // Le garanzie, in cifre. Ognuna è vera per costruzione o misurata:
 // - «100% dei prezzi dal tuo listino»: il motore non può mettere un prezzo che non viene dal listino
 //   (lib/motore, misure/2026-10-08.md: prezzi inventati 0);
-// - «6 lingue»: le lingue del cliente in lib/preventivi/lingua.ts (LINGUE). Se cambiano, si cambia qui;
+// - «6 lingue»: le lingue dell'interfaccia dell'artigiano in lib/i18n/lingue.ts (LINGUE_SITO). Se cambiano, si cambia qui;
 // - «13 s»: tempo medio per la bozza in misure/2026-10-08.md.
 // Quando una di queste cambia, si cambia in lib/i18n/it.ts (e nelle traduzioni) e nella tabella delle promesse della SPEC.
 

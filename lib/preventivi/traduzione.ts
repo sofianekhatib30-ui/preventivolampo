@@ -23,16 +23,16 @@ const TOOL: ToolSpec = {
 
 // Termini che sbagliati cambiano il senso: la resa è fissata, non lasciata al modello.
 const GLOSSARIO = `Glossario (rese obbligate quando il termine compare):
-- tramezzo = parete divisoria non portante (EN non-load-bearing partition wall · DE nichttragende Trennwand · FR cloison non porteuse · ES tabique no portante · NL niet-dragende scheidingswand)
-- massetto = sottofondo del pavimento (EN floor screed · DE Estrich · FR chape · ES recrecido de mortero · NL dekvloer)
-- battiscopa (EN skirting board · DE Sockelleiste · FR plinthe · ES rodapié · NL plint)
-- a corpo = a prezzo fisso per l'intero lavoro (EN lump sum · DE pauschal · FR forfait · ES a tanto alzado · NL forfaitair)
-- solo posa / posa del materiale del cliente = solo manodopera, materiale fornito dal cliente (EN labour only, client-supplied material · DE nur Verlegung, Material vom Kunden · FR pose seule, matériau fourni par le client · ES solo colocación, material del cliente · NL alleen plaatsing, materiaal van de klant)
-- fornitura e posa (EN supply and installation · DE Lieferung und Montage · FR fourniture et pose · ES suministro y colocación · NL levering en plaatsing)
+- tramezzo = parete divisoria non portante (EN non-load-bearing partition wall)
+- massetto = sottofondo del pavimento (EN floor screed)
+- battiscopa (EN skirting board)
+- a corpo = a prezzo fisso per l'intero lavoro (EN lump sum)
+- solo posa / posa del materiale del cliente = solo manodopera, materiale fornito dal cliente (EN labour only, client-supplied material)
+- fornitura e posa (EN supply and installation)
 - beni significativi: non si traduce, resta «beni significativi»
-- rasatura = rasatura con stucco della parete (EN skim coat · DE Spachtelung · FR ratissage · ES enlucido fino · NL egaliseren met plamuur)
-- idropittura (EN emulsion paint · DE Dispersionsfarbe · FR peinture à l'eau · ES pintura plástica · NL muurverf)
-- punto luce / punto presa = punto dell'impianto elettrico (EN light point / socket point · DE Lichtauslass / Steckdosenauslass · FR point lumineux / point prise · ES punto de luz / punto de enchufe · NL lichtpunt / stopcontactpunt)`;
+- rasatura = rasatura con stucco della parete (EN skim coat)
+- idropittura (EN emulsion paint)
+- punto luce / punto presa = punto dell'impianto elettrico (EN light point / socket point)`;
 
 export function istruzioni(lingua: LinguaStraniera): string {
   return `Traduci dall'italiano in ${NOME_LINGUA[lingua].italiano} (${NOME_LINGUA[lingua].proprio}) le voci di un preventivo edile italiano, per il cliente finale che non parla italiano.

@@ -38,6 +38,15 @@ export const Traduzione = z.strictObject({
   sorgente: z.strictObject({ righe: z.array(z.string().max(200)).max(80), esclusioni: z.array(z.string().max(300)).max(30) }),
 });
 
+// Preventivi di prima dell'11/10/2026 in tedesco, francese, spagnolo o olandese (solo demo): si leggono
+// in italiano, senza la traduzione, invece di sparire.
+const LINGUE_OGGI = new Set<string>(LINGUE);
+const linguaLetta = z.preprocess((v) => (typeof v === "string" && !LINGUE_OGGI.has(v) ? undefined : v), Lingua.optional());
+const traduzioneLetta = z.preprocess(
+  (v) => (v && typeof v === "object" && "lingua" in v && !LINGUE_OGGI.has(String((v as { lingua: unknown }).lingua)) ? null : v),
+  Traduzione.nullable().optional(),
+);
+
 export const Preventivo = z.strictObject({
   id: z.string().regex(/^[A-Za-z0-9_-]{22}$/),
   numero: z.string(),
@@ -62,8 +71,8 @@ export const Preventivo = z.strictObject({
   origine: z.object({ tipo: z.enum(["esempio", "testo"]), caso: z.string().optional() }).optional(),
   // Prima apertura della pagina del cliente (da browser vero, non dall'anteprima del link).
   vistoIl: z.string().nullable().optional(),
-  lingua: Lingua.optional(),
-  traduzione: Traduzione.nullable().optional(),
+  lingua: linguaLetta,
+  traduzione: traduzioneLetta,
 });
 
 export type RigaPreventivo = z.infer<typeof RigaPreventivo>;

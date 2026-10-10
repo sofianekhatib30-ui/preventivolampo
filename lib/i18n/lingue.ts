@@ -4,7 +4,10 @@
 // I preventivi restano in italiano qualunque sia la lingua dell'interfaccia: la lingua del cliente
 // si sceglie a parte, per ogni preventivo (lib/preventivi/lingua.ts).
 
-export const LINGUE_SITO = ["it", "en", "ro", "sq", "ar", "uk", "es", "fr", "de", "nl"] as const;
+// Dall'11/10/2026 (decisione di Sofiane) le lingue di chi lavora nei cantieri in Italia, più l'inglese.
+// Spagnolo, francese, tedesco e olandese sono stati tolti: i loro indirizzi rimandano all'italiano (next.config.ts).
+export const LINGUE_SITO = ["it", "en", "ro", "sq", "ar", "uk"] as const;
+export const LINGUE_TOLTE = ["es", "fr", "de", "nl"] as const;
 export type LinguaSito = (typeof LINGUE_SITO)[number];
 
 export const COOKIE_LINGUA = "pl_lingua";
@@ -19,10 +22,6 @@ export const INFO_LINGUA: Record<LinguaSito, { nome: string; bandiera: string; d
   sq: { nome: "Shqip", bandiera: "al", dir: "ltr" },
   ar: { nome: "العربية", bandiera: "ma", dir: "rtl" },
   uk: { nome: "Українська", bandiera: "ua", dir: "ltr" },
-  es: { nome: "Español", bandiera: "es", dir: "ltr" },
-  fr: { nome: "Français", bandiera: "fr", dir: "ltr" },
-  de: { nome: "Deutsch", bandiera: "de", dir: "ltr" },
-  nl: { nome: "Nederlands", bandiera: "nl", dir: "ltr" },
 };
 
 export function linguaValida(v: string | undefined | null): LinguaSito {
@@ -42,10 +41,6 @@ export const LOCALE_OG: Record<LinguaSito, string> = {
   sq: "sq_AL",
   ar: "ar_MA",
   uk: "uk_UA",
-  es: "es_ES",
-  fr: "fr_FR",
-  de: "de_DE",
-  nl: "nl_NL",
 };
 
 /** Indirizzo di una pagina pubblica nella lingua data: percorso("ro", "/prezzi") → "/ro/prezzi". */

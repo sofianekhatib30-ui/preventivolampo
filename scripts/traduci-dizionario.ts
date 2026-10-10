@@ -59,10 +59,6 @@ const NOMI: Record<LinguaSito, string> = {
   sq: "albanese",
   ar: "arabo standard moderno, semplice e chiaro, comprensibile in Marocco, Egitto e Tunisia; cifre occidentali (0-9)",
   uk: "ucraino",
-  es: "spagnolo (di Spagna)",
-  fr: "francese",
-  de: "tedesco",
-  nl: "olandese",
 };
 
 function istruzioni(lingua: LinguaSito): string {

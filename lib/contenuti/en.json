@@ -160,7 +160,7 @@
       },
       "straniero": {
         "titolo": "If the client doesn't speak Italian",
-        "testo": "The people who call an electrician are often foreigners who have just bought a home and found an old system, or offices of foreign companies adding workstations. For them the quote can go out in English, German, French, Spanish or Dutch: light points and sockets with the translation underneath, the Italian text as the one that counts legally, and the withdrawal form in their language. You check the draft in Italian."
+        "testo": "The people who call an electrician are often foreigners who have just bought a home and found an old system, or offices of foreign companies adding workstations. For them the quote can go out in English: light points and sockets with the translation underneath, the Italian text as the one that counts and the withdrawal form in English. You check the draft in Italian."
       },
       "domande": {
         "titolo": "Questions from electricians",
@@ -361,7 +361,7 @@
       },
       "straniero": {
         "titolo": "When the customer speaks another language",
-        "testo": "The owner who lives abroad and rents out the flat calls you about a leak and wants the quote before authorising the work; the foreign family who have just bought a home want to redo the bathroom. The quote can reach them in English, German, French, Spanish or Dutch, with connections and sanitaryware translated item by item, the Italian text as the one that counts legally, and the withdrawal form in their language. You approve it in Italian."
+        "testo": "The owner who lives abroad and rents out the flat calls you about a leak and wants the quote before authorising the work; the foreign family who have just bought a home want to redo the bathroom. The quote can reach them in English, with connections and sanitaryware translated item by item, the Italian text as the one that counts and the withdrawal form in English. You approve it in Italian."
       },
       "domande": {
         "titolo": "Questions from plumbers",
@@ -557,7 +557,7 @@
       },
       "straniero": {
         "titolo": "If the customer is a foreigner",
-        "testo": "A foreign tenant who has to hand the flat back freshly painted, an owner who lives abroad and freshens up the flat before renting it: they want to know straight away what it costs and what is included. The quote can reach them in English, German, French, Spanish or Dutch, with words like «rasatura» or «idropittura» put into their own language, the Italian version being the one that counts, and the withdrawal form translated. You carry on working in Italian."
+        "testo": "A foreign tenant who has to hand the flat back freshly painted, an owner who lives abroad and freshens up the flat before renting it out: they want to know straight away what it costs and what is included. The quote can reach them in English, with words like «rasatura» or «idropittura» put into English, the Italian text as the one that counts and the withdrawal form translated. You carry on working in Italian."
       },
       "domande": {
         "titolo": "Questions from painters",
@@ -753,7 +753,7 @@
       },
       "straniero": {
         "titolo": "Floors for people who speak another language",
-        "testo": "An owner who lives abroad and only drops by to choose the tiles, or someone redoing the bathroom before renting the flat out: they want to understand what they're paying for without an interpreter. The quote can go out in English, German, French, Spanish or Dutch, with screed, grout joints and skirting boards translated item by item and the Italian version being the one that counts. You check the items in Italian."
+        "testo": "An owner who lives abroad and only drops by to choose the tiles, or someone redoing the bathroom before renting the flat out: they want to understand what they're paying for without an interpreter. The quote can go out in English, with screed, grout joints and skirting boards translated item by item and the Italian text as the one that counts. You check the items in Italian."
       },
       "domande": {
         "titolo": "Questions from tilers",
@@ -939,7 +939,7 @@
       },
       "straniero": {
         "titolo": "Masonry work for people living abroad",
-        "testo": "Someone renovating from far away comes for the site visit and then decides from their own country: they need to understand from the quote which walls come down and what is left out. It can reach them in English, German, French, Spanish or Dutch, with «tramezzo» (partition wall) and «rasatura» (skim coat) rendered so the meaning doesn't change, and the Italian version being the one that counts. You read and check it in Italian."
+        "testo": "Someone renovating from far away comes for the site visit and then decides from their own country: they need to understand from the quote which walls come down and what is left out. It can reach them in English, with «tramezzo» (partition wall) and «rasatura» (skim coat) rendered so the meaning doesn't change, and the Italian text as the one that counts. You read and check it in Italian."
       },
       "domande": {
         "titolo": "Questions from bricklayers",
@@ -1139,7 +1139,7 @@
       },
       "straniero": {
         "titolo": "A site for a client from abroad",
-        "testo": "Someone who lives abroad and buys a home here looks for a firm that takes on the whole site, because they can’t coordinate crews from far away. They need a single quote that they can understand line by line: in English, German, French, Spanish or Dutch, with charges and work translated, the Italian version being the one that counts and the withdrawal form in their language. They accept it from the link, without having to come and sign."
+        "testo": "Someone who lives abroad and buys a home here looks for a firm that takes on the whole site, because they can't coordinate crews from far away. They need a single quote that they can understand line by line: in English, with charges and work translated, the Italian text as the one that counts and the withdrawal form in English. They accept it from the link, without having to come and sign."
       },
       "domande": {
         "titolo": "Questions from building firms",
@@ -1344,7 +1344,7 @@
       },
       "straniero": {
         "titolo": "Customers who don't speak Italian",
-        "testo": "Someone with a second home who wants air-con before the summer, or the family who came over for work and finds at the first winter that the boiler needs replacing: for a plumber and heating engineer these are frequent calls. The quote can go out in English, German, French, Spanish or Dutch, with the boiler, accessories and maintenance explained in their language, the Italian version being the one that counts and the withdrawal form translated. You check it in Italian."
+        "testo": "Someone with a second home who wants air-con before the summer, or the family who came over for work and find at the first winter that the boiler needs replacing: for a plumber and heating engineer these are frequent calls. The quote can go out in English, with the heating unit, accessories and maintenance explained in English, the Italian text as the one that counts and the withdrawal form translated. You check it in Italian."
       },
       "domande": {
         "titolo": "Questions from heating and plumbing engineers",
@@ -1544,7 +1544,7 @@
       },
       "straniero": {
         "titolo": "If the client speaks another language",
-        "testo": "A foreigner who buys an open-plan flat and wants to make a bedroom out of it, or a foreign company dividing up an office: «controparete» (lining wall) and «veletta» (bulkhead) mean nothing to them. The quote can go out in English, German, French, Spanish or Dutch, with these words explained clearly, the Italian version as the one that counts and the withdrawal form translated. You prepare it and check it in Italian."
+        "testo": "A foreigner who buys an open-plan flat and wants to make a bedroom out of it, or a foreign company dividing up an office: «controparete» and «veletta» mean nothing to them. The quote can go out in English, with these words put clearly, the Italian text as the one that counts and the withdrawal form translated. You prepare it and check it in Italian."
       },
       "domande": {
         "titolo": "Questions from plasterboard fitters",
@@ -1754,7 +1754,7 @@
       },
       "straniero": {
         "titolo": "Second homes and foreign clients",
-        "testo": "The owner of a second home who lives abroad wants to close it up properly before winter and compares quotes from a distance, looking at glass, profile and colour. The quote reaches him in English, German, French, Spanish or Dutch, with the opening measurements unchanged, the explanation of the beni significativi (significant goods) in his language, the Italian version as the one that counts and the withdrawal form translated."
+        "testo": "The owner of a second home who lives abroad wants to close it up properly before winter and compares quotes from a distance, looking at glass, profile and colour. The quote reaches them in English, with the opening measurements unchanged, the Italian text as the one that counts and the withdrawal form translated."
       },
       "domande": {
         "titolo": "Questions from window fitters",
@@ -1946,7 +1946,7 @@
       },
       "straniero": {
         "titolo": "Made to measure for foreign customers",
-        "testo": "Someone furnishing a flat for short lets or a second home wants to understand why a made-to-measure wardrobe costs more than one from the furniture shop, and wants to read it in their own language. The quote can go out in English, German, French, Spanish or Dutch, with woods, finishes and hardware translated, the Italian text as the binding one and the withdrawal form in their language. You check it in Italian."
+        "testo": "Someone furnishing a flat for short lets or a second home wants to understand why a made-to-measure wardrobe costs more than one from the furniture shop, and wants to read it without an interpreter. The quote can go out in English, with woods, finishes and hardware translated, the Italian text as the one that counts and the withdrawal form in English. You check it in Italian."
       },
       "domande": {
         "titolo": "Questions from joiners",
@@ -2138,7 +2138,7 @@
       },
       "straniero": {
         "titolo": "Holiday homes and customers far away",
-        "testo": "Someone with a holiday home who wants to secure it with window grilles and a gate before leaving follows the work from a distance and decides from their phone. The quote can go out in English, German, French, Spanish or Dutch, with galvanising, painting and automation explained in their language and the Italian text as the binding one. You check it in Italian, and you see when the customer opens it and when they accept it, even from far away."
+        "testo": "Someone with a holiday home who wants to secure it with window grilles and a gate before leaving follows the work from a distance and decides from their phone. The quote can go out in English, with galvanising, painting and automation explained in English and the Italian text as the one that counts. You check it in Italian, and you see when the customer opens it and when they accept it, even from far away."
       },
       "domande": {
         "titolo": "Questions from metalworkers",
@@ -2344,7 +2344,7 @@
       },
       "straniero": {
         "titolo": "Gardens of people who live abroad",
-        "testo": "An owner who only comes in summer wants to find the garden in good order and entrusts the season's maintenance to someone from a distance. The quote can go out in English, German, French, Spanish or Dutch, with the visits included in the contract listed in their language and the Italian text as the binding one. You check it in Italian, and the customer accepts it from the link, even from far away."
+        "testo": "An owner who only comes in summer wants to find the garden in good order and arranges the season's maintenance from a distance. The quote can go out in English, with the visits included in the contract listed in English and the Italian text as the one that counts. You check it in Italian, and the customer accepts it from the link, even from far away."
       },
       "domande": {
         "titolo": "Questions from gardeners",
@@ -2511,26 +2511,26 @@
     },
     "preventivo-in-lingua-del-cliente": {
       "meta": {
-        "titolo": "Quote in English or German for your customer",
-        "descrizione": "Quote in the customer's language: English, German, French, Spanish or Dutch. Two-language PDF where the Italian text is the binding one, and the right of withdrawal translated."
+        "titolo": "Quote in English for your foreign customer",
+        "descrizione": "Quote in English for your foreign customer. Two-language PDF where the Italian text is the one that counts, and the right of withdrawal translated."
       },
-      "nome": "Quote in the customer's language",
-      "riga": "English, German, French, Spanish and Dutch, with the Italian text alongside, which is the binding one.",
-      "h1": "The quote in your customer's language, with the Italian text as the binding one",
-      "sottotitolo": "You work in Italian as always. Your foreign customer gets the message, the page and the PDF in English, German, French, Spanish or Dutch, with the Italian text alongside. You see the translation and can correct it before you approve.",
+      "nome": "Quote in English",
+      "riga": "In English for your foreign customer, with the Italian text alongside, which is the one that counts.",
+      "h1": "The quote in English for your foreign customer, with the Italian text as the one that counts",
+      "sottotitolo": "You work in Italian as always. Your foreign customer gets the message, the page and the PDF in English, with the Italian text alongside. You see the translation and correct it before you approve.",
       "sezioni": [
         {
           "titolo": "Who it's for",
           "paragrafi": [
             "Houses bought by foreigners, flats let to people who have only recently started working here, second homes of families living abroad. The customer understands the measurements and the prices, but an item like «rasatura» (skim coat) or «massetto» (screed) means little to them, and a quote they don't understand gets signed late, or not at all.",
-            "With PreventivoLampo the quote can go out in five languages besides Italian: **English, German, French, Spanish and Dutch**. You choose the language quote by quote. For a customer who speaks yet another language, the quote stays in Italian.",
-            "Don't confuse it with the language you use to describe the site visit: that can also be Romanian, Albanian or Arabic, and the draft still comes out in Italian. We explain it on the page about the [quote from a voice note](/funzioni/preventivo-da-vocale)."
+            "With PreventivoLampo the quote can go out **in English** as well as in Italian: you choose quote by quote. Almost every foreign customer reads English; for anyone who doesn't, the quote stays in Italian.",
+            "Don't confuse it with the language you use to describe the site visit: that can also be Romanian, Albanian, Arabic or Ukrainian, and the draft still comes out in Italian. We explain it on the page about the [quote from a voice note](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
           "titolo": "How it works, and how you check it",
           "paragrafi": [
-            "The quote starts out in Italian, from what you tell it and from your price list. When you've sorted out the items, quantities and prices, you choose the customer's language in the draft and press the button to translate. Each translated item appears under the Italian one, and you can correct it by hand, line by line. The same goes for the exclusions."
+            "The quote starts out in Italian, from what you tell it and from your price list. When you've sorted out the items, quantities and prices, you choose English as the customer's language in the draft and press the button to translate. Each translated item appears under the Italian one, and you can correct it by hand, line by line. The same goes for the exclusions."
           ],
           "punti": [
             {
@@ -2539,7 +2539,7 @@
             },
             {
               "titolo": "Trade words have a fixed translation",
-              "testo": "Massetto (screed), tramezzo (partition wall), battiscopa (skirting board), rasatura (skim coat), idropittura (water-based paint), punto luce (light point), a corpo (lump sum), fornitura e posa (supply and fitting), solo posa (fitting only): for terms whose meaning changes if they're badly translated, the translation is fixed in advance, language by language. A tramezzo stays a non-load-bearing dividing wall in German too."
+              "testo": "Massetto (screed), tramezzo (partition wall), battiscopa (skirting board), rasatura (skim coat), idropittura (water-based paint), punto luce (light point), a corpo (lump sum), fornitura e posa (supply and fitting), solo posa (fitting only): for terms whose meaning changes if they're badly translated, the translation is fixed in advance. A tramezzo stays a non-load-bearing dividing wall in English too."
             },
             {
               "titolo": "If you change an item, the translation is redone",
@@ -2547,24 +2547,24 @@
             },
             {
               "titolo": "You see what they will see",
-              "testo": "After approval you can open the page exactly as the customer sees it, in their language, and the two-language PDF."
+              "testo": "After approval you can open the page exactly as the customer sees it, in English, and the two-language PDF."
             }
           ]
         },
         {
           "titolo": "The PDF in two languages",
           "paragrafi": [
-            "The PDF stays an Italian quote, with the Italian always up front. Under each item there's the translation, in grey italics. The column headings, the taxable amount, IVA, the total, the exclusions and the conditions each have their line in the customer's language. Dates are written the way they read them.",
-            "IVA stays the Italian one, and the PDF explains to the customer which rate applies and why. If there are «beni significativi» (significant goods, a category with its own IVA rules), the term stays in Italian, with an explanation in their language: it's a word from Italian law, and translating it would make it vaguer.",
-            "At the bottom there is the prevailing-language clause, written in both languages: the quote is drawn up in Italian and in the customer's language, and if the two differ, the Italian text prevails. The Codice del Consumo (Italian Consumer Code) requires that information for consumers be given at least in Italian (art. 9), and in distance contracts the customer can ask for it in Italian (art. 49, paragraph 7): the translated version is a help for them, the one that counts is the Italian one."
+            "The PDF stays an Italian quote, with the Italian always up front. Under each item there's the translation, in grey italics. The column headings, the taxable amount, IVA, the total, the exclusions and the conditions each have their line in English.",
+            "IVA stays the Italian one. Rates, «beni significativi» and legal references stay written in Italian, as the law requires, and a line in English explains to the customer that these are the tax details required by Italian law: translating them would make them vaguer.",
+            "At the bottom there is the prevailing-language clause, written in both languages: the quote is drawn up in Italian and in English, and if the two differ, the Italian text prevails. The Codice del Consumo (Italian Consumer Code) requires that information for consumers be given at least in Italian (art. 9), and in distance contracts the customer can ask for it in Italian (art. 49, comma 7): the translated version is a help for them, the one that counts is still the Italian one."
           ]
         },
         {
-          "titolo": "The message, the acceptance page and the withdrawal in their language",
+          "titolo": "The message, the acceptance page and the withdrawal in English",
           "paragrafi": [
-            "When you send the quote on WhatsApp, the message is already written in the customer's language, with the quote number, the total and the link.",
-            "The page they open is in their language: the total, the breakdown of items, the exclusions, the button to accept and the sentence they tick before doing it. Under each translated item there's the Italian one, and at the top they can switch to the Italian version with one tap. You'll find how acceptance works in [online acceptance](/funzioni/accettazione-online).",
-            "The information on the right of withdrawal and the standard form are in their language too, on the page and in the PDF, where the withdrawal page comes in Italian and in the customer's language. These texts aren't our own translation: for each language they start from the official version of the form set out in Directive 2011/83/EU, which exists in all the languages of the Union. What changes, and what doesn't, when the customer is foreign is covered in the guide to the [quote for foreign customers](/guide/preventivo-cliente-straniero)."
+            "When you send the quote on WhatsApp, the message is already written in English, with the quote number, the total and the link.",
+            "The page they open is in English: the total, the breakdown of items, the exclusions, the button to accept and the sentence they tick before doing it. Under each translated item there's the Italian one, and at the top they can switch to the Italian version with one tap. You'll find how acceptance works in [online acceptance](/funzioni/accettazione-online).",
+            "The information on the right of withdrawal and the standard form are in English too, on the page and in the PDF, where the withdrawal page comes in Italian and in English. These texts aren't our own translation: they start from the official English version of the form set out in Directive 2011/83/UE. What changes, and what doesn't, when the customer is foreign is covered in the guide to the [quote for foreign customers](/guide/preventivo-cliente-straniero)."
           ]
         },
         {
@@ -2593,15 +2593,15 @@
         }
       ],
       "domande": {
-        "titolo": "Questions about the quote in another language",
+        "titolo": "Questions about the quote in English",
         "voci": [
           {
             "d": "Do I need to know English to send a quote in English?",
             "r": "No. You prepare it and check it in Italian. The system does the translation, and if a translated item doesn't convince you, you correct it or get help from someone who knows the language, before you approve."
           },
           {
-            "d": "The customer speaks Portuguese. Can I send it in their language?",
-            "r": "Not for now: the customer languages are English, German, French, Spanish and Dutch. In other cases the quote goes out in Italian, or in English if the customer reads it."
+            "d": "The customer speaks German. Can I send it in their language?",
+            "r": "No: besides Italian there's English, which almost every foreign customer reads. If they don't read it, the quote goes out in Italian."
           },
           {
             "d": "If there's a dispute, which text counts?",
@@ -2616,7 +2616,7 @@
             "r": "No: quantities and prices are not translated, so the translation is still valid. You only need to redo it if you change the text of a line or of an exclusion, or if you add or remove one. The system tells you."
           },
           {
-            "d": "Does the price change if the quote is in another language?",
+            "d": "Does the price change if the quote is in English?",
             "r": "No. Prices, IVA (Italian VAT) and total are the same as in the Italian quote: only the language the customer reads them in changes."
           }
         ]
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "A bilingual quote has two columns or two blocks for each item, or the Italian text followed by the translation. At the end you need a clause saying which version prevails if the two don't match, for example: ‘This quote is drawn up in Italian and English. If the two versions differ, the Italian text prevails.’",
             "Why Italian? Because it is the language you work in, the one in which the quote would be read by an Italian consultant, surveyor or judge, and the one in which the technical terms are written. But the clause is not an absolute shield. In contracts with consumers, when the meaning of a clause is doubtful, the interpretation most favourable to the consumer prevails (art. 35, paragraph 2): if the translation says something different from the original and the customer signed trusting their own language, a wrong translation can become your problem.",
-            "So the translation must be faithful, not elegant. Short sentences, one thing per sentence, the same numbers in both versions, no summaries. PreventivoLampo makes the quote in the customer's language, choosing from English, German, French, Spanish and Dutch, with a PDF in two languages where the Italian prevails: you always check the Italian version, and that is the one you approve before it goes out."
+            "So the translation must be faithful, not elegant. Short sentences, one thing per sentence, the same numbers in both versions, no summaries. PreventivoLampo also makes the quote in English, with a PDF in two languages where the Italian text is the one that counts: you always check the Italian version, and that is the one you approve before it goes out."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "The right to withdraw, explained in their language",
           "paragrafi": [
             "Under the codice del consumo (Consumer Code), a foreign private customer is a consumer like any other. If the contract is made at their home or at a distance, they normally have 14 days to withdraw (recesso) without giving a reason, and you must inform them before they commit, also handing over the withdrawal form. If the information is missing, the deadline is extended by twelve months.",
-            "With a foreign customer the problem is not the rule, it is whether they understand it. Information in Italian handed to someone who can't read it does the bare minimum and leaves the argument open about what they really knew. Better to give it in both languages, like the rest of the quote: with PreventivoLampo, the acceptance page and the withdrawal form are translated into the customer's language.",
+            "With a foreign customer the problem is not the rule, it is whether they understand it. Information in Italian handed to someone who can't read it does the bare minimum and leaves the argument open about what they really knew. Better to give it in both languages, like the rest of the quote: with PreventivoLampo the acceptance page and the withdrawal form are in English too.",
             "The deadlines, the exceptions (for example made-to-measure goods or urgent repairs requested by the customer) and what happens if the work starts before the deadline are explained in the guide on [withdrawing from a quote accepted at home](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },

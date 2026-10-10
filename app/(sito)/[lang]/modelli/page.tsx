@@ -36,7 +36,7 @@ export default async function Modelli({ params }: PageProps<"/[lang]/modelli">) 
         <ul className="m-0 grid list-none gap-px overflow-hidden rounded-[20px] border border-linea-2 bg-linea-2 p-0 md:grid-cols-2">
           {MESTIERI.map((m) => {
             const nome = c.mestieri[m].nome;
-            const nomeMin = lingua === "de" ? nome : nome.toLocaleLowerCase(lingua);
+            const nomeMin = nome.toLocaleLowerCase(lingua);
             return (
               <li key={m} className="flex flex-col gap-4 bg-superficie p-6 sm:flex-row sm:items-center sm:justify-between">
                 <div>

@@ -64,8 +64,8 @@ describe("testi fissi per lingua", () => {
     }
   });
   it("il prompt di traduzione fissa i termini a rischio e vieta di aggiungere o togliere", () => {
-    const s = istruzioni("de");
-    expect(s).toContain("Estrich");
+    const s = istruzioni("en");
+    expect(s).toContain("floor screed");
     expect(s).toMatch(/mai unire, dividere, saltare o aggiungere/);
   });
   it("il motore sa che il racconto può essere in un'altra lingua, e scrive le voci in italiano", () => {
@@ -77,7 +77,7 @@ describe("recesso", () => {
   const k = { nome: "Edil Prova", indirizzo: "via Roma 1", telefono: "+39 333 0000000", email: "info@example.com" };
   it.each([...LINGUE])("%s: informazioni complete, contatti dell'impresa e numero del preventivo nel modulo", (l) => {
     const r = recesso(l, k, "2026-007");
-    expect(r.paragrafi.join(" ")).toMatch(/14|vierzehn|quatorze/);
+    expect(r.paragrafi.join(" ")).toMatch(/14/);
     expect(r.paragrafi.join(" ")).toContain("info@example.com");
     expect(r.effetti).toHaveLength(2);
     expect(r.modulo.righe.join(" ")).toContain("2026-007");
@@ -110,19 +110,19 @@ describe("traduzione allineata alle voci", () => {
 
 describe("dal sopralluogo al PDF bilingue", () => {
   it("non si approva senza traduzione; con la traduzione il PDF è bilingue e l'italiano resta", async () => {
-    const p = await creaDaTesto("Sopralluogo inventato per un cliente tedesco, bagno e pittura.", motore);
-    await aggiornaBozza(p.id, { cliente: p.cliente, iva: p.iva, righe: p.righe, esclusioni: p.esclusioni, lingua: "de" });
-    await expect(approvaIn(demo, p.id)).rejects.toThrow(/traduci il preventivo in tedesco/);
+    const p = await creaDaTesto("Sopralluogo inventato per un cliente inglese, bagno e pittura.", motore);
+    await aggiornaBozza(p.id, { cliente: p.cliente, iva: p.iva, righe: p.righe, esclusioni: p.esclusioni, lingua: "en" });
+    await expect(approvaIn(demo, p.id)).rejects.toThrow(/traduci il preventivo in inglese/);
 
-    const tradotto = await traduciIn(demo, p.id, "de", traduttore(["Entfernung der Wandfliesen", "Anstrich der Wände"], ["Möbel rückt der Kunde selbst"]));
+    const tradotto = await traduciIn(demo, p.id, "en", traduttore(["Removal of wall tiles", "Wall painting"], ["Furniture moved by the client"]));
     expect(tradotto.traduzione?.sorgente.righe).toEqual(p.righe.map((r) => r.work));
 
     // L'artigiano cambia una voce: la traduzione scade e l'approvazione si ferma di nuovo.
     const righe = p.righe.map((r, i) => (i === 1 ? { ...r, work: "tinteggiatura pareti e soffitti" } : r));
-    await aggiornaBozza(p.id, { cliente: p.cliente, iva: p.iva, righe, esclusioni: p.esclusioni, lingua: "de", traduzione: tradotto.traduzione });
+    await aggiornaBozza(p.id, { cliente: p.cliente, iva: p.iva, righe, esclusioni: p.esclusioni, lingua: "en", traduzione: tradotto.traduzione });
     await expect(approvaIn(demo, p.id)).rejects.toThrow(/da rifare/);
 
-    await traduciIn(demo, p.id, "de", traduttore(["Entfernung der Wandfliesen", "Anstrich von Wänden und Decken"], ["Möbel rückt der Kunde selbst"]));
+    await traduciIn(demo, p.id, "en", traduttore(["Removal of wall tiles", "Painting of walls and ceilings"], ["Furniture moved by the client"]));
     const approvato = await approvaIn(demo, p.id);
     expect(approvato.stato).toBe("approvato");
 
@@ -162,8 +162,8 @@ describe("totali lunghi nel PDF", () => {
         righe,
         stato: "approvato" as const,
         approvatoIl: new Date().toISOString(),
-        lingua: "de" as const,
-        traduzione: { lingua: "de" as const, righe: righe.map((r) => `${r.work} DE`), esclusioni: base.esclusioni.map((e) => `${e} DE`), sorgente: { righe: righe.map((r) => r.work), esclusioni: base.esclusioni } },
+        lingua: "en" as const,
+        traduzione: { lingua: "en" as const, righe: righe.map((r) => `${r.work} EN`), esclusioni: base.esclusioni.map((e) => `${e} EN`), sorgente: { righe: righe.map((r) => r.work), esclusioni: base.esclusioni } },
         fisco: { contesto: { ...CONTESTO_VUOTO, cliente: "impresa" as const, oggetto: "nessuno" as const }, profilo },
       };
     });

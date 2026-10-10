@@ -160,7 +160,7 @@
       },
       "straniero": {
         "titolo": "Dacă clientul nu vorbește italiana",
-        "testo": "Pe electrician îl sună des străini care tocmai au cumpărat casă și găsesc o instalație veche, sau birouri ale unor firme străine care adaugă posturi de lucru. Pentru ei devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză: puncte de lumină și prize cu traducerea dedesubt, versiunea în italiană fiind cea care face fe și formularul de retragere în limba lor. Ciorna o verifici în italiană."
+        "testo": "Pe electrician îl sună des străini care tocmai au cumpărat casă și găsesc o instalație veche, sau birouri ale unor firme străine care adaugă posturi de lucru. Pentru ei devizul poate pleca în engleză: puncte de lumină și prize cu traducerea dedesubt, textul italian care prevalează și formularul de retragere în engleză. Ciorna o verifici în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la electricieni",
@@ -361,7 +361,7 @@
       },
       "straniero": {
         "titolo": "Când clientul vorbește altă limbă",
-        "testo": "Proprietarul care locuiește în străinătate și închiriază apartamentul te sună pentru o pierdere de apă și vrea devizul înainte să aprobe lucrarea; familia străină care tocmai a cumpărat casă vrea să refacă baia. Devizul le poate ajunge în engleză, germană, franceză, spaniolă sau olandeză, cu racorduri și obiecte sanitare traduse poziție cu poziție, versiunea în italiană fiind cea care face fe și formularul de retragere în limba lor. Tu îl aprobi în italiană."
+        "testo": "Proprietarul care locuiește în străinătate și închiriază apartamentul te sună pentru o pierdere de apă și vrea devizul înainte să aprobe lucrarea; familia străină care tocmai a cumpărat casă vrea să refacă baia. Devizul le poate ajunge în engleză, cu racorduri și obiecte sanitare traduse poziție cu poziție, textul italian care prevalează și formularul de retragere în engleză. Tu îl aprobi în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la instalatori",
@@ -557,7 +557,7 @@
       },
       "straniero": {
         "titolo": "Dacă clientul e străin",
-        "testo": "Chiriașul străin care trebuie să predea casa zugrăvită, proprietarul care stă în afara țării și reîmprospătează apartamentul înainte să-l închirieze: vor să știe imediat cât costă și ce e inclus. Devizul poate ajunge la ei în engleză, germană, franceză, spaniolă sau olandeză, cu cuvinte ca «rasatura» (glet) sau «idropittura» (vopsea lavabilă) traduse în limba lor, cu italiana care face fe��ță și cu formularul de retragere tradus. Tu continui să lucrezi în italiană."
+        "testo": "Chiriașul străin care trebuie să predea casa zugrăvită, proprietarul care stă în afara țării și reîmprospătează apartamentul înainte să-l închirieze: vor să știe imediat cât costă și ce e inclus. Devizul le poate ajunge în engleză, cu cuvinte ca «rasatura» sau «idropittura» redate în engleză, textul italian care prevalează și formularul de retragere tradus. Tu continui să lucrezi în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la zugravi",
@@ -753,7 +753,7 @@
       },
       "straniero": {
         "titolo": "Pardoseli pentru cei care vorbesc altă limbă",
-        "testo": "Proprietarul care stă în afara țării și trece doar ca să aleagă gresia, sau cel care refăce baia înainte să închirieze apartamentul: vrea să înțeleagă ce plătește fără interpret. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu șapa, rosturile și plinta traduse poziție cu poziție și cu italiana care face fecioară. Tu verifici pozițiile în italiană."
+        "testo": "Proprietarul care stă în afara țării și trece doar ca să aleagă plăcile, sau cel care reface baia înainte să închirieze apartamentul: vrea să înțeleagă ce plătește fără interpret. Devizul poate pleca în engleză, cu șapa, rosturile și plinta traduse poziție cu poziție și cu textul italian care prevalează. Tu verifici pozițiile în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la faianțari",
@@ -939,7 +939,7 @@
       },
       "straniero": {
         "titolo": "Lucrări de zidărie pentru cei care trăiesc în străinătate",
-        "testo": "Cine renovează de departe vine la vizită și apoi decide din țara lui: trebuie să înțeleagă din deviz ce pereți se dărâmă și ce rămâne în afară. Devizul poate ajunge la el în engleză, germană, franceză, spaniolă sau olandeză, cu «tramezzo» (perete despărțitor) și «rasatura» (glet) redate fără să-și schimbe sensul și cu italiana care face fecioară. Tu îl citești și îl verifici în italiană."
+        "testo": "Cine renovează de departe vine la vizita la fața locului și apoi decide din țara lui: trebuie să înțeleagă din deviz ce pereți se dărâmă și ce rămâne pe dinafară. Devizul îi poate ajunge în engleză, cu peretele despărțitor și gletul redate astfel încât să nu-și schimbe sensul și cu textul italian care prevalează. Tu îl citești și îl verifici în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la zidari",
@@ -1139,7 +1139,7 @@
       },
       "straniero": {
         "titolo": "Șantierul unui client străin",
-        "testo": "Cine trăiește în străinătate și cumpără o casă aici caută o firmă care să preia tot șantierul, pentru că nu poate coordona echipele de la distanță. Are nevoie de un singur deviz pe care să-l înțeleagă rând cu rând: în engleză, germană, franceză, spaniolă sau olandeză, cu cheltuielile și lucrările traduse, cu versiunea în italiană care face fe, și cu formularul de retragere în limba lui. Îl acceptă din link, fără să vină să semneze."
+        "testo": "Cine trăiește în străinătate și cumpără o casă aici caută o firmă care să preia tot șantierul, pentru că nu poate coordona echipele de la distanță. Are nevoie de un singur deviz pe care să-l înțeleagă rând cu rând: în engleză, cu cheltuielile și lucrările traduse, textul italian care prevalează și formularul de retragere în engleză. Îl acceptă din link, fără să vină să semneze."
       },
       "domande": {
         "titolo": "Întrebări de la firmele de construcții",
@@ -1344,7 +1344,7 @@
       },
       "straniero": {
         "titolo": "Clienți care nu vorbesc italiană",
-        "testo": "Cine are o a doua casă și vrea clima înainte de vară, sau familia venită pentru muncă ce găsește la prima iarnă centrala de schimbat: pentru instalatorul termist sunt cereri frecvente. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu generator, accesorii și întreținere explicate în limba lor, cu versiunea în italiană care face fe și formularul de retragere tradus. Tu îl verifici în italiană."
+        "testo": "Cine are o a doua casă și vrea clima înainte de vară, sau familia venită pentru muncă ce găsește la prima iarnă centrala de schimbat: pentru instalatorul termist sunt cereri frecvente. Devizul poate pleca în engleză, cu generatorul, accesoriile și întreținerea explicate în engleză, textul italian care prevalează și formularul de retragere tradus. Tu îl verifici în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la instalatori termici",
@@ -1544,7 +1544,7 @@
       },
       "straniero": {
         "titolo": "Dacă clientul vorbește altă limbă",
-        "testo": "Străinul care cumpără un open space și vrea să facă o cameră din el, sau firma din străinătate care compartimentează un birou: pentru ei «controparete» (perete de placare) și «veletta» (bordură de gips-carton) nu înseamnă nimic. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu aceste cuvinte explicate clar, cu textul în italiană care are valoare juridică și cu formularul de retragere tradus. Tu îl pregătești și îl verifici în italiană."
+        "testo": "Străinul care cumpără un open space și vrea să facă o cameră din el, sau firma din străinătate care compartimentează un birou: pentru ei «controparete» și «veletta» nu înseamnă nimic. Devizul poate pleca în engleză, cu aceste cuvinte redate clar, textul italian care prevalează și formularul de retragere tradus. Tu îl pregătești și îl verifici în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la cei care lucrează în gips-carton",
@@ -1754,7 +1754,7 @@
       },
       "straniero": {
         "titolo": "Case de vacanță și clienți străini",
-        "testo": "Proprietarul unei a doua case, care locuiește în străinătate, vrea să o închidă bine înainte de iarnă și compară ofertele de la distanță, uitându-se la sticlă, profil și culoare. Devizul îi ajunge în engleză, germană, franceză, spaniolă sau olandeză, cu dimensiunile golului identice, cu explicația despre beni significativi (bunuri semnificative, termen fiscal italian) în limba lui, cu textul în italiană care are valoare juridică și cu formularul de retragere tradus."
+        "testo": "Proprietarul unei a doua case, care locuiește în străinătate, vrea să o închidă bine înainte de iarnă și compară devizele de la distanță, uitându-se la sticlă, profil și culoare. Devizul îi ajunge în engleză, cu dimensiunile golului identice, textul italian care prevalează și formularul de retragere tradus."
       },
       "domande": {
         "titolo": "Întrebări de la montatorii de tâmplărie",
@@ -1946,7 +1946,7 @@
       },
       "straniero": {
         "titolo": "Mobilă la comandă pentru clienți străini",
-        "testo": "Cine mobilează un apartament pentru închirieri pe termen scurt sau o a doua casă vrea să înțeleagă de ce un dulap la comandă costă mai mult decât unul din magazinul de mobilă și vrea să citească în limba lui. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu esențele de lemn, finisajele și feroneria traduse, cu italiana ca versiune care contează și cu formularul de retragere în limba lui. Tu îl verifici în italiană."
+        "testo": "Cine mobilează un apartament pentru închirieri pe termen scurt sau o a doua casă vrea să înțeleagă de ce un dulap la comandă costă mai mult decât unul din magazinul de mobilă, și vrea să citească asta fără interpret. Devizul poate pleca în engleză, cu esențele de lemn, finisajele și feroneria traduse, textul italian care prevalează și formularul de retragere în engleză. Tu îl verifici în italiană."
       },
       "domande": {
         "titolo": "Întrebări de la tâmplari",
@@ -2138,7 +2138,7 @@
       },
       "straniero": {
         "titolo": "Case de vacanță și clienți departe",
-        "testo": "Cine are o casă de vacanță și vrea să o închidă cu grilaje și poartă înainte să plece urmărește lucrările de la distanță și decide de pe telefon. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu galvanizarea, vopsirea și automatizarea explicate în limba lui și cu italiana ca versiune care contează. Tu îl verifici în italiană și vezi când clientul îl deschide și când îl acceptă, chiar dacă e departe."
+        "testo": "Cine are o casă de vacanță și vrea să o închidă cu grilaje și poartă înainte să plece urmărește lucrările de la distanță și decide de pe telefon. Devizul poate pleca în engleză, cu galvanizarea, vopsirea și automatizarea explicate în engleză și cu textul italian care prevalează. Tu îl verifici în italiană și vezi când clientul îl deschide și când îl acceptă, chiar dacă e departe."
       },
       "domande": {
         "titolo": "Întrebări de la lăcătuși",
@@ -2344,7 +2344,7 @@
       },
       "straniero": {
         "titolo": "Grădinile celor care trăiesc în străinătate",
-        "testo": "Proprietarul care vine doar vara vrea să găsească grădina în ordine și încredințează de la distanță întreținerea sezonului. Devizul poate pleca în engleză, germană, franceză, spaniolă sau olandeză, cu intervențiile incluse în contract enumerate în limba lui și cu italiana ca versiune care contează. Tu îl verifici în italiană, iar clientul îl acceptă din link, chiar și de departe."
+        "testo": "Proprietarul care vine doar vara vrea să găsească grădina în ordine și încredințează de la distanță întreținerea sezonului. Devizul poate pleca în engleză, cu intervențiile incluse în contract enumerate în engleză și cu textul italian care prevalează. Tu îl verifici în italiană, iar clientul îl acceptă din link, chiar și de departe."
       },
       "domande": {
         "titolo": "Întrebări de la grădinari",
@@ -2511,26 +2511,26 @@
     },
     "preventivo-in-lingua-del-cliente": {
       "meta": {
-        "titolo": "Deviz în engleză sau germană pentru client",
-        "descrizione": "Deviz în limba clientului: engleză, germană, franceză, spaniolă sau olandeză. PDF în două limbi, în care are prioritate textul italian, și dreptul de retragere tradus."
+        "titolo": "Deviz în engleză pentru clientul străin",
+        "descrizione": "Deviz în engleză pentru clientul străin. PDF în două limbi în care prevalează textul italian și dreptul de retragere tradus."
       },
-      "nome": "Deviz în limba clientului",
-      "riga": "Engleză, germană, franceză, spaniolă și olandeză, cu textul italian alături, care are prioritate.",
-      "h1": "Devizul în limba clientului, cu textul italian care are prioritate",
-      "sottotitolo": "Tu lucrezi în italiană ca întotdeauna. Clientul străin primește mesajul, pagina și PDF-ul în engleză, germană, franceză, spaniolă sau olandeză, cu textul italian alături. Traducerea o vezi și o corectezi înainte să aprobi.",
+      "nome": "Deviz în engleză",
+      "riga": "În engleză pentru clientul străin, cu textul italian alături, care prevalează.",
+      "h1": "Devizul în engleză pentru clientul străin, cu textul italian care prevalează",
+      "sottotitolo": "Tu lucrezi în italiană ca întotdeauna. Clientul străin primește mesajul, pagina și PDF-ul în engleză, cu textul italian alături. Traducerea o vezi și o corectezi înainte să aprobi.",
       "sezioni": [
         {
           "titolo": "Pentru cine e",
           "paragrafi": [
             "Case cumpărate de străini, apartamente închiriate celor care lucrează aici de puțin timp, a doua casă a unor familii care locuiesc în străinătate. Clientul înțelege măsurile și prețurile, dar o poziție ca «rasatura» (gletuire) sau «massetto» (șapă) îi spune puțin, iar un deviz pe care nu-l înțelege îl semnează târziu, sau deloc.",
-            "Cu PreventivoLampo devizul poate pleca în cinci limbi pe lângă italiană: **engleză, germană, franceză, spaniolă și olandeză**. Limba o alegi deviz cu deviz. Pentru un client care vorbește altă limbă, devizul rămâne în italiană.",
-            "Să nu o încurci cu limba în care povestești vizita: aceea poate fi și româna, albaneza sau araba, iar ciorna iese oricum în italiană. Explicăm în pagina despre [devizul din mesaj vocal](/funzioni/preventivo-da-vocale)."
+            "Cu PreventivoLampo devizul poate pleca **în engleză**, pe lângă italiană: alegi deviz cu deviz. Engleza o citește aproape orice client străin; pentru cine nu o citește, devizul rămâne în italiană.",
+            "Să nu o încurci cu limba în care povestești vizita la fața locului: aceea poate fi și româna, albaneza, araba sau ucraineana, iar ciorna iese oricum în italiană. Explicăm asta în pagina despre [devizul din mesaj vocal](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
           "titolo": "Cum se face și cum verifici",
           "paragrafi": [
-            "Devizul se naște în italiană, din povestea ta și din lista ta de prețuri. După ce ai pus la punct pozițiile, cantitățile și prețurile, în ciornă alegi limba clientului și apeși butonul de tradus. Fiecare poziție tradusă apare sub cea italiană și o poți corecta de mână, rând cu rând. La fel pentru excluderi."
+            "Devizul se naște în italiană, din povestea ta și din lista ta de prețuri. După ce ai pus la punct pozițiile, cantitățile și prețurile, în ciornă alegi engleza ca limbă a clientului și apeși butonul de tradus. Fiecare poziție tradusă apare sub cea italiană și o poți corecta de mână, rând cu rând. La fel pentru excluderi."
           ],
           "punti": [
             {
@@ -2539,7 +2539,7 @@
             },
             {
               "titolo": "Cuvintele meseriei au o traducere fixă",
-              "testo": "Massetto, tramezzo, battiscopa, rasatura, idropittura, punto luce, a corpo, fornitura e posa, solo posa: pentru termenii care, traduși greșit, schimbă sensul, traducerea e stabilită dinainte, limbă cu limbă. Un tramezzo rămâne un perete despărțitor neportant și în germană."
+              "testo": "Massetto, tramezzo, battiscopa, rasatura, idropittura, punto luce, a corpo, fornitura e posa, solo posa: pentru termenii care, traduși greșit, își schimbă sensul, traducerea e stabilită dinainte. Un tramezzo rămâne un perete despărțitor neportant și în engleză."
             },
             {
               "titolo": "Dacă schimbi o poziție, traducerea se reface",
@@ -2547,24 +2547,24 @@
             },
             {
               "titolo": "Te uiți la ce va vedea el",
-              "testo": "După aprobare poți deschide pagina exact cum o vede clientul, în limba lui, și PDF-ul bilingv."
+              "testo": "După aprobare poți deschide pagina exact cum o vede clientul, în engleză, și PDF-ul bilingv."
             }
           ]
         },
         {
           "titolo": "PDF-ul în două limbi",
           "paragrafi": [
-            "PDF-ul rămâne un deviz italian, cu italiana mereu în prim-plan. Sub fiecare poziție e traducerea, în cursiv gri. Capetele de coloană, baza impozabilă (imponibile), IVA, totalul, excluderile și condițiile au rândul lor în limba clientului. Datele sunt scrise cum le citește el.",
-            "IVA rămâne cea italiană, iar PDF-ul îi explică clientului ce cotă se aplică și de ce. Dacă există «beni significativi» (bunuri semnificative), termenul rămâne în italiană, cu o explicație în limba lui: e un cuvânt din norma italiană și traducerea l-ar face mai vag.",
-            "La final este clauza de prevalență, scrisă în ambele limbi: devizul este redactat în italiană și în limba clientului, iar în caz de nepotrivire prevalează textul italian. Codice del Consumo (Codul consumului) cere ca informațiile pentru consumator să fie date cel puțin în limba italiană (art. 9), iar în contractele la distanță clientul le poate cere în italiană (art. 49, alin. 7): versiunea tradusă este un ajutor pentru el, cea care contează rămâne cea italiană."
+            "PDF-ul rămâne un deviz italian, cu italiana mereu în prim-plan. Sub fiecare poziție e traducerea, în cursiv gri. Capetele de coloană, baza impozabilă (imponibile), IVA, totalul, excluderile și condițiile au rândul lor în engleză.",
+            "IVA rămâne cea italiană. Cotele, «beni significativi» și trimiterile la lege rămân scrise în italiană, cum le cere norma, iar un rând în engleză îi explică clientului că sunt indicațiile fiscale prevăzute de legea italiană: traduse, ar deveni mai vagi.",
+            "La final este clauza de prevalență, scrisă în ambele limbi: devizul este redactat în italiană și în engleză, iar în caz de nepotrivire prevalează textul italian. Codice del Consumo (Codul consumului) cere ca informațiile pentru consumator să fie date cel puțin în limba italiană (art. 9), iar în contractele la distanță clientul le poate cere în italiană (art. 49, comma 7): versiunea tradusă este un ajutor pentru el, cea care contează rămâne cea italiană."
           ]
         },
         {
-          "titolo": "Mesajul, pagina de acceptare și retragerea în limba lui",
+          "titolo": "Mesajul, pagina de acceptare și retragerea în engleză",
           "paragrafi": [
-            "Când trimiți devizul pe WhatsApp, mesajul e deja scris în limba clientului, cu numărul devizului, totalul și linkul.",
-            "Pagina pe care o deschide e în limba lui: totalul, detaliul pozițiilor, excluderile, butonul de acceptare și fraza pe care o bifează înainte. Sub fiecare poziție tradusă e poziția italiană, iar sus poate trece la versiunea italiană cu o atingere. Cum funcționează acceptarea găsești la [acceptarea online](/funzioni/accettazione-online).",
-            "Și informațiile despre dreptul de retragere (recesso) și formularul-tip sunt în limba lui, pe pagină și în PDF, unde pagina despre retragere apare în italiană și în limba clientului. Textele astea nu sunt traducerea noastră: pentru fiecare limbă pornesc de la versiunea oficială a formularului prevăzut de directiva 2011/83/UE, care există în toate limbile Uniunii. Ce se schimbă, și ce nu, când clientul e străin găsești în ghidul despre [devizul pentru clientul străin](/guide/preventivo-cliente-straniero)."
+            "Când trimiți devizul pe WhatsApp, mesajul e deja scris în engleză, cu numărul devizului, totalul și linkul.",
+            "Pagina pe care o deschide e în engleză: totalul, detaliul pozițiilor, excluderile, butonul de acceptare și fraza pe care o bifează înainte. Sub fiecare poziție tradusă e poziția italiană, iar sus poate trece la versiunea italiană cu o atingere. Cum funcționează acceptarea găsești la [acceptarea online](/funzioni/accettazione-online).",
+            "Și informațiile despre dreptul de retragere și formularul-tip sunt în engleză, pe pagină și în PDF, unde pagina despre retragere apare în italiană și în engleză. Textele astea nu sunt traducerea noastră: pornesc de la versiunea oficială în engleză a formularului prevăzut de directiva 2011/83/UE. Ce se schimbă, și ce nu, când clientul e străin găsești în ghidul despre [devizul pentru clientul străin](/guide/preventivo-cliente-straniero)."
           ]
         },
         {
@@ -2593,15 +2593,15 @@
         }
       ],
       "domande": {
-        "titolo": "Întrebări despre devizul în altă limbă",
+        "titolo": "Întrebări despre devizul în engleză",
         "voci": [
           {
             "d": "Trebuie să știu engleza ca să trimit un deviz în engleză?",
             "r": "Nu. Îl pregătești și îl verifici în italiană. Traducerea o face sistemul, iar dacă o poziție tradusă nu te convinge, o corectezi sau te ajută cineva care știe limba, înainte să aprobi."
           },
           {
-            "d": "Clientul vorbește portugheza. Pot să i-l trimit în limba lui?",
-            "r": "Deocamdată nu: limbile pentru client sunt engleza, germana, franceza, spaniola și olandeza. În celelalte cazuri devizul pleacă în italiană, sau în engleză dacă clientul o citește."
+            "d": "Clientul vorbește germana. Pot să i-l trimit în limba lui?",
+            "r": "Nu: pe lângă italiană există engleza, pe care o citește aproape orice client străin. Dacă nu o citește, devizul pleacă în italiană."
           },
           {
             "d": "Dacă apare o dispută, care text este valabil?",
@@ -2616,7 +2616,7 @@
             "r": "Nu: cantitățile și prețurile nu se traduc, deci traducerea rămâne valabilă. Trebuie refăcută doar dacă schimbi textul unei rubrici sau al unei excluderi, sau dacă adaugi ori ștergi una. Sistemul îți arată asta."
           },
           {
-            "d": "Se schimbă prețul dacă devizul e în altă limbă?",
+            "d": "Se schimbă prețul dacă devizul e în engleză?",
             "r": "Nu. Prețurile, IVA și totalul sunt aceleași ca în devizul în italiană: se schimbă doar limba în care le citește clientul."
           }
         ]
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "Un deviz bilingv are două coloane sau două blocuri pentru fiecare poziție, sau textul italian urmat de traducere. La final trebuie o clauză care spune care versiune prevalează dacă cele două nu coincid, de exemplu: „Prezentul deviz este redactat în italiană și în engleză. În caz de diferențe între cele două versiuni, face fe textul italian.”",
             "De ce italiana? Pentru că e limba în care lucrezi, în care devizul ar fi citit de un consultant, de un expert sau de un judecător italian și în care sunt scrise termenii tehnici. Dar clauza nu e un scut absolut. În contractele cu consumatorii, când sensul unei clauze e îndoielnic, prevalează interpretarea cea mai favorabilă consumatorului (art. 35, comma 2): dacă traducerea spune altceva decât originalul și clientul a semnat având încredere în limba lui, o traducere greșită poate deveni problema ta.",
-            "Deci traducerea trebuie să fie fidelă, nu elegantă. Propoziții scurte, un singur lucru într-o propoziție, aceleași numere în ambele versiuni, fără rezumate. PreventivoLampo face devizul în limba clientului, la alegere între engleză, germană, franceză, spaniolă și olandeză, cu PDF în două limbi în care face fe italiana: tu verifici mereu versiunea italiană, și aceea o aprobi înainte să plece."
+            "Deci traducerea trebuie să fie fidelă, nu elegantă. Propoziții scurte, un singur lucru într-o propoziție, aceleași numere în ambele versiuni, fără rezumate. PreventivoLampo face devizul și în engleză, cu PDF în două limbi în care prevalează italiana: tu verifici mereu versiunea italiană, și pe aceea o aprobi înainte să plece."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "Dreptul de retragere explicat în limba lui",
           "paragrafi": [
             "Un client privat străin este, pentru codice del consumo (codul consumului), un consumator ca oricare altul. Dacă contractul se încheie la el acasă sau la distanță, de regulă are 14 zile să se retragă (recesso) fără să dea motive, iar tu trebuie să-l informezi înainte să se angajeze, dându-i și formularul de retragere. Dacă informarea lipsește, termenul se prelungește cu douăsprezece luni.",
-            "Cu un client străin problema nu e regula, e ca el s-o înțeleagă. O informare în italiană dată cuiva care nu o citește face doar strictul necesar și lasă deschisă discuția despre ce știa el cu adevărat. Mai bine s-o dai în ambele limbi, ca restul devizului: cu PreventivoLampo, pagina de acceptare și formularul de retragere sunt traduse în limba clientului.",
+            "Cu un client străin problema nu e regula, e ca el s-o înțeleagă. O informare în italiană dată cuiva care nu o citește face doar strictul necesar și lasă deschisă discuția despre ce știa el cu adevărat. Mai bine s-o dai în ambele limbi, ca restul devizului: cu PreventivoLampo, pagina de acceptare și formularul de retragere sunt și în engleză.",
             "Termenele, excepțiile (de exemplu bunurile făcute la comandă sau reparațiile urgente cerute de client) și ce se întâmplă dacă lucrarea începe înainte de expirarea termenului sunt explicate în ghidul despre [retragerea din devizul acceptat acasă](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },

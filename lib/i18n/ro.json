@@ -833,8 +833,8 @@
       },
       {
         "cifra": "6 limbi",
-        "cosa": "pentru clientul tău",
-        "dettaglio": "Italiană, engleză, germană, franceză, spaniolă și olandeză. Iar tu poți povesti și în română, albaneză sau arabă."
+        "cosa": "ca să lucrezi în a ta",
+        "dettaglio": "Italiană, engleză, română, albaneză, arabă și ucraineană. Clientului străin devizul îi ajunge în engleză, cu italiana alături."
       },
       {
         "cifra": "13 s",
@@ -875,9 +875,9 @@
       "totale": "Total"
     },
     "lingueTitolo": "Tu povestești în limba ta. Clientul citește în a lui.",
-    "lingueTesto": "Scrii sau dictezi vizita la fața locului în română, albaneză, arabă sau în altă limbă: ciorna iese în italiană. Dacă clientul e străin, devizul ajunge la el în engleză, germană, franceză, spaniolă sau olandeză, cu textul italian alături, care este cel valabil. Traducerea o vezi și o corectezi înainte să o trimiți.",
+    "lingueTesto": "Scrii sau dictezi vizita la fața locului în română, albaneză, arabă, ucraineană sau în altă limbă: ciorna iese în italiană. Dacă clientul e străin, devizul ajunge la el în engleză, cu textul italian alături, care prevalează. Traducerea o vezi și o corectezi înainte să o trimiți.",
     "lingueDalListino": "din lista ta de prețuri, în italiană",
-    "lingueAlCliente": "către clientul german, cu textul italian alături",
+    "lingueAlCliente": "către clientul străin, cu italiana alături",
     "aiutoTitolo": "Un ajutor adevărat, de la un om",
     "aiutoTesto": "Logo, date, condiții de plată, avansuri, excluderi: le setezi tu în câteva minute. Dacă te blochezi, ne scrii sau ne suni și îți răspunde un om, nu un bot. Iar primul deviz îl trimiți tu, din dubă.",
     "ultimaTitolo": "Ultimul cuvânt este mereu al tău",
@@ -1010,7 +1010,7 @@
       },
       {
         "d": "Pot să povestesc în limba mea? Și dacă clientul e străin?",
-        "r": "Da. Scrii sau dictezi inspecția în română, albaneză, arabă, ucraineană, spaniolă sau în altă limbă, iar ciorna iese în italiană, cu prețurile din lista ta. Cu vocea depinde de telefon: unde limba ta nu există, scrii. Iar dacă clientul vorbește engleză, germană, franceză, spaniolă sau olandeză, îi trimiți devizul în limba lui: traducerea o verifici tu, iar textul italian rămâne alături și prevalează."
+        "r": "Da. Scrii sau dictezi vizita la fața locului în română, albaneză, arabă, ucraineană, spaniolă sau în altă limbă, iar ciorna iese în italiană, cu prețurile din lista ta. Cu vocea depinde de telefon: unde limba ta nu există, o scrii. Iar dacă clientul e străin, îi trimiți devizul în engleză: traducerea o verifici tu, iar textul italian rămâne alături și prevalează."
       },
       {
         "d": "Vorbesc repede, e zgomot, folosesc termeni de-ai mei.",

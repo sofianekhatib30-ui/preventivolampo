@@ -160,7 +160,7 @@
       },
       "straniero": {
         "titolo": "Nëse klienti nuk flet italisht",
-        "testo": "Elektricistin e thërrasin shpesh të huaj që sapo kanë blerë shtëpi dhe gjejnë një instalim të vjetër, ose zyra të kompanive të huaja që shtojnë vende pune. Për ta preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht: pikat e dritës dhe priza me përkthimin poshtë, italishtja që ka vlerë ligjore dhe formulari i tërheqjes në gjuhën e tyre. Draftin e kontrollon ti në italisht."
+        "testo": "Elektricistin e thërrasin shpesh të huaj që sapo kanë blerë shtëpi dhe gjejnë një instalim të vjetër, ose zyra të kompanive të huaja që shtojnë vende pune. Për ta preventivi mund të niset në anglisht: pikat e dritës dhe prizat me përkthimin poshtë, italishtja që vlen dhe formulari i tërheqjes në anglisht. Draftin e kontrollon ti në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga elektricistët",
@@ -361,7 +361,7 @@
       },
       "straniero": {
         "titolo": "Kur klienti flet një gjuhë tjetër",
-        "testo": "Pronari që jeton jashtë dhe e jep apartamentin me qira të thërret për një rrjedhje dhe e do preventivin para se të autorizojë punën; familja e huaj që sapo ka blerë shtëpi do ta rinovojë banjon. Preventivi mund t'u vijë në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me lidhjet dhe pajisjet sanitare të përkthyera zë për zë, italishtja që ka vlerë ligjore dhe formulari i tërheqjes në gjuhën e tyre. Ti e miraton në italisht."
+        "testo": "Pronari që jeton jashtë dhe e jep apartamentin me qira të thërret për një rrjedhje dhe e do preventivin para se të autorizojë punën; familja e huaj që sapo ka blerë shtëpi do ta rinovojë banjon. Preventivi mund t'i vijë në anglisht, me lidhjet dhe pajisjet sanitare të përkthyera zë për zë, italishtja që vlen dhe formulari i tërheqjes në anglisht. Ti e miraton në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga hidraulikët",
@@ -557,7 +557,7 @@
       },
       "straniero": {
         "titolo": "Nëse klienti është i huaj",
-        "testo": "Qiramarrësi i huaj që duhet ta kthejë shtëpinë të lyer, pronari që jeton jashtë dhe e freskon apartamentin para se ta japë me qira: duan të dinë menjëherë sa kushton dhe çfarë përfshihet. Preventivi mund t'u shkojë në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me fjalë si «rasatura» ose «idropittura» të përkthyera në gjuhën e tyre, me italishten që ka vlerë ligjore dhe me formularin e tërheqjes (recesso) të përkthyer. Ti vazhdon të punosh në italisht."
+        "testo": "Qiramarrësi i huaj që duhet ta kthejë shtëpinë të lyer, pronari që jeton jashtë dhe e freskon apartamentin para se ta japë me qira: duan të dinë menjëherë sa kushton dhe çfarë përfshihet. Preventivi mund t'u vijë në anglisht, me fjalë si «rasatura» ose «idropittura» të përkthyera në anglisht, italishtja që vlen dhe formulari i tërheqjes i përkthyer. Ti vazhdon të punosh në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga lyerësit",
@@ -753,7 +753,7 @@
       },
       "straniero": {
         "titolo": "Dysheme për ata që flasin një gjuhë tjetër",
-        "testo": "Pronari që jeton jashtë dhe kalon vetëm për të zgjedhur pllakat, ose ai që rinovon banjon para se ta japë apartamentin me qira: dëshiron të kuptojë çfarë paguan pa përkthyes. Preventivi mund të nisë në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me nënshtresën, fugat dhe plintusin të përkthyera zë për zë dhe me italishten që ka vlerë ligjore. Ti zërat i kontrollon në italisht."
+        "testo": "Pronari që jeton jashtë dhe kalon vetëm për të zgjedhur pllakat, ose ai që rinovon banjon para se ta japë apartamentin me qira: do të kuptojë çfarë paguan pa përkthyes. Preventivi mund të niset në anglisht, me nënshtresën, fugat dhe plintusin të përkthyera zë për zë dhe italishten që vlen. Ti zërat i kontrollon në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga pllakaxhinjtë",
@@ -939,7 +939,7 @@
       },
       "straniero": {
         "titolo": "Punime muratura për ata që jetojnë jashtë vendit",
-        "testo": "Ai që rinovon nga larg vjen për vizitën në vend (sopralluogo) dhe pastaj vendos nga vendi i tij: duhet të kuptojë nga preventivi cilat mure rrëzohen dhe çfarë mbetet jashtë. Mund t'i vijë në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me tramezzo dhe rasatura të përkthyera që të mos ndryshojë kuptimi dhe me italishten që ka vlerë ligjore. Ti e lexon dhe e kontrollon në italisht."
+        "testo": "Ai që rinovon nga larg vjen për vizitën në objekt dhe pastaj vendos nga vendi i tij: duhet të kuptojë nga preventivi cilat mure rrëzohen dhe çfarë mbetet jashtë. Mund t'i vijë në anglisht, me tramezzo dhe rasatura të përkthyera në mënyrë që të mos ndryshojë kuptimi dhe italishten që vlen. Ti e lexon dhe e kontrollon në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga muratorët",
@@ -1139,7 +1139,7 @@
       },
       "straniero": {
         "titolo": "Kantieri i një klienti të huaj",
-        "testo": "Kush jeton jashtë dhe blen shtëpi këtu kërkon një ndërmarrje që merr gjithë kantierin, sepse nuk mund t'i koordinojë skuadrat nga larg. Atij i duhet një preventiv i vetëm që e kupton rresht pas rreshti: në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me ngarkesat dhe punimet e përkthyera, italishtja që ka vlerë ligjore dhe formulari i tërheqjes në gjuhën e tij. E pranon nga linku, pa pasur nevojë të vijë të nënshkruajë."
+        "testo": "Kush jeton jashtë dhe blen shtëpi këtu kërkon një ndërmarrje që merr gjithë kantierin, sepse nuk mund t'i koordinojë skuadrat nga larg. Atij i duhet një preventiv i vetëm që ta kuptojë rresht pas rreshti: në anglisht, me ngarkesat dhe punimet e përkthyera, italishtja që vlen dhe formulari i tërheqjes në anglisht. E pranon nga linku, pa pasur nevojë të vijë të nënshkruajë."
       },
       "domande": {
         "titolo": "Pyetje nga ndërmarrjet ndërtimore",
@@ -1344,7 +1344,7 @@
       },
       "straniero": {
         "titolo": "Klientë që nuk flasin italisht",
-        "testo": "Kush ka një shtëpi të dytë dhe e do klimën para verës, ose familja që ka ardhur për punë dhe në dimrin e parë gjen kaldajën për ta ndërruar: për termoidraulikun janë thirrje të shpeshta. Preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me gjeneratorin, aksesorët dhe mirëmbajtjet të shpjeguara në gjuhën e tyre, italishtja që ka vlerë ligjore dhe formulari i tërheqjes i përkthyer. Ti e kontrollon në italisht."
+        "testo": "Kush ka një shtëpi të dytë dhe e do klimën para verës, ose familja që ka ardhur për punë dhe në dimrin e parë gjen kaldajën për ta ndërruar: për termoidraulikun janë thirrje të shpeshta. Preventivi mund të niset në anglisht, me gjeneratorin, aksesorët dhe mirëmbajtjet të shpjeguara në anglisht, italishtja që vlen dhe formulari i tërheqjes i përkthyer. Ti e kontrollon në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga termoidraulikët",
@@ -1544,7 +1544,7 @@
       },
       "straniero": {
         "titolo": "Nëse klienti flet një gjuhë tjetër",
-        "testo": "I huaji që blen një open space dhe do të bëjë një dhomë, ose ndërmarrja e huaj që ndan një zyrë: për ta «controparete» dhe «veletta» nuk thonë asgjë. Preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me këto fjalë të shpjeguara qartë, me italishten që vlen para ligjit dhe me formularin e tërheqjes nga kontrata (modulo di recesso) të përkthyer. Ti e përgatit dhe e kontrollon në italisht."
+        "testo": "I huaji që blen një open space dhe do të nxjerrë prej tij një dhomë, ose ndërmarrja e huaj që ndan një zyrë: për ta «controparete» dhe «veletta» nuk thonë asgjë. Preventivi mund të niset në anglisht, me këto fjalë të shpjeguara qartë, italishtja që vlen dhe formulari i tërheqjes i përkthyer. Ti e përgatit dhe e kontrollon në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga kartongjesistët",
@@ -1754,7 +1754,7 @@
       },
       "straniero": {
         "titolo": "Shtëpi të dyta dhe klientë të huaj",
-        "testo": "Pronari i një shtëpie të dytë që jeton jashtë vendit do ta mbyllë mirë para dimrit dhe krahason preventivat nga larg, duke parë xhamin, profilin dhe ngjyrën. Preventivi i vjen në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me përmasat e vrimës identike, shpjegimin e beni significativi (mallra të rëndësishme) në gjuhën e tij, italishten që vlen para ligjit dhe formularin e tërheqjes (modulo di recesso) të përkthyer."
+        "testo": "Pronari i një shtëpie të dytë që jeton jashtë vendit do ta mbyllë mirë para dimrit dhe krahason preventivat nga larg, duke parë xhamin, profilin dhe ngjyrën. Preventivi i vjen në anglisht, me përmasat e vrimës identike, italishten që vlen dhe formularin e tërheqjes të përkthyer."
       },
       "domande": {
         "titolo": "Pyetje nga montuesit e dritareve",
@@ -1946,7 +1946,7 @@
       },
       "straniero": {
         "titolo": "Sipas masës, për klientë të huaj",
-        "testo": "Kush mobilon një apartament për qira afatshkurtra ose një shtëpi të dytë do të kuptojë pse një gardërobë sipas masës kushton më shumë se një e gatshme nga dyqani i mobiljeve, dhe do ta lexojë në gjuhën e tij. Preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me llojet e drurit, përfundimet dhe aksesorët e përkthyer, me italishten si version që vlen dhe formularin e tërheqjes në gjuhën e tij. Ti e kontrollon në italisht."
+        "testo": "Kush mobilon një apartament për qira afatshkurtra ose një shtëpi të dytë do të kuptojë pse një gardërobë me porosi kushton më shumë se një nga dyqani i mobiljeve, dhe do ta lexojë pa përkthyes. Preventivi mund të niset në anglisht, me llojet e drurit, përfundimet dhe aksesorët e përkthyer, italishtja që vlen dhe formulari i tërheqjes në anglisht. Ti e kontrollon në italisht."
       },
       "domande": {
         "titolo": "Pyetje nga marangozët",
@@ -2138,7 +2138,7 @@
       },
       "straniero": {
         "titolo": "Shtëpi pushimi dhe klientë larg",
-        "testo": "Kush ka një shtëpi pushimi dhe do ta mbyllë me grila e portë para se të nisë i ndjek punimet nga larg dhe vendos nga telefoni. Preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me galvanizimin, bojën dhe automatizimin e shpjeguara në gjuhën e tij dhe me italishten si version që vlen. Ti e kontrollon në italisht dhe sheh kur klienti e hap dhe kur e pranon, edhe nëse është larg."
+        "testo": "Kush ka një shtëpi pushimi dhe do ta mbyllë me grila e portë para se të nisë, i ndjek punimet nga larg dhe vendos nga telefoni. Preventivi mund të niset në anglisht, me galvanizimin, lyerjen dhe automatizimin të shpjeguara në anglisht dhe italishten që vlen. Ti e kontrollon në italisht dhe sheh kur klienti e hap dhe kur e pranon, edhe nëse është larg."
       },
       "domande": {
         "titolo": "Pyetje nga farkëtarët",
@@ -2344,7 +2344,7 @@
       },
       "straniero": {
         "titolo": "Kopshte të atyre që jetojnë jashtë",
-        "testo": "Pronari që vjen vetëm në verë do ta gjejë kopshtin në rregull dhe ia beson mirëmbajtjen e stinës nga larg. Preventivi mund të niset në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me kalimet e përfshira në kontratë të listuara në gjuhën e tij dhe me italishten si version që vlen. Ti e kontrollon në italisht dhe klienti e pranon nga linku, edhe nga larg."
+        "testo": "Pronari që vjen vetëm në verë do ta gjejë kopshtin në rregull dhe ia beson mirëmbajtjen e stinës nga larg. Preventivi mund të niset në anglisht, me kalimet e përfshira në kontratë të listuara në anglisht dhe italishten që vlen. Ti e kontrollon në italisht, dhe klienti e pranon nga linku edhe nga larg."
       },
       "domande": {
         "titolo": "Pyetje nga kopshtarët",
@@ -2511,26 +2511,26 @@
     },
     "preventivo-in-lingua-del-cliente": {
       "meta": {
-        "titolo": "Preventiv në anglisht ose gjermanisht për klientin",
-        "descrizione": "Preventiv në gjuhën e klientit: anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht. PDF në dy gjuhë ku vlen italishtja, dhe e drejta e tërheqjes (recesso) e përkthyer."
+        "titolo": "Preventiv në anglisht për klientin e huaj",
+        "descrizione": "Preventiv në anglisht për klientin e huaj. PDF në dy gjuhë ku vlen italishtja, dhe tërheqja e përkthyer."
       },
-      "nome": "Preventivi në gjuhën e klientit",
-      "riga": "Anglisht, gjermanisht, frëngjisht, spanjisht dhe holandisht, me tekstin italisht pranë, që është ai që vlen.",
-      "h1": "Preventivi në gjuhën e klientit, me italishten që vlen",
-      "sottotitolo": "Ti punon në italisht si gjithmonë. Klienti i huaj merr mesazhin, faqen dhe PDF-në në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me tekstin italisht pranë. Përkthimin e sheh dhe e korrigjon para se të miratosh.",
+      "nome": "Preventivi në anglisht",
+      "riga": "Në anglisht për klientin e huaj, me tekstin italian pranë, që është ai që vlen.",
+      "h1": "Preventivi në anglisht për klientin e huaj, me italishten që vlen",
+      "sottotitolo": "Ti punon në italisht si gjithmonë. Klienti i huaj merr mesazhin, faqen dhe PDF-në në anglisht, me tekstin italian pranë. Përkthimin e sheh dhe e korrigjon para se të miratosh.",
       "sezioni": [
         {
           "titolo": "Kujt i duhet",
           "paragrafi": [
             "Shtëpi të blera nga të huaj, apartamente të dhëna me qira atyre që punojnë këtu prej pak, shtëpi të dyta të familjeve që jetojnë jashtë. Klienti i kupton masat dhe çmimet, por një zë si «rasatura» ose «massetto» i thotë pak, dhe një preventiv që nuk e kupton e firmos me vonesë, ose nuk e firmos fare.",
-            "Me PreventivoLampo preventivi mund të dalë në pesë gjuhë përveç italishtes: **anglisht, gjermanisht, frëngjisht, spanjisht dhe holandisht**. Gjuhën e zgjedh preventiv pas preventivi. Për një klient që flet një gjuhë tjetër, preventivi mbetet në italisht.",
-            "Mos e ngatërro me gjuhën në të cilën tregon vizitën në objekt: ajo mund të jetë edhe rumanisht, shqip ose arabisht, dhe drafti del prapë në italisht. E shpjegojmë te faqja për [preventivin me zë](/funzioni/preventivo-da-vocale)."
+            "Me PreventivoLampo preventivi mund të niset **në anglisht** përveç italishtes: e zgjedh preventiv pas preventivi. Anglishten e lexon pothuajse çdo klient i huaj; për atë që nuk e lexon, preventivi mbetet në italisht.",
+            "Mos e ngatërro me gjuhën në të cilën tregon vizitën në objekt: ajo mund të jetë edhe rumanisht, shqip, arabisht ose ukrainisht, dhe drafti del prapë në italisht. E shpjegojmë te faqja për [preventivin me zë](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
           "titolo": "Si bëhet dhe si e kontrollon",
           "paragrafi": [
-            "Preventivi lind në italisht, nga rrëfimi yt dhe nga lista jote e çmimeve. Kur i ke rregulluar zërat, sasitë dhe çmimet, në draft zgjedh gjuhën e klientit dhe shtyp butonin për të përkthyer. Çdo zë i përkthyer del poshtë atij italisht, dhe mund ta korrigjosh me dorë, rresht pas rreshti. E njëjta gjë vlen për përjashtimet."
+            "Preventivi lind në italisht, nga rrëfimi yt dhe nga lista jote e çmimeve. Kur i ke rregulluar zërat, sasitë dhe çmimet, në draft zgjedh anglishten si gjuhë të klientit dhe shtyp butonin për të përkthyer. Çdo zë i përkthyer del poshtë atij italian, dhe mund ta korrigjosh me dorë, rresht pas rreshti. E njëjta gjë për përjashtimet."
           ],
           "punti": [
             {
@@ -2539,7 +2539,7 @@
             },
             {
               "titolo": "Fjalët e zanatit kanë një përkthim të caktuar",
-              "testo": "Massetto, tramezzo, battiscopa, rasatura, idropittura, punto luce, a corpo, fornitura e posa, solo posa: për termat që, po u përkthyen keq, ndryshojnë kuptimin, përkthimi është i caktuar që në fillim, gjuhë pas gjuhe. Një tramezzo mbetet një mur ndarës jo mbajtës edhe në gjermanisht."
+              "testo": "Massetto, tramezzo, battiscopa, rasatura, idropittura, punto luce, a corpo, fornitura e posa, solo posa: për termat që, po të përkthehen keq, ndryshojnë kuptimin, përkthimi është i caktuar që në fillim. Një tramezzo mbetet një mur ndarës jo mbajtës edhe në anglisht."
             },
             {
               "titolo": "Nëse ndryshon një zë, përkthimi ribëhet",
@@ -2547,24 +2547,24 @@
             },
             {
               "titolo": "Shikon çfarë do të shohë ai",
-              "testo": "Pas miratimit mund ta hapësh faqen pikërisht siç e sheh klienti, në gjuhën e tij, dhe PDF-në në dy gjuhë."
+              "testo": "Pas miratimit mund ta hapësh faqen pikërisht siç e sheh klienti, në anglisht, dhe PDF-në në dy gjuhë."
             }
           ]
         },
         {
           "titolo": "PDF-ja në dy gjuhë",
           "paragrafi": [
-            "PDF-ja mbetet një preventiv italian, me italishten gjithmonë në plan të parë. Nën çdo zë është përkthimi, me shkronja të pjerrëta gri. Titujt e kolonave, baza e tatueshme (imponibile), IVA, totali, përjashtimet dhe kushtet kanë rreshtin e tyre në gjuhën e klientit. Datat janë shkruar siç i lexon ai.",
-            "IVA mbetet ajo italiane, dhe PDF-ja i shpjegon klientit cila përqindje zbatohet dhe pse. Nëse ka «beni significativi» (mallra me vlerë të konsiderueshme sipas normës së IVA-s), termi mbetet në italisht, me një shpjegim në gjuhën e tij: është një fjalë e normës italiane, dhe përkthimi do ta bënte më të paqartë.",
-            "Në fund ka klauzolën e përparësisë, të shkruar në dy gjuhët: preventivi është hartuar në italisht dhe në gjuhën e klientit, dhe nëse ka mospërputhje, mbizotëron teksti italian. Codice del Consumo (kodi i konsumit) kërkon që informacionet për konsumatorin të jepen të paktën në italisht (neni 9), dhe në kontratat në distancë klienti mund t'i kërkojë në italisht (neni 49, paragrafi 7): versioni i përkthyer është një ndihmë për të, ai që ka vlerë mbetet italiani."
+            "PDF-ja mbetet një preventiv italian, me italishten gjithmonë në plan të parë. Nën çdo zë është përkthimi, me shkronja të pjerrëta gri. Titujt e kolonave, baza e tatueshme, IVA, totali, përjashtimet dhe kushtet kanë rreshtin e tyre në anglisht.",
+            "IVA mbetet ajo italiane. Përqindjet, «beni significativi» dhe referencat ligjore mbeten të shkruara në italisht, siç i do norma, dhe një rresht në anglisht i shpjegon klientit se janë treguesit fiskalë të parashikuar nga ligji italian: përkthimi do t'i bënte më të paqarta.",
+            "Në fund është klauzola e përparësisë, e shkruar në dy gjuhët: preventivi është hartuar në italisht dhe në anglisht, dhe në rast mospërputhjeje mbizotëron teksti italian. Codice del Consumo kërkon që informacionet për konsumatorin të jepen të paktën në italisht (art. 9), dhe në kontratat në distancë klienti mund t'i kërkojë në italisht (art. 49, comma 7): versioni i përkthyer është një ndihmë për të, ai që vlen mbetet italiani."
           ]
         },
         {
-          "titolo": "Mesazhi, faqja e pranimit dhe tërheqja në gjuhën e tij",
+          "titolo": "Mesazhi, faqja e pranimit dhe tërheqja në anglisht",
           "paragrafi": [
-            "Kur e dërgon preventivin në WhatsApp, mesazhi është shkruar tashmë në gjuhën e klientit, me numrin e preventivit, totalin dhe linkun.",
-            "Faqja që hap është në gjuhën e tij: totali, detaji i zërave, përjashtimet, butoni për të pranuar dhe fraza që shënon para se ta bëjë. Poshtë çdo zëri të përkthyer është zëri italian, dhe lart mund të kalojë te versioni italian me një prekje. Si funksionon pranimi e gjen te [pranimi online](/funzioni/accettazione-online).",
-            "Edhe informacionet për të drejtën e tërheqjes (recesso) dhe formulari tip janë në gjuhën e tij, në faqe dhe në PDF, ku faqja e tërheqjes është në italisht dhe në gjuhën e klientit. Këto tekste nuk janë përkthim i yni: për çdo gjuhë nisin nga versioni zyrtar i formularit të parashikuar nga direktiva 2011/83/BE, që ekziston në të gjitha gjuhët e Bashkimit Evropian. Çfarë ndryshon, dhe çfarë jo, kur klienti është i huaj e gjen te udhëzuesi për [preventivin për klientin e huaj](/guide/preventivo-cliente-straniero)."
+            "Kur e dërgon preventivin në WhatsApp, mesazhi është shkruar tashmë në anglisht, me numrin e preventivit, totalin dhe linkun.",
+            "Faqja që hap është në anglisht: totali, detaji i zërave, përjashtimet, butoni për të pranuar dhe fraza që shënon para se ta bëjë. Poshtë çdo zëri të përkthyer është zëri italian, dhe lart mund të kalojë te versioni italian me një prekje. Si funksionon pranimi e gjen te [pranimi online](/funzioni/accettazione-online).",
+            "Edhe informacionet për të drejtën e tërheqjes dhe formulari tip janë në anglisht, në faqe dhe në PDF, ku faqja e tërheqjes është në italisht dhe në anglisht. Këto tekste nuk janë përkthim i yni: nisin nga versioni zyrtar anglisht i formularit të parashikuar nga direktiva 2011/83/UE. Çfarë ndryshon, dhe çfarë jo, kur klienti është i huaj e gjen te udhëzuesi për [preventivin për klientin e huaj](/guide/preventivo-cliente-straniero)."
           ]
         },
         {
@@ -2593,15 +2593,15 @@
         }
       ],
       "domande": {
-        "titolo": "Pyetje për preventivin në një gjuhë tjetër",
+        "titolo": "Pyetje për preventivin në anglisht",
         "voci": [
           {
             "d": "Duhet të di anglisht për të dërguar një preventiv në anglisht?",
             "r": "Jo. E përgatit dhe e kontrollon në italisht. Përkthimin e bën sistemi, dhe nëse një zë i përkthyer nuk të bind, e korrigjon ose kërkon ndihmë nga dikush që e njeh gjuhën, para se të miratosh."
           },
           {
-            "d": "Klienti flet portugalisht. Mund t'ia dërgoj në gjuhën e tij?",
-            "r": "Për momentin jo: gjuhët për klientin janë anglisht, gjermanisht, frëngjisht, spanjisht dhe holandisht. Në rastet e tjera preventivi del në italisht, ose në anglisht nëse klienti e lexon."
+            "d": "Klienti flet gjermanisht. A mund t'ia dërgoj në gjuhën e tij?",
+            "r": "Jo: përveç italishtes ka anglishten, që e lexon pothuajse çdo klient i huaj. Nëse nuk e lexon, preventivi niset në italisht."
           },
           {
             "d": "Nëse lind një mosmarrëveshje, cili tekst vlen?",
@@ -2616,7 +2616,7 @@
             "r": "Jo: sasitë dhe çmimet nuk përkthehen, ndaj përkthimi mbetet i vlefshëm. Duhet ribërë vetëm nëse ndryshon tekstin e një zëri ose të një përjashtimi, ose nëse shton a heq një të tillë. Sistemi të njofton."
           },
           {
-            "d": "A ndryshon çmimi nëse preventivi është në një gjuhë tjetër?",
+            "d": "A ndryshon çmimi nëse preventivi është në anglisht?",
             "r": "Jo. Çmimet, IVA dhe totali janë të njëjtat me preventivin në italisht: ndryshon vetëm gjuha në të cilën i lexon klienti."
           }
         ]
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "Një preventiv dygjuhësh ka dy kolona ose dy blloqe për çdo zë, ose tekstin italisht të ndjekur nga përkthimi. Në fund duhet një klauzolë që thotë cili version mbizotëron nëse të dyja nuk përputhen, për shembull: «Ky preventiv është hartuar në italisht dhe në anglisht. Në rast mospërputhjeje midis dy versioneve vlen teksti italisht.»",
             "Pse italishtja? Sepse është gjuha në të cilën punon, në të cilën preventivin do ta lexonte një konsulent, një ekspert ose një gjykatës italian, dhe në të cilën janë shkruar termat teknikë. Por klauzola nuk është mburojë absolute. Në kontratat me konsumatorët, kur kuptimi i një klauzole është i dyshimtë, mbizotëron interpretimi më i favorshëm për konsumatorin (neni 35, pika 2): nëse përkthimi thotë diçka tjetër nga origjinali dhe klienti ka nënshkruar duke u besuar gjuhës së tij, një përkthim i gabuar mund të bëhet problem yti.",
-            "Pra përkthimi duhet të jetë besnik, jo elegant. Fjali të shkurtra, një gjë për fjali, të njëjtat numra në të dyja versionet, asnjë përmbledhje. PreventivoLampo e bën preventivin në gjuhën e klientit mes anglishtes, gjermanishtes, frëngjishtes, spanjishtes dhe holandishtes, me PDF në dy gjuhë ku vlen italishtja: ti kontrollon gjithmonë versionin italisht, dhe është ai që miraton para se të dërgohet."
+            "Pra përkthimi duhet të jetë besnik, jo elegant. Fjali të shkurtra, një gjë për fjali, të njëjtat numra në të dyja versionet, asnjë përmbledhje. PreventivoLampo e bën preventivin edhe në anglisht, me PDF në dy gjuhë ku vlen italishtja: ti kontrollon gjithmonë versionin italian, dhe është ai që miraton para se të niset."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "Recesso (tërheqja nga kontrata) e shpjeguar në gjuhën e tij",
           "paragrafi": [
             "Një klient privat i huaj, sipas codice del consumo (kodit të konsumit), është konsumator si çdo tjetër. Nëse kontrata lind në shtëpinë e tij ose në distancë, si rregull ka 14 ditë për t'u tërhequr pa dhënë arsye, dhe ti duhet ta informosh para se të angazhohet, duke i dhënë edhe formularin e tërheqjes. Nëse mungon informimi, afati zgjatet me dymbëdhjetë muaj.",
-            "Me një klient të huaj problemi nuk është rregulli, është që ta kuptojë. Një informim në italisht i dhënë dikujt që nuk e lexon bën vetëm minimumin e domosdoshëm dhe e lë të hapur diskutimin se çfarë dinte vërtet. Më mirë ta japësh në të dyja gjuhët, si pjesën tjetër të preventivit: me PreventivoLampo faqja e pranimit dhe formulari i tërheqjes janë të përkthyera në gjuhën e klientit.",
+            "Me një klient të huaj problemi nuk është rregulli, është që ta kuptojë. Një informim në italisht i dhënë dikujt që nuk e lexon bën minimumin e domosdoshëm dhe e lë të hapur diskutimin se çfarë dinte vërtet. Më mirë ta japësh në dy gjuhët, si pjesën tjetër të preventivit: me PreventivoLampo faqja e pranimit dhe formulari i tërheqjes janë edhe në anglisht.",
             "Afatet, përjashtimet (për shembull mallrat e bëra sipas porosisë ose riparimet urgjente të kërkuara nga klienti) dhe çfarë ndodh nëse puna fillon para skadencës shpjegohen në udhëzuesin për [tërheqjen nga preventivi i pranuar në shtëpi](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },

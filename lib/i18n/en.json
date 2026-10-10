@@ -833,8 +833,8 @@
       },
       {
         "cifra": "6 languages",
-        "cosa": "for your customer",
-        "dettaglio": "Italian, English, German, French, Spanish and Dutch. And you can tell it about the job in Romanian, Albanian or Arabic too."
+        "cosa": "to work in your own",
+        "dettaglio": "Italian, English, Romanian, Albanian, Arabic and Ukrainian. Your foreign customer gets the quote in English, with the Italian alongside."
       },
       {
         "cifra": "13 s",
@@ -875,9 +875,9 @@
       "totale": "Total"
     },
     "lingueTitolo": "You tell it in your language. Your customer reads it in theirs.",
-    "lingueTesto": "Write or dictate the site visit in Romanian, Albanian, Arabic or another language, and the draft comes out in Italian. If your customer is a foreigner, the quote reaches them in English, German, French, Spanish or Dutch, with the Italian text alongside, which is the one that counts. You see the translation and fix it before you send it.",
+    "lingueTesto": "Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian or another language: the draft comes out in Italian. If your customer is foreign, the quote reaches them in English, with the Italian text alongside, which is the one that counts. You see the translation and correct it before you send it.",
     "lingueDalListino": "from your price list, in Italian",
-    "lingueAlCliente": "to the German customer, with the Italian alongside",
+    "lingueAlCliente": "to your foreign customer, with the Italian alongside",
     "aiutoTitolo": "Real help, from a real person",
     "aiutoTesto": "Logo, details, payment terms, deposits, exclusions: you set them up in a few minutes. If you get stuck, write to us or call us and a person answers, not a bot. And you send the first quote yourself, from the van.",
     "ultimaTitolo": "The last word is always yours",
@@ -1010,7 +1010,7 @@
       },
       {
         "d": "Can I tell it in my own language? What if my customer is foreign?",
-        "r": "Yes. Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian, Spanish or another language, and the draft comes out in Italian with the prices from your price list. For voice it depends on your phone: if your language isn't available, type it. And if your customer speaks English, German, French, Spanish or Dutch, you send the quote in their language: you check the translation, and the Italian text stays alongside and is the one that counts."
+        "r": "Yes. Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian, Spanish or another language, and the draft comes out in Italian with the prices from your price list. For voice it depends on your phone: if your language isn't available, type it. And if your customer is foreign, you send them the quote in English: you check the translation, and the Italian text stays alongside and is the one that counts."
       },
       {
         "d": "I talk fast, there's noise, I use my own words.",

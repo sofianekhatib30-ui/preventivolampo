@@ -19,6 +19,14 @@ const nextConfig: NextConfig = {
   },
   // Lettore Excel: resta un pacchetto Node esterno (le sue dipendenze facoltative, come S3, non si impacchettano).
   serverExternalPackages: ["read-excel-file", "unzipper"],
+  // Le pagine in spagnolo, francese, tedesco e olandese sono state tolte l'11/10/2026 (erano in noindex):
+  // chi arriva da un vecchio link trova la pagina italiana.
+  async redirects() {
+    return [
+      { source: "/:lingua(es|fr|de|nl)", destination: "/", permanent: true },
+      { source: "/:lingua(es|fr|de|nl)/:resto*", destination: "/:resto*", permanent: true },
+    ];
+  },
   // Intestazioni di sicurezza su tutto il sito. Dal 10/10/2026 qui vive anche il cookie della sessione
   // unica di K Digital Solution (leggibile dagli script, valido su tutto .kdigitalsolution.it): gli script
   // vengono solo da qui e dall'account (la barra comune). 'unsafe-inline' resta per gli script che Next

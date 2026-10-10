@@ -833,8 +833,8 @@
       },
       {
         "cifra": "6 gjuhë",
-        "cosa": "për klientin tënd",
-        "dettaglio": "Italisht, anglisht, gjermanisht, frëngjisht, spanjisht dhe holandisht. Ti mund të tregosh edhe në rumanisht, shqip ose arabisht."
+        "cosa": "për të punuar në tënden",
+        "dettaglio": "Italisht, anglisht, rumanisht, shqip, arabisht dhe ukrainisht. Te klienti i huaj preventivi arrin në anglisht, me italishten pranë."
       },
       {
         "cifra": "13 s",
@@ -875,9 +875,9 @@
       "totale": "Totali"
     },
     "lingueTitolo": "Ti tregon në gjuhën tënde. Klienti lexon në të tijën.",
-    "lingueTesto": "Shkruaje ose diktoje vizitën në objekt në rumanisht, shqip, arabisht ose në një gjuhë tjetër: skica del në italisht. Nëse klienti është i huaj, preventivi i vjen në anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, me tekstin italian pranë, që është ai që vlen. Përkthimin e sheh dhe e korrigjon para se ta dërgosh.",
+    "lingueTesto": "Shkruaje ose diktoje vizitën në objekt në rumanisht, shqip, arabisht, ukrainisht ose në një gjuhë tjetër: drafti del në italisht. Nëse klienti është i huaj, preventivi i vjen në anglisht, me tekstin italian pranë, që është ai që vlen. Përkthimin e sheh dhe e korrigjon para se ta dërgosh.",
     "lingueDalListino": "nga lista jote e çmimeve, në italisht",
-    "lingueAlCliente": "te klienti gjerman, me italishten pranë",
+    "lingueAlCliente": "te klienti i huaj, me italishten pranë",
     "aiutoTitolo": "Ndihmë e vërtetë, nga një njeri",
     "aiutoTesto": "Logo, të dhëna, kushtet e pagesës, parapagimet, përjashtimet: i vendos ti vetë për pak minuta. Nëse ngec, na shkruan ose na merr në telefon dhe të përgjigjet një njeri, jo një bot. Dhe preventivin e parë e dërgon ti vetë, nga furgoni.",
     "ultimaTitolo": "Fjala e fundit është gjithmonë e jotja",
@@ -1010,7 +1010,7 @@
       },
       {
         "d": "A mund ta tregoj në gjuhën time? Po nëse klienti është i huaj?",
-        "r": "Po. E shkruan ose e diktoni sopralluogon në rumanisht, shqip, arabisht, ukrainisht, spanjisht ose në një gjuhë tjetër, dhe drafti dalin në italisht me çmimet e listës tënde. Me zë varet nga telefoni: aty ku gjuha jote nuk ka, e shkruan. Dhe nëse klienti flet anglisht, gjermanisht, frëngjisht, spanjisht ose holandisht, ia dërgon preventivin në gjuhën e tij: përkthimin e kontrollon ti, dhe teksti italisht qëndron pranë dhe vlen si tekst zyrtar."
+        "r": "Po. E shkruan ose e dikton vizitën në objekt në rumanisht, shqip, arabisht, ukrainisht, spanjisht ose në një gjuhë tjetër, dhe drafti del në italisht me çmimet e listës tënde. Me zë varet nga telefoni: aty ku gjuha jote nuk është, e shkruan. Dhe nëse klienti është i huaj, ia dërgon preventivin në anglisht: përkthimin e kontrollon ti, dhe teksti italian mbetet pranë dhe është ai që vlen."
       },
       {
         "d": "Flas shpejt, ka zhurmë, përdor fjalët e mia.",

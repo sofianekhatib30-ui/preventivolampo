@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[pagina]">
 }
 
 // Le lingue in cui il cliente può ricevere il preventivo, con la bandiera.
-const LINGUE_CLIENTE = ["en", "de", "fr", "es", "nl"] as const;
+const LINGUE_CLIENTE = ["it", "en"] as const;
 
 export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pagina]">) {
   const { id, lingua, c, m } = await carica(params);
@@ -64,8 +64,8 @@ export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pag
     { nome: m.nome, p: percorsoMestiere(id) },
   ];
   const slug = SLUG_MESTIERE[id];
-  // Dentro una frase il mestiere va minuscolo, tranne in tedesco (nomi maiuscoli) e nelle lingue senza maiuscole.
-  const nomeMin = lingua === "de" ? m.nome : m.nome.toLocaleLowerCase(lingua);
+  // Dentro una frase il mestiere va minuscolo (nelle lingue senza maiuscole non cambia niente).
+  const nomeMin = m.nome.toLocaleLowerCase(lingua);
   return (
     <Guscio d={d} c={c} lingua={lingua}>
       <TestaPagina lingua={lingua} briciole={vie} etichettaBriciole={d.comune.briciole} h1={m.h1} sottotitolo={m.sottotitolo}>

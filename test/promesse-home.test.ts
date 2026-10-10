@@ -94,8 +94,8 @@ const PROMESSE: Promessa[] = [
   {
     rigaSpec: "«dei prezzi dal tuo listino» / «6 lingue»",
     frasi: ["dei prezzi dal tuo listino", "6 lingue"],
-    requisito: "Nessun prezzo fuori listino; sei lingue del cliente",
-    prova: { file: "lib/preventivi/lingua.ts", contiene: 'export const LINGUE = ["it", "en", "de", "fr", "es", "nl"] as const;' },
+    requisito: "Nessun prezzo fuori listino; sei lingue per lavorare (interfaccia dell'artigiano)",
+    prova: { file: "lib/i18n/lingue.ts", contiene: 'export const LINGUE_SITO = ["it", "en", "ro", "sq", "ar", "uk"] as const;' },
   },
   {
     rigaSpec: "«la bozza esce in italiano»",
@@ -104,8 +104,8 @@ const PROMESSE: Promessa[] = [
     prova: { file: "test/lingue.test.ts", contiene: "il motore sa che il racconto può essere in un'altra lingua" },
   },
   {
-    rigaSpec: "«gli mandi il preventivo nella sua lingua»",
-    frasi: ["gli mandi il preventivo nella sua lingua"],
+    rigaSpec: "«gli mandi il preventivo in inglese»",
+    frasi: ["gli mandi il preventivo in inglese"],
     requisito: "Traduzione controllata, PDF e pagina bilingui con l'italiano che prevale",
     prova: { file: "test/lingue.test.ts", contiene: "non si approva senza traduzione; con la traduzione il PDF è bilingue" },
   },

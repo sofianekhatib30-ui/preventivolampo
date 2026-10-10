@@ -9,10 +9,6 @@ const CARICA: Record<Exclude<LinguaSito, "it">, () => Promise<{ default: unknown
   sq: () => import("./sq.json"),
   ar: () => import("./ar.json"),
   uk: () => import("./uk.json"),
-  es: () => import("./es.json"),
-  fr: () => import("./fr.json"),
-  de: () => import("./de.json"),
-  nl: () => import("./nl.json"),
 };
 
 export async function contenutiDi(lingua: LinguaSito): Promise<Contenuti> {
