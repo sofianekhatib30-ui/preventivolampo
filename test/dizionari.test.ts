@@ -29,7 +29,7 @@ describe("dizionari", () => {
     expect(segni, "segnaposto, link o grassetti diversi").toEqual([]);
     expect([...d].filter(([, t]) => t.includes("—")).map(([k]) => k)).toEqual([]);
     // I tipi di blocco delle pagine legali non si traducono.
-    const tipi = [...d].filter(([k]) => k.endsWith(".t"));
+    const tipi = [...d].filter(([k]) => k.startsWith("legale.") && k.endsWith(".t"));
     expect(tipi.every(([k, t]) => t === base.get(k))).toBe(true);
   });
 });

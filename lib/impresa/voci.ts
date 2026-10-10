@@ -6,7 +6,7 @@ import type { DatiVoce, Voce } from "./schema";
 // Il listino dell'impresa: le voci da cui il motore prende i prezzi. Nessun prezzo fuori da qui.
 
 export const MAX_VOCI = 3000;
-const CAMPI = "id, codice, nome, descrizione, unita, prezzo_cents, categoria, sinonimi, bene_significativo, fornibile_dal_cliente, origine, attiva, aggiornata_il";
+const CAMPI = "id, codice, nome, descrizione, unita, prezzo_cents, categoria, sinonimi, bene_significativo, fornibile_dal_cliente, aliquota, origine, attiva, aggiornata_il";
 
 export async function elencoVoci(impresaId: string): Promise<Voce[]> {
   const out: Voce[] = [];
@@ -32,6 +32,7 @@ export function perMotore(v: Voce): VoceMotore {
     synonyms: v.sinonimi,
     significantGood: v.bene_significativo,
     clientSuppliable: v.fornibile_dal_cliente,
+    aliquota: v.aliquota ?? null,
   };
 }
 

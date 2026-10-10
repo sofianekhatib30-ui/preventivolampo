@@ -224,6 +224,19 @@ const UNITA_DETTE: [RegExp, (typeof UNITS)[number]][] = [
   [/^(a corpo|corpo|ac|a\.c\.|forfait|forfettario|a forfait)$/, "corpo"],
   [/^(g|gg|gg\.|giorn[oi]|giornat[ae]|day|days)$/, "giorno"],
   [/^(km|km\.|chilometr[oi])$/, "km"],
+  [/^(pers|pers\.|persona|persone|coperto|coperti|pax|ospit[ei]|invitat[oi])$/, "persona"],
+  [/^(intervento|interventi|uscita|uscite|chiamata|diritto di chiamata)$/, "intervento"],
+  [/^(mese|mesi|mensile|canone mensile)$/, "mese"],
+  [/^(anno|anni|annuo|annuale|canone annuo|canone annuale)$/, "anno"],
+  [/^(pag|pag\.|pagina|pagine)$/, "pagina"],
+  [/^(copia|copie)$/, "copia"],
+  [/^(t|ton|tonn|tonn\.|tonnellat[ae])$/, "t"],
+  [/^(viaggio|viaggi)$/, "viaggio"],
+  [/^(ha|ettar[oi])$/, "ha"],
+  [/^(capo|capi)$/, "capo"],
+  [/^(kwp)$/, "kWp"],
+  [/^(kw)$/, "kW"],
+  [/^(servizio|servizi|pacchetto|pacchetti)$/, "servizio"],
 ];
 
 export function unitaDa(s: string): (typeof UNITS)[number] | null {

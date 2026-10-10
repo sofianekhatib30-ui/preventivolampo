@@ -9,6 +9,7 @@ import { dizionario } from "@/lib/i18n/server";
 import { fmt } from "@/lib/i18n/testo";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 import { contestoImpresa, storia } from "@/lib/impresa/preventivi";
+import { conFisco, profiloDemo } from "@/lib/preventivi/calcolo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
@@ -23,9 +24,11 @@ export default async function PaginaPreventivo({ params }: { params: Promise<{ i
   const a = await richiediImpresa();
   const { id } = await params;
   const ctx = await contestoImpresa(a.impresaId);
-  const p = await ctx.leggi(id);
-  if (!p) notFound();
-  const voci = (await ctx.voci()).map((v) => ({ code: v.code, name: v.name, unit: v.unit, priceCents: v.priceCents, significantGood: v.significantGood }));
+  const letto = await ctx.leggi(id);
+  if (!letto) notFound();
+  // Una bozza nata prima del fisco si rivede con le regole nuove (il profilo di oggi dell'impresa).
+  const p = conFisco(letto, ctx.profilo ?? profiloDemo());
+  const voci = (await ctx.voci()).map((v) => ({ code: v.code, name: v.name, unit: v.unit, priceCents: v.priceCents, significantGood: v.significantGood, aliquota: v.aliquota ?? null }));
   const eventi = p.stato === "bozza" ? [] : await storia(a.impresaId, p.id);
   const { d: diz } = await dizionario();
   const P = diz.area.preventivo;

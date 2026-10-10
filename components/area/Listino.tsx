@@ -22,6 +22,7 @@ type Bozza = {
   sinonimi: string;
   bene_significativo: boolean;
   fornibile_dal_cliente: boolean;
+  aliquota: string;
 };
 
 const daVoce = (v: Voce): Bozza => ({
@@ -34,6 +35,7 @@ const daVoce = (v: Voce): Bozza => ({
   sinonimi: v.sinonimi.join(", "),
   bene_significativo: v.bene_significativo,
   fornibile_dal_cliente: v.fornibile_dal_cliente,
+  aliquota: v.aliquota ?? "",
 });
 
 const norm = (s: string) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
@@ -78,6 +80,7 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
           .slice(0, 20),
         bene_significativo: b.bene_significativo,
         fornibile_dal_cliente: b.fornibile_dal_cliente,
+        aliquota: b.aliquota || null,
       }),
     });
     setInvio(false);
@@ -132,6 +135,17 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
       <label className={etichetta}>
         {L.categoria}
         <input className={campo} value={b.categoria} onChange={(e) => set("categoria", e.target.value)} />
+      </label>
+      <label className={etichetta}>
+        {L.aliquota}
+        <select className={`${campo} px-2`} value={b.aliquota} onChange={(e) => set("aliquota", e.target.value)}>
+          <option value="">{L.aliquotaAuto}</option>
+          <option value="22">22%</option>
+          <option value="10">10%</option>
+          <option value="4">4%</option>
+          <option value="esente">{L.esente}</option>
+        </select>
+        <span className="mt-1 block text-[14px] font-normal text-testo-3">{L.aliquotaNota}</span>
       </label>
       <label className="flex min-h-11 items-start gap-3 text-[16px]">
         <input type="checkbox" className="mt-1 size-5 shrink-0 accent-[#343645]" checked={b.bene_significativo} onChange={(e) => set("bene_significativo", e.target.checked)} />
@@ -230,7 +244,7 @@ export default function Listino({ voci, apriNuova = false }: { voci: Voce[]; apr
           <p className="bg-superficie px-4 pt-4 text-lg font-extrabold sm:px-5">{L.nuovaVoce}</p>
           <Editor
             id={null}
-            iniziale={{ codice: prossimoCodice(voci), nome: "", descrizione: "", unita: "m2", prezzo: "", categoria: "", sinonimi: "", bene_significativo: false, fornibile_dal_cliente: false }}
+            iniziale={{ codice: prossimoCodice(voci), nome: "", descrizione: "", unita: "m2", prezzo: "", categoria: "", sinonimi: "", bene_significativo: false, fornibile_dal_cliente: false, aliquota: "" }}
             onFatto={fatto}
             onAnnulla={() => setAperta(null)}
           />

@@ -17,16 +17,18 @@ type Foglia = { chiave: string; testo: string };
 type Albero = string | Albero[] | { [k: string]: Albero };
 
 // Le due fonti: il dizionario dell'interfaccia e i contenuti delle pagine.
-type Fonte = { nome: string; albero: Albero; cartella: string; fisse: Set<string>; tipo: string };
+// radice: le chiavi fisse valgono solo sotto questa radice (nel dizionario, «t» è il tipo di blocco delle pagine
+// legali; altrove «t» può essere una chiave qualunque, come l'unità di misura delle tonnellate).
+type Fonte = { nome: string; albero: Albero; cartella: string; fisse: Set<string>; radice?: string; tipo: string };
 const FONTI: Record<"dizionario" | "contenuti", Fonte> = {
   // Chiavi che non si traducono: tipi di blocco delle pagine legali.
-  dizionario: { nome: "dizionario", albero: it as unknown as Albero, cartella: "lib/i18n", fisse: new Set(["t"]), tipo: "i testi dell'interfaccia" },
+  dizionario: { nome: "dizionario", albero: it as unknown as Albero, cartella: "lib/i18n", fisse: new Set(["t"]), radice: "legale", tipo: "i testi dell'interfaccia" },
   // Racconto dell'esempio, nomi delle voci, termini del glossario, indirizzi delle fonti.
   contenuti: { nome: "contenuti", albero: contenutiIt as unknown as Albero, cartella: "lib/contenuti", fisse: new Set(CHIAVI_FISSE), tipo: "le pagine del sito (mestieri, funzioni, guide, glossario)" },
 };
 let fonte = FONTI.dizionario;
 
-const fissa = (via: string[]) => via.some((k) => fonte.fisse.has(k));
+const fissa = (via: string[]) => (!fonte.radice || via[0] === fonte.radice) && via.some((k) => fonte.fisse.has(k));
 
 function foglie(nodo: Albero, via: string[] = [], out: Foglia[] = []): Foglia[] {
   if (typeof nodo === "string") {

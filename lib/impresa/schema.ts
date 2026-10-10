@@ -1,12 +1,13 @@
 import { z } from "zod";
 import { CODICE, UNITS } from "@/lib/listino/schema";
-import { ELENCO_MESTIERI, type NomeMestiere } from "./mestieri";
+import { ALIQUOTE } from "@/lib/fisco/schema";
+import { ELENCO_MESTIERI, normalizzaMestieri, type NomeMestiere } from "./mestieri";
 
 // Dati dell'impresa e delle voci di listino come arrivano dai moduli. Validati sul server.
 
 // I mestieri, per famiglia: lib/impresa/mestieri.ts.
 export const MESTIERI = ELENCO_MESTIERI.map((m) => m.nome) as [NomeMestiere, ...NomeMestiere[]];
-export const REGIMI_IVA = ["edile", "ordinario"] as const;
+export const REGIMI_FISCALI = ["ordinario", "forfettario"] as const;
 
 // Partita IVA italiana: 11 cifre con la cifra di controllo (algoritmo dell'Agenzia delle Entrate).
 export function partitaIvaValida(piva: string): boolean {
@@ -58,9 +59,15 @@ export const DatiImpresa = z.strictObject({
   iban: facoltativo(40).refine((s) => s === null || ibanValido(s), "IBAN non valido").transform((s) => (s ? s.replace(/\s/g, "").toUpperCase() : null)),
   condizioni_pagamento: facoltativo(300),
   validita_giorni: z.coerce.number().int().min(1).max(365),
-  mestieri: z.array(z.enum(MESTIERI)).max(MESTIERI.length),
-  // «edile»: regole dell'IVA edile; «ordinario»: IVA ordinaria 22% su tutto, nessuna domanda.
-  regime_iva: z.enum(REGIMI_IVA).default("edile"),
+  // I nomi di prima (Termoidraulico, Restauro...) diventano quelli di oggi; quelli sconosciuti si scartano.
+  mestieri: z
+    .array(z.string().trim().max(80))
+    .max(MESTIERI.length * 2)
+    .transform((ms) => normalizzaMestieri(ms) as NomeMestiere[]),
+  // Il profilo fiscale: decide IVA, bollo, ritenute e rivalsa di ogni preventivo (lib/fisco).
+  regime_fiscale: z.enum(REGIMI_FISCALI).default("ordinario"),
+  ritenuta: z.boolean().default(false),
+  rivalsa_inps: z.boolean().default(false),
 });
 export type DatiImpresa = z.infer<typeof DatiImpresa>;
 
@@ -74,6 +81,8 @@ export const DatiVoce = z.strictObject({
   sinonimi: z.array(z.string().trim().min(2).max(60)).max(20),
   bene_significativo: z.boolean(),
   fornibile_dal_cliente: z.boolean(),
+  // Aliquota propria della voce (fiori al 10%, lezioni esenti). Null: la decide il preventivo.
+  aliquota: z.enum(ALIQUOTE).nullable().optional().transform((a) => a ?? null),
 });
 export type DatiVoce = z.infer<typeof DatiVoce>;
 

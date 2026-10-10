@@ -13,17 +13,20 @@ import type { Draft, DraftLine, DraftQuestion } from "./tipi";
 
 export const CONFIDENCE_THRESHOLD = 0.6;
 
-const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo", giorno: "giornate", km: "km" };
+const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo", giorno: "giornate", km: "km", persona: "persone", intervento: "interventi", mese: "mesi", anno: "anni", pagina: "pagine", copia: "copie", t: "tonnellate", viaggio: "viaggi", ha: "ettari", capo: "capi", kWp: "kWp", kW: "kW", servizio: "servizi" };
+
+const FEMMINILI = new Set(["h", "giorno", "persona", "pagina", "copia", "t"]);
 
 export type ListinoMotore = { items: PriceListItem[] };
 // regime «ordinario»: impresa fuori dall'edilizia, IVA ordinaria fissa e nessuna domanda sull'IVA edile.
-export type OpzioniMotore = { impresa?: string; regime?: "edile" | "ordinario" };
+// chiedere: le cose che il mestiere dell'impresa deve sapere, per le note «Manca: …».
+export type OpzioniMotore = { impresa?: string; regime?: "edile" | "ordinario"; chiedere?: string };
 
 export async function elabora(transcript: string, list: ListinoMotore, call: ToolCaller, opzioni: OpzioniMotore = {}): Promise<Draft> {
   const started = Date.now();
   const byCode = new Map<string, PriceListItem>(list.items.map((i) => [i.code, i]));
   const regime = opzioni.regime ?? "edile";
-  const ex = await extract(transcript, call, opzioni.impresa, regime);
+  const ex = await extract(transcript, call, opzioni.impresa, regime, opzioni.chiedere);
   const candidates = ex.extraction.lines.map((l) => candidatesFor(`${l.work} ${l.spoken}`, l.unit, list.items));
   const mt = await chooseMatches(ex.extraction.lines, candidates, call, regime);
 
@@ -60,7 +63,7 @@ export async function elabora(transcript: string, list: ListinoMotore, call: Too
   const questions: DraftQuestion[] = [];
   lines.forEach((l, i) => {
     if (l.quantity === null) {
-      const text = l.unit ? `${l.unit === "h" ? "Quante" : "Quanti"} ${UNIT_LABEL[l.unit]} di «${l.work}»?` : `Quanto «${l.work}»? Dimmi numero e unità.`;
+      const text = l.unit ? `${FEMMINILI.has(l.unit) ? "Quante" : "Quanti"} ${UNIT_LABEL[l.unit]} di «${l.work}»?` : `Quanto «${l.work}»? Dimmi numero e unità.`;
       questions.push({ lineIndex: i, kind: "quantita_mancante", text });
     }
     if (l.unit === null) questions.push({ lineIndex: i, kind: "unita_mancante", text: `«${l.work}»: ${l.quantity ?? "la quantità"} in che unità?` });
@@ -70,6 +73,7 @@ export async function elabora(transcript: string, list: ListinoMotore, call: Too
   const context = ex.extraction.vat;
   return {
     customer: ex.extraction.customer,
+    clientKind: ex.extraction.clientKind ?? null,
     vat:
       regime === "ordinario"
         ? { context: { dwelling: null, intervention: null, goodsBoughtBy: null }, regime: "ordinaria_22", missing: [] }

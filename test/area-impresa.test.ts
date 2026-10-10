@@ -5,8 +5,10 @@ vi.mock("next/headers", () => ({ cookies: async () => ({ get: () => undefined, s
 import { costruisciRighe, leggiCsv, mappaConRegole, prezzoDa, trovaIntestazione, unitaDa } from "@/lib/impresa/importa";
 import { DatiImpresa, DatiVoce, ibanValido, partitaIvaValida, primoErrore } from "@/lib/impresa/schema";
 import { contestoDa, dominioCookie, membroDa, opzioniCookie } from "@/lib/impresa/sessione";
-import { ELENCO_MESTIERI, regimeSuggerito } from "@/lib/impresa/mestieri";
-import { conti, mancanze } from "@/lib/preventivi/calcolo";
+import { domandeDi, ELENCO_MESTIERI } from "@/lib/impresa/mestieri";
+import { conFisco, mancanze, riepilogo } from "@/lib/preventivi/calcolo";
+import { profiloDa } from "@/lib/fisco/profilo";
+import type { Preventivo } from "@/lib/preventivi/modello";
 import { eArea, versoDominio } from "../proxy";
 import { descrizioneDi, tipoLogo } from "@/lib/impresa/imprese";
 import { extractionSystem, EXTRACTION_SYSTEM } from "@/lib/motore/estrazione";
@@ -144,19 +146,34 @@ describe("mestieri e IVA", () => {
     expect(new Set(ELENCO_MESTIERI.map((m) => m.chiave)).size).toBe(ELENCO_MESTIERI.length);
     expect(new Set(ELENCO_MESTIERI.map((m) => m.nome)).size).toBe(ELENCO_MESTIERI.length);
   });
-  it("propone l'IVA edile solo a chi fa almeno un mestiere edile", () => {
-    expect(regimeSuggerito(["Idraulico", "Catering"])).toBe("edile");
-    expect(regimeSuggerito(["Fotografo e video", "Catering"])).toBe("ordinario");
-    expect(regimeSuggerito([])).toBe("ordinario");
-  });
-  it("con l'aliquota fissa non chiede nulla sull'IVA edile e calcola il 22%", () => {
+  it("chi non lavora sugli edifici risponde solo «chi è il cliente» e ha il 22%", () => {
     const riga = { work: "Servizio fotografico", spoken: "foto", quantity: 1, unit: "corpo" as const, unitPriceCents: 50000, code: "F1", priceSource: "listino" as const, flag: null, significantGood: false, goodsValueCents: null, addToPriceList: false };
-    const senza = { iva: { dwelling: null, intervention: null, goodsBoughtBy: null }, righe: [riga] };
-    expect(mancanze(senza).length).toBe(3);
-    expect(conti(senza)).toBeNull();
-    const fissa = { ...senza, ivaFissa: "ordinaria_22" as const };
+    const profilo = profiloDa({ regime_fiscale: "ordinario", ritenuta: false, rivalsa_inps: false, mestieri: ["Fotografo e video"] });
+    const p = { iva: { dwelling: null, intervention: null, goodsBoughtBy: null }, righe: [riga], fisco: { contesto: { cliente: null, oggetto: "nessuno" as const, lavoro: null, materiali: null, primaCasa: null, inversione: null }, profilo } };
+    expect(mancanze(p).map((m) => m.testo)).toEqual(["Fisco: tipo di cliente"]);
+    const ok = { ...p, fisco: { ...p.fisco, contesto: { ...p.fisco.contesto, cliente: "privato" as const } } };
+    expect(riepilogo(ok)).toMatchObject({ imponibileCents: 50000, ivaCents: 11000, totaleCents: 61000, nettoCents: 61000 });
+  });
+  it("i preventivi di prima restano con le regole di allora; le bozze passano al fisco", () => {
+    const riga = { work: "Servizio fotografico", spoken: "foto", quantity: 1, unit: "corpo" as const, unitPriceCents: 50000, code: "F1", priceSource: "listino" as const, flag: null, significantGood: false, goodsValueCents: null, addToPriceList: false };
+    const fissa = { iva: { dwelling: null, intervention: null, goodsBoughtBy: null }, righe: [riga], ivaFissa: "ordinaria_22" as const };
     expect(mancanze(fissa)).toEqual([]);
-    expect(conti(fissa)).toMatchObject({ regime: "ordinaria_22", taxableCents: 50000, vatCents: 11000, totalCents: 61000 });
+    expect(riepilogo(fissa)).toMatchObject({ imponibileCents: 50000, ivaCents: 11000, totaleCents: 61000 });
+    const bozza = { ...fissa, stato: "bozza" } as unknown as Preventivo;
+    const profilo = profiloDa({ regime_fiscale: "ordinario", ritenuta: false, rivalsa_inps: false, mestieri: ["Fotografo e video"] });
+    const nuova = conFisco(bozza, profilo);
+    expect(nuova.fisco?.contesto.oggetto).toBe("nessuno");
+    expect(nuova.ivaFissa).toBeNull();
+    // Approvato: non cambia.
+    expect(conFisco({ ...bozza, stato: "approvato" } as Preventivo, profilo).fisco).toBeUndefined();
+  });
+  it("le domande del mestiere arrivano al motore, una famiglia alla volta", () => {
+    expect(domandeDi(["Catering", "Musica e DJ"])).toMatch(/numero di persone/);
+    expect(domandeDi(["Catering", "Musica e DJ"])!.split("; ").length).toBe(1);
+    expect(domandeDi([])).toBeUndefined();
+    const g = extractionSystem("Catering Prova, impresa italiana (catering)", "ordinario", domandeDi(["Catering"]));
+    expect(g).toContain("Manca:");
+    expect(g).toContain("numero di persone");
   });
 });
 
@@ -172,7 +189,7 @@ describe("dettagli dell'impresa", () => {
     expect(extractionSystem(d)).toContain("Sei l'assistente di Edil Prova srl");
     expect(extractionSystem()).toBe(EXTRACTION_SYSTEM);
     // Fuori dall'edilizia: prompt generale, niente IVA edile e niente dialetto di cantiere.
-    const f = descrizioneDi({ ragione_sociale: "Foto Prova", mestieri: ["Fotografo e video"], regime_iva: "ordinario" });
+    const f = descrizioneDi({ ragione_sociale: "Foto Prova", mestieri: ["Fotografo e video"] });
     expect(f).toBe("Foto Prova, impresa italiana (fotografo e video)");
     const g = extractionSystem(f, "ordinario");
     expect(g).toContain("Sei l'assistente di Foto Prova");

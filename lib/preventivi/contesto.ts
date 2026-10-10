@@ -1,3 +1,4 @@
+import type { ProfiloFiscale } from "@/lib/fisco/schema";
 import type { VoceMotore } from "@/lib/listino/schema";
 import type { Preventivo } from "./modello";
 
@@ -26,8 +27,11 @@ export interface Contesto {
   tipo: "demo" | "impresa";
   // Chi è l'impresa, per il motore («un'impresa edile di Monza che fa bagni e cucine»).
   descrizione?: string;
-  // «ordinario»: impresa fuori dall'edilizia, IVA ordinaria fissa. Assente: regole dell'IVA edile.
-  regimeIva?: "edile" | "ordinario";
+  // Il profilo fiscale dell'impresa (regime, ritenuta, rivalsa, aliquote dei mestieri): il preventivo
+  // nuovo lo fotografa. Assente (demo): impresa edile in regime ordinario.
+  profilo?: ProfiloFiscale;
+  // Che cosa chiedere per i mestieri dell'impresa, quando il racconto non lo dice.
+  chiedere?: string;
   azienda(): Promise<Azienda>;
   voci(): Promise<VoceMotore[]>;
   leggi(id: string): Promise<Preventivo | null>;

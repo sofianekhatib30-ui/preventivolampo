@@ -4,6 +4,7 @@ import ModuloImpresa from "@/components/area/ModuloImpresa";
 import { TestataArea } from "@/components/area/TestataArea";
 import { dizionario } from "@/lib/i18n/server";
 import { fmt } from "@/lib/i18n/testo";
+import { normalizzaMestieri } from "@/lib/impresa/mestieri";
 import { richiediImpresa } from "@/lib/impresa/pagine";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -36,8 +37,10 @@ export default async function PaginaImpresa() {
             iban: i.iban ?? "",
             condizioni_pagamento: i.condizioni_pagamento ?? "",
             validita_giorni: String(i.validita_giorni),
-            mestieri: i.mestieri,
-            regime_iva: i.regime_iva,
+            mestieri: normalizzaMestieri(i.mestieri),
+            regime_fiscale: i.regime_fiscale,
+            ritenuta: i.ritenuta,
+            rivalsa_inps: i.rivalsa_inps,
           }}
         />
         <p className="mt-10 text-[14px] text-testo-3">{fmt(I.accessoCon, { email: a.sessione.email })}</p>

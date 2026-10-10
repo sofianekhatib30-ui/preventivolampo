@@ -1,3 +1,5 @@
+import { profiloDa } from "@/lib/fisco/profilo";
+import type { ProfiloFiscale } from "@/lib/fisco/schema";
 import { Rifiuto } from "@/lib/preventivi/rifiuto";
 import type { Azienda, Logo } from "@/lib/preventivi/contesto";
 import { db, ok } from "./db";
@@ -16,7 +18,7 @@ export type Impresa = DatiImpresa & {
   creata_il: string;
 };
 
-const CAMPI = "id, org_id, ragione_sociale, piva, cf, indirizzo, telefono, email, iban, condizioni_pagamento, validita_giorni, mestieri, regime_iva, logo_path, stato, creata_il";
+const CAMPI = "id, org_id, ragione_sociale, piva, cf, indirizzo, telefono, email, iban, condizioni_pagamento, validita_giorni, mestieri, regime_fiscale, ritenuta, rivalsa_inps, logo_path, stato, creata_il";
 
 export async function leggiImpresa(id: string): Promise<Impresa | null> {
   return ok(await db().from("pl_imprese").select(CAMPI).eq("id", id).maybeSingle(), "impresa") as Impresa | null;
@@ -87,9 +89,19 @@ export function aziendaDi(imp: Impresa): Azienda {
   };
 }
 
+// Il profilo fiscale che ogni preventivo nuovo fotografa.
+export function profiloDi(imp: Pick<Impresa, "mestieri"> & Partial<Pick<Impresa, "regime_fiscale" | "ritenuta" | "rivalsa_inps">>): ProfiloFiscale {
+  return profiloDa({
+    regime_fiscale: imp.regime_fiscale ?? "ordinario",
+    ritenuta: imp.ritenuta ?? false,
+    rivalsa_inps: imp.rivalsa_inps ?? false,
+    mestieri: imp.mestieri,
+  });
+}
+
 // Per il motore: chi è l'impresa e che lavori fa.
-export function descrizioneDi(imp: Pick<Impresa, "ragione_sociale" | "mestieri"> & { regime_iva?: Impresa["regime_iva"] }): string {
+export function descrizioneDi(imp: Pick<Impresa, "ragione_sociale" | "mestieri">): string {
   const mestieri = imp.mestieri.filter((m) => m !== "Impresa edile").map((m) => m.toLowerCase());
-  const tipo = imp.regime_iva === "ordinario" ? "impresa italiana" : "impresa edile italiana";
+  const tipo = profiloDi(imp).edifici ? "impresa edile italiana" : "impresa italiana";
   return `${imp.ragione_sociale}, ${tipo}${mestieri.length ? ` (${mestieri.join(", ")})` : ""}`;
 }

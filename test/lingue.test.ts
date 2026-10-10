@@ -31,6 +31,7 @@ const motore: ToolCaller = async ({ tool }) =>
     ? {
         input: {
           customer: { name: "Müller", address: "via Roma 3" },
+          clientKind: "privato",
           vat: { dwelling: true, intervention: "manutenzione_ordinaria", goodsBoughtBy: "impresa" },
           lines: [
             { spoken: "nimm die alten Fliesen weg", work: "rimozione rivestimento in piastrelle", quantity: 12, unit: "m2", quantityNote: null, clientSuppliesMaterial: false },

@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
 import { useLingua } from "@/lib/i18n/client";
-import { ELENCO_MESTIERI, FAMIGLIE, regimeSuggerito } from "@/lib/impresa/mestieri";
+import { profiloDa } from "@/lib/fisco/profilo";
+import { ELENCO_MESTIERI, FAMIGLIE } from "@/lib/impresa/mestieri";
 
 // Il valore salvato è il nome italiano del mestiere; l'etichetta viene dal dizionario (chiave in lib/impresa/mestieri.ts).
 type ChiaviMestieri = keyof Dizionario["area"]["modulo"]["mestieri"];
@@ -21,7 +22,9 @@ export type ValoriImpresa = {
   condizioni_pagamento: string;
   validita_giorni: string;
   mestieri: string[];
-  regime_iva: "edile" | "ordinario";
+  regime_fiscale: "ordinario" | "forfettario";
+  ritenuta: boolean;
+  rivalsa_inps: boolean;
 };
 
 const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal text-inchiostro";
@@ -34,7 +37,7 @@ function Campo({
   cambia,
   nota,
   ...resto
-}: { nome: keyof ValoriImpresa; etichetta: string; valore: string; cambia: (v: string) => void; nota?: string } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">) {
+}: { nome: Exclude<keyof ValoriImpresa, "ritenuta" | "rivalsa_inps">; etichetta: string; valore: string; cambia: (v: string) => void; nota?: string } & Omit<React.InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">) {
   return (
     <label className={etichetta}>
       {testo}
@@ -49,10 +52,11 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
   const router = useRouter();
   const M = useLingua().d.area.modulo;
   const [v, setV] = useState(iniziali);
-  const [regimeToccato, setRegimeToccato] = useState(modo === "modifica");
   const [invio, setInvio] = useState(false);
   const [esito, setEsito] = useState<{ tipo: "ok" | "errore"; testo: string } | null>(null);
-  const set = (k: keyof ValoriImpresa) => (x: string) => setV((p) => ({ ...p, [k]: x }));
+  const set = (k: Exclude<keyof ValoriImpresa, "ritenuta" | "rivalsa_inps">) => (x: string) => setV((p) => ({ ...p, [k]: x }));
+  // Le eccezioni fiscali dei mestieri scelti: si leggono qui, prima del primo preventivo. Sono testi di legge, in italiano.
+  const { avvisi } = profiloDa({ regime_fiscale: v.regime_fiscale, ritenuta: v.ritenuta, rivalsa_inps: v.rivalsa_inps, mestieri: v.mestieri });
 
   async function salva(e: React.FormEvent) {
     e.preventDefault();
@@ -111,11 +115,7 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
                         className="sr-only"
                         checked={scelto}
                         onChange={() =>
-                          setV((p) => {
-                            const mestieri = scelto ? p.mestieri.filter((x) => x !== m) : [...p.mestieri, m];
-                            // Alla prima registrazione il regime IVA segue i mestieri scelti; poi lo decide l'impresa.
-                            return { ...p, mestieri, regime_iva: modo === "nuova" && !regimeToccato ? regimeSuggerito(mestieri) : p.regime_iva };
-                          })
+                          setV((p) => ({ ...p, mestieri: scelto ? p.mestieri.filter((x) => x !== m) : [...p.mestieri, m] }))
                         }
                       />
                       {M.mestieri[chiave as ChiaviMestieri]}
@@ -129,27 +129,25 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
       </fieldset>
 
       <fieldset>
-        <legend className="text-xl font-extrabold">{M.ivaTitolo}</legend>
+        <legend className="text-xl font-extrabold">{M.fiscoTitolo}</legend>
+        <p className="mt-1 text-[15px] text-testo-3">{M.fiscoNota}</p>
         <div className="mt-3 grid gap-2 sm:grid-cols-2">
           {(
             [
-              ["edile", M.ivaEdile, M.ivaEdileNota],
-              ["ordinario", M.ivaOrdinaria, M.ivaOrdinariaNota],
+              ["ordinario", M.regimeOrdinario, M.regimeOrdinarioNota],
+              ["forfettario", M.regimeForfettario, M.regimeForfettarioNota],
             ] as const
           ).map(([valore, titolo, nota]) => (
             <label
               key={valore}
-              className={`flex cursor-pointer gap-3 rounded-card border-2 p-4 ${v.regime_iva === valore ? "border-ardesia bg-superficie" : "border-linea-2 bg-superficie"}`}
+              className={`flex cursor-pointer gap-3 rounded-card border-2 p-4 ${v.regime_fiscale === valore ? "border-ardesia bg-superficie" : "border-linea-2 bg-superficie"}`}
             >
               <input
                 type="radio"
-                name="regime_iva"
+                name="regime_fiscale"
                 className="mt-1 size-5 shrink-0 accent-ardesia"
-                checked={v.regime_iva === valore}
-                onChange={() => {
-                  setRegimeToccato(true);
-                  setV((p) => ({ ...p, regime_iva: valore }));
-                }}
+                checked={v.regime_fiscale === valore}
+                onChange={() => setV((p) => ({ ...p, regime_fiscale: valore }))}
               />
               <span>
                 <span className="block text-[17px] font-bold">{titolo}</span>
@@ -158,6 +156,35 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
             </label>
           ))}
         </div>
+        <div className="mt-4 space-y-3">
+          {(
+            [
+              ["ritenuta", M.ritenuta, M.ritenutaNota],
+              ["rivalsa_inps", M.rivalsa, M.rivalsaNota],
+            ] as const
+          )
+            // In regime forfettario la ritenuta d'acconto non si applica.
+            .filter(([k]) => k !== "ritenuta" || v.regime_fiscale === "ordinario")
+            .map(([k, titolo, nota]) => (
+              <label key={k} className="flex cursor-pointer gap-3">
+                <input type="checkbox" name={k} className="mt-1 size-5 shrink-0 accent-ardesia" checked={v[k]} onChange={(e) => setV((p) => ({ ...p, [k]: e.target.checked }))} />
+                <span>
+                  <span className="block text-[17px] font-semibold">{titolo}</span>
+                  <span className="mt-0.5 block text-[15px] text-testo-2">{nota}</span>
+                </span>
+              </label>
+            ))}
+        </div>
+        {avvisi.length > 0 && (
+          <div className="mt-4 rounded-card border border-linea-2 bg-superficie p-4">
+            <p className="text-[15px] font-bold">{M.daSapere}</p>
+            <ul className="mt-2 list-disc space-y-1 pl-5 text-[15px] text-testo-2" lang="it">
+              {avvisi.map((a) => (
+                <li key={a}>{a}</li>
+              ))}
+            </ul>
+          </div>
+        )}
       </fieldset>
 
       <fieldset className="space-y-4">

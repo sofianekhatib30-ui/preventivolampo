@@ -1,7 +1,7 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont, type PDFPage } from "pdf-lib";
 import { formatEuro } from "@/lib/importi";
-import { VAT_NOTICE } from "@/lib/motore/iva";
-import { conti, importoRiga } from "./calcolo";
+import type { Gruppo } from "@/lib/fisco/conti";
+import { conti, importoRiga, riepilogo } from "./calcolo";
 import type { Azienda } from "./contesto";
 import { LOCALE, linguaDi, prevalenzaItaliana, TESTI, traduzioneAllineata } from "./lingua";
 import type { Preventivo } from "./modello";
@@ -20,12 +20,7 @@ const LINE = hex("#E4E6EC");
 const ARDESIA = hex("#343645");
 const LIME = hex("#B2F601");
 const WHITE = rgb(1, 1, 1);
-const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo", giorno: "gg", km: "km" };
-const REGIME_LABEL: Record<string, string> = {
-  ordinaria_22: "IVA ordinaria 22%",
-  agevolata_10: "IVA agevolata 10% (manutenzione su abitazione)",
-  agevolata_10_beni_significativi: "IVA agevolata 10% con beni significativi (DM 29/12/1999)",
-};
+const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo", giorno: "gg", km: "km", persona: "pers.", intervento: "interv.", mese: "mese", anno: "anno", pagina: "pag.", copia: "copie", t: "t", viaggio: "viaggi", ha: "ha", capo: "capi", kWp: "kWp", kW: "kW", servizio: "servizio" };
 
 const euro = (c: number) => formatEuro(c).replace(/ /g, " ");
 const qty = (q: number) => q.toLocaleString("it-IT", { maximumFractionDigits: 2 });
@@ -61,7 +56,7 @@ function wrap(text: string, font: PDFFont, size: number, width: number): string[
 }
 
 export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8Array> {
-  const c = conti(p);
+  const c = riepilogo(p);
   if (!c || !p.approvatoIl) throw new Error("Il preventivo non è approvato o è incompleto");
   const doc = await PDFDocument.create();
   doc.setTitle(`Preventivo ${p.numero}`);
@@ -190,19 +185,41 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
     }
     y -= 15;
   };
-  right("Imponibile", euro(c.taxableCents), T?.imponibile);
-  if (c.at10Cents > 0) right(`IVA 10% su ${euro(c.at10Cents)}`, euro(Math.round(c.at10Cents * 0.1)), T?.ivaSu(10, euro(c.at10Cents)));
-  if (c.at22Cents > 0) right(`IVA 22% su ${euro(c.at22Cents)}`, euro(Math.round(c.at22Cents * 0.22)), T?.ivaSu(22, euro(c.at22Cents)));
+  // Le righe dei gruppi IVA: «IVA 10% su…», «Esente da IVA su…», «Inversione contabile su…».
+  const gruppo = (g: Gruppo): [string, string | undefined] => {
+    const b = euro(g.imponibileCents);
+    if (g.codice === "inversione") return [`Inversione contabile su ${b} (${g.natura})`, T?.inversioneSu(b)];
+    if (g.codice === "forfettario") return [`Senza IVA, regime forfettario, su ${b}`, T?.forfettarioSu(b)];
+    if (g.codice === "esente") return [`Esente da IVA su ${b} (${g.natura})`, T?.esenteSu(b)];
+    return [`IVA ${g.percento}% su ${b}`, T?.ivaSu(g.percento, b)];
+  };
+  right("Imponibile", euro(c.imponibileCents), T?.imponibile);
+  if (c.rivalsaCents > 0) right("Rivalsa INPS 4%", euro(c.rivalsaCents), T?.rivalsa);
+  for (const g of c.gruppi) {
+    const [it, tradotta] = gruppo(g);
+    right(it, euro(g.ivaCents), tradotta);
+  }
+  if (c.bolloCents > 0) right("Marca da bollo", euro(c.bolloCents), T?.bollo);
   y -= 2;
   page.drawRectangle({ x: col.pu - 156, y: y - 6, width: col.imp - (col.pu - 156), height: 22, color: ARDESIA });
   text(T ? `Totale / ${T.totale}` : "Totale", col.pu - 150, 12, bold, WHITE);
-  page.drawText(euro(c.totalCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.totalCents), 12), y, size: 12, font: bold, color: WHITE });
+  page.drawText(euro(c.totaleCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.totaleCents), 12), y, size: 12, font: bold, color: WHITE });
   y -= 30;
+  // Quello che il cliente versa davvero all'impresa: senza l'IVA dell'ente (scissione) e senza la ritenuta.
+  if (c.scissione) right("IVA versata dall'ente (scissione dei pagamenti)", `-${euro(c.ivaCents)}`, T?.scissione);
+  if (c.ritenuta) right(`Ritenuta d'acconto ${c.ritenuta.percento}%`, `-${euro(c.ritenuta.importoCents)}`, T?.ritenuta(c.ritenuta.percento));
+  if (c.nettoCents !== c.totaleCents) {
+    text(T ? `Netto da pagare / ${T.netto}` : "Netto da pagare", col.pu - 150, 10, bold);
+    page.drawText(euro(c.nettoCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.nettoCents), 10), y, size: 10, font: bold, color: INK });
+    y -= 22;
+  }
 
-  // Aliquota fissa dell'impresa (fuori dall'edilizia): nessun riferimento alle norme dell'IVA edile.
-  const avvisoIva = p.ivaFissa ? "Verifica con il tuo commercialista." : VAT_NOTICE;
-  para(`${REGIME_LABEL[c.regime!]}.${c.beniSignificativiCents > 0 ? ` Valore dei beni significativi: ${euro(c.beniSignificativiCents)}.` : ""} ${avvisoIva}`);
-  if (T) para(`${T.regime[c.regime!]}${c.beniSignificativiCents > 0 ? ` ${T.valoreBeni(euro(c.beniSignificativiCents))}` : ""}`, 8, ital);
+  for (const d of c.diciture) para(d);
+  // Preventivi di prima del fisco: la traduzione del regime di allora. Dopo: le diciture restano di legge, in italiano.
+  if (T && !p.fisco) {
+    const v = conti(p)!;
+    para(`${T.regime[v.regime!]}${v.beniSignificativiCents > 0 ? ` ${T.valoreBeni(euro(v.beniSignificativiCents))}` : ""}`, 8, ital);
+  } else if (T && c.diciture.length) para(T.notaFiscale, 8, ital);
   if (p.esclusioni.length) {
     y -= 6;
     para(T ? `Esclusi dal preventivo / ${T.esclusi}` : "Esclusi dal preventivo", 8.5, bold, INK);

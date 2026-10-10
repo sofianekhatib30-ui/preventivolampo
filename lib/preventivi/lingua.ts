@@ -87,7 +87,18 @@ export type Testi = {
   imponibile: string;
   ivaSu: (aliquota: number, base: string) => string;
   totale: string;
+  // Preventivi nati prima del fisco (10/10/2026 sera): il regime di allora.
   regime: { ordinaria_22: string; agevolata_10: string; agevolata_10_beni_significativi: string };
+  // Dal fisco: le righe dei totali. Le diciture di legge restano in italiano, con una nota tradotta.
+  rivalsa: string;
+  bollo: string;
+  esenteSu: (base: string) => string;
+  inversioneSu: (base: string) => string;
+  forfettarioSu: (base: string) => string;
+  scissione: string;
+  ritenuta: (percento: number) => string;
+  netto: string;
+  notaFiscale: string;
   valoreBeni: (v: string) => string;
   esclusi: string;
   condizioniTitolo: string;
@@ -103,6 +114,7 @@ export type Testi = {
     lavoriIn: (indirizzo: string) => string;
     totaleIncl: string;
     imponibilePiuIva: (imponibile: string, iva: string) => string;
+    nettoDaPagare: (importo: string) => string;
     validoFino: (data: string) => string;
     eAltre: (n: number) => string;
     dettaglio: (n: number) => string;
@@ -130,6 +142,15 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     imponibile: "Taxable amount",
     ivaSu: (a, b) => `VAT ${a}% on ${b}`,
     totale: "Total",
+    rivalsa: "INPS contribution 4% (rivalsa)",
+    bollo: "Stamp duty",
+    esenteSu: (b) => `VAT exempt on ${b}`,
+    inversioneSu: (b) => `Reverse charge on ${b}: VAT paid by the client`,
+    forfettarioSu: (b) => `No VAT (flat-rate scheme) on ${b}`,
+    scissione: "VAT paid directly by the public body (split payment)",
+    ritenuta: (p) => `Withholding tax ${p}%`,
+    netto: "Net amount payable",
+    notaFiscale: "The notes above state the VAT treatment required by Italian law.",
     regime: {
       ordinaria_22: "Standard Italian VAT rate of 22%.",
       agevolata_10: "Reduced Italian VAT rate of 10% for maintenance work on homes.",
@@ -145,13 +166,14 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     iban: (i, n) => `IBAN ${i}, account holder ${n}`,
     esito: (e, n, q) => `${e === "accettato" ? "Accepted" : "Declined"} online by ${n} on ${q}.`,
     prevalenza: "This quote is written in Italian and English. In case of discrepancy, the Italian text prevails.",
-    unita: { cad: "pcs", corpo: "lump sum", h: "hrs" },
+    unita: { cad: "pcs", corpo: "lump sum", h: "hrs", persona: "people", giorno: "days", mese: "months", anno: "years", viaggio: "trips", pagina: "pages", copia: "copies", servizio: "services", intervento: "call-outs" },
     pagina: {
       titolo: "Your quote",
       per: (n) => `for ${n}`,
       lavoriIn: (a) => `Work at ${a}`,
       totaleIncl: "Total incl. VAT",
       imponibilePiuIva: (i, v) => `Taxable ${i} + VAT ${v}`,
+      nettoDaPagare: (v) => `Net amount payable: ${v}`,
       validoFino: (d) => `valid until ${d}`,
       eAltre: (n) => `and ${n} more items.`,
       dettaglio: (n) => `Details of the ${n} items`,
@@ -182,6 +204,15 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     imponibile: "Nettobetrag",
     ivaSu: (a, b) => `MwSt. ${a} % auf ${b}`,
     totale: "Gesamt",
+    rivalsa: "INPS-Beitrag 4% (rivalsa)",
+    bollo: "Stempelsteuer",
+    esenteSu: (b) => `MwSt.-befreit auf ${b}`,
+    inversioneSu: (b) => `Umkehr der Steuerschuld auf ${b}: die MwSt. zahlt der Auftraggeber`,
+    forfettarioSu: (b) => `Ohne MwSt. (Pauschalregelung) auf ${b}`,
+    scissione: "MwSt. direkt von der öffentlichen Stelle gezahlt (split payment)",
+    ritenuta: (p) => `Quellensteuer ${p}%`,
+    netto: "Zu zahlender Nettobetrag",
+    notaFiscale: "Die Hinweise oben geben die steuerliche Behandlung nach italienischem Recht an.",
     regime: {
       ordinaria_22: "Italienischer Regelsteuersatz von 22 %.",
       agevolata_10: "Ermäßigter italienischer Mehrwertsteuersatz von 10 % für Instandhaltungsarbeiten an Wohnungen.",
@@ -197,13 +228,14 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     iban: (i, n) => `IBAN ${i}, Kontoinhaber ${n}`,
     esito: (e, n, q) => `Online ${e === "accettato" ? "angenommen" : "abgelehnt"} von ${n} am ${q}.`,
     prevalenza: "Dieses Angebot ist in italienischer und deutscher Sprache verfasst. Bei Abweichungen ist der italienische Text maßgeblich.",
-    unita: { cad: "Stk.", corpo: "pauschal", h: "Std." },
+    unita: { cad: "Stk.", corpo: "pauschal", h: "Std.", persona: "Pers.", giorno: "Tage", mese: "Monate", anno: "Jahre", viaggio: "Fahrten", pagina: "Seiten", copia: "Exempl.", servizio: "Leistungen", intervento: "Einsätze" },
     pagina: {
       titolo: "Ihr Angebot",
       per: (n) => `für ${n}`,
       lavoriIn: (a) => `Arbeiten in ${a}`,
       totaleIncl: "Gesamtbetrag inkl. MwSt.",
       imponibilePiuIva: (i, v) => `Netto ${i} + MwSt. ${v}`,
+      nettoDaPagare: (v) => `Zu zahlender Nettobetrag: ${v}`,
       validoFino: (d) => `gültig bis ${d}`,
       eAltre: (n) => `und ${n} weitere Leistungen.`,
       dettaglio: (n) => `Details der ${n} Positionen`,
@@ -234,6 +266,15 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     imponibile: "Montant HT",
     ivaSu: (a, b) => `TVA ${a} % sur ${b}`,
     totale: "Total",
+    rivalsa: "Contribution INPS 4 % (rivalsa)",
+    bollo: "Droit de timbre",
+    esenteSu: (b) => `Exonéré de TVA sur ${b}`,
+    inversioneSu: (b) => `Autoliquidation sur ${b} : la TVA est due par le client`,
+    forfettarioSu: (b) => `Sans TVA (régime forfaitaire) sur ${b}`,
+    scissione: "TVA versée directement par l'organisme public (split payment)",
+    ritenuta: (p) => `Retenue à la source ${p} %`,
+    netto: "Montant net à payer",
+    notaFiscale: "Les mentions ci-dessus indiquent le traitement fiscal prévu par la loi italienne.",
     regime: {
       ordinaria_22: "Taux normal de TVA italienne de 22 %.",
       agevolata_10: "Taux réduit de TVA italienne de 10 % pour les travaux d'entretien de logements.",
@@ -249,13 +290,14 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     iban: (i, n) => `IBAN ${i}, titulaire ${n}`,
     esito: (e, n, q) => `${e === "accettato" ? "Accepté" : "Refusé"} en ligne par ${n} le ${q}.`,
     prevalenza: "Ce devis est rédigé en italien et en français. En cas de divergence, le texte italien prévaut.",
-    unita: { cad: "pce", corpo: "forfait", h: "h" },
+    unita: { cad: "pce", corpo: "forfait", h: "h", persona: "pers.", giorno: "jours", mese: "mois", anno: "ans", viaggio: "trajets", pagina: "pages", copia: "copies", servizio: "services", intervento: "interventions" },
     pagina: {
       titolo: "Votre devis",
       per: (n) => `pour ${n}`,
       lavoriIn: (a) => `Travaux à ${a}`,
       totaleIncl: "Total TTC",
       imponibilePiuIva: (i, v) => `HT ${i} + TVA ${v}`,
+      nettoDaPagare: (v) => `Montant net à payer : ${v}`,
       validoFino: (d) => `valable jusqu'au ${d}`,
       eAltre: (n) => `et ${n} autres prestations.`,
       dettaglio: (n) => `Détail des ${n} postes`,
@@ -286,6 +328,15 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     imponibile: "Base imponible",
     ivaSu: (a, b) => `IVA ${a} % sobre ${b}`,
     totale: "Total",
+    rivalsa: "Aportación INPS 4 % (rivalsa)",
+    bollo: "Impuesto de timbre",
+    esenteSu: (b) => `Exento de IVA sobre ${b}`,
+    inversioneSu: (b) => `Inversión del sujeto pasivo sobre ${b}: el IVA lo paga el cliente`,
+    forfettarioSu: (b) => `Sin IVA (régimen a tanto alzado) sobre ${b}`,
+    scissione: "IVA pagada directamente por el organismo público (split payment)",
+    ritenuta: (p) => `Retención a cuenta ${p} %`,
+    netto: "Importe neto a pagar",
+    notaFiscale: "Las menciones de arriba indican el tratamiento fiscal previsto por la ley italiana.",
     regime: {
       ordinaria_22: "Tipo general del IVA italiano del 22 %.",
       agevolata_10: "Tipo reducido del IVA italiano del 10 % para obras de mantenimiento en viviendas.",
@@ -301,13 +352,14 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     iban: (i, n) => `IBAN ${i}, titular ${n}`,
     esito: (e, n, q) => `${e === "accettato" ? "Aceptado" : "Rechazado"} en línea por ${n} el ${q}.`,
     prevalenza: "Este presupuesto está redactado en italiano y en español. En caso de discrepancia, prevalece el texto italiano.",
-    unita: { cad: "ud.", corpo: "a tanto alzado", h: "h" },
+    unita: { cad: "ud.", corpo: "a tanto alzado", h: "h", persona: "pers.", giorno: "días", mese: "meses", anno: "años", viaggio: "viajes", pagina: "páginas", copia: "copias", servizio: "servicios", intervento: "intervenciones" },
     pagina: {
       titolo: "Su presupuesto",
       per: (n) => `para ${n}`,
       lavoriIn: (a) => `Obras en ${a}`,
       totaleIncl: "Total IVA incluido",
       imponibilePiuIva: (i, v) => `Base ${i} + IVA ${v}`,
+      nettoDaPagare: (v) => `Importe neto a pagar: ${v}`,
       validoFino: (d) => `válido hasta el ${d}`,
       eAltre: (n) => `y ${n} trabajos más.`,
       dettaglio: (n) => `Detalle de las ${n} partidas`,
@@ -338,6 +390,15 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     imponibile: "Bedrag excl. btw",
     ivaSu: (a, b) => `Btw ${a}% over ${b}`,
     totale: "Totaal",
+    rivalsa: "INPS-bijdrage 4% (rivalsa)",
+    bollo: "Zegelrecht",
+    esenteSu: (b) => `Vrijgesteld van btw over ${b}`,
+    inversioneSu: (b) => `Btw verlegd over ${b}: de btw betaalt de opdrachtgever`,
+    forfettarioSu: (b) => `Zonder btw (forfaitaire regeling) over ${b}`,
+    scissione: "Btw rechtstreeks betaald door de overheidsinstantie (split payment)",
+    ritenuta: (p) => `Bronheffing ${p}%`,
+    netto: "Netto te betalen",
+    notaFiscale: "De vermeldingen hierboven geven de fiscale behandeling volgens de Italiaanse wet.",
     regime: {
       ordinaria_22: "Italiaans standaardtarief btw van 22%.",
       agevolata_10: "Verlaagd Italiaans btw-tarief van 10% voor onderhoudswerk aan woningen.",
@@ -353,13 +414,14 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     iban: (i, n) => `IBAN ${i}, op naam van ${n}`,
     esito: (e, n, q) => `Online ${e === "accettato" ? "aanvaard" : "geweigerd"} door ${n} op ${q}.`,
     prevalenza: "Deze offerte is opgesteld in het Italiaans en het Nederlands. Bij verschillen is de Italiaanse tekst bepalend.",
-    unita: { cad: "st.", corpo: "forfait", h: "uur" },
+    unita: { cad: "st.", corpo: "forfait", h: "uur", persona: "pers.", giorno: "dagen", mese: "maanden", anno: "jaar", viaggio: "ritten", pagina: "pagina's", copia: "exempl.", servizio: "diensten", intervento: "interventies" },
     pagina: {
       titolo: "Uw offerte",
       per: (n) => `voor ${n}`,
       lavoriIn: (a) => `Werkzaamheden in ${a}`,
       totaleIncl: "Totaal incl. btw",
       imponibilePiuIva: (i, v) => `Excl. btw ${i} + btw ${v}`,
+      nettoDaPagare: (v) => `Netto te betalen: ${v}`,
       validoFino: (d) => `geldig tot ${d}`,
       eAltre: (n) => `en nog ${n} werkzaamheden.`,
       dettaglio: (n) => `Details van de ${n} posten`,

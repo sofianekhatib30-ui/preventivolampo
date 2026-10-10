@@ -4,7 +4,7 @@ import { useState, useSyncExternalStore } from "react";
 import { ConNodi } from "@/components/Ricco";
 import { useLingua } from "@/lib/i18n/client";
 import { fmt } from "@/lib/i18n/testo";
-import { conti } from "@/lib/preventivi/calcolo";
+import { riepilogo } from "@/lib/preventivi/calcolo";
 import type { Preventivo } from "@/lib/preventivi/modello";
 import { linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
 import { euro } from "./formato";
@@ -15,7 +15,7 @@ const quando = (iso: string) =>
 // Dopo l'approvazione: il preventivo è pronto, adesso va mandato. Il primo pulsante è WhatsApp,
 // il canale che usano artigiano e cliente. Sotto, la linea del tempo: approvato, visto, risposta.
 export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { p: Preventivo; pdf?: string }) {
-  const c = conti(p);
+  const c = riepilogo(p);
   const A = useLingua().d.area.approvato;
   // L'indirizzo del sito si conosce solo nel browser: sul server il link resta relativo.
   const origine = useSyncExternalStore(
@@ -31,9 +31,9 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
   const lingua = linguaDi(p);
   const messaggio =
     lingua !== "it" && traduzioneAllineata(p)
-      ? TESTI[lingua].messaggio(p.cliente.name, p.numero, c ? euro(c.totalCents) : null, linkCliente)
+      ? TESTI[lingua].messaggio(p.cliente.name, p.numero, c && c.ivaCents > 0 ? euro(c.totaleCents) : null, linkCliente)
       : `Buongiorno${p.cliente.name ? ` ${p.cliente.name}` : ""}, le mando il preventivo n. ${p.numero}${
-          c ? ` (totale ${euro(c.totalCents)} IVA inclusa)` : ""
+          c ? ` (totale ${euro(c.totaleCents)}${c.ivaCents > 0 ? " IVA inclusa" : ""})` : ""
         }. Lo può vedere e accettare da qui, senza registrarsi: ${linkCliente}`;
 
   async function copia() {
@@ -79,10 +79,18 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
       </div>
 
       {c && (
-        <p className="mt-6 flex items-baseline justify-between rounded-card bg-superficie px-5 py-4 ring-1 ring-linea">
-          <span className="text-[17px] text-testo-2">{A.totaleIvaInclusa}</span>
-          <span className="font-mono text-[26px] font-semibold">{euro(c.totalCents)}</span>
-        </p>
+        <div className="mt-6 rounded-card bg-superficie px-5 py-4 ring-1 ring-linea">
+          <p className="flex items-baseline justify-between">
+            <span className="text-[17px] text-testo-2">{c.ivaCents > 0 ? A.totaleIvaInclusa : A.totale}</span>
+            <span className="font-mono text-[26px] font-semibold">{euro(c.totaleCents)}</span>
+          </p>
+          {c.nettoCents !== c.totaleCents && (
+            <p className="mt-1 flex items-baseline justify-between text-[15px] text-testo-2">
+              <span>{A.netto}</span>
+              <span className="font-mono">{euro(c.nettoCents)}</span>
+            </p>
+          )}
+        </div>
       )}
 
       {p.stato === "approvato" && p.tokenAccettazione && (

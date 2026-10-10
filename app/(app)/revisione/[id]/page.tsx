@@ -6,6 +6,7 @@ import { SceltaLingua } from "@/components/SceltaLingua";
 import { TestataApp } from "@/components/TestataApp";
 import { dizionario } from "@/lib/i18n/server";
 import { leggi } from "@/lib/preventivi/archivio";
+import { conFisco, profiloDemo } from "@/lib/preventivi/calcolo";
 import { listino } from "@/lib/preventivi/servizio";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,8 +18,10 @@ export const dynamic = "force-dynamic";
 // Il link di revisione è l'id del preventivo: 128 bit casuali, non indovinabile.
 export default async function PaginaRevisione({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const p = await leggi(id);
-  if (!p) notFound();
+  const letto = await leggi(id);
+  if (!letto) notFound();
+  // Una bozza della demo nata prima del fisco si rivede con le regole nuove.
+  const p = conFisco(letto, profiloDemo());
   const { d } = await dizionario();
   const voci = listino().items.map((i) => ({ code: i.code, name: i.name, unit: i.unit, priceCents: i.priceCents, significantGood: i.significantGood }));
   return (

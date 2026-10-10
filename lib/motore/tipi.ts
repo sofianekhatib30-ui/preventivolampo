@@ -16,8 +16,12 @@ export const ExtractedLine = z.strictObject({
   clientSuppliesMaterial: z.boolean(),
 });
 
+// Chi è il cliente, per il fisco (ritenuta del condominio, scissione per gli enti, inversione fra imprese).
+export const CLIENT_KINDS = ["privato", "impresa", "condominio", "pa"] as const;
+
 export const Extraction = z.strictObject({
   customer: z.strictObject({ name: z.string().nullable(), address: z.string().nullable() }),
+  clientKind: z.enum(CLIENT_KINDS).nullable().optional(),
   vat: VatContext,
   lines: z.array(ExtractedLine).min(1),
   exclusions: z.array(z.string()),
@@ -56,6 +60,8 @@ export type Usage = { inputTokens: number; outputTokens: number; calls: number }
 
 export type Draft = {
   customer: Extraction["customer"];
+  // Assente nelle bozze registrate prima del 10/10/2026 sera.
+  clientKind?: (typeof CLIENT_KINDS)[number] | null;
   vat: { context: z.infer<typeof VatContext>; regime: z.infer<typeof VatRegime> | null; missing: string[] };
   lines: DraftLine[];
   questions: DraftQuestion[];

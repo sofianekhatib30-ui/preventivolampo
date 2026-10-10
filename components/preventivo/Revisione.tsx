@@ -2,7 +2,9 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { conti, importoRiga, imponibileParziale, mancanze, regimeDi, type Mancanza } from "@/lib/preventivi/calcolo";
+import { aliquotaRiga, chiedeInversione, chiedeValoreBene, DOMANDE, oggettoDi, type Gruppo } from "@/lib/fisco/conti";
+import type { Aliquota, ContestoFiscale } from "@/lib/fisco/schema";
+import { importoRiga, imponibileParziale, mancanze, riepilogo, type Mancanza } from "@/lib/preventivi/calcolo";
 import { LINGUE, linguaDi, mancanzaTraduzione, NOME_LINGUA, traduzioneAllineata, type Lingua } from "@/lib/preventivi/lingua";
 import type { Preventivo, RigaPreventivo } from "@/lib/preventivi/modello";
 import { ConNodi } from "@/components/Ricco";
@@ -11,7 +13,7 @@ import type { Dizionario } from "@/lib/i18n/it";
 import { fmt } from "@/lib/i18n/testo";
 import { centesimi, euro, numero } from "./formato";
 
-type Voce = { code: string; name: string; unit: string; priceCents: number; significantGood: boolean };
+type Voce = { code: string; name: string; unit: string; priceCents: number; significantGood: boolean; aliquota?: Aliquota | null };
 
 const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal";
 const etichetta = "block text-[15px] font-semibold text-testo-2";
@@ -37,6 +39,12 @@ const MANCANZA: Record<string, keyof Dizionario["area"]["revisione"]["mancanze"]
   "manca la quantità": "quantita",
   "manca l'unità di misura": "unita",
   "manca il prezzo": "prezzo",
+  [DOMANDE.cliente]: "cliente",
+  [DOMANDE.oggetto]: "oggetto",
+  [DOMANDE.lavoro]: "intervento",
+  [DOMANDE.materiali]: "materiali",
+  [DOMANDE.primaCasa]: "primaCasa",
+  [DOMANDE.inversione]: "inversione",
   "IVA: è un'abitazione?": "abitazione",
   "IVA: tipo di intervento": "intervento",
   "IVA: chi compra i materiali": "materiali",
@@ -116,7 +124,6 @@ export default function Revisione({
   const { d } = useLingua();
   const R = d.area.revisione;
   const UNITA: Record<string, string> = d.area.formato.unita;
-  const REGIME: Record<string, string> = d.area.formato.regime;
   const [p, setP] = useState<Preventivo>(iniziale);
   const [testiPrezzo, setTestiPrezzo] = useState<string[]>(iniziale.righe.map((r) => (r.unitPriceCents === null ? "" : (r.unitPriceCents / 100).toFixed(2).replace(".", ","))));
   const [stato, setStato] = useState<"pronto" | "invio">("pronto");
@@ -135,8 +142,23 @@ export default function Revisione({
   const lingua = linguaDi(p);
   const allineata = traduzioneAllineata(p);
   const sezioneDi = (x: Mancanza) => (x.riga !== null ? `riga-${x.riga}` : x.testo === mTrad ? "sezione-lingua" : "sezione-iva");
-  const c = conti(p);
-  const regime = regimeDi(p);
+  const c = riepilogo(p);
+  const f = p.fisco;
+  const ordinario = f?.profilo.regime === "ordinario";
+  const oggetto = f ? oggettoDi(f) : null;
+  const setContesto = (patch: Partial<ContestoFiscale>) =>
+    setP((prev) => (prev.fisco ? { ...prev, fisco: { ...prev.fisco, contesto: { ...prev.fisco.contesto, ...patch } } } : prev));
+  const rigaFiscale = (r: RigaPreventivo) => ({ importoCents: importoRiga(r), aliquota: r.aliquota ?? null, significantGood: r.significantGood, code: r.code, goodsValueCents: r.goodsValueCents });
+  // Le righe di un gruppo IVA, in parole: «IVA 10% su 1.200,00 €», «Esente da IVA su…».
+  const etichettaGruppo = (g: Gruppo) =>
+    g.codice === "inversione"
+      ? fmt(R.inversioneSu, { importo: euro(g.imponibileCents) })
+      : g.codice === "forfettario"
+        ? fmt(R.forfettarioSu, { importo: euro(g.imponibileCents) })
+        : g.codice === "esente"
+          ? fmt(R.esenteSu, { importo: euro(g.imponibileCents) })
+          : fmt(R.ivaSu, { aliquota: g.percento, importo: euro(g.imponibileCents) });
+  const nomeAliquota = (a: Aliquota) => (a === "esente" ? R.esente : `${a}%`);
   const stati = p.righe.map((_, i) => statoRiga(m, i));
   const pronte = stati.filter((s) => s.tipo === "pronta").length;
   const daPrezzare = stati.filter((s) => s.tipo === "manca" && s.motivi.includes("prezzo")).length;
@@ -158,17 +180,17 @@ export default function Revisione({
   function scegliVoce(i: number, code: string) {
     const v = byCode.get(code);
     if (!v) {
-      setRiga(i, { code: null, significantGood: false, goodsValueCents: null });
+      setRiga(i, { code: null, significantGood: false, goodsValueCents: null, aliquota: null });
       return;
     }
-    setRiga(i, { code, work: v.name, unit: v.unit as RigaPreventivo["unit"], unitPriceCents: v.priceCents, priceSource: "listino", significantGood: v.significantGood, flag: null });
+    setRiga(i, { code, work: v.name, unit: v.unit as RigaPreventivo["unit"], unitPriceCents: v.priceCents, priceSource: "listino", significantGood: v.significantGood, aliquota: v.aliquota ?? null, flag: null });
     setTestiPrezzo((t) => t.map((x, j) => (j === i ? (v.priceCents / 100).toFixed(2).replace(".", ",") : x)));
   }
 
   function aggiungiRiga() {
     setP((prev) => ({
       ...prev,
-      righe: [...prev.righe, { work: "Nuova lavorazione", spoken: "", quantity: null, unit: null, unitPriceCents: null, code: null, priceSource: null, flag: null, significantGood: false, goodsValueCents: null, addToPriceList: false }],
+      righe: [...prev.righe, { work: "Nuova lavorazione", spoken: "", quantity: null, unit: null, unitPriceCents: null, code: null, priceSource: null, flag: null, significantGood: false, goodsValueCents: null, aliquota: null, addToPriceList: false }],
     }));
     setTestiPrezzo((t) => [...t, ""]);
     setSoloDaSistemare(false);
@@ -193,6 +215,7 @@ export default function Revisione({
       body: JSON.stringify({
         cliente: p.cliente,
         iva: p.iva,
+        ...(p.fisco ? { contesto: p.fisco.contesto } : {}),
         righe: p.righe,
         esclusioni: p.esclusioni,
         ...(traduzioni ? { lingua: p.lingua ?? "it", traduzione: p.traduzione ?? null } : {}),
@@ -380,66 +403,121 @@ export default function Revisione({
 
       <section id="sezione-iva" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${domandeIva ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
         <h2 className="text-xl font-extrabold">{R.ivaTitolo}</h2>
-        {/* Impresa fuori dall'edilizia: aliquota fissa, nessuna domanda. */}
-        <div className="mt-3 space-y-4" hidden={Boolean(p.ivaFissa)}>
-          <div data-manca={p.iva.dwelling === null || undefined}>
-            <p className={etichetta}>{R.abitazione}</p>
-            <Scelta
-              nome={R.abitazione}
-              valore={p.iva.dwelling === null ? null : p.iva.dwelling ? "si" : "no"}
-              opzioni={[
-                { v: "si", testo: R.abitazioneSi },
-                { v: "no", testo: R.abitazioneNo },
-              ]}
-              onScegli={(v) => setP({ ...p, iva: { ...p.iva, dwelling: v === "si" } })}
-            />
+        {f && (
+          <div className="mt-3 space-y-4">
+            <div data-manca={f.contesto.cliente === null || undefined}>
+              <p className={etichetta}>{R.tipoCliente}</p>
+              <Scelta
+                nome={R.tipoCliente}
+                valore={f.contesto.cliente}
+                opzioni={[
+                  { v: "privato", testo: R.clientePrivato },
+                  { v: "impresa", testo: R.clienteImpresa },
+                  { v: "condominio", testo: R.clienteCondominio },
+                  { v: "pa", testo: R.clientePa },
+                ]}
+                onScegli={(v) => setContesto({ cliente: v })}
+              />
+            </div>
+            {ordinario && f.profilo.edifici && (
+              <div data-manca={f.contesto.oggetto === null || undefined}>
+                <p className={etichetta}>{R.oggetto}</p>
+                <Scelta
+                  nome={R.oggetto}
+                  valore={f.contesto.oggetto}
+                  opzioni={[
+                    { v: "abitazione", testo: R.oggettoAbitazione },
+                    { v: "non_abitativo", testo: R.oggettoNonAbitativo },
+                    { v: "nuova_costruzione", testo: R.oggettoNuova },
+                    { v: "esterno", testo: R.oggettoEsterno },
+                    { v: "nessuno", testo: R.oggettoNessuno },
+                  ]}
+                  onScegli={(v) => setContesto({ oggetto: v })}
+                />
+              </div>
+            )}
+            {ordinario && (oggetto === "abitazione" || oggetto === "non_abitativo") && (
+              <div data-manca={f.contesto.lavoro === null || undefined}>
+                <p className={etichetta}>{R.intervento}</p>
+                <Scelta
+                  nome={R.intervento}
+                  valore={f.contesto.lavoro}
+                  opzioni={[
+                    { v: "manutenzione_ordinaria", testo: R.ordinaria },
+                    { v: "manutenzione_straordinaria", testo: R.straordinaria },
+                    { v: "ristrutturazione", testo: R.ristrutturazione },
+                    { v: "barriere", testo: R.barriere },
+                    { v: "fotovoltaico", testo: R.fotovoltaico },
+                  ]}
+                  onScegli={(v) => setContesto({ lavoro: v })}
+                />
+              </div>
+            )}
+            {ordinario && oggetto === "abitazione" && (f.contesto.lavoro === "manutenzione_ordinaria" || f.contesto.lavoro === "manutenzione_straordinaria") && (
+              <div data-manca={f.contesto.materiali === null || undefined}>
+                <p className={etichetta}>{R.materiali}</p>
+                <Scelta
+                  nome={R.materiali}
+                  valore={f.contesto.materiali}
+                  opzioni={[
+                    { v: "impresa", testo: R.materialiImpresa },
+                    { v: "cliente", testo: R.materialiCliente },
+                  ]}
+                  onScegli={(v) => setContesto({ materiali: v })}
+                />
+              </div>
+            )}
+            {ordinario && oggetto === "nuova_costruzione" && (
+              <div data-manca={f.contesto.primaCasa === null || undefined}>
+                <p className={etichetta}>{R.primaCasa}</p>
+                <Scelta
+                  nome={R.primaCasa}
+                  valore={f.contesto.primaCasa === null ? null : f.contesto.primaCasa ? "si" : "no"}
+                  opzioni={[
+                    { v: "si", testo: R.primaCasaSi },
+                    { v: "no", testo: R.primaCasaNo },
+                  ]}
+                  onScegli={(v) => setContesto({ primaCasa: v === "si" })}
+                />
+              </div>
+            )}
+            {chiedeInversione(f) && (
+              <div data-manca={f.contesto.inversione === null || undefined}>
+                <p className={etichetta}>{R.inversione}</p>
+                <p className="mt-0.5 text-[14px] text-testo-3">{R.inversioneNota}</p>
+                <Scelta
+                  nome={R.inversione}
+                  valore={f.contesto.inversione}
+                  opzioni={[
+                    { v: "subappalto", testo: R.inversioneSubappalto },
+                    { v: "edificio", testo: R.inversioneEdificio },
+                    { v: "no", testo: R.inversioneNo },
+                  ]}
+                  onScegli={(v) => setContesto({ inversione: v })}
+                />
+              </div>
+            )}
           </div>
-          <div data-manca={p.iva.intervention === null || undefined}>
-            <p className={etichetta}>{R.intervento}</p>
-            <Scelta
-              nome={R.intervento}
-              valore={p.iva.intervention}
-              opzioni={[
-                { v: "manutenzione_ordinaria", testo: R.ordinaria },
-                { v: "manutenzione_straordinaria", testo: R.straordinaria },
-                { v: "ristrutturazione", testo: R.ristrutturazione },
-              ]}
-              onScegli={(v) => setP({ ...p, iva: { ...p.iva, intervention: v } })}
-            />
-          </div>
-          <div data-manca={p.iva.goodsBoughtBy === null || undefined}>
-            <p className={etichetta}>{R.materiali}</p>
-            <Scelta
-              nome={R.materiali}
-              valore={p.iva.goodsBoughtBy}
-              opzioni={[
-                { v: "impresa", testo: R.materialiImpresa },
-                { v: "cliente", testo: R.materialiCliente },
-              ]}
-              onScegli={(v) => setP({ ...p, iva: { ...p.iva, goodsBoughtBy: v } })}
-            />
-          </div>
-        </div>
-        <p className="mt-4 rounded-campo bg-fondo px-4 py-3 text-[15px] text-testo-2">
-          {regime ? (
+        )}
+        <div className="mt-4 rounded-campo bg-fondo px-4 py-3 text-[15px] text-testo-2">
+          {c ? (
             <>
-              <strong className="text-inchiostro">{REGIME[regime]}</strong>
-              {c && c.at10Cents > 0 && c.at22Cents > 0 && (
-                <>
-                  {" "}
-                  ·{" "}
-                  <ConNodi
-                    testo={R.ripartizione}
-                    valori={{ a10: <span className="font-mono">{euro(c.at10Cents)}</span>, a22: <span className="font-mono">{euro(c.at22Cents)}</span> }}
-                  />
-                </>
-              )}
-              . {R.commercialista}
+              <strong className="text-inchiostro">{c.gruppi.map(etichettaGruppo).join(" · ")}</strong>. {R.commercialista}
             </>
           ) : (
             R.rispondi
           )}
-        </p>
+          {c && c.avvisi.length > 0 && (
+            <>
+              <p className="mt-3 font-bold text-inchiostro">{R.daSapere}</p>
+              <ul className="mt-1 list-disc space-y-1 pl-5" lang="it">
+                {c.avvisi.map((a) => (
+                  <li key={a}>{a}</li>
+                ))}
+              </ul>
+            </>
+          )}
+        </div>
       </section>
 
       <section className="mt-8">
@@ -540,7 +618,29 @@ export default function Revisione({
                     />
                   </label>
                 </div>
-                {regime === "agevolata_10_beni_significativi" && r.significantGood && r.code && (
+                {f && ordinario && (
+                  <label className={`${etichetta} mt-3`}>
+                    {R.aliquota}
+                    <select
+                      className={campo}
+                      value={r.aliquota ?? ""}
+                      onChange={(e) => setRiga(i, { aliquota: (e.target.value || null) as Aliquota | null })}
+                    >
+                      <option value="">
+                        {(() => {
+                          const a = aliquotaRiga(f, { aliquota: null }).aliquota;
+                          return a ? fmt(R.aliquotaAutoN, { aliquota: nomeAliquota(a) }) : R.aliquotaAuto;
+                        })()}
+                      </option>
+                      {(["22", "10", "4", "esente"] as const).map((a) => (
+                        <option key={a} value={a}>
+                          {nomeAliquota(a)}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+                )}
+                {f && chiedeValoreBene(f, rigaFiscale(r)) && (
                   <label className={`${etichetta} mt-3`} data-manca={r.goodsValueCents === null || undefined}>
                     {R.valoreBene}
                     <input
@@ -594,26 +694,50 @@ export default function Revisione({
         <h2 className="text-xl font-extrabold">{R.riepilogo}</h2>
         <div className="mt-3 flex items-baseline justify-between">
           <span>{R.imponibile}</span>
-          <span className="font-mono text-lg font-semibold">{euro(c ? c.taxableCents : imponibileParziale(p.righe))}</span>
+          <span className="font-mono text-lg font-semibold">{euro(c ? c.imponibileCents : imponibileParziale(p.righe))}</span>
         </div>
         {c && (
           <>
-            {c.at10Cents > 0 && (
+            {c.rivalsaCents > 0 && (
               <div className="flex justify-between text-[15px] text-scuro-testo">
-                <span>{fmt(R.ivaSu, { aliquota: 10, importo: euro(c.at10Cents) })}</span>
-                <span className="font-mono">{euro(Math.round(c.at10Cents * 0.1))}</span>
+                <span>{R.rivalsaInps}</span>
+                <span className="font-mono">{euro(c.rivalsaCents)}</span>
               </div>
             )}
-            {c.at22Cents > 0 && (
+            {c.gruppi.map((g) => (
+              <div key={g.codice} className="flex justify-between text-[15px] text-scuro-testo">
+                <span>{etichettaGruppo(g)}</span>
+                <span className="font-mono">{euro(g.ivaCents)}</span>
+              </div>
+            ))}
+            {c.bolloCents > 0 && (
               <div className="flex justify-between text-[15px] text-scuro-testo">
-                <span>{fmt(R.ivaSu, { aliquota: 22, importo: euro(c.at22Cents) })}</span>
-                <span className="font-mono">{euro(Math.round(c.at22Cents * 0.22))}</span>
+                <span>{R.bollo}</span>
+                <span className="font-mono">{euro(c.bolloCents)}</span>
               </div>
             )}
             <div className="mt-2 flex justify-between border-t border-scuro-linea pt-2 text-xl font-bold">
               <span>{R.totale}</span>
-              <span className="font-mono">{euro(c.totalCents)}</span>
+              <span className="font-mono">{euro(c.totaleCents)}</span>
             </div>
+            {c.scissione && (
+              <div className="flex justify-between text-[15px] text-scuro-testo">
+                <span>{R.scissione}</span>
+                <span className="font-mono">−{euro(c.ivaCents)}</span>
+              </div>
+            )}
+            {c.ritenuta && (
+              <div className="flex justify-between text-[15px] text-scuro-testo">
+                <span>{fmt(R.ritenutaN, { percento: c.ritenuta.percento })}</span>
+                <span className="font-mono">−{euro(c.ritenuta.importoCents)}</span>
+              </div>
+            )}
+            {c.nettoCents !== c.totaleCents && (
+              <div className="mt-1 flex justify-between text-lg font-bold">
+                <span>{R.netto}</span>
+                <span className="font-mono">{euro(c.nettoCents)}</span>
+              </div>
+            )}
           </>
         )}
         {m.length > 0 && (
@@ -648,8 +772,8 @@ export default function Revisione({
       {/* Barra sempre visibile: totale e un solo pulsante, che porta al prossimo dato mancante o all'approvazione */}
       <div className="su-scuro sticky bottom-0 z-30 -mx-4 mt-6 flex items-center gap-3 bg-ardesia px-4 py-3 text-fondo shadow-[0_-8px_24px_rgba(31,32,41,0.18)] sm:bottom-4 sm:mx-0 sm:rounded-card">
         <div className="min-w-0 flex-1 leading-tight">
-          <span className="block text-[13px] text-scuro-nota">{c ? R.totaleIvaInclusa : R.imponibileFinora}</span>
-          <span className="font-mono text-[19px] font-semibold">{euro(c ? c.totalCents : imponibileParziale(p.righe))}</span>
+          <span className="block text-[13px] text-scuro-nota">{c ? (c.ivaCents > 0 ? R.totaleIvaInclusa : R.totale) : R.imponibileFinora}</span>
+          <span className="font-mono text-[19px] font-semibold">{euro(c ? c.totaleCents : imponibileParziale(p.righe))}</span>
         </div>
         {m.length > 0 ? (
           <button type="button" onClick={primoDaSistemare} className="bottone min-h-14 bg-ambra px-5 text-[16px] text-ambra-testo">
@@ -677,7 +801,7 @@ export default function Revisione({
             <p className="mt-2 text-[16px] text-testo-2">
               <ConNodi
                 testo={R.confermaTesto}
-                valori={{ totale: <span className="font-mono font-semibold text-inchiostro">{euro(c.totalCents)}</span>, regime: REGIME[c.regime!] }}
+                valori={{ totale: <span className="font-mono font-semibold text-inchiostro">{euro(c.totaleCents)}</span>, regime: c.gruppi.map(etichettaGruppo).join(" · ") }}
               />
             </p>
             <label className="mt-5 flex min-h-12 cursor-pointer items-center gap-3 rounded-campo bg-fondo px-4 text-[16px] font-semibold">

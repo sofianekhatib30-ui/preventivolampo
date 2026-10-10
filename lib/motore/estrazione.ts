@@ -2,7 +2,7 @@ import { UNITS } from "@/lib/listino/schema";
 import { z } from "zod";
 import { calcola } from "./calcolo";
 import type { ToolCaller, ToolSpec } from "./claude";
-import { Extraction, ExtractedLine, INTERVENTIONS } from "./tipi";
+import { CLIENT_KINDS, Extraction, ExtractedLine, INTERVENTIONS } from "./tipi";
 
 // Come esce dal modello: in più c'è il calcolo della quantità, che si rifà in codice.
 const RigaGrezza = ExtractedLine.extend({ calc: z.string().nullable().optional() });
@@ -26,7 +26,7 @@ export const EXTRACTION_TOOL: ToolSpec = {
   input_schema: {
     type: "object",
     additionalProperties: false,
-    required: ["customer", "vat", "lines", "exclusions", "notes"],
+    required: ["customer", "clientKind", "vat", "lines", "exclusions", "notes"],
     properties: {
       customer: {
         type: "object",
@@ -34,6 +34,7 @@ export const EXTRACTION_TOOL: ToolSpec = {
         required: ["name", "address"],
         properties: { name: nullable({ type: "string" }), address: nullable({ type: "string" }) },
       },
+      clientKind: nullable({ type: "string", enum: [...CLIENT_KINDS], description: "Chi è il cliente, solo se detto o evidente" }),
       vat: {
         type: "object",
         additionalProperties: false,
@@ -87,6 +88,7 @@ Regole:
 - unit: m2, m, m3, cad (pezzi), h (ore), 100kg, kg, l (litri), corpo (lavoro a corpo, quantità 1). Usa l'unità in cui la quantità è detta; «metri» detto di una superficie (pittura, intonaco, piastrelle, muffa) sono m2. Se il numero detto non ha un'unità chiara, unit = non_detto. Se la quantità manca, unit è l'unità con cui quella lavorazione si misura senza dubbi (pittura e rivestimenti m2, tubi e cavi m, prese e sanitari cad); se potrebbe essere misurata in più modi (crepe, ripristini), unit = non_detto.
 - clientSuppliesMaterial = true solo se l'artigiano dice che il materiale di quella riga lo compra o lo fornisce il cliente, compreso il caso in cui si rimonta un pezzo che il cliente ha già («rimonto il suo lavello», «il suo rubinetto vecchio, niente da comprare»): vale per ogni riga a cui si riferisce, anche se è detto una volta sola.
 - Contesto IVA, solo se detto o evidente dalle parole: dwelling (abitazione: «ci abita», «casa sua»; negozio o ufficio = false), intervention (manutenzione_ordinaria, manutenzione_straordinaria, ristrutturazione), goodsBoughtBy (chi compra i materiali: «li compro io» = impresa, «li ha comprati lei» = cliente). Se non è detto, null (per gli elenchi: non_detto).
+- clientKind, solo se detto o evidente: privato (una persona, una famiglia), impresa (una ditta, una società, un negozio, un ristorante, un professionista con partita IVA), condominio («l'amministratore», «il condominio»), pa (un comune, una scuola pubblica, un'ASL, un ente pubblico). Se non è detto: non_detto.
 - Termini dialettali lombardi: «el cess» = water, «caldana» = massetto, «sciura» = signora, «magütt» = muratore, «minga» = non.
 - Non scrivere prezzi.`;
 
@@ -109,20 +111,29 @@ Regole:
 - Quantità: se il titolare dà le misure o i conti (persone per ore, giorni per mezzi, metri per metri), calcola tu la quantità e scrivi in calc l'espressione con i numeri usati (es. tre persone per otto ore = «3*8»), e in quantityNote la spiegazione a parole. Se la quantità è detta direttamente, calc = null.
 - Un solo oggetto o servizio detto al singolare senza numero è 1: quantity = 1, unit = cad (oppure corpo se è un lavoro a forfait).
 - Se la quantità non è detta né ricavabile, quantity = null. Non stimare mai.
-- unit: m2, m, m3, cad (pezzi o persone), h (ore), giorno (giornate), km (chilometri), 100kg, kg, l (litri), corpo (a forfait, quantità 1). Usa l'unità in cui la quantità è detta; se il numero detto non ha un'unità chiara, unit = non_detto.
+- unit: m2, m, m3, cad (pezzi), h (ore), giorno (giornate), km (chilometri), 100kg, kg, l (litri), t (tonnellate), corpo (a forfait, quantità 1), persona (coperti, invitati, partecipanti), intervento (uscite, visite, chiamate), servizio, viaggio, mese e anno (canoni), pagina, copia, ha (ettari), capo (capi di bestiame o di abbigliamento), kWp e kW (potenza di impianti). Usa l'unità in cui la quantità è detta; se il numero detto non ha un'unità chiara, unit = non_detto.
 - clientSuppliesMaterial = true solo se il titolare dice che il materiale o il pezzo di quella riga lo fornisce il cliente.
 - vat: sempre non_detto per i tre campi (l'IVA la decide l'impresa, non il racconto).
+- clientKind, solo se detto o evidente: privato (una persona, una famiglia), impresa (una ditta, una società, un negozio, un ristorante, un professionista con partita IVA), condominio («l'amministratore», «il condominio»), pa (un comune, una scuola pubblica, un'ASL, un ente pubblico). Se non è detto: non_detto.
 - Non scrivere prezzi.`;
 
 // Il listino di prova è di un'impresa della Brianza; per un'impresa vera si dice chi è e che mestieri fa.
-export function extractionSystem(impresa?: string, regime: "edile" | "ordinario" = "edile"): string {
-  if (regime === "ordinario") return impresa ? EXTRACTION_SYSTEM_GENERALE.replace("di un'impresa italiana", `di ${impresa}`) : EXTRACTION_SYSTEM_GENERALE;
+// chiedere: che cosa serve sapere per i mestieri dell'impresa (lib/impresa/mestieri.ts, DOMANDE_FAMIGLIA).
+export function extractionSystem(impresa?: string, regime: "edile" | "ordinario" = "edile", chiedere?: string): string {
+  if (regime === "ordinario") {
+    const base = impresa ? EXTRACTION_SYSTEM_GENERALE.replace("di un'impresa italiana", `di ${impresa}`) : EXTRACTION_SYSTEM_GENERALE;
+    if (!chiedere) return base;
+    return base.replace(
+      /- Non scrivere prezzi\.$/,
+      `- Per questo mestiere un preventivo di solito ha bisogno di: ${chiedere}. Per ognuna di queste cose che serve a questo lavoro e che il racconto non dice, scrivi in notes «Manca: …» con una domanda breve. Non chiedere cose che non c'entrano con il lavoro raccontato.\n- Non scrivere prezzi.`,
+    );
+  }
   if (!impresa) return EXTRACTION_SYSTEM;
   return EXTRACTION_SYSTEM.replace("di un'impresa edile della Brianza", `di ${impresa}`);
 }
 
-export async function extract(transcript: string, call: ToolCaller, impresa?: string, regime: "edile" | "ordinario" = "edile") {
-  const result = await call({ system: extractionSystem(impresa, regime), user: transcript, tool: EXTRACTION_TOOL });
+export async function extract(transcript: string, call: ToolCaller, impresa?: string, regime: "edile" | "ordinario" = "edile", chiedere?: string) {
+  const result = await call({ system: extractionSystem(impresa, regime, chiedere), user: transcript, tool: EXTRACTION_TOOL });
   const parsed = EstrazioneGrezza.safeParse(notSaidToNull(result.input));
   if (!parsed.success) {
     throw new Error(`Uscita dell'estrazione non valida: ${parsed.error.issues.map((i) => i.path.join(".")).join(", ")}`);

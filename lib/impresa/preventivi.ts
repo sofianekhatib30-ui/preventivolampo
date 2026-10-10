@@ -1,8 +1,9 @@
-import { conti } from "@/lib/preventivi/calcolo";
+import { riepilogo } from "@/lib/preventivi/calcolo";
 import type { Contesto, Evento } from "@/lib/preventivi/contesto";
 import { Preventivo } from "@/lib/preventivi/modello";
 import { configurato, db, ok } from "./db";
-import { aziendaDi, descrizioneDi, leggiImpresa, type Impresa } from "./imprese";
+import { domandeDi } from "./mestieri";
+import { aziendaDi, descrizioneDi, leggiImpresa, profiloDi, type Impresa } from "./imprese";
 import { elencoVoci, perMotore } from "./voci";
 
 // I preventivi di un'impresa vera: documento in pl_preventivi, storia in pl_eventi,
@@ -20,7 +21,7 @@ function riga(p: Preventivo) {
     documento: p,
     token_accettazione: p.tokenAccettazione,
     cliente_nome: p.cliente.name,
-    totale_cents: conti(p)?.totalCents ?? 0,
+    totale_cents: riepilogo(p)?.totaleCents ?? 0,
     aggiornato_il: new Date().toISOString(),
   };
 }
@@ -41,7 +42,8 @@ export async function contestoImpresa(impresaId: string): Promise<Contesto> {
   return {
     tipo: "impresa",
     descrizione: descrizioneDi(imp),
-    regimeIva: imp.regime_iva,
+    profilo: profiloDi(imp),
+    chiedere: domandeDi(imp.mestieri),
     azienda: async () => aziendaDi(imp),
     voci: async () => (await elencoVoci(impresaId)).map(perMotore),
     async leggi(id) {

@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { VatContext, VatRegime } from "@/lib/banco/schema";
+import { Aliquota, ContestoFiscale, Fisco } from "@/lib/fisco/schema";
 import { CODICE, Unit } from "@/lib/listino/schema";
 import { LINGUE } from "./lingua";
 
@@ -22,6 +23,9 @@ export const RigaPreventivo = z.strictObject({
   // Valore del bene significativo compreso nella riga (serve per la ripartizione 10%/22%): lo dice l'artigiano.
   goodsValueCents: z.number().int().nonnegative().nullable(),
   addToPriceList: z.boolean(),
+  // Aliquota propria della riga (dal listino o scelta dall'artigiano). Assente o null: la decide il fisco
+  // del preventivo (regole dell'edilizia o aliquota del mestiere).
+  aliquota: Aliquota.nullable().optional(),
 });
 
 // Lingua del cliente e traduzione delle voci (lib/preventivi/lingua.ts). Senza: italiano.
@@ -43,6 +47,9 @@ export const Preventivo = z.strictObject({
   // Impresa fuori dall'edilizia: aliquota fissa decisa dall'impresa, nessuna domanda sull'IVA edile.
   // Assente o null: valgono le regole dell'IVA edile sul contesto qui sopra.
   ivaFissa: VatRegime.nullable().optional(),
+  // Dal 10/10/2026 sera: contesto fiscale del preventivo e profilo dell'impresa fotografato alla nascita
+  // (lib/fisco). Assente: preventivo nato prima, con le regole di allora (iva e ivaFissa).
+  fisco: Fisco.optional(),
   righe: z.array(RigaPreventivo).min(1).max(80),
   esclusioni: z.array(z.string().max(300)).max(30),
   note: z.array(z.string().max(300)).max(30),
@@ -65,6 +72,8 @@ export type Preventivo = z.infer<typeof Preventivo>;
 export const ModificheBozza = z.strictObject({
   cliente: Preventivo.shape.cliente,
   iva: VatContext,
+  // Le risposte fiscali; il profilo dell'impresa non si cambia dalla pagina.
+  contesto: ContestoFiscale.optional(),
   righe: z.array(RigaPreventivo).min(1).max(80),
   esclusioni: z.array(z.string().max(300)).max(30),
   lingua: Lingua.optional(),

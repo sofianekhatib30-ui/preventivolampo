@@ -5,7 +5,7 @@ import type { VoceMotore } from "@/lib/listino/schema";
 import { elabora } from "@/lib/motore";
 import type { ToolCaller } from "@/lib/motore/claude";
 import type { Draft } from "@/lib/motore/tipi";
-import { mancanze } from "./calcolo";
+import { conFisco, mancanze, profiloDemo } from "./calcolo";
 import type { Contesto } from "./contesto";
 import { daBozza, nuovoId } from "./da-bozza";
 import { demo, listino, perCodice } from "./demo";
@@ -31,9 +31,9 @@ export async function creaDaTestoIn(ctx: Contesto, testo: string, call: ToolCall
   if (t.length > 6000) throw new Rifiuto("Il testo del sopralluogo è troppo lungo (massimo 6000 caratteri).", 400);
   const voci = await ctx.voci();
   if (!voci.length) throw new Rifiuto("Il listino è vuoto: aggiungi o importa le tue voci prima di fare un preventivo.", 409);
-  const regime = ctx.regimeIva ?? "edile";
-  const draft = await elabora(t, { items: voci }, call, { impresa: ctx.descrizione, regime });
-  return ctx.crea({ ...daBozza(draft, mappa(voci)), ivaFissa: regime === "ordinario" ? "ordinaria_22" : null, origine: { tipo: "testo" } });
+  const profilo = ctx.profilo ?? profiloDemo();
+  const draft = await elabora(t, { items: voci }, call, { impresa: ctx.descrizione, regime: profilo.edifici ? "edile" : "ordinario", chiedere: ctx.chiedere });
+  return ctx.crea({ ...daBozza(draft, mappa(voci), profilo), origine: { tipo: "testo" } });
 }
 
 export async function creaDaTesto(testo: string, call: ToolCaller): Promise<Preventivo> {
@@ -57,7 +57,7 @@ export async function creaDaEsempio(caso: string): Promise<Preventivo> {
   } catch {
     throw new Rifiuto("Esempio inesistente.", 404);
   }
-  return demo.crea({ ...daBozza(draft, perCodice()), origine: { tipo: "esempio", caso } });
+  return demo.crea({ ...daBozza(draft, perCodice(), profiloDemo()), origine: { tipo: "esempio", caso } });
 }
 
 // Il cliente ha aperto la pagina: lo segno una volta sola, per la timeline dell'artigiano.
@@ -83,7 +83,22 @@ export async function aggiornaBozzaIn(ctx: Contesto, id: string, body: unknown):
     const priceSource = r.unitPriceCents === null ? null : item && r.unitPriceCents === item.priceCents ? "listino" : "artigiano";
     return { ...r, priceSource, significantGood: item?.significantGood ?? false } as typeof r;
   });
-  const next: Preventivo = { ...p, ...parsed.data, righe };
+  // Un preventivo in bozza nato prima del fisco passa alle regole nuove alla prima modifica.
+  const base = conFisco(p, ctx.profilo ?? profiloDemo());
+  const { contesto, ...resto } = parsed.data;
+  // Chi manda ancora solo le tre risposte di prima (una pagina aperta prima dell'aggiornamento): valgono quelle.
+  const v = resto.iva;
+  const daIva =
+    base.fisco && !contesto && base.fisco.profilo.edifici
+      ? {
+          ...base.fisco.contesto,
+          ...(v.dwelling === null ? {} : { oggetto: v.dwelling ? ("abitazione" as const) : ("non_abitativo" as const) }),
+          ...(v.intervention === null ? {} : { lavoro: v.intervention }),
+          ...(v.goodsBoughtBy === null ? {} : { materiali: v.goodsBoughtBy }),
+        }
+      : null;
+  const fisco = base.fisco && (contesto ?? daIva) ? { ...base.fisco, contesto: (contesto ?? daIva)! } : base.fisco;
+  const next: Preventivo = { ...base, ...resto, righe, fisco };
   await ctx.salva(next);
   return next;
 }

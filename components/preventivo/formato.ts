@@ -24,10 +24,9 @@ export function numero(input: string): number | null {
   return n > 0 ? n : null;
 }
 
-export const REGIME: Record<string, string> = area.formato.regime;
 
 // Prezzo unitario a parole: «9,50 € al quintale», «38,00 € all'ora».
 export const PER_UNITA: Record<string, string> = area.formato.perUnita;
 
 // Unità brevi per le righe compatte («1 pz × 226,33 €»).
-export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q", kg: "kg", l: "l", corpo: "corpo", giorno: "gg", km: "km" };
+export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q", kg: "kg", l: "l", corpo: "corpo", giorno: "gg", km: "km", ...{ persona: "pers.", intervento: "interv.", mese: "mese", anno: "anno", pagina: "pag.", copia: "copie", t: "t", viaggio: "viaggi", ha: "ha", capo: "capi", kWp: "kWp", kW: "kW", servizio: "serv." } };

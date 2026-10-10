@@ -9,7 +9,7 @@ import { GET as pdfRoute } from "@/app/api/preventivi/[id]/pdf/route";
 import { PUT as aggiorna } from "@/app/api/preventivi/[id]/route";
 import type { ToolCaller } from "@/lib/motore/claude";
 import { leggi } from "@/lib/preventivi/archivio";
-import { conti } from "@/lib/preventivi/calcolo";
+import { riepilogo } from "@/lib/preventivi/calcolo";
 import { creaDaTesto } from "@/lib/preventivi/servizio";
 
 // Da bozza a PDF e accettazione del cliente, passando dalle route. Claude è un finto; dati inventati.
@@ -73,15 +73,22 @@ describe("preventivo da bozza a PDF", () => {
     righe[3].unitPriceCents = 2500; // prezzo dell'artigiano
     righe[3].addToPriceList = true;
     righe[1].goodsValueCents = 15000; // valore del vaso
-    const put = await aggiorna(req({ cliente: p.cliente, iva: { ...p.iva, goodsBoughtBy: "impresa" }, righe, esclusioni: p.esclusioni }, "PUT"), ctx);
+    // Senza dire chi è il cliente non si approva.
+    const senzaCliente = await aggiorna(req({ cliente: p.cliente, iva: { ...p.iva, goodsBoughtBy: "impresa" }, righe, esclusioni: p.esclusioni }, "PUT"), ctx);
+    expect(senzaCliente.status).toBe(200);
+    expect((await approvaRoute(req({}), ctx)).status).toBe(422);
+    const contesto = { ...(await leggi(p.id))!.fisco!.contesto, cliente: "privato" };
+    expect(contesto).toMatchObject({ oggetto: "abitazione", lavoro: "manutenzione_straordinaria", materiali: "impresa" });
+    const put = await aggiorna(req({ cliente: p.cliente, iva: { ...p.iva, goodsBoughtBy: "impresa" }, contesto, righe, esclusioni: p.esclusioni }, "PUT"), ctx);
     expect(put.status).toBe(200);
 
     const salvato = (await leggi(p.id))!;
     expect(salvato.righe[3].priceSource).toBe("artigiano");
     expect(salvato.righe[1].priceSource).toBe("listino");
-    const c = conti(salvato)!;
-    expect(c.regime).toBe("agevolata_10_beni_significativi");
-    expect(c.at10Cents + c.at22Cents).toBe(c.taxableCents);
+    const c = riepilogo(salvato)!;
+    expect(c.beniSignificativiCents).toBe(15000);
+    expect(c.gruppi.reduce((s, g) => s + g.imponibileCents, 0)).toBe(c.imponibileCents);
+    expect(c.diciture.join(" ")).toMatch(/beni significativi/);
 
     const ok = await approvaRoute(req({}), ctx);
     expect(ok.status).toBe(200);

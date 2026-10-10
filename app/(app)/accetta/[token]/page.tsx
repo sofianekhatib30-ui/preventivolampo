@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Accetta from "@/components/preventivo/Accetta";
 import { euro, UNITA_BREVE } from "@/components/preventivo/formato";
-import { conti, importoRiga } from "@/lib/preventivi/calcolo";
+import { importoRiga, riepilogo } from "@/lib/preventivi/calcolo";
 import { LOCALE, linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
 import { Bandiera } from "@/components/SceltaLingua";
 import { INFO_LINGUA } from "@/lib/i18n/lingue";
@@ -26,7 +26,7 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
   const T = L === "it" ? null : TESTI[L];
   const company = await trovato.ctx.azienda();
   const conLogo = trovato.ctx.tipo === "impresa" && (await company.logo()) !== null;
-  const c = conti(p)!;
+  const c = riepilogo(p)!;
   const scadenza = p.approvatoIl ? new Date(new Date(p.approvatoIl).getTime() + company.quoteValidityDays * 86_400_000) : null;
   const data = (d: Date | string) => new Date(d).toLocaleDateString(LOCALE[L], { timeZone: "Europe/Rome" });
   const voce = (i: number) => (T && tr ? tr.righe[i] : p.righe[i].work);
@@ -88,10 +88,15 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
         {p.cliente.address && <p className="mt-1 text-[17px] text-testo-2">{T ? T.pagina.lavoriIn(p.cliente.address) : `Lavori in ${p.cliente.address}`}</p>}
 
         <div className="mt-5 rounded-card bg-ardesia p-5 text-fondo">
-          <p className="text-[15px] text-scuro-testo">{T ? T.pagina.totaleIncl : "Totale IVA inclusa"}</p>
-          <p className="font-mono text-[40px] font-semibold leading-tight">{euro(c.totalCents)}</p>
+          <p className="text-[15px] text-scuro-testo">{c.ivaCents > 0 ? (T ? T.pagina.totaleIncl : "Totale IVA inclusa") : T ? T.totale : "Totale"}</p>
+          <p className="font-mono text-[40px] font-semibold leading-tight">{euro(c.totaleCents)}</p>
           <p className="mt-1 text-[15px] text-scuro-testo">
-            {T ? T.pagina.imponibilePiuIva(euro(c.taxableCents), euro(c.vatCents)) : `Imponibile ${euro(c.taxableCents)} + IVA ${euro(c.vatCents)}`}
+            {c.ivaCents > 0
+              ? T
+                ? T.pagina.imponibilePiuIva(euro(c.imponibileCents + c.rivalsaCents), euro(c.ivaCents))
+                : `Imponibile ${euro(c.imponibileCents + c.rivalsaCents)} + IVA ${euro(c.ivaCents)}`
+              : ""}
+            {c.nettoCents !== c.totaleCents ? ` · ${T ? T.pagina.nettoDaPagare(euro(c.nettoCents)) : `Netto da pagare ${euro(c.nettoCents)}`}` : ""}
             {scadenza && p.stato === "approvato" ? ` · ${T ? T.pagina.validoFino(data(scadenza)) : `valido fino al ${data(scadenza)}`}` : ""}
           </p>
         </div>

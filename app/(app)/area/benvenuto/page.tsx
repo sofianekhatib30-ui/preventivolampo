@@ -61,7 +61,9 @@ export default async function Benvenuto() {
             condizioni_pagamento: "",
             validita_giorni: "30",
             mestieri: [],
-            regime_iva: "edile",
+            regime_fiscale: "ordinario",
+            ritenuta: false,
+            rivalsa_inps: false,
           }}
         />
       </main>
