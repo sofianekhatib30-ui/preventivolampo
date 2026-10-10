@@ -20,7 +20,7 @@ const LINE = hex("#E4E6EC");
 const ARDESIA = hex("#343645");
 const LIME = hex("#B2F601");
 const WHITE = rgb(1, 1, 1);
-const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo" };
+const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo", giorno: "gg", km: "km" };
 const REGIME_LABEL: Record<string, string> = {
   ordinaria_22: "IVA ordinaria 22%",
   agevolata_10: "IVA agevolata 10% (manutenzione su abitazione)",
@@ -199,7 +199,9 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   page.drawText(euro(c.totalCents), { x: col.imp - 6 - bold.widthOfTextAtSize(euro(c.totalCents), 12), y, size: 12, font: bold, color: WHITE });
   y -= 30;
 
-  para(`${REGIME_LABEL[c.regime!]}.${c.beniSignificativiCents > 0 ? ` Valore dei beni significativi: ${euro(c.beniSignificativiCents)}.` : ""} ${VAT_NOTICE}`);
+  // Aliquota fissa dell'impresa (fuori dall'edilizia): nessun riferimento alle norme dell'IVA edile.
+  const avvisoIva = p.ivaFissa ? "Verifica con il tuo commercialista." : VAT_NOTICE;
+  para(`${REGIME_LABEL[c.regime!]}.${c.beniSignificativiCents > 0 ? ` Valore dei beni significativi: ${euro(c.beniSignificativiCents)}.` : ""} ${avvisoIva}`);
   if (T) para(`${T.regime[c.regime!]}${c.beniSignificativiCents > 0 ? ` ${T.valoreBeni(euro(c.beniSignificativiCents))}` : ""}`, 8, ital);
   if (p.esclusioni.length) {
     y -= 6;

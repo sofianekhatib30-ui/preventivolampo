@@ -8,7 +8,7 @@ import { richiediImpresa } from "@/lib/impresa/pagine";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
-  return { title: `${d.area.titoli.impresa} · PreventivoLampo`, robots: { index: false, follow: false } };
+  return { title: `${d.area.titoli.impresa} · Preventivi`, robots: { index: false, follow: false } };
 }
 export const dynamic = "force-dynamic";
 
@@ -37,6 +37,7 @@ export default async function PaginaImpresa() {
             condizioni_pagamento: i.condizioni_pagamento ?? "",
             validita_giorni: String(i.validita_giorni),
             mestieri: i.mestieri,
+            regime_iva: i.regime_iva,
           }}
         />
         <p className="mt-10 text-[14px] text-testo-3">{fmt(I.accessoCon, { email: a.sessione.email })}</p>

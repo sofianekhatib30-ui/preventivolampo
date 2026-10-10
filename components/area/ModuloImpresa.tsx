@@ -4,22 +4,11 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
 import { useLingua } from "@/lib/i18n/client";
-import { MESTIERI } from "@/lib/impresa/schema";
+import { ELENCO_MESTIERI, FAMIGLIE, regimeSuggerito } from "@/lib/impresa/mestieri";
 
-// Il valore salvato è il nome italiano del mestiere; l'etichetta viene dal dizionario. La mappa è completa
-// per costruzione: un mestiere nuovo in MESTIERI senza la sua voce qui non compila.
-const CHIAVE_MESTIERE: Record<(typeof MESTIERI)[number], keyof Dizionario["area"]["modulo"]["mestieri"]> = {
-  "Impresa edile": "impresaEdile",
-  Muratore: "muratore",
-  Idraulico: "idraulico",
-  Elettricista: "elettricista",
-  Imbianchino: "imbianchino",
-  Piastrellista: "piastrellista",
-  Cartongessista: "cartongessista",
-  Serramentista: "serramentista",
-  Termoidraulico: "termoidraulico",
-  Giardiniere: "giardiniere",
-};
+// Il valore salvato è il nome italiano del mestiere; l'etichetta viene dal dizionario (chiave in lib/impresa/mestieri.ts).
+type ChiaviMestieri = keyof Dizionario["area"]["modulo"]["mestieri"];
+const PER_FAMIGLIA = FAMIGLIE.map((f) => ({ famiglia: f, mestieri: ELENCO_MESTIERI.filter((m) => m.famiglia === f) }));
 
 export type ValoriImpresa = {
   ragione_sociale: string;
@@ -32,6 +21,7 @@ export type ValoriImpresa = {
   condizioni_pagamento: string;
   validita_giorni: string;
   mestieri: string[];
+  regime_iva: "edile" | "ordinario";
 };
 
 const campo = "mt-1 block min-h-12 w-full rounded-campo border border-linea-2 bg-superficie px-3 text-[17px] font-normal text-inchiostro";
@@ -59,6 +49,7 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
   const router = useRouter();
   const M = useLingua().d.area.modulo;
   const [v, setV] = useState(iniziali);
+  const [regimeToccato, setRegimeToccato] = useState(modo === "modifica");
   const [invio, setInvio] = useState(false);
   const [esito, setEsito] = useState<{ tipo: "ok" | "errore"; testo: string } | null>(null);
   const set = (k: keyof ValoriImpresa) => (x: string) => setV((p) => ({ ...p, [k]: x }));
@@ -106,21 +97,66 @@ export default function ModuloImpresa({ iniziali, modo }: { iniziali: ValoriImpr
       <fieldset>
         <legend className="text-xl font-extrabold">{M.cheLavori}</legend>
         <p className="mt-1 text-[15px] text-testo-3">{M.cheLavoriNota}</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {MESTIERI.map((m) => {
-            const scelto = v.mestieri.includes(m);
-            return (
-              <label key={m} className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 text-[16px] font-semibold ${scelto ? "border-ardesia bg-ardesia text-fondo" : "border-linea-2 bg-superficie"}`}>
-                <input
-                  type="checkbox"
-                  className="sr-only"
-                  checked={scelto}
-                  onChange={() => setV((p) => ({ ...p, mestieri: scelto ? p.mestieri.filter((x) => x !== m) : [...p.mestieri, m] }))}
-                />
-                {M.mestieri[CHIAVE_MESTIERE[m]]}
-              </label>
-            );
-          })}
+        <div className="mt-3 space-y-4">
+          {PER_FAMIGLIA.map(({ famiglia, mestieri }) => (
+            <div key={famiglia}>
+              <p className="text-[14px] font-bold uppercase tracking-wide text-testo-3">{M.famiglie[famiglia]}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {mestieri.map(({ nome: m, chiave }) => {
+                  const scelto = v.mestieri.includes(m);
+                  return (
+                    <label key={m} className={`flex min-h-11 cursor-pointer items-center gap-2 rounded-full border-2 px-4 text-[16px] font-semibold ${scelto ? "border-ardesia bg-ardesia text-fondo" : "border-linea-2 bg-superficie"}`}>
+                      <input
+                        type="checkbox"
+                        className="sr-only"
+                        checked={scelto}
+                        onChange={() =>
+                          setV((p) => {
+                            const mestieri = scelto ? p.mestieri.filter((x) => x !== m) : [...p.mestieri, m];
+                            // Alla prima registrazione il regime IVA segue i mestieri scelti; poi lo decide l'impresa.
+                            return { ...p, mestieri, regime_iva: modo === "nuova" && !regimeToccato ? regimeSuggerito(mestieri) : p.regime_iva };
+                          })
+                        }
+                      />
+                      {M.mestieri[chiave as ChiaviMestieri]}
+                    </label>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend className="text-xl font-extrabold">{M.ivaTitolo}</legend>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+          {(
+            [
+              ["edile", M.ivaEdile, M.ivaEdileNota],
+              ["ordinario", M.ivaOrdinaria, M.ivaOrdinariaNota],
+            ] as const
+          ).map(([valore, titolo, nota]) => (
+            <label
+              key={valore}
+              className={`flex cursor-pointer gap-3 rounded-card border-2 p-4 ${v.regime_iva === valore ? "border-ardesia bg-superficie" : "border-linea-2 bg-superficie"}`}
+            >
+              <input
+                type="radio"
+                name="regime_iva"
+                className="mt-1 size-5 shrink-0 accent-ardesia"
+                checked={v.regime_iva === valore}
+                onChange={() => {
+                  setRegimeToccato(true);
+                  setV((p) => ({ ...p, regime_iva: valore }));
+                }}
+              />
+              <span>
+                <span className="block text-[17px] font-bold">{titolo}</span>
+                <span className="mt-0.5 block text-[15px] text-testo-2">{nota}</span>
+              </span>
+            </label>
+          ))}
         </div>
       </fieldset>
 

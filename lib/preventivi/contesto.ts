@@ -26,6 +26,8 @@ export interface Contesto {
   tipo: "demo" | "impresa";
   // Chi è l'impresa, per il motore («un'impresa edile di Monza che fa bagni e cucine»).
   descrizione?: string;
+  // «ordinario»: impresa fuori dall'edilizia, IVA ordinaria fissa. Assente: regole dell'IVA edile.
+  regimeIva?: "edile" | "ordinario";
   azienda(): Promise<Azienda>;
   voci(): Promise<VoceMotore[]>;
   leggi(id: string): Promise<Preventivo | null>;

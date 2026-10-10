@@ -13,17 +13,19 @@ import type { Draft, DraftLine, DraftQuestion } from "./tipi";
 
 export const CONFIDENCE_THRESHOLD = 0.6;
 
-const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo" };
+const UNIT_LABEL: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo", giorno: "giornate", km: "km" };
 
 export type ListinoMotore = { items: PriceListItem[] };
-export type OpzioniMotore = { impresa?: string };
+// regime «ordinario»: impresa fuori dall'edilizia, IVA ordinaria fissa e nessuna domanda sull'IVA edile.
+export type OpzioniMotore = { impresa?: string; regime?: "edile" | "ordinario" };
 
 export async function elabora(transcript: string, list: ListinoMotore, call: ToolCaller, opzioni: OpzioniMotore = {}): Promise<Draft> {
   const started = Date.now();
   const byCode = new Map<string, PriceListItem>(list.items.map((i) => [i.code, i]));
-  const ex = await extract(transcript, call, opzioni.impresa);
+  const regime = opzioni.regime ?? "edile";
+  const ex = await extract(transcript, call, opzioni.impresa, regime);
   const candidates = ex.extraction.lines.map((l) => candidatesFor(`${l.work} ${l.spoken}`, l.unit, list.items));
-  const mt = await chooseMatches(ex.extraction.lines, candidates, call);
+  const mt = await chooseMatches(ex.extraction.lines, candidates, call, regime);
 
   const lines: DraftLine[] = ex.extraction.lines.flatMap((line, i) => {
     const choice = mt.choices[i];
@@ -68,7 +70,10 @@ export async function elabora(transcript: string, list: ListinoMotore, call: Too
   const context = ex.extraction.vat;
   return {
     customer: ex.extraction.customer,
-    vat: { context, regime: vatRegime(context, hasSignificant), missing: missingVatAnswers(context) },
+    vat:
+      regime === "ordinario"
+        ? { context: { dwelling: null, intervention: null, goodsBoughtBy: null }, regime: "ordinaria_22", missing: [] }
+        : { context, regime: vatRegime(context, hasSignificant), missing: missingVatAnswers(context) },
     lines,
     questions,
     exclusions: ex.extraction.exclusions,

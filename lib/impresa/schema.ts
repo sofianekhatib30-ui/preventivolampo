@@ -1,20 +1,12 @@
 import { z } from "zod";
 import { CODICE, UNITS } from "@/lib/listino/schema";
+import { ELENCO_MESTIERI, type NomeMestiere } from "./mestieri";
 
 // Dati dell'impresa e delle voci di listino come arrivano dai moduli. Validati sul server.
 
-export const MESTIERI = [
-  "Impresa edile",
-  "Muratore",
-  "Idraulico",
-  "Elettricista",
-  "Imbianchino",
-  "Piastrellista",
-  "Cartongessista",
-  "Serramentista",
-  "Termoidraulico",
-  "Giardiniere",
-] as const;
+// I mestieri, per famiglia: lib/impresa/mestieri.ts.
+export const MESTIERI = ELENCO_MESTIERI.map((m) => m.nome) as [NomeMestiere, ...NomeMestiere[]];
+export const REGIMI_IVA = ["edile", "ordinario"] as const;
 
 // Partita IVA italiana: 11 cifre con la cifra di controllo (algoritmo dell'Agenzia delle Entrate).
 export function partitaIvaValida(piva: string): boolean {
@@ -67,6 +59,8 @@ export const DatiImpresa = z.strictObject({
   condizioni_pagamento: facoltativo(300),
   validita_giorni: z.coerce.number().int().min(1).max(365),
   mestieri: z.array(z.enum(MESTIERI)).max(MESTIERI.length),
+  // «edile»: regole dell'IVA edile; «ordinario»: IVA ordinaria 22% su tutto, nessuna domanda.
+  regime_iva: z.enum(REGIMI_IVA).default("edile"),
 });
 export type DatiImpresa = z.infer<typeof DatiImpresa>;
 

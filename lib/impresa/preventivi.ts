@@ -25,6 +25,12 @@ function riga(p: Preventivo) {
   };
 }
 
+// Il cliente nell'anagrafica del nucleo (lo ritrova per nome o lo crea). Non blocca mai il preventivo.
+async function collegaCliente(preventivoId: string): Promise<void> {
+  const r = await db().schema("preventivi").rpc("collega_cliente", { p_preventivo: preventivoId });
+  if (r.error) console.error(`cliente in anagrafica: ${r.error.message}`);
+}
+
 async function registra(impresaId: string, preventivoId: string, e: Evento): Promise<void> {
   const r = await db().from("pl_eventi").insert({ impresa_id: impresaId, preventivo_id: preventivoId, tipo: e.tipo, dati: e.dati ?? {} });
   if (r.error) console.error(`evento: ${r.error.message}`); // la storia non deve bloccare il preventivo
@@ -35,6 +41,7 @@ export async function contestoImpresa(impresaId: string): Promise<Contesto> {
   return {
     tipo: "impresa",
     descrizione: descrizioneDi(imp),
+    regimeIva: imp.regime_iva,
     azienda: async () => aziendaDi(imp),
     voci: async () => (await elencoVoci(impresaId)).map(perMotore),
     async leggi(id) {
@@ -55,6 +62,8 @@ export async function contestoImpresa(impresaId: string): Promise<Contesto> {
       const r = ok(await db().from("pl_preventivi").update(riga(valido)).eq("impresa_id", impresaId).eq("id", valido.id).select("id"), "salva preventivo");
       if (!r?.length) throw new Error("preventivo inesistente");
       if (evento) await registra(impresaId, valido.id, evento);
+      // Approvato o deciso dal cliente: il cliente entra nell'anagrafica unica dell'organizzazione.
+      if (valido.stato !== "bozza") await collegaCliente(valido.id);
     },
     async impara(p, righe) {
       ok(

@@ -9,7 +9,7 @@ import { elencoVoci } from "@/lib/impresa/voci";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
-  return { title: `${d.area.titoli.daPrezzare} · PreventivoLampo`, robots: { index: false, follow: false } };
+  return { title: `${d.area.titoli.daPrezzare} · Preventivi`, robots: { index: false, follow: false } };
 }
 export const dynamic = "force-dynamic";
 

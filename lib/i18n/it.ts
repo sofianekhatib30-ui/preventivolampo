@@ -484,7 +484,7 @@ export const it = {
         {
           t: "ul",
           voci: [
-            "**pl_sessione**: tiene aperto l'accesso all'area artigiani dopo che hai inserito il codice ricevuto via email. Lo mettiamo solo quando entri, dura 30 giorni e si cancella quando premi «Esci».",
+            "**kds-sessione**: tiene aperto l'accesso all'area artigiani, che si fa dall'account di K Digital Solution (lo stesso per tutti i suoi strumenti). Lo mette l'account quando entri, vale su tutti gli indirizzi kdigitalsolution.it, dura 30 giorni dall'ultimo uso e si cancella quando esci.",
             "**pl_lingua**: ricorda la lingua del sito. Lo mettiamo quando scegli una lingua con il selettore o quando apri una pagina in una lingua diversa dall'italiano, e dura un anno.",
           ],
         },

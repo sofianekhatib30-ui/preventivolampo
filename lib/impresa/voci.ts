@@ -1,5 +1,4 @@
 import type { VoceMotore } from "@/lib/listino/schema";
-import { listino } from "@/lib/preventivi/demo";
 import { Rifiuto } from "@/lib/preventivi/rifiuto";
 import { db, ok } from "./db";
 import type { DatiVoce, Voce } from "./schema";
@@ -99,17 +98,3 @@ export async function inserisciVoci(impresaId: string, voci: DatiVoce[], origine
   return { inserite: nuove.length, saltate };
 }
 
-// Il listino di esempio della demo come punto di partenza: prezzi da prezzari pubblici, da rivedere.
-export function vociDemo(): DatiVoce[] {
-  return listino().items.map((i) => ({
-    codice: i.code,
-    nome: i.name,
-    descrizione: i.description,
-    unita: i.unit,
-    prezzo_cents: i.priceCents,
-    categoria: i.category.replace(/_/g, " "),
-    sinonimi: i.synonyms.slice(0, 20).map((s) => s.slice(0, 60)),
-    bene_significativo: i.significantGood,
-    fornibile_dal_cliente: i.clientSuppliable,
-  }));
-}

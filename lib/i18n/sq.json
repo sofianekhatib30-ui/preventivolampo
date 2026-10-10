@@ -33,7 +33,9 @@
         "100kg": "kuintalë",
         "kg": "kg",
         "l": "litra",
-        "corpo": "çmim fiks"
+        "corpo": "çmim fiks",
+        "giorno": "ditë",
+        "km": "km"
       },
       "perUnita": {
         "m2": "për m²",
@@ -44,7 +46,9 @@
         "100kg": "për kuintal",
         "kg": "për kg",
         "l": "për litër",
-        "corpo": "çmim fiks"
+        "corpo": "çmim fiks",
+        "giorno": "në ditë",
+        "km": "për km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Hapi 1 nga 2",
       "h1": "Biznesi yt",
-      "sotto": "Këto të dhëna shkojnë në krye të çdo preventivi. Mund t'i ndryshosh kur të duash."
+      "sotto": "Këto të dhëna shkojnë në krye të çdo preventivi. Mund t'i ndryshosh kur të duash.",
+      "nonAttivoH1": "Preventivi nuk është aktiv",
+      "nonAttivo": "Për {org} moduli Preventivi nuk është aktiv. E aktivizon nga llogaria; nëse punon për një organizatë tjetër, zgjidhe nga shiriti lart.",
+      "apriAccount": "Hap llogarinë",
+      "soloTitolare": "Ndërmarrja {org} nuk është ende e regjistruar në Preventivi. E regjistron pronari ose një administrator: pyeti ata, pastaj nga këtu bën oferta dhe listë çmimesh."
     },
     "nuovo": {
       "torna": "Kthehu te preventivat",
@@ -119,11 +127,44 @@
         "idraulico": "Hidraulik",
         "elettricista": "Elektricist",
         "imbianchino": "Bojaxhi",
-        "piastrellista": "Vendosës pllakash",
-        "cartongessista": "Punues kartongjipsi",
+        "piastrellista": "Pllakashtrues",
+        "cartongessista": "Montues gipsi",
         "serramentista": "Montues dyersh e dritaresh",
         "termoidraulico": "Termohidraulik",
-        "giardiniere": "Kopshtar"
+        "fabbro": "Farkëtar",
+        "falegname": "Marangoz",
+        "climatizzazione": "Klimatizim",
+        "tetti": "Çati dhe llamarinë",
+        "pavimenti": "Dysheme dhe parket",
+        "giardiniere": "Kopshtar",
+        "pulizie": "Pastrim",
+        "traslochi": "Transferime dhe zbrazje",
+        "disinfestazioni": "Dezinsektim",
+        "tende": "Tenda dhe rrjeta mushkonjash",
+        "tappezziere": "Tapicier",
+        "vetraio": "Xhamxhi",
+        "elettrodomestici": "Riparim pajisjesh shtëpiake",
+        "officina": "Servis mekanik",
+        "carrozzeria": "Karrocieri",
+        "gommista": "Gomist",
+        "elettrauto": "Elektroaut",
+        "moto": "Motor dhe biçikleta",
+        "fotografo": "Foto dhe video",
+        "catering": "Katering",
+        "noleggio": "Qira pajisjesh",
+        "allestimenti": "Dekorime dhe lule",
+        "musica": "Muzikë dhe DJ",
+        "organizzazioneEventi": "Organizim eventesh",
+        "informatica": "Teknik informatike",
+        "grafica": "Grafikë dhe faqe interneti",
+        "manutenzioni": "Mirëmbajtje",
+        "sicurezza": "Siguri dhe alarme",
+        "stampa": "Shtyp dhe tabela",
+        "formazione": "Kurse dhe trajnime",
+        "trasporti": "Transport dhe dorëzime",
+        "agricoltura": "Punime bujqësore",
+        "sartoria": "Rrobaqepësi",
+        "restauro": "Restaurim"
       },
       "sulPreventivo": "Në preventiv",
       "validita": "Vlefshmëria e preventivit (ditë)",
@@ -135,7 +176,20 @@
       "registra": "Regjistro ndërmarrjen",
       "salva": "Ruaj të dhënat",
       "errore": "Nuk munda ta ruaj. Provo përsëri.",
-      "salvati": "Të dhënat u ruajtën. PDF-të e radhës do t'i përdorin këto."
+      "salvati": "Të dhënat u ruajtën. PDF-të e radhës do t'i përdorin këto.",
+      "famiglie": {
+        "edilizia": "Ndërtim dhe impiante",
+        "casa": "Shërbime për shtëpinë",
+        "auto": "Makina dhe mjete",
+        "eventi": "Evente dhe foto",
+        "aziende": "Shërbime për bizneset",
+        "altro": "Transport, bujqësi dhe punishte"
+      },
+      "ivaTitolo": "Si e llogaritni TVSH-në",
+      "ivaEdile": "TVSH për ndërtimin",
+      "ivaEdileNota": "10% ose 22% sipas punës: oferta pyet nëse është banesë, çfarë ndërhyrjeje është dhe kush i blen materialet.",
+      "ivaOrdinaria": "TVSH e zakonshme 22%",
+      "ivaOrdinariaNota": "Për kë nuk punon në ndërtim: e njëjta normë për gjithçka, pa pyetje."
     },
     "logo": {
       "titolo": "Logoja",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: e mban të hapur hyrjen në zonën e artizanëve pasi ke futur kodin e marrë me email. E vendosim vetëm kur hyn, zgjat 30 ditë dhe fshihet kur shtyp «Dil».",
+            "**kds-sessione**: mban të hapur hyrjen në zonën e zejtarëve, ku hyn nga llogaria e K Digital Solution (e njëjta për të gjitha mjetet e saj). E vendos llogaria kur hyn, vlen në të gjitha adresat kdigitalsolution.it, zgjat 30 ditë nga përdorimi i fundit dhe fshihet kur del.",
             "**pl_lingua**: kujton gjuhën e faqes. E vendosim kur zgjedh një gjuhë me zgjedhësin ose kur hap një faqe në një gjuhë tjetër nga italishtja, dhe zgjat një vit."
           ]
         },

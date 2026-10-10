@@ -33,7 +33,9 @@
         "100kg": "quintaux",
         "kg": "kg",
         "l": "litres",
-        "corpo": "au forfait"
+        "corpo": "au forfait",
+        "giorno": "jours",
+        "km": "km"
       },
       "perUnita": {
         "m2": "au m²",
@@ -44,7 +46,9 @@
         "100kg": "au quintal",
         "kg": "au kg",
         "l": "au litre",
-        "corpo": "au forfait"
+        "corpo": "au forfait",
+        "giorno": "par jour",
+        "km": "par km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Étape 1 sur 2",
       "h1": "Ton entreprise",
-      "sotto": "Ces infos apparaissent en haut de chaque devis. Tu peux les changer quand tu veux."
+      "sotto": "Ces infos apparaissent en haut de chaque devis. Tu peux les changer quand tu veux.",
+      "nonAttivoH1": "Preventivi n'est pas actif",
+      "nonAttivo": "Pour {org}, le module Preventivi n'est pas actif. Tu l'actives depuis ton compte ; si tu travailles pour une autre organisation, choisis-la dans la barre en haut.",
+      "apriAccount": "Ouvrir le compte",
+      "soloTitolare": "{org} n'est pas encore enregistrée dans Preventivi. C'est le titulaire ou un administrateur qui l'enregistre : demande-leur, puis tu fais devis et tarifs d'ici."
     },
     "nuovo": {
       "torna": "Retour aux devis",
@@ -121,9 +129,42 @@
         "imbianchino": "Peintre en bâtiment",
         "piastrellista": "Carreleur",
         "cartongessista": "Plaquiste",
-        "serramentista": "Poseur de menuiseries (fenêtres, portes)",
-        "termoidraulico": "Chauffagiste-plombier",
-        "giardiniere": "Jardinier"
+        "serramentista": "Menuisier poseur",
+        "termoidraulico": "Chauffagiste",
+        "fabbro": "Serrurier",
+        "falegname": "Menuisier",
+        "climatizzazione": "Climatisation",
+        "tetti": "Toitures et zinguerie",
+        "pavimenti": "Sols et parquet",
+        "giardiniere": "Jardinier",
+        "pulizie": "Nettoyage",
+        "traslochi": "Déménagements et débarras",
+        "disinfestazioni": "Désinsectisation",
+        "tende": "Stores et moustiquaires",
+        "tappezziere": "Tapissier",
+        "vetraio": "Vitrier",
+        "elettrodomestici": "Réparation d'électroménager",
+        "officina": "Garage mécanique",
+        "carrozzeria": "Carrosserie",
+        "gommista": "Pneus",
+        "elettrauto": "Électricien auto",
+        "moto": "Motos et vélos",
+        "fotografo": "Photo et vidéo",
+        "catering": "Traiteur",
+        "noleggio": "Location de matériel",
+        "allestimenti": "Décoration et fleurs",
+        "musica": "Musique et DJ",
+        "organizzazioneEventi": "Organisation d'événements",
+        "informatica": "Technicien informatique",
+        "grafica": "Graphisme et sites web",
+        "manutenzioni": "Maintenance",
+        "sicurezza": "Sécurité et alarmes",
+        "stampa": "Impression et enseignes",
+        "formazione": "Cours et formation",
+        "trasporti": "Transport et livraisons",
+        "agricoltura": "Travaux agricoles",
+        "sartoria": "Couture",
+        "restauro": "Restauration"
       },
       "sulPreventivo": "Sur le devis",
       "validita": "Validité du devis (jours)",
@@ -135,7 +176,20 @@
       "registra": "Enregistre ton entreprise",
       "salva": "Enregistre les données",
       "errore": "Je n'ai pas réussi à enregistrer. Réessaie.",
-      "salvati": "Données enregistrées. Les prochains PDF utiliseront celles-ci."
+      "salvati": "Données enregistrées. Les prochains PDF utiliseront celles-ci.",
+      "famiglie": {
+        "edilizia": "Bâtiment et installations",
+        "casa": "Services à domicile",
+        "auto": "Autos et véhicules",
+        "eventi": "Événements et photos",
+        "aziende": "Services aux entreprises",
+        "altro": "Transport, agriculture et atelier"
+      },
+      "ivaTitolo": "Comment vous calculez la TVA",
+      "ivaEdile": "TVA du bâtiment",
+      "ivaEdileNota": "10 % ou 22 % selon le chantier : le devis demande s'il s'agit d'un logement, quel type de travaux et qui achète les matériaux.",
+      "ivaOrdinaria": "TVA normale 22 %",
+      "ivaOrdinariaNota": "Pour qui ne travaille pas dans le bâtiment : le même taux partout, sans questions."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione** : garde ta connexion ouverte à l'espace artisans après que tu as saisi le code reçu par email. Nous le déposons seulement quand tu te connectes, il dure 30 jours et il est supprimé quand tu cliques sur « Esci » (Se déconnecter).",
+            "**kds-sessione** : garde ouvert l'accès à l'espace artisans, auquel tu accèdes depuis le compte K Digital Solution (le même pour tous ses outils). Le compte le pose quand tu te connectes ; il vaut sur toutes les adresses kdigitalsolution.it, dure 30 jours après la dernière utilisation et s'efface quand tu te déconnectes.",
             "**pl_lingua** : il garde en mémoire la langue du site. On le met quand tu choisis une langue avec le sélecteur ou quand tu ouvres une page dans une autre langue que l'italien, et il dure un an."
           ]
         },

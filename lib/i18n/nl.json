@@ -33,7 +33,9 @@
         "100kg": "honderd kilo",
         "kg": "kg",
         "l": "liter",
-        "corpo": "vaste prijs"
+        "corpo": "vaste prijs",
+        "giorno": "dagen",
+        "km": "km"
       },
       "perUnita": {
         "m2": "per m²",
@@ -44,7 +46,9 @@
         "100kg": "per honderd kilo",
         "kg": "per kg",
         "l": "per liter",
-        "corpo": "vaste prijs"
+        "corpo": "vaste prijs",
+        "giorno": "per dag",
+        "km": "per km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Stap 1 van 2",
       "h1": "Jouw bedrijf",
-      "sotto": "Deze gegevens komen bovenaan elke offerte te staan. Je kunt ze altijd wijzigen."
+      "sotto": "Deze gegevens komen bovenaan elke offerte te staan. Je kunt ze altijd wijzigen.",
+      "nonAttivoH1": "Preventivi is niet actief",
+      "nonAttivo": "Voor {org} is de module Preventivi niet actief. Je zet hem aan via je account; werk je voor een andere organisatie, kies die dan in de balk bovenaan.",
+      "apriAccount": "Account openen",
+      "soloTitolare": "{org} is nog niet ingesteld in Preventivi. De eigenaar of een beheerder doet dat: vraag het hun, daarna maak je hier offertes en je prijslijst."
     },
     "nuovo": {
       "torna": "Terug naar de offertes",
@@ -121,9 +129,42 @@
         "imbianchino": "Schilder",
         "piastrellista": "Tegelzetter",
         "cartongessista": "Gipsplaatmonteur",
-        "serramentista": "Kozijnenmonteur",
-        "termoidraulico": "Installateur (verwarming en sanitair)",
-        "giardiniere": "Hovenier"
+        "serramentista": "Kozijnmonteur",
+        "termoidraulico": "Verwarmingsinstallateur",
+        "fabbro": "Smid",
+        "falegname": "Timmerman",
+        "climatizzazione": "Airconditioning",
+        "tetti": "Daken en zinkwerk",
+        "pavimenti": "Vloeren en parket",
+        "giardiniere": "Hovenier",
+        "pulizie": "Schoonmaak",
+        "traslochi": "Verhuizingen en ontruimingen",
+        "disinfestazioni": "Ongediertebestrijding",
+        "tende": "Zonwering en horren",
+        "tappezziere": "Stoffeerder",
+        "vetraio": "Glaszetter",
+        "elettrodomestici": "Reparatie huishoudtoestellen",
+        "officina": "Autogarage",
+        "carrozzeria": "Carrosseriebedrijf",
+        "gommista": "Bandencentrale",
+        "elettrauto": "Auto-elektricien",
+        "moto": "Motoren en fietsen",
+        "fotografo": "Foto en video",
+        "catering": "Catering",
+        "noleggio": "Verhuur van materiaal",
+        "allestimenti": "Decoratie en bloemen",
+        "musica": "Muziek en dj",
+        "organizzazioneEventi": "Evenementenorganisatie",
+        "informatica": "IT-technicus",
+        "grafica": "Grafisch ontwerp en websites",
+        "manutenzioni": "Onderhoud",
+        "sicurezza": "Beveiliging en alarmen",
+        "stampa": "Drukwerk en reclameborden",
+        "formazione": "Cursussen en opleidingen",
+        "trasporti": "Transport en leveringen",
+        "agricoltura": "Landbouwwerk",
+        "sartoria": "Kleermakerij",
+        "restauro": "Restauratie"
       },
       "sulPreventivo": "Op de offerte",
       "validita": "Geldigheid van de offerte (dagen)",
@@ -135,7 +176,20 @@
       "registra": "Registreer je bedrijf",
       "salva": "Gegevens opslaan",
       "errore": "Het is niet gelukt om op te slaan. Probeer het opnieuw.",
-      "salvati": "Gegevens opgeslagen. De volgende PDF's gebruiken deze gegevens."
+      "salvati": "Gegevens opgeslagen. De volgende PDF's gebruiken deze gegevens.",
+      "famiglie": {
+        "edilizia": "Bouw en installaties",
+        "casa": "Diensten voor thuis",
+        "auto": "Auto's en voertuigen",
+        "eventi": "Evenementen en foto's",
+        "aziende": "Zakelijke diensten",
+        "altro": "Transport, landbouw en werkplaats"
+      },
+      "ivaTitolo": "Hoe jullie btw berekenen",
+      "ivaEdile": "Btw voor bouwwerk",
+      "ivaEdileNota": "10% of 22% afhankelijk van het werk: de offerte vraagt of het een woning is, wat voor werk het is en wie de materialen koopt.",
+      "ivaOrdinaria": "Normaal btw-tarief 22%",
+      "ivaOrdinariaNota": "Voor wie niet in de bouw werkt: hetzelfde tarief op alles, geen vragen."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: houdt je ingelogd in het gedeelte voor vakmensen nadat je de code uit je e-mail hebt ingevuld. We plaatsen hem alleen als je inlogt, hij blijft 30 dagen staan en wordt gewist als je op «Esci» (Uitloggen) drukt.",
+            "**kds-sessione**: houdt je toegang tot de vakmensenomgeving open, waar je binnenkomt via je account van K Digital Solution (hetzelfde voor al zijn tools). Het account zet het wanneer je inlogt; het geldt op alle adressen van kdigitalsolution.it, duurt 30 dagen na het laatste gebruik en wordt gewist wanneer je uitlogt.",
             "**pl_lingua**: onthoudt de taal van de site. We zetten hem als je een taal kiest met de taalkiezer of als je een pagina opent in een andere taal dan het Italiaans. Hij blijft een jaar bewaard."
           ]
         },

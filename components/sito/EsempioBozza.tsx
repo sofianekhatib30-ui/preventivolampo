@@ -3,7 +3,7 @@ import type { EsempioMotore } from "@/lib/contenuti/esempi";
 import { fmt } from "@/lib/i18n/testo";
 import { type LinguaSito } from "@/lib/i18n/lingue";
 
-const UNITA: Record<string, string> = { m2: "m²", m3: "m³", m: "m", cad: "cad", h: "h", corpo: "a corpo", kg: "kg", l: "l", "100kg": "q" };
+const UNITA: Record<string, string> = { m2: "m²", m3: "m³", m: "m", cad: "cad", h: "h", corpo: "a corpo", kg: "kg", l: "l", "100kg": "q", giorno: "gg", km: "km" };
 
 function quantita(n: number) {
   return Number.isInteger(n) ? String(n) : n.toFixed(2).replace(".", ",");

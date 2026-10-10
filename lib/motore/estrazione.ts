@@ -90,14 +90,39 @@ Regole:
 - Termini dialettali lombardi: «el cess» = water, «caldana» = massetto, «sciura» = signora, «magütt» = muratore, «minga» = non.
 - Non scrivere prezzi.`;
 
+// Mestieri fuori dall'edilizia (servizi per la casa, auto, eventi, servizi alle aziende…): stesse regole
+// di fondo (niente prezzi, niente stime, una riga per ogni cosa che si paga), parole generali, nessuna
+// domanda sull'IVA edile: l'aliquota è quella fissa dell'impresa. Il prompt edile qui sopra resta quello
+// misurato sul banco di prova e non si tocca.
+export const EXTRACTION_SYSTEM_GENERALE = `Sei l'assistente di un'impresa italiana. Ricevi il racconto (trascrizione di un vocale o testo scritto) con cui il titolare descrive un lavoro, un servizio o una fornitura da preventivare, e registri i dati per il preventivo.
+
+Regole:
+- Una riga per ogni voce da mettere nel preventivo: un lavoro, un servizio, un prodotto, un noleggio, una trasferta. Non inventare voci che il titolare non dice.
+- spoken contiene solo le parole di quella voce: mai frasi che appartengono a un'altra riga.
+- Separa in righe diverse solo le cose che si pagano separatamente («il servizio fotografico e l'album», «il trasloco e il montaggio dei mobili», «il tagliando e la sostituzione delle pastiglie»). Non separare le parti di una stessa voce («smontare e rimontare la stessa ruota», «preparare e servire il pranzo»).
+- Se il titolare dice il numero totale dei pezzi o delle persone di una voce, è una riga sola con quel numero, anche se poi li elenca. Cose diverse elencate senza un numero totale sono righe diverse.
+- Quello che il titolare farà e farà pagare ma dice di non avere a listino («quello va a parte», «lo devo chiedere») è comunque una riga: il prezzo lo metterà lui. Le verifiche, le cose da vedere e i lavori che fanno altri non sono righe: vanno in notes o in exclusions.
+- «Io», «noi», «lo faccio io» sono l'impresa; il cliente è «lui», «lei», «il signore», «la signora», «l'azienda».
+- Autocorrezioni («no aspetta», «anzi», «cioè»): registra solo la versione finale di quello che viene corretto; le righe dette prima che la correzione non contraddice restano. Nel dubbio tieni la riga e scrivi il dubbio in notes.
+- Voci rimandate o escluse («lo vediamo dopo», «quello no») non sono righe: vanno in exclusions se escluse, in notes se rimandate.
+- Il racconto può essere in un'altra lingua o mescolato con l'italiano: spoken resta come è stato detto; work, quantityNote, exclusions e notes sempre in italiano.
+- Quantità: se il titolare dà le misure o i conti (persone per ore, giorni per mezzi, metri per metri), calcola tu la quantità e scrivi in calc l'espressione con i numeri usati (es. tre persone per otto ore = «3*8»), e in quantityNote la spiegazione a parole. Se la quantità è detta direttamente, calc = null.
+- Un solo oggetto o servizio detto al singolare senza numero è 1: quantity = 1, unit = cad (oppure corpo se è un lavoro a forfait).
+- Se la quantità non è detta né ricavabile, quantity = null. Non stimare mai.
+- unit: m2, m, m3, cad (pezzi o persone), h (ore), giorno (giornate), km (chilometri), 100kg, kg, l (litri), corpo (a forfait, quantità 1). Usa l'unità in cui la quantità è detta; se il numero detto non ha un'unità chiara, unit = non_detto.
+- clientSuppliesMaterial = true solo se il titolare dice che il materiale o il pezzo di quella riga lo fornisce il cliente.
+- vat: sempre non_detto per i tre campi (l'IVA la decide l'impresa, non il racconto).
+- Non scrivere prezzi.`;
+
 // Il listino di prova è di un'impresa della Brianza; per un'impresa vera si dice chi è e che mestieri fa.
-export function extractionSystem(impresa?: string): string {
+export function extractionSystem(impresa?: string, regime: "edile" | "ordinario" = "edile"): string {
+  if (regime === "ordinario") return impresa ? EXTRACTION_SYSTEM_GENERALE.replace("di un'impresa italiana", `di ${impresa}`) : EXTRACTION_SYSTEM_GENERALE;
   if (!impresa) return EXTRACTION_SYSTEM;
   return EXTRACTION_SYSTEM.replace("di un'impresa edile della Brianza", `di ${impresa}`);
 }
 
-export async function extract(transcript: string, call: ToolCaller, impresa?: string) {
-  const result = await call({ system: extractionSystem(impresa), user: transcript, tool: EXTRACTION_TOOL });
+export async function extract(transcript: string, call: ToolCaller, impresa?: string, regime: "edile" | "ordinario" = "edile") {
+  const result = await call({ system: extractionSystem(impresa, regime), user: transcript, tool: EXTRACTION_TOOL });
   const parsed = EstrazioneGrezza.safeParse(notSaidToNull(result.input));
   if (!parsed.success) {
     throw new Error(`Uscita dell'estrazione non valida: ${parsed.error.issues.map((i) => i.path.join(".")).join(", ")}`);

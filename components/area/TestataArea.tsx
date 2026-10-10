@@ -2,9 +2,19 @@ import Link from "next/link";
 import { Marchio } from "@/components/Marchio";
 import { SceltaLingua } from "@/components/SceltaLingua";
 import { dizionario } from "@/lib/i18n/server";
-import Esci from "./Esci";
+import { ACCOUNT } from "@/lib/impresa/sessione";
 
-// Testata dell'area: marchio, nome dell'impresa, lingua, sezioni. Sul telefono le sezioni scorrono in orizzontale.
+declare module "react" {
+  // eslint-disable-next-line @typescript-eslint/no-namespace -- è il modo in cui React dichiara i tag HTML.
+  namespace JSX {
+    interface IntrinsicElements {
+      "kds-barra": React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & { modulo?: string; tema?: string };
+    }
+  }
+}
+
+// Testata dell'area: in cima la barra comune di K Digital Solution (organizzazione, strumenti, ricerca,
+// notifiche, account e uscita), poi nome dell'impresa, lingua e sezioni. Sul telefono le sezioni scorrono in orizzontale.
 const SEZIONI = [
   { id: "preventivi", href: "/area" },
   { id: "listino", href: "/area/listino" },
@@ -19,15 +29,18 @@ export async function TestataArea({ impresa, attiva, daPrezzare = 0 }: { impresa
   const T = d.area.testata;
   const nome: Record<Sezione, string> = { preventivi: T.preventivi, listino: T.listino, "da-prezzare": T.daPrezzare, impresa: T.impresa };
   return (
+    <>
+      <link rel="stylesheet" href={`${ACCOUNT}/ui/v1/kds-token.css`} precedence="default" />
+      <script type="module" src={`${ACCOUNT}/ui/v1/kds-ui.js`} async />
+      <kds-barra id="barra" modulo="preventivi" />
     <header className="su-scuro bg-ardesia text-fondo">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4">
         <Link href={impresa ? "/area" : "/"} className="flex min-h-11 min-w-0 items-center gap-2.5 no-underline" aria-label={T.logo}>
           <Marchio className="size-9 shrink-0" />
-          <span className="min-w-0 truncate text-[19px] font-extrabold [font-stretch:78%]">{impresa ?? "PreventivoLampo"}</span>
+          <span className="min-w-0 truncate text-[19px] font-extrabold [font-stretch:78%]">{impresa ?? "Preventivi"}</span>
         </Link>
         <div className="flex shrink-0 items-center gap-2">
           <SceltaLingua compatto />
-          {impresa && <Esci className="min-h-11 shrink-0 px-2 text-[15px] font-semibold text-scuro-testo underline" />}
         </div>
       </div>
       {impresa && attiva && (
@@ -56,5 +69,6 @@ export async function TestataArea({ impresa, attiva, daPrezzare = 0 }: { impresa
         </nav>
       )}
     </header>
+    </>
   );
 }

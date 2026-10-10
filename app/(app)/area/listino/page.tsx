@@ -5,11 +5,11 @@ import { TestataArea } from "@/components/area/TestataArea";
 import { dizionario } from "@/lib/i18n/server";
 import { fmt } from "@/lib/i18n/testo";
 import { richiediImpresa } from "@/lib/impresa/pagine";
-import { elencoVoci, vociDemo } from "@/lib/impresa/voci";
+import { elencoVoci } from "@/lib/impresa/voci";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
-  return { title: `${d.area.titoli.listino} · PreventivoLampo`, robots: { index: false, follow: false } };
+  return { title: `${d.area.titoli.listino} · Preventivi`, robots: { index: false, follow: false } };
 }
 export const dynamic = "force-dynamic";
 
@@ -39,7 +39,7 @@ export default async function PaginaListino({ searchParams }: { searchParams: Pr
             {fmt(L.esempio, { n: esempio })}
           </p>
         )}
-        {voci.length || q.aggiungi ? <Listino voci={voci} apriNuova={Boolean(q.aggiungi)} /> : <ListinoVuoto vociEsempio={vociDemo().length} />}
+        {voci.length || q.aggiungi ? <Listino voci={voci} apriNuova={Boolean(q.aggiungi)} /> : <ListinoVuoto />}
       </main>
     </>
   );

@@ -33,7 +33,9 @@
         "100kg": "Doppelzentner (100 kg)",
         "kg": "kg",
         "l": "Liter",
-        "corpo": "pauschal"
+        "corpo": "pauschal",
+        "giorno": "Tage",
+        "km": "km"
       },
       "perUnita": {
         "m2": "pro m²",
@@ -44,7 +46,9 @@
         "100kg": "pro Doppelzentner (100 kg)",
         "kg": "pro kg",
         "l": "pro Liter",
-        "corpo": "pauschal"
+        "corpo": "pauschal",
+        "giorno": "pro Tag",
+        "km": "pro km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Schritt 1 von 2",
       "h1": "Dein Betrieb",
-      "sotto": "Diese Daten stehen oben auf jedem Angebot. Du kannst sie jederzeit ändern."
+      "sotto": "Diese Daten stehen oben auf jedem Angebot. Du kannst sie jederzeit ändern.",
+      "nonAttivoH1": "Preventivi ist nicht aktiv",
+      "nonAttivo": "Für {org} ist das Modul Preventivi nicht aktiv. Du aktivierst es im Konto; wenn du für eine andere Organisation arbeitest, wähle sie oben in der Leiste.",
+      "apriAccount": "Konto öffnen",
+      "soloTitolare": "{org} ist in Preventivi noch nicht eingerichtet. Das macht der Inhaber oder ein Administrator: frag sie, danach erstellst du hier Angebote und Preisliste."
     },
     "nuovo": {
       "torna": "Zurück zu den Angeboten",
@@ -122,8 +130,41 @@
         "piastrellista": "Fliesenleger",
         "cartongessista": "Trockenbauer",
         "serramentista": "Fensterbauer",
-        "termoidraulico": "Heizungs- und Sanitärinstallateur",
-        "giardiniere": "Gärtner"
+        "termoidraulico": "Heizungsinstallateur",
+        "fabbro": "Schlosser",
+        "falegname": "Tischler",
+        "climatizzazione": "Klimatechnik",
+        "tetti": "Dach und Spenglerei",
+        "pavimenti": "Böden und Parkett",
+        "giardiniere": "Gärtner",
+        "pulizie": "Reinigung",
+        "traslochi": "Umzüge und Räumungen",
+        "disinfestazioni": "Schädlingsbekämpfung",
+        "tende": "Markisen und Insektenschutz",
+        "tappezziere": "Polsterer",
+        "vetraio": "Glaser",
+        "elettrodomestici": "Haushaltsgeräte-Reparatur",
+        "officina": "Kfz-Werkstatt",
+        "carrozzeria": "Karosseriewerkstatt",
+        "gommista": "Reifendienst",
+        "elettrauto": "Autoelektriker",
+        "moto": "Motorräder und Fahrräder",
+        "fotografo": "Foto und Video",
+        "catering": "Catering",
+        "noleggio": "Geräteverleih",
+        "allestimenti": "Dekoration und Blumen",
+        "musica": "Musik und DJ",
+        "organizzazioneEventi": "Eventplanung",
+        "informatica": "IT-Techniker",
+        "grafica": "Grafik und Websites",
+        "manutenzioni": "Wartung",
+        "sicurezza": "Sicherheit und Alarmanlagen",
+        "stampa": "Druck und Schilder",
+        "formazione": "Kurse und Schulungen",
+        "trasporti": "Transport und Lieferungen",
+        "agricoltura": "Landwirtschaftliche Arbeiten",
+        "sartoria": "Schneiderei",
+        "restauro": "Restaurierung"
       },
       "sulPreventivo": "Im Angebot",
       "validita": "Gültigkeit des Angebots (Tage)",
@@ -135,7 +176,20 @@
       "registra": "Betrieb registrieren",
       "salva": "Daten speichern",
       "errore": "Ich konnte nicht speichern. Versuch es nochmal.",
-      "salvati": "Daten gespeichert. Die nächsten PDFs verwenden diese Daten."
+      "salvati": "Daten gespeichert. Die nächsten PDFs verwenden diese Daten.",
+      "famiglie": {
+        "edilizia": "Bau und Installationen",
+        "casa": "Dienste rund ums Haus",
+        "auto": "Autos und Fahrzeuge",
+        "eventi": "Events und Fotos",
+        "aziende": "Dienste für Unternehmen",
+        "altro": "Transport, Landwirtschaft und Werkstatt"
+      },
+      "ivaTitolo": "Wie Sie die MwSt. berechnen",
+      "ivaEdile": "Bau-MwSt.",
+      "ivaEdileNota": "10 % oder 22 % je nach Arbeit: Das Angebot fragt, ob es eine Wohnung ist, welche Art von Arbeit und wer das Material kauft.",
+      "ivaOrdinaria": "Regelsteuersatz 22 %",
+      "ivaOrdinariaNota": "Für alle außerhalb des Baugewerbes: derselbe Satz für alles, keine Fragen."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: hält deinen Zugang zum Handwerkerbereich offen, nachdem du den per E-Mail erhaltenen Code eingegeben hast. Wir setzen es nur, wenn du dich anmeldest, es gilt 30 Tage und wird gelöscht, wenn du auf «Abmelden» drückst.",
+            "**kds-sessione**: hält deinen Zugang zum Handwerkerbereich offen, in den du über das Konto von K Digital Solution kommst (dasselbe für alle seine Werkzeuge). Das Konto setzt es bei der Anmeldung; es gilt auf allen Adressen von kdigitalsolution.it, hält 30 Tage ab der letzten Nutzung und wird beim Abmelden gelöscht.",
             "**pl_lingua**: merkt sich die Sprache der Website. Wir setzen es, wenn du über die Sprachauswahl eine Sprache wählst oder eine Seite in einer anderen Sprache als Italienisch öffnest. Es gilt ein Jahr lang."
           ]
         },

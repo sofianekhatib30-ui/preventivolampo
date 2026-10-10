@@ -222,6 +222,8 @@ const UNITA_DETTE: [RegExp, (typeof UNITS)[number]][] = [
   [/^(kg|chil[oi]|chilogramm[oi])$/, "kg"],
   [/^(l|lt|litr[oi])$/, "l"],
   [/^(a corpo|corpo|ac|a\.c\.|forfait|forfettario|a forfait)$/, "corpo"],
+  [/^(g|gg|gg\.|giorn[oi]|giornat[ae]|day|days)$/, "giorno"],
+  [/^(km|km\.|chilometr[oi])$/, "km"],
 ];
 
 export function unitaDa(s: string): (typeof UNITS)[number] | null {

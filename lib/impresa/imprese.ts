@@ -2,7 +2,7 @@ import { Rifiuto } from "@/lib/preventivi/rifiuto";
 import type { Azienda, Logo } from "@/lib/preventivi/contesto";
 import { db, ok } from "./db";
 import type { DatiImpresa } from "./schema";
-import type { Sessione } from "./sessione";
+import type { Contesto } from "./sessione";
 
 // L'impresa registrata: anagrafica che finisce sul PDF, logo, numerazione.
 
@@ -10,28 +10,29 @@ export const BUCKET = "preventivolampo";
 
 export type Impresa = DatiImpresa & {
   id: string;
+  org_id: string | null;
   logo_path: string | null;
   stato: "prova" | "attiva" | "sospesa";
   creata_il: string;
 };
 
-const CAMPI = "id, ragione_sociale, piva, cf, indirizzo, telefono, email, iban, condizioni_pagamento, validita_giorni, mestieri, logo_path, stato, creata_il";
+const CAMPI = "id, org_id, ragione_sociale, piva, cf, indirizzo, telefono, email, iban, condizioni_pagamento, validita_giorni, mestieri, regime_iva, logo_path, stato, creata_il";
 
 export async function leggiImpresa(id: string): Promise<Impresa | null> {
   return ok(await db().from("pl_imprese").select(CAMPI).eq("id", id).maybeSingle(), "impresa") as Impresa | null;
 }
 
-export async function creaImpresa(s: Sessione, dati: DatiImpresa): Promise<string> {
-  const gia = ok(await db().from("pl_membri").select("impresa_id").eq("user_id", s.userId).maybeSingle(), "membro");
-  if (gia) throw new Rifiuto("Questo account ha già un'impresa.", 409);
-  const imp = ok(await db().from("pl_imprese").insert(dati).select("id").single(), "nuova impresa") as { id: string };
-  const r = await db().from("pl_membri").insert({ impresa_id: imp.id, user_id: s.userId, ruolo: "titolare" });
-  if (r.error) {
-    // Due registrazioni in parallelo: tengo la prima, tolgo l'impresa rimasta senza titolare.
-    await db().from("pl_imprese").delete().eq("id", imp.id);
-    throw new Rifiuto("Questo account ha già un'impresa.", 409);
-  }
-  return imp.id;
+// Un'impresa per organizzazione del nucleo: la registra il titolare o un amministratore,
+// con il modulo attivo (in prova compresa). Chi ci lavora lo dice il nucleo, non una tabella di Preventivi.
+export async function creaImpresa(c: Contesto, dati: DatiImpresa): Promise<string> {
+  if (!c.orgId || !c.lettura) throw new Rifiuto("Preventivi non è attivo per questa organizzazione.", 403);
+  if (c.ruoloOrg !== "titolare" && c.ruoloOrg !== "admin") throw new Rifiuto("L'impresa la registra il titolare o un amministratore dell'organizzazione.", 403);
+  if (!c.scrittura) throw new Rifiuto("Preventivi è in sola lettura per questa organizzazione.", 403);
+  if (c.impresaId) throw new Rifiuto("Questa organizzazione ha già un'impresa.", 409);
+  const r = await db().from("pl_imprese").insert({ ...dati, org_id: c.orgId }).select("id").single();
+  // Due registrazioni in parallelo: l'indice unico su org_id tiene la prima.
+  if (r.error?.code === "23505") throw new Rifiuto("Questa organizzazione ha già un'impresa.", 409);
+  return (ok(r, "nuova impresa") as { id: string }).id;
 }
 
 export async function aggiornaImpresa(id: string, dati: DatiImpresa): Promise<void> {
@@ -87,7 +88,8 @@ export function aziendaDi(imp: Impresa): Azienda {
 }
 
 // Per il motore: chi è l'impresa e che lavori fa.
-export function descrizioneDi(imp: Pick<Impresa, "ragione_sociale" | "mestieri">): string {
+export function descrizioneDi(imp: Pick<Impresa, "ragione_sociale" | "mestieri"> & { regime_iva?: Impresa["regime_iva"] }): string {
   const mestieri = imp.mestieri.filter((m) => m !== "Impresa edile").map((m) => m.toLowerCase());
-  return `${imp.ragione_sociale}, impresa edile italiana${mestieri.length ? ` (${mestieri.join(", ")})` : ""}`;
+  const tipo = imp.regime_iva === "ordinario" ? "impresa italiana" : "impresa edile italiana";
+  return `${imp.ragione_sociale}, ${tipo}${mestieri.length ? ` (${mestieri.join(", ")})` : ""}`;
 }

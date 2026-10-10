@@ -10,7 +10,7 @@ import { anthropicCaller } from "@/lib/motore/claude";
 import { extract } from "@/lib/motore/estrazione";
 
 const FILE = "lib/contenuti/esempi/esempi.json";
-const UNITA: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo" };
+const UNITA: Record<string, string> = { m2: "m²", m: "metri", m3: "m³", cad: "pezzi", h: "ore", "100kg": "quintali", kg: "kg", l: "litri", corpo: "a corpo", giorno: "giornate", km: "km" };
 
 async function esempio(id: IdMestiere): Promise<EsempioMotore> {
   const dettatura = contenutiIt.mestieri[id].esempio.dettatura;

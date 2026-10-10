@@ -9,10 +9,10 @@ function dati(b: unknown) {
   return r.data;
 }
 
-// Registrazione dell'impresa (una per account) e modifica dei dati.
+// Registrazione dell'impresa (una per organizzazione) e modifica dei dati.
 export async function POST(request: Request): Promise<Response> {
-  return conSessione(request, async (s) => {
-    const id = await creaImpresa(s, dati(await corpo(request)));
+  return conSessione(request, async (c) => {
+    const id = await creaImpresa(c, dati(await corpo(request)));
     return Response.json({ id, vai: "/area/listino?nuovo=1" }, { status: 201 });
   });
 }

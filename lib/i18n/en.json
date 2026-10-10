@@ -33,7 +33,9 @@
         "100kg": "100 kg",
         "kg": "kg",
         "l": "litres",
-        "corpo": "lump sum"
+        "corpo": "lump sum",
+        "giorno": "days",
+        "km": "km"
       },
       "perUnita": {
         "m2": "per m²",
@@ -44,7 +46,9 @@
         "100kg": "per 100 kg",
         "kg": "per kg",
         "l": "per litre",
-        "corpo": "lump sum"
+        "corpo": "lump sum",
+        "giorno": "per day",
+        "km": "per km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Step 1 of 2",
       "h1": "Your business",
-      "sotto": "These details go at the top of every quote. You can change them whenever you like."
+      "sotto": "These details go at the top of every quote. You can change them whenever you like.",
+      "nonAttivoH1": "Preventivi is not active",
+      "nonAttivo": "The Preventivi module is not active for {org}. You can turn it on from your account; if you work for another organisation, pick it from the bar at the top.",
+      "apriAccount": "Open your account",
+      "soloTitolare": "{org} is not yet set up in Preventivi. The owner or an administrator sets it up: ask them, then you can make quotes and price lists here."
     },
     "nuovo": {
       "torna": "Back to quotes",
@@ -114,16 +122,49 @@
       "cheLavori": "What work you do",
       "cheLavoriNota": "It helps us read your site visits better.",
       "mestieri": {
-        "impresaEdile": "Building firm",
+        "impresaEdile": "Building contractor",
         "muratore": "Bricklayer",
         "idraulico": "Plumber",
         "elettricista": "Electrician",
         "imbianchino": "Painter and decorator",
         "piastrellista": "Tiler",
-        "cartongessista": "Plasterboard fitter",
+        "cartongessista": "Drywall installer",
         "serramentista": "Window and door fitter",
-        "termoidraulico": "Heating and plumbing engineer",
-        "giardiniere": "Gardener"
+        "termoidraulico": "Heating engineer",
+        "fabbro": "Metalworker",
+        "falegname": "Carpenter",
+        "climatizzazione": "Air conditioning",
+        "tetti": "Roofing and guttering",
+        "pavimenti": "Flooring and parquet",
+        "giardiniere": "Gardener",
+        "pulizie": "Cleaning",
+        "traslochi": "Removals and clearances",
+        "disinfestazioni": "Pest control",
+        "tende": "Awnings and insect screens",
+        "tappezziere": "Upholsterer",
+        "vetraio": "Glazier",
+        "elettrodomestici": "Appliance repair",
+        "officina": "Car mechanic",
+        "carrozzeria": "Body shop",
+        "gommista": "Tyre shop",
+        "elettrauto": "Auto electrician",
+        "moto": "Motorbikes and bicycles",
+        "fotografo": "Photo and video",
+        "catering": "Catering",
+        "noleggio": "Equipment hire",
+        "allestimenti": "Decorations and flowers",
+        "musica": "Music and DJ",
+        "organizzazioneEventi": "Event planning",
+        "informatica": "IT technician",
+        "grafica": "Graphic design and websites",
+        "manutenzioni": "Maintenance",
+        "sicurezza": "Security and alarms",
+        "stampa": "Printing and signs",
+        "formazione": "Courses and training",
+        "trasporti": "Transport and deliveries",
+        "agricoltura": "Agricultural work",
+        "sartoria": "Tailoring",
+        "restauro": "Restoration"
       },
       "sulPreventivo": "On the quote",
       "validita": "How long the quote is valid (days)",
@@ -135,7 +176,20 @@
       "registra": "Register your business",
       "salva": "Save details",
       "errore": "I couldn't save. Try again.",
-      "salvati": "Details saved. Your next PDFs will use these."
+      "salvati": "Details saved. Your next PDFs will use these.",
+      "famiglie": {
+        "edilizia": "Building and installations",
+        "casa": "Home services",
+        "auto": "Cars and vehicles",
+        "eventi": "Events and photos",
+        "aziende": "Business services",
+        "altro": "Transport, farming and workshop"
+      },
+      "ivaTitolo": "How you charge VAT",
+      "ivaEdile": "Building VAT",
+      "ivaEdileNota": "10% or 22% depending on the job: the quote asks whether it is a home, what kind of work it is and who buys the materials.",
+      "ivaOrdinaria": "Standard VAT 22%",
+      "ivaOrdinariaNota": "If you don't work in building: the same rate on everything, no questions."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: keeps you logged in to the tradespeople area after you enter the code you got by email. We only set it when you log in, it lasts 30 days and it is deleted when you press “Log out”.",
+            "**kds-sessione**: keeps you logged in to the tradespeople area, which you enter from your K Digital Solution account (the same for all its tools). The account sets it when you log in; it works on all kdigitalsolution.it addresses, lasts 30 days from your last visit and is deleted when you log out.",
             "**pl_lingua**: remembers the language of the site. We set it when you pick a language with the selector or when you open a page in a language other than Italian, and it lasts one year."
           ]
         },

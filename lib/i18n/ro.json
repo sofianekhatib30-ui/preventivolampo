@@ -33,7 +33,9 @@
         "100kg": "chintale",
         "kg": "kg",
         "l": "litri",
-        "corpo": "forfetar"
+        "corpo": "forfetar",
+        "giorno": "zile",
+        "km": "km"
       },
       "perUnita": {
         "m2": "la m²",
@@ -44,7 +46,9 @@
         "100kg": "la chintal",
         "kg": "la kg",
         "l": "la litru",
-        "corpo": "forfetar"
+        "corpo": "forfetar",
+        "giorno": "pe zi",
+        "km": "pe km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Pasul 1 din 2",
       "h1": "Firma ta",
-      "sotto": "Aceste date apar în capul fiecărei oferte. Le poți schimba oricând."
+      "sotto": "Aceste date apar în capul fiecărei oferte. Le poți schimba oricând.",
+      "nonAttivoH1": "Preventivi nu este activ",
+      "nonAttivo": "Pentru {org} modulul Preventivi nu este activ. Îl activezi din cont; dacă lucrezi pentru altă organizație, alege-o din bara de sus.",
+      "apriAccount": "Deschide contul",
+      "soloTitolare": "Firma {org} nu este încă înregistrată în Preventivi. O înregistrează titularul sau un administrator: cere-le lor, apoi de aici faci oferte și lista de prețuri."
     },
     "nuovo": {
       "torna": "Înapoi la devize",
@@ -116,14 +124,47 @@
       "mestieri": {
         "impresaEdile": "Firmă de construcții",
         "muratore": "Zidar",
-        "idraulico": "Instalator",
+        "idraulico": "Instalator sanitar",
         "elettricista": "Electrician",
         "imbianchino": "Zugrav",
         "piastrellista": "Faianțar",
-        "cartongessista": "Montator gips-carton",
-        "serramentista": "Montator tâmplărie",
+        "cartongessista": "Montator de rigips",
+        "serramentista": "Montator de tâmplărie",
         "termoidraulico": "Instalator termic",
-        "giardiniere": "Grădinar"
+        "fabbro": "Lăcătuș",
+        "falegname": "Tâmplar",
+        "climatizzazione": "Climatizare",
+        "tetti": "Acoperișuri și tinichigerie",
+        "pavimenti": "Pardoseli și parchet",
+        "giardiniere": "Grădinar",
+        "pulizie": "Curățenie",
+        "traslochi": "Mutări și debarasări",
+        "disinfestazioni": "Dezinsecție",
+        "tende": "Rulouri și plase de țânțari",
+        "tappezziere": "Tapițer",
+        "vetraio": "Geamgiu",
+        "elettrodomestici": "Reparații electrocasnice",
+        "officina": "Service auto",
+        "carrozzeria": "Tinichigerie auto",
+        "gommista": "Vulcanizare",
+        "elettrauto": "Electrician auto",
+        "moto": "Moto și biciclete",
+        "fotografo": "Foto și video",
+        "catering": "Catering",
+        "noleggio": "Închiriere echipamente",
+        "allestimenti": "Decoruri și flori",
+        "musica": "Muzică și DJ",
+        "organizzazioneEventi": "Organizare evenimente",
+        "informatica": "Tehnician IT",
+        "grafica": "Grafică și site-uri web",
+        "manutenzioni": "Întreținere",
+        "sicurezza": "Securitate și alarme",
+        "stampa": "Tipar și reclame",
+        "formazione": "Cursuri și formare",
+        "trasporti": "Transport și livrări",
+        "agricoltura": "Lucrări agricole",
+        "sartoria": "Croitorie",
+        "restauro": "Restaurare"
       },
       "sulPreventivo": "Pe deviz",
       "validita": "Valabilitatea devizului (zile)",
@@ -135,7 +176,20 @@
       "registra": "Înregistrează firma",
       "salva": "Salvează datele",
       "errore": "Nu am reușit să salvez. Încearcă din nou.",
-      "salvati": "Datele au fost salvate. Următoarele PDF-uri le vor folosi pe acestea."
+      "salvati": "Datele au fost salvate. Următoarele PDF-uri le vor folosi pe acestea.",
+      "famiglie": {
+        "edilizia": "Construcții și instalații",
+        "casa": "Servicii pentru casă",
+        "auto": "Auto și vehicule",
+        "eventi": "Evenimente și foto",
+        "aziende": "Servicii pentru firme",
+        "altro": "Transport, agricultură și atelier"
+      },
+      "ivaTitolo": "Cum calculați TVA",
+      "ivaEdile": "TVA pentru construcții",
+      "ivaEdileNota": "10% sau 22% în funcție de lucrare: oferta întreabă dacă e o locuință, ce fel de lucrare este și cine cumpără materialele.",
+      "ivaOrdinaria": "TVA standard 22%",
+      "ivaOrdinariaNota": "Pentru cine nu lucrează în construcții: aceeași cotă pentru tot, fără întrebări."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: ține accesul deschis în zona pentru meseriași după ce ai introdus codul primit prin email. Îl setăm doar când intri, durează 30 de zile și se șterge când apeși «Ieși».",
+            "**kds-sessione**: păstrează deschis accesul în zona meseriașilor, în care intri din contul K Digital Solution (același pentru toate instrumentele sale). Îl pune contul când intri, este valabil pe toate adresele kdigitalsolution.it, durează 30 de zile de la ultima folosire și se șterge când ieși.",
             "**pl_lingua**: ține minte limba site-ului. Îl setăm când alegi o limbă din selector sau când deschizi o pagină într-o altă limbă decât italiana și durează un an."
           ]
         },

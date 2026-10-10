@@ -31,8 +31,9 @@ export async function creaDaTestoIn(ctx: Contesto, testo: string, call: ToolCall
   if (t.length > 6000) throw new Rifiuto("Il testo del sopralluogo è troppo lungo (massimo 6000 caratteri).", 400);
   const voci = await ctx.voci();
   if (!voci.length) throw new Rifiuto("Il listino è vuoto: aggiungi o importa le tue voci prima di fare un preventivo.", 409);
-  const draft = await elabora(t, { items: voci }, call, { impresa: ctx.descrizione });
-  return ctx.crea({ ...daBozza(draft, mappa(voci)), origine: { tipo: "testo" } });
+  const regime = ctx.regimeIva ?? "edile";
+  const draft = await elabora(t, { items: voci }, call, { impresa: ctx.descrizione, regime });
+  return ctx.crea({ ...daBozza(draft, mappa(voci)), ivaFissa: regime === "ordinario" ? "ordinaria_22" : null, origine: { tipo: "testo" } });
 }
 
 export async function creaDaTesto(testo: string, call: ToolCaller): Promise<Preventivo> {

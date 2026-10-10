@@ -4,7 +4,10 @@ vi.mock("next/headers", () => ({ cookies: async () => ({ get: () => undefined, s
 
 import { costruisciRighe, leggiCsv, mappaConRegole, prezzoDa, trovaIntestazione, unitaDa } from "@/lib/impresa/importa";
 import { DatiImpresa, DatiVoce, ibanValido, partitaIvaValida, primoErrore } from "@/lib/impresa/schema";
-import { creaToken, leggiToken } from "@/lib/impresa/sessione";
+import { contestoDa, dominioCookie, membroDa, opzioniCookie } from "@/lib/impresa/sessione";
+import { ELENCO_MESTIERI, regimeSuggerito } from "@/lib/impresa/mestieri";
+import { conti, mancanze } from "@/lib/preventivi/calcolo";
+import { eArea, versoDominio } from "../proxy";
 import { descrizioneDi, tipoLogo } from "@/lib/impresa/imprese";
 import { extractionSystem, EXTRACTION_SYSTEM } from "@/lib/motore/estrazione";
 import { sicuro } from "@/lib/preventivi/pdf";
@@ -95,22 +98,65 @@ describe("import da CSV ed Excel", () => {
       "m2", "m2", "m2", "m", "cad", "cad", "h", "100kg", "l", "corpo",
     ]);
     expect(["al metro", "€/ora", "euro al mq", "per pezzo", "a corpo", "all'ora"].map(unitaDa)).toEqual(["m", "h", "m2", "cad", "corpo", "h"]);
+    // Mestieri fuori dall'edilizia: noleggi a giornata, trasferte a chilometro.
+    expect(["gg", "giornata", "al giorno", "km", "al km", "chilometri"].map(unitaDa)).toEqual(["giorno", "giorno", "giorno", "km", "km", "km"]);
     expect([12.5, "12,50", "1.234,56", "1,234.56", "€ 7", "1.000", "abc", "", -3].map(prezzoDa)).toEqual([
       1250, 1250, 123456, 123456, 700, 100000, null, null, null,
     ]);
   });
 });
 
-describe("sessione dell'area", () => {
-  process.env.SESSIONE_SEGRETO = "segreto-di-prova-abbastanza-lungo";
-  it("firma e rilegge il cookie; respinge firme cambiate e scadute", () => {
-    const t = creaToken("u-1", "a@b.it", 1_000_000);
-    expect(leggiToken(t, 1_000_000)).toMatchObject({ userId: "u-1", email: "a@b.it" });
-    const [dati] = t.split(".");
-    const falso = Buffer.from(JSON.stringify({ u: "u-2", e: "a@b.it", x: 9e9 })).toString("base64url");
-    expect(leggiToken(`${falso}.${t.split(".")[1]}`, 1_000_000)).toBeNull();
-    expect(leggiToken(`${dati}.xxx`, 1_000_000)).toBeNull();
-    expect(leggiToken(t, 1_000_000 + 31 * 86_400_000)).toBeNull();
+describe("sessione unica di K Digital Solution", () => {
+  const s = { userId: "u-1", email: "a@b.it", token: "t" };
+  it("il cookie vale per tutto il dominio solo su *.kdigitalsolution.it", () => {
+    expect(dominioCookie("preventivi.kdigitalsolution.it")).toBe(".kdigitalsolution.it");
+    expect(dominioCookie("kdigitalsolution.it:443")).toBe(".kdigitalsolution.it");
+    expect(dominioCookie("kdigitalsolution.it.esempio.com")).toBeUndefined();
+    expect(dominioCookie("localhost:3000")).toBeUndefined();
+    expect(opzioniCookie({ maxAge: 999, httpOnly: true }, "preventivi.kdigitalsolution.it")).toMatchObject({
+      httpOnly: false, secure: true, sameSite: "lax", path: "/", maxAge: 30 * 24 * 3600, domain: ".kdigitalsolution.it",
+    });
+    expect(opzioniCookie({ maxAge: 0 }, "preventivi.kdigitalsolution.it").maxAge).toBe(0);
+  });
+  it("entra solo chi ha il modulo e un'impresa; titolare e admin cambiano i dati", () => {
+    const base = { org_id: "o-1", ruolo: "titolare", lettura: true, scrittura: true, impresa_id: "i-1" };
+    expect(membroDa(contestoDa(s, base))).toMatchObject({ impresaId: "i-1", orgId: "o-1", ruolo: "titolare", scrittura: true });
+    expect(membroDa(contestoDa(s, { ...base, ruolo: "admin" }))?.ruolo).toBe("titolare");
+    expect(membroDa(contestoDa(s, { ...base, ruolo: "membro" }))?.ruolo).toBe("collaboratore");
+    expect(membroDa(contestoDa(s, { ...base, scrittura: false }))?.scrittura).toBe(false);
+    expect(membroDa(contestoDa(s, { ...base, lettura: false }))).toBeNull();
+    expect(membroDa(contestoDa(s, { ...base, impresa_id: null }))).toBeNull();
+    expect(membroDa(contestoDa(s, { utente: "u-1", org_id: null }))).toBeNull();
+    expect(membroDa(contestoDa(s, null))).toBeNull();
+    expect(membroDa(null)).toBeNull();
+  });
+  it("l'area si serve dal dominio, non dagli indirizzi di anteprima", () => {
+    expect(["/area", "/area/listino", "/api/area/voci", "/accedi"].every(eArea)).toBe(true);
+    expect(["/", "/areale", "/prezzi", "/api/elabora"].some(eArea)).toBe(false);
+    expect(versoDominio("preventivolampo.vercel.app", "/area")).toBe(true);
+    expect(versoDominio("preventivolampo.vercel.app", "/api/area/voci")).toBe(false);
+    expect(versoDominio("preventivi.kdigitalsolution.it", "/area")).toBe(false);
+  });
+});
+
+describe("mestieri e IVA", () => {
+  it("ogni mestiere ha la sua etichetta e una chiave sola", () => {
+    expect(new Set(ELENCO_MESTIERI.map((m) => m.chiave)).size).toBe(ELENCO_MESTIERI.length);
+    expect(new Set(ELENCO_MESTIERI.map((m) => m.nome)).size).toBe(ELENCO_MESTIERI.length);
+  });
+  it("propone l'IVA edile solo a chi fa almeno un mestiere edile", () => {
+    expect(regimeSuggerito(["Idraulico", "Catering"])).toBe("edile");
+    expect(regimeSuggerito(["Fotografo e video", "Catering"])).toBe("ordinario");
+    expect(regimeSuggerito([])).toBe("ordinario");
+  });
+  it("con l'aliquota fissa non chiede nulla sull'IVA edile e calcola il 22%", () => {
+    const riga = { work: "Servizio fotografico", spoken: "foto", quantity: 1, unit: "corpo" as const, unitPriceCents: 50000, code: "F1", priceSource: "listino" as const, flag: null, significantGood: false, goodsValueCents: null, addToPriceList: false };
+    const senza = { iva: { dwelling: null, intervention: null, goodsBoughtBy: null }, righe: [riga] };
+    expect(mancanze(senza).length).toBe(3);
+    expect(conti(senza)).toBeNull();
+    const fissa = { ...senza, ivaFissa: "ordinaria_22" as const };
+    expect(mancanze(fissa)).toEqual([]);
+    expect(conti(fissa)).toMatchObject({ regime: "ordinaria_22", taxableCents: 50000, vatCents: 11000, totalCents: 61000 });
   });
 });
 
@@ -125,6 +171,14 @@ describe("dettagli dell'impresa", () => {
     expect(d).toBe("Edil Prova srl, impresa edile italiana (idraulico)");
     expect(extractionSystem(d)).toContain("Sei l'assistente di Edil Prova srl");
     expect(extractionSystem()).toBe(EXTRACTION_SYSTEM);
+    // Fuori dall'edilizia: prompt generale, niente IVA edile e niente dialetto di cantiere.
+    const f = descrizioneDi({ ragione_sociale: "Foto Prova", mestieri: ["Fotografo e video"], regime_iva: "ordinario" });
+    expect(f).toBe("Foto Prova, impresa italiana (fotografo e video)");
+    const g = extractionSystem(f, "ordinario");
+    expect(g).toContain("Sei l'assistente di Foto Prova");
+    expect(g).not.toContain("edile");
+    expect(g).not.toContain("magütt");
+    expect(g).toContain("vat: sempre non_detto");
   });
   it("il PDF non si rompe con caratteri fuori da Windows-1252", () => {
     expect(sicuro("Bagno 🛁 – 3×2 m² “ok”\tŁ")).toBe("Bagno ? – 3×2 m² “ok” ?");

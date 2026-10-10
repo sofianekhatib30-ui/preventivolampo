@@ -57,8 +57,13 @@ export function matchPrompt(lines: ExtractedLine[], candidates: Candidate[][]): 
     .join("\n\n");
 }
 
-export async function chooseMatches(lines: ExtractedLine[], candidates: Candidate[][], call: ToolCaller) {
-  const result = await call({ system: MATCH_SYSTEM, user: matchPrompt(lines, candidates), tool: MATCH_TOOL });
+// Fuori dall'edilizia le regole sono le stesse; cambia solo la prima frase.
+export function matchSystem(regime: "edile" | "ordinario" = "edile"): string {
+  return regime === "ordinario" ? MATCH_SYSTEM.replace("Abbini le lavorazioni di un preventivo edile", "Abbini le voci di un preventivo (lavori, servizi, prodotti)") : MATCH_SYSTEM;
+}
+
+export async function chooseMatches(lines: ExtractedLine[], candidates: Candidate[][], call: ToolCaller, regime: "edile" | "ordinario" = "edile") {
+  const result = await call({ system: matchSystem(regime), user: matchPrompt(lines, candidates), tool: MATCH_TOOL });
   const parsed = MatchChoices.safeParse(result.input);
   if (!parsed.success) throw new Error("Uscita dell'abbinamento non valida");
   const byIndex = new Map(parsed.data.choices.map((c) => [c.index, c]));

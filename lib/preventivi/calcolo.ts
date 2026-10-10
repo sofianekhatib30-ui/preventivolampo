@@ -11,20 +11,23 @@ export function importoRiga(r: RigaPreventivo): number | null {
   return lineAmountCents({ quantity: r.quantity, unitPriceCents: r.unitPriceCents });
 }
 
-export function regimeDi(p: Pick<Preventivo, "iva" | "righe">) {
+type PerConti = Pick<Preventivo, "iva" | "righe"> & { ivaFissa?: Preventivo["ivaFissa"] };
+
+export function regimeDi(p: PerConti) {
+  if (p.ivaFissa) return p.ivaFissa;
   return vatRegime(p.iva, p.righe.some((r) => r.significantGood && r.code !== null));
 }
 
-export function mancanze(p: Pick<Preventivo, "iva" | "righe">): Mancanza[] {
+export function mancanze(p: PerConti): Mancanza[] {
   const out: Mancanza[] = [];
   p.righe.forEach((r, i) => {
     if (r.quantity === null) out.push({ riga: i, testo: "manca la quantità" });
     if (r.unit === null) out.push({ riga: i, testo: "manca l'unità di misura" });
     if (r.unitPriceCents === null) out.push({ riga: i, testo: "manca il prezzo" });
   });
-  if (p.iva.dwelling === null) out.push({ riga: null, testo: "IVA: è un'abitazione?" });
-  if (p.iva.intervention === null) out.push({ riga: null, testo: "IVA: tipo di intervento" });
-  if (p.iva.goodsBoughtBy === null) out.push({ riga: null, testo: "IVA: chi compra i materiali" });
+  if (!p.ivaFissa && p.iva.dwelling === null) out.push({ riga: null, testo: "IVA: è un'abitazione?" });
+  if (!p.ivaFissa && p.iva.intervention === null) out.push({ riga: null, testo: "IVA: tipo di intervento" });
+  if (!p.ivaFissa && p.iva.goodsBoughtBy === null) out.push({ riga: null, testo: "IVA: chi compra i materiali" });
   if (regimeDi(p) === "agevolata_10_beni_significativi") {
     p.righe.forEach((r, i) => {
       if (!r.significantGood || r.code === null) return;
@@ -38,7 +41,7 @@ export function mancanze(p: Pick<Preventivo, "iva" | "righe">): Mancanza[] {
 
 export type Conti = VatSplit & { beniSignificativiCents: number; regime: ReturnType<typeof regimeDi> };
 
-export function conti(p: Pick<Preventivo, "iva" | "righe">): Conti | null {
+export function conti(p: PerConti): Conti | null {
   if (mancanze(p).length > 0) return null;
   const regime = regimeDi(p)!;
   const taxable = p.righe.reduce((s, r) => s + (importoRiga(r) ?? 0), 0);

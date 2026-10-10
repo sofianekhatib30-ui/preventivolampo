@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { VatContext } from "@/lib/banco/schema";
+import { VatContext, VatRegime } from "@/lib/banco/schema";
 import { CODICE, Unit } from "@/lib/listino/schema";
 import { LINGUE } from "./lingua";
 
@@ -40,6 +40,9 @@ export const Preventivo = z.strictObject({
   stato: z.enum(STATI),
   cliente: z.strictObject({ name: z.string().max(120).nullable(), address: z.string().max(200).nullable() }),
   iva: VatContext,
+  // Impresa fuori dall'edilizia: aliquota fissa decisa dall'impresa, nessuna domanda sull'IVA edile.
+  // Assente o null: valgono le regole dell'IVA edile sul contesto qui sopra.
+  ivaFissa: VatRegime.nullable().optional(),
   righe: z.array(RigaPreventivo).min(1).max(80),
   esclusioni: z.array(z.string().max(300)).max(30),
   note: z.array(z.string().max(300)).max(30),

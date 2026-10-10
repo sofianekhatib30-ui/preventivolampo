@@ -33,7 +33,9 @@
         "100kg": "quintales (100 kg)",
         "kg": "kg",
         "l": "litros",
-        "corpo": "a tanto alzado"
+        "corpo": "a tanto alzado",
+        "giorno": "días",
+        "km": "km"
       },
       "perUnita": {
         "m2": "por m²",
@@ -44,7 +46,9 @@
         "100kg": "por quintal (100 kg)",
         "kg": "por kg",
         "l": "por litro",
-        "corpo": "a tanto alzado"
+        "corpo": "a tanto alzado",
+        "giorno": "por día",
+        "km": "por km"
       },
       "regime": {
         "ordinaria_22": "IVA 22%",
@@ -76,7 +80,11 @@
     "benvenuto": {
       "passo": "Paso 1 de 2",
       "h1": "Tu empresa",
-      "sotto": "Estos datos van al principio de cada presupuesto. Los puedes cambiar cuando quieras."
+      "sotto": "Estos datos van al principio de cada presupuesto. Los puedes cambiar cuando quieras.",
+      "nonAttivoH1": "Preventivi no está activo",
+      "nonAttivo": "Para {org} el módulo Preventivi no está activo. Lo activas desde la cuenta; si trabajas para otra organización, elígela en la barra de arriba.",
+      "apriAccount": "Abrir la cuenta",
+      "soloTitolare": "{org} todavía no está registrada en Preventivi. La registra el titular o un administrador: pídeselo, y luego desde aquí haces presupuestos y tarifas."
     },
     "nuovo": {
       "torna": "Volver a los presupuestos",
@@ -119,11 +127,44 @@
         "idraulico": "Fontanero",
         "elettricista": "Electricista",
         "imbianchino": "Pintor",
-        "piastrellista": "Solador y alicatador",
+        "piastrellista": "Alicatador",
         "cartongessista": "Instalador de pladur",
-        "serramentista": "Instalador de ventanas y puertas",
-        "termoidraulico": "Instalador de calefacción y fontanería",
-        "giardiniere": "Jardinero"
+        "serramentista": "Carpintero de ventanas",
+        "termoidraulico": "Calefactor",
+        "fabbro": "Herrero",
+        "falegname": "Carpintero",
+        "climatizzazione": "Climatización",
+        "tetti": "Tejados y canalones",
+        "pavimenti": "Suelos y parquet",
+        "giardiniere": "Jardinero",
+        "pulizie": "Limpieza",
+        "traslochi": "Mudanzas y vaciados",
+        "disinfestazioni": "Control de plagas",
+        "tende": "Toldos y mosquiteras",
+        "tappezziere": "Tapicero",
+        "vetraio": "Cristalero",
+        "elettrodomestici": "Reparación de electrodomésticos",
+        "officina": "Taller mecánico",
+        "carrozzeria": "Chapa y pintura",
+        "gommista": "Neumáticos",
+        "elettrauto": "Electricista de automóviles",
+        "moto": "Motos y bicicletas",
+        "fotografo": "Foto y vídeo",
+        "catering": "Catering",
+        "noleggio": "Alquiler de equipos",
+        "allestimenti": "Decoración y flores",
+        "musica": "Música y DJ",
+        "organizzazioneEventi": "Organización de eventos",
+        "informatica": "Técnico informático",
+        "grafica": "Diseño gráfico y webs",
+        "manutenzioni": "Mantenimiento",
+        "sicurezza": "Seguridad y alarmas",
+        "stampa": "Imprenta y rótulos",
+        "formazione": "Cursos y formación",
+        "trasporti": "Transporte y entregas",
+        "agricoltura": "Trabajos agrícolas",
+        "sartoria": "Sastrería",
+        "restauro": "Restauración"
       },
       "sulPreventivo": "En el presupuesto",
       "validita": "Validez del presupuesto (días)",
@@ -135,7 +176,20 @@
       "registra": "Registra la empresa",
       "salva": "Guarda los datos",
       "errore": "No he podido guardar. Inténtalo otra vez.",
-      "salvati": "Datos guardados. Los próximos PDF usarán estos."
+      "salvati": "Datos guardados. Los próximos PDF usarán estos.",
+      "famiglie": {
+        "edilizia": "Construcción e instalaciones",
+        "casa": "Servicios para el hogar",
+        "auto": "Coches y vehículos",
+        "eventi": "Eventos y fotos",
+        "aziende": "Servicios a empresas",
+        "altro": "Transporte, campo y taller"
+      },
+      "ivaTitolo": "Cómo calculáis el IVA",
+      "ivaEdile": "IVA de construcción",
+      "ivaEdileNota": "10% o 22% según el trabajo: el presupuesto pregunta si es una vivienda, qué tipo de obra es y quién compra los materiales.",
+      "ivaOrdinaria": "IVA general 22%",
+      "ivaOrdinariaNota": "Para quien no trabaja en la construcción: el mismo tipo para todo, sin preguntas."
     },
     "logo": {
       "titolo": "Logo",
@@ -1106,7 +1160,7 @@
         {
           "t": "ul",
           "voci": [
-            "**pl_sessione**: mantiene abierto el acceso al área de artesanos después de que introduces el código recibido por email. Solo la creamos cuando entras, dura 30 días y se borra cuando pulsas «Salir».",
+            "**kds-sessione**: mantiene abierto el acceso al área de profesionales, al que entras desde la cuenta de K Digital Solution (la misma para todas sus herramientas). Lo pone la cuenta cuando entras, vale en todas las direcciones kdigitalsolution.it, dura 30 días desde el último uso y se borra cuando sales.",
             "**pl_lingua**: recuerda el idioma del sitio. Lo guardamos cuando eliges un idioma con el selector o cuando abres una página en un idioma distinto del italiano, y dura un año."
           ]
         },

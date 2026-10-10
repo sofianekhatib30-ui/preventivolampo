@@ -1,7 +1,7 @@
 import { errore, troppeRichieste } from "@/lib/preventivi/http";
 import { Rifiuto } from "@/lib/preventivi/rifiuto";
 import { configurato } from "./db";
-import { membro, sessione, stessaOrigine, type Membro, type Sessione } from "./sessione";
+import { contesto, membro, stessaOrigine, type Contesto, type Membro } from "./sessione";
 
 // Le route dell'area: stessa origine per chi scrive, sessione valida, impresa dell'utente.
 // Ogni funzione riceve l'id dell'impresa dalla sessione, mai dal browser.
@@ -20,18 +20,20 @@ export async function conMembro(request: Request, fn: (m: Membro) => Promise<Res
     controlli(request);
     const m = await membro();
     if (!m) throw new Rifiuto("Accedi di nuovo per continuare.", 401);
+    // Modulo sospeso o scaduto: si legge, non si scrive (regola del nucleo).
+    if (request.method !== "GET" && !m.scrittura) throw new Rifiuto("Preventivi è in sola lettura: il modulo non è attivo per questa organizzazione.", 403);
     return await fn(m);
   } catch (e) {
     return errore(e);
   }
 }
 
-export async function conSessione(request: Request, fn: (s: Sessione) => Promise<Response>): Promise<Response> {
+export async function conSessione(request: Request, fn: (c: Contesto) => Promise<Response>): Promise<Response> {
   try {
     controlli(request);
-    const s = await sessione();
-    if (!s) throw new Rifiuto("Accedi di nuovo per continuare.", 401);
-    return await fn(s);
+    const c = await contesto();
+    if (!c) throw new Rifiuto("Accedi di nuovo per continuare.", 401);
+    return await fn(c);
   } catch (e) {
     return errore(e);
   }

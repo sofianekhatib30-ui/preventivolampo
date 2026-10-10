@@ -380,7 +380,8 @@ export default function Revisione({
 
       <section id="sezione-iva" className={`mt-4 rounded-card bg-superficie p-5 ring-1 ${domandeIva ? "ring-2 ring-ambra-bordo" : "ring-linea"}`}>
         <h2 className="text-xl font-extrabold">{R.ivaTitolo}</h2>
-        <div className="mt-3 space-y-4">
+        {/* Impresa fuori dall'edilizia: aliquota fissa, nessuna domanda. */}
+        <div className="mt-3 space-y-4" hidden={Boolean(p.ivaFissa)}>
           <div data-manca={p.iva.dwelling === null || undefined}>
             <p className={etichetta}>{R.abitazione}</p>
             <Scelta

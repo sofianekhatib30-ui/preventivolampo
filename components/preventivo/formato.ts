@@ -30,4 +30,4 @@ export const REGIME: Record<string, string> = area.formato.regime;
 export const PER_UNITA: Record<string, string> = area.formato.perUnita;
 
 // Unità brevi per le righe compatte («1 pz × 226,33 €»).
-export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q", kg: "kg", l: "l", corpo: "corpo" };
+export const UNITA_BREVE: Record<string, string> = { m2: "m²", m: "m", m3: "m³", cad: "pz", h: "h", "100kg": "q", kg: "kg", l: "l", corpo: "corpo", giorno: "gg", km: "km" };

@@ -14,7 +14,7 @@ export const CATEGORIES = [
   "opere_varie",
 ] as const;
 
-export const UNITS = ["m2", "m", "m3", "cad", "h", "100kg", "kg", "l", "corpo"] as const;
+export const UNITS = ["m2", "m", "m3", "cad", "h", "100kg", "kg", "l", "corpo", "giorno", "km"] as const;
 
 // Codice di una voce: quello del listino di prova (BAG-03) o quello che usa l'impresa (A.12, 03/45, FIN-7).
 export const CODICE = /^[A-Za-z0-9][A-Za-z0-9._/-]{0,23}$/;
