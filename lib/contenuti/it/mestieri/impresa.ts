@@ -121,7 +121,7 @@ export const impresa: PaginaMestiere = {
   straniero: {
     titolo: "Il cantiere di un cliente straniero",
     testo:
-      "Chi vive all'estero e compra casa qui cerca un'impresa che prenda tutto il cantiere, perché non può coordinare le squadre da lontano. A lui serve un preventivo unico che capisca riga per riga: in inglese, tedesco, francese, spagnolo o olandese, con oneri e lavorazioni tradotti, l'italiano che fa fede e il modulo di recesso nella sua lingua. Lo accetta dal link, senza dover venire a firmare.",
+      "Chi vive all'estero e compra casa qui cerca un'impresa che prenda tutto il cantiere, perché non può coordinare le squadre da lontano. A lui serve un preventivo unico che capisca riga per riga: in inglese, con oneri e lavorazioni tradotti, l'italiano che fa fede e il modulo di recesso in inglese. Lo accetta dal link, senza dover venire a firmare.",
   },
   domande: {
     titolo: "Domande dalle imprese edili",

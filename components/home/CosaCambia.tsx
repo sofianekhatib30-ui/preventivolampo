@@ -72,7 +72,7 @@ export function CosaCambia({ d }: { d: Dizionario }) {
               <span className="block text-testo-3">{C.lingueDalListino}</span>
             </li>
             <li className="rounded-campo border border-linea px-4 py-3">
-              <span lang="de">Entfernung des Fliesenbelags</span>
+              <span lang="en">Removal of wall tiles</span>
               <span className="block text-testo-3">{C.lingueAlCliente}</span>
             </li>
           </ol>

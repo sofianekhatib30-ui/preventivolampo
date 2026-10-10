@@ -121,7 +121,7 @@ export const cartongessista: PaginaMestiere = {
   straniero: {
     titolo: "Se il cliente parla un'altra lingua",
     testo:
-      "Lo straniero che compra un open space e vuole ricavarne una camera, o l'azienda estera che divide un ufficio: per loro «controparete» e «veletta» non dicono niente. Il preventivo può partire in inglese, tedesco, francese, spagnolo o olandese, con queste parole rese in modo chiaro, l'italiano che fa fede e il modulo di recesso tradotto. Tu lo prepari e lo controlli in italiano.",
+      "Lo straniero che compra un open space e vuole ricavarne una camera, o l'azienda estera che divide un ufficio: per loro «controparete» e «veletta» non dicono niente. Il preventivo può partire in inglese, con queste parole rese in modo chiaro, l'italiano che fa fede e il modulo di recesso tradotto. Tu lo prepari e lo controlli in italiano.",
   },
   domande: {
     titolo: "Domande dai cartongessisti",

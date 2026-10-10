@@ -111,7 +111,7 @@ export const fabbro: PaginaMestiere = {
   straniero: {
     titolo: "Case vacanza e clienti lontani",
     testo:
-      "Chi ha una casa vacanza e la vuole chiudere con inferriate e cancello prima di partire segue i lavori a distanza e decide dal telefono. Il preventivo può partire in inglese, tedesco, francese, spagnolo o olandese, con zincatura, verniciatura e automazione spiegate nella sua lingua e l'italiano che fa fede. Tu lo controlli in italiano, e vedi quando il cliente lo apre e quando lo accetta, anche se è lontano.",
+      "Chi ha una casa vacanza e la vuole chiudere con inferriate e cancello prima di partire segue i lavori a distanza e decide dal telefono. Il preventivo può partire in inglese, con zincatura, verniciatura e automazione spiegate in inglese e l'italiano che fa fede. Tu lo controlli in italiano, e vedi quando il cliente lo apre e quando lo accetta, anche se è lontano.",
   },
   domande: {
     titolo: "Domande dai fabbri",

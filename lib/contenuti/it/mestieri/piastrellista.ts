@@ -116,7 +116,7 @@ export const piastrellista: PaginaMestiere = {
   straniero: {
     titolo: "Pavimenti per chi parla un'altra lingua",
     testo:
-      "Il proprietario che vive fuori e passa solo per scegliere le piastrelle, o chi rifà il bagno prima di affittare l'appartamento: vuole capire cosa paga senza un interprete. Il preventivo può partire in inglese, tedesco, francese, spagnolo o olandese, con massetto, fughe e battiscopa tradotti voce per voce e l'italiano che fa fede. Tu le voci le controlli in italiano.",
+      "Il proprietario che vive fuori e passa solo per scegliere le piastrelle, o chi rifà il bagno prima di affittare l'appartamento: vuole capire cosa paga senza un interprete. Il preventivo può partire in inglese, con massetto, fughe e battiscopa tradotti voce per voce e l'italiano che fa fede. Tu le voci le controlli in italiano.",
   },
   domande: {
     titolo: "Domande dai piastrellisti",

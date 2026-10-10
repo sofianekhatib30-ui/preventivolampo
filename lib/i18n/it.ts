@@ -144,8 +144,8 @@ export const it = {
       { cifra: "100%", cosa: "dei prezzi dal tuo listino", dettaglio: "Nessun prezzo inventato. Quello che manca resta da prezzare finché non lo decidi tu." },
       {
         cifra: "6 lingue",
-        cosa: "per il tuo cliente",
-        dettaglio: "Italiano, inglese, tedesco, francese, spagnolo e olandese. E tu racconti anche in rumeno, albanese o arabo.",
+        cosa: "per lavorare nella tua",
+        dettaglio: "Italiano, inglese, rumeno, albanese, arabo e ucraino. Al cliente straniero il preventivo arriva in inglese, con l'italiano accanto.",
       },
       { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del sopralluogo alla bozza completa, con le domande su quello che manca." },
     ],
@@ -180,9 +180,9 @@ export const it = {
     },
     lingueTitolo: "Tu racconti nella tua lingua. Il cliente legge nella sua.",
     lingueTesto:
-      "Scrivi o detti il sopralluogo in rumeno, albanese, arabo o un'altra lingua: la bozza esce in italiano. Se il cliente è straniero, il preventivo gli arriva in inglese, tedesco, francese, spagnolo o olandese, con il testo italiano accanto che fa fede. La traduzione la vedi e la correggi prima di mandarla.",
+      "Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino o un'altra lingua: la bozza esce in italiano. Se il cliente è straniero, il preventivo gli arriva in inglese, con il testo italiano accanto che fa fede. La traduzione la vedi e la correggi prima di mandarla.",
     lingueDalListino: "dal tuo listino, in italiano",
-    lingueAlCliente: "al cliente tedesco, con l'italiano accanto",
+    lingueAlCliente: "al cliente straniero, con l'italiano accanto",
     aiutoTitolo: "Un aiuto vero, da una persona",
     aiutoTesto:
       "Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti. Se ti blocchi, ci scrivi o ci chiami e ti risponde una persona, non un bot. E il primo preventivo lo mandi tu, dal furgone.",
@@ -264,7 +264,7 @@ export const it = {
       },
       {
         d: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
-        r: "Sì. Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino, spagnolo o un'altra lingua, e la bozza esce in italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c'è, la scrivi. E se il cliente parla inglese, tedesco, francese, spagnolo o olandese, gli mandi il preventivo nella sua lingua: la traduzione la controlli tu, e il testo italiano resta accanto e fa fede.",
+        r: "Sì. Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino, spagnolo o un'altra lingua, e la bozza esce in italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c'è, la scrivi. E se il cliente è straniero, gli mandi il preventivo in inglese: la traduzione la controlli tu, e il testo italiano resta accanto e fa fede.",
       },
       {
         d: "Parlo veloce, c'è rumore, uso termini miei.",

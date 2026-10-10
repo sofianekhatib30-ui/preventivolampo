@@ -111,7 +111,7 @@ export const falegname: PaginaMestiere = {
   straniero: {
     titolo: "Su misura per clienti stranieri",
     testo:
-      "Chi arreda un appartamento per gli affitti brevi o una seconda casa vuole capire perché un armadio su misura costa più di uno del mobilificio, e lo vuole leggere nella sua lingua. Il preventivo può partire in inglese, tedesco, francese, spagnolo o olandese, con essenze, finiture e ferramenta tradotte, l'italiano che fa fede e il modulo di recesso nella sua lingua. Tu lo controlli in italiano.",
+      "Chi arreda un appartamento per gli affitti brevi o una seconda casa vuole capire perché un armadio su misura costa più di uno del mobilificio, e lo vuole leggere senza un interprete. Il preventivo può partire in inglese, con essenze, finiture e ferramenta tradotte, l'italiano che fa fede e il modulo di recesso in inglese. Tu lo controlli in italiano.",
   },
   domande: {
     titolo: "Domande dai falegnami",

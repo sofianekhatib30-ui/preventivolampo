@@ -114,7 +114,7 @@ export const muratore: PaginaMestiere = {
   straniero: {
     titolo: "Opere murarie per chi vive all'estero",
     testo:
-      "Chi ristruttura da lontano passa per il sopralluogo e poi decide dal suo paese: deve capire dal preventivo quali muri si buttano giù e cosa resta fuori. Gli può arrivare in inglese, tedesco, francese, spagnolo o olandese, con tramezzo e rasatura resi in modo che non cambino senso e l'italiano che fa fede. Tu lo leggi e lo controlli in italiano.",
+      "Chi ristruttura da lontano passa per il sopralluogo e poi decide dal suo paese: deve capire dal preventivo quali muri si buttano giù e cosa resta fuori. Gli può arrivare in inglese, con tramezzo e rasatura resi in modo che non cambino senso e l'italiano che fa fede. Tu lo leggi e lo controlli in italiano.",
   },
   domande: {
     titolo: "Domande dai muratori",
