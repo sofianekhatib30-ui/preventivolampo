@@ -37,8 +37,8 @@ export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
         className="m-0 -mx-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] flex list-none snap-x snap-mandatory gap-3 overflow-x-auto px-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] pb-2 [scrollbar-width:thin] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-hidden sm:rounded-[20px] sm:border sm:border-linea-2 sm:bg-linea-2 sm:p-0 xl:grid-cols-3"
       >
         {RIGHE.map((m) => (
-          <li key={m.id} className="flex w-[80%] shrink-0 snap-start flex-col gap-3 rounded-[18px] border border-linea-2 bg-superficie p-5 sm:w-auto sm:rounded-none sm:border-0 lg:p-6">
-            <div className="flex items-baseline justify-between gap-3">
+          <li key={m.id} className="flex w-[80%] shrink-0 snap-start flex-col items-center gap-3 text-center rounded-[18px] border border-linea-2 bg-superficie p-5 sm:w-auto sm:rounded-none sm:border-0 lg:p-6">
+            <div className="flex flex-col items-center gap-2">
               <h3 className="m-0 text-[22px] font-extrabold leading-none [font-stretch:78%] lg:text-[24px]">
                 <a href={percorso(lingua, percorsoMestiere(m.id))} className="decoration-lime-scuro decoration-2 underline-offset-4 hover:text-lime-scuro">
                   {M.voci[m.id].nome}
@@ -47,7 +47,7 @@ export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
               {m.esempio && <GuardaEsempio id={m.esempio} testo={M.guarda} />}
             </div>
             <p className="m-0 text-[17px] leading-snug text-testo-2">«{M.voci[m.id].detto}»</p>
-            <p className="m-0 mt-auto flex items-center gap-2 font-mono text-[13px] font-semibold">
+            <p className="m-0 mt-auto flex items-center justify-center gap-2 font-mono text-[13px] font-semibold">
               <span aria-hidden="true" className="text-lime-scuro rtl:-scale-x-100">→</span>
               <span lang="it" dir="ltr" className="rounded-md bg-fondo px-2 py-1">
                 {m.riga}

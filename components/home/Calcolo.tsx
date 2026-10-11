@@ -53,7 +53,7 @@ export function Calcolo() {
             onCambia={setMinuti}
           />
         </div>
-        <div className="flex flex-col justify-center gap-4 rounded-[18px] bg-fondo p-6 lg:p-9">
+        <div className="flex flex-col items-center justify-center gap-4 rounded-[18px] bg-fondo p-6 text-center lg:p-9">
           <p className="m-0 text-[17px] text-testo-2 lg:text-lg">{C.passi}</p>
           <p className="m-0 font-sans text-[72px] leading-[0.9] [font-weight:900] [font-stretch:62%] lg:text-[104px]">
             {fmt(C.ore, { n: virgola(ore) })}

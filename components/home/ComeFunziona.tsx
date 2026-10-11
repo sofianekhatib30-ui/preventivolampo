@@ -11,7 +11,7 @@ export function ComeFunziona({ d }: { d: Dizionario }) {
       </div>
       <ol className="m-0 grid list-none gap-3 p-0 lg:grid-cols-2 lg:gap-5 xl:grid-cols-4">
         {C.passi.map((passo, i) => (
-          <li key={i} className="flex flex-col gap-2 rounded-[18px] border border-linea bg-fondo p-5 lg:gap-4 lg:rounded-[20px] lg:p-7">
+          <li key={i} className="flex flex-col items-center gap-2 text-center rounded-[18px] border border-linea bg-fondo p-5 lg:gap-4 lg:rounded-[20px] lg:p-7">
             <span className="font-mono text-[15px] font-semibold text-lime-scuro lg:text-base">{String(i + 1).padStart(2, "0")}</span>
             <h3 className="m-0 text-2xl font-extrabold [font-stretch:80%] lg:text-[26px]">{passo.titolo}</h3>
             <p className="m-0 text-base leading-normal text-testo-2">{passo.testo}</p>
