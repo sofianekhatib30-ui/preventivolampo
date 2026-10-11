@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="canonical" href="https://kdigitalsolution.it/prodotti/">
+<title>Prodotti di K Digital Solution</title>
+<meta name="description" content="Libri e strumenti di K Digital Solution per artigiani, piccole imprese e studi: AI per l’impresa edile, Clienti da Google (e dall’AI), Preventivi, Attestiamo e Smistatore Mail.">
+<style>
+@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("/font/instrument-serif-latin.woff2") format("woff2")}
+@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("/font/instrument-serif-italic-latin.woff2") format("woff2")}
+@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("/font/hanken-grotesk-latin.woff2") format("woff2")}
+@font-face{font-family:"Montserrat";font-style:normal;font-weight:600;font-display:swap;src:url("/font/montserrat-600.woff2") format("woff2")}
+:root{--n900:#1B090F;--n800:#2A1018;--n700:#3D1522;--n600:#6E1734;--oro:#C6A15B;--crema:#F2E4D0;--sabbia:#DCC6A4;--filo:rgba(242,228,208,.17);--display:"Instrument Serif","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--corpo:"Hanken Grotesk","Segoe UI",system-ui,-apple-system,sans-serif;--marchio:"Montserrat","Hanken Grotesk",system-ui,sans-serif;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--n900)}
+body{margin:0;background:var(--n800);color:var(--crema);font-family:var(--corpo);font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+a{color:var(--crema);text-decoration-color:var(--oro);text-underline-offset:3px}
+a:hover{color:var(--oro)}
+:focus-visible{outline:2.5px solid var(--oro);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:clamp(16px,5vw,48px)}
+.barra{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px;border-bottom:1px solid var(--filo)}
+.marchio{display:inline-flex;align-items:center;gap:4px;text-decoration:none;font-family:var(--marchio);font-weight:600;font-size:16.5px;letter-spacing:-.01em;color:var(--crema)}
+.ksym{width:34px;height:34px;flex:none}
+.barra .torna{font-size:14px;color:var(--sabbia)}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.02em;line-height:1.04;text-wrap:balance;margin:0}
+.testa{padding-block:clamp(40px,7vw,76px) clamp(28px,4vw,44px);max-width:46rem}
+.eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--oro);margin:0 0 14px}
+h1{font-size:clamp(46px,7.6vw,86px)}
+.lead{font-size:18px;color:var(--sabbia);max-width:56ch;margin:18px 0 0}
+.libro{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:start;padding-block:44px;border-top:1px solid var(--filo)}
+.cop{position:relative}
+.cop img{display:block;width:100%;height:auto;max-width:100%;border-radius:3px 6px 6px 3px;box-shadow:0 30px 50px -24px rgba(0,0,0,.85),inset 0 0 0 1px rgba(242,228,208,.08)}
+.cop::before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;border-radius:3px 0 0 3px;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(0,0,0,0))}
+.per{font-weight:600;color:var(--sabbia);font-size:18px;margin:10px 0 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;list-style:none}
+.meta li{font-size:13px;font-weight:700;letter-spacing:.04em;padding:4px 12px;border:1px solid var(--filo);border-radius:999px;color:var(--sabbia)}
+.sotto{color:var(--sabbia);max-width:60ch;margin:18px 0 0}
+.punti{margin:16px 0 0;padding-left:1.1em;max-width:62ch}
+.punti li{margin-bottom:6px}
+.punti li::marker{color:var(--oro)}
+.azioni{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:26px}
+.bt{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 24px;border-radius:999px;background:var(--oro);color:var(--n900);font-weight:700;text-decoration:none;font-size:15.5px}
+.bt:hover{background:var(--crema);color:var(--n900)}
+.bt.spento{background:transparent;border:1px dashed rgba(198,161,91,.7);color:var(--oro);cursor:default}
+.secondario{font-size:15px;font-weight:600}
+footer{border-top:1px solid var(--filo);padding-block:32px 48px;color:var(--sabbia);font-size:14px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+footer p{margin:0;max-width:62ch}
+.percorso{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;padding:0;list-style:none;counter-reset:p}
+.percorso li{border:1px solid var(--filo);border-radius:16px;padding:16px 16px 18px;position:relative;counter-increment:p;min-width:0}
+.percorso li::before{content:counter(p);display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--oro);color:var(--n900);font-weight:800;font-size:13px;margin-bottom:10px}
+.percorso b{display:block;font-size:16px;margin-bottom:4px}
+.percorso span{display:block;color:var(--sabbia);font-size:14px;line-height:1.45}
+.percorso em{display:block;font-style:normal;font-weight:700;color:var(--oro);font-size:14px;margin-top:8px}
+.sez{padding-block:44px;border-top:1px solid var(--filo)}
+.sez > .eyebrow{margin-bottom:8px}
+.sez h2.tit{font-size:clamp(32px,4.4vw,46px);margin-bottom:6px}
+.sez p.int{color:var(--sabbia);max-width:60ch;margin:8px 0 26px}
+.prezzi{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;margin-top:16px}
+.prezzi strong{font-family:var(--display);font-weight:400;font-size:34px;color:var(--crema);letter-spacing:-.01em}
+.prezzi small{color:var(--sabbia);font-size:14px}
+.app{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:22px clamp(22px,4vw,44px);align-items:start;padding-block:34px;border-top:1px solid var(--filo)}
+.app .lato{grid-column:2;max-width:440px}
+.app:first-of-type{border-top:none}
+.anteprima{display:block;grid-row:span 2;position:sticky;top:24px;border-radius:14px;overflow:hidden;background:var(--n900);text-decoration:none;box-shadow:0 26px 46px -26px rgba(0,0,0,.9),inset 0 0 0 1px rgba(242,228,208,.1)}
+.anteprima .barra-b{display:flex;align-items:center;gap:6px;padding:9px 12px;background:var(--n700);border-bottom:1px solid var(--filo);font-size:12px;font-weight:600;color:var(--sabbia)}
+.anteprima .barra-b i{width:8px;height:8px;border-radius:50%;background:rgba(242,228,208,.28);flex:none}
+.anteprima .barra-b span{margin-left:6px;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.anteprima img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top center}
+.anteprima:hover{box-shadow:0 26px 46px -26px rgba(0,0,0,.9),inset 0 0 0 1px var(--oro)}
+.app h3{font-size:clamp(30px,3.6vw,40px)}
+.app .per{font-size:16px;margin-top:6px}
+.app .frase{color:var(--crema);margin:12px 0 0;max-width:60ch}
+.app ul{margin:12px 0 0;padding-left:1.1em;color:var(--sabbia);font-size:15px}
+.app li{margin-bottom:4px}
+.app li::marker{color:var(--oro)}
+.lato{border:1px solid var(--filo);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.stato{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px}
+.stato.ok{background:var(--oro);color:var(--n900)}
+.stato.soft{border:1px solid var(--filo);color:var(--sabbia)}
+.lato .cifra{font-family:var(--display);font-size:36px;line-height:1;color:var(--crema)}
+.lato .cifra small{font-family:var(--corpo);font-size:14px;color:var(--sabbia);margin-left:4px}
+.lato .nota{font-size:13.5px;color:var(--sabbia);margin:0}
+.lato .bt{align-self:stretch}
+.servizi{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:18px 32px;align-items:center;border:1px solid var(--filo);border-radius:22px;padding:clamp(20px,3vw,32px);background:var(--n700)}
+.servizi h2{font-size:clamp(28px,3.6vw,38px)}
+.servizi p{color:var(--sabbia);margin:10px 0 0;max-width:60ch}
+@media (max-width:860px){.percorso{grid-template-columns:repeat(2,minmax(0,1fr))}.app{grid-template-columns:minmax(0,1fr)}.app .lato{grid-column:auto;max-width:none}.anteprima{grid-row:auto;position:static;max-width:520px}}
+
+@media (max-width:720px){.libro{grid-template-columns:1fr}.cop{max-width:240px}}
+@media (max-width:520px){.percorso{grid-template-columns:1fr}.servizi{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.bt,a{transition:color .15s,background-color .15s}}
+</style>
+</head><body><div class="wrap">
+  <header class="barra">
+    <a class="marchio" href="https://kdigitalsolution.it/" aria-label="K Digital Solution, vai al sito"><svg class="ksym" viewBox="0 0 100 100" aria-hidden="true"><rect x="14" y="10" width="15" height="80" rx="1.5" fill="var(--crema)"/><path d="M82 10 L42 50 L82 90" fill="none" stroke="var(--oro)" stroke-width="15" stroke-miterlimit="8"/></svg><span>Digital Solution</span></a>
+    <a class="torna" href="/libri/">I libri</a>
+  </header>
+  <main>
+    <div class="testa">
+      <p class="eyebrow">Prodotti di K Digital Solution</p>
+      <h1>Strumenti pronti per chi lavora sul campo</h1>
+      <p class="lead">Libri da leggere in una sera e app che fanno il lavoro noioso al posto tuo. Si parte da quello che costa meno e si aggiunge il resto solo quando serve.</p>
+    </div>
+    <section class="sez" aria-labelledby="percorso-t" style="border-top:none;padding-top:0">
+      <p class="eyebrow" id="percorso-t">Come si comincia</p>
+      <ol class="percorso">
+        <li><b>Leggi il libro</b><span>Il metodo completo per farti trovare su Google e per usare l’AI in ufficio.</span><em>da 6,99 €</em></li>
+        <li><b>Il servizio incluso</b><span>Con il libro: il controllo della tua scheda Google oppure il tuo primo preventivo dal vocale.</span><em>gratis con il libro</em></li>
+        <li><b>Prova Preventivi</b><span>Le richieste arrivano: rispondi con il preventivo mentre sei ancora sul furgone.</span><em>30 giorni gratis</em></li>
+        <li><b>Il sito o l’automazione su misura</b><span>Quando vuoi che lo facciamo noi, con prezzo fisso e data di consegna.</span><em><a href="/prezzi/">vedi i servizi</a></em></li>
+      </ol>
+    </section>
+    <section class="sez" aria-labelledby="libri-t">
+      <p class="eyebrow">Libri</p>
+      <h2 class="tit" id="libri-t">Guide pratiche, aggiornate ogni anno</h2>
+      <p class="int">Ebook e cartaceo su Amazon. Ogni libro ha una pagina di risorse gratuite e un servizio incluso per chi lo legge.</p>
+      <article class="libro" id="ai-impresa-edile">
+        <div class="cop"><img src="/libri/ai-impresa-edile.webp" width="600" height="960" alt="Copertina di AI per l’impresa edile: preventivi, email e pratiche in metà tempo"></div>
+        <div class="scheda">
+          <h3 style="font-size:clamp(34px,4.6vw,50px)"><em style="color:var(--oro)">AI</em> per l’impresa edile</h3>
+          <p class="per">Preventivi, email e pratiche in metà tempo</p>
+          <ul class="meta"><li>Edizione 2027</li><li>Ebook e cartaceo</li><li>83 pagine</li><li>47 prompt pronti</li></ul>
+          <div class="prezzi"><strong>6,99 €</strong><small>ebook, anche in Kindle Unlimited</small><strong>14,90 €</strong><small>cartaceo</small></div>
+          <ul class="punti"><li>Il preventivo dal vocale, con i prezzi del tuo listino e le voci dubbie segnate</li><li>Preventivi chiari e a norma: IVA, varianti, recesso</li><li>Messaggi WhatsApp, email scomode, rapportini e conti di cantiere</li><li>AI Act e privacy, agenti AI, automazioni e truffe</li></ul>
+          <p class="sotto"><strong style="color:var(--crema)">Incluso:</strong> il tuo primo preventivo dal vocale preparato gratis da noi, con un modello di listino per il tuo mestiere.</p>
+          <div class="azioni"><span class="bt spento" aria-disabled="true">Su Amazon dal 16 ottobre</span><a class="secondario" href="/libro-ai/">Risorse per chi l’ha letto</a></div>
+        </div>
+      </article>
+      <article class="libro" id="clienti-da-google">
+        <div class="cop"><img src="/libri/clienti-da-google.webp" width="600" height="960" alt="Copertina di Clienti da Google (e dall’AI) per artigiani e imprese edili"></div>
+        <div class="scheda">
+          <h3 style="font-size:clamp(34px,4.6vw,50px)">Clienti da Google <em style="color:var(--oro)">(e dall’AI)</em></h3>
+          <p class="per">per artigiani e imprese edili</p>
+          <ul class="meta"><li>Edizione 2027</li><li>Ebook e cartaceo</li><li>91 pagine</li></ul>
+          <div class="prezzi"><strong>6,99 €</strong><small>ebook, anche in Kindle Unlimited</small><strong>14,90 €</strong><small>cartaceo</small></div>
+          <ul class="punti"><li>La scheda Google fatta bene: categoria, zona servita, verifica, sospensioni</li><li>Un sistema di recensioni che funziona, con le regole aggiornate ad aprile 2026</li><li>Il sito che porta richieste e risponde alle domande dei clienti e dell’AI</li><li>Portali, annunci e falsi pronto intervento: i conti veri</li></ul>
+          <p class="sotto"><strong style="color:var(--crema)">Incluso:</strong> il controllo gratuito della tua scheda Google, con le tre cose da migliorare per prime.</p>
+          <div class="azioni"><a class="bt" href="https://www.amazon.it/dp/B0HMJ1STRP" rel="noopener">Ebook su Amazon</a><a class="secondario" href="https://www.amazon.it/dp/B0HMJ84NW1" rel="noopener">Cartaceo su Amazon</a><a class="secondario" href="/libro/">Risorse per chi l’ha letto</a></div>
+        </div>
+      </article>
+    </section>
+    <section class="sez" aria-labelledby="app-t">
+      <p class="eyebrow">Strumenti</p>
+      <h2 class="tit" id="app-t">App che lavorano mentre tu lavori</h2>
+      <p class="int">Le usi dal browser, senza installare niente. Paghi un canone e smetti quando vuoi.</p>
+      <article class="app" id="preventivi">
+        <a class="anteprima" href="https://preventivi.kdigitalsolution.it/" target="_blank" rel="noopener" aria-label="Apri il sito di Preventivi"><span class="barra-b"><i></i><i></i><i></i><span>preventivi.kdigitalsolution.it</span></span><picture><img src="/img/scatto-preventivi.dcc64b91e3.webp" width="1280" height="800" alt="" loading="lazy" decoding="async"></picture></a>
+        <div>
+          <h3>Preventivi</h3>
+          <p class="per">Per artigiani e imprese edili</p>
+          <p class="frase">Finisci il sopralluogo, racconti il lavoro a voce e ricevi la bozza del preventivo con i prezzi del tuo listino, l’IVA giusta e le voci dubbie segnate. Il cliente lo accetta online con un clic.</p>
+          <ul><li>Prezzi solo dal tuo listino: niente cifre inventate</li><li>Listino caricato anche da Excel, PDF o una foto</li><li>Area dell’artigiano in 6 lingue; al cliente straniero il preventivo arriva in inglese con l’italiano accanto</li><li>Niente da installare: funziona dal telefono</li></ul>
+        </div>
+        <aside class="lato" aria-label="Prezzo e stato di Preventivi">
+          <span class="stato ok">Programma pilota · 10 posti</span>
+          <div class="cifra">19,90 €<small>al mese</small></div>
+          <p class="nota">oppure 199 € l’anno · i primi 30 giorni gratis con il pilota, senza rinnovo automatico</p>
+          <a class="bt" href="https://preventivi.kdigitalsolution.it/" rel="noopener" target="_blank">Diventa artigiano pilota</a>
+        </aside>
+      </article>
+      <article class="app" id="attestiamo">
+        <a class="anteprima" href="https://attestiamo.vercel.app/" target="_blank" rel="noopener" aria-label="Apri il sito di Attestiamo"><span class="barra-b"><i></i><i></i><i></i><span>attestiamo.vercel.app</span></span><picture><img src="/img/scatto-attestiamo.d2c085cdf7.webp" width="1280" height="800" alt="" loading="lazy" decoding="async"></picture></a>
+        <div>
+          <h3>Attestiamo</h3>
+          <p class="per">Per consulenti, DPO e MSP che seguono la NIS2 dei clienti</p>
+          <p class="frase">Il fascicolo NIS2 di ogni cliente, costruito sulla struttura dell’ACN: requisiti uno per uno, gli 11 documenti da far approvare agli organi con il verbale pronto, inventari, registri, incidenti e scadenze di tutti i clienti in un solo posto.</p>
+          <ul><li>Requisiti ACN per soggetti importanti ed essenziali, con deroghe e piano di adeguamento</li><li>Documenti scritti dai dati del cliente, con il marchio del tuo studio</li><li>Elenco dei fornitori rilevanti pronto per la piattaforma ACN</li><li>Tutti i clienti in una vista, in ordine di urgenza</li></ul>
+        </div>
+        <aside class="lato" aria-label="Prezzo e stato di Attestiamo">
+          <span class="stato soft">In anteprima</span>
+          <div class="cifra">19,90 €<small>al mese per azienda</small></div>
+          <p class="nota">14,90 € dall’11ª azienda, 9,90 € dalla 31ª · IVA esclusa, senza vincolo · gratis durante l’anteprima</p>
+          <a class="bt" href="https://attestiamo.vercel.app/app?richiesta" rel="noopener" target="_blank">Richiedi l’accesso</a>
+        </aside>
+      </article>
+      <article class="app" id="smistatore">
+        <a class="anteprima" href="https://smistatore.kdigitalsolution.it/" target="_blank" rel="noopener" aria-label="Apri il sito di Smistatore Mail"><span class="barra-b"><i></i><i></i><i></i><span>smistatore.kdigitalsolution.it</span></span><picture><img src="/img/scatto-smistatore.0456887fbf.webp" width="1280" height="800" alt="" loading="lazy" decoding="async"></picture></a>
+        <div>
+          <h3>Smistatore Mail</h3>
+          <p class="per">Per studi di commercialisti e altri studi professionali</p>
+          <p class="frase">Legge le richieste che arrivano allo studio per email e dal modulo del sito, capisce che cosa chiede il cliente, le passa alla persona che se ne occupa e prepara una prima risposta. Parte solo quando lo studio la approva.</p>
+          <ul><li>Richieste divise per argomento e urgenza, con la persona giusta già indicata</li><li>Bozza di risposta nel tono dello studio, da correggere e approvare</li><li>Dati delicati segnalati e mai ripetuti nella risposta</li><li>Dati su server nell’Unione Europea</li></ul>
+        </div>
+        <aside class="lato" aria-label="Prezzo e stato di Smistatore Mail">
+          <span class="stato ok">Programma pilota · 10 posti</span>
+          <div class="cifra">49 €<small>al mese</small></div>
+          <p class="nota">oppure 490 € l’anno, fino a 5 persone · 89 € al mese fino a 15 · i primi 30 giorni gratis con il pilota, senza costo di avvio</p>
+          <a class="bt" href="https://smistatore.kdigitalsolution.it/#candidatura" rel="noopener" target="_blank">Diventa studio pilota</a>
+        </aside>
+      </article>
+    </section>
+    <section class="sez">
+      <div class="servizi">
+        <div>
+          <p class="eyebrow">Su misura</p>
+          <h2>Ti serve qualcosa che qui non c’è?</h2>
+          <p>Siti, gestionali, integrazioni tra i programmi che usi e automazioni con l’intelligenza artificiale. Prezzo fisso e data di consegna detti prima.</p>
+        </div>
+        <a class="bt" href="/preventivo/">Richiedi un preventivo</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>I libri sono venduti su Amazon. Google, ChatGPT e gli altri nomi citati sono marchi dei rispettivi proprietari; K Digital Solution non è affiliata a queste aziende.</p>
+    <p><a class="marchio" href="https://kdigitalsolution.it/"><svg class="ksym" viewBox="0 0 100 100" aria-hidden="true"><rect x="14" y="10" width="15" height="80" rx="1.5" fill="var(--crema)"/><path d="M82 10 L42 50 L82 90" fill="none" stroke="var(--oro)" stroke-width="15" stroke-miterlimit="8"/></svg><span>Digital Solution</span></a></p>
+  </footer>
+</div></body>
+</html>
