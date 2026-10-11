@@ -1,6 +1,7 @@
 import { SceltaLingua } from "@/components/SceltaLingua";
 import type { Contenuti } from "@/lib/contenuti";
-import { FUNZIONI, MESTIERI, percorsoFunzione, percorsoMestiere } from "@/lib/contenuti/registro";
+import { ORDINE_FAMIGLIE } from "@/lib/contenuti/famiglie";
+import { FUNZIONI, percorsoFunzione } from "@/lib/contenuti/registro";
 import type { Dizionario } from "@/lib/i18n/it";
 import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 import { configurato } from "@/lib/impresa/db";
@@ -24,7 +25,7 @@ export function Header({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: 
   ];
   // Menu del telefono: tutte le pagine, raggruppate.
   const gruppi: GruppoMenu[] = [
-    { titolo: d.nav.mestieri, colonne: true, voci: MESTIERI.map((m) => ({ href: p(percorsoMestiere(m)), label: c.mestieri[m].nome })) },
+    { titolo: d.nav.mestieri, colonne: true, voci: ORDINE_FAMIGLIE.map((f) => ({ href: p(`/mestieri#${f}`), label: d.area.modulo.famiglie[f] })) },
     { titolo: d.nav.come, voci: FUNZIONI.map((f) => ({ href: p(percorsoFunzione(f)), label: c.funzioni[f].nome })) },
     {
       titolo: d.nav.risorse,

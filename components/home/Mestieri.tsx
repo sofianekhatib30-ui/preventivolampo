@@ -64,10 +64,16 @@ export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
           </li>
         ))}
       </ListaRotella>
-      <p className="m-0 max-w-[720px] text-[15px] leading-normal text-testo-3">
-        <span className="sm:hidden">{M.scorri} </span>
-        {M.nota}
-      </p>
+      <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <p className="m-0 max-w-[720px] text-[15px] leading-normal text-testo-3">
+          <span className="sm:hidden">{M.scorri} </span>
+          {M.nota}
+        </p>
+        <a href={percorso(lingua, "/mestieri")} className="inline-flex min-h-11 shrink-0 items-center gap-2 font-semibold text-cielo-scuro underline underline-offset-4">
+          {M.tutti}
+          <span aria-hidden="true" className="rtl:-scale-x-100">→</span>
+        </a>
+      </div>
     </section>
   );
 }

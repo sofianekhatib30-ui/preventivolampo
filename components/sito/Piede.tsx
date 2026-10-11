@@ -2,19 +2,20 @@ import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { ctaPrincipale } from "@/components/home/Header";
 import { Logo } from "@/components/home/Logo";
 import type { Contenuti } from "@/lib/contenuti";
-import { FUNZIONI, GUIDE, MESTIERI, percorsoFunzione, percorsoGuida, percorsoMestiere } from "@/lib/contenuti/registro";
+import { ORDINE_FAMIGLIE } from "@/lib/contenuti/famiglie";
+import { FUNZIONI, GUIDE, percorsoFunzione, percorsoGuida } from "@/lib/contenuti/registro";
 import type { Dizionario } from "@/lib/i18n/it";
 import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 
 // Piè di pagina di tutte le pagine pubbliche: la mappa del sito, così ogni pagina è a un clic da tutte le altre.
 // Rifatto l'11/10/2026 (Sofiane, sugli schermi larghi: «sistema anche qua il footer che cosi non si puo vedere»):
-// a sinistra il marchio con la regola del listino e il pulsante, poi le colonne; i mestieri su due colonne invece
-// di una lista lunga; in fondo chi fa il servizio e le pagine legali. Larghezza come la testata (margini).
+// a sinistra il marchio con la regola del listino e il pulsante, poi le colonne; le famiglie di mestieri su due colonne; in fondo chi fa il servizio e le pagine legali. Larghezza come la testata (margini).
 export function Piede({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: LinguaSito }) {
   const p = (x: string) => percorso(lingua, x);
   const cta = ctaPrincipale(d, lingua);
   const colonne: { titolo: string; voci: { href: string; label: string }[]; due?: boolean }[] = [
-    { titolo: c.ui.piede.mestieri, voci: MESTIERI.map((m) => ({ href: p(percorsoMestiere(m)), label: c.mestieri[m].nome })), due: true },
+    // Le famiglie di mestieri, ognuna porta alla sua parte dell'elenco unico di /mestieri.
+    { titolo: c.ui.piede.mestieri, voci: ORDINE_FAMIGLIE.map((f) => ({ href: p(`/mestieri#${f}`), label: d.area.modulo.famiglie[f] })), due: true },
     { titolo: c.ui.piede.funzioni, voci: FUNZIONI.map((f) => ({ href: p(percorsoFunzione(f)), label: c.funzioni[f].nome })) },
     {
       titolo: c.ui.piede.risorse,

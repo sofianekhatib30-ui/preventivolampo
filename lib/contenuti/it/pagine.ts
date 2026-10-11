@@ -10,7 +10,7 @@ export const pagine = {
     },
     h1: "Il preventivo del tuo mestiere",
     testo:
-      "Ogni mestiere ha le sue voci, le sue unità di misura e le sue discussioni a fine lavoro. Per ognuno trovi le righe che tornano più spesso, come si prezzano, i documenti da citare e un esempio di racconto trasformato in bozza.",
+      "Preventivi funziona con ogni mestiere che fa preventivi a voci. Qui sotto ci sono tutti quelli che conosce già, per famiglia: quando scegli il tuo, l'IVA e le regole del mestiere sono già impostate. Per alcuni c'è anche una pagina con le voci tipiche e come si prezzano.",
     altro:
       "Il tuo mestiere non c'è? Se fai preventivi a voci funziona lo stesso: le parole del mestiere le trova nel tuo listino, e quello che non c'è resta da prezzare.",
   },

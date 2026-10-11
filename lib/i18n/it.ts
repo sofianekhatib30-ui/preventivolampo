@@ -103,6 +103,7 @@ export const it = {
     scorri: "Scorri per vedere gli altri mestieri.",
     nota: "Righe di esempio. Funziona con qualunque listino a voci: se il tuo mestiere non è qui, vale lo stesso.",
     etichettaLista: "Esempi per mestiere",
+    tutti: "Tutti i mestieri, per famiglia",
     voci: {
       elettricista: { nome: "Elettricista", detto: "sei punti luce, due deviati" },
       idraulico: { nome: "Idraulico", detto: "sposto il lavello di un metro e mezzo" },

@@ -761,6 +761,7 @@
     "scorri": "Scroll to see the other trades.",
     "nota": "Example lines. It works with any itemised price list: if your trade isn't here, it works just the same.",
     "etichettaLista": "Examples by trade",
+    "tutti": "All trades, by family",
     "voci": {
       "elettricista": {
         "nome": "Electrician",
