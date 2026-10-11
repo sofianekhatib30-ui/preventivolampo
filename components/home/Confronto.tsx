@@ -1,3 +1,4 @@
+import { ListaRotella } from "@/components/home/ListaRotella";
 import type { Dizionario } from "@/lib/i18n/it";
 
 // Sopra 1024 px una tabella vera; sotto, una scheda per tema.
@@ -32,7 +33,7 @@ export function Confronto({ d }: { d: Dizionario }) {
         </table>
       </div>
 
-      <ul
+      <ListaRotella
         tabIndex={0}
         aria-label={C.etichettaLista}
         className="m-0 -mx-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] flex list-none snap-x snap-mandatory gap-3 overflow-x-auto px-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] pb-2 lg:hidden"
@@ -52,7 +53,7 @@ export function Confronto({ d }: { d: Dizionario }) {
             </dl>
           </li>
         ))}
-      </ul>
+      </ListaRotella>
       <p className="m-0 text-[14px] text-testo-3">
         <span className="lg:hidden">{C.scorri} </span>
         {C.nota}

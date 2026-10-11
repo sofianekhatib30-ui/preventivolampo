@@ -144,7 +144,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
 
   return (
     <div ref={radice} id="esempio" className="flex min-w-0 flex-col gap-3 lg:gap-4">
-      <div role="group" aria-label={D.gruppo} className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none]">
+      <div role="group" aria-label={D.gruppo} className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 [scrollbar-width:none] sm:flex-wrap sm:overflow-visible">
         {SCENARI.map((s, i) => {
           const attivo = !altro && i === indice;
           return (

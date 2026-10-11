@@ -4,20 +4,24 @@ import { z } from "zod";
 // Riceve i valori così come arrivano da un FormData (stringhe; la casella spuntata vale "on").
 // Messaggi di errore: formulazioni minime, da far riscrivere ad Araldo (vedi consegna).
 
+// Dall'11/10/2026 non solo mestieri della casa (Sofiane: «anche i mestieri sono troppo edili»). Le candidature
+// già arrivate restano con il valore di allora: la colonna è testo libero, l'elenco vale solo per le nuove.
 export const TRADES = [
   "Elettricista",
-  "Idraulico",
-  "Termoidraulico",
+  "Idraulico o termoidraulico",
   "Imbianchino",
-  "Piastrellista",
-  "Muratore",
-  "Cartongessista",
-  "Serramentista",
-  "Falegname",
-  "Fabbro",
+  "Muratore o impresa edile",
+  "Altri lavori per la casa",
   "Giardiniere",
-  "Impresa edile",
-  "Impresa di ristrutturazioni",
+  "Officina o carrozzeria",
+  "Fotografo o videomaker",
+  "Catering o ristorazione",
+  "Allestimenti ed eventi",
+  "Grafica e stampa",
+  "Tecnico informatico",
+  "Traslochi",
+  "Formazione e lezioni",
+  "Estetica e benessere",
   "Altro",
 ] as const;
 

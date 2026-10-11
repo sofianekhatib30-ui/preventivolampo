@@ -1,27 +1,31 @@
+import { ListaRotella } from "@/components/home/ListaRotella";
 import { Frasi } from "@/components/Frasi";
-import { percorsoMestiere } from "@/lib/contenuti/registro";
+import { type IdMestiere, MESTIERI, percorsoMestiere } from "@/lib/contenuti/registro";
 import type { Dizionario } from "@/lib/i18n/it";
 import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 import { GuardaEsempio } from "./demo/GuardaEsempio";
 
-// Tutti i mestieri della casa: per ognuno una frase come si dice in cantiere (nella lingua della
-// pagina) e la riga che ne esce dal listino, sempre in italiano. Le prime cinque hanno l'esempio animato.
+// Mestieri diversi, non solo della casa (Sofiane, 11/10/2026: «anche i mestieri sono troppo edili»): per ognuno
+// una frase come la direbbe chi lo fa (nella lingua della pagina) e la riga che ne esce dal listino, sempre in
+// italiano. Quelli con l'esempio animato lo aprono nella hero; il nome porta alla pagina del mestiere solo se
+// la pagina esiste (oggi i mestieri della casa).
 
 type Chiave = keyof Dizionario["mestieri"]["voci"];
 const RIGHE: { id: Chiave; riga: string; esempio?: string }[] = [
   { id: "elettricista", riga: "Punto luce deviato · 2 cad", esempio: "elettricista" },
+  { id: "fotografo", riga: "Album 30 pagine · 1 cad", esempio: "fotografo" },
+  { id: "officina", riga: "Tagliando con filtri · 1 cad", esempio: "officina" },
+  { id: "catering", riga: "Buffet salato e dolce · 60 persone", esempio: "catering" },
   { id: "idraulico", riga: "Tubo PE-X Ø 16 · 1,5 m", esempio: "idraulico" },
+  { id: "informatico", riga: "Configurazione postazione · 5 cad" },
+  { id: "grafico", riga: "Volantini A5 · 1000 pz" },
   { id: "imbianchino", riga: "Idropittura lavabile · 120 m²", esempio: "imbianchino" },
-  { id: "piastrellista", riga: "Posa gres, solo posa · m²", esempio: "piastrellista" },
-  { id: "muratore", riga: "Tramezzo in forati · 8,64 m²", esempio: "muratore" },
-  { id: "cartongessista", riga: "Controsoffitto · 6,60 m²" },
-  { id: "serramentista", riga: "Finestra a due ante · 3 cad" },
-  { id: "termoidraulico", riga: "Sostituzione caldaia · 1 cad" },
-  { id: "falegname", riga: "Armadio su misura · 6,24 m²" },
-  { id: "fabbro", riga: "Ringhiera in ferro · 6 m" },
+  { id: "carrozzeria", riga: "Verniciatura paraurti · 1 cad" },
+  { id: "allestimenti", riga: "Noleggio sedie · 100 cad" },
+  { id: "traslochi", riga: "Trasloco trilocale, 3° piano · 1 cad" },
   { id: "giardiniere", riga: "Taglio siepe · 40 m" },
-  { id: "impresa", riga: "Tutte le voci, una per riga" },
 ];
+const pagina = (id: Chiave): IdMestiere | null => (MESTIERI as readonly string[]).includes(id) ? (id as IdMestiere) : null;
 
 export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   const M = d.mestieri;
@@ -31,18 +35,22 @@ export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
         <h2 className="titolo-h2 m-0"><Frasi testo={M.titolo} /></h2>
         <p className="testo-base m-0 max-w-[560px] text-testo-2">{M.testo}</p>
       </div>
-      <ul
+      <ListaRotella
         tabIndex={0}
         aria-label={M.etichettaLista}
-        className="m-0 -mx-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] flex list-none snap-x snap-mandatory gap-3 overflow-x-auto px-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] pb-2 [scrollbar-width:thin] sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-hidden sm:rounded-[20px] sm:border sm:border-linea-2 sm:bg-linea-2 sm:p-0 xl:grid-cols-3"
+        className="m-0 -mx-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] flex list-none snap-x snap-mandatory gap-3 overflow-x-auto px-[clamp(1.25rem,-1.071rem+9.524vw,7.5rem)] pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-px sm:overflow-hidden sm:rounded-[20px] sm:border sm:border-linea-2 sm:bg-linea-2 sm:p-0 xl:grid-cols-3"
       >
         {RIGHE.map((m) => (
           <li key={m.id} className="flex w-[80%] shrink-0 snap-start flex-col items-center gap-3 text-center rounded-[18px] border border-linea-2 bg-superficie p-5 sm:w-auto sm:rounded-none sm:border-0 lg:p-6">
             <div className="flex flex-col items-center gap-2">
               <h3 className="m-0 text-[22px] font-extrabold leading-none [font-stretch:78%] lg:text-[24px]">
-                <a href={percorso(lingua, percorsoMestiere(m.id))} className="decoration-lime-scuro decoration-2 underline-offset-4 hover:text-lime-scuro">
-                  {M.voci[m.id].nome}
-                </a>
+                {pagina(m.id) ? (
+                  <a href={percorso(lingua, percorsoMestiere(pagina(m.id)!))} className="decoration-lime-scuro decoration-2 underline-offset-4 hover:text-lime-scuro">
+                    {M.voci[m.id].nome}
+                  </a>
+                ) : (
+                  M.voci[m.id].nome
+                )}
               </h3>
               {m.esempio && <GuardaEsempio id={m.esempio} testo={M.guarda} />}
             </div>
@@ -55,7 +63,7 @@ export function Mestieri({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
             </p>
           </li>
         ))}
-      </ul>
+      </ListaRotella>
       <p className="m-0 max-w-[720px] text-[15px] leading-normal text-testo-3">
         <span className="sm:hidden">{M.scorri} </span>
         {M.nota}

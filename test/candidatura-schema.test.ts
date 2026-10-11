@@ -8,7 +8,7 @@ import {
 // Dati di prova inventati.
 const valida = {
   nome: "Mario Prova",
-  mestiere: "Idraulico",
+  mestiere: "Elettricista",
   comune: "Lissone",
   telefono: "333 123 4567",
   volume: "da 3 a 5",
@@ -42,7 +42,7 @@ describe("validateCandidatura", () => {
     if (!r.ok) return;
     expect(r.data).toEqual({
       nome: "Mario Prova",
-      mestiere: "Idraulico",
+      mestiere: "Elettricista",
       comune: "Lissone",
       telefono: "+393331234567",
       volume: "da 3 a 5",

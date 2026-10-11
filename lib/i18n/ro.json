@@ -659,7 +659,7 @@
     "apriMenu": "Deschide meniul",
     "chiudiMenu": "Închide meniul",
     "principale": "Principal",
-    "ctaPilota": "Devino meseriaș pilot",
+    "ctaPilota": "Intră în programul pilot",
     "ctaProva": "Încearcă cu un exemplu",
     "privacy": "Confidențialitate",
     "cookie": "Cookie-uri",
@@ -685,7 +685,7 @@
   },
   "hero": {
     "etichetta": "Pentru orice meserie: casă, auto, evenimente, firme și persoane",
-    "titolo": "Termini vizita la client. Oferta pleacă din dubă.",
+    "titolo": "Povestește lucrarea. Devizul pleacă de pe telefon.",
     "testo": "O povestești cu vocea sau o scrii, ca și cum ai vorbi cu un coleg. Primești ciorna cu prețurile din lista **ta** de prețuri, cu IVA corect și cu pozițiile nesigure marcate. Verifici, aprobi, iar clientul primește PDF-ul și îl acceptă dintr-un clic.",
     "garanzia": "Prețuri doar din lista ta. Dacă o poziție lipsește, rămâne de prețuit: fără cifre inventate.",
     "guarda": "Vezi cum funcționează",
@@ -764,10 +764,10 @@
   },
   "mestieri": {
     "titolo": "Fiecare meserie are cuvintele ei. Lista ta de prețuri le știe deja.",
-    "testo": "Nu trebuie să înveți să vorbești altfel: spui măsurile din ochi, numele pe care le folosești tu, «ce a cumpărat dumneaei». Sistemul caută printre pozițiile din lista ta, reface calculele măsurilor, iar ce nu găsește îți marchează.",
+    "testo": "Nu trebuie să înveți să vorbești altfel: spui cantitățile și măsurile din ochi, numele pe care le folosești tu, «ce a cumpărat dumneaei». Sistemul caută printre pozițiile din lista ta, reface calculele, iar ce nu găsește îți marchează.",
     "guarda": "Vezi exemplul",
     "scorri": "Derulează ca să vezi celelalte meserii.",
-    "nota": "Rânduri de exemplu. Merge cu orice listă pe poziții și măsurători: dacă meseria ta nu e aici, merge la fel.",
+    "nota": "Rânduri de exemplu. Merge cu orice listă de prețuri pe poziții: dacă meseria ta nu e aici, merge la fel.",
     "etichettaLista": "Exemple pe meserii",
     "voci": {
       "elettricista": {
@@ -782,41 +782,41 @@
         "nome": "Zugrav",
         "detto": "două straturi de lavabilă, o sută douăzeci de metri"
       },
-      "piastrellista": {
-        "nome": "Faianțar",
-        "detto": "montez gresia pe care a cumpărat-o dumneaei"
+      "fotografo": {
+        "nome": "Fotograf",
+        "detto": "nuntă, ședința foto și albumul"
       },
-      "muratore": {
-        "nome": "Zidar",
-        "detto": "trei douăzeci pe doi șaptezeci"
+      "catering": {
+        "nome": "Catering",
+        "detto": "șaizeci de persoane, bufet și doi ospătari"
       },
-      "cartongessista": {
-        "nome": "Montator gips-carton",
-        "detto": "tavan fals pe hol, șase pe unu zece"
+      "officina": {
+        "nome": "Service auto",
+        "detto": "revizie și plăcuțele din față"
       },
-      "serramentista": {
-        "nome": "Montator de tâmplărie",
-        "detto": "trei ferestre cu două canate și o ușă de balcon"
+      "carrozzeria": {
+        "nome": "Tinichigerie auto",
+        "detto": "bara de revopsit, portiera de îndreptat"
       },
-      "termoidraulico": {
-        "nome": "Instalator termic și sanitar",
-        "detto": "schimb centrala, caloriferele rămân"
+      "informatico": {
+        "nome": "Tehnician IT",
+        "detto": "cinci calculatoare de configurat și serverul"
       },
-      "falegname": {
-        "nome": "Tâmplar",
-        "detto": "dulap încastrat în perete, doi patruzeci pe doi șaizeci"
+      "grafico": {
+        "nome": "Grafică și tipar",
+        "detto": "logo, cărți de vizită și o mie de fluturași"
       },
-      "fabbro": {
-        "nome": "Lăcătuș",
-        "detto": "balustrada de la balcon, șase metri"
+      "allestimenti": {
+        "nome": "Decoruri pentru evenimente",
+        "detto": "o scenă de opt pe șase și o sută de scaune"
+      },
+      "traslochi": {
+        "nome": "Mutări",
+        "detto": "apartament cu trei camere la etajul trei, fără lift"
       },
       "giardiniere": {
         "nome": "Grădinar",
         "detto": "gard viu de tuns, patruzeci de metri"
-      },
-      "impresa": {
-        "nome": "Firmă de construcții",
-        "detto": "baie completă, la cheie"
       }
     }
   },
@@ -826,7 +826,7 @@
     "passi": [
       {
         "titolo": "Povestești lucrarea",
-        "testo": "Cu vocea sau în scris, de pe telefon, imediat după vizita la fața locului: măsuri, lucrări, ce aduce clientul, ce este exclus.",
+        "testo": "Cu vocea sau în scris, de pe telefon, imediat după ce ai vorbit cu clientul: cantități, lucrări, ce aduce clientul, ce este exclus.",
         "nota": "„trei pe doi și jumate, cam așa”"
       },
       {
@@ -863,7 +863,7 @@
       {
         "cifra": "13 s",
         "cosa": "ca să ai ciorna",
-        "dettaglio": "De la povestea vizitei la ciorna completă, cu întrebările despre ce lipsește."
+        "dettaglio": "De la povestea lucrării la ciorna completă, cu întrebările despre ce lipsește."
       }
     ],
     "sotto1": "Înainte să ajungă la client, fiecare deviz trece pe la tine. Pozițiile de verificat sunt evidențiate, măsurile care lipsesc ți le cere, iar nimic nu pleacă fără aprobarea ta.",
@@ -884,9 +884,9 @@
     "prezzoTitolo": "Niciun preț inventat",
     "prezzoTesto": "Multe aplicații, când nu găsesc o poziție, o estimează cu „prețuri de piață”. Noi nu: dacă nu e în lista ta, o marcăm ca de prețuit, iar prețul îl pui tu. Un deviz greșit în minus înseamnă o lucrare pe pierdere.",
     "dalListino": "din lista ta ✓",
-    "ivaTitolo": "IVA pentru construcții, făcută corect, de la sine",
+    "ivaTitolo": "IVA corectă, chiar și cea mai complicată",
     "ivaTesto1": "Întreținere la o locuință? Cota de 10% se aplică pentru manoperă, dar „beni significativi” (bunuri semnificative: obiecte sanitare, robineți, tâmplărie, centrale) intră aici doar până la valoarea restului lucrării. Partea care depășește merge la 22%.",
-    "ivaTesto2": "Îți punem trei întrebări: ce fel de imobil e, ce lucrare e, cine cumpără materialele. În PDF, IVA de 10% și de 22% apare împărțită corect, cu mențiunea.",
+    "ivaTesto2": "Pentru lucrările la locuințe îți punem trei întrebări: ce fel de imobil e, ce lucrare e, cine cumpără materialele. În PDF, IVA de 10% și de 22% apare împărțită corect, cu mențiunea.",
     "ivaNota": "Exemplu preluat din ghidul Agenzia delle Entrate. Pentru cazurile speciale rămâne mereu contabilul tău.",
     "scontrino": {
       "etichetta": "Exemplu de împărțire a IVA",
@@ -899,11 +899,11 @@
       "totale": "Total"
     },
     "lingueTitolo": "Tu povestești în limba ta. Clientul citește în a lui.",
-    "lingueTesto": "Scrii sau dictezi vizita la fața locului în română, albaneză, arabă, ucraineană sau în altă limbă: ciorna iese în italiană. Dacă clientul e străin, devizul ajunge la el în engleză, cu textul italian alături, care prevalează. Traducerea o vezi și o corectezi înainte să o trimiți.",
+    "lingueTesto": "Scrii sau dictezi lucrarea în română, albaneză, arabă, ucraineană sau în altă limbă: ciorna iese în italiană. Dacă clientul e străin, devizul ajunge la el în engleză, cu textul italian alături, care prevalează. Traducerea o vezi și o corectezi înainte să o trimiți.",
     "lingueDalListino": "din lista ta de prețuri, în italiană",
     "lingueAlCliente": "către clientul străin, cu italiana alături",
     "aiutoTitolo": "Un ajutor adevărat, de la un om",
-    "aiutoTesto": "Logo, date, condiții de plată, avansuri, excluderi: le setezi tu în câteva minute. Dacă te blochezi, ne scrii sau ne suni și îți răspunde un om, nu un bot. Iar primul deviz îl trimiți tu, din dubă.",
+    "aiutoTesto": "Logo, date, condiții de plată, avansuri, excluderi: le setezi tu în câteva minute. Dacă te blochezi, ne scrii sau ne suni și îți răspunde un om, nu un bot. Iar primul deviz îl trimiți tu, de pe telefon.",
     "ultimaTitolo": "Ultimul cuvânt este mereu al tău",
     "ultimaTesto": "Sistemul propune, tu decizi. Niciun deviz nu ajunge la client fără să-l fi deschis și aprobat tu. Pozițiile noi pe care le prețuiești intră în lista ta de prețuri, pentru data viitoare."
   },
@@ -960,7 +960,7 @@
         "celle": [
           "La calculator, după cină",
           "Pe telefon, apoi îl refaci",
-          "De pe telefon, imediat după vizita la fața locului"
+          "De pe telefon, imediat după ce ai terminat cu clientul"
         ]
       }
     ],
@@ -975,7 +975,7 @@
     "min": "{n} min",
     "passi": "În fiecare lună petreci cu devizele aproximativ",
     "ore": "{n} ore",
-    "costa": "aproape mereu seara, după șantier. Preventivi costă 19,90 € pe lună:",
+    "costa": "aproape mereu seara, după muncă. Preventivi costă 19,90 € pe lună:",
     "allOra": "{n} € pentru fiecare dintre orele acelea.",
     "nota": "Numerele le pui tu. Cât timp îți redă măsurăm cu pilotul, pe lucrări reale."
   },
@@ -1034,7 +1034,7 @@
       },
       {
         "d": "Pot să povestesc în limba mea? Și dacă clientul e străin?",
-        "r": "Da. Scrii sau dictezi vizita la fața locului în română, albaneză, arabă, ucraineană, spaniolă sau în altă limbă, iar ciorna iese în italiană, cu prețurile din lista ta. Cu vocea depinde de telefon: unde limba ta nu există, o scrii. Iar dacă clientul e străin, îi trimiți devizul în engleză: traducerea o verifici tu, iar textul italian rămâne alături și prevalează."
+        "r": "Da. Scrii sau dictezi lucrarea în română, albaneză, arabă, ucraineană, spaniolă sau în altă limbă, iar ciorna iese în italiană, cu prețurile din lista ta. Cu vocea depinde de telefon: unde limba ta nu există, o scrii. Iar dacă clientul e străin, îi trimiți devizul în engleză: traducerea o verifici tu, iar textul italian rămâne alături și prevalează."
       },
       {
         "d": "Vorbesc repede, e zgomot, folosesc termeni de-ai mei.",
@@ -1046,7 +1046,7 @@
       },
       {
         "d": "Unde ajung mesajele vocale și datele clienților mei?",
-        "r": "Lista de prețuri și devizele stau pe servere din Uniunea Europeană. Pentru a pregăti ciorna, textul inspecției trece printr-un serviciu de inteligență artificială, indicat în [pagina Privacy](/privacy). La serverele noastre ajunge doar textul, nu și audio, iar cu tine semnăm acordul pentru prelucrarea datelor clienților tăi."
+        "r": "Lista de prețuri și devizele stau pe servere din Uniunea Europeană. Pentru a pregăti ciorna, textul descrierii tale trece printr-un serviciu de inteligență artificială, indicat în [pagina Privacy](/privacy). La serverele noastre ajunge doar textul, nu și audio, iar cu tine semnăm acordul pentru prelucrarea datelor clienților tăi."
       },
       {
         "d": "Trebuie să schimb programul de facturi?",
@@ -1055,9 +1055,9 @@
     ]
   },
   "candidatura": {
-    "titolo": "Următorul deviz trimite-l din furgonetă.",
+    "titolo": "Următorul deviz trimite-l de pe telefon.",
     "testo": "Căutăm 10 profesioniști pentru programul pilot, din orice meserie. Lasă-ne datele tale: te sunăm noi, în ordinea sosirii, ca să vedem dacă e potrivit pentru tine.",
-    "vederlo": "Vrei să-l vezi înainte să te înscrii? [Încearcă-l pe WhatsApp]({whatsapp}): primul mesaj e deja scris, apeși trimite și apoi povestești o inspecție. Sau [încearcă cu un exemplu](/prova).",
+    "vederlo": "Vrei să-l vezi înainte să te înscrii? [Încearcă-l pe WhatsApp]({whatsapp}): primul mesaj e deja scris, apeși trimite și apoi povestești o lucrare. Sau [încearcă cu un exemplu](/prova).",
     "scrivere": "Preferi să scrii? [{email}](mailto:{email})",
     "modulo": {
       "etichetta": "Înscriere în programul pilot",
@@ -1082,18 +1082,20 @@
       },
       "mestieri": {
         "Elettricista": "Electrician",
-        "Idraulico": "Instalator",
-        "Termoidraulico": "Instalator termic",
+        "Idraulico o termoidraulico": "Instalator sau termoinstalator",
         "Imbianchino": "Zugrav",
-        "Piastrellista": "Faianțar",
-        "Muratore": "Zidar",
-        "Cartongessista": "Montator gips-carton",
-        "Serramentista": "Montator uși și ferestre",
-        "Falegname": "Tâmplar",
-        "Fabbro": "Lăcătuș",
+        "Muratore o impresa edile": "Zidar sau firmă de construcții",
+        "Altri lavori per la casa": "Alte lucrări pentru casă",
         "Giardiniere": "Grădinar",
-        "Impresa edile": "Firmă de construcții",
-        "Impresa di ristrutturazioni": "Firmă de renovări",
+        "Officina o carrozzeria": "Service auto sau tinichigerie",
+        "Fotografo o videomaker": "Fotograf sau videograf",
+        "Catering o ristorazione": "Catering sau restaurant",
+        "Allestimenti ed eventi": "Decoruri și evenimente",
+        "Grafica e stampa": "Grafică și tipar",
+        "Tecnico informatico": "Tehnician IT",
+        "Traslochi": "Mutări",
+        "Formazione e lezioni": "Cursuri și meditații",
+        "Estetica e benessere": "Cosmetică și wellness",
         "Altro": "Altceva"
       },
       "volumi": {
@@ -1274,7 +1276,7 @@
         {
           "t": "ul",
           "voci": [
-            "Facem tot posibilul ca serviciul să funcționeze mereu și fără erori, dar interpretarea descrierii tale de pe șantier poate greși: de aceea fiecare ciornă trebuie verificată înainte de aprobare.",
+            "Facem tot posibilul ca serviciul să funcționeze mereu și fără erori, dar interpretarea descrierii lucrării poate greși: de aceea fiecare ciornă trebuie verificată înainte de aprobare.",
             "Pot apărea întreruperi pentru mentenanță sau din cauza defecțiunilor la furnizori; mentenanțele mari ți le anunțăm din timp.",
             "În limitele legii și cu excepția dolului sau culpei grave, răspunderea noastră nu depășește suma pe care ne-ai plătit-o în ultimele 12 luni. În perioada pilotului gratuit, serviciul este oferit așa cum este."
           ]
@@ -1338,7 +1340,7 @@
   },
   "prova": {
     "titolo": "Încearcă motorul",
-    "h1": "De la vizita pe șantier la ciornă",
+    "h1": "De la descriere la ciornă",
     "testo": "Motorul extrage lucrările, le potrivește cu lista ta de prețuri și îți pregătește ciorna de verificat. Prețurile vin doar din listă: ce nu găsește rămâne de prețuit, ce lipsește te întreabă.",
     "nota": "Date de test inventate: firma din listă și clienții din exemple nu există. Nu introduce nume, adrese sau numere ale unor persoane reale: ciornele rămân 7 zile și oricine are linkul le poate deschide. Textul liber este procesat de un serviciu de inteligență artificială. [Confidențialitate](/privacy)"
   }

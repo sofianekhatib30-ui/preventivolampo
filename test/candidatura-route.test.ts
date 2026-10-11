@@ -34,7 +34,7 @@ afterEach(() => {
 
 const campiValidi = {
   nome: "Mario Prova",
-  mestiere: "Piastrellista",
+  mestiere: "Fotografo o videomaker",
   comune: "Lissone",
   telefono: "+39 333 123 4567",
   volume: "1 o 2",
@@ -68,7 +68,7 @@ describe("POST /api/candidatura", () => {
     expect(archivio).toHaveLength(1);
     expect(archivio[0]).toMatchObject({
       nome: "Mario Prova",
-      mestiere: "Piastrellista",
+      mestiere: "Fotografo o videomaker",
       comune: "Lissone",
       telefono: "+393331234567",
       volume: "1 o 2",

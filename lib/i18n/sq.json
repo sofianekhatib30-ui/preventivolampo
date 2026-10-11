@@ -659,7 +659,7 @@
     "apriMenu": "Hap menunë",
     "chiudiMenu": "Mbyll menunë",
     "principale": "Kryesore",
-    "ctaPilota": "Bëhu artizan pilot",
+    "ctaPilota": "Hyr në programin pilot",
     "ctaProva": "Provo me një shembull",
     "privacy": "Privatësia",
     "cookie": "Cookie",
@@ -685,7 +685,7 @@
   },
   "hero": {
     "etichetta": "Për çdo profesion: shtëpi, makina, aktivitete, firma dhe persona",
-    "titolo": "Mbaron vizitën në objekt. Preventivi niset nga furgoni.",
+    "titolo": "Tregoje punën. Preventivi niset nga telefoni.",
     "testo": "Ia tregon me zë ose e shkruan, ashtu siç do t'ia thoshe një kolegu. Të kthehet drafti me çmimet e **listës tënde**, me IVA-n e saktë dhe me zërat e dyshimtë të shënuar. Kontrollon, miraton, dhe klienti merr PDF-në për ta pranuar me një klik.",
     "garanzia": "Çmime vetëm nga lista jote. Nëse një zë nuk ka, mbetet pa çmim: asnjë shifër e shpikur.",
     "guarda": "Shih si funksionon",
@@ -764,10 +764,10 @@
   },
   "mestieri": {
     "titolo": "Çdo zanat ka fjalët e veta. Lista jote i ka tashmë.",
-    "testo": "Nuk duhet të mësosh të flasësh ndryshe: i thua masat afërsisht, emrat që përdor ti, «atë që ka blerë ajo». Sistemi kërkon mes zërave të listës sate, i bën përsëri llogaritë e masave dhe ç'nuk gjen ta shënon për ty.",
+    "testo": "Nuk duhet të mësosh të flasësh ndryshe: i thua sasitë dhe masat afërsisht, emrat që përdor ti, «atë që ka blerë ajo». Sistemi kërkon mes zërave të listës sate, i bën përsëri llogaritë dhe ç'nuk gjen ta shënon për ty.",
     "guarda": "Shih shembullin",
     "scorri": "Rrëshqit për të parë profesionet e tjera.",
-    "nota": "Rreshta shembull. Funksionon me çdo listë me zëra dhe masa: nëse profesioni yt nuk është këtu, vlen njësoj.",
+    "nota": "Rreshta shembull. Funksionon me çdo listë çmimesh me zëra: nëse profesioni yt nuk është këtu, vlen njësoj.",
     "etichettaLista": "Shembuj sipas profesionit",
     "voci": {
       "elettricista": {
@@ -782,41 +782,41 @@
         "nome": "Bojaxhi",
         "detto": "dy duar bojë të larshme, njëqind e njëzet metra"
       },
-      "piastrellista": {
-        "nome": "Pllakaxhi",
-        "detto": "vendos gresin që ka blerë ajo"
+      "fotografo": {
+        "nome": "Fotograf",
+        "detto": "dasmë, fotografimi dhe albumi"
       },
-      "muratore": {
-        "nome": "Murator",
-        "detto": "tre e njëzet me dy e shtatëdhjetë"
+      "catering": {
+        "nome": "Katering",
+        "detto": "gjashtëdhjetë veta, bufe dhe dy kamarierë"
       },
-      "cartongessista": {
-        "nome": "Punues gips-kartoni",
-        "detto": "tavan i varur në korridor, gjashtë me një e dhjetë"
+      "officina": {
+        "nome": "Servis makinash",
+        "detto": "servisi dhe pllakat e frenave përpara"
       },
-      "serramentista": {
-        "nome": "Montues dyersh e dritaresh",
-        "detto": "tre dritare me dy kanate dhe një derë ballkoni"
+      "carrozzeria": {
+        "nome": "Karrocieri",
+        "detto": "parakolp për ta rilyer, derë për ta drejtuar"
       },
-      "termoidraulico": {
-        "nome": "Termohidraulik",
-        "detto": "ndërroj kaldajën, radiatorët mbeten"
+      "informatico": {
+        "nome": "Teknik informatik",
+        "detto": "pesë kompjuterë për t'u konfiguruar dhe serveri"
       },
-      "falegname": {
-        "nome": "Marangoz",
-        "detto": "gardërobë në mur, dy e dyzet me dy e gjashtëdhjetë"
+      "grafico": {
+        "nome": "Grafikë dhe shtyp",
+        "detto": "logo, kartvizita dhe një mijë fletëpalosje"
       },
-      "fabbro": {
-        "nome": "Hekurpunues",
-        "detto": "parmakët e ballkonit, gjashtë metra"
+      "allestimenti": {
+        "nome": "Dekorime për aktivitete",
+        "detto": "skenë tetë me gjashtë dhe njëqind karrige"
+      },
+      "traslochi": {
+        "nome": "Transferime",
+        "detto": "apartament me tri dhoma në katin e tretë, pa ashensor"
       },
       "giardiniere": {
         "nome": "Kopshtar",
         "detto": "gardhi i gjallë për t'u prerë, dyzet metra"
-      },
-      "impresa": {
-        "nome": "Ndërmarrje ndërtimi",
-        "detto": "banjë e plotë, çelësa në dorë"
       }
     }
   },
@@ -826,7 +826,7 @@
     "passi": [
       {
         "titolo": "Ti tregon punën",
-        "testo": "Me zë ose me shkrim, nga telefoni, sapo mbaron vizita në objekt: masat, punët, çfarë sjell klienti, çfarë nuk hyn në preventiv.",
+        "testo": "Me zë ose me shkrim, nga telefoni, sapo ke folur me klientin: sasitë, punët, çfarë sjell klienti, çfarë nuk hyn në preventiv.",
         "nota": "«tre me dy e gjysmë, afërsisht»"
       },
       {
@@ -863,7 +863,7 @@
       {
         "cifra": "13 s",
         "cosa": "për të marrë draftin",
-        "dettaglio": "Nga tregimi i vizitës në objekt te drafti i plotë, me pyetjet për atë që mungon."
+        "dettaglio": "Nga tregimi i punës te drafti i plotë, me pyetjet për atë që mungon."
       }
     ],
     "sotto1": "Përpara se të arrijë te klienti, çdo preventiv kalon nga ti. Zërat që duhen kontrolluar janë të theksuar, masat që mungojnë të pyet sistemi, dhe asgjë nuk niset pa miratimin tënd.",
@@ -884,9 +884,9 @@
     "prezzoTitolo": "Asnjë çmim i shpikur",
     "prezzoTesto": "Disa aplikacione, kur nuk gjejnë një zë, e vlerësojnë me «çmime tregu». Ne jo: nëse nuk është në listën tënde, e shënojmë si pa çmim, dhe çmimin e vendos ti. Një preventiv i gabuar nga ana e ulët është punë me humbje.",
     "dalListino": "nga lista ✓",
-    "ivaTitolo": "IVA e ndërtimit e bërë mirë, vetvetiu",
+    "ivaTitolo": "IVA e saktë, edhe ajo më e ndërlikuara",
     "ivaTesto1": "Mirëmbajtje në një banesë? 10% vlen për punën, por beni significativi (mallra të rëndësishëm: sanitare, rubinetë, dyer e dritare, kaldaja) hyjnë aty vetëm deri në vlerën e pjesës tjetër të ndërhyrjes. Pjesa që e tejkalon shkon me 22%.",
-    "ivaTesto2": "Të bëjmë tre pyetje: çfarë prone është, çfarë pune është, kush blen materialet. Në PDF, IVA 10% dhe 22% del e ndarë saktë, me shënimin përkatës.",
+    "ivaTesto2": "Për punët në shtëpi të bëjmë tre pyetje: çfarë prone është, çfarë pune është, kush blen materialet. Në PDF, IVA 10% dhe 22% del e ndarë saktë, me shënimin përkatës.",
     "ivaNota": "Shembull marrë nga udhëzuesi i Agenzia delle Entrate. Për rastet e veçanta mbetet gjithmonë kontabilisti yt.",
     "scontrino": {
       "etichetta": "Shembull ndarjeje të IVA-s",
@@ -899,11 +899,11 @@
       "totale": "Totali"
     },
     "lingueTitolo": "Ti tregon në gjuhën tënde. Klienti lexon në të tijën.",
-    "lingueTesto": "Shkruaje ose diktoje vizitën në objekt në rumanisht, shqip, arabisht, ukrainisht ose në një gjuhë tjetër: drafti del në italisht. Nëse klienti është i huaj, preventivi i vjen në anglisht, me tekstin italian pranë, që është ai që vlen. Përkthimin e sheh dhe e korrigjon para se ta dërgosh.",
+    "lingueTesto": "Shkruaje ose diktoje punën në rumanisht, shqip, arabisht, ukrainisht ose në një gjuhë tjetër: drafti del në italisht. Nëse klienti është i huaj, preventivi i vjen në anglisht, me tekstin italian pranë, që është ai që vlen. Përkthimin e sheh dhe e korrigjon para se ta dërgosh.",
     "lingueDalListino": "nga lista jote e çmimeve, në italisht",
     "lingueAlCliente": "te klienti i huaj, me italishten pranë",
     "aiutoTitolo": "Ndihmë e vërtetë, nga një njeri",
-    "aiutoTesto": "Logo, të dhëna, kushtet e pagesës, parapagimet, përjashtimet: i vendos ti vetë për pak minuta. Nëse ngec, na shkruan ose na merr në telefon dhe të përgjigjet një njeri, jo një bot. Dhe preventivin e parë e dërgon ti vetë, nga furgoni.",
+    "aiutoTesto": "Logo, të dhëna, kushtet e pagesës, parapagimet, përjashtimet: i vendos ti vetë për pak minuta. Nëse ngec, na shkruan ose na merr në telefon dhe të përgjigjet një njeri, jo një bot. Dhe preventivin e parë e dërgon ti vetë, nga telefoni.",
     "ultimaTitolo": "Fjala e fundit është gjithmonë e jotja",
     "ultimaTesto": "Sistemi propozon, ti vendos. Asnjë preventiv nuk i arrin klientit pa e hapur dhe miratuar ti. Zërat e rinj që çmon ti hyjnë në listën tënde, për herën tjetër."
   },
@@ -960,7 +960,7 @@
         "celle": [
           "Në kompjuter, pas darke",
           "Në telefon, pastaj e bën përsëri",
-          "Nga telefoni, sapo mbaron vizita në objekt"
+          "Nga telefoni, sapo mbaron me klientin"
         ]
       }
     ],
@@ -975,7 +975,7 @@
     "min": "{n} min",
     "passi": "Çdo muaj kalon me preventivat afërsisht",
     "ore": "{n} orë",
-    "costa": "pothuajse gjithmonë në mbrëmje, pas kantierit. Preventivi kushton 19,90 € në muaj:",
+    "costa": "pothuajse gjithmonë në mbrëmje, pas punës. Preventivi kushton 19,90 € në muaj:",
     "allOra": "{n} € për secilën nga ato orë.",
     "nota": "Numrat i vendos ti. Sa kohë të kthen e masim me pilotin, në punë të vërteta."
   },
@@ -1034,7 +1034,7 @@
       },
       {
         "d": "A mund ta tregoj në gjuhën time? Po nëse klienti është i huaj?",
-        "r": "Po. E shkruan ose e dikton vizitën në objekt në rumanisht, shqip, arabisht, ukrainisht, spanjisht ose në një gjuhë tjetër, dhe drafti del në italisht me çmimet e listës tënde. Me zë varet nga telefoni: aty ku gjuha jote nuk është, e shkruan. Dhe nëse klienti është i huaj, ia dërgon preventivin në anglisht: përkthimin e kontrollon ti, dhe teksti italian mbetet pranë dhe është ai që vlen."
+        "r": "Po. E shkruan ose e dikton punën në rumanisht, shqip, arabisht, ukrainisht, spanjisht ose në një gjuhë tjetër, dhe drafti del në italisht me çmimet e listës tënde. Me zë varet nga telefoni: aty ku gjuha jote nuk është, e shkruan. Dhe nëse klienti është i huaj, ia dërgon preventivin në anglisht: përkthimin e kontrollon ti, dhe teksti italian mbetet pranë dhe është ai që vlen."
       },
       {
         "d": "Flas shpejt, ka zhurmë, përdor fjalët e mia.",
@@ -1046,7 +1046,7 @@
       },
       {
         "d": "Ku përfundojnë zërat dhe të dhënat e klientëve të mi?",
-        "r": "Lista e çmimeve dhe preventivat qëndrojnë në serverë në Bashkimin Evropian. Për të përgatitur draftin, teksti i sopralluogos kalon nga një shërbim i inteligjencës artificiale, i treguar te [faqja Privacy](/privacy). Te serverët tanë arrin vetëm teksti, jo audioja, dhe me ty nënshkruajmë marrëveshjen për trajtimin e të dhënave të klientëve të tu."
+        "r": "Lista e çmimeve dhe preventivat qëndrojnë në serverë në Bashkimin Evropian. Për të përgatitur draftin, teksti i tregimit tënd kalon nga një shërbim i inteligjencës artificiale, i treguar te [faqja Privacy](/privacy). Te serverët tanë arrin vetëm teksti, jo audioja, dhe me ty nënshkruajmë marrëveshjen për trajtimin e të dhënave të klientëve të tu."
       },
       {
         "d": "Duhet ta ndryshoj programin e faturave?",
@@ -1055,9 +1055,9 @@
     ]
   },
   "candidatura": {
-    "titolo": "Preventivin tjetër dërgoje nga furgoni.",
+    "titolo": "Preventivin e radhës dërgoje nga telefoni.",
     "testo": "Po kërkojmë 10 profesionistë për programin pilot, nga çdo profesion. Na lër të dhënat e tua: të telefonojmë ne, sipas radhës, për të parë nëse bën për ty.",
-    "vederlo": "Do ta shohësh përpara se të aplikosh? [Provoje në WhatsApp]({whatsapp}): mesazhi i parë është shkruar tashmë, shtyp dërgo dhe pastaj tregoji një sopralluogo. Ose [provo me një shembull](/prova).",
+    "vederlo": "Do ta shohësh përpara se të aplikosh? [Provoje në WhatsApp]({whatsapp}): mesazhi i parë është shkruar tashmë, shtyp dërgo dhe pastaj tregoji një punë. Ose [provo me një shembull](/prova).",
     "scrivere": "Preferon të shkruash? [{email}](mailto:{email})",
     "modulo": {
       "etichetta": "Aplikim për programin pilot",
@@ -1082,18 +1082,20 @@
       },
       "mestieri": {
         "Elettricista": "Elektricist",
-        "Idraulico": "Hidraulik",
-        "Termoidraulico": "Termohidraulik",
+        "Idraulico o termoidraulico": "Hidraulik ose termohidraulik",
         "Imbianchino": "Bojaxhi",
-        "Piastrellista": "Pllakaxhi",
-        "Muratore": "Murator",
-        "Cartongessista": "Punëtor kartongjipsi",
-        "Serramentista": "Montues dyersh dhe dritaresh",
-        "Falegname": "Zdrukthëtar",
-        "Fabbro": "Hekurpunues",
+        "Muratore o impresa edile": "Murator ose firmë ndërtimi",
+        "Altri lavori per la casa": "Punë të tjera për shtëpinë",
         "Giardiniere": "Kopshtar",
-        "Impresa edile": "Firmë ndërtimi",
-        "Impresa di ristrutturazioni": "Firmë ristrukturimesh",
+        "Officina o carrozzeria": "Servis makinash ose karrocieri",
+        "Fotografo o videomaker": "Fotograf ose videomaker",
+        "Catering o ristorazione": "Katering ose restorant",
+        "Allestimenti ed eventi": "Dekorime dhe aktivitete",
+        "Grafica e stampa": "Grafikë dhe shtyp",
+        "Tecnico informatico": "Teknik informatik",
+        "Traslochi": "Transferime",
+        "Formazione e lezioni": "Trajnime dhe mësime",
+        "Estetica e benessere": "Estetikë dhe mirëqenie",
         "Altro": "Tjetër"
       },
       "volumi": {
@@ -1274,7 +1276,7 @@
         {
           "t": "ul",
           "voci": [
-            "Bëjmë maksimumin që shërbimi të funksionojë gjithmonë dhe pa gabime, por leximi i inspektimit në objekt mund të gabojë: për këtë çdo draft duhet kontrolluar para se ta miratosh.",
+            "Bëjmë maksimumin që shërbimi të funksionojë gjithmonë dhe pa gabime, por leximi i tregimit të punës mund të gabojë: për këtë çdo draft duhet kontrolluar para se ta miratosh.",
             "Mund të ketë ndërprerje për mirëmbajtje ose defekte te furnizuesit; mirëmbajtjet e mëdha ta njoftojmë përpara.",
             "Brenda kufijve të ligjit, dhe me përjashtim të dashjes ose pakujdesisë së rëndë, përgjegjësia jonë nuk e kalon atë që na ke paguar në 12 muajt e fundit. Gjatë pilotit falas shërbimi ofrohet siç është."
           ]
@@ -1338,7 +1340,7 @@
   },
   "prova": {
     "titolo": "Provo motorin",
-    "h1": "Nga inspektimi te drafti",
+    "h1": "Nga tregimi te drafti",
     "testo": "Motori nxjerr punimet, i përputh me listën e çmimeve dhe të përgatit draftin për ta kontrolluar. Çmimet vijnë vetëm nga lista: ç'nuk gjen mbetet për t'u çmuar, ç'mungon ta pyet.",
     "nota": "Të dhëna prove të shpikura: firma e listës dhe klientët e shembujve nuk ekzistojnë. Mos fut emra, adresa ose numra personash realë: draftet qëndrojnë 7 ditë dhe kushdo që ka lidhjen mund t'i hapë. Teksti i lirë përpunohet nga një shërbim i inteligjencës artificiale. [Privacy](/privacy)"
   }

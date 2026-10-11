@@ -19,7 +19,7 @@ export const it = {
     apriMenu: "Apri il menu",
     chiudiMenu: "Chiudi il menu",
     principale: "Principale",
-    ctaPilota: "Diventa artigiano pilota",
+    ctaPilota: "Entra nel programma pilota",
     ctaProva: "Prova con un esempio",
     privacy: "Privacy",
     cookie: "Cookie",
@@ -45,7 +45,7 @@ export const it = {
   },
   hero: {
     etichetta: "Per ogni mestiere: casa, auto, eventi, aziende e persone",
-    titolo: "Finisci il sopralluogo. Il preventivo parte dal furgone.",
+    titolo: "Racconta il lavoro. Il preventivo parte dal telefono.",
     testo:
       "Lo racconti a voce o lo scrivi, come faresti con un collega. Ti torna la bozza con i prezzi del **tuo** listino, l'IVA giusta e le voci dubbie segnate. Controlli, approvi, e il cliente riceve il PDF da accettare con un clic.",
     garanzia: "Prezzi solo dal tuo listino. Se una voce non c'è resta da prezzare: niente cifre inventate.",
@@ -102,24 +102,24 @@ export const it = {
   mestieri: {
     titolo: "Ogni mestiere ha le sue parole. Il tuo listino le ha già.",
     testo:
-      "Non devi imparare a parlare in un altro modo: dici le misure a spanne, i nomi che usi tu, «quello che ha comprato lei». Il sistema cerca fra le voci del tuo listino, rifà i conti delle misure e quello che non trova te lo segna.",
+      "Non devi imparare a parlare in un altro modo: dici quantità e misure a spanne, i nomi che usi tu, «quello che ha comprato lei». Il sistema cerca fra le voci del tuo listino, rifà i conti e quello che non trova te lo segna.",
     guarda: "Guarda l'esempio",
     scorri: "Scorri per vedere gli altri mestieri.",
-    nota: "Righe di esempio. Funziona con qualunque listino a voci e misure: se il tuo mestiere non è qui, vale lo stesso.",
+    nota: "Righe di esempio. Funziona con qualunque listino a voci: se il tuo mestiere non è qui, vale lo stesso.",
     etichettaLista: "Esempi per mestiere",
     voci: {
       elettricista: { nome: "Elettricista", detto: "sei punti luce, due deviati" },
       idraulico: { nome: "Idraulico", detto: "sposto il lavello di un metro e mezzo" },
       imbianchino: { nome: "Imbianchino", detto: "due mani di lavabile, centoventi metri" },
-      piastrellista: { nome: "Piastrellista", detto: "poso il gres che ha comprato lei" },
-      muratore: { nome: "Muratore", detto: "tre e venti per due e settanta" },
-      cartongessista: { nome: "Cartongessista", detto: "controsoffitto nel corridoio, sei per uno e dieci" },
-      serramentista: { nome: "Serramentista", detto: "tre finestre a due ante e una portafinestra" },
-      termoidraulico: { nome: "Termoidraulico", detto: "cambio la caldaia, i radiatori restano" },
-      falegname: { nome: "Falegname", detto: "armadio a muro, due e quaranta per due e sessanta" },
-      fabbro: { nome: "Fabbro", detto: "ringhiera del balcone, sei metri" },
+      fotografo: { nome: "Fotografo", detto: "matrimonio, servizio e album" },
+      catering: { nome: "Catering", detto: "sessanta persone, buffet e due camerieri" },
+      officina: { nome: "Officina", detto: "tagliando e pastiglie davanti" },
+      carrozzeria: { nome: "Carrozzeria", detto: "paraurti da riverniciare, portiera da raddrizzare" },
+      informatico: { nome: "Tecnico informatico", detto: "cinque computer da configurare e il server" },
+      grafico: { nome: "Grafica e stampa", detto: "logo, biglietti da visita e mille volantini" },
+      allestimenti: { nome: "Allestimenti", detto: "palco otto per sei e cento sedie" },
+      traslochi: { nome: "Traslochi", detto: "trilocale al terzo piano, senza ascensore" },
       giardiniere: { nome: "Giardiniere", detto: "siepe da tagliare, quaranta metri" },
-      impresa: { nome: "Impresa edile", detto: "bagno completo, chiavi in mano" },
     },
   },
   come: {
@@ -128,7 +128,7 @@ export const it = {
     passi: [
       {
         titolo: "Racconti il lavoro",
-        testo: "A voce o per iscritto, dal telefono, appena finito il sopralluogo: misure, lavori, cosa porta il cliente, cosa è escluso.",
+        testo: "A voce o per iscritto, dal telefono, appena hai parlato con il cliente: quantità, lavori, cosa porta il cliente, cosa è escluso.",
         nota: "«tre per due e mezzo, più o meno»",
       },
       {
@@ -159,7 +159,7 @@ export const it = {
         cosa: "per lavorare nella tua",
         dettaglio: "Italiano, inglese, rumeno, albanese, arabo e ucraino. Al cliente straniero il preventivo arriva in inglese, con l'italiano accanto.",
       },
-      { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del sopralluogo alla bozza completa, con le domande su quello che manca." },
+      { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del lavoro alla bozza completa, con le domande su quello che manca." },
     ],
     sotto1:
       "Prima di arrivare al cliente, ogni preventivo passa da te. Le voci da controllare sono evidenziate, le misure che mancano te le chiede, e niente parte senza la tua approvazione.",
@@ -175,10 +175,10 @@ export const it = {
     prezzoTesto:
       "Diverse app, quando non trovano una voce, la stimano con «prezzi di mercato». Noi no: se non è nel tuo listino la segniamo da prezzare, e il prezzo lo metti tu. Un preventivo sbagliato al ribasso è un lavoro in perdita.",
     dalListino: "dal listino ✓",
-    ivaTitolo: "L'IVA edile fatta bene, da sola",
+    ivaTitolo: "L'IVA giusta, anche quella più complicata",
     ivaTesto1:
       "Manutenzione su un'abitazione? Il 10% vale per il lavoro, ma i beni significativi (sanitari, rubinetteria, infissi, caldaie) ci rientrano solo fino al valore del resto dell'intervento. La parte che eccede va al 22%.",
-    ivaTesto2: "Ti facciamo tre domande: che immobile è, che lavoro è, chi compra i materiali. Sul PDF l'IVA 10% e 22% esce ripartita giusta, con la dicitura.",
+    ivaTesto2: "Per i lavori sulla casa ti facciamo tre domande: che immobile è, che lavoro è, chi compra i materiali. Sul PDF l'IVA 10% e 22% esce ripartita giusta, con la dicitura.",
     ivaNota: "Esempio tratto dalla guida dell'Agenzia delle Entrate. Per i casi particolari resta sempre il tuo commercialista.",
     scontrino: {
       etichetta: "Esempio di ripartizione IVA",
@@ -192,12 +192,12 @@ export const it = {
     },
     lingueTitolo: "Tu racconti nella tua lingua. Il cliente legge nella sua.",
     lingueTesto:
-      "Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino o un'altra lingua: la bozza esce in italiano. Se il cliente è straniero, il preventivo gli arriva in inglese, con il testo italiano accanto che fa fede. La traduzione la vedi e la correggi prima di mandarla.",
+      "Scrivi o detti il lavoro in rumeno, albanese, arabo, ucraino o un'altra lingua: la bozza esce in italiano. Se il cliente è straniero, il preventivo gli arriva in inglese, con il testo italiano accanto che fa fede. La traduzione la vedi e la correggi prima di mandarla.",
     lingueDalListino: "dal tuo listino, in italiano",
     lingueAlCliente: "al cliente straniero, con l'italiano accanto",
     aiutoTitolo: "Un aiuto vero, da una persona",
     aiutoTesto:
-      "Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti. Se ti blocchi, ci scrivi o ci chiami e ti risponde una persona, non un bot. E il primo preventivo lo mandi tu, dal furgone.",
+      "Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti. Se ti blocchi, ci scrivi o ci chiami e ti risponde una persona, non un bot. E il primo preventivo lo mandi tu, dal telefono.",
     ultimaTitolo: "L'ultima parola è sempre tua",
     ultimaTesto:
       "Il sistema propone, tu decidi. Nessun preventivo arriva al cliente senza che tu l'abbia aperto e approvato. Le voci nuove che prezzi entrano nel tuo listino, per la volta dopo.",
@@ -211,7 +211,7 @@ export const it = {
       { tema: "IVA con beni significativi", celle: ["A mano, con il dubbio", "Dipende da come glielo chiedi", "10% e 22% ripartiti, con la dicitura"] },
       { tema: "Il documento", celle: ["Da impaginare ogni volta", "Testo da copiare altrove", "PDF con il tuo logo, pronto da mandare"] },
       { tema: "Il sì del cliente", celle: ["Un messaggio, se va bene", "Non c'è", "Accettazione online: nome, data, ora e copia del PDF"] },
-      { tema: "Dove lo fai", celle: ["Al computer, dopo cena", "Al telefono, poi lo rifai", "Dal telefono, appena finito il sopralluogo"] },
+      { tema: "Dove lo fai", celle: ["Al computer, dopo cena", "Al telefono, poi lo rifai", "Dal telefono, appena finito con il cliente"] },
     ],
     etichettaLista: "Confronto per tema",
     scorri: "Scorri per gli altri confronti.",
@@ -224,7 +224,7 @@ export const it = {
     min: "{n} min",
     passi: "Ogni mese passi sui preventivi circa",
     ore: "{n} ore",
-    costa: "quasi sempre la sera, dopo il cantiere. Preventivi costa 19,90 € al mese:",
+    costa: "quasi sempre la sera, dopo il lavoro. Preventivi costa 19,90 € al mese:",
     allOra: "{n} € per ognuna di quelle ore.",
     nota: "I numeri li metti tu. Quanto tempo ti restituisce lo misuriamo con il pilota, sui lavori veri.",
   },
@@ -276,7 +276,7 @@ export const it = {
       },
       {
         d: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
-        r: "Sì. Scrivi o detti il sopralluogo in rumeno, albanese, arabo, ucraino, spagnolo o un'altra lingua, e la bozza esce in italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c'è, la scrivi. E se il cliente è straniero, gli mandi il preventivo in inglese: la traduzione la controlli tu, e il testo italiano resta accanto e fa fede.",
+        r: "Sì. Scrivi o detti il lavoro in rumeno, albanese, arabo, ucraino, spagnolo o un'altra lingua, e la bozza esce in italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c'è, la scrivi. E se il cliente è straniero, gli mandi il preventivo in inglese: la traduzione la controlli tu, e il testo italiano resta accanto e fa fede.",
       },
       {
         d: "Parlo veloce, c'è rumore, uso termini miei.",
@@ -288,16 +288,16 @@ export const it = {
       },
       {
         d: "Dove finiscono i vocali e i dati dei miei clienti?",
-        r: "Listino e preventivi stanno su server nell'Unione Europea. Per preparare la bozza il testo del sopralluogo passa da un servizio di intelligenza artificiale, indicato nella [pagina Privacy](/privacy). Ai nostri server arriva solo il testo, non l'audio, e con te firmiamo l'accordo per il trattamento dei dati dei tuoi clienti.",
+        r: "Listino e preventivi stanno su server nell'Unione Europea. Per preparare la bozza il testo del tuo racconto passa da un servizio di intelligenza artificiale, indicato nella [pagina Privacy](/privacy). Ai nostri server arriva solo il testo, non l'audio, e con te firmiamo l'accordo per il trattamento dei dati dei tuoi clienti.",
       },
       { d: "Devo cambiare il programma delle fatture?", r: "No, tieni il tuo. Preventivi si occupa dei preventivi; le fatture restano dove sono." },
     ],
   },
   candidatura: {
-    titolo: "Il prossimo preventivo mandalo dal furgone.",
+    titolo: "Il prossimo preventivo mandalo dal telefono.",
     testo: "Cerchiamo 10 professionisti per il programma pilota, di qualunque mestiere. Lasciaci i tuoi dati: ti richiamiamo noi, in ordine di arrivo, per capire se fa per te.",
     vederlo:
-      "Vuoi vederlo prima di candidarti? [Provalo su WhatsApp]({whatsapp}): il primo messaggio è già scritto, premi invio e poi racconta un sopralluogo. Oppure [prova con un esempio](/prova).",
+      "Vuoi vederlo prima di candidarti? [Provalo su WhatsApp]({whatsapp}): il primo messaggio è già scritto, premi invio e poi racconta un lavoro. Oppure [prova con un esempio](/prova).",
     scrivere: "Preferisci scrivere? [{email}](mailto:{email})",
     modulo: {
       etichetta: "Candidatura al programma pilota",
@@ -322,18 +322,20 @@ export const it = {
       },
       mestieri: {
         Elettricista: "Elettricista",
-        Idraulico: "Idraulico",
-        Termoidraulico: "Termoidraulico",
+        "Idraulico o termoidraulico": "Idraulico o termoidraulico",
         Imbianchino: "Imbianchino",
-        Piastrellista: "Piastrellista",
-        Muratore: "Muratore",
-        Cartongessista: "Cartongessista",
-        Serramentista: "Serramentista",
-        Falegname: "Falegname",
-        Fabbro: "Fabbro",
+        "Muratore o impresa edile": "Muratore o impresa edile",
+        "Altri lavori per la casa": "Altri lavori per la casa",
         Giardiniere: "Giardiniere",
-        "Impresa edile": "Impresa edile",
-        "Impresa di ristrutturazioni": "Impresa di ristrutturazioni",
+        "Officina o carrozzeria": "Officina o carrozzeria",
+        "Fotografo o videomaker": "Fotografo o videomaker",
+        "Catering o ristorazione": "Catering o ristorazione",
+        "Allestimenti ed eventi": "Allestimenti ed eventi",
+        "Grafica e stampa": "Grafica e stampa",
+        "Tecnico informatico": "Tecnico informatico",
+        Traslochi: "Traslochi",
+        "Formazione e lezioni": "Formazione e lezioni",
+        "Estetica e benessere": "Estetica e benessere",
         Altro: "Altro",
       },
       volumi: { "1 o 2": "1 o 2", "da 3 a 5": "da 3 a 5", "più di 5": "più di 5" },
@@ -466,7 +468,7 @@ export const it = {
         {
           t: "ul",
           voci: [
-            "Facciamo il possibile perché il servizio funzioni sempre e senza errori, ma la lettura del sopralluogo può sbagliare: per questo ogni bozza va controllata prima di approvarla.",
+            "Facciamo il possibile perché il servizio funzioni sempre e senza errori, ma la lettura del racconto del lavoro può sbagliare: per questo ogni bozza va controllata prima di approvarla.",
             "Possono esserci interruzioni per manutenzione o guasti dei fornitori; le grandi manutenzioni te le annunciamo prima.",
             "Nei limiti di legge, e salvo dolo o colpa grave, la nostra responsabilità non supera quanto ci hai pagato negli ultimi 12 mesi. Durante il pilota gratuito il servizio è fornito così com'è.",
           ],
@@ -528,7 +530,7 @@ export const it = {
   },
   prova: {
     titolo: "Prova il motore",
-    h1: "Dal sopralluogo alla bozza",
+    h1: "Dal racconto alla bozza",
     testo:
       "Il motore estrae le lavorazioni, le abbina al listino e ti prepara la bozza da controllare. I prezzi vengono solo dal listino: quello che non trova resta da prezzare, quello che manca te lo chiede.",
     nota: "Dati di prova inventati: l'impresa del listino e i clienti degli esempi non esistono. Non inserire nomi, indirizzi o numeri di persone reali: le bozze restano 7 giorni e chiunque abbia il link può aprirle. Il testo libero viene elaborato da un servizio di intelligenza artificiale. [Privacy](/privacy)",

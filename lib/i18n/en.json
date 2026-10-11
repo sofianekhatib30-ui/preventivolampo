@@ -659,7 +659,7 @@
     "apriMenu": "Open the menu",
     "chiudiMenu": "Close the menu",
     "principale": "Main",
-    "ctaPilota": "Become a pilot tradesperson",
+    "ctaPilota": "Join the pilot programme",
     "ctaProva": "Try it with an example",
     "privacy": "Privacy",
     "cookie": "Cookies",
@@ -685,7 +685,7 @@
   },
   "hero": {
     "etichetta": "For every trade: home, cars, events, businesses and people",
-    "titolo": "Finish the site visit. The quote leaves from the van.",
+    "titolo": "Describe the job. The quote goes out from your phone.",
     "testo": "You say it out loud or type it, like you would to a colleague. You get back a draft with prices from **your** price list, the right IVA and any doubtful items flagged. You check it, approve it, and the customer gets the PDF to accept with one click.",
     "garanzia": "Prices only from your price list. If an item isn't there, it stays unpriced: no made-up figures.",
     "guarda": "See how it works",
@@ -764,10 +764,10 @@
   },
   "mestieri": {
     "titolo": "Every trade has its own words. Your price list already has them.",
-    "testo": "You don't have to learn to talk a different way: you give rough measurements, use your own names for things, say ‘the one she bought herself’. The system looks through the items in your price list, redoes the sums on the measurements, and flags what it can't find.",
+    "testo": "You don't have to learn to talk a different way: you give rough quantities and measurements, use your own names for things, say ‘the one she bought herself’. The system looks through the items in your price list, redoes the sums, and flags what it can't find.",
     "guarda": "See the example",
     "scorri": "Scroll to see the other trades.",
-    "nota": "Example lines. It works with any price list based on items and measurements: if your trade isn't here, it works just the same.",
+    "nota": "Example lines. It works with any itemised price list: if your trade isn't here, it works just the same.",
     "etichettaLista": "Examples by trade",
     "voci": {
       "elettricista": {
@@ -782,41 +782,41 @@
         "nome": "Painter and decorator",
         "detto": "two coats of washable emulsion, a hundred and twenty metres"
       },
-      "piastrellista": {
-        "nome": "Tiler",
-        "detto": "I'm laying the porcelain tiles she bought"
+      "fotografo": {
+        "nome": "Photographer",
+        "detto": "a wedding, the shoot and the album"
       },
-      "muratore": {
-        "nome": "Bricklayer",
-        "detto": "three twenty by two seventy"
+      "catering": {
+        "nome": "Catering",
+        "detto": "sixty people, buffet and two waiters"
       },
-      "cartongessista": {
-        "nome": "Plasterboard fitter",
-        "detto": "suspended ceiling in the hallway, six by one ten"
+      "officina": {
+        "nome": "Car repair shop",
+        "detto": "a service and front brake pads"
       },
-      "serramentista": {
-        "nome": "Window fitter",
-        "detto": "three two-casement windows and a French door"
+      "carrozzeria": {
+        "nome": "Body shop",
+        "detto": "bumper to respray, door to straighten"
       },
-      "termoidraulico": {
-        "nome": "Plumber and heating engineer",
-        "detto": "swapping the boiler, the radiators stay"
+      "informatico": {
+        "nome": "IT technician",
+        "detto": "five computers to set up, plus the server"
       },
-      "falegname": {
-        "nome": "Joiner",
-        "detto": "built-in wardrobe, two forty by two sixty"
+      "grafico": {
+        "nome": "Graphic design and printing",
+        "detto": "logo, business cards and a thousand flyers"
       },
-      "fabbro": {
-        "nome": "Metalworker",
-        "detto": "balcony railing, six metres"
+      "allestimenti": {
+        "nome": "Event set-ups",
+        "detto": "an eight by six stage and a hundred chairs"
+      },
+      "traslochi": {
+        "nome": "Removals",
+        "detto": "three-room flat on the third floor, no lift"
       },
       "giardiniere": {
         "nome": "Gardener",
         "detto": "hedge to trim, forty metres"
-      },
-      "impresa": {
-        "nome": "Building firm",
-        "detto": "full bathroom, turnkey"
       }
     }
   },
@@ -826,7 +826,7 @@
     "passi": [
       {
         "titolo": "You tell it about the job",
-        "testo": "By voice or in writing, from your phone, as soon as the site visit is done: measurements, work, what the customer supplies, what's not included.",
+        "testo": "By voice or in writing, from your phone, as soon as you've spoken to the customer: quantities, work, what the customer supplies, what's not included.",
         "nota": "‘three by two and a half, give or take’"
       },
       {
@@ -863,7 +863,7 @@
       {
         "cifra": "13 s",
         "cosa": "to get the draft",
-        "dettaglio": "From your account of the site visit to a complete draft, with questions about anything that's missing."
+        "dettaglio": "From your account of the job to a complete draft, with questions about anything that's missing."
       }
     ],
     "sotto1": "Before it reaches the customer, every quote goes through you. The items to check are highlighted, it asks you for any missing measurements, and nothing goes out without your approval.",
@@ -884,9 +884,9 @@
     "prezzoTitolo": "No invented prices",
     "prezzoTesto": "Plenty of apps, when they can't find an item, guess it with ‘market prices’. We don't: if it's not in your price list, we mark it as still to be priced, and you set the price. A quote that comes in too low means a job at a loss.",
     "dalListino": "from price list ✓",
-    "ivaTitolo": "Building IVA done right, on its own",
+    "ivaTitolo": "The right IVA, even the tricky kind",
     "ivaTesto1": "Maintenance work on a home? The 10% applies to the labour, but the beni significativi (significant goods: sanitaryware, taps and fittings, windows and doors, boilers) only count at 10% up to the value of the rest of the work. The part above that goes at 22%.",
-    "ivaTesto2": "We ask you three questions: what kind of property it is, what kind of work it is, and who buys the materials. On the PDF the 10% and 22% IVA come out split correctly, with the required wording.",
+    "ivaTesto2": "For work on a home we ask you three questions: what kind of property it is, what kind of work it is, and who buys the materials. On the PDF the 10% and 22% IVA come out split correctly, with the required wording.",
     "ivaNota": "Example taken from the Agenzia delle Entrate guide. For special cases, your accountant is always the one to ask.",
     "scontrino": {
       "etichetta": "IVA split example",
@@ -899,11 +899,11 @@
       "totale": "Total"
     },
     "lingueTitolo": "You tell it in your language. Your customer reads it in theirs.",
-    "lingueTesto": "Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian or another language: the draft comes out in Italian. If your customer is foreign, the quote reaches them in English, with the Italian text alongside, which is the one that counts. You see the translation and correct it before you send it.",
+    "lingueTesto": "Write or dictate the job in Romanian, Albanian, Arabic, Ukrainian or another language: the draft comes out in Italian. If your customer is foreign, the quote reaches them in English, with the Italian text alongside, which is the one that counts. You see the translation and correct it before you send it.",
     "lingueDalListino": "from your price list, in Italian",
     "lingueAlCliente": "to your foreign customer, with the Italian alongside",
     "aiutoTitolo": "Real help, from a real person",
-    "aiutoTesto": "Logo, details, payment terms, deposits, exclusions: you set them up in a few minutes. If you get stuck, write to us or call us and a person answers, not a bot. And you send the first quote yourself, from the van.",
+    "aiutoTesto": "Logo, details, payment terms, deposits, exclusions: you set them up in a few minutes. If you get stuck, write to us or call us and a person answers, not a bot. And you send the first quote yourself, from your phone.",
     "ultimaTitolo": "The last word is always yours",
     "ultimaTesto": "The system suggests, you decide. No quote reaches your customer unless you have opened it and approved it. The new items you price go into your price list, ready for next time."
   },
@@ -960,7 +960,7 @@
         "celle": [
           "On the computer, after dinner",
           "On the phone, then you do it again",
-          "From your phone, right after the site visit"
+          "From your phone, right after seeing the customer"
         ]
       }
     ],
@@ -975,7 +975,7 @@
     "min": "{n} min",
     "passi": "Every month you spend about this much time on quotes:",
     "ore": "{n} hours",
-    "costa": "almost always in the evening, after the job. Preventivi costs €19.90 a month:",
+    "costa": "almost always in the evening, after work. Preventivi costs €19.90 a month:",
     "allOra": "€{n} for each of those hours.",
     "nota": "You enter the numbers. How much time it gives you back, we measure with the pilot, on real jobs."
   },
@@ -1034,7 +1034,7 @@
       },
       {
         "d": "Can I tell it in my own language? What if my customer is foreign?",
-        "r": "Yes. Write or dictate the site visit in Romanian, Albanian, Arabic, Ukrainian, Spanish or another language, and the draft comes out in Italian with the prices from your price list. For voice it depends on your phone: if your language isn't available, type it. And if your customer is foreign, you send them the quote in English: you check the translation, and the Italian text stays alongside and is the one that counts."
+        "r": "Yes. Write or dictate the job in Romanian, Albanian, Arabic, Ukrainian, Spanish or another language, and the draft comes out in Italian with the prices from your price list. For voice it depends on your phone: if your language isn't available, type it. And if your customer is foreign, you send them the quote in English: you check the translation, and the Italian text stays alongside and is the one that counts."
       },
       {
         "d": "I talk fast, there's noise, I use my own words.",
@@ -1046,7 +1046,7 @@
       },
       {
         "d": "Where do my voice messages and my customers' data end up?",
-        "r": "Your price list and quotes are kept on servers in the European Union. To prepare the draft, the text of the site visit goes through an artificial intelligence service, named on the [Privacy page](/privacy). Only the text reaches our servers, not the audio, and we sign a data processing agreement with you for your customers' data."
+        "r": "Your price list and quotes are kept on servers in the European Union. To prepare the draft, the text of your description goes through an artificial intelligence service, named on the [Privacy page](/privacy). Only the text reaches our servers, not the audio, and we sign a data processing agreement with you for your customers' data."
       },
       {
         "d": "Do I have to change my invoicing software?",
@@ -1055,9 +1055,9 @@
     ]
   },
   "candidatura": {
-    "titolo": "Send your next quote from the van.",
+    "titolo": "Send your next quote from your phone.",
     "testo": "We're looking for 10 professionals for the pilot programme, from any trade. Leave us your details: we'll call you back, in order of arrival, to see if it's right for you.",
-    "vederlo": "Want to see it before you apply? [Try it on WhatsApp]({whatsapp}): the first message is already written, press send and then describe a site visit. Or [try an example](/prova).",
+    "vederlo": "Want to see it before you apply? [Try it on WhatsApp]({whatsapp}): the first message is already written, press send and then describe a job. Or [try an example](/prova).",
     "scrivere": "Prefer to write? [{email}](mailto:{email})",
     "modulo": {
       "etichetta": "Pilot programme application",
@@ -1082,18 +1082,20 @@
       },
       "mestieri": {
         "Elettricista": "Electrician",
-        "Idraulico": "Plumber",
-        "Termoidraulico": "Heating and plumbing engineer",
+        "Idraulico o termoidraulico": "Plumber or heating engineer",
         "Imbianchino": "Painter and decorator",
-        "Piastrellista": "Tiler",
-        "Muratore": "Bricklayer",
-        "Cartongessista": "Plasterboard fitter",
-        "Serramentista": "Window and door fitter",
-        "Falegname": "Joiner",
-        "Fabbro": "Metalworker",
+        "Muratore o impresa edile": "Bricklayer or building firm",
+        "Altri lavori per la casa": "Other home work",
         "Giardiniere": "Gardener",
-        "Impresa edile": "Building firm",
-        "Impresa di ristrutturazioni": "Renovation firm",
+        "Officina o carrozzeria": "Car repair or body shop",
+        "Fotografo o videomaker": "Photographer or videomaker",
+        "Catering o ristorazione": "Catering or food service",
+        "Allestimenti ed eventi": "Event set-ups and events",
+        "Grafica e stampa": "Graphic design and printing",
+        "Tecnico informatico": "IT technician",
+        "Traslochi": "Removals",
+        "Formazione e lezioni": "Training and lessons",
+        "Estetica e benessere": "Beauty and wellness",
         "Altro": "Other"
       },
       "volumi": {
@@ -1274,7 +1276,7 @@
         {
           "t": "ul",
           "voci": [
-            "We do our best to make sure the service always works without errors, but it can misread a site visit. That's why you must check every draft before you approve it.",
+            "We do our best to make sure the service always works without errors, but it can misread your description of the job. That's why you must check every draft before you approve it.",
             "There can be interruptions for maintenance or because of problems with our suppliers. We'll tell you in advance about any major maintenance.",
             "Within the limits of the law, and except in cases of wilful misconduct or gross negligence, our liability does not go beyond what you have paid us in the last 12 months. During the free pilot, the service is provided as it is."
           ]
@@ -1338,7 +1340,7 @@
   },
   "prova": {
     "titolo": "Try the engine",
-    "h1": "From site visit to draft",
+    "h1": "From your description to a draft",
     "testo": "The engine picks out the jobs, matches them to your price list and prepares a draft for you to check. Prices come only from your price list: what it can't find stays to be priced, and if something is missing, it asks you.",
     "nota": "The data here is made up: the price list's business and the customers in the examples don't exist. Don't enter names, addresses or numbers of real people: drafts are kept for 7 days and anyone with the link can open them. Free text is processed by an artificial intelligence service. [Privacy](/privacy)"
   }
