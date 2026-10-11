@@ -50,8 +50,8 @@ export const listinoPrezzi: PaginaFunzione = {
     {
       titolo: "Le parole del mestiere: come chiami le voci a voce",
       paragrafi: [
-        "Nel listino una voce si chiama «Rasatura pareti con stucco», ma in cantiere dici «rasare», «stuccare tutto», «una mano di rasante». Per questo ogni voce ha un campo **come la chiami a voce**: qualche parola, separata da virgole. Quando il sistema cerca la voce giusta, quelle parole pesano più del nome e della descrizione.",
-        "Dopo un import il campo è vuoto. Conviene riempirlo per le voci che usi di più, con le parole che usi davvero, anche quelle di cantiere. Bastano pochi minuti e le bozze successive trovano più voci al primo colpo. Ogni voce può avere anche una descrizione più lunga, che aiuta il sistema a capire che cosa comprende. Sul preventivo va il nome della voce, che nella bozza puoi sempre ritoccare.",
+        "Nel listino una voce si chiama «Rasatura pareti con stucco», ma al lavoro dici «rasare», «stuccare tutto», «una mano di rasante». Per questo ogni voce ha un campo **come la chiami a voce**: qualche parola, separata da virgole. Quando il sistema cerca la voce giusta, quelle parole pesano più del nome e della descrizione.",
+        "Dopo un import il campo è vuoto. Conviene riempirlo per le voci che usi di più, con le parole che usi davvero, anche quelle del mestiere. Bastano pochi minuti e le bozze successive trovano più voci al primo colpo. Ogni voce può avere anche una descrizione più lunga, che aiuta il sistema a capire che cosa comprende. Sul preventivo va il nome della voce, che nella bozza puoi sempre ritoccare.",
       ],
     },
     {

@@ -127,7 +127,7 @@ export const comeFareUnPreventivo: PaginaGuida = {
         {
           titolo: "Il preventivo che arriva dopo una settimana",
           testo:
-            "Chi chiede più preventivi tende a muoversi con chi risponde per primo in modo chiaro. Scriverlo la sera stessa del sopralluogo, quando ricordi ogni dettaglio, è il vantaggio più semplice che hai. È il motivo per cui esiste il [preventivo da vocale](/funzioni/preventivo-da-vocale).",
+            "Chi chiede più preventivi tende a muoversi con chi risponde per primo in modo chiaro. Scriverlo la sera stessa dell'incontro con il cliente, quando ricordi ogni dettaglio, è il vantaggio più semplice che hai. È il motivo per cui esiste il [preventivo da vocale](/funzioni/preventivo-da-vocale).",
         },
         {
           titolo: "Nessuna data di validità",

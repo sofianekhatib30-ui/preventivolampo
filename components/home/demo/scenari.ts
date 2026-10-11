@@ -32,6 +32,7 @@ export type Scenario = {
 };
 
 export const SCENARI: Scenario[] = [
+  // Sei esempi, tre della casa e tre no (Sofiane, 11/10/2026, «anche i mestieri sono troppo edili»: tolti piastrellista e muratore).
   // Accanto ai mestieri della casa, a turno, anche mestieri che non sono della casa (Sofiane, 11/10/2026: «non mostriamo solo questi mestieri mostriamo anche quelli
   // non artigianali»). Il listino di prova (dati/listino.json) copre solo i lavori di casa: per questi tre esempi
   // voci e prezzi sono inventati, come dice la didascalia della finestra.
@@ -148,44 +149,6 @@ export const SCENARI: Scenario[] = [
     domanda: { testo: "Quanti litri di olio?", scelte: ["3", "4", "5"], risposta: 1, quantita: 4 },
     prezzoTuo: 2000,
     iva: { aliquota: 22, perche: "riparazione del veicolo" },
-  },
-  {
-    id: "piastrellista",
-    mestiere: "Piastrellista",
-    lavoro: "Soggiorno",
-    cliente: "Marino",
-    durata: "0:36",
-    vocale:
-      "Soggiorno della signora Marino, ventotto metri quadri. Tolgo il pavimento vecchio e il battiscopa, rifaccio il massetto e poso il gres trenta per trenta che ha comprato lei. Battiscopa nuovo in gres.",
-    righe: [
-      { voce: "Demolizione pavimento in piastrelle", unita: "m²", quantita: 28, prezzo: 1129 },
-      { voce: "Rimozione battiscopa", unita: "m", quantita: null, prezzo: 213 },
-      { voce: "Massetto sabbia e cemento 5 cm", unita: "m²", quantita: 28, prezzo: 2508 },
-      { voce: "Posa gres della cliente, solo posa", unita: "m²", quantita: 28, prezzo: null },
-      { voce: "Battiscopa in gres h 10", unita: "m", quantita: null, prezzo: 1487 },
-    ],
-    domanda: { testo: "Quanti metri di battiscopa?", scelte: ["18", "22", "26"], risposta: 1, quantita: 22 },
-    prezzoTuo: 2400,
-    iva: { aliquota: 10, perche: "abitazione, manutenzione" },
-  },
-  {
-    id: "muratore",
-    mestiere: "Muratore",
-    lavoro: "Cameretta",
-    cliente: "Conti",
-    durata: "0:47",
-    vocale:
-      "Cameretta del signor Conti. Butto giù il tramezzo vecchio e lo rifaccio spostato di un metro: forati da otto, tre e venti per due e settanta, intonaco da tutte e due le parti. Macerie, un metro cubo. Il controtelaio della porta lo metto io.",
-    righe: [
-      { voce: "Demolizione tramezzo in forati", unita: "m²", quantita: null, prezzo: 1554 },
-      { voce: "Tramezzo in forati 8 cm", unita: "m²", quantita: 8.64, prezzo: 2783, nota: "3,20 × 2,70" },
-      { voce: "Intonaco civile, due facce", unita: "m²", quantita: 17.28, prezzo: 3146, nota: "8,64 × 2" },
-      { voce: "Carico e trasporto macerie", unita: "m³", quantita: 1, prezzo: 3004 },
-      { voce: "Controtelaio porta", unita: "cad", quantita: 1, prezzo: null },
-    ],
-    domanda: { testo: "Il tramezzo da buttare giù: quanti m²?", scelte: ["6", "8", "10"], risposta: 1, quantita: 8 },
-    prezzoTuo: 9000,
-    iva: { aliquota: 10, perche: "abitazione, manutenzione" },
   },
 ];
 

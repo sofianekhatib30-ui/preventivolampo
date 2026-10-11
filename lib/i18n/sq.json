@@ -723,8 +723,6 @@
       "elettricista": "Elektricist",
       "idraulico": "Hidraulik",
       "imbianchino": "Bojaxhi",
-      "piastrellista": "Pllakaxhi",
-      "muratore": "Murator",
       "fotografo": "Fotograf",
       "officina": "Servis makinash",
       "catering": "Katering"
@@ -733,8 +731,6 @@
       "elettricista": "Kuzhina",
       "idraulico": "Kuzhina",
       "imbianchino": "Apartament dy dhomash",
-      "piastrellista": "Dhoma e ndenjes",
-      "muratore": "Dhoma e vogël",
       "fotografo": "Dasmë",
       "officina": "Servis periodik",
       "catering": "Pagëzim"
@@ -743,8 +739,6 @@
       "elettricista": "banesë, mirëmbajtje",
       "idraulico": "banesë, mirëmbajtje",
       "imbianchino": "banesë, mirëmbajtje",
-      "piastrellista": "banesë, mirëmbajtje",
-      "muratore": "banesë, mirëmbajtje",
       "fotografo": "shërbim fotografik",
       "officina": "riparim i automjetit",
       "catering": "shërbim ushqimi për një aktivitet"
@@ -753,8 +747,6 @@
       "elettricista": "Kuzhina e z. Ferrari. Katër pika drite të thjeshta dhe dy me deviator mbi tavolinë. Prizat nga gjashtëmbëdhjetë për pajisjet elektroshtëpiake. Në kuadër vihet një diferencial i ri. Dhe ia montoj llambadarin që ka blerë vetë.",
       "idraulico": "Kuzhina e zonjës Rinaldi. E zhvendosim lavamanin në murin përballë: lidhje e re uji të ngrohtë e të ftohtë me shkarkimin, tre metra shkarkim nga dyzet. Lidh edhe larësen e enëve. Rubinetin e ka tashmë ajo, e montoj unë.",
       "imbianchino": "Apartamenti dy dhomash i z. Greco, salloni dhe dhoma e gjumit: muret dhe tavanet bëjnë njëqind e njëzet metra. Gërvisht ku zhvishet, fiksativ kudo dhe dy duar bojë të larshme. Gjashtë metra bojë kundër mykut në tavanin e banjës. Mobiljet i zhvendosim ne.",
-      "piastrellista": "Dhoma e ndenjes e zonjës Marino, njëzet e tetë metra katrorë. Heq dyshemenë e vjetër dhe plintusin, ribëj masetin dhe vendos gresin tridhjetë me tridhjetë që ka blerë ajo. Plintus i ri prej gresi.",
-      "muratore": "Dhoma e vogël e z. Conti. E rrëzoj murin ndarës të vjetër dhe e ndërtoj përsëri një metër më tutje: tulla të zbrazëta nga tetë, tre e njëzet me dy e shtatëdhjetë, suva nga të dyja anët. Mbetje, një metër kub. Kornizën e derës e vë unë.",
       "fotografo": "Dasma e zonjës Bianchi në shtator, në një vilë. Shërbim nga përgatitja e nuses deri te prerja e tortës, rreth dhjetë orë. Duan videon me dron dhe një album me tridhjetë faqe, plus galerinë online për të ftuarit. Projeksionin e fotove gjatë festës ma kërkojnë veçmas.",
       "officina": "Panda e zotit Galli, njëqind e njëzet mijë kilometra. Servis me vaj dhe filtra, pastaj ndërroj pllakat dhe disqet përpara. Baterinë e re e ka blerë vetë, ia montoj unë.",
       "catering": "Pagëzimi i të voglit Leo, në kopshtin e zonjës Russo, rreth gjashtëdhjetë veta. Aperitiv mirëseardhjeje, bufe e kripur dhe e ëmbël, ujë, verë dhe pije freskuese. Duhen dy kamerierë për katër orë. Tortën e sjell pastiçeria e tyre: ne e presim dhe e shërbejmë."

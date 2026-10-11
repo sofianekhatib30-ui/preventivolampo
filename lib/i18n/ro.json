@@ -723,8 +723,6 @@
       "elettricista": "Electrician",
       "idraulico": "Instalator",
       "imbianchino": "Zugrav",
-      "piastrellista": "Faianțar",
-      "muratore": "Zidar",
       "fotografo": "Fotograf",
       "officina": "Service auto",
       "catering": "Catering"
@@ -733,8 +731,6 @@
       "elettricista": "Bucătărie",
       "idraulico": "Bucătărie",
       "imbianchino": "Apartament cu 2 camere",
-      "piastrellista": "Living",
-      "muratore": "Cameră de copii",
       "fotografo": "Nuntă",
       "officina": "Revizie",
       "catering": "Botez"
@@ -743,8 +739,6 @@
       "elettricista": "locuință, întreținere",
       "idraulico": "locuință, întreținere",
       "imbianchino": "locuință, întreținere",
-      "piastrellista": "locuință, întreținere",
-      "muratore": "locuință, întreținere",
       "fotografo": "serviciu foto",
       "officina": "reparație auto",
       "catering": "servire la un eveniment"
@@ -753,8 +747,6 @@
       "elettricista": "Bucătăria domnului Ferrari. Patru puncte de lumină simple și două cu cap scară deasupra mesei. Prizele de 16 pentru electrocasnice. În tablou intră un diferențial nou. Și îi montez candelabrul pe care l-a cumpărat el.",
       "idraulico": "Bucătăria doamnei Rinaldi. Mutăm chiuveta pe peretele din față: racord nou de apă caldă și rece cu scurgere, trei metri de țeavă de scurgere de 40. Racordez și mașina de spălat vase. Bateria o are deja dumneaei, o montez eu.",
       "imbianchino": "Apartamentul domnului Greco, living și dormitor: pereții și tavanele fac o sută douăzeci de metri. Răzuiesc unde se cojește, grund peste tot și două straturi de lavabilă. Șase metri de vopsea antimucegai pe tavanul băii. Mobila o mutăm noi.",
-      "piastrellista": "Living-ul doamnei Marino, douăzeci și opt de metri pătrați. Scot pardoseala veche și plinta, refac șapa și montez gresia de treizeci pe treizeci pe care a cumpărat-o dumneaei. Plintă nouă din gresie.",
-      "muratore": "Camera de copii a domnului Conti. Dărâm peretele vechi și îl refac mutat cu un metru: cărămidă de opt, trei și douăzeci pe doi și șaptezeci, tencuială pe ambele părți. Moloz, un metru cub. Tocul ușii îl pun eu.",
       "fotografo": "Nunta doamnei Bianchi în septembrie, la o vilă. Serviciu de la pregătirea miresei până la tăierea tortului, cam zece ore. Vor filmare cu drona și un album de treizeci de pagini, plus galeria online pentru invitați. Proiecția fotografiilor în timpul petrecerii mi-o cer separat.",
       "officina": "Panda domnului Galli, o sută douăzeci de mii de kilometri. Revizie cu ulei și filtre, apoi schimb plăcuțele și discurile din față. Bateria nouă a cumpărat-o deja el, i-o montez eu.",
       "catering": "Botezul micului Leo, în grădina doamnei Russo, cam șaizeci de persoane. Aperitiv de bun venit, bufet sărat și dulce, apă, vin și băuturi răcoritoare. E nevoie de doi ospătari pentru patru ore. Tortul îl aduce cofetăria lor: noi îl tăiem și îl servim."

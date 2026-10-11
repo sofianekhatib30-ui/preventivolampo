@@ -4,16 +4,16 @@ export const preventivoDaVocale: PaginaFunzione = {
   meta: {
     titolo: "Preventivo da vocale: racconti, e la bozza c'è",
     descrizione:
-      "Preventivo da vocale: racconti il sopralluogo a voce o per iscritto, anche nella tua lingua. Torna la bozza col tuo listino e le domande su ciò che manca.",
+      "Preventivo da vocale: racconti il lavoro a voce o per iscritto, anche nella tua lingua. Torna la bozza col tuo listino e le domande su ciò che manca.",
   },
   nome: "Preventivo da vocale",
-  riga: "Racconti il sopralluogo come a un collega: voci, misure, domande ed esclusioni le mette in fila il sistema.",
+  riga: "Racconti il lavoro come a un collega: voci, misure, domande ed esclusioni le mette in fila il sistema.",
   h1: "Preventivo da vocale: lo racconti, e la bozza la scrive il sistema",
   sottotitolo:
-    "Finito il sopralluogo parli al telefono o scrivi due righe, come faresti con un collega. Il sistema separa le lavorazioni, rifà i conti delle misure, prende i prezzi dal tuo listino e ti chiede quello che non hai detto. Tu controlli e approvi.",
+    "Finito con il cliente parli al telefono o scrivi due righe, come faresti con un collega. Il sistema separa le lavorazioni, rifà i conti delle misure, prende i prezzi dal tuo listino e ti chiede quello che non hai detto. Tu controlli e approvi.",
   sezioni: [
     {
-      titolo: "Come racconti il sopralluogo",
+      titolo: "Come racconti il lavoro",
       paragrafi: [
         "Apri la pagina del nuovo preventivo dal telefono, senza installare niente. Hai due strade: premi il microfono e detti, oppure scrivi. Quando detti, la voce la trasforma in testo il riconoscimento vocale del telefono: a noi arriva solo il testo, mai l'audio. Puoi rileggerlo e sistemarlo prima di preparare la bozza.",
         "Puoi raccontare anche nella tua lingua. A voce scegli fra italiano, rumeno, albanese, arabo, ucraino, russo, spagnolo, francese e inglese, se il tuo telefono riconosce quella lingua; se non la riconosce, te lo dice e la scrivi. Per iscritto va bene qualunque lingua, anche mescolata con l'italiano. La bozza esce sempre in italiano, e le misure dette in un'altra lingua valgono come quelle dette in italiano.",
@@ -56,7 +56,7 @@ export const preventivoDaVocale: PaginaFunzione = {
     {
       titolo: "Come raccontare bene: qualche consiglio pratico",
       paragrafi: [
-        "Il sistema capisce il parlato di cantiere, le misure a spanne e i ripensamenti. Ma qualche abitudine ti fa trovare una bozza più completa e meno domande da chiudere.",
+        "Il sistema capisce il parlato di tutti i giorni, le misure a spanne e i ripensamenti. Ma qualche abitudine ti fa trovare una bozza più completa e meno domande da chiudere.",
       ],
       punti: [
         {
@@ -127,7 +127,7 @@ export const preventivoDaVocale: PaginaFunzione = {
       },
       {
         d: "Il cliente vede il mio racconto?",
-        r: "No. Il cliente vede il preventivo: le voci, le quantità, i prezzi e le esclusioni. Il racconto e le note del sopralluogo restano a te.",
+        r: "No. Il cliente vede il preventivo: le voci, le quantità, i prezzi e le esclusioni. Il racconto e le note restano a te.",
       },
       {
         d: "Cosa succede se nomino un lavoro che non faccio io?",

@@ -75,10 +75,10 @@ export const it = {
     altroTesto:
       "Se fai preventivi a voci, funziona con il tuo listino: le parole del mestiere le trova lì, e quello che non c'è resta da prezzare. Carichi il listino che hai, anche in foto, e lo provi sui tuoi lavori.",
     altroCta: "Provalo sul tuo lavoro",
-    mestieri: { elettricista: "Elettricista", idraulico: "Idraulico", imbianchino: "Imbianchino", piastrellista: "Piastrellista", muratore: "Muratore", fotografo: "Fotografo", officina: "Officina", catering: "Catering" },
-    lavori: { elettricista: "Cucina", idraulico: "Cucina", imbianchino: "Bilocale", piastrellista: "Soggiorno", muratore: "Cameretta", fotografo: "Matrimonio", officina: "Tagliando", catering: "Battesimo" },
+    mestieri: { elettricista: "Elettricista", idraulico: "Idraulico", imbianchino: "Imbianchino", fotografo: "Fotografo", officina: "Officina", catering: "Catering" },
+    lavori: { elettricista: "Cucina", idraulico: "Cucina", imbianchino: "Bilocale", fotografo: "Matrimonio", officina: "Tagliando", catering: "Battesimo" },
     // Perché quell'aliquota IVA, una per esempio.
-    perche: { elettricista: "abitazione, manutenzione", idraulico: "abitazione, manutenzione", imbianchino: "abitazione, manutenzione", piastrellista: "abitazione, manutenzione", muratore: "abitazione, manutenzione", fotografo: "servizio fotografico", officina: "riparazione del veicolo", catering: "somministrazione per un evento" },
+    perche: { elettricista: "abitazione, manutenzione", idraulico: "abitazione, manutenzione", imbianchino: "abitazione, manutenzione", fotografo: "servizio fotografico", officina: "riparazione del veicolo", catering: "somministrazione per un evento" },
     // Il racconto dell'artigiano nella lingua della pagina: le voci della bozza restano in italiano.
     vocali: {
       elettricista:
@@ -87,10 +87,6 @@ export const it = {
         "Cucina della signora Rinaldi. Spostiamo il lavello sulla parete di fronte: nuovo allaccio acqua calda e fredda con lo scarico, tre metri di scarico da quaranta. Allaccio anche la lavastoviglie. Il miscelatore ce l'ha già lei, lo monto io.",
       imbianchino:
         "Bilocale del signor Greco, soggiorno e camera: pareti e soffitti fanno centoventi metri. Raschio dove si sfoglia, fissativo dappertutto e due mani di lavabile. Sei metri di antimuffa sul soffitto del bagno. I mobili li spostiamo noi.",
-      piastrellista:
-        "Soggiorno della signora Marino, ventotto metri quadri. Tolgo il pavimento vecchio e il battiscopa, rifaccio il massetto e poso il gres trenta per trenta che ha comprato lei. Battiscopa nuovo in gres.",
-      muratore:
-        "Cameretta del signor Conti. Butto giù il tramezzo vecchio e lo rifaccio spostato di un metro: forati da otto, tre e venti per due e settanta, intonaco da tutte e due le parti. Macerie, un metro cubo. Il controtelaio della porta lo metto io.",
       fotografo:
         "Matrimonio della signora Bianchi a settembre, in villa. Servizio dalla preparazione della sposa al taglio della torta, più o meno dieci ore. Vogliono il video con il drone e un album da trenta pagine, più la galleria online per gli invitati. La proiezione delle foto durante la festa me la chiedono a parte.",
       officina:

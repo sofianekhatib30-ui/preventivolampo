@@ -95,7 +95,7 @@ export const preventivoClienteStraniero: PaginaGuida = {
       titolo: "Il sopralluogo, quando non vi capite bene",
       paragrafi: [
         "Il preventivo bilingue nasce dal sopralluogo, ed è lì che si creano gli equivoci. Ripeti ad alta voce le misure e le scelte, mostra con le mani quello che farai, fotografa le cose da rimuovere e quelle da tenere. Se il cliente ti manda messaggi nella sua lingua, rispondi per iscritto: una conversazione scritta, anche tradotta male, vale più di una a voce capita a metà.",
-        "Lo stesso vale per te. Se l'italiano non è la tua prima lingua, puoi raccontare il sopralluogo nella lingua in cui ragioni meglio: a Preventivi arriva il testo, in rumeno, in albanese, in arabo o in un'altra lingua, e la bozza del preventivo esce comunque in italiano, pronta da tradurre per il cliente.",
+        "Lo stesso vale per te. Se l'italiano non è la tua prima lingua, puoi raccontare il lavoro nella lingua in cui ragioni meglio: a Preventivi arriva il testo, in rumeno, in albanese, in arabo o in un'altra lingua, e la bozza del preventivo esce comunque in italiano, pronta da tradurre per il cliente.",
       ],
     },
   ],
