@@ -14,7 +14,7 @@ export const SITE_URL =
 export const SITE_TITLE = "Preventivi · Il preventivo parte dal furgone";
 
 export const SITE_DESCRIPTION =
-  "Racconti il sopralluogo a voce o per iscritto: ti torna la bozza con i prezzi del tuo listino e l'IVA edile giusta. Per tutti i mestieri della casa.";
+  "Racconti il lavoro a voce o per iscritto: ti torna la bozza con i prezzi del tuo listino e l'IVA giusta. Per ogni mestiere: casa, auto, eventi, aziende e persone.";
 
 export const CONTACT_EMAIL = "studio@kdigitalsolution.it";
 

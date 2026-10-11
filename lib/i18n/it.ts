@@ -44,7 +44,7 @@ export const it = {
     risorse: "Risorse",
   },
   hero: {
-    etichetta: "Per tutti i mestieri della casa",
+    etichetta: "Per ogni mestiere: casa, auto, eventi, aziende e persone",
     titolo: "Finisci il sopralluogo. Il preventivo parte dal furgone.",
     testo:
       "Lo racconti a voce o lo scrivi, come faresti con un collega. Ti torna la bozza con i prezzi del **tuo** listino, l'IVA giusta e le voci dubbie segnate. Controlli, approvi, e il cliente riceve il PDF da accettare con un clic.",
@@ -71,9 +71,9 @@ export const it = {
     iva: "IVA {aliquota}%: {perche}",
     stati: ["Inviato", "Visto", "Accettato"],
     accettato: "Accettato online dal sig. {cliente}: nome, data, ora e copia del PDF restano a te.",
-    altroTitolo: "Serramenti, cartongesso, caldaie, giardini, cancelli, cucine su misura.",
+    altroTitolo: "Carrozzerie, allestimenti, grafica, traslochi, lezioni private, giardini.",
     altroTesto:
-      "Se lavori a voci e misure, funziona con il tuo listino: le parole del mestiere le trova lì, e quello che non c'è resta da prezzare. Carichi il listino che hai, anche in foto, e lo provi sui tuoi lavori.",
+      "Se fai preventivi a voci, funziona con il tuo listino: le parole del mestiere le trova lì, e quello che non c'è resta da prezzare. Carichi il listino che hai, anche in foto, e lo provi sui tuoi lavori.",
     altroCta: "Provalo sul tuo lavoro",
     mestieri: { elettricista: "Elettricista", idraulico: "Idraulico", imbianchino: "Imbianchino", piastrellista: "Piastrellista", muratore: "Muratore", fotografo: "Fotografo", officina: "Officina", catering: "Catering" },
     lavori: { elettricista: "Cucina", idraulico: "Cucina", imbianchino: "Bilocale", piastrellista: "Soggiorno", muratore: "Cameretta", fotografo: "Matrimonio", officina: "Tagliando", catering: "Battesimo" },
@@ -163,7 +163,7 @@ export const it = {
     ],
     sotto1:
       "Prima di arrivare al cliente, ogni preventivo passa da te. Le voci da controllare sono evidenziate, le misure che mancano te le chiede, e niente parte senza la tua approvazione.",
-    sotto2: "Con il programma pilota lo mettiamo alla prova sui lavori veri di dieci artigiani di mestieri diversi. Quello che non va ce lo dicono, e lo sistemiamo.",
+    sotto2: "Con il programma pilota lo mettiamo alla prova sui lavori veri di dieci professionisti di mestieri diversi. Quello che non va ce lo dicono, e lo sistemiamo.",
   },
   cosa: {
     titolo: "Trascrivere un vocale lo sanno fare in tanti. Noi ci occupiamo di quello che ti fa perdere soldi.",
@@ -272,7 +272,7 @@ export const it = {
       },
       {
         d: "Va bene per il mio mestiere?",
-        r: "Se lavori a voci e misure, sì: elettricisti, idraulici, imbianchini, piastrellisti, muratori, cartongessisti, serramentisti, fabbri, giardinieri. Le parole del mestiere le trova nel tuo listino. Con il pilota lo misuriamo anche sui mestieri che non abbiamo ancora provato.",
+        r: "Se fai preventivi a voci, sì. Per la casa e gli impianti: elettricisti, idraulici, imbianchini, muratori, serramentisti, fabbri, giardinieri. Per l'auto: officine, carrozzerie, gommisti. Per gli eventi: fotografi, catering, allestimenti, musica. Per le aziende e le persone: tecnici informatici, grafici, stampa, formazione, lezioni private, estetica. Le parole del mestiere le trova nel tuo listino. Con il pilota lo misuriamo anche sui mestieri che non abbiamo ancora provato.",
       },
       {
         d: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
@@ -295,7 +295,7 @@ export const it = {
   },
   candidatura: {
     titolo: "Il prossimo preventivo mandalo dal furgone.",
-    testo: "Cerchiamo 10 artigiani per il programma pilota, di qualunque mestiere della casa. Lasciaci i tuoi dati: ti richiamiamo noi, in ordine di arrivo, per capire se fa per te.",
+    testo: "Cerchiamo 10 professionisti per il programma pilota, di qualunque mestiere. Lasciaci i tuoi dati: ti richiamiamo noi, in ordine di arrivo, per capire se fa per te.",
     vederlo:
       "Vuoi vederlo prima di candidarti? [Provalo su WhatsApp]({whatsapp}): il primo messaggio è già scritto, premi invio e poi racconta un sopralluogo. Oppure [prova con un esempio](/prova).",
     scrivere: "Preferisci scrivere? [{email}](mailto:{email})",
@@ -422,7 +422,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "Preventivi è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani e imprese edili a preparare i preventivi: dal racconto del sopralluogo prepara una bozza con i prezzi del listino dell'impresa, che l'artigiano controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
+            "Preventivi è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani, imprese e professionisti di ogni mestiere a preparare i preventivi: dal racconto del lavoro prepara una bozza con i prezzi del listino dell'impresa, che l'impresa controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
         },
         { t: "h2", testo: "Programma pilota" },
         {

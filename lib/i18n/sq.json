@@ -684,7 +684,7 @@
     "risorse": "Burime"
   },
   "hero": {
-    "etichetta": "Për të gjitha profesionet e shtëpisë",
+    "etichetta": "Për çdo profesion: shtëpi, makina, aktivitete, firma dhe persona",
     "titolo": "Mbaron vizitën në objekt. Preventivi niset nga furgoni.",
     "testo": "Ia tregon me zë ose e shkruan, ashtu siç do t'ia thoshe një kolegu. Të kthehet drafti me çmimet e **listës tënde**, me IVA-n e saktë dhe me zërat e dyshimtë të shënuar. Kontrollon, miraton, dhe klienti merr PDF-në për ta pranuar me një klik.",
     "garanzia": "Çmime vetëm nga lista jote. Nëse një zë nuk ka, mbetet pa çmim: asnjë shifër e shpikur.",
@@ -716,8 +716,8 @@
       "Pranuar"
     ],
     "accettato": "Pranuar online nga z. {cliente}: emri, data, ora dhe kopja e PDF-së mbeten te ti.",
-    "altroTitolo": "Dyer e dritare, kartongjes, kaldaja, kopshte, kangjella, kuzhina sipas masës.",
-    "altroTesto": "Nëse punon me zëra dhe masa, funksionon me listën tënde: fjalët e zanatit i gjen aty, dhe ç'nuk ka mbetet pa çmim. Ngarkon listën që ke, edhe me foto, dhe e provon me punët e tua.",
+    "altroTitolo": "Karrocieri, dekorime për aktivitete, grafikë, transferime, mësime private, kopshte.",
+    "altroTesto": "Nëse bën preventiva me zëra, punon me listën tënde të çmimeve: fjalët e profesionit i gjen aty, dhe ajo që nuk është aty mbetet për t'u vendosur çmimi. Ngarkon listën që ke, edhe si foto, dhe e provon në punët e tua.",
     "altroCta": "Provoje me punën tënde",
     "mestieri": {
       "elettricista": "Elektricist",
@@ -867,7 +867,7 @@
       }
     ],
     "sotto1": "Përpara se të arrijë te klienti, çdo preventiv kalon nga ti. Zërat që duhen kontrolluar janë të theksuar, masat që mungojnë të pyet sistemi, dhe asgjë nuk niset pa miratimin tënd.",
-    "sotto2": "Me programin pilot e testojmë në punë të vërteta të dhjetë artizanëve me profesione të ndryshme. Çfarë nuk shkon na e thonë, dhe e rregullojmë."
+    "sotto2": "Me programin pilot e vëmë në provë në punët e vërteta të dhjetë profesionistëve nga profesione të ndryshme. Na thonë çfarë nuk shkon, dhe ne e rregullojmë."
   },
   "cosa": {
     "titolo": "Të transkriptosh një zë e dinë shumë. Ne merremi me atë që të bën të humbasësh para.",
@@ -1030,7 +1030,7 @@
       },
       {
         "d": "A shkon për profesionin tim?",
-        "r": "Nëse punon me zëra dhe masa, po: elektricistë, hidraulikë, bojaxhinj, pllakaxhinj, murator, punëtorë kartongjipsi, montues dyersh e dritaresh, farkëtarë, kopshtarë. Fjalët e profesionit i gjen në listën tënde të çmimeve. Me pilotin e provojmë edhe në profesione që nuk i kemi provuar ende."
+        "r": "Nëse bën preventiva me zëra, po. Për shtëpinë dhe impiantet: elektricistë, hidraulikë, bojaxhinj, murator, montues dyer e dritaresh, farkëtarë, kopshtarë. Për makinat: servise, karrocieri, gomisteri. Për aktivitetet: fotografë, katering, dekorime, muzikë. Për firmat dhe personat: teknikë informatikë, grafistë, shtypshkronja, trajnime, mësime private, estetikë. Fjalët e profesionit i gjen në listën tënde të çmimeve. Me programin pilot e masim edhe në profesionet që nuk i kemi provuar ende."
       },
       {
         "d": "A mund ta tregoj në gjuhën time? Po nëse klienti është i huaj?",
@@ -1056,7 +1056,7 @@
   },
   "candidatura": {
     "titolo": "Preventivin tjetër dërgoje nga furgoni.",
-    "testo": "Po kërkojmë 10 zanatçinj për programin pilot, nga çdo profesion i shtëpisë. Na lër të dhënat e tua: të telefonojmë ne, sipas radhës së ardhjes, për të kuptuar nëse të ka punë.",
+    "testo": "Po kërkojmë 10 profesionistë për programin pilot, nga çdo profesion. Na lër të dhënat e tua: të telefonojmë ne, sipas radhës, për të parë nëse bën për ty.",
     "vederlo": "Do ta shohësh përpara se të aplikosh? [Provoje në WhatsApp]({whatsapp}): mesazhi i parë është shkruar tashmë, shtyp dërgo dhe pastaj tregoji një sopralluogo. Ose [provo me një shembull](/prova).",
     "scrivere": "Preferon të shkruash? [{email}](mailto:{email})",
     "modulo": {
@@ -1215,7 +1215,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë dhe firmat e ndërtimit të përgatisin preventivat: nga rrëfimi i vizitës në kantier përgatit një draft me çmimet e listës së firmës, që zanatçiu e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
+          "testo": "Preventivi është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë, firmat dhe profesionistët e çdo profesioni të përgatisin preventivat: nga rrëfimi i punës përgatit një draft me çmimet e listës së firmës, që firma e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
         },
         {
           "t": "h2",

@@ -684,7 +684,7 @@
     "risorse": "Resources"
   },
   "hero": {
-    "etichetta": "For every home trade",
+    "etichetta": "For every trade: home, cars, events, businesses and people",
     "titolo": "Finish the site visit. The quote leaves from the van.",
     "testo": "You say it out loud or type it, like you would to a colleague. You get back a draft with prices from **your** price list, the right IVA and any doubtful items flagged. You check it, approve it, and the customer gets the PDF to accept with one click.",
     "garanzia": "Prices only from your price list. If an item isn't there, it stays unpriced: no made-up figures.",
@@ -716,8 +716,8 @@
       "Accepted"
     ],
     "accettato": "Accepted online by Mr {cliente}: name, date, time and a copy of the PDF stay with you.",
-    "altroTitolo": "Windows and doors, plasterboard, boilers, gardens, gates, made-to-measure kitchens.",
-    "altroTesto": "If you work with items and measurements, it works with your price list: it finds the words of your trade there, and anything that isn't there stays unpriced. Upload the price list you have, even as a photo, and try it on your own jobs.",
+    "altroTitolo": "Body shops, event set-ups, graphic design, removals, private lessons, gardens.",
+    "altroTesto": "If you quote item by item, it works with your price list: it finds your trade's words there, and anything that isn't there stays to be priced. Upload the price list you have, even as a photo, and try it on your own jobs.",
     "altroCta": "Try it on your own job",
     "mestieri": {
       "elettricista": "Electrician",
@@ -867,7 +867,7 @@
       }
     ],
     "sotto1": "Before it reaches the customer, every quote goes through you. The items to check are highlighted, it asks you for any missing measurements, and nothing goes out without your approval.",
-    "sotto2": "With the pilot programme, we test it on the real jobs of ten tradespeople from different trades. Whatever doesn't work, they tell us, and we fix it."
+    "sotto2": "With the pilot programme we're putting it to the test on the real jobs of ten professionals from different trades. They tell us what doesn't work, and we fix it."
   },
   "cosa": {
     "titolo": "Plenty of people can transcribe a voice note. We deal with the things that lose you money.",
@@ -1030,7 +1030,7 @@
       },
       {
         "d": "Is it right for my trade?",
-        "r": "If you work with items and measurements, yes: electricians, plumbers, painters, tilers, bricklayers, plasterboard fitters, window and door fitters, metalworkers, gardeners. It picks up the words of your trade from your price list. With the pilot we'll also test it on trades we haven't tried yet."
+        "r": "If you quote item by item, yes. Home and installations: electricians, plumbers, painters, bricklayers, window and door fitters, metalworkers, gardeners. Cars: repair shops, body shops, tyre shops. Events: photographers, caterers, event set-ups, music. Businesses and people: IT technicians, graphic designers, printing, training, private lessons, beauty. It finds your trade's words in your price list. With the pilot we'll also measure it on trades we haven't tried yet."
       },
       {
         "d": "Can I tell it in my own language? What if my customer is foreign?",
@@ -1056,7 +1056,7 @@
   },
   "candidatura": {
     "titolo": "Send your next quote from the van.",
-    "testo": "We're looking for 10 tradespeople for the pilot programme, from any home trade. Leave us your details: we'll call you back, in order of arrival, to see if it's right for you.",
+    "testo": "We're looking for 10 professionals for the pilot programme, from any trade. Leave us your details: we'll call you back, in order of arrival, to see if it's right for you.",
     "vederlo": "Want to see it before you apply? [Try it on WhatsApp]({whatsapp}): the first message is already written, press send and then describe a site visit. Or [try an example](/prova).",
     "scrivere": "Prefer to write? [{email}](mailto:{email})",
     "modulo": {
@@ -1215,7 +1215,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople and building firms prepare quotes: from your account of the site visit, it prepares a draft with the prices from the firm's price list. The tradesperson checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
+          "testo": "Preventivi is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople, businesses and professionals of every trade prepare quotes: from your account of the job, it prepares a draft with the prices from the business's price list. The business checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
         },
         {
           "t": "h2",

@@ -684,7 +684,7 @@
     "risorse": "Resurse"
   },
   "hero": {
-    "etichetta": "Pentru toate meseriile din casă",
+    "etichetta": "Pentru orice meserie: casă, auto, evenimente, firme și persoane",
     "titolo": "Termini vizita la client. Oferta pleacă din dubă.",
     "testo": "O povestești cu vocea sau o scrii, ca și cum ai vorbi cu un coleg. Primești ciorna cu prețurile din lista **ta** de prețuri, cu IVA corect și cu pozițiile nesigure marcate. Verifici, aprobi, iar clientul primește PDF-ul și îl acceptă dintr-un clic.",
     "garanzia": "Prețuri doar din lista ta. Dacă o poziție lipsește, rămâne de prețuit: fără cifre inventate.",
@@ -716,8 +716,8 @@
       "Acceptată"
     ],
     "accettato": "Acceptată online de dl. {cliente}: numele, data, ora și copia PDF rămân la tine.",
-    "altroTitolo": "Tâmplărie, gips-carton, centrale termice, grădini, porți, bucătării la comandă.",
-    "altroTesto": "Dacă lucrezi pe poziții și măsurători, merge cu lista ta de prețuri: cuvintele meseriei le găsește acolo, iar ce nu există rămâne de prețuit. Încarci lista pe care o ai, chiar și în poză, și o încerci pe lucrările tale.",
+    "altroTitolo": "Tinichigerii auto, decoruri pentru evenimente, grafică, mutări, meditații, grădini.",
+    "altroTesto": "Dacă faci devize pe poziții, funcționează cu lista ta de prețuri: cuvintele meseriei le găsește acolo, iar ce nu e acolo rămâne de stabilit prețul. Încarci lista pe care o ai, chiar și ca fotografie, și îl încerci pe lucrările tale.",
     "altroCta": "Încearcă pe lucrarea ta",
     "mestieri": {
       "elettricista": "Electrician",
@@ -867,7 +867,7 @@
       }
     ],
     "sotto1": "Înainte să ajungă la client, fiecare deviz trece pe la tine. Pozițiile de verificat sunt evidențiate, măsurile care lipsesc ți le cere, iar nimic nu pleacă fără aprobarea ta.",
-    "sotto2": "Cu programul pilot îl testăm pe lucrări reale ale zece meseriași din meserii diferite. Ce nu merge ne spun ei, și reparăm."
+    "sotto2": "Cu programul pilot îl punem la încercare pe lucrările reale a zece profesioniști din meserii diferite. Ne spun ce nu merge, iar noi reparăm."
   },
   "cosa": {
     "titolo": "Să transcrie un mesaj vocal știu mulți. Noi ne ocupăm de ce te face să pierzi bani.",
@@ -1030,7 +1030,7 @@
       },
       {
         "d": "Merge pentru meseria mea?",
-        "r": "Dacă lucrezi pe poziții și măsurători, da: electricieni, instalatori, zugravi, faianțari, zidari, gipscartoniști, montatori de uși și ferestre, lăcătuși, grădinari. Termenii meseriei îi găsește în lista ta de prețuri. Cu programul pilot măsurăm asta și pe meserii pe care nu le-am încercat încă."
+        "r": "Dacă faci devize pe poziții, da. Pentru casă și instalații: electricieni, instalatori, zugravi, zidari, montatori de tâmplărie, fierari, grădinari. Pentru auto: service-uri, tinichigerii, vulcanizări. Pentru evenimente: fotografi, catering, decoruri, muzică. Pentru firme și persoane: tehnicieni IT, graficieni, tipografii, cursuri, meditații, cosmetică. Cuvintele meseriei le găsește în lista ta de prețuri. Cu programul pilot îl măsurăm și pe meseriile pe care nu le-am încercat încă."
       },
       {
         "d": "Pot să povestesc în limba mea? Și dacă clientul e străin?",
@@ -1056,7 +1056,7 @@
   },
   "candidatura": {
     "titolo": "Următorul deviz trimite-l din furgonetă.",
-    "testo": "Căutăm 10 meseriași pentru programul pilot, din orice meserie a casei. Lasă-ne datele tale: te sunăm noi, în ordinea sosirii, ca să vedem dacă e potrivit pentru tine.",
+    "testo": "Căutăm 10 profesioniști pentru programul pilot, din orice meserie. Lasă-ne datele tale: te sunăm noi, în ordinea sosirii, ca să vedem dacă e potrivit pentru tine.",
     "vederlo": "Vrei să-l vezi înainte să te înscrii? [Încearcă-l pe WhatsApp]({whatsapp}): primul mesaj e deja scris, apeși trimite și apoi povestești o inspecție. Sau [încearcă cu un exemplu](/prova).",
     "scrivere": "Preferi să scrii? [{email}](mailto:{email})",
     "modulo": {
@@ -1215,7 +1215,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi este un serviciu al lui Sofiane Khatib, K Digital Solution, Monza (MB). Îi ajută pe meseriași și pe firmele de construcții să pregătească devizele: din povestea vizitei pe șantier face o ciornă cu prețurile din lista firmei, pe care meseriașul o verifică, o aprobă și o trimite clientului. Serviciul este rezervat firmelor și profesioniștilor cu partita IVA (înregistrați ca plătitori de TVA în Italia)."
+          "testo": "Preventivi este un serviciu al lui Sofiane Khatib, K Digital Solution, Monza (MB). Îi ajută pe meseriași, firme și profesioniști din orice meserie să pregătească devizele: din povestea lucrării face o ciornă cu prețurile din lista firmei, pe care firma o verifică, o aprobă și o trimite clientului. Serviciul este rezervat firmelor și profesioniștilor cu partita IVA (înregistrați ca plătitori de TVA în Italia)."
         },
         {
           "t": "h2",
