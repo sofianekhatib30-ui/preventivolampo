@@ -1119,7 +1119,7 @@
         },
         {
           "t": "p",
-          "testo": "The data controller is Sofiane Khatib, K Digital Solution, Monza (MB). For any request about your data, write to [{email}](mailto:{email})."
+          "testo": "The data controller is Sofiane Khatib, K Digital Solution. For any request about your data, write to [{email}](mailto:{email})."
         },
         {
           "t": "p",
@@ -1217,7 +1217,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople, businesses and professionals of every trade prepare quotes: from your account of the job, it prepares a draft with the prices from the business's price list. The business checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
+          "testo": "Preventivi is a service by Sofiane Khatib, K Digital Solution. It helps tradespeople, businesses and professionals of every trade prepare quotes: from your account of the job, it prepares a draft with the prices from the business's price list. The business checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
         },
         {
           "t": "h2",
@@ -1295,7 +1295,7 @@
         },
         {
           "t": "p",
-          "testo": "If we change these terms, we'll tell you by email at least 30 days before. Italian law applies and, for disputes, the foro di Monza (the court of Monza). If you have any questions, write to [{email}](mailto:{email})."
+          "testo": "If we change these terms, we'll tell you by email at least 30 days before. Italian law applies and, for disputes, the court that has jurisdiction under the law. If you have any questions, write to [{email}](mailto:{email})."
         }
       ]
     },

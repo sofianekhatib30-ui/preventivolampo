@@ -1119,7 +1119,7 @@
         },
         {
           "t": "p",
-          "testo": "Kontrollues i të dhënave (titolare del trattamento) është Sofiane Khatib, K Digital Solution, Monza (MB). Për çdo kërkesë mbi të dhënat e tua shkruaj te [{email}](mailto:{email})."
+          "testo": "Kontrollues i të dhënave (titolare del trattamento) është Sofiane Khatib, K Digital Solution. Për çdo kërkesë mbi të dhënat e tua shkruaj te [{email}](mailto:{email})."
         },
         {
           "t": "p",
@@ -1217,7 +1217,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë, firmat dhe profesionistët e çdo profesioni të përgatisin preventivat: nga rrëfimi i punës përgatit një draft me çmimet e listës së firmës, që firma e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
+          "testo": "Preventivi është një shërbim i Sofiane Khatib, K Digital Solution. Ndihmon zanatçinjtë, firmat dhe profesionistët e çdo profesioni të përgatisin preventivat: nga rrëfimi i punës përgatit një draft me çmimet e listës së firmës, që firma e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
         },
         {
           "t": "h2",
@@ -1295,7 +1295,7 @@
         },
         {
           "t": "p",
-          "testo": "Nëse i ndryshojmë këto kushte, ta themi me email të paktën 30 ditë përpara. Vlen ligji italian dhe, për mosmarrëveshjet, foro di Monza (gjykata e Monzës). Për çdo pyetje shkruaj te [{email}](mailto:{email})."
+          "testo": "Nëse i ndryshojmë këto kushte, ta themi me email të paktën 30 ditë përpara. Vlen ligji italian dhe, për mosmarrëveshjet, gjykata kompetente sipas ligjit. Për çdo pyetje shkruaj te [{email}](mailto:{email})."
         }
       ]
     },

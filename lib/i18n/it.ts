@@ -347,7 +347,7 @@ export const it = {
       blocchi: [
         { t: "p", testo: "Questa pagina spiega quali dati personali tratta Preventivi, perché, dove finiscono e per quanto tempo restano." },
         { t: "h2", testo: "Chi tratta i dati" },
-        { t: "p", testo: "Titolare del trattamento è Sofiane Khatib, K Digital Solution, Monza (MB). Per qualsiasi richiesta sui tuoi dati scrivi a [{email}](mailto:{email})." },
+        { t: "p", testo: "Titolare del trattamento è Sofiane Khatib, K Digital Solution. Per qualsiasi richiesta sui tuoi dati scrivi a [{email}](mailto:{email})." },
         {
           t: "p",
           testo:
@@ -424,7 +424,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "Preventivi è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani, imprese e professionisti di ogni mestiere a preparare i preventivi: dal racconto del lavoro prepara una bozza con i prezzi del listino dell'impresa, che l'impresa controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
+            "Preventivi è un servizio di Sofiane Khatib, K Digital Solution. Aiuta artigiani, imprese e professionisti di ogni mestiere a preparare i preventivi: dal racconto del lavoro prepara una bozza con i prezzi del listino dell'impresa, che l'impresa controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
         },
         { t: "h2", testo: "Programma pilota" },
         {
@@ -483,7 +483,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "Se cambiamo queste condizioni te lo diciamo via email almeno 30 giorni prima. Valgono la legge italiana e, per le controversie, il foro di Monza. Per qualsiasi domanda scrivi a [{email}](mailto:{email}).",
+            "Se cambiamo queste condizioni te lo diciamo via email almeno 30 giorni prima. Valgono la legge italiana e, per le controversie, il foro competente secondo la legge. Per qualsiasi domanda scrivi a [{email}](mailto:{email}).",
         },
       ],
     },
