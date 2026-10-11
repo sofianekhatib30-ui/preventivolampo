@@ -202,6 +202,22 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
       ctx.fill();
       ctx.restore();
     };
+    // Velo sopra tessere e fili, per leggere bene i testi (Sofiane, 11/10: «ci vuole un filtro o simili per rendere
+    // ben leggibili i testi»). Nella hero su schermi larghi è più scuro a sinistra, dove sta il testo, e quasi
+    // trasparente dietro la finestra d'esempio; altrove è uniforme.
+    const velo = () => {
+      if (galleggia && W >= 1020) {
+        const g = ctx.createLinearGradient(0, 0, W, 0);
+        g.addColorStop(0, "rgba(14,4,8,.66)");
+        g.addColorStop(0.42, "rgba(14,4,8,.56)");
+        g.addColorStop(0.6, "rgba(14,4,8,.16)");
+        g.addColorStop(1, "rgba(14,4,8,.12)");
+        ctx.fillStyle = g;
+      } else {
+        ctx.fillStyle = "rgba(14,4,8,.5)";
+      }
+      ctx.fillRect(0, 0, W, H);
+    };
     const sfondo = () => {
       if (!fondo) return;
       ctx.setTransform(1, 0, 0, 1, 0, 0);
@@ -257,6 +273,7 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
         linea(L, Math.min(da, fino), Math.max(da, fino), 1, true);
         testa(L.ax + (L.bx - L.ax) * fino, L.ay + (L.by - L.ay) * fino);
       }
+      velo();
     };
     // Con «riduci movimento»: tessere ferme e un tratto di filo acceso per corridore, come la home.
     const fermo = () => {
@@ -267,6 +284,7 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
           avanti(c);
         }
       }
+      velo();
     };
 
     const misura = () => {
