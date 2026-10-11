@@ -3,9 +3,6 @@
 // mostra quello che il motore fa davvero: prezzi solo dal listino, una domanda su quello che
 // manca, una voce da prezzare che il prezzo lo mette l'artigiano.
 
-// Evento con cui la sezione dei mestieri cambia l'esempio della demo in cima alla pagina.
-export const EVENTO_MESTIERE = "pl:mestiere";
-
 export type Riga = {
   voce: string;
   unita: string;

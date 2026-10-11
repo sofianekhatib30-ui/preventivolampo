@@ -57,7 +57,7 @@ export function Prezzi({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
           </ul>
           <p className={notaDesktop}>{P.mensileNota}</p>
           <p className="m-0 text-[15px] leading-[1.55] text-testo-2 lg:hidden">
-            {P.mensileVoci.join(", ")}. {P.mensileNota}
+            {P.mensileVoci.join(" · ")}. {P.mensileNota}
           </p>
         </article>
 
@@ -77,7 +77,7 @@ export function Prezzi({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
             ))}
           </ul>
           <p className={notaDesktop}>{P.ivaEsclusa}</p>
-          <p className="m-0 text-[15px] leading-[1.55] text-testo-2 lg:hidden">{P.annualeVoci.join(", ")}.</p>
+          <p className="m-0 text-[15px] leading-[1.55] text-testo-2 lg:hidden">{P.annualeVoci.join(" · ")}.</p>
         </article>
       </div>
       <p className="m-0 text-[13px] text-testo-3 lg:hidden">{P.ivaEsclusa}</p>

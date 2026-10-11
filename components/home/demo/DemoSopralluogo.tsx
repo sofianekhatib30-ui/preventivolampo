@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useLingua } from "@/lib/i18n/client";
 import type { Dizionario } from "@/lib/i18n/it";
 import { fmt } from "@/lib/i18n/testo";
-import { conti, euro, EVENTO_MESTIERE, numero, SCENARI, type Scenario } from "./scenari";
+import { conti, euro, numero, SCENARI, type Scenario } from "./scenari";
 
 // La demo in cima alla home: il vocale si trascrive, le righe arrivano dal listino, una domanda
 // su quello che manca, la voce da prezzare che prezza l'artigiano, l'IVA e l'accettazione.
@@ -90,16 +90,6 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
     }, 350);
     return () => clearTimeout(id);
   }, [setTrascorso]);
-
-  // Dalla sezione dei mestieri più in basso: «Guarda l'esempio» cambia mestiere qui.
-  useEffect(() => {
-    function suEvento(e: Event) {
-      const id = (e as CustomEvent<string>).detail;
-      scegli(id, true);
-    }
-    window.addEventListener(EVENTO_MESTIERE, suEvento);
-    return () => window.removeEventListener(EVENTO_MESTIERE, suEvento);
-  }, [scegli]);
 
   // Fuori dallo schermo o con la scheda nascosta si ferma.
   useEffect(() => {

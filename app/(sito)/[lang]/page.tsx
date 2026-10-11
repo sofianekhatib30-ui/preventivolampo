@@ -7,7 +7,6 @@ import { CosaCambia } from "@/components/home/CosaCambia";
 import { BannerDemo, Demo } from "@/components/home/Demo";
 import { Domande } from "@/components/home/Domande";
 import { Hero } from "@/components/home/Hero";
-import { Mestieri } from "@/components/home/Mestieri";
 import { Numeri } from "@/components/home/Numeri";
 import { Prezzi } from "@/components/home/Prezzi";
 import { Guscio } from "@/components/sito/Guscio";
@@ -43,7 +42,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
     <Guscio d={d} c={c} lingua={lingua}>
       {!aperte && <BannerDemo />}
       <Hero d={d} lingua={lingua} />
-      <Mestieri d={d} lingua={lingua} />
       <ComeFunziona d={d} />
       <Numeri d={d} />
       <CosaCambia d={d} />
