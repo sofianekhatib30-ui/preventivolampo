@@ -251,7 +251,7 @@
 }
 
 /* Griglia della hero, la stessa di Attestiamo, Smistatore Mail e Agenzie e aziende: quadratini da 22 px
-   ogni 30, a partire dall'angolo in alto a destra. GrigliaLuce accende gli stessi quadratini. */
+   ogni 30, a partire dall'angolo in alto a destra. MatriceViva solleva i quadratini pieni. */
 @utility griglia-kds {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30'%3E%3Crect x='4' y='4' width='22' height='22' rx='4' fill='none' stroke='%23F2E4D0' stroke-opacity='.09'/%3E%3C/svg%3E");
   background-position: right top;

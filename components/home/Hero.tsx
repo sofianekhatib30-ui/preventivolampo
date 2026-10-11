@@ -3,7 +3,7 @@ import { Ricco } from "@/components/Ricco";
 import type { Dizionario } from "@/lib/i18n/it";
 import type { LinguaSito } from "@/lib/i18n/lingue";
 import { DemoSopralluogo } from "./demo/DemoSopralluogo";
-import { GrigliaLuce } from "./GrigliaLuce";
+import { MatriceViva } from "./MatriceViva";
 import { ctaPrincipale } from "./Header";
 import { Matrice } from "./Matrice";
 
@@ -20,7 +20,7 @@ export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
       className="su-scuro griglia-kds relative isolate overflow-hidden bg-ardesia pb-[clamp(52px,7vw,104px)] pt-[clamp(44px,6vw,92px)] text-fondo-2"
     >
       <Matrice />
-      <GrigliaLuce />
+      <MatriceViva />
       <div className="mx-auto grid max-w-[1240px] items-center gap-[clamp(36px,5vw,72px)] px-[clamp(16px,5vw,72px)] min-[1021px]:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] [&>*]:min-w-0">
         <div>
           <p className="m-0 inline-flex items-center gap-2.5 text-[15px] font-semibold text-fondo-2">
