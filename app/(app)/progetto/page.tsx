@@ -6,8 +6,8 @@ import { CHIAVI, reportMisure, valori } from "@/lib/misure";
 import { REPO_URL } from "@/lib/sito";
 
 export const metadata: Metadata = {
-  title: "Caso di studio · PreventivoLampo",
-  description: "Come funziona PreventivoLampo: dal vocale del sopralluogo al preventivo, con i prezzi solo dal listino. Numeri misurati su 36 casi.",
+  title: "Caso di studio · Preventivi",
+  description: "Come funziona Preventivi: dal vocale del sopralluogo al preventivo, con i prezzi solo dal listino. Numeri misurati su 36 casi.",
   // Pagina tecnica per chi valuta il lavoro (link dal CV): nessun link dal sito, mai indicizzata.
   robots: { index: false, follow: false },
 };
@@ -65,7 +65,7 @@ export default function Progetto() {
           Dal vocale del sopralluogo al preventivo, senza prezzi inventati.
         </h1>
         <p className="mt-5 max-w-[62ch] text-[18px] leading-relaxed text-testo-2">
-          L&apos;artigiano edile racconta il lavoro come a un collega. PreventivoLampo estrae le lavorazioni, le abbina al suo
+          L&apos;artigiano edile racconta il lavoro come a un collega. Preventivi estrae le lavorazioni, le abbina al suo
           listino, segnala quello che manca e prepara la bozza da controllare dal telefono; dopo l&apos;approvazione genera il PDF
           con l&apos;IVA edile e un link con cui il cliente accetta. È un progetto dimostrativo: impresa, listino e clienti sono
           inventati, i numeri no.

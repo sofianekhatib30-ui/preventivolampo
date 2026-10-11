@@ -1,5 +1,7 @@
 # Index di PreventivoLampo — specifica di realizzazione
 
+> **11/10/2026, decisione di Sofiane: PreventivoLampo non esiste più, è stato inglobato da K Digital Solution.** Il prodotto si chiama **Preventivi**, vive su preventivi.kdigitalsolution.it e usa marchio, colori e caratteri di KDS (Instrument Serif per i titoli, Hanken Grotesk per il testo, inchiostro bordeaux, oro, sabbia), come Attestiamo e Smistatore. Dove questa specifica dice «PreventivoLampo», lime, ardesia, Archivo o fulmine, vale il nuovo: nel codice i token hanno tenuto i nomi storici (`lime` è l'oro, `ardesia` l'inchiostro, `cielo-scuro` il bordeaux), vedi `app/globals.css`. I testi restano quelli di qui, con il nome cambiato.
+
 Scritta da Claude (cloud) il 2026-09-23, su autorizzazione di Sofiane (D2). Questa è la fonte di verità della home: testi, struttura, stile e comportamento. **I testi si copiano alla lettera** dai file di riferimento; se un testo va cambiato, si cambia prima qui.
 
 ## File in questa cartella

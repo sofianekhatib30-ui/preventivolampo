@@ -13,7 +13,7 @@ export function organizzazione() {
     name: "K Digital Solution",
     url: SITE_URL,
     email: CONTACT_EMAIL,
-    brand: { "@type": "Brand", name: "PreventivoLampo" },
+    brand: { "@type": "Brand", name: "Preventivi" },
   };
 }
 
@@ -28,7 +28,7 @@ export function applicazione(lingua: LinguaSito, descrizione = SITE_DESCRIPTION)
   return {
     "@type": "SoftwareApplication",
     "@id": `${SITE_URL}/#applicazione`,
-    name: "PreventivoLampo",
+    name: "Preventivi",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     inLanguage: lingua,
@@ -47,7 +47,7 @@ export function sitoWeb(lingua: LinguaSito) {
   return {
     "@type": "WebSite",
     "@id": `${SITE_URL}/#sito`,
-    name: "PreventivoLampo",
+    name: "Preventivi",
     url: SITE_URL,
     inLanguage: lingua,
     publisher: { "@id": `${SITE_URL}/#organizzazione` },

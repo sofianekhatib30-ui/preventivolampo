@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]">): Promis
   const lingua = linguaValida((await params).lang);
   // Titolo e descrizione della home: in italiano quelli di lib/sito.ts, nelle altre lingue dal dizionario.
   const d = dizionarioDi(lingua);
-  const titolo = lingua === "it" ? SITE_TITLE : `PreventivoLampo · ${d.hero.titolo}`;
+  const titolo = lingua === "it" ? SITE_TITLE : `Preventivi · ${d.hero.titolo}`;
   const descrizione = lingua === "it" ? SITE_DESCRIPTION : d.hero.garanzia;
   return metadati({ lingua, p: "/", titolo, descrizione, titoloCompleto: true });
 }

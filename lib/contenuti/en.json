@@ -2523,7 +2523,7 @@
           "titolo": "Who it's for",
           "paragrafi": [
             "Houses bought by foreigners, flats let to people who have only recently started working here, second homes of families living abroad. The customer understands the measurements and the prices, but an item like «rasatura» (skim coat) or «massetto» (screed) means little to them, and a quote they don't understand gets signed late, or not at all.",
-            "With PreventivoLampo the quote can go out **in English** as well as in Italian: you choose quote by quote. Almost every foreign customer reads English; for anyone who doesn't, the quote stays in Italian.",
+            "With Preventivi the quote can go out **in English** as well as in Italian: you choose quote by quote. Almost every foreign customer reads English; for anyone who doesn't, the quote stays in Italian.",
             "Don't confuse it with the language you use to describe the site visit: that can also be Romanian, Albanian, Arabic or Ukrainian, and the draft still comes out in Italian. We explain it on the page about the [quote from a voice note](/funzioni/preventivo-da-vocale)."
           ]
         },
@@ -2794,7 +2794,7 @@
             "**They stay yours.** Price list, quotes and business details are yours, and on request we send you the price list in Excel and the PDFs of your quotes. We don't sell the data and we don't use it for advertising.",
             "**They only serve your own quotes.** The price list is tied to your business: your drafts only search among your items, and your items never go into anyone else's quotes. To choose the items the system looks at names and descriptions; it takes the price afterwards, from your price list.",
             "**No invented figures.** A price in the draft comes from one of your items, or you type it yourself. If you upload the price list from a PDF or photos, the file is only used to read the items and is not kept afterwards.",
-            "When you stop using PreventivoLampo, your data is deleted within the times set out in the privacy notice, except what the law requires us to keep."
+            "When you stop using Preventivi, your data is deleted within the times set out in the privacy notice, except what the law requires us to keep."
           ]
         }
       ],
@@ -2893,7 +2893,7 @@
           "paragrafi": [
             "Under the lines put the taxable amount (imponibile), the IVA rate, the IVA amount and the total. To a private customer who makes the contract at home or at a distance, you must state the **total price including taxes**, or at least how to calculate it (art. 49 of the codice del consumo). A quote with only the net amount, sent to a private customer, is a recipe for hearing «I understood a different figure».",
             "The customer doesn't choose the rate and neither do you: it depends on the type of property, the type of work and who buys the materials. In homes it's often 10%, with a separate calculation for the beni significativi (\"significant goods\", such as boilers, windows and doors, and sanitaryware). The guide on [IVA on quotes for home work](/guide/iva-preventivo-lavori-casa) explains the cases one by one. If you're in the regime forfettario (flat-rate tax scheme), on the other hand, you don't charge IVA to the customer on the invoice, and it's a good idea to write that in the quote too.",
-            "A system like PreventivoLampo asks you three things (whether it is a home, what kind of work it is, who buys the materials) and works out the rate from there, with the split of the beni significativi (significant goods, a rule of Italian VAT) on the items you have marked in your price list. At the moment it calculates 10%, 22% and that split; inversione contabile (reverse charge), 4% first home and the flat-rate regime not yet, so in those cases check the total before sending it. The final word is yours and your accountant's."
+            "A system like Preventivi asks you three things (whether it is a home, what kind of work it is, who buys the materials) and works out the rate from there, with the split of the beni significativi (significant goods, a rule of Italian VAT) on the items you have marked in your price list. At the moment it calculates 10%, 22% and that split; inversione contabile (reverse charge), 4% first home and the flat-rate regime not yet, so in those cases check the total before sending it. The final word is yours and your accountant's."
           ]
         },
         {
@@ -2917,7 +2917,7 @@
         {
           "titolo": "Acceptance, withdrawal and warranty",
           "paragrafi": [
-            "The quote must say how it is accepted: a dated signature under the sentence «I accept the quote and the conditions stated above», or an online acceptance that leaves a record of who, when and which version. With PreventivoLampo the customer accepts from the link, and the name, date, time and a copy of the accepted PDF are kept.",
+            "The quote must say how it is accepted: a dated signature under the sentence «I accept the quote and the conditions stated above», or an online acceptance that leaves a record of who, when and which version. With Preventivi the customer accepts from the link, and the name, date, time and a copy of the accepted PDF are kept.",
             "If the customer is a private individual and the contract is concluded at their home, or at a distance, the codice del consumo comes into play: as a rule they have 14 days to withdraw without giving a reason, and you must inform them and give them the form. If you don't, the period is extended by twelve months. It deserves a page of its own: [withdrawing from a quote accepted at home](/guide/recesso-preventivo-accettato-a-casa).",
             "Finally the guarantee, which you don't write but which is worth knowing about. In an appalto (contract for works) the customer must report non-conformities and defects within sixty days of discovering them, and the claim lapses two years after delivery of the work (art. 1667 of the codice civile, the Italian Civil Code). In a contratto d'opera (contract for personal work) the periods are shorter: eight days from discovery to report, one year from delivery to take action (art. 2226). If the customer accepts the work and the defects were known or easy to spot, the guarantee is not due: that is why a signed end-of-works record is worth more than it seems. For serious defects in a building, though, you are liable for ten years (art. 1669), and the Corte di Cassazione (Italy's supreme court) applies this to renovations too. And if you also supply goods to a private customer, such as a boiler or a window, the guarantee of the codice del consumo (Consumer Code) applies to those goods."
           ]
@@ -3307,7 +3307,7 @@
           "titolo": "How to write it in the quote",
           "paragrafi": [
             "A well-made quote makes the IVA clear even to someone who knows nothing about tax. Put the type of property and the type of work at the top of the document, mark the beni significativi (significant goods) in the items with their value, and under the lines put the taxable amount at 10%, the one at 22% if there is one, the two taxes and the total. If the customer buys the materials, the line becomes labour only and you write that.",
-            "PreventivoLampo works out the IVA regime from three answers (whether it is a home, what kind of work it is, who buys the materials) and applies the rule of the beni significativi (significant goods) to the items you have marked as such in your [price list](/funzioni/listino-prezzi). At the moment the system calculates 10%, 22% and the split of the beni significativi; inversione contabile (reverse charge), 4% first home and the flat-rate regime not yet, so in those cases check the total before sending it. Under every quote there is a reminder to check with your accountant, and it is a reminder to take seriously."
+            "Preventivi works out the IVA regime from three answers (whether it is a home, what kind of work it is, who buys the materials) and applies the rule of the beni significativi (significant goods) to the items you have marked as such in your [price list](/funzioni/listino-prezzi). At the moment the system calculates 10%, 22% and the split of the beni significativi; inversione contabile (reverse charge), 4% first home and the flat-rate regime not yet, so in those cases check the total before sending it. Under every quote there is a reminder to check with your accountant, and it is a reminder to take seriously."
           ]
         }
       ],
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "A bilingual quote has two columns or two blocks for each item, or the Italian text followed by the translation. At the end you need a clause saying which version prevails if the two don't match, for example: ‘This quote is drawn up in Italian and English. If the two versions differ, the Italian text prevails.’",
             "Why Italian? Because it is the language you work in, the one in which the quote would be read by an Italian consultant, surveyor or judge, and the one in which the technical terms are written. But the clause is not an absolute shield. In contracts with consumers, when the meaning of a clause is doubtful, the interpretation most favourable to the consumer prevails (art. 35, paragraph 2): if the translation says something different from the original and the customer signed trusting their own language, a wrong translation can become your problem.",
-            "So the translation must be faithful, not elegant. Short sentences, one thing per sentence, the same numbers in both versions, no summaries. PreventivoLampo also makes the quote in English, with a PDF in two languages where the Italian text is the one that counts: you always check the Italian version, and that is the one you approve before it goes out."
+            "So the translation must be faithful, not elegant. Short sentences, one thing per sentence, the same numbers in both versions, no summaries. Preventivi also makes the quote in English, with a PDF in two languages where the Italian text is the one that counts: you always check the Italian version, and that is the one you approve before it goes out."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "The right to withdraw, explained in their language",
           "paragrafi": [
             "Under the codice del consumo (Consumer Code), a foreign private customer is a consumer like any other. If the contract is made at their home or at a distance, they normally have 14 days to withdraw (recesso) without giving a reason, and you must inform them before they commit, also handing over the withdrawal form. If the information is missing, the deadline is extended by twelve months.",
-            "With a foreign customer the problem is not the rule, it is whether they understand it. Information in Italian handed to someone who can't read it does the bare minimum and leaves the argument open about what they really knew. Better to give it in both languages, like the rest of the quote: with PreventivoLampo the acceptance page and the withdrawal form are in English too.",
+            "With a foreign customer the problem is not the rule, it is whether they understand it. Information in Italian handed to someone who can't read it does the bare minimum and leaves the argument open about what they really knew. Better to give it in both languages, like the rest of the quote: with Preventivi the acceptance page and the withdrawal form are in English too.",
             "The deadlines, the exceptions (for example made-to-measure goods or urgent repairs requested by the customer) and what happens if the work starts before the deadline are explained in the guide on [withdrawing from a quote accepted at home](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },
@@ -3452,7 +3452,7 @@
           "titolo": "The site visit, when you don't understand each other well",
           "paragrafi": [
             "The bilingual quote starts from the site visit, and that is where misunderstandings begin. Say the measurements and the choices out loud, show with your hands what you are going to do, and photograph what is to be removed and what is to stay. If the customer sends you messages in their language, reply in writing: a written conversation, even badly translated, is worth more than a spoken one half understood.",
-            "The same goes for you. If Italian is not your first language, you can describe the site visit in the language you think best in: PreventivoLampo receives the text, in Romanian, Albanian, Arabic or another language, and the draft quote still comes out in Italian, ready to be translated for the customer."
+            "The same goes for you. If Italian is not your first language, you can describe the site visit in the language you think best in: Preventivi receives the text, in Romanian, Albanian, Arabic or another language, and the draft quote still comes out in Italian, ready to be translated for the customer."
           ]
         }
       ],
@@ -3561,7 +3561,7 @@
             "Before the customer commits, the codice del consumo (Consumer Code) requires you to give them, in a clear and understandable way, a series of information: who you are and how to contact you, what the work involves, the total price including taxes, the payment and delivery arrangements and, above all, **the conditions, time limits and procedures for withdrawing, with the standard form** set out in annex I of the code (art. 49). If the right of withdrawal does not apply, you must say so. You can use the standard instructions in the same annex: if you fill them in correctly, your duty to inform on these points is met.",
             "In off-premises contracts the information must be given on paper or, if the customer agrees, on another durable medium, and you must hand over a copy of the signed contract or the confirmation of the contract (art. 50). The code defines a durable medium as any tool that lets you store information and reproduce it unchanged: a PDF sent by email, which the customer keeps and can read again exactly as it was, fits this description.",
             "Remember that, if a dispute arises, **the burden of proving you informed the customer is yours**. A notice read out loud leaves no trace; a form handed over with the quote and a signed copy do.",
-            "With PreventivoLampo the customer accepts online through the link, and the acceptance leaves a record of name, date, time and a copy of the accepted PDF; the withdrawal form is also available in the customer's language, if the quote is translated. See [online acceptance](/funzioni/accettazione-online)."
+            "With Preventivi the customer accepts online through the link, and the acceptance leaves a record of name, date, time and a copy of the accepted PDF; the withdrawal form is also available in the customer's language, if the quote is translated. See [online acceptance](/funzioni/accettazione-online)."
           ]
         },
         {
@@ -3870,7 +3870,7 @@
     },
     "funzioni": {
       "meta": {
-        "titolo": "How PreventivoLampo works",
+        "titolo": "How Preventivi works",
         "descrizione": "From the site visit story to the accepted quote: a draft from your price list, questions about what's missing, a PDF in the customer's language and online acceptance."
       },
       "h1": "How it works, piece by piece",
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "The templates are free and you don't need to sign up. The prices are left out on purpose: they're yours. If you want the quote to write itself from your account of the site visit, with the prices from your price list already in it, that's what PreventivoLampo does.",
+      "nota": "The templates are free and you don't need to sign up. The prices are left out on purpose: they're yours. If you want the quote to write itself from your account of the site visit, with the prices from your price list already in it, that's what Preventivi does.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Download the {mestiere} template in {formato}"
@@ -3924,7 +3924,7 @@
     "prezzi": {
       "meta": {
         "titolo": "Prices: 30 days free, then €19.90 a month",
-        "descrizione": "PreventivoLampo prices: free 30-day pilot with no automatic renewal, then €19.90 a month or €199 a year, excluding IVA."
+        "descrizione": "Preventivi prices: free 30-day pilot with no automatic renewal, then €19.90 a month or €199 a year, excluding IVA."
       },
       "h1": "Clear prices, and you try it free first",
       "testo": "Thirty days to try it on your real jobs, with unlimited quotes. Then, only if you decide to stay, a fixed fee: no cost per quote, no set-up cost.",
@@ -3960,17 +3960,17 @@
     },
     "chiSiamo": {
       "meta": {
-        "titolo": "About us: who makes PreventivoLampo and why",
-        "descrizione": "PreventivoLampo is made by K Digital Solution, Sofiane Khatib's studio. Why it exists, how we treat your prices and your customers' data, how to contact us."
+        "titolo": "About us: who makes Preventivi and why",
+        "descrizione": "Preventivi is made by K Digital Solution, Sofiane Khatib's studio. Why it exists, how we treat your prices and your customers' data, how to contact us."
       },
-      "h1": "Who makes PreventivoLampo, and why",
-      "intro": "PreventivoLampo is a service from K Digital Solution, Sofiane Khatib's studio that builds software for small businesses. It started from something every tradesperson knows: the work on site finishes at six, and the quotes get written in the evening.",
+      "h1": "Who makes Preventivi, and why",
+      "intro": "Preventivi is a service from K Digital Solution, Sofiane Khatib's studio that builds software for small businesses. It started from something every tradesperson knows: the work on site finishes at six, and the quotes get written in the evening.",
       "sezioni": [
         {
           "titolo": "Why it exists",
           "paragrafi": [
             "If you work in people's homes, you do the site visit, take the measurements and drive back in the van with it all in your head. Then the quote sits there for days, because writing it means looking up prices, redoing the metre counts, remembering what's excluded. Meanwhile the customer asks someone else.",
-            "PreventivoLampo is there to close that gap: you describe the job right after the site visit, as you would to a colleague, and the draft is ready before you get to your next site."
+            "Preventivi is there to close that gap: you describe the job right after the site visit, as you would to a colleague, and the draft is ready before you get to your next site."
           ]
         },
         {

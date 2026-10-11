@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { FaviconAnimata } from "@/components/FaviconAnimata";
 import { classiCaratteri } from "@/lib/brand/caratteri";
 import { LinguaProvider } from "@/lib/i18n/client";
 import { INFO_LINGUA, LINGUE_SITO, LOCALE_OG, linguaValida } from "@/lib/i18n/lingue";
@@ -19,7 +18,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const lingua = linguaValida((await params).lang);
   return {
     metadataBase: new URL(SITE_URL),
-    openGraph: { type: "website", siteName: "PreventivoLampo", locale: LOCALE_OG[lingua] },
+    openGraph: { type: "website", siteName: "Preventivi", locale: LOCALE_OG[lingua] },
   };
 }
 
@@ -31,7 +30,6 @@ export default async function LayoutSito({ children, params }: LayoutProps<"/[la
         <LinguaProvider lingua={lingua} d={dizionarioClientPubblico(lingua)} pubblica>
           {children}
         </LinguaProvider>
-        <FaviconAnimata />
       </body>
     </html>
   );

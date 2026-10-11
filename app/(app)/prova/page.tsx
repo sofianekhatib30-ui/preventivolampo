@@ -13,7 +13,7 @@ import { provaAttiva, serveCodice } from "@/lib/preventivi/http";
 export const dynamic = "force-dynamic";
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
-  return { title: `${d.area.titoli.prova} · PreventivoLampo`, robots: { index: false, follow: false } };
+  return { title: `${d.area.titoli.prova} · Preventivi`, robots: { index: false, follow: false } };
 }
 
 // Pagina di prova: incolli il testo di un vocale (o scegli uno dei 30 sopralluoghi inventati del banco di prova)

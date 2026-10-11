@@ -5,7 +5,7 @@ import { useLingua } from "@/lib/i18n/client";
 import { fmt } from "@/lib/i18n/testo";
 
 // «Quanto ti costano oggi i preventivi»: i numeri li mette chi legge. Non promettiamo quanto
-// tempo restituisce PreventivoLampo: quello si misura con il pilota, sui lavori veri.
+// tempo restituisce Preventivi: quello si misura con il pilota, sui lavori veri.
 
 const SETTIMANE_AL_MESE = 4.33;
 const CANONE = 19.9;

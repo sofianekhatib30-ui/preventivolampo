@@ -1,16 +1,17 @@
-// Geometria del marchio: un foglio con l'orecchia (il preventivo) e il fulmine (il lampo).
-// Usata dal logo animato, dalla favicon, dall'icona Apple e dall'immagine di anteprima.
+// Il marchio di Preventivi è quello di K Digital Solution, come per Attestiamo e Smistatore: la K fatta
+// di una stanghetta sabbia e di una freccia d'oro su fondo inchiostro (lo stesso disegno di
+// kdigitalsolution.it e dell'account). Il vecchio marchio col fulmine di PreventivoLampo è andato con il nome l'11/10/2026.
+// Usato dal logo, dall'icona della scheda, dall'icona Apple e dall'immagine di anteprima.
 export const MARCHIO = {
-  viewBox: "0 0 40 40",
-  // Foglio con l'angolo in alto a destra piegato
-  foglio: "M9 0H29L40 11V31C40 36 36 40 31 40H9C4 40 0 36 0 31V9C0 4 4 0 9 0Z",
-  orecchia: "M29 0V8C29 9.7 30.3 11 32 11H40Z",
-  fulmine: "M23.5 6.5 11.5 22.6H19.2L16.4 33.5 28.6 17.2H20.9Z",
-  colori: { foglio: "#2A2C39", orecchia: "#62C0F6", fulmine: "#B2F601" },
+  viewBox: "0 0 64 64",
+  fondo: { raggio: 14, colore: "#2A1018" },
+  // Disegnata in un riquadro 100×100, poi ridotta e centrata: translate(10 10) scale(0.44)
+  trasforma: "translate(10 10) scale(0.44)",
+  stanghetta: { x: 14, y: 10, larghezza: 15, altezza: 80, raggio: 1.5, colore: "#F2E4D0" },
+  freccia: { d: "M82 10 L42 50 L82 90", colore: "#C6A15B", spessore: 15 },
 } as const;
 
-export function marchioSvg({ size = 40, sfondo }: { size?: number; sfondo?: string } = {}): string {
-  const { foglio, orecchia, fulmine, colori } = MARCHIO;
-  const bg = sfondo ? `<rect width="40" height="40" fill="${sfondo}"/>` : "";
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="${size}" height="${size}">${bg}<path d="${foglio}" fill="${colori.foglio}"/><path d="${orecchia}" fill="${colori.orecchia}"/><path d="${fulmine}" fill="${colori.fulmine}"/></svg>`;
+export function marchioSvg({ size = 64 }: { size?: number } = {}): string {
+  const { fondo, trasforma, stanghetta: s, freccia: f } = MARCHIO;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="${size}" height="${size}"><rect width="64" height="64" rx="${fondo.raggio}" fill="${fondo.colore}"/><g transform="${trasforma}"><rect x="${s.x}" y="${s.y}" width="${s.larghezza}" height="${s.altezza}" rx="${s.raggio}" fill="${s.colore}"/><path d="${f.d}" fill="none" stroke="${f.colore}" stroke-width="${f.spessore}" stroke-miterlimit="8"/></g></svg>`;
 }

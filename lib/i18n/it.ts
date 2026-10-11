@@ -13,8 +13,8 @@ export const it = {
     scegliLingua: "Scegli la lingua",
     faFede: "Traduzione di cortesia: in caso di dubbio fa fede il testo italiano.",
     saltaAlContenuto: "Salta al contenuto",
-    logoTop: "PreventivoLampo, torna all'inizio",
-    logoHome: "PreventivoLampo, home",
+    logoTop: "Preventivi, torna all'inizio",
+    logoHome: "Preventivi, home",
     entra: "Accedi",
     apriMenu: "Apri il menu",
     chiudiMenu: "Chiudi il menu",
@@ -25,7 +25,7 @@ export const it = {
     cookie: "Cookie",
     condizioni: "Condizioni",
     infoLegali: "Informazioni legali",
-    servizioDi: "PreventivoLampo è un servizio di K Digital Solution",
+    servizioDi: "Preventivi è un servizio di K Digital Solution",
     aggiornata: "Aggiornata il {data}",
     comeFunziona: "Come funziona",
     briciole: "Sei qui",
@@ -192,7 +192,7 @@ export const it = {
   },
   confronto: {
     titolo: "Tre modi di fare lo stesso preventivo.",
-    colonne: ["Word o Excel, la sera", "Un chatbot qualsiasi", "PreventivoLampo"],
+    colonne: ["Word o Excel, la sera", "Un chatbot qualsiasi", "Preventivi"],
     righe: [
       { tema: "I prezzi", celle: ["Li copi tu dal listino", "Li stima: il tuo listino non lo conosce", "Solo dal tuo listino. Quello che manca resta da prezzare"] },
       { tema: "Le misure che mancano", celle: ["Te ne accorgi quando scrivi", "Spesso le dà per buone", "Te le chiede prima di fare i conti"] },
@@ -212,7 +212,7 @@ export const it = {
     min: "{n} min",
     passi: "Ogni mese passi sui preventivi circa",
     ore: "{n} ore",
-    costa: "quasi sempre la sera, dopo il cantiere. PreventivoLampo costa 19,90 € al mese:",
+    costa: "quasi sempre la sera, dopo il cantiere. Preventivi costa 19,90 € al mese:",
     allOra: "{n} € per ognuna di quelle ore.",
     nota: "I numeri li metti tu. Quanto tempo ti restituisce lo misuriamo con il pilota, sui lavori veri.",
   },
@@ -278,7 +278,7 @@ export const it = {
         d: "Dove finiscono i vocali e i dati dei miei clienti?",
         r: "Listino e preventivi stanno su server nell'Unione Europea. Per preparare la bozza il testo del sopralluogo passa da un servizio di intelligenza artificiale, indicato nella [pagina Privacy](/privacy). Ai nostri server arriva solo il testo, non l'audio, e con te firmiamo l'accordo per il trattamento dei dati dei tuoi clienti.",
       },
-      { d: "Devo cambiare il programma delle fatture?", r: "No, tieni il tuo. PreventivoLampo si occupa dei preventivi; le fatture restano dove sono." },
+      { d: "Devo cambiare il programma delle fatture?", r: "No, tieni il tuo. Preventivi si occupa dei preventivi; le fatture restano dove sono." },
     ],
   },
   candidatura: {
@@ -331,7 +331,7 @@ export const it = {
     privacy: {
       titolo: "Privacy",
       blocchi: [
-        { t: "p", testo: "Questa pagina spiega quali dati personali tratta PreventivoLampo, perché, dove finiscono e per quanto tempo restano." },
+        { t: "p", testo: "Questa pagina spiega quali dati personali tratta Preventivi, perché, dove finiscono e per quanto tempo restano." },
         { t: "h2", testo: "Chi tratta i dati" },
         { t: "p", testo: "Titolare del trattamento è Sofiane Khatib, K Digital Solution, Monza (MB). Per qualsiasi richiesta sui tuoi dati scrivi a [{email}](mailto:{email})." },
         {
@@ -368,7 +368,7 @@ export const it = {
             "Per vedere, correggere o cancellare questi dati puoi rivolgerti all'artigiano o a noi: gli giriamo la richiesta.",
           ],
         },
-        { t: "h3", testo: "Se provi PreventivoLampo con un esempio o su WhatsApp" },
+        { t: "h3", testo: "Se provi Preventivi con un esempio o su WhatsApp" },
         {
           t: "ul",
           voci: [
@@ -387,7 +387,7 @@ export const it = {
             "Vercel: il sito e le sue funzioni, a Francoforte (UE).",
             "Anthropic (Claude): legge il testo del sopralluogo e prepara la bozza, e traduce le voci del preventivo quando il cliente parla un'altra lingua, negli Stati Uniti.",
             "Twilio e WhatsApp (Meta): ricevono e mandano i messaggi WhatsApp.",
-            "n8n: collega i messaggi WhatsApp a PreventivoLampo.",
+            "n8n: collega i messaggi WhatsApp a Preventivi.",
             "Resend: manda le email con il codice di accesso.",
           ],
         },
@@ -410,7 +410,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "PreventivoLampo è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani e imprese edili a preparare i preventivi: dal racconto del sopralluogo prepara una bozza con i prezzi del listino dell'impresa, che l'artigiano controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
+            "Preventivi è un servizio di Sofiane Khatib, K Digital Solution, Monza (MB). Aiuta artigiani e imprese edili a preparare i preventivi: dal racconto del sopralluogo prepara una bozza con i prezzi del listino dell'impresa, che l'artigiano controlla, approva e manda al cliente. Il servizio è riservato a imprese e professionisti con partita IVA.",
         },
         { t: "h2", testo: "Programma pilota" },
         {
@@ -435,10 +435,10 @@ export const it = {
         {
           t: "ul",
           voci: [
-            "PreventivoLampo propone, tu decidi: nessun preventivo arriva al cliente senza che tu l'abbia aperto e approvato. Prima di approvare controlla voci, quantità e prezzi.",
+            "Preventivi propone, tu decidi: nessun preventivo arriva al cliente senza che tu l'abbia aperto e approvato. Prima di approvare controlla voci, quantità e prezzi.",
             "I prezzi vengono solo dal tuo listino. Le voci che non ci sono restano «da prezzare» e il prezzo lo metti tu.",
             "Il calcolo dell'IVA segue le risposte che dai e le regole dell'Agenzia delle Entrate, ma non è consulenza fiscale: per i casi particolari resta il tuo commercialista.",
-            "Il rapporto con il cliente, i prezzi e i lavori restano tuoi: PreventivoLampo non è parte del contratto fra te e lui.",
+            "Il rapporto con il cliente, i prezzi e i lavori restano tuoi: Preventivi non è parte del contratto fra te e lui.",
           ],
         },
         { t: "h2", testo: "I tuoi dati restano tuoi" },
@@ -463,7 +463,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "Usa PreventivoLampo solo per i preventivi della tua impresa. Non condividere il tuo accesso con persone esterne e non usare il servizio per caricare testi offensivi o richieste in massa. Se queste regole non vengono rispettate possiamo sospendere l'accesso, dopo averti avvisato.",
+            "Usa Preventivi solo per i preventivi della tua impresa. Non condividere il tuo accesso con persone esterne e non usare il servizio per caricare testi offensivi o richieste in massa. Se queste regole non vengono rispettate possiamo sospendere l'accesso, dopo averti avvisato.",
         },
         { t: "h2", testo: "Modifiche e legge applicabile" },
         {
@@ -479,7 +479,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "PreventivoLampo usa solo cookie tecnici: senza, l'area artigiani non saprebbe che sei entrato e il sito non ricorderebbe la lingua che hai scelto. Niente cookie di profilazione, niente statistiche, niente strumenti di terze parti che ti seguono da un sito all'altro. Per questo non trovi un banner dei cookie.",
+            "Preventivi usa solo cookie tecnici: senza, l'area artigiani non saprebbe che sei entrato e il sito non ricorderebbe la lingua che hai scelto. Niente cookie di profilazione, niente statistiche, niente strumenti di terze parti che ti seguono da un sito all'altro. Per questo non trovi un banner dei cookie.",
         },
         {
           t: "ul",
@@ -497,7 +497,7 @@ export const it = {
     },
   },
   accesso: {
-    titolo: "Accedi · PreventivoLampo",
+    titolo: "Accedi · Preventivi",
     h1: "Entra nei tuoi preventivi",
     sotto: "Il tuo listino, i tuoi prezzi, i preventivi con il tuo nome sopra.",
     email: "La tua email",

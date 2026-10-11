@@ -14,11 +14,12 @@ import { recesso, type Recesso } from "./recesso";
 // Colori del brand: testo inchiostro su bianco, intestazioni ardesia, il lime solo come filetto
 // (su bianco non si legge come testo e in stampa in bianco e nero sparisce).
 const hex = (h: string) => rgb(parseInt(h.slice(1, 3), 16) / 255, parseInt(h.slice(3, 5), 16) / 255, parseInt(h.slice(5, 7), 16) / 255);
-const INK = hex("#1F2029");
-const GREY = hex("#5E6172");
-const LINE = hex("#E4E6EC");
-const ARDESIA = hex("#343645");
-const LIME = hex("#B2F601");
+// Colori di K Digital Solution: inchiostro, testo secondario, linea sabbia, oro per il filetto.
+const INK = hex("#2A1018");
+const GREY = hex("#5E4A4D");
+const LINE = hex("#E3D3BC");
+const ARDESIA = hex("#2A1018");
+const LIME = hex("#C6A15B");
 const WHITE = rgb(1, 1, 1);
 const UNIT_LABEL: Record<string, string> = { m2: "mq", m: "m", m3: "mc", cad: "cad", h: "ore", "100kg": "q.li", kg: "kg", l: "l", corpo: "a corpo", giorno: "gg", km: "km", persona: "pers.", intervento: "interv.", mese: "mese", anno: "anno", pagina: "pag.", copia: "copie", t: "t", viaggio: "viaggi", ha: "ha", capo: "capi", kWp: "kWp", kW: "kW", servizio: "servizio" };
 
@@ -61,7 +62,7 @@ export async function generaPdf(p: Preventivo, company: Azienda): Promise<Uint8A
   const doc = await PDFDocument.create();
   doc.setTitle(`Preventivo ${p.numero}`);
   doc.setAuthor(sicuro(company.name));
-  doc.setCreator("PreventivoLampo");
+  doc.setCreator("Preventivi · K Digital Solution");
   const reg = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
   const ital = await doc.embedFont(StandardFonts.HelveticaOblique);

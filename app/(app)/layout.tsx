@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { FaviconAnimata } from "@/components/FaviconAnimata";
 import { classiCaratteri } from "@/lib/brand/caratteri";
 import { LinguaProvider } from "@/lib/i18n/client";
 import { INFO_LINGUA } from "@/lib/i18n/lingue";
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "it_IT",
-    siteName: "PreventivoLampo",
+    siteName: "Preventivi",
     title: SITE_TITLE,
     description: SITE_DESCRIPTION,
   },
@@ -33,7 +32,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <LinguaProvider lingua={lingua} d={d}>
           {children}
         </LinguaProvider>
-        <FaviconAnimata />
       </body>
     </html>
   );

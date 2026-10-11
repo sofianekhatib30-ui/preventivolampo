@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MarchioKds } from "@/components/area/MarchioKds";
+import { Marchio } from "@/components/Marchio";
 import { SceltaLingua } from "@/components/SceltaLingua";
 import { dizionario } from "@/lib/i18n/server";
 import { ACCOUNT } from "@/lib/impresa/sessione";
@@ -15,8 +15,8 @@ declare module "react" {
 
 // Testata dell'area: in cima la barra comune di K Digital Solution (organizzazione, strumenti, ricerca,
 // notifiche, account e uscita), poi la testata dello strumento come in Attestiamo (marchio K, nome in
-// Instrument Serif, impresa), lingua e sezioni. Colori del tema KDS (border-cielo-scuro è il bordeaux dentro
-// tema-kds). Sul telefono le sezioni scorrono in orizzontale e il nome dell'impresa si accorcia.
+// Instrument Serif, impresa), lingua e sezioni. Colori KDS (border-cielo-scuro è il bordeaux:
+// vedi app/globals.css). Sul telefono le sezioni scorrono in orizzontale e il nome dell'impresa si accorcia.
 const SEZIONI = [
   { id: "preventivi", href: "/area" },
   { id: "listino", href: "/area/listino" },
@@ -39,7 +39,7 @@ export async function TestataArea({ impresa, attiva, daPrezzare = 0 }: { impresa
           <div className="flex min-w-0 items-center gap-4">
             {/* Come negli altri strumenti, il marchio porta alla pagina iniziale del prodotto. */}
             <Link href="/" className="flex min-h-11 shrink-0 items-center gap-2.5 text-inchiostro no-underline" aria-label={T.logo}>
-              <MarchioKds className="size-8 shrink-0" />
+              <Marchio className="size-8 shrink-0" />
               <span className="nome-strumento text-[24px] leading-none">Preventivi</span>
             </Link>
             {impresa && (

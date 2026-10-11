@@ -3,31 +3,25 @@
 import { useState } from "react";
 import { MARCHIO } from "@/lib/brand/marchio";
 
-// Il marchio animato: il fulmine si traccia e si accende, poi l'orecchia del foglio scatta.
-// Si anima all'apertura e di nuovo al passaggio del mouse; con «riduci movimento» resta fermo.
+// Il marchio di K Digital Solution, animato come su kdigitalsolution.it: la stanghetta cresce e la
+// freccia si disegna all'apertura e di nuovo al passaggio del mouse; con «riduci movimento» resta fermo.
 export function Marchio({ className, animato = true }: { className?: string; animato?: boolean }) {
   const [giro, setGiro] = useState(0);
-  const { foglio, orecchia, fulmine, colori } = MARCHIO;
+  const { fondo, trasforma, stanghetta: s, freccia: f } = MARCHIO;
   return (
     <svg
       key={giro}
-      className={`${animato ? "logo-animato" : ""} ${className ?? ""}`}
+      className={`${animato ? "marchio-animato" : ""} ${className ?? ""}`}
       viewBox={MARCHIO.viewBox}
       aria-hidden="true"
       focusable="false"
       onMouseEnter={animato ? () => setGiro((g) => g + 1) : undefined}
     >
-      <path d={foglio} fill={colori.foglio} />
-      <path className="lampo-angolo" d={orecchia} fill={colori.orecchia} />
-      <path
-        className="lampo-fulmine"
-        d={fulmine}
-        fill={colori.fulmine}
-        stroke={colori.fulmine}
-        strokeWidth="1.2"
-        strokeLinejoin="round"
-        pathLength={1}
-      />
+      <rect width="64" height="64" rx={fondo.raggio} fill={fondo.colore} />
+      <g transform={trasforma}>
+        <rect className="marchio-stanghetta" x={s.x} y={s.y} width={s.larghezza} height={s.altezza} rx={s.raggio} fill={s.colore} />
+        <path className="marchio-freccia" d={f.d} fill="none" stroke={f.colore} strokeWidth={f.spessore} strokeMiterlimit={8} pathLength={1} />
+      </g>
     </svg>
   );
 }

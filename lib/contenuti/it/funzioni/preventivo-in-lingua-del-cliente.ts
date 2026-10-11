@@ -16,7 +16,7 @@ export const preventivoInLinguaDelCliente: PaginaFunzione = {
       titolo: "A chi serve",
       paragrafi: [
         "Case comprate da stranieri, appartamenti affittati a chi lavora qui da poco, seconde case di famiglie che vivono all'estero. Il cliente capisce le misure e i prezzi, ma una voce come «rasatura» o «massetto» gli dice poco, e un preventivo che non capisce lo firma tardi, o non lo firma.",
-        "Con PreventivoLampo il preventivo può partire **in inglese** oltre che in italiano: lo scegli preventivo per preventivo. L'inglese lo legge quasi ogni cliente straniero; per chi non lo legge, il preventivo resta in italiano.",
+        "Con Preventivi il preventivo può partire **in inglese** oltre che in italiano: lo scegli preventivo per preventivo. L'inglese lo legge quasi ogni cliente straniero; per chi non lo legge, il preventivo resta in italiano.",
         "Non confonderla con la lingua in cui racconti il sopralluogo: quella può essere anche rumeno, albanese, arabo o ucraino, e la bozza esce comunque in italiano. Lo spieghiamo nella pagina sul [preventivo da vocale](/funzioni/preventivo-da-vocale).",
       ],
     },

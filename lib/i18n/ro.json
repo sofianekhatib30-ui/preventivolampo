@@ -653,8 +653,8 @@
     "scegliLingua": "Alege limba",
     "faFede": "Traducere de curtoazie: în caz de dubiu, face fidei textul în italiană.",
     "saltaAlContenuto": "Treci la conținut",
-    "logoTop": "PreventivoLampo, înapoi sus",
-    "logoHome": "PreventivoLampo, pagina principală",
+    "logoTop": "Preventivi, înapoi sus",
+    "logoHome": "Preventivi, pagina principală",
     "entra": "Intră în cont",
     "apriMenu": "Deschide meniul",
     "chiudiMenu": "Închide meniul",
@@ -665,7 +665,7 @@
     "cookie": "Cookie-uri",
     "condizioni": "Condiții",
     "infoLegali": "Informații legale",
-    "servizioDi": "PreventivoLampo este un serviciu K Digital Solution",
+    "servizioDi": "Preventivi este un serviciu K Digital Solution",
     "aggiornata": "Actualizat la {data}",
     "comeFunziona": "Cum funcționează",
     "briciole": "Te afli aici"
@@ -889,7 +889,7 @@
     "colonne": [
       "Word sau Excel, seara",
       "Un chatbot oarecare",
-      "PreventivoLampo"
+      "Preventivi"
     ],
     "righe": [
       {
@@ -952,7 +952,7 @@
     "min": "{n} min",
     "passi": "În fiecare lună petreci cu devizele aproximativ",
     "ore": "{n} ore",
-    "costa": "aproape mereu seara, după șantier. PreventivoLampo costă 19,90 € pe lună:",
+    "costa": "aproape mereu seara, după șantier. Preventivi costă 19,90 € pe lună:",
     "allOra": "{n} € pentru fiecare dintre orele acelea.",
     "nota": "Numerele le pui tu. Cât timp îți redă măsurăm cu pilotul, pe lucrări reale."
   },
@@ -1027,7 +1027,7 @@
       },
       {
         "d": "Trebuie să schimb programul de facturi?",
-        "r": "Nu, îl păstrezi pe al tău. PreventivoLampo se ocupă de devize; facturile rămân unde sunt."
+        "r": "Nu, îl păstrezi pe al tău. Preventivi se ocupă de devize; facturile rămân unde sunt."
       }
     ]
   },
@@ -1086,7 +1086,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Pe această pagină explicăm ce date personale prelucrează PreventivoLampo, de ce, unde ajung și cât timp rămân."
+          "testo": "Pe această pagină explicăm ce date personale prelucrează Preventivi, de ce, unde ajung și cât timp rămân."
         },
         {
           "t": "h2",
@@ -1143,7 +1143,7 @@
         },
         {
           "t": "h3",
-          "testo": "Dacă încerci PreventivoLampo cu un exemplu sau pe WhatsApp"
+          "testo": "Dacă încerci Preventivi cu un exemplu sau pe WhatsApp"
         },
         {
           "t": "ul",
@@ -1169,7 +1169,7 @@
             "Vercel: site-ul și funcțiile lui, la Frankfurt (UE).",
             "Anthropic (Claude): citește textul de la vizita pe șantier și pregătește ciorna, iar când clientul vorbește altă limbă traduce pozițiile din deviz, în Statele Unite.",
             "Twilio și WhatsApp (Meta): primesc și trimit mesajele WhatsApp.",
-            "n8n: leagă mesajele WhatsApp de PreventivoLampo.",
+            "n8n: leagă mesajele WhatsApp de Preventivi.",
             "Resend: trimite emailurile cu codul de acces."
           ]
         },
@@ -1192,7 +1192,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo este un serviciu al lui Sofiane Khatib, K Digital Solution, Monza (MB). Îi ajută pe meseriași și pe firmele de construcții să pregătească devizele: din povestea vizitei pe șantier face o ciornă cu prețurile din lista firmei, pe care meseriașul o verifică, o aprobă și o trimite clientului. Serviciul este rezervat firmelor și profesioniștilor cu partita IVA (înregistrați ca plătitori de TVA în Italia)."
+          "testo": "Preventivi este un serviciu al lui Sofiane Khatib, K Digital Solution, Monza (MB). Îi ajută pe meseriași și pe firmele de construcții să pregătească devizele: din povestea vizitei pe șantier face o ciornă cu prețurile din lista firmei, pe care meseriașul o verifică, o aprobă și o trimite clientului. Serviciul este rezervat firmelor și profesioniștilor cu partita IVA (înregistrați ca plătitori de TVA în Italia)."
         },
         {
           "t": "h2",
@@ -1226,10 +1226,10 @@
         {
           "t": "ul",
           "voci": [
-            "PreventivoLampo propune, tu decizi: niciun deviz nu ajunge la client fără să-l fi deschis și aprobat tu. Înainte să aprobi, verifică pozițiile, cantitățile și prețurile.",
+            "Preventivi propune, tu decizi: niciun deviz nu ajunge la client fără să-l fi deschis și aprobat tu. Înainte să aprobi, verifică pozițiile, cantitățile și prețurile.",
             "Prețurile vin doar din lista ta de prețuri. Pozițiile care lipsesc rămân «de prețuit», iar prețul îl pui tu.",
             "Calculul IVA urmează răspunsurile tale și regulile Agenzia delle Entrate (fiscul italian), dar nu este consultanță fiscală: pentru cazurile speciale rămâne contabilul tău (commercialista).",
-            "Relația cu clientul, prețurile și lucrările rămân ale tale: PreventivoLampo nu face parte din contractul dintre tine și client."
+            "Relația cu clientul, prețurile și lucrările rămân ale tale: Preventivi nu face parte din contractul dintre tine și client."
           ]
         },
         {
@@ -1262,7 +1262,7 @@
         },
         {
           "t": "p",
-          "testo": "Folosește PreventivoLampo doar pentru devizele firmei tale. Nu da accesul tău altor persoane și nu folosi serviciul pentru a încărca texte jignitoare sau cereri în masă. Dacă aceste reguli nu sunt respectate, putem suspenda accesul, după ce te avertizăm."
+          "testo": "Folosește Preventivi doar pentru devizele firmei tale. Nu da accesul tău altor persoane și nu folosi serviciul pentru a încărca texte jignitoare sau cereri în masă. Dacă aceste reguli nu sunt respectate, putem suspenda accesul, după ce te avertizăm."
         },
         {
           "t": "h2",
@@ -1279,7 +1279,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo folosește doar cookie-uri tehnice: fără ele, zona pentru meseriași nu ar ști că ai intrat, iar site-ul nu ar ține minte limba pe care ai ales-o. Fără cookie-uri de profilare, fără statistici, fără instrumente ale unor terți care te urmăresc de pe un site pe altul. De aceea nu vei găsi un banner de cookie-uri."
+          "testo": "Preventivi folosește doar cookie-uri tehnice: fără ele, zona pentru meseriași nu ar ști că ai intrat, iar site-ul nu ar ține minte limba pe care ai ales-o. Fără cookie-uri de profilare, fără statistici, fără instrumente ale unor terți care te urmăresc de pe un site pe altul. De aceea nu vei găsi un banner de cookie-uri."
         },
         {
           "t": "ul",
@@ -1296,7 +1296,7 @@
     }
   },
   "accesso": {
-    "titolo": "Autentificare · PreventivoLampo",
+    "titolo": "Autentificare · Preventivi",
     "h1": "Intră în devizele tale",
     "sotto": "Lista ta de prețuri, prețurile tale, devize cu numele tău pe ele.",
     "email": "Emailul tău",

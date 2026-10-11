@@ -10,7 +10,7 @@ export function Demo({ d }: { d: Dizionario }) {
         <h2 className="titolo-finale m-0">Il servizio non è in vendita. Il motore sì, funziona.</h2>
         <div className="flex flex-col gap-6">
           <p className="m-0 max-w-[520px] text-[17px] leading-normal text-scuro-testo lg:text-xl">
-            PreventivoLampo è un progetto dimostrativo di Sofiane Khatib. Questa pagina racconta il prodotto come se fosse sul
+            Preventivi è un progetto dimostrativo di Sofiane Khatib. Questa pagina racconta il prodotto come se fosse sul
             mercato; la parte che conta gira davvero. Incolli il testo di un sopralluogo e ricevi la bozza con i prezzi di un
             listino di prova, le domande su quello che manca, l&apos;IVA edile ripartita e il PDF per il cliente.
           </p>

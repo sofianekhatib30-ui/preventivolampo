@@ -33,7 +33,7 @@ export function metadati({
   titoloCompleto?: boolean;
   articolo?: { modificato: string };
 }): Metadata {
-  const title = titoloCompleto ? titolo : `${titolo} · PreventivoLampo`;
+  const title = titoloCompleto ? titolo : `${titolo} · Preventivi`;
   const nelleIndicizzate = LINGUE_INDICIZZATE.includes(lingua);
   return {
     title: { absolute: title },
@@ -42,7 +42,7 @@ export function metadati({
     robots: { index: indicizzabile(lingua), follow: INDEXABLE },
     openGraph: {
       type: articolo ? "article" : "website",
-      siteName: "PreventivoLampo",
+      siteName: "Preventivi",
       title,
       description: descrizione,
       url: percorso(lingua, p),

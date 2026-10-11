@@ -3,7 +3,7 @@ import { linguaValida } from "@/lib/i18n/lingue";
 import { dizionarioDi } from "@/lib/i18n/server";
 
 // Anteprima della home e delle pagine che non ne hanno una propria.
-export const alt = "PreventivoLampo";
+export const alt = "Preventivi";
 export const size = DIMENSIONE_OG;
 export const contentType = "image/png";
 

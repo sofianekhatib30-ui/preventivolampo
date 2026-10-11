@@ -653,8 +653,8 @@
     "scegliLingua": "Zgjidh gjuhën",
     "faFede": "Përkthim kortezie: në rast dyshimi vlen teksti në italisht.",
     "saltaAlContenuto": "Kalo te përmbajtja",
-    "logoTop": "PreventivoLampo, kthehu në fillim",
-    "logoHome": "PreventivoLampo, faqja kryesore",
+    "logoTop": "Preventivi, kthehu në fillim",
+    "logoHome": "Preventivi, faqja kryesore",
     "entra": "Hyr",
     "apriMenu": "Hap menunë",
     "chiudiMenu": "Mbyll menunë",
@@ -665,7 +665,7 @@
     "cookie": "Cookie",
     "condizioni": "Kushtet",
     "infoLegali": "Informacione ligjore",
-    "servizioDi": "PreventivoLampo është një shërbim i K Digital Solution",
+    "servizioDi": "Preventivi është një shërbim i K Digital Solution",
     "aggiornata": "Përditësuar më {data}",
     "comeFunziona": "Si funksionon",
     "briciole": "Ti ndodhesh këtu"
@@ -889,7 +889,7 @@
     "colonne": [
       "Word ose Excel, në mbrëmje",
       "Një chatbot çfarëdo",
-      "PreventivoLampo"
+      "Preventivi"
     ],
     "righe": [
       {
@@ -952,7 +952,7 @@
     "min": "{n} min",
     "passi": "Çdo muaj kalon me preventivat afërsisht",
     "ore": "{n} orë",
-    "costa": "pothuajse gjithmonë në mbrëmje, pas kantierit. PreventivoLampo kushton 19,90 € në muaj:",
+    "costa": "pothuajse gjithmonë në mbrëmje, pas kantierit. Preventivi kushton 19,90 € në muaj:",
     "allOra": "{n} € për secilën nga ato orë.",
     "nota": "Numrat i vendos ti. Sa kohë të kthen e masim me pilotin, në punë të vërteta."
   },
@@ -1027,7 +1027,7 @@
       },
       {
         "d": "Duhet ta ndryshoj programin e faturave?",
-        "r": "Jo, mbaje të tuajin. PreventivoLampo merret me preventivat; faturat mbeten aty ku janë."
+        "r": "Jo, mbaje të tuajin. Preventivi merret me preventivat; faturat mbeten aty ku janë."
       }
     ]
   },
@@ -1086,7 +1086,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Kjo faqe shpjegon cilat të dhëna personale përpunon PreventivoLampo, pse, ku përfundojnë dhe sa kohë ruhen."
+          "testo": "Kjo faqe shpjegon cilat të dhëna personale përpunon Preventivi, pse, ku përfundojnë dhe sa kohë ruhen."
         },
         {
           "t": "h2",
@@ -1143,7 +1143,7 @@
         },
         {
           "t": "h3",
-          "testo": "Nëse provon PreventivoLampo me një shembull ose në WhatsApp"
+          "testo": "Nëse provon Preventivi me një shembull ose në WhatsApp"
         },
         {
           "t": "ul",
@@ -1169,7 +1169,7 @@
             "Vercel: faqja e internetit dhe funksionet e saj, në Frankfurt (BE).",
             "Anthropic (Claude): lexon tekstin e vizitës në kantier dhe përgatit draftin, dhe përkthen zërat e preventivit kur klienti flet një gjuhë tjetër, në Shtetet e Bashkuara.",
             "Twilio dhe WhatsApp (Meta): marrin dhe dërgojnë mesazhet e WhatsApp.",
-            "n8n: lidh mesazhet e WhatsApp me PreventivoLampo.",
+            "n8n: lidh mesazhet e WhatsApp me Preventivi.",
             "Resend: dërgon email-et me kodin e hyrjes."
           ]
         },
@@ -1192,7 +1192,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë dhe firmat e ndërtimit të përgatisin preventivat: nga rrëfimi i vizitës në kantier përgatit një draft me çmimet e listës së firmës, që zanatçiu e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
+          "testo": "Preventivi është një shërbim i Sofiane Khatib, K Digital Solution, Monza (MB). Ndihmon zanatçinjtë dhe firmat e ndërtimit të përgatisin preventivat: nga rrëfimi i vizitës në kantier përgatit një draft me çmimet e listës së firmës, që zanatçiu e kontrollon, e miraton dhe ia dërgon klientit. Shërbimi është vetëm për firma dhe profesionistë me partita IVA."
         },
         {
           "t": "h2",
@@ -1226,10 +1226,10 @@
         {
           "t": "ul",
           "voci": [
-            "PreventivoLampo propozon, ti vendos: asnjë preventiv nuk shkon te klienti pa e hapur dhe miratuar ti. Para se ta miratosh, kontrollo zërat, sasitë dhe çmimet.",
+            "Preventivi propozon, ti vendos: asnjë preventiv nuk shkon te klienti pa e hapur dhe miratuar ti. Para se ta miratosh, kontrollo zërat, sasitë dhe çmimet.",
             "Çmimet vijnë vetëm nga lista jote e çmimeve. Zërat që nuk ka mbeten «për t'u çmuar» dhe çmimin e vendos ti.",
             "Llogaritja e IVA-s ndjek përgjigjet që jep ti dhe rregullat e Agenzia delle Entrate (Agjencisë së të Ardhurave), por nuk është këshillim fiskal: për rastet e veçanta mbetet kontabilisti yt (commercialista).",
-            "Marrëdhënia me klientin, çmimet dhe punimet mbeten të tuat: PreventivoLampo nuk është palë në kontratën mes teje dhe tij."
+            "Marrëdhënia me klientin, çmimet dhe punimet mbeten të tuat: Preventivi nuk është palë në kontratën mes teje dhe tij."
           ]
         },
         {
@@ -1262,7 +1262,7 @@
         },
         {
           "t": "p",
-          "testo": "Përdore PreventivoLampo vetëm për preventivat e firmës sate. Mos e ndaj aksesin tënd me persona të jashtëm dhe mos e përdor shërbimin për të ngarkuar tekste fyese ose kërkesa në masë. Nëse këto rregulla nuk respektohen, mund ta pezullojmë aksesin, pasi të kemi njoftuar."
+          "testo": "Përdore Preventivi vetëm për preventivat e firmës sate. Mos e ndaj aksesin tënd me persona të jashtëm dhe mos e përdor shërbimin për të ngarkuar tekste fyese ose kërkesa në masë. Nëse këto rregulla nuk respektohen, mund ta pezullojmë aksesin, pasi të kemi njoftuar."
         },
         {
           "t": "h2",
@@ -1279,7 +1279,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo përdor vetëm cookie teknike: pa to, zona e artizanëve nuk do ta dinte që ke hyrë dhe faqja nuk do ta mbante mend gjuhën që ke zgjedhur. Pa cookie profilizimi, pa statistika, pa mjete të palëve të treta që të ndjekin nga një faqe te tjetra. Prandaj nuk gjen banner për cookie."
+          "testo": "Preventivi përdor vetëm cookie teknike: pa to, zona e artizanëve nuk do ta dinte që ke hyrë dhe faqja nuk do ta mbante mend gjuhën që ke zgjedhur. Pa cookie profilizimi, pa statistika, pa mjete të palëve të treta që të ndjekin nga një faqe te tjetra. Prandaj nuk gjen banner për cookie."
         },
         {
           "t": "ul",
@@ -1296,7 +1296,7 @@
     }
   },
   "accesso": {
-    "titolo": "Hyr · PreventivoLampo",
+    "titolo": "Hyr · Preventivi",
     "h1": "Hyr te preventivat e tu",
     "sotto": "Lista jote e çmimeve, çmimet e tua, preventivat me emrin tënd sipër.",
     "email": "Emaili yt",

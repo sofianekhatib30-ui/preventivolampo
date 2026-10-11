@@ -24,7 +24,7 @@ export function aziendaDemo(): Azienda {
     phone: c.phone,
     email: c.email,
     quoteValidityDays: c.quoteValidityDays,
-    avviso: `${c.fictitiousNotice} Documento generato da PreventivoLampo a scopo dimostrativo.`,
+    avviso: `${c.fictitiousNotice} Documento generato da Preventivi di K Digital Solution a scopo dimostrativo.`,
     iban: null,
     condizioniPagamento: null,
     logo: async () => null,

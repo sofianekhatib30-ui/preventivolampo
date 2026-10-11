@@ -3,7 +3,7 @@ import { contenutiDi } from "@/lib/contenuti";
 import { GUIDE, type IdGuida } from "@/lib/contenuti/registro";
 import { linguaValida } from "@/lib/i18n/lingue";
 
-export const alt = "PreventivoLampo";
+export const alt = "Preventivi";
 export const size = DIMENSIONE_OG;
 export const contentType = "image/png";
 

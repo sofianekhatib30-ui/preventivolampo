@@ -16,7 +16,7 @@ export const pagine = {
   },
   funzioni: {
     meta: {
-      titolo: "Come funziona PreventivoLampo",
+      titolo: "Come funziona Preventivi",
       descrizione:
         "Dal racconto del sopralluogo al preventivo accettato: bozza dal tuo listino, domande su quello che manca, PDF nella lingua del cliente e accettazione online.",
     },
@@ -54,7 +54,7 @@ export const pagine = {
       ],
     },
     nota:
-      "I modelli sono gratuiti e senza registrazione. I prezzi non ci sono apposta: sono i tuoi. Se vuoi che il preventivo si scriva da solo partendo dal racconto del sopralluogo, con i prezzi del tuo listino già dentro, è quello che fa PreventivoLampo.",
+      "I modelli sono gratuiti e senza registrazione. I prezzi non ci sono apposta: sono i tuoi. Se vuoi che il preventivo si scriva da solo partendo dal racconto del sopralluogo, con i prezzi del tuo listino già dentro, è quello che fa Preventivi.",
     pdf: "PDF",
     excel: "Excel",
     scarica: "Scarica il modello da {mestiere} in {formato}",
@@ -63,7 +63,7 @@ export const pagine = {
     meta: {
       titolo: "Prezzi: 30 giorni gratis, poi 19,90 € al mese",
       descrizione:
-        "Prezzi di PreventivoLampo: pilota gratuito di 30 giorni senza rinnovo automatico, poi 19,90 € al mese o 199 € l'anno, IVA esclusa.",
+        "Prezzi di Preventivi: pilota gratuito di 30 giorni senza rinnovo automatico, poi 19,90 € al mese o 199 € l'anno, IVA esclusa.",
     },
     h1: "Prezzi chiari, e prima lo provi gratis",
     testo:
@@ -100,19 +100,19 @@ export const pagine = {
   },
   chiSiamo: {
     meta: {
-      titolo: "Chi siamo: chi fa PreventivoLampo e perché",
+      titolo: "Chi siamo: chi fa Preventivi e perché",
       descrizione:
-        "PreventivoLampo è fatto da K Digital Solution, lo studio di Sofiane Khatib. Perché esiste, come trattiamo i tuoi prezzi e i dati dei tuoi clienti, come contattarci.",
+        "Preventivi è fatto da K Digital Solution, lo studio di Sofiane Khatib. Perché esiste, come trattiamo i tuoi prezzi e i dati dei tuoi clienti, come contattarci.",
     },
-    h1: "Chi fa PreventivoLampo, e perché",
+    h1: "Chi fa Preventivi, e perché",
     intro:
-      "PreventivoLampo è un servizio di K Digital Solution, lo studio di Sofiane Khatib che sviluppa software per piccole imprese. È nato da una cosa che tutti gli artigiani conoscono: il lavoro in cantiere finisce alle sei, i preventivi si scrivono la sera.",
+      "Preventivi è un servizio di K Digital Solution, lo studio di Sofiane Khatib che sviluppa software per piccole imprese. È nato da una cosa che tutti gli artigiani conoscono: il lavoro in cantiere finisce alle sei, i preventivi si scrivono la sera.",
     sezioni: [
       {
         titolo: "Perché esiste",
         paragrafi: [
           "Chi lavora nelle case fa il sopralluogo, prende le misure e torna in furgone con tutto in testa. Poi il preventivo resta lì per giorni, perché scriverlo vuol dire cercare i prezzi, rifare i conti dei metri, ricordarsi le esclusioni. Nel frattempo il cliente chiede a un altro.",
-          "PreventivoLampo serve a chiudere quel buco: racconti il lavoro appena finito il sopralluogo, come lo racconteresti a un collega, e la bozza è pronta prima di arrivare al cantiere dopo.",
+          "Preventivi serve a chiudere quel buco: racconti il lavoro appena finito il sopralluogo, come lo racconteresti a un collega, e la bozza è pronta prima di arrivare al cantiere dopo.",
         ],
       },
       {

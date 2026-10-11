@@ -2523,7 +2523,7 @@
           "titolo": "Pentru cine e",
           "paragrafi": [
             "Case cumpărate de străini, apartamente închiriate celor care lucrează aici de puțin timp, a doua casă a unor familii care locuiesc în străinătate. Clientul înțelege măsurile și prețurile, dar o poziție ca «rasatura» (gletuire) sau «massetto» (șapă) îi spune puțin, iar un deviz pe care nu-l înțelege îl semnează târziu, sau deloc.",
-            "Cu PreventivoLampo devizul poate pleca **în engleză**, pe lângă italiană: alegi deviz cu deviz. Engleza o citește aproape orice client străin; pentru cine nu o citește, devizul rămâne în italiană.",
+            "Cu Preventivi devizul poate pleca **în engleză**, pe lângă italiană: alegi deviz cu deviz. Engleza o citește aproape orice client străin; pentru cine nu o citește, devizul rămâne în italiană.",
             "Să nu o încurci cu limba în care povestești vizita la fața locului: aceea poate fi și româna, albaneza, araba sau ucraineana, iar ciorna iese oricum în italiană. Explicăm asta în pagina despre [devizul din mesaj vocal](/funzioni/preventivo-da-vocale)."
           ]
         },
@@ -2794,7 +2794,7 @@
             "**Rămân ale tale.** Lista de prețuri, devizele și datele firmei sunt ale tale, iar la cerere îți trimitem lista în Excel și PDF-urile devizelor. Nu vindem datele și nu le folosim pentru reclame.",
             "**Servesc doar devizelor tale.** Lista de prețuri este legată de firma ta: ciornele tale caută doar printre pozițiile tale, iar pozițiile tale nu intră în devizele nimănui altcuiva. Ca să aleagă pozițiile, sistemul se uită la nume și descrieri; prețul îl ia abia după aceea, din lista ta.",
             "**Nicio cifră inventată.** Un preț din ciornă vine dintr-o poziție a ta sau îl scrii tu. Dacă încarci lista din PDF sau din poze, fișierul servește la citirea pozițiilor și apoi nu se păstrează.",
-            "Când nu mai folosești PreventivoLampo, datele tale se șterg în termenele scrise în informarea de confidențialitate, în afară de ce legea obligă să se păstreze."
+            "Când nu mai folosești Preventivi, datele tale se șterg în termenele scrise în informarea de confidențialitate, în afară de ce legea obligă să se păstreze."
           ]
         }
       ],
@@ -2893,7 +2893,7 @@
           "paragrafi": [
             "Sub rânduri pui baza impozabilă (imponibile), cota IVA, suma IVA și totalul. Persoanei fizice care încheie contractul la ea acasă sau la distanță trebuie să-i indici **prețul total cu toate impozitele incluse**, sau cel puțin modul de calcul (art. 49 din codice del consumo, codul consumului). Un deviz doar cu baza impozabilă, trimis unei persoane fizice, e rețeta ca să auzi «eu înțelesesem altă sumă».",
             "Cota nu o alege clientul și nici tu: depinde de tipul de imobil, de tipul de intervenție și de cine cumpără materialele. La locuințe se aplică des 10%, cu calcul separat pentru beni significativi (bunuri semnificative) precum centralele termice, tâmplăria și obiectele sanitare. Ghidul [IVA nei preventivi per lavori in casa](/guide/iva-preventivo-lavori-casa) explică cazurile unul câte unul. Dacă ești în regime forfettario (regim forfetar), în schimb, pe factură nu aplici IVA clientului, și e bine să scrii asta și în deviz.",
-            "Un sistem ca PreventivoLampo îți cere trei lucruri (dacă este o locuință, ce fel de intervenție este, cine cumpără materialele) și deduce de acolo cota de IVA, cu împărțirea pe «beni significativi» (bunuri semnificative) la pozițiile pe care le-ai marcat în listă. Azi calculează 10%, 22% și această împărțire; inversione contabile (taxare inversă), 4% prima casă (prima locuință) și regimul forfetar (regime forfettario) încă nu, așa că în cazurile astea verifică totalul înainte să-l trimiți. Ultimul cuvânt rămâne al tău și al contabilului tău."
+            "Un sistem ca Preventivi îți cere trei lucruri (dacă este o locuință, ce fel de intervenție este, cine cumpără materialele) și deduce de acolo cota de IVA, cu împărțirea pe «beni significativi» (bunuri semnificative) la pozițiile pe care le-ai marcat în listă. Azi calculează 10%, 22% și această împărțire; inversione contabile (taxare inversă), 4% prima casă (prima locuință) și regimul forfetar (regime forfettario) încă nu, așa că în cazurile astea verifică totalul înainte să-l trimiți. Ultimul cuvânt rămâne al tău și al contabilului tău."
           ]
         },
         {
@@ -2917,7 +2917,7 @@
         {
           "titolo": "Acceptare, retragere și garanție",
           "paragrafi": [
-            "Devizul trebuie să spună cum se acceptă: o semnătură cu data sub fraza «accept devizul și condițiile de mai sus», sau o acceptare online care lasă urmă despre cine, când și pe ce versiune. Cu PreventivoLampo clientul acceptă din link și rămân numele, data, ora și o copie a PDF-ului acceptat.",
+            "Devizul trebuie să spună cum se acceptă: o semnătură cu data sub fraza «accept devizul și condițiile de mai sus», sau o acceptare online care lasă urmă despre cine, când și pe ce versiune. Cu Preventivi clientul acceptă din link și rămân numele, data, ora și o copie a PDF-ului acceptat.",
             "Dacă clientul este o persoană fizică și contractul se încheie la el acasă sau la distanță, intră în joc codice del consumo (codul consumului): de regulă el are 14 zile să se retragă fără să dea motive, iar tu trebuie să-l informezi și să-i dai formularul. Dacă nu o faci, termenul se prelungește cu douăsprezece luni. E un subiect care merită o pagină separată: [recesso dal preventivo accettato a casa](/guide/recesso-preventivo-accettato-a-casa).",
             "În sfârșit, garanția, pe care n-o scrii tu, dar este bine s-o cunoști. În appalto (contractul de antrepriză) clientul trebuie să reclame neconformitățile și viciile în șaizeci de zile de la descoperire, iar acțiunea se prescrie în doi ani de la predarea lucrării (art. 1667). În contratto d'opera (contractul de prestări lucrare) termenele sunt mai scurte: opt zile de la descoperire pentru reclamație, un an de la predare pentru acțiune (art. 2226). Dacă clientul acceptă lucrarea și viciile erau cunoscute sau ușor de observat, garanția nu se datorează: de aceea un proces-verbal de final de lucrări semnat valorează mai mult decât pare. Pentru defectele grave ale unei clădiri însă răspunzi zece ani (art. 1669), iar Cassazione (Curtea de Casație) o aplică și la renovări. Iar dacă furnizezi clientului privat și bunuri, cum ar fi un cazan sau o fereastră, pentru acele bunuri se aplică garanția din codice del consumo (codul consumului)."
           ]
@@ -3307,7 +3307,7 @@
           "titolo": "Cum îl scrii în deviz",
           "paragrafi": [
             "Un deviz făcut bine face IVA ușor de înțeles chiar și pentru cine nu știe nimic despre fiscalitate. Scrie la începutul documentului tipul de imobil și de intervenție, marchează în poziții beni significativi (bunurile semnificative) cu valoarea lor, apoi pune sub rânduri baza impozabilă la 10%, cea la 22% dacă există, cele două impozite și totalul. Dacă materialul îl cumpără clientul, poziția devine doar de montaj și scrii asta.",
-            "PreventivoLampo deduce regimul IVA din trei răspunsuri (dacă este o locuință, ce fel de intervenție este, cine cumpără materialele) și aplică regula beni significativi (bunurilor semnificative) pozițiilor pe care în [lista ta de prețuri](/funzioni/listino-prezzi) le-ai marcat ca atare. Azi sistemul calculează 10%, 22% și împărțirea bunurilor semnificative; inversione contabile (taxare inversă), 4% prima casă (prima locuință) și regimul forfetar (regime forfettario) încă nu, așa că în cazurile astea verifică totalul înainte să-l trimiți. Sub fiecare deviz rămâne avertismentul să verifici cu contabilul, și e un avertisment de luat în serios."
+            "Preventivi deduce regimul IVA din trei răspunsuri (dacă este o locuință, ce fel de intervenție este, cine cumpără materialele) și aplică regula beni significativi (bunurilor semnificative) pozițiilor pe care în [lista ta de prețuri](/funzioni/listino-prezzi) le-ai marcat ca atare. Azi sistemul calculează 10%, 22% și împărțirea bunurilor semnificative; inversione contabile (taxare inversă), 4% prima casă (prima locuință) și regimul forfetar (regime forfettario) încă nu, așa că în cazurile astea verifică totalul înainte să-l trimiți. Sub fiecare deviz rămâne avertismentul să verifici cu contabilul, și e un avertisment de luat în serios."
           ]
         }
       ],
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "Un deviz bilingv are două coloane sau două blocuri pentru fiecare poziție, sau textul italian urmat de traducere. La final trebuie o clauză care spune care versiune prevalează dacă cele două nu coincid, de exemplu: „Prezentul deviz este redactat în italiană și în engleză. În caz de diferențe între cele două versiuni, face fe textul italian.”",
             "De ce italiana? Pentru că e limba în care lucrezi, în care devizul ar fi citit de un consultant, de un expert sau de un judecător italian și în care sunt scrise termenii tehnici. Dar clauza nu e un scut absolut. În contractele cu consumatorii, când sensul unei clauze e îndoielnic, prevalează interpretarea cea mai favorabilă consumatorului (art. 35, comma 2): dacă traducerea spune altceva decât originalul și clientul a semnat având încredere în limba lui, o traducere greșită poate deveni problema ta.",
-            "Deci traducerea trebuie să fie fidelă, nu elegantă. Propoziții scurte, un singur lucru într-o propoziție, aceleași numere în ambele versiuni, fără rezumate. PreventivoLampo face devizul și în engleză, cu PDF în două limbi în care prevalează italiana: tu verifici mereu versiunea italiană, și pe aceea o aprobi înainte să plece."
+            "Deci traducerea trebuie să fie fidelă, nu elegantă. Propoziții scurte, un singur lucru într-o propoziție, aceleași numere în ambele versiuni, fără rezumate. Preventivi face devizul și în engleză, cu PDF în două limbi în care prevalează italiana: tu verifici mereu versiunea italiană, și pe aceea o aprobi înainte să plece."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "Dreptul de retragere explicat în limba lui",
           "paragrafi": [
             "Un client privat străin este, pentru codice del consumo (codul consumului), un consumator ca oricare altul. Dacă contractul se încheie la el acasă sau la distanță, de regulă are 14 zile să se retragă (recesso) fără să dea motive, iar tu trebuie să-l informezi înainte să se angajeze, dându-i și formularul de retragere. Dacă informarea lipsește, termenul se prelungește cu douăsprezece luni.",
-            "Cu un client străin problema nu e regula, e ca el s-o înțeleagă. O informare în italiană dată cuiva care nu o citește face doar strictul necesar și lasă deschisă discuția despre ce știa el cu adevărat. Mai bine s-o dai în ambele limbi, ca restul devizului: cu PreventivoLampo, pagina de acceptare și formularul de retragere sunt și în engleză.",
+            "Cu un client străin problema nu e regula, e ca el s-o înțeleagă. O informare în italiană dată cuiva care nu o citește face doar strictul necesar și lasă deschisă discuția despre ce știa el cu adevărat. Mai bine s-o dai în ambele limbi, ca restul devizului: cu Preventivi, pagina de acceptare și formularul de retragere sunt și în engleză.",
             "Termenele, excepțiile (de exemplu bunurile făcute la comandă sau reparațiile urgente cerute de client) și ce se întâmplă dacă lucrarea începe înainte de expirarea termenului sunt explicate în ghidul despre [retragerea din devizul acceptat acasă](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },
@@ -3452,7 +3452,7 @@
           "titolo": "Vizita la fața locului, când nu vă înțelegeți bine",
           "paragrafi": [
             "Devizul bilingv pornește de la vizita la fața locului, și acolo apar neînțelegerile. Repetă cu voce tare măsurile și alegerile, arată cu mâinile ce o să faci, fotografiază ce se scoate și ce rămâne. Dacă clientul îți trimite mesaje în limba lui, răspunde în scris: o conversație scrisă, chiar și tradusă prost, valorează mai mult decât una vorbită și înțeleasă pe jumătate.",
-            "La fel e și pentru tine. Dacă italiana nu e prima ta limbă, poți povesti vizita în limba în care gândești mai bine: la PreventivoLampo ajunge textul, în română, albaneză, arabă sau în altă limbă, iar ciorna devizului iese oricum în italiană, gata de tradus pentru client."
+            "La fel e și pentru tine. Dacă italiana nu e prima ta limbă, poți povesti vizita în limba în care gândești mai bine: la Preventivi ajunge textul, în română, albaneză, arabă sau în altă limbă, iar ciorna devizului iese oricum în italiană, gata de tradus pentru client."
           ]
         }
       ],
@@ -3561,7 +3561,7 @@
             "Înainte ca clientul să se angajeze, codice del consumo (codul consumului) îți cere să-i dai, clar și pe înțelesul lui, o serie de informații: cine ești și cum te poate contacta, caracteristicile lucrării, prețul total cu taxele, modalitățile de plată și de execuție și, mai ales, **condițiile, termenele și procedurile pentru retragere, cu formularul tip** prevăzut de anexa I a codului (art. 49). Dacă dreptul de retragere nu se aplică, trebuie să spui asta. Poți folosi instrucțiunile tip din aceeași anexă: dacă le completezi corect, obligația de informare pe aceste puncte este îndeplinită.",
             "În contractele în afara spațiilor comerciale, informațiile se dau pe hârtie sau, dacă clientul este de acord, pe alt suport durabil, și trebuie să-i predai o copie a contractului semnat sau confirmarea contractului (art. 50). Codul definește ca suport durabil orice instrument care permite păstrarea informațiilor și reproducerea lor identică: un PDF trimis pe email, pe care clientul îl păstrează și îl recitește așa cum era, corespunde acestei descrieri.",
             "Ține minte că, dacă apare o contestație, **sarcina de a dovedi că l-ai informat pe client îți revine ție**. O informare citită cu voce tare nu lasă urme; un formular predat odată cu devizul și o copie semnată, da.",
-            "Cu PreventivoLampo clientul acceptă online din link, iar din acceptare rămân numele, data, ora și copia PDF-ului acceptat; formularul de retragere este disponibil și în limba clientului, dacă devizul este tradus. Vezi [acceptarea online](/funzioni/accettazione-online)."
+            "Cu Preventivi clientul acceptă online din link, iar din acceptare rămân numele, data, ora și copia PDF-ului acceptat; formularul de retragere este disponibil și în limba clientului, dacă devizul este tradus. Vezi [acceptarea online](/funzioni/accettazione-online)."
           ]
         },
         {
@@ -3870,7 +3870,7 @@
     },
     "funzioni": {
       "meta": {
-        "titolo": "Cum funcționează PreventivoLampo",
+        "titolo": "Cum funcționează Preventivi",
         "descrizione": "De la povestea vizitei la fața locului până la devizul acceptat: ciornă făcută din lista ta de prețuri, întrebări despre ce lipsește, PDF în limba clientului și acceptare online."
       },
       "h1": "Cum funcționează, piesă cu piesă",
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "Modelele sunt gratuite și fără înregistrare. Prețurile lipsesc intenționat: sunt ale tale. Dacă vrei ca devizul să se scrie singur, pornind de la ce povestești după vizita la fața locului, cu prețurile din lista ta deja puse, asta face PreventivoLampo.",
+      "nota": "Modelele sunt gratuite și fără înregistrare. Prețurile lipsesc intenționat: sunt ale tale. Dacă vrei ca devizul să se scrie singur, pornind de la ce povestești după vizita la fața locului, cu prețurile din lista ta deja puse, asta face Preventivi.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Descarcă modelul pentru {mestiere} în {formato}"
@@ -3924,7 +3924,7 @@
     "prezzi": {
       "meta": {
         "titolo": "Prețuri: 30 de zile gratis, apoi 19,90 € pe lună",
-        "descrizione": "Prețurile PreventivoLampo: pilot gratuit de 30 de zile, fără reînnoire automată, apoi 19,90 € pe lună sau 199 € pe an, fără IVA."
+        "descrizione": "Prețurile Preventivi: pilot gratuit de 30 de zile, fără reînnoire automată, apoi 19,90 € pe lună sau 199 € pe an, fără IVA."
       },
       "h1": "Prețuri clare, și mai întâi îl încerci gratis",
       "testo": "Treizeci de zile ca să-l încerci pe lucrările tale reale, cu devize nelimitate. Apoi, doar dacă decizi să rămâi, un abonament fix: fără cost pe deviz, fără cost de pornire.",
@@ -3960,17 +3960,17 @@
     },
     "chiSiamo": {
       "meta": {
-        "titolo": "Despre noi: cine face PreventivoLampo și de ce",
-        "descrizione": "PreventivoLampo este făcut de K Digital Solution, studioul lui Sofiane Khatib. De ce există, cum tratăm prețurile tale și datele clienților tăi, cum ne poți contacta."
+        "titolo": "Despre noi: cine face Preventivi și de ce",
+        "descrizione": "Preventivi este făcut de K Digital Solution, studioul lui Sofiane Khatib. De ce există, cum tratăm prețurile tale și datele clienților tăi, cum ne poți contacta."
       },
-      "h1": "Cine face PreventivoLampo, și de ce",
-      "intro": "PreventivoLampo este un serviciu al K Digital Solution, studioul lui Sofiane Khatib care face software pentru firme mici. S-a născut dintr-un lucru pe care îl știe orice meseriaș: munca pe șantier se termină la șase, devizele se scriu seara.",
+      "h1": "Cine face Preventivi, și de ce",
+      "intro": "Preventivi este un serviciu al K Digital Solution, studioul lui Sofiane Khatib care face software pentru firme mici. S-a născut dintr-un lucru pe care îl știe orice meseriaș: munca pe șantier se termină la șase, devizele se scriu seara.",
       "sezioni": [
         {
           "titolo": "De ce există",
           "paragrafi": [
             "Cine lucrează prin case face vizita la fața locului, ia măsurile și se întoarce cu duba având totul în cap. Apoi devizul stă acolo zile întregi, pentru că a-l scrie înseamnă să cauți prețurile, să refaci socotelile cu metrii, să-ți amintești ce e exclus. Între timp, clientul cere la altcineva.",
-            "PreventivoLampo servește ca să închidă golul ăsta: povestești lucrarea imediat după vizită, cum i-ai povesti unui coleg, iar ciorna e gata înainte să ajungi la următorul șantier."
+            "Preventivi servește ca să închidă golul ăsta: povestești lucrarea imediat după vizită, cum i-ai povesti unui coleg, iar ciorna e gata înainte să ajungi la următorul șantier."
           ]
         },
         {

@@ -180,7 +180,7 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
       scaricaPdf: "Download the full PDF (Italian and English)",
       leggiQui: "Read in English",
       risposta: (e, d) => `You ${e === "accettato" ? "accepted" : "declined"} this quote on ${d}.`,
-      creato: "Quote created with PreventivoLampo.",
+      creato: "Quote created with Preventivi by K Digital Solution.",
     },
     accetta: {
       titolo: "Your answer",

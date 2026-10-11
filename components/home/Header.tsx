@@ -42,7 +42,7 @@ export function Header({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: 
   return (
     <header className="su-scuro margini sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-scuro-linea bg-ardesia text-fondo lg:h-[80px]">
       {/* Sui telefoni più stretti il nome si stringe e non spinge fuori lingua, «Accedi» e il menu */}
-      <div className="min-w-0 [&_a]:min-w-0 [&_span]:truncate max-[439px]:[&_span]:text-[17px] max-[359px]:[&_span]:text-[15px]">
+      <div className="min-w-0 [&_a]:min-w-0 [&_span]:truncate max-[439px]:[&_span]:text-[23px] max-[359px]:[&_span]:text-[20px]">
         <Logo href={p("/")} etichetta={d.comune.logoHome} />
       </div>
       <nav aria-label={d.comune.principale} className="hidden items-center gap-5 font-medium xl:flex">

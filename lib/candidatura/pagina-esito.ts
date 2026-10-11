@@ -55,7 +55,7 @@ export function paginaEsito(esito: Esito): string {
   return `<!doctype html>
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>${escapeHtml(esito.stato === "ok" ? MESSAGGI.titoloInviata : MESSAGGI.titoloNonInviata)} · PreventivoLampo</title>
+<title>${escapeHtml(esito.stato === "ok" ? MESSAGGI.titoloInviata : MESSAGGI.titoloNonInviata)} · Preventivi</title>
 <style>${STILE}</style></head>
 <body><main><h1>${escapeHtml(titolo)}</h1>${corpo}<p>${link}</p></main></body></html>`;
 }

@@ -121,7 +121,7 @@ export const ivaPreventivoLavoriCasa: PaginaGuida = {
       titolo: "Come scriverlo nel preventivo",
       paragrafi: [
         "Un preventivo fatto bene rende l'IVA leggibile anche a chi non sa niente di fisco. Scrivi il tipo di immobile e di intervento in testa al documento, segna nelle voci i beni significativi con il loro valore, metti sotto le righe l'imponibile al 10%, quello al 22% se c'è, le due imposte e il totale. Se il materiale lo compra il cliente, la riga diventa di sola posa e lo scrivi.",
-        "PreventivoLampo ricava il regime IVA da tre risposte (se è un'abitazione, che tipo di intervento è, chi compra i materiali) e applica la regola dei beni significativi alle voci che nel tuo [listino prezzi](/funzioni/listino-prezzi) hai segnato come tali. Oggi il sistema calcola il 10%, il 22% e la divisione dei beni significativi; inversione contabile, 4% prima casa e regime forfettario non ancora, quindi in quei casi controlla il totale prima di mandarlo. Sotto ogni preventivo resta l'avviso di verificare con il commercialista, ed è un avviso da prendere sul serio.",
+        "Preventivi ricava il regime IVA da tre risposte (se è un'abitazione, che tipo di intervento è, chi compra i materiali) e applica la regola dei beni significativi alle voci che nel tuo [listino prezzi](/funzioni/listino-prezzi) hai segnato come tali. Oggi il sistema calcola il 10%, il 22% e la divisione dei beni significativi; inversione contabile, 4% prima casa e regime forfettario non ancora, quindi in quei casi controlla il totale prima di mandarlo. Sotto ogni preventivo resta l'avviso di verificare con il commercialista, ed è un avviso da prendere sul serio.",
       ],
     },
   ],

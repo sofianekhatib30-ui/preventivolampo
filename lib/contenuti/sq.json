@@ -2523,7 +2523,7 @@
           "titolo": "Kujt i duhet",
           "paragrafi": [
             "Shtëpi të blera nga të huaj, apartamente të dhëna me qira atyre që punojnë këtu prej pak, shtëpi të dyta të familjeve që jetojnë jashtë. Klienti i kupton masat dhe çmimet, por një zë si «rasatura» ose «massetto» i thotë pak, dhe një preventiv që nuk e kupton e firmos me vonesë, ose nuk e firmos fare.",
-            "Me PreventivoLampo preventivi mund të niset **në anglisht** përveç italishtes: e zgjedh preventiv pas preventivi. Anglishten e lexon pothuajse çdo klient i huaj; për atë që nuk e lexon, preventivi mbetet në italisht.",
+            "Me Preventivi preventivi mund të niset **në anglisht** përveç italishtes: e zgjedh preventiv pas preventivi. Anglishten e lexon pothuajse çdo klient i huaj; për atë që nuk e lexon, preventivi mbetet në italisht.",
             "Mos e ngatërro me gjuhën në të cilën tregon vizitën në objekt: ajo mund të jetë edhe rumanisht, shqip, arabisht ose ukrainisht, dhe drafti del prapë në italisht. E shpjegojmë te faqja për [preventivin me zë](/funzioni/preventivo-da-vocale)."
           ]
         },
@@ -2794,7 +2794,7 @@
             "**Mbeten të tuat.** Lista, preventivat dhe të dhënat e ndërmarrjes janë të tuat, dhe me kërkesë ta dërgojmë listën në Excel dhe PDF-të e preventivave. Nuk i shesim të dhënat dhe nuk i përdorim për reklama.",
             "**Shërbejnë vetëm për preventivat e tu.** Lista e çmimeve është e lidhur me firmën tënde: draftet e tua kërkojnë vetëm mes zërave të tu, dhe zërat e tu nuk hyjnë në preventivat e askujt tjetër. Për të zgjedhur zërat, sistemi shikon emrat dhe përshkrimet; çmimin e merr pas, nga lista jote.",
             "**Asnjë shifër e shpikur.** Një çmim në draft vjen nga një zë yti ose e shkruan ti. Nëse e ngarkon listën nga PDF ose foto, skedari shërben vetëm për të lexuar zërat dhe pastaj nuk ruhet.",
-            "Kur ndalon së përdoruri PreventivoLampo, të dhënat e tua fshihen brenda afateve të shkruara në politikën e privatësisë, me përjashtim të asaj që ligji detyron të ruhet."
+            "Kur ndalon së përdoruri Preventivi, të dhënat e tua fshihen brenda afateve të shkruara në politikën e privatësisë, me përjashtim të asaj që ligji detyron të ruhet."
           ]
         }
       ],
@@ -2893,7 +2893,7 @@
           "paragrafi": [
             "Poshtë rreshtave vër bazën e tatueshme (imponibile), normën e IVA-s, shumën e IVA-s dhe totalin. Privatit që e lidh kontratën në shtëpinë e tij ose në distancë duhet t'i tregosh **çmimin total me taksat e përfshira**, ose të paktën mënyrën si llogaritet (neni 49 i codice del consumo, kodit të konsumit). Një preventivo vetëm me bazën e tatueshme, dërguar një privati, është receta për të dëgjuar «unë e kisha kuptuar një shumë tjetër».",
             "Aliquotën nuk e zgjedh klienti dhe nuk e zgjedh ti: varet nga lloji i pronës, nga lloji i ndërhyrjes dhe nga kush blen materialet. Te banesat shpesh del 10%, me llogaritje më vete për «beni significativi» (mallra me vlerë të madhe, si kaldajat, serramentet dhe sanitarët). Udhëzuesi [IVA nei preventivi per lavori in casa](/guide/iva-preventivo-lavori-casa) i shpjegon rastet një nga një. Nëse je në regime forfettario (regjimi fiskal i thjeshtuar për profesionistët me xhiro të vogël), në faturë nuk i ngarkon klientit IVA-n, dhe ia vlen ta shkruash edhe në preventiv.",
-            "Një sistem si PreventivoLampo të pyet tri gjëra (nëse është banesë, çfarë lloj ndërhyrjeje është, kush i blen materialet) dhe nnga ato nxjerr aliquotën, me ndarjen e beni significativi (mallrave të rëndësishme) në zërat që ke shënuar në listë. Sot llogarit 10%, 22% dhe atë ndarje; inversione contabile (zbritja e kundërt), 4% për shtëpinë e parë dhe regjimin forfetar jo ende, prandaj në ato raste kontrollo totalin përpara se ta dërgosh. Fjala e fundit mbetet e jotja dhe e kontabilistit tënd (commercialista)."
+            "Një sistem si Preventivi të pyet tri gjëra (nëse është banesë, çfarë lloj ndërhyrjeje është, kush i blen materialet) dhe nnga ato nxjerr aliquotën, me ndarjen e beni significativi (mallrave të rëndësishme) në zërat që ke shënuar në listë. Sot llogarit 10%, 22% dhe atë ndarje; inversione contabile (zbritja e kundërt), 4% për shtëpinë e parë dhe regjimin forfetar jo ende, prandaj në ato raste kontrollo totalin përpara se ta dërgosh. Fjala e fundit mbetet e jotja dhe e kontabilistit tënd (commercialista)."
           ]
         },
         {
@@ -2917,7 +2917,7 @@
         {
           "titolo": "Pranimi, tërheqja dhe garancia",
           "paragrafi": [
-            "Preventivo duhet të thotë si pranohet: një firmë me datë nën frazën «accetto il preventivo e le condizioni sopra indicate» (pranoj preventivin dhe kushtet e mësipërme), ose një pranim online që lë gjurmë se kush, kur dhe për cilën version. Me PreventivoLampo klienti pranon nga linku dhe mbeten emri, data, ora dhe kopja e PDF-së së pranuar.",
+            "Preventivo duhet të thotë si pranohet: një firmë me datë nën frazën «accetto il preventivo e le condizioni sopra indicate» (pranoj preventivin dhe kushtet e mësipërme), ose një pranim online që lë gjurmë se kush, kur dhe për cilën version. Me Preventivi klienti pranon nga linku dhe mbeten emri, data, ora dhe kopja e PDF-së së pranuar.",
             "Nëse klienti është privat dhe kontrata lidhet në shtëpinë e tij, ose në distancë, hyn në lojë codice del consumo: si rregull ka 14 ditë për t'u tërhequr pa dhënë arsye, dhe ti duhet ta informosh dhe t'i dorëzosh formularin. Nëse nuk e bën, afati zgjatet me dymbëdhjetë muaj. Është temë që meriton një faqe më vete: [recesso dal preventivo accettato a casa](/guide/recesso-preventivo-accettato-a-casa) (tërheqja nga preventivi i pranuar në shtëpi).",
             "Në fund garancia, që nuk e shkruan ti por që të leverdis ta njohësh. Në appalto (kontratën e ndërmarrjes) klienti duhet të denoncojë mospërputhjet dhe të metat brenda gjashtëdhjetë ditëve nga zbulimi, dhe e drejta e padisë parashkruhet pas dy vjetësh nga dorëzimi i punës (neni 1667 i codice civile, kodit civil). Në contratto d'opera (kontratën e punës) afatet janë më të shkurtra: tetë ditë nga zbulimi për ta denoncuar, një vit nga dorëzimi për të ngritur padi (neni 2226). Nëse klienti e pranon punën dhe të metat ishin të njohura ose të dallueshme, garancia nuk detyrohet: prandaj një verbale i firmosur në fund të punimeve vlen më shumë nga ç'duket. Për defektet e rënda të një ndërtese, megjithatë, përgjigjesh për dhjetë vjet (neni 1669), dhe Kasacioni e zbaton edhe te ristrukturimet. Dhe nëse klientit privat i jep edhe mallra, si një kaldaja ose një dritare, për ato mallra vlen garancia e codice del consumo (kodit të konsumit)."
           ]
@@ -3307,7 +3307,7 @@
           "titolo": "Si ta shkruash në preventiv",
           "paragrafi": [
             "Një preventiv i bërë mirë e bën IVA-n të lexueshme edhe për ata që nuk dinë gjë për tatimet. Shkruaj llojin e imobilit dhe të ndërhyrjes në krye të dokumentit, shëno te zërat beni significativi (pasuritë e rëndësishme, si sanitarët ose kaldaja) me vlerën e tyre, vendos poshtë rreshtave baza tatimore (imponibile) me 10%, atë me 22% nëse ka, të dyja tatimet dhe totalin. Nëse materialin e blen klienti, rreshti bëhet vetëm për montimin dhe e shkruan.",
-            "PreventivoLampo e nxjerr regjimin IVA nga tri përgjigje (nëse është banesë, çfarë lloj ndërhyrjeje është, kush i blen materialet) dhe e zbaton rregullin e beni significativi (mallrave të rëndësishme) te zërat që në [listën e çmimeve](/funzioni/listino-prezzi) i ke shënuar si të tillë. Sot sistemi llogarit 10%, 22% dhe ndarjen e beni significativi; inversione contabile (zbritja e kundërt), 4% për shtëpinë e parë dhe regjimin forfetar jo ende, prandaj në ato raste kontrollo totalin përpara se ta dërgosh. Nën çdo preventiv mbetet njoftimi për të verifikuar me kontabilistin (commercialista), dhe është një njoftim që duhet marrë seriozisht."
+            "Preventivi e nxjerr regjimin IVA nga tri përgjigje (nëse është banesë, çfarë lloj ndërhyrjeje është, kush i blen materialet) dhe e zbaton rregullin e beni significativi (mallrave të rëndësishme) te zërat që në [listën e çmimeve](/funzioni/listino-prezzi) i ke shënuar si të tillë. Sot sistemi llogarit 10%, 22% dhe ndarjen e beni significativi; inversione contabile (zbritja e kundërt), 4% për shtëpinë e parë dhe regjimin forfetar jo ende, prandaj në ato raste kontrollo totalin përpara se ta dërgosh. Nën çdo preventiv mbetet njoftimi për të verifikuar me kontabilistin (commercialista), dhe është një njoftim që duhet marrë seriozisht."
           ]
         }
       ],
@@ -3393,7 +3393,7 @@
           "paragrafi": [
             "Një preventiv dygjuhësh ka dy kolona ose dy blloqe për çdo zë, ose tekstin italisht të ndjekur nga përkthimi. Në fund duhet një klauzolë që thotë cili version mbizotëron nëse të dyja nuk përputhen, për shembull: «Ky preventiv është hartuar në italisht dhe në anglisht. Në rast mospërputhjeje midis dy versioneve vlen teksti italisht.»",
             "Pse italishtja? Sepse është gjuha në të cilën punon, në të cilën preventivin do ta lexonte një konsulent, një ekspert ose një gjykatës italian, dhe në të cilën janë shkruar termat teknikë. Por klauzola nuk është mburojë absolute. Në kontratat me konsumatorët, kur kuptimi i një klauzole është i dyshimtë, mbizotëron interpretimi më i favorshëm për konsumatorin (neni 35, pika 2): nëse përkthimi thotë diçka tjetër nga origjinali dhe klienti ka nënshkruar duke u besuar gjuhës së tij, një përkthim i gabuar mund të bëhet problem yti.",
-            "Pra përkthimi duhet të jetë besnik, jo elegant. Fjali të shkurtra, një gjë për fjali, të njëjtat numra në të dyja versionet, asnjë përmbledhje. PreventivoLampo e bën preventivin edhe në anglisht, me PDF në dy gjuhë ku vlen italishtja: ti kontrollon gjithmonë versionin italian, dhe është ai që miraton para se të niset."
+            "Pra përkthimi duhet të jetë besnik, jo elegant. Fjali të shkurtra, një gjë për fjali, të njëjtat numra në të dyja versionet, asnjë përmbledhje. Preventivi e bën preventivin edhe në anglisht, me PDF në dy gjuhë ku vlen italishtja: ti kontrollon gjithmonë versionin italian, dhe është ai që miraton para se të niset."
           ]
         },
         {
@@ -3444,7 +3444,7 @@
           "titolo": "Recesso (tërheqja nga kontrata) e shpjeguar në gjuhën e tij",
           "paragrafi": [
             "Një klient privat i huaj, sipas codice del consumo (kodit të konsumit), është konsumator si çdo tjetër. Nëse kontrata lind në shtëpinë e tij ose në distancë, si rregull ka 14 ditë për t'u tërhequr pa dhënë arsye, dhe ti duhet ta informosh para se të angazhohet, duke i dhënë edhe formularin e tërheqjes. Nëse mungon informimi, afati zgjatet me dymbëdhjetë muaj.",
-            "Me një klient të huaj problemi nuk është rregulli, është që ta kuptojë. Një informim në italisht i dhënë dikujt që nuk e lexon bën minimumin e domosdoshëm dhe e lë të hapur diskutimin se çfarë dinte vërtet. Më mirë ta japësh në dy gjuhët, si pjesën tjetër të preventivit: me PreventivoLampo faqja e pranimit dhe formulari i tërheqjes janë edhe në anglisht.",
+            "Me një klient të huaj problemi nuk është rregulli, është që ta kuptojë. Një informim në italisht i dhënë dikujt që nuk e lexon bën minimumin e domosdoshëm dhe e lë të hapur diskutimin se çfarë dinte vërtet. Më mirë ta japësh në dy gjuhët, si pjesën tjetër të preventivit: me Preventivi faqja e pranimit dhe formulari i tërheqjes janë edhe në anglisht.",
             "Afatet, përjashtimet (për shembull mallrat e bëra sipas porosisë ose riparimet urgjente të kërkuara nga klienti) dhe çfarë ndodh nëse puna fillon para skadencës shpjegohen në udhëzuesin për [tërheqjen nga preventivi i pranuar në shtëpi](/guide/recesso-preventivo-accettato-a-casa)."
           ]
         },
@@ -3452,7 +3452,7 @@
           "titolo": "Sopralluogo (vizita në kantier), kur nuk kuptoheni mirë",
           "paragrafi": [
             "Preventivi dygjuhësh lind nga sopralluogo, dhe aty krijohen keqkuptimet. Përsërit me zë të lartë matjet dhe zgjedhjet, trego me duar atë që do të bësh, fotografo gjërat që do të hiqen dhe ato që mbeten. Nëse klienti të dërgon mesazhe në gjuhën e tij, përgjigju me shkrim: një bisedë e shkruar, edhe e përkthyer keq, vlen më shumë se një me gojë e kuptuar përgjysmë.",
-            "E njëjta gjë vlen për ty. Nëse italishtja nuk është gjuha jote e parë, mund ta tregosh sopralluogo-n në gjuhën në të cilën mendon më mirë: te PreventivoLampo vjen teksti, në rumanisht, shqip, arabisht ose në një gjuhë tjetër, dhe drafti i preventivit del prapë në italisht, gati për t'u përkthyer për klientin."
+            "E njëjta gjë vlen për ty. Nëse italishtja nuk është gjuha jote e parë, mund ta tregosh sopralluogo-n në gjuhën në të cilën mendon më mirë: te Preventivi vjen teksti, në rumanisht, shqip, arabisht ose në një gjuhë tjetër, dhe drafti i preventivit del prapë në italisht, gati për t'u përkthyer për klientin."
           ]
         }
       ],
@@ -3561,7 +3561,7 @@
             "Para se klienti të angazhohet, kodi i konsumit (codice del consumo) të kërkon t'i japësh, në mënyrë të qartë dhe të kuptueshme, një sërë informacionesh: kush je dhe si të kontaktojë, karakteristikat e punës, çmimin total me taksat, mënyrat e pagesës dhe të ekzekutimit dhe, mbi të gjitha, **kushtet, afatet dhe procedurat për tërheqjen, me formularin tip** të parashikuar nga shtojca I e kodit (art. 49). Nëse tërheqja nuk zbatohet, duhet ta thuash. Mund të përdorësh udhëzimet tip të së njëjtës shtojcë: nëse i plotëson saktë, detyrimi për informim në këto pika është përmbushur.",
             "Në kontratat jashtë ambienteve tregtare informacionet jepen në letër ose, nëse klienti ppranon, në një mjet tjetër të qëndrueshëm, dhe duhet t'i dorëzosh një kopje të kontratës së firmosur ose konfirmimin e kontratës (art. 50). Kodi e quan mjet të qëndrueshëm çdo instrument që lejon të ruhen informacionet dhe të riprodhohen të pandryshuara: një PDF i dërguar me email, që klienti e ruan dhe e rilexon siç ishte, i përgjigjet kësaj përshkrimi.",
             "Mbaje mend që, nëse lind një mosmarrëveshje, **barra e provës që e ke informuar klientin është e jotja**. Një informativë e lexuar me zë të lartë nuk lë gjurmë; një formular i dorëzuar me preventivin dhe një kopje e firmosur po.",
-            "Me PreventivoLampo klienti e pranon online nga linku, dhe nga pranimi mbeten emri, data, ora dhe kopja e PDF-së së pranuar; formulari i tërheqjes ndodhet edhe në gjuhën e klientit, nëse preventivi është i përkthyer. Shih [pranimi online](/funzioni/accettazione-online)."
+            "Me Preventivi klienti e pranon online nga linku, dhe nga pranimi mbeten emri, data, ora dhe kopja e PDF-së së pranuar; formulari i tërheqjes ndodhet edhe në gjuhën e klientit, nëse preventivi është i përkthyer. Shih [pranimi online](/funzioni/accettazione-online)."
           ]
         },
         {
@@ -3870,7 +3870,7 @@
     },
     "funzioni": {
       "meta": {
-        "titolo": "Si funksionon PreventivoLampo",
+        "titolo": "Si funksionon Preventivi",
         "descrizione": "Nga rrëfimi i inspektimit deri te preventivi i pranuar: draft nga lista jote, pyetje për atë që mungon, PDF në gjuhën e klientit dhe pranim online."
       },
       "h1": "Si funksionon, pjesë-pjesë",
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "Modelet janë falas dhe pa regjistrim. Çmimet nuk janë shkruar me qëllim: janë të tuat. Nëse do që preventivi të shkruhet vetë nga rrëfimi i vizitës në objekt, me çmimet e listës tënde brenda, kjo është ajo që bën PreventivoLampo.",
+      "nota": "Modelet janë falas dhe pa regjistrim. Çmimet nuk janë shkruar me qëllim: janë të tuat. Nëse do që preventivi të shkruhet vetë nga rrëfimi i vizitës në objekt, me çmimet e listës tënde brenda, kjo është ajo që bën Preventivi.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Shkarko modelin për {mestiere} në {formato}"
@@ -3924,7 +3924,7 @@
     "prezzi": {
       "meta": {
         "titolo": "Çmimet: 30 ditë falas, pastaj 19,90 € në muaj",
-        "descrizione": "Çmimet e PreventivoLampo: pilot falas 30 ditë pa rinovim automatik, pastaj 19,90 € në muaj ose 199 € në vit, pa IVA."
+        "descrizione": "Çmimet e Preventivi: pilot falas 30 ditë pa rinovim automatik, pastaj 19,90 € në muaj ose 199 € në vit, pa IVA."
       },
       "h1": "Çmime të qarta, dhe më parë e provon falas",
       "testo": "Tridhjetë ditë për ta provuar në punët e tua të vërteta, me preventiva pa kufi. Pastaj, vetëm nëse vendos të qëndrosh, një tarifë fikse: pa kosto për preventiv, pa kosto nisjeje.",
@@ -3960,17 +3960,17 @@
     },
     "chiSiamo": {
       "meta": {
-        "titolo": "Rreth nesh: kush e bën PreventivoLampo dhe pse",
-        "descrizione": "PreventivoLampo është bërë nga K Digital Solution, studioja e Sofiane Khatib. Pse ekziston, si i trajtojmë çmimet e tua dhe të dhënat e klientëve të tu, si të na kontaktosh."
+        "titolo": "Rreth nesh: kush e bën Preventivi dhe pse",
+        "descrizione": "Preventivi është bërë nga K Digital Solution, studioja e Sofiane Khatib. Pse ekziston, si i trajtojmë çmimet e tua dhe të dhënat e klientëve të tu, si të na kontaktosh."
       },
-      "h1": "Kush e bën PreventivoLampo, dhe pse",
-      "intro": "PreventivoLampo është një shërbim i K Digital Solution, studioja e Sofiane Khatib që zhvillon softuer për ndërmarrje të vogla. Lindi nga diçka që e njeh çdo zanatçi: puna në kantier mbaron në gjashtë, preventivat shkruhen në mbrëmje.",
+      "h1": "Kush e bën Preventivi, dhe pse",
+      "intro": "Preventivi është një shërbim i K Digital Solution, studioja e Sofiane Khatib që zhvillon softuer për ndërmarrje të vogla. Lindi nga diçka që e njeh çdo zanatçi: puna në kantier mbaron në gjashtë, preventivat shkruhen në mbrëmje.",
       "sezioni": [
         {
           "titolo": "Pse ekziston",
           "paragrafi": [
             "Kush punon nëpër shtëpi bën vizitën në objekt, merr masat dhe kthehet me furgon me gjithçka në kokë. Pastaj preventivi mbetet aty me ditë, sepse për ta shkruar duhet të kërkosh çmimet, të rifacësh llogaritë e metrave, të kujtohesh përjashtimet. Ndërkohë klienti i kërkon një tjetri.",
-            "PreventivoLampo shërben për ta mbyllur këtë boshllëk: e tregon punën sapo mbaron vizita, siç do t'ia tregoje një kolegu, dhe drafti është gati para se të arrish në kantierin tjetër."
+            "Preventivi shërben për ta mbyllur këtë boshllëk: e tregon punën sapo mbaron vizita, siç do t'ia tregoje një kolegu, dhe drafti është gati para se të arrish në kantierin tjetër."
           ]
         },
         {

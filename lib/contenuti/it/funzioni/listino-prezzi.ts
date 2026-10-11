@@ -77,7 +77,7 @@ export const listinoPrezzi: PaginaFunzione = {
         "**Restano tuoi.** Listino, preventivi e dati dell'impresa sono tuoi, e su richiesta ti mandiamo il listino in Excel e i PDF dei preventivi. Non vendiamo i dati e non li usiamo per pubblicità.",
         "**Servono solo ai tuoi preventivi.** Il listino è legato alla tua impresa: le tue bozze cercano solo fra le tue voci, e le tue voci non entrano nei preventivi di nessun altro. Per scegliere le voci il sistema guarda nomi e descrizioni; il prezzo lo prende dopo, dal tuo listino.",
         "**Nessuna cifra inventata.** Un prezzo nella bozza viene da una tua voce o lo scrivi tu. Se carichi il listino da PDF o da foto, il file serve a leggere le voci e poi non viene conservato.",
-        "Quando smetti di usare PreventivoLampo, i tuoi dati si cancellano nei tempi scritti nell'informativa privacy, salvo quello che la legge obbliga a conservare.",
+        "Quando smetti di usare Preventivi, i tuoi dati si cancellano nei tempi scritti nell'informativa privacy, salvo quello che la legge obbliga a conservare.",
       ],
     },
   ],

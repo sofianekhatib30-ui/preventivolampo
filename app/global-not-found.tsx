@@ -5,7 +5,7 @@ import "./globals.css";
 
 // Pagina 404 per gli indirizzi che non corrispondono a nessuna pagina (il sito ha due layout
 // radice, pubblico e area: questa li scavalca entrambi). In italiano: non sappiamo la lingua.
-export const metadata: Metadata = { title: "Pagina non trovata · PreventivoLampo", robots: { index: false } };
+export const metadata: Metadata = { title: "Pagina non trovata · Preventivi", robots: { index: false } };
 
 export default function GlobalNotFound() {
   return (

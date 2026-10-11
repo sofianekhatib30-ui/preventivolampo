@@ -11,7 +11,7 @@ import { listino } from "@/lib/preventivi/servizio";
 
 export async function generateMetadata(): Promise<Metadata> {
   const { d } = await dizionario();
-  return { title: `${d.area.titoli.revisione} · PreventivoLampo`, robots: { index: false, follow: false } };
+  return { title: `${d.area.titoli.revisione} · Preventivi`, robots: { index: false, follow: false } };
 }
 export const dynamic = "force-dynamic";
 

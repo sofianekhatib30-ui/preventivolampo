@@ -38,7 +38,7 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
     .join("");
   return (
     <>
-      {/* La pagina è dell'impresa, non di PreventivoLampo: il suo nome in alto, il nostro solo in fondo */}
+      {/* La pagina è dell'impresa, non di Preventivi: il suo nome in alto, il nostro solo in fondo */}
       <header className="border-b border-linea bg-superficie">
         <div className="mx-auto flex max-w-2xl items-center gap-3 px-4 py-4">
           {conLogo ? (
@@ -171,7 +171,7 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
         )}
         <footer className="mt-10 border-t border-linea pt-4 text-xs leading-relaxed text-testo-3">
           {company.avviso && <p className="mb-2">{company.avviso}</p>}
-          <p>{T ? T.pagina.creato : "Preventivo creato con PreventivoLampo."}</p>
+          <p>{T ? T.pagina.creato : "Preventivo creato con Preventivi di K Digital Solution."}</p>
         </footer>
       </main>
     </>

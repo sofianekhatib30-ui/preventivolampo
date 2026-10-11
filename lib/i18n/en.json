@@ -653,8 +653,8 @@
     "scegliLingua": "Choose your language",
     "faFede": "Courtesy translation: if in doubt, the Italian text is the one that counts.",
     "saltaAlContenuto": "Skip to content",
-    "logoTop": "PreventivoLampo, back to the top",
-    "logoHome": "PreventivoLampo, home",
+    "logoTop": "Preventivi, back to the top",
+    "logoHome": "Preventivi, home",
     "entra": "Log in",
     "apriMenu": "Open the menu",
     "chiudiMenu": "Close the menu",
@@ -665,7 +665,7 @@
     "cookie": "Cookies",
     "condizioni": "Terms",
     "infoLegali": "Legal information",
-    "servizioDi": "PreventivoLampo is a service by K Digital Solution",
+    "servizioDi": "Preventivi is a service by K Digital Solution",
     "aggiornata": "Updated on {data}",
     "comeFunziona": "How it works",
     "briciole": "You are here"
@@ -889,7 +889,7 @@
     "colonne": [
       "Word or Excel, in the evening",
       "Any chatbot",
-      "PreventivoLampo"
+      "Preventivi"
     ],
     "righe": [
       {
@@ -952,7 +952,7 @@
     "min": "{n} min",
     "passi": "Every month you spend about this much time on quotes:",
     "ore": "{n} hours",
-    "costa": "almost always in the evening, after the job. PreventivoLampo costs €19.90 a month:",
+    "costa": "almost always in the evening, after the job. Preventivi costs €19.90 a month:",
     "allOra": "€{n} for each of those hours.",
     "nota": "You enter the numbers. How much time it gives you back, we measure with the pilot, on real jobs."
   },
@@ -1027,7 +1027,7 @@
       },
       {
         "d": "Do I have to change my invoicing software?",
-        "r": "No, keep yours. PreventivoLampo takes care of quotes; invoices stay where they are."
+        "r": "No, keep yours. Preventivi takes care of quotes; invoices stay where they are."
       }
     ]
   },
@@ -1086,7 +1086,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "This page explains what personal data PreventivoLampo handles, why, where it goes and how long it stays."
+          "testo": "This page explains what personal data Preventivi handles, why, where it goes and how long it stays."
         },
         {
           "t": "h2",
@@ -1143,7 +1143,7 @@
         },
         {
           "t": "h3",
-          "testo": "If you try PreventivoLampo with an example or on WhatsApp"
+          "testo": "If you try Preventivi with an example or on WhatsApp"
         },
         {
           "t": "ul",
@@ -1169,7 +1169,7 @@
             "Vercel: the website and its functions, in Frankfurt (EU).",
             "Anthropic (Claude): reads the site visit text and prepares the draft, and translates the quote items when the customer speaks another language, in the United States.",
             "Twilio and WhatsApp (Meta): receive and send the WhatsApp messages.",
-            "n8n: connects the WhatsApp messages to PreventivoLampo.",
+            "n8n: connects the WhatsApp messages to Preventivi.",
             "Resend: sends the emails with the login code."
           ]
         },
@@ -1192,7 +1192,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople and building firms prepare quotes: from your account of the site visit, it prepares a draft with the prices from the firm's price list. The tradesperson checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
+          "testo": "Preventivi is a service by Sofiane Khatib, K Digital Solution, Monza (MB). It helps tradespeople and building firms prepare quotes: from your account of the site visit, it prepares a draft with the prices from the firm's price list. The tradesperson checks it, approves it and sends it to the customer. The service is only for businesses and professionals with a partita IVA (Italian VAT number)."
         },
         {
           "t": "h2",
@@ -1226,10 +1226,10 @@
         {
           "t": "ul",
           "voci": [
-            "PreventivoLampo suggests, you decide: no quote goes to your customer unless you have opened and approved it. Before you approve, check the items, quantities and prices.",
+            "Preventivi suggests, you decide: no quote goes to your customer unless you have opened and approved it. Before you approve, check the items, quantities and prices.",
             "Prices come only from your price list. Items that aren't in it stay “to be priced” (da prezzare), and you add the price yourself.",
             "The IVA calculation follows the answers you give and the rules of the Agenzia delle Entrate (the Italian tax authority), but it isn't tax advice: for special cases, ask your accountant.",
-            "Your relationship with the customer, your prices and your jobs stay yours: PreventivoLampo is not a party to the contract between you and your customer."
+            "Your relationship with the customer, your prices and your jobs stay yours: Preventivi is not a party to the contract between you and your customer."
           ]
         },
         {
@@ -1262,7 +1262,7 @@
         },
         {
           "t": "p",
-          "testo": "Use PreventivoLampo only for your own business's quotes. Don't share your login with people outside your business, and don't use the service to upload offensive text or bulk requests. If these rules aren't followed, we can suspend your access, after warning you."
+          "testo": "Use Preventivi only for your own business's quotes. Don't share your login with people outside your business, and don't use the service to upload offensive text or bulk requests. If these rules aren't followed, we can suspend your access, after warning you."
         },
         {
           "t": "h2",
@@ -1279,7 +1279,7 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "PreventivoLampo only uses technical cookies: without them, the tradespeople area wouldn't know you're logged in and the site wouldn't remember the language you chose. No profiling cookies, no statistics, no third-party tools that follow you from one site to another. That's why you won't see a cookie banner."
+          "testo": "Preventivi only uses technical cookies: without them, the tradespeople area wouldn't know you're logged in and the site wouldn't remember the language you chose. No profiling cookies, no statistics, no third-party tools that follow you from one site to another. That's why you won't see a cookie banner."
         },
         {
           "t": "ul",
@@ -1296,7 +1296,7 @@
     }
   },
   "accesso": {
-    "titolo": "Log in · PreventivoLampo",
+    "titolo": "Log in · Preventivi",
     "h1": "Get into your quotes",
     "sotto": "Your price list, your prices, quotes with your name on them.",
     "email": "Your email",
