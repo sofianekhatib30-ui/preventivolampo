@@ -68,7 +68,7 @@ export function SceltaLingua({ scuro = true, compatto = false }: { scuro?: boole
         <span
           aria-hidden="true"
           className={`flex items-center justify-center rounded-full bg-lime text-inchiostro transition-transform group-aria-expanded:rotate-180 ${
-            compatto ? "absolute -bottom-0.5 -end-0.5 size-[18px] ring-2 ring-ardesia" : "size-5"
+            compatto ? `absolute -bottom-0.5 -end-0.5 size-[18px] ring-2 ${scuro ? "ring-ardesia" : "ring-superficie"}` : "size-5"
           }`}
         >
           <svg viewBox="0 0 20 20" className="size-3" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

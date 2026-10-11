@@ -40,35 +40,36 @@ export function Header({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: 
   // Chi ha già un account entra da qui: sempre a vista, anche sul telefono accanto al menu.
   const area = configurato();
   return (
-    <header className="su-scuro margini sticky top-0 z-40 flex h-16 items-center justify-between gap-3 border-b border-scuro-linea bg-ardesia text-fondo lg:h-[80px]">
+    // Testata chiara come quella di Attestiamo e Smistatore Mail (.testata di Attestiamo): sabbia velata, sfocatura, linea sotto.
+    <header className="margini sticky top-0 z-40 flex h-[68px] items-center justify-between gap-3 border-b border-linea bg-fondo/95 text-inchiostro backdrop-blur-md backdrop-saturate-[1.3]">
       {/* Sui telefoni più stretti il nome si stringe e non spinge fuori lingua, «Accedi» e il menu */}
       <div className="min-w-0 [&_a]:min-w-0 [&_span]:truncate max-[439px]:[&_span]:text-[23px] max-[359px]:[&_span]:text-[20px]">
-        <Logo href={p("/")} etichetta={d.comune.logoHome} />
+        <Logo href={p("/")} etichetta={d.comune.logoHome} suScuro={false} />
       </div>
-      <nav aria-label={d.comune.principale} className="hidden items-center gap-5 font-medium xl:flex">
+      <nav aria-label={d.comune.principale} className="hidden items-center gap-6 text-[15.5px] font-medium xl:flex">
         {NAV.map((link) => (
-          <a key={link.href} href={link.href} className="flex min-h-11 items-center whitespace-nowrap no-underline hover:text-lime">
+          <a key={link.href} href={link.href} className="flex min-h-11 items-center whitespace-nowrap text-inchiostro no-underline hover:text-cielo-scuro">
             {link.label}
           </a>
         ))}
         {area && (
-          <a href="/accedi" className="bottone whitespace-nowrap border-[1.5px] border-scuro-linea text-fondo hover:border-lime">
+          <a href="/accedi" className="flex min-h-11 items-center whitespace-nowrap text-inchiostro no-underline hover:text-cielo-scuro">
             {d.comune.entra}
           </a>
         )}
-        <a href={CTA_PILOTA.href} className="bottone bottone-azione-scuro whitespace-nowrap">
+        <a href={CTA_PILOTA.href} className="ms-1 inline-flex min-h-[42px] items-center whitespace-nowrap rounded-full bg-cielo-scuro px-[18px] text-[15px] font-semibold text-white no-underline hover:bg-inchiostro">
           {CTA_PILOTA.label}
         </a>
-        <SceltaLingua compatto />
+        <SceltaLingua compatto scuro={false} />
       </nav>
       <div className="flex shrink-0 items-center gap-1 xl:hidden">
         {area && (
-          <a href="/accedi" className="flex min-h-11 items-center rounded-campo px-1.5 text-[16px] font-bold text-fondo underline underline-offset-4">
+          <a href="/accedi" className="flex min-h-11 items-center rounded-campo px-1.5 text-[16px] font-semibold text-inchiostro underline underline-offset-4">
             {d.comune.entra}
           </a>
         )}
         <MenuMobile gruppi={gruppi} cta={CTA_PILOTA} />
-        <SceltaLingua compatto />
+        <SceltaLingua compatto scuro={false} />
       </div>
     </header>
   );

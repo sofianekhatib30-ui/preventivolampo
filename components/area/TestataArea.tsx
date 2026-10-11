@@ -39,15 +39,15 @@ export async function TestataArea({ impresa, attiva, daPrezzare = 0 }: { impresa
           <div className="flex min-w-0 items-center gap-4">
             {/* Come negli altri strumenti, il marchio porta alla pagina iniziale del prodotto. */}
             <Link href="/" className="flex min-h-11 shrink-0 items-center gap-2.5 text-inchiostro no-underline" aria-label={T.logo}>
-              <Marchio className="size-8 shrink-0" />
-              <span className="nome-strumento text-[24px] leading-none">Preventivi</span>
+              <Marchio className="size-[34px] shrink-0" />
+              <span className="nome-strumento text-[26px] leading-none">Preventivi</span>
             </Link>
             {impresa && (
               <span className="min-w-0 truncate border-l border-linea pl-4 text-[14px] font-semibold text-testo-2">{impresa}</span>
             )}
           </div>
           <div className="flex shrink-0 items-center gap-2">
-            <SceltaLingua compatto />
+            <SceltaLingua compatto scuro={false} />
           </div>
         </div>
         {impresa && attiva && (

@@ -7,10 +7,10 @@ export function Logo({ href = "#top", suScuro = true, etichetta }: { href?: stri
     <a
       href={href}
       aria-label={etichetta ?? (href === "#top" ? "Preventivi, torna all'inizio" : "Preventivi, home")}
-      className={`flex min-h-11 items-center gap-2 no-underline sm:gap-2.5 lg:gap-3 ${suScuro ? "text-fondo" : "text-inchiostro"}`}
+      className={`flex min-h-11 items-center gap-2.5 no-underline ${suScuro ? "text-fondo" : "text-inchiostro"}`}
     >
-      <Marchio className="size-8 shrink-0 sm:size-9 lg:size-10" />
-      <span className="nome-strumento text-[26px] leading-none lg:text-[30px]">
+      <Marchio className="size-[34px] shrink-0" />
+      <span className="nome-strumento whitespace-nowrap text-[26px] leading-none">
         Preventivi
       </span>
     </a>

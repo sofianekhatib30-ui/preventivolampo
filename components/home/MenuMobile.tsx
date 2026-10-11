@@ -35,7 +35,7 @@ export function MenuMobile({ gruppi, cta }: { gruppi: GruppoMenu[]; cta: Link })
         aria-controls={panelId}
         aria-label={open ? d.comune.chiudiMenu : d.comune.apriMenu}
         onClick={() => setOpen((value) => !value)}
-        className="flex size-11 items-center justify-center rounded-campo border-[1.5px] border-scuro-linea bg-transparent text-fondo"
+        className="flex size-11 items-center justify-center rounded-campo border-[1.5px] border-campo bg-transparent text-inchiostro"
       >
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
           {open ? <path d="M5 5l10 10M15 5L5 15" /> : <path d="M3 6h14M3 10h14M3 14h14" />}
@@ -45,15 +45,15 @@ export function MenuMobile({ gruppi, cta }: { gruppi: GruppoMenu[]; cta: Link })
         id={panelId}
         aria-label={d.comune.principale}
         hidden={!open}
-        className="margini absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-scuro-linea bg-ardesia pb-6 pt-4 text-fondo"
+        className="margini absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-b border-linea bg-fondo pb-6 pt-4 text-inchiostro"
       >
         <div className="flex flex-col gap-6">
           {gruppi.map((g) => (
             <div key={g.titolo}>
-              <p className="m-0 mb-1 text-[14px] font-semibold text-scuro-nota">{g.titolo}</p>
+              <p className="m-0 mb-1 text-[14px] font-semibold text-testo-3">{g.titolo}</p>
               <ul className={`m-0 grid list-none p-0 ${g.colonne ? "grid-cols-2 gap-x-4" : ""}`}>
                 {g.voci.map((link) => (
-                  <li key={link.href} className="border-b border-scuro-linea">
+                  <li key={link.href} className="border-b border-linea">
                     <a href={link.href} onClick={() => setOpen(false)} className="flex min-h-12 items-center text-[17px] font-medium no-underline">
                       {link.label}
                     </a>
@@ -63,7 +63,7 @@ export function MenuMobile({ gruppi, cta }: { gruppi: GruppoMenu[]; cta: Link })
             </div>
           ))}
         </div>
-        <a href={cta.href} onClick={() => setOpen(false)} className="bottone bottone-azione-scuro mt-6 flex w-full text-[17px]">
+        <a href={cta.href} onClick={() => setOpen(false)} className="bottone bottone-azione mt-6 flex w-full text-[17px]">
           {cta.label}
         </a>
       </nav>
