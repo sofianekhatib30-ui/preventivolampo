@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { ctaPrincipale } from "@/components/home/Header";
 import { Logo } from "@/components/home/Logo";
 import type { Contenuti } from "@/lib/contenuti";
@@ -37,10 +38,11 @@ export function Piede({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: L
     { href: p("/condizioni"), label: d.comune.condizioni },
   ];
   return (
-    <footer className="su-scuro margini mt-auto bg-ardesia-2 pb-8 pt-14 text-scuro-testo lg:pt-20">
-      <div className="grid gap-x-10 gap-y-12 lg:grid-cols-[minmax(240px,1fr)_minmax(0,2.4fr)] xl:gap-x-20">
+    <footer className="su-scuro margini relative isolate mt-auto overflow-hidden bg-ardesia-2 pb-8 pt-14 text-scuro-testo lg:pt-20">
+      <EsagoniVivi />
+      <div className="grid gap-x-10 gap-y-12 lg:grid-cols-[minmax(220px,0.8fr)_minmax(0,2.8fr)] xl:gap-x-20">
         <div className="max-w-[26rem]">
-          <Logo href={p("/")} etichetta={d.comune.logoHome} />
+          <Logo href={p("/")} etichetta={d.comune.logoHome} marchioScuro />
           <p className="m-0 mt-5 text-[15px] leading-[1.6] text-scuro-testo">{d.hero.garanzia}</p>
           <a
             href={cta.href}
@@ -49,7 +51,7 @@ export function Piede({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: L
             {cta.label}
           </a>
         </div>
-        <nav aria-label={c.ui.piede.risorse} className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-[2fr_1fr_1.4fr_1fr]">
+        <nav aria-label={c.ui.piede.risorse} className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-[2fr_1.2fr_1.5fr_0.8fr]">
           {colonne.map((col) => (
             <div key={col.titolo} className={col.due ? "col-span-2 md:col-span-1" : undefined}>
               <p className="m-0 mb-3 text-[13px] font-bold uppercase tracking-[.08em] text-fondo">{col.titolo}</p>

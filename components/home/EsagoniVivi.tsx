@@ -13,12 +13,13 @@ import { useEffect, useRef } from "react";
 // restano come fondo senza JavaScript. Con «riduci movimento» il disegno è fermo (tessere e qualche filo
 // acceso); fuori dallo schermo e con la scheda nascosta si ferma.
 // Dall'11/10/2026 lo stesso fondo va anche nelle altre fasce scure del sito (Sofiane: «mettiamo questo effetto anche
-// nelle zone bordeaux dove non ci sono effetti»): numeri, demo, testata delle pagine, invito finale. La sezione che
+// nelle zone bordeaux dove non ci sono effetti», «hai dimenticato questo e il footer»): numeri, demo, testata delle
+// pagine, invito finale, scheda del programma pilota nei prezzi, piede. La sezione che
 // lo ospita deve essere relative, isolate e overflow-hidden; solo nella hero la finestra d'esempio galleggia.
 
 type Colore = readonly [number, number, number];
 type Cella = { x: number; y: number; tono: number };
-type Lato = { a: string; b: string; ax: number; ay: number; bx: number; by: number };
+type Lato = { id: string; a: string; b: string; ax: number; ay: number; bx: number; by: number };
 type Corridore = { lato: number; verso: 1 | -1; t: number };
 
 // Tessere: fuga quasi nera, espresso in leggero rilievo.
@@ -52,8 +53,8 @@ const mescola = (a: Colore, b: Colore, t: number): Colore => [a[0] + (b[0] - a[0
 const rgb = (c: Colore, al: number) => `rgba(${Math.round(c[0])},${Math.round(c[1])},${Math.round(c[2])},${al.toFixed(3)})`;
 
 function disegnaTessera(g: CanvasRenderingContext2D, x: number, y: number, r: number, tono: number, alza: number) {
-  const dall = mescola(TESSERA_A, [70, 32, 44], alza);
-  const al = mescola(TESSERA_B, [44, 18, 28], alza);
+  const dall = mescola(TESSERA_A, [98, 40, 60], alza);
+  const al = mescola(TESSERA_B, [62, 24, 38], alza);
   const gr = g.createLinearGradient(x, y - r, x, y + r);
   gr.addColorStop(0, rgb(mescola(dall, NERO, tono), 1));
   gr.addColorStop(1, rgb(mescola(al, NERO, tono), 1));
@@ -65,7 +66,7 @@ function disegnaTessera(g: CanvasRenderingContext2D, x: number, y: number, r: nu
   esagono(g, x, y, r);
   g.clip();
   g.lineWidth = 2;
-  g.strokeStyle = `rgba(242,228,208,${(0.08 + 0.06 * alza).toFixed(3)})`;
+  g.strokeStyle = `rgba(242,228,208,${(0.08 + 0.16 * alza).toFixed(3)})`;
   g.beginPath();
   g.moveTo(x - r, y);
   g.lineTo(x - r * 0.5, y - r * 0.866);
@@ -101,6 +102,7 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
     let vert: Record<string, number[]> = {};
     let lati: Lato[] = [];
     let dentroLati: number[] = [];
+    let perId = new Map<string, number>();
     let fondo: HTMLCanvasElement | null = null;
     let corridori: Corridore[] = [];
     let scia: { lato: number; eta: number }[] = [];
@@ -116,7 +118,7 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
       vert = {};
       lati = [];
       dentroLati = [];
-      const visti = new Set<string>();
+      perId = new Map<string, number>();
       for (const c of celle) {
         const p: [number, number][] = [];
         for (let k = 0; k < 6; k++) {
@@ -129,10 +131,10 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
           const ka = chiave(A[0], A[1]);
           const kb = chiave(B[0], B[1]);
           const id = ka < kb ? `${ka}|${kb}` : `${kb}|${ka}`;
-          if (visti.has(id)) continue;
-          visti.add(id);
+          if (perId.has(id)) continue;
           const idx = lati.length;
-          lati.push({ a: ka, b: kb, ax: A[0], ay: A[1], bx: B[0], by: B[1] });
+          perId.set(id, idx);
+          lati.push({ id, a: ka, b: kb, ax: A[0], ay: A[1], bx: B[0], by: B[1] });
           (vert[ka] ??= []).push(idx);
           (vert[kb] ??= []).push(idx);
           const mx = (A[0] + B[0]) / 2;
@@ -145,22 +147,24 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
       dentroLati.length ? { lato: dentroLati[(Math.random() * dentroLati.length) | 0], verso: Math.random() < 0.5 ? 1 : -1, t: 0 } : null;
     const fuori = (i: number) => {
       const L = lati[i];
-      const m = 90;
+      const m = 20;
       const mx = (L.ax + L.bx) / 2;
       const my = (L.ay + L.by) / 2;
       return mx < -m || mx > W + m || my < -m || my > H + m;
     };
+    // Il filo non salta mai da un'altra parte (Sofiane, 11/10: «le scie luminose devono essere infinite e non che si
+    // resettano danno fastidio agli occhi»): al vertice sceglie fra i lati che restano nella fascia e, se non ce ne
+    // sono, torna indietro sullo stesso lato.
     const avanti = (c: Corridore) => {
       const L = lati[c.lato];
       const kArrivo = c.verso === 1 ? L.b : L.a;
-      const scelte = (vert[kArrivo] ?? []).filter((i) => i !== c.lato);
-      const riparti = () => {
-        const n = nuovoCorridore();
-        if (n) Object.assign(c, n);
-      };
-      if (!scelte.length) return riparti();
+      const scelte = (vert[kArrivo] ?? []).filter((i) => i !== c.lato && !fuori(i));
+      if (!scelte.length) {
+        c.verso = c.verso === 1 ? -1 : 1;
+        c.t = 0;
+        return;
+      }
       const nuovo = scelte[(Math.random() * scelte.length) | 0];
-      if (fuori(nuovo)) return riparti();
       c.lato = nuovo;
       c.verso = lati[nuovo].a === kArrivo ? 1 : -1;
       c.t = 0;
@@ -207,20 +211,26 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
 
     const disegna = (dt: number, ora: number) => {
       sfondo();
-      // tessere sollevate: salgono di qualche pixel con un'ombra sotto e poi tornano giù
-      if (ora - ultimaSollevata > 420 && sollevate.length < 7 && celle.length) {
-        sollevate.push({ c: celle[(Math.random() * celle.length) | 0], da: ora });
-        ultimaSollevata = ora;
+      // tessere sollevate: tante, sempre in movimento (Sofiane, 11/10: «fai muovere di piu gli esagoni e piu esagoni
+      // cosi è animata davvero»). Ognuna sale di qualche pixel, cresce un poco con un'ombra sotto e torna giù; una
+      // nuova parte ogni 150 ms, fino a una ogni 50.000 px² di fascia.
+      const massimo = Math.max(8, Math.round((W * H) / 50000));
+      if (ora - ultimaSollevata > 150 && sollevate.length < massimo && celle.length) {
+        const scelta = celle[(Math.random() * celle.length) | 0];
+        if (!sollevate.some((s) => s.c === scelta)) {
+          sollevate.push({ c: scelta, da: ora });
+          ultimaSollevata = ora;
+        }
       }
       sollevate = sollevate.filter((s) => {
-        const p = (ora - s.da) / 3000;
+        const p = (ora - s.da) / 2600;
         if (p >= 1) return false;
         const e = 0.5 - 0.5 * Math.cos(p * 2 * Math.PI);
         ctx.save();
-        ctx.shadowColor = `rgba(0,0,0,${(0.6 * e).toFixed(3)})`;
-        ctx.shadowBlur = 16 * e;
-        ctx.shadowOffsetY = 6 * e;
-        disegnaTessera(ctx, s.c.x, s.c.y - 4 * e, R - FUGA_PX, s.c.tono, e);
+        ctx.shadowColor = `rgba(0,0,0,${(0.7 * e).toFixed(3)})`;
+        ctx.shadowBlur = 20 * e;
+        ctx.shadowOffsetY = 9 * e;
+        disegnaTessera(ctx, s.c.x, s.c.y - 7 * e, (R - FUGA_PX) * (1 + 0.05 * e), s.c.tono, e);
         ctx.restore();
         return true;
       });
@@ -287,12 +297,28 @@ export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
       g.fillStyle = FUGA;
       g.fillRect(0, 0, W, H);
       for (const c of celle) disegnaTessera(g, c.x, c.y, R - FUGA_PX, c.tono, 0);
+      // Quando la fascia cambia misura (la finestra d'esempio cresce, la pagina si allarga) la maglia si rifà, ma i fili
+      // restano dove sono: si ritrovano per nome del lato, così niente salta e niente riparte da capo.
+      const prima = corridori.map((c) => {
+        const L = lati[c.lato];
+        return { id: L.id, arrivo: c.verso === 1 ? L.b : L.a, t: c.t };
+      });
+      const sciaPrima = scia.map((v) => ({ id: lati[v.lato].id, eta: v.eta }));
       costruisciMaglia();
       corridori = [];
       scia = [];
       sollevate = [];
+      for (const p of prima) {
+        const i = perId.get(p.id);
+        if (i !== undefined) corridori.push({ lato: i, verso: lati[i].b === p.arrivo ? 1 : -1, t: p.t });
+      }
+      for (const v of sciaPrima) {
+        const i = perId.get(v.id);
+        if (i !== undefined) scia.push({ lato: i, eta: v.eta });
+      }
       const quanti = Math.max(3, Math.min(14, Math.round((W * H) / 115000)));
-      for (let k = 0; k < quanti; k++) {
+      if (corridori.length > quanti) corridori.length = quanti;
+      for (let k = corridori.length; k < quanti; k++) {
         const c = nuovoCorridore();
         if (c) {
           c.t = Math.random();

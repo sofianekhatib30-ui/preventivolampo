@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { Frasi } from "@/components/Frasi";
 import { Suspense } from "react";
 import type { Dizionario } from "@/lib/i18n/it";
@@ -22,7 +23,8 @@ export function Prezzi({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
       </div>
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)_minmax(0,1fr)] lg:gap-5">
-        <article className="su-scuro flex flex-col gap-3 rounded-[20px] bg-ardesia p-6 text-fondo lg:gap-[18px] lg:rounded-card lg:p-10">
+        <article className="su-scuro relative isolate flex flex-col gap-3 overflow-hidden rounded-[20px] bg-ardesia p-6 text-fondo lg:gap-[18px] lg:rounded-card lg:p-10">
+          <EsagoniVivi />
           <Suspense fallback={<PostiPilota posti={null} P={P} />}>
             <PostiDalDatabase P={P} />
           </Suspense>
