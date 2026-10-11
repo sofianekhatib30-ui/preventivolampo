@@ -21,13 +21,13 @@ export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
     >
       <Matrice />
       <EsagoniVivi />
-      <div className="mx-auto grid max-w-[1240px] items-center gap-[clamp(36px,5vw,72px)] px-[clamp(16px,5vw,72px)] min-[1021px]:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] [&>*]:min-w-0">
+      <div className="margini grid items-center gap-[clamp(36px,5vw,120px)] min-[1021px]:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] min-[1500px]:grid-cols-[minmax(0,1fr)_minmax(0,820px)] [&>*]:min-w-0">
         <div>
           <p className="m-0 inline-flex items-center gap-2.5 text-[15px] font-semibold text-fondo-2">
             <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-lime" />
             {h.etichetta}
           </p>
-          <h1 className="mb-[22px] mt-[18px] max-w-[15ch] text-[clamp(42px,4.8vw,64px)] leading-[1.02] text-white">
+          <h1 className="mb-[22px] mt-[18px] max-w-[15ch] text-[clamp(42px,4.6vw,84px)] leading-[1.02] text-white">
             <Frasi testo={h.titolo} />
           </h1>
           <p className="m-0 max-w-[32em] text-[19px] leading-[1.6] text-fondo-2 [text-wrap:pretty]">

@@ -1,13 +1,19 @@
+import { ctaPrincipale } from "@/components/home/Header";
+import { Logo } from "@/components/home/Logo";
 import type { Contenuti } from "@/lib/contenuti";
 import { FUNZIONI, GUIDE, MESTIERI, percorsoFunzione, percorsoGuida, percorsoMestiere } from "@/lib/contenuti/registro";
 import type { Dizionario } from "@/lib/i18n/it";
 import { type LinguaSito, percorso } from "@/lib/i18n/lingue";
 
 // Piè di pagina di tutte le pagine pubbliche: la mappa del sito, così ogni pagina è a un clic da tutte le altre.
+// Rifatto l'11/10/2026 (Sofiane, sugli schermi larghi: «sistema anche qua il footer che cosi non si puo vedere»):
+// a sinistra il marchio con la regola del listino e il pulsante, poi le colonne; i mestieri su due colonne invece
+// di una lista lunga; in fondo chi fa il servizio e le pagine legali. Larghezza come la testata (margini).
 export function Piede({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: LinguaSito }) {
   const p = (x: string) => percorso(lingua, x);
-  const colonne: { titolo: string; voci: { href: string; label: string }[] }[] = [
-    { titolo: c.ui.piede.mestieri, voci: MESTIERI.map((m) => ({ href: p(percorsoMestiere(m)), label: c.mestieri[m].nome })) },
+  const cta = ctaPrincipale(d, lingua);
+  const colonne: { titolo: string; voci: { href: string; label: string }[]; due?: boolean }[] = [
+    { titolo: c.ui.piede.mestieri, voci: MESTIERI.map((m) => ({ href: p(percorsoMestiere(m)), label: c.mestieri[m].nome })), due: true },
     { titolo: c.ui.piede.funzioni, voci: FUNZIONI.map((f) => ({ href: p(percorsoFunzione(f)), label: c.funzioni[f].nome })) },
     {
       titolo: c.ui.piede.risorse,
@@ -22,31 +28,58 @@ export function Piede({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: L
       voci: [
         { href: p("/prezzi"), label: d.nav.prezzi },
         { href: p("/chi-siamo"), label: d.nav.chiSiamo },
-        { href: p("/privacy"), label: d.comune.privacy },
-        { href: p("/cookie"), label: d.comune.cookie },
-        { href: p("/condizioni"), label: d.comune.condizioni },
       ],
     },
   ];
+  const legali = [
+    { href: p("/privacy"), label: d.comune.privacy },
+    { href: p("/cookie"), label: d.comune.cookie },
+    { href: p("/condizioni"), label: d.comune.condizioni },
+  ];
   return (
-    <footer className="su-scuro margini mt-auto bg-ardesia-2 py-12 text-scuro-testo lg:py-16">
-      <nav aria-label={c.ui.piede.risorse} className="grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4 lg:gap-8">
-        {colonne.map((col) => (
-          <div key={col.titolo}>
-            <p className="m-0 mb-3 text-[15px] font-bold text-fondo">{col.titolo}</p>
-            <ul className="m-0 flex list-none flex-col p-0">
-              {col.voci.map((v) => (
-                <li key={v.href}>
-                  <a href={v.href} className="flex min-h-10 items-center text-[15px] no-underline hover:text-lime hover:underline">
-                    {v.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </nav>
-      <p className="m-0 mt-10 border-t border-scuro-linea pt-6 text-[14px]">{d.comune.servizioDi}</p>
+    <footer className="su-scuro margini mt-auto bg-ardesia-2 pb-8 pt-14 text-scuro-testo lg:pt-20">
+      <div className="grid gap-x-10 gap-y-12 lg:grid-cols-[minmax(240px,1fr)_minmax(0,2.4fr)] xl:gap-x-20">
+        <div className="max-w-[26rem]">
+          <Logo href={p("/")} etichetta={d.comune.logoHome} />
+          <p className="m-0 mt-5 text-[15px] leading-[1.6] text-scuro-testo">{d.hero.garanzia}</p>
+          <a
+            href={cta.href}
+            className="mt-6 inline-flex min-h-12 items-center justify-center rounded-full bg-lime px-6 py-3 text-[15.5px] font-semibold text-ardesia-2 no-underline hover:bg-cielo"
+          >
+            {cta.label}
+          </a>
+        </div>
+        <nav aria-label={c.ui.piede.risorse} className="grid grid-cols-2 gap-x-8 gap-y-10 md:grid-cols-[2fr_1fr_1.4fr_1fr]">
+          {colonne.map((col) => (
+            <div key={col.titolo} className={col.due ? "col-span-2 md:col-span-1" : undefined}>
+              <p className="m-0 mb-3 text-[13px] font-bold uppercase tracking-[.08em] text-fondo">{col.titolo}</p>
+              <ul className={`m-0 list-none p-0 ${col.due ? "grid grid-cols-2 gap-x-6" : "flex flex-col"}`}>
+                {col.voci.map((v) => (
+                  <li key={v.href}>
+                    <a href={v.href} className="flex min-h-9 items-center text-[15px] no-underline hover:text-lime hover:underline">
+                      {v.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </nav>
+      </div>
+      <div className="mt-14 flex flex-wrap items-center justify-between gap-x-8 gap-y-3 border-t border-scuro-linea pt-6 text-[14px]">
+        <a href="https://kdigitalsolution.it/prodotti/" className="no-underline hover:text-lime hover:underline">
+          {d.comune.servizioDi}
+        </a>
+        <ul className="m-0 flex list-none flex-wrap gap-x-6 gap-y-2 p-0" aria-label={d.comune.infoLegali}>
+          {legali.map((v) => (
+            <li key={v.href}>
+              <a href={v.href} className="flex min-h-9 items-center no-underline hover:text-lime hover:underline">
+                {v.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 }

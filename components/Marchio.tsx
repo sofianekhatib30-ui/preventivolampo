@@ -17,7 +17,7 @@ export function Marchio({ className, animato = true }: { className?: string; ani
       focusable="false"
       onMouseEnter={animato ? () => setGiro((g) => g + 1) : undefined}
     >
-      <rect width="64" height="64" rx={fondo.raggio} fill={fondo.colore} />
+      <path d={fondo.esagono} fill={fondo.colore} />
       <g transform={trasforma}>
         <rect className="marchio-stanghetta" x={s.x} y={s.y} width={s.larghezza} height={s.altezza} rx={s.raggio} fill={s.colore} />
         <path className="marchio-freccia" d={f.d} fill="none" stroke={f.colore} strokeWidth={f.spessore} strokeMiterlimit={8} pathLength={1} />

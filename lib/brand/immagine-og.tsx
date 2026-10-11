@@ -19,7 +19,7 @@ export function immagineOg({ titolo, riga }: { titolo: string; riga: string }) {
       <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", padding: "72px 80px", background: fondo.colore, color: "#F2E4D0" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 22 }}>
           <svg width="76" height="76" viewBox="0 0 64 64">
-            <rect width="64" height="64" rx={fondo.raggio} fill="#3A1A24" />
+            <path d={fondo.esagono} fill="#3A1A24" />
             <g transform={trasforma}>
               <rect x={s.x} y={s.y} width={s.larghezza} height={s.altezza} rx={s.raggio} fill={s.colore} />
               <path d={f.d} fill="none" stroke={f.colore} strokeWidth={f.spessore} strokeMiterlimit={8} />
