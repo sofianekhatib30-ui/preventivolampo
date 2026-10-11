@@ -709,7 +709,7 @@
     "voci": "{n} items",
     "daPrezzare": "to be priced",
     "prezzoTuo": "your own price: you can add it to your price list",
-    "iva": "IVA {aliquota}%: home, maintenance",
+    "iva": "IVA {aliquota}%: {perche}",
     "stati": [
       "Sent",
       "Seen",
@@ -724,21 +724,40 @@
       "idraulico": "Plumber",
       "imbianchino": "Painter and decorator",
       "piastrellista": "Tiler",
-      "muratore": "Bricklayer"
+      "muratore": "Bricklayer",
+      "fotografo": "Photographer",
+      "officina": "Car repair shop",
+      "catering": "Catering"
     },
     "lavori": {
       "elettricista": "Kitchen",
       "idraulico": "Kitchen",
       "imbianchino": "Two-room flat",
       "piastrellista": "Living room",
-      "muratore": "Small bedroom"
+      "muratore": "Small bedroom",
+      "fotografo": "Wedding",
+      "officina": "Service",
+      "catering": "Christening"
+    },
+    "perche": {
+      "elettricista": "home, maintenance",
+      "idraulico": "home, maintenance",
+      "imbianchino": "home, maintenance",
+      "piastrellista": "home, maintenance",
+      "muratore": "home, maintenance",
+      "fotografo": "photography service",
+      "officina": "vehicle repair",
+      "catering": "catering for an event"
     },
     "vocali": {
       "elettricista": "Mr Ferrari's kitchen. Four simple light points and two two-way switches over the table. The 16 amp sockets for the appliances. A new RCD goes in the consumer unit. And I'll hang the light fitting he bought himself.",
       "idraulico": "Mrs Rinaldi's kitchen. We're moving the sink to the opposite wall: new hot and cold supply with the waste, three metres of 40 mm waste pipe. I'll connect the dishwasher too. She already has the mixer tap, I'll fit it.",
       "imbianchino": "Mr Greco's two-room flat, living room and bedroom: walls and ceilings come to a hundred and twenty square metres. I'll scrape where it's flaking, primer everywhere and two coats of washable emulsion. Six metres of anti-mould on the bathroom ceiling. We'll move the furniture ourselves.",
       "piastrellista": "Mrs Marino's living room, twenty-eight square metres. I'll take up the old floor and the skirting, redo the screed and lay the 30 by 30 porcelain tiles she bought. New porcelain skirting.",
-      "muratore": "Mr Conti's small bedroom. I'm knocking down the old partition wall and rebuilding it a metre over: 8 cm hollow blocks, three twenty by two seventy, plaster on both sides. Rubble, one cubic metre. I'll fit the door lining myself."
+      "muratore": "Mr Conti's small bedroom. I'm knocking down the old partition wall and rebuilding it a metre over: 8 cm hollow blocks, three twenty by two seventy, plaster on both sides. Rubble, one cubic metre. I'll fit the door lining myself.",
+      "fotografo": "Mrs Bianchi's wedding in September, at a villa. Coverage from the bride getting ready to the cutting of the cake, about ten hours. They want the video with the drone and a thirty-page album, plus the online gallery for the guests. The slideshow of the photos during the party they're asking for separately.",
+      "officina": "Mr Galli's Panda, a hundred and twenty thousand kilometres. Service with oil and filters, then I'm changing the front pads and discs. He's already bought the new battery himself, I'll fit it.",
+      "catering": "Little Leo's christening, in Mrs Russo's garden, around sixty people. Welcome aperitif, savoury and sweet buffet, water, wine and soft drinks. Two waiters needed for four hours. Their bakery is bringing the cake: we cut it and serve it."
     },
     "finestra": "From voice note to quote",
     "esempio": "Example"

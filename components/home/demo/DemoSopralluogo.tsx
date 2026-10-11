@@ -313,7 +313,7 @@ function Pannello({ s, t, e, D }: { s: Scenario; t: Tempi; e: number; D: Diziona
       <div className="flex flex-col gap-2.5 border-t border-dashed border-linea-2 bg-scontrino px-3.5 py-3 lg:px-5 lg:py-4">
         <div className={`flex items-baseline justify-between gap-3 transition-opacity duration-300 ${conIva ? "opacity-100" : "opacity-0"}`}>
           <span className="text-[12.5px] text-testo-2 lg:text-[13px]">
-            {fmt(D.iva, { aliquota: s.iva.aliquota })}
+            {fmt(D.iva, { aliquota: s.iva.aliquota, perche: D.perche[s.id as IdScenario] ?? s.iva.perche })}
           </span>
           <span className="whitespace-nowrap font-mono text-[17px] font-bold lg:text-[19px]">{euro(totaleMostrato)}</span>
         </div>

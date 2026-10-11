@@ -68,15 +68,17 @@ export const it = {
     voci: "{n} voci",
     daPrezzare: "da prezzare",
     prezzoTuo: "prezzo tuo: lo puoi aggiungere al listino",
-    iva: "IVA {aliquota}%: abitazione, manutenzione",
+    iva: "IVA {aliquota}%: {perche}",
     stati: ["Inviato", "Visto", "Accettato"],
     accettato: "Accettato online dal sig. {cliente}: nome, data, ora e copia del PDF restano a te.",
     altroTitolo: "Serramenti, cartongesso, caldaie, giardini, cancelli, cucine su misura.",
     altroTesto:
       "Se lavori a voci e misure, funziona con il tuo listino: le parole del mestiere le trova lì, e quello che non c'è resta da prezzare. Carichi il listino che hai, anche in foto, e lo provi sui tuoi lavori.",
     altroCta: "Provalo sul tuo lavoro",
-    mestieri: { elettricista: "Elettricista", idraulico: "Idraulico", imbianchino: "Imbianchino", piastrellista: "Piastrellista", muratore: "Muratore" },
-    lavori: { elettricista: "Cucina", idraulico: "Cucina", imbianchino: "Bilocale", piastrellista: "Soggiorno", muratore: "Cameretta" },
+    mestieri: { elettricista: "Elettricista", idraulico: "Idraulico", imbianchino: "Imbianchino", piastrellista: "Piastrellista", muratore: "Muratore", fotografo: "Fotografo", officina: "Officina", catering: "Catering" },
+    lavori: { elettricista: "Cucina", idraulico: "Cucina", imbianchino: "Bilocale", piastrellista: "Soggiorno", muratore: "Cameretta", fotografo: "Matrimonio", officina: "Tagliando", catering: "Battesimo" },
+    // Perché quell'aliquota IVA, una per esempio.
+    perche: { elettricista: "abitazione, manutenzione", idraulico: "abitazione, manutenzione", imbianchino: "abitazione, manutenzione", piastrellista: "abitazione, manutenzione", muratore: "abitazione, manutenzione", fotografo: "servizio fotografico", officina: "riparazione del veicolo", catering: "somministrazione per un evento" },
     // Il racconto dell'artigiano nella lingua della pagina: le voci della bozza restano in italiano.
     vocali: {
       elettricista:
@@ -89,6 +91,12 @@ export const it = {
         "Soggiorno della signora Marino, ventotto metri quadri. Tolgo il pavimento vecchio e il battiscopa, rifaccio il massetto e poso il gres trenta per trenta che ha comprato lei. Battiscopa nuovo in gres.",
       muratore:
         "Cameretta del signor Conti. Butto giù il tramezzo vecchio e lo rifaccio spostato di un metro: forati da otto, tre e venti per due e settanta, intonaco da tutte e due le parti. Macerie, un metro cubo. Il controtelaio della porta lo metto io.",
+      fotografo:
+        "Matrimonio della signora Bianchi a settembre, in villa. Servizio dalla preparazione della sposa al taglio della torta, più o meno dieci ore. Vogliono il video con il drone e un album da trenta pagine, più la galleria online per gli invitati. La proiezione delle foto durante la festa me la chiedono a parte.",
+      officina:
+        "Panda del signor Galli, centoventimila chilometri. Tagliando con olio e filtri, poi cambio pastiglie e dischi davanti. La batteria nuova l'ha già comprata lui, gliela monto io.",
+      catering:
+        "Battesimo del piccolo Leo, in giardino dalla signora Russo, una sessantina di persone. Aperitivo di benvenuto, buffet salato e dolce, acqua, vino e bibite. Servono due camerieri per quattro ore. La torta la porta la loro pasticceria: noi la tagliamo e la serviamo.",
     },
   },
   mestieri: {

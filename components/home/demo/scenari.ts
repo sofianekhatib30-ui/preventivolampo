@@ -32,6 +32,9 @@ export type Scenario = {
 };
 
 export const SCENARI: Scenario[] = [
+  // Accanto ai mestieri della casa, a turno, anche mestieri che non sono della casa (Sofiane, 11/10/2026: «non mostriamo solo questi mestieri mostriamo anche quelli
+  // non artigianali»). Il listino di prova (dati/listino.json) copre solo i lavori di casa: per questi tre esempi
+  // voci e prezzi sono inventati, come dice la didascalia della finestra.
   {
     id: "elettricista",
     mestiere: "Elettricista",
@@ -50,6 +53,25 @@ export const SCENARI: Scenario[] = [
     domanda: { testo: "Quante prese da 16 A?", scelte: ["3", "4", "5"], risposta: 1, quantita: 4 },
     prezzoTuo: 3500,
     iva: { aliquota: 10, perche: "abitazione, manutenzione" },
+  },
+  {
+    id: "fotografo",
+    mestiere: "Fotografo",
+    lavoro: "Matrimonio",
+    cliente: "Bianchi",
+    durata: "0:35",
+    vocale:
+      "Matrimonio della signora Bianchi a settembre, in villa. Servizio dalla preparazione della sposa al taglio della torta, più o meno dieci ore. Vogliono il video con il drone e un album da trenta pagine, più la galleria online per gli invitati. La proiezione delle foto durante la festa me la chiedono a parte.",
+    righe: [
+      { voce: "Servizio fotografico", unita: "ora", quantita: null, prezzo: 9000 },
+      { voce: "Video con riprese da drone", unita: "cad", quantita: 1, prezzo: 65000 },
+      { voce: "Album 30 pagine", unita: "cad", quantita: 1, prezzo: 42000 },
+      { voce: "Galleria online per gli invitati", unita: "cad", quantita: 1, prezzo: 9000 },
+      { voce: "Proiezione delle foto alla festa", unita: "cad", quantita: 1, prezzo: null },
+    ],
+    domanda: { testo: "Quante ore di servizio?", scelte: ["8", "10", "12"], risposta: 1, quantita: 10 },
+    prezzoTuo: 15000,
+    iva: { aliquota: 22, perche: "servizio fotografico" },
   },
   {
     id: "idraulico",
@@ -71,6 +93,25 @@ export const SCENARI: Scenario[] = [
     iva: { aliquota: 10, perche: "abitazione, manutenzione" },
   },
   {
+    id: "catering",
+    mestiere: "Catering",
+    lavoro: "Battesimo",
+    cliente: "Russo",
+    durata: "0:37",
+    vocale:
+      "Battesimo del piccolo Leo, in giardino dalla signora Russo, una sessantina di persone. Aperitivo di benvenuto, buffet salato e dolce, acqua, vino e bibite. Servono due camerieri per quattro ore. La torta la porta la loro pasticceria: noi la tagliamo e la serviamo.",
+    righe: [
+      { voce: "Buffet salato e dolce", unita: "persona", quantita: null, prezzo: 2800 },
+      { voce: "Aperitivo di benvenuto", unita: "persona", quantita: 60, prezzo: 600 },
+      { voce: "Bevande: acqua, vino e bibite", unita: "persona", quantita: 60, prezzo: 500 },
+      { voce: "Cameriere", unita: "ora", quantita: 8, prezzo: 2200 },
+      { voce: "Taglio e servizio della torta del cliente", unita: "cad", quantita: 1, prezzo: null },
+    ],
+    domanda: { testo: "Quanti invitati?", scelte: ["50", "60", "70"], risposta: 1, quantita: 60 },
+    prezzoTuo: 6000,
+    iva: { aliquota: 10, perche: "somministrazione per un evento" },
+  },
+  {
     id: "imbianchino",
     mestiere: "Imbianchino",
     lavoro: "Bilocale",
@@ -88,6 +129,25 @@ export const SCENARI: Scenario[] = [
     domanda: { testo: "Quanti m² da raschiare?", scelte: ["20", "30", "45"], risposta: 1, quantita: 30 },
     prezzoTuo: 6000,
     iva: { aliquota: 10, perche: "abitazione, manutenzione" },
+  },
+  {
+    id: "officina",
+    mestiere: "Officina",
+    lavoro: "Tagliando",
+    cliente: "Galli",
+    durata: "0:29",
+    vocale:
+      "Panda del signor Galli, centoventimila chilometri. Tagliando con olio e filtri, poi cambio pastiglie e dischi davanti. La batteria nuova l'ha già comprata lui, gliela monto io.",
+    righe: [
+      { voce: "Tagliando, filtri olio, aria e abitacolo", unita: "cad", quantita: 1, prezzo: 9500 },
+      { voce: "Olio motore 5W-30", unita: "l", quantita: null, prezzo: 1400 },
+      { voce: "Pastiglie freno anteriori", unita: "cad", quantita: 1, prezzo: 6800 },
+      { voce: "Dischi freno anteriori, coppia", unita: "cad", quantita: 1, prezzo: 9800 },
+      { voce: "Montaggio batteria del cliente", unita: "cad", quantita: 1, prezzo: null },
+    ],
+    domanda: { testo: "Quanti litri di olio?", scelte: ["3", "4", "5"], risposta: 1, quantita: 4 },
+    prezzoTuo: 2000,
+    iva: { aliquota: 22, perche: "riparazione del veicolo" },
   },
   {
     id: "piastrellista",
