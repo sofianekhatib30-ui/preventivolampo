@@ -1,6 +1,6 @@
 import { Marchio } from "@/components/Marchio";
 
-// Marchio di K Digital Solution e nome dello strumento in Instrument Serif, come Attestiamo.
+// Marchio di K Digital Solution e nome dello strumento in Archivo, come gli altri prodotti.
 
 export function Logo({ href = "#top", suScuro = true, etichetta, marchioScuro = false }: { href?: string; suScuro?: boolean; etichetta?: string; marchioScuro?: boolean }) {
   return (

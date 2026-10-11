@@ -15,7 +15,7 @@ declare module "react" {
 
 // Testata dell'area: in cima la barra comune di K Digital Solution (organizzazione, strumenti, ricerca,
 // notifiche, account e uscita), poi la testata dello strumento come in Attestiamo (marchio K, nome in
-// Instrument Serif, impresa), lingua e sezioni. Colori KDS (border-cielo-scuro è il bordeaux:
+// Archivo, impresa), lingua e sezioni. Colori KDS (border-cielo-scuro è il bordeaux:
 // vedi app/globals.css). Sul telefono le sezioni scorrono in orizzontale e il nome dell'impresa si accorcia.
 const SEZIONI = [
   { id: "preventivi", href: "/area" },

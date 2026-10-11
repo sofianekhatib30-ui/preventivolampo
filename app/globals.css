@@ -5,12 +5,10 @@
  * colori e caratteri sono quelli comuni a tutti i prodotti KDS. Caratteri serviti da /font/ di questo
  * sito, nessuna richiesta a domini terzi.
  */
-@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("/font/instrument-serif-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Instrument Serif";font-style:normal;font-weight:400;font-display:swap;src:url("/font/instrument-serif-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("/font/instrument-serif-italic-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Instrument Serif";font-style:italic;font-weight:400;font-display:swap;src:url("/font/instrument-serif-italic-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("/font/hanken-grotesk-latin.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Hanken Grotesk";font-style:normal;font-weight:100 900;font-display:swap;src:url("/font/hanken-grotesk-latin-ext.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("/font/archivo-latin-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("/font/archivo-latin-ext-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Archivo";font-style:italic;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("/font/archivo-latin-italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Archivo";font-style:italic;font-weight:100 900;font-stretch:62% 125%;font-display:swap;src:url("/font/archivo-latin-ext-italic.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 @theme {
   /* Colori di K Digital Solution (gli stessi di kds-token.css dell'account), con i nomi storici dei token:
      ardesia = inchiostro bordeaux scuro, lime = oro (accento e azione su scuro), cielo-scuro = bordeaux
@@ -47,10 +45,10 @@
   --color-campo: #8a7670;
   --color-riga: #eadcc6;
 
-  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Archivo", ui-sans-serif, system-ui, sans-serif;
   /* Cifre e importi: lo stesso carattere, con le cifre tabellari (la classe resta font-mono) */
-  --font-mono: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-titoli: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-titoli: "Archivo", ui-sans-serif, system-ui, sans-serif;
 
   --radius-card: 14px;
   --radius-campo: 10px;
@@ -110,7 +108,7 @@
   }
 }
 
-/* Titoli: Instrument Serif come in tutti i prodotti KDS, interlinea corta. Scala desktop → mobile con clamp() */
+/* Titoli: Archivo come in tutti i prodotti KDS, interlinea corta. Scala desktop → mobile con clamp() */
 @utility titolo-h1 {
   overflow-wrap: break-word;
   text-wrap: balance;
@@ -119,10 +117,10 @@
     hyphens: auto;
   }
   font-size: clamp(3.375rem, 2.4rem + 4vw, 6rem); /* 54 → 96 px */
-  line-height: 0.92;
+  line-height: 1;
   font-family: var(--font-titoli);
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  font-weight: 660;
+  letter-spacing: -0.04em;
 }
 @utility titolo-h2 {
   overflow-wrap: break-word;
@@ -132,10 +130,10 @@
     hyphens: auto;
   }
   font-size: clamp(2.625rem, 2.114rem + 2.095vw, 4rem); /* 42 → 64 px */
-  line-height: 0.95;
+  line-height: 1.02;
   font-family: var(--font-titoli);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 640;
+  letter-spacing: -0.035em;
 }
 @utility titolo-finale {
   overflow-wrap: break-word;
@@ -145,10 +143,10 @@
     hyphens: auto;
   }
   font-size: clamp(3.625rem, 2.371rem + 5.143vw, 7rem); /* 58 → 112 px */
-  line-height: 0.88;
+  line-height: 0.96;
   font-family: var(--font-titoli);
-  font-weight: 400;
-  letter-spacing: -0.025em;
+  font-weight: 680;
+  letter-spacing: -0.045em;
 }
 @utility titolo-confronto {
   overflow-wrap: break-word;
@@ -158,9 +156,10 @@
     hyphens: auto;
   }
   font-size: clamp(2.25rem, 1.971rem + 1.143vw, 3rem); /* 36 → 48 px */
-  line-height: 1;
+  line-height: 1.04;
   font-family: var(--font-titoli);
-  font-weight: 400;
+  font-weight: 640;
+  letter-spacing: -0.03em;
 }
 @utility testo-hero {
   font-size: clamp(1.125rem, 1.055rem + 0.286vw, 1.3125rem); /* 18 → 21 px */
@@ -294,18 +293,18 @@
   border: 2px solid var(--color-inchiostro);
 }
 
-/* Titoli come in tutti i prodotti KDS: Instrument Serif, peso normale. Fuori dai layer, così vince
+/* Titoli come in tutti i prodotti KDS: Archivo pieno, spaziatura stretta. Fuori dai layer, così vince
    sulle classi di peso e larghezza scritte nei componenti (font-black, [font-stretch:…]). */
 :is(h1, h2) {
   font-family: var(--font-titoli);
-  font-weight: 400;
+  font-weight: 650;
   font-stretch: normal;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.035em;
 }
 .nome-strumento {
   font-family: var(--font-titoli);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 650;
+  letter-spacing: -0.02em;
 }
 ::selection {
   background: #f2e4d0;
