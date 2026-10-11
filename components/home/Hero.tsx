@@ -5,10 +5,9 @@ import type { LinguaSito } from "@/lib/i18n/lingue";
 import { DemoSopralluogo } from "./demo/DemoSopralluogo";
 import { EsagoniVivi } from "./EsagoniVivi";
 import { ctaPrincipale } from "./Header";
-import { Matrice } from "./Matrice";
 
 // La hero è la stessa di Attestiamo e Smistatore Mail (Sofiane, 11/10/2026: «hero uguali per tutte e 3,
-// quella di Attestiamo»): fondo inchiostro con il fondale a quadratini, a sinistra per chi è, titolo,
+// quella di Attestiamo»): fondo inchiostro con le tessere a esagoni (EsagoniVivi), a sinistra per chi è, titolo,
 // guida, la regola che conta, i due pulsanti e il canone; a destra la prova del prodotto in una finestra
 // chiara. Misure e colori copiati da styles.css di Attestiamo (.hero, .per-chi, .regola, .canone, .scena).
 export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
@@ -17,10 +16,9 @@ export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   return (
     <section
       id="top"
-      className="su-scuro griglia-kds relative isolate overflow-hidden bg-ardesia pb-[clamp(52px,7vw,104px)] pt-[clamp(44px,6vw,92px)] text-fondo-2"
+      className="su-scuro relative isolate overflow-hidden bg-ardesia pb-[clamp(52px,7vw,104px)] pt-[clamp(44px,6vw,92px)] text-fondo-2"
     >
-      <Matrice />
-      <EsagoniVivi galleggia />
+      <EsagoniVivi principale />
       <div className="margini grid items-center gap-[clamp(36px,5vw,120px)] min-[1021px]:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] min-[1500px]:grid-cols-[minmax(0,1fr)_minmax(0,820px)] [&>*]:min-w-0">
         <div>
           <p className="m-0 inline-flex items-center gap-2.5 text-[15px] font-semibold text-fondo-2">
