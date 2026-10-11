@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-// I quadratini della griglia della hero si accendono al passaggio del mouse e si spengono piano, in bordeaux.
+// I quadratini della griglia della hero si accendono al passaggio del mouse e si spengono piano:
+// il bordo si schiarisce appena, nel colore della griglia stessa.
 // Stesso disegno e stessi tempi di griglia-luce.js su Smistatore Mail e Attestiamo e di sito.js su
 // Agenzie e aziende (Sofiane, 11/10/2026: «magari aggiungi anche effetti di illuminazione al passaggio
 // del mause sui quadratini»). La griglia di sfondo (utility griglia-kds) è da 30 px e parte dall'angolo
@@ -10,9 +11,11 @@ import { useEffect, useRef } from "react";
 // movimento»; la tela non riceve clic e sta fra il fondale e il contenuto.
 const P = 30;
 
-// Luce bordeaux, il colore della palette KDS (Sofiane, 11/10: «l illuminazione bordeaux come la palette»).
-const RIEMPI = "rgba(110,23,52,.55)";
-const BORDO = "rgba(176,58,96,.75)";
+// Luce discreta, scelta da Claude su richiesta di Sofiane (11/10: «puoi scegliere tu colore e intesità non
+// deve essere too much»): il bordo dei quadratini, sabbia a .09, sale fino a circa .3, con un velo appena
+// percettibile dentro. Niente oro, niente bordeaux pieno.
+const RIEMPI = "rgba(242,228,208,.04)";
+const BORDO = "rgba(242,228,208,.36)";
 
 export function GrigliaLuce() {
   const rif = useRef<HTMLCanvasElement>(null);
@@ -68,7 +71,7 @@ export function GrigliaLuce() {
         ctx.strokeStyle = BORDO;
         ctx.lineWidth = 1;
         ctx.stroke();
-        const n = v - 0.025;
+        const n = v - 0.03;
         if (n <= 0) celle.delete(k);
         else celle.set(k, n);
       });
@@ -85,10 +88,10 @@ export function GrigliaLuce() {
         const dx = x - prima[0];
         const dy = y - prima[1];
         const passi = Math.min(30, Math.ceil(Math.hypot(dx, dy) / 12));
-        for (let i = 1; i < passi; i++) accendi(prima[0] + (dx * i) / passi, prima[1] + (dy * i) / passi, 0.75);
+        for (let i = 1; i < passi; i++) accendi(prima[0] + (dx * i) / passi, prima[1] + (dy * i) / passi, 0.6);
       }
-      accendi(x, y, 1);
-      for (const [ox, oy] of [[P, 0], [-P, 0], [0, P], [0, -P]]) accendi(x + ox, y + oy, 0.3);
+      accendi(x, y, 0.85);
+      for (const [ox, oy] of [[P, 0], [-P, 0], [0, P], [0, -P]]) accendi(x + ox, y + oy, 0.22);
       prima = [x, y];
       if (!giro) giro = requestAnimationFrame(disegna);
     };
