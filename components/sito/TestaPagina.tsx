@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import type { ReactNode } from "react";
 import { Frasi } from "@/components/Frasi";
 import type { LinguaSito } from "@/lib/i18n/lingue";
@@ -20,7 +21,8 @@ export function TestaPagina({
   children?: ReactNode;
 }) {
   return (
-    <section className="su-scuro quadretti margini flex flex-col gap-6 bg-ardesia pb-14 pt-8 text-fondo lg:gap-8 lg:pb-20 lg:pt-12">
+    <section className="su-scuro relative isolate overflow-hidden quadretti margini flex flex-col gap-6 bg-ardesia pb-14 pt-8 text-fondo lg:gap-8 lg:pb-20 lg:pt-12">
+      <EsagoniVivi />
       <Briciole lingua={lingua} voci={briciole} etichetta={etichettaBriciole} />
       <h1 className="titolo-h2 m-0 max-w-[1000px]">
         <Frasi testo={h1} />

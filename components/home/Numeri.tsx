@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { Frasi } from "@/components/Frasi";
 // Le garanzie, in cifre. Ognuna è vera per costruzione o misurata:
 // - «100% dei prezzi dal tuo listino»: il motore non può mettere un prezzo che non viene dal listino
@@ -12,7 +13,8 @@ import type { Dizionario } from "@/lib/i18n/it";
 export function Numeri({ d }: { d: Dizionario }) {
   const N = d.numeri;
   return (
-    <section id="numeri" className="su-scuro margini flex flex-col gap-9 bg-ardesia py-14 text-fondo lg:gap-14 lg:py-28">
+    <section id="numeri" className="su-scuro relative isolate overflow-hidden margini flex flex-col gap-9 bg-ardesia py-14 text-fondo lg:gap-14 lg:py-28">
+      <EsagoniVivi />
       <div className="grid gap-5 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-end lg:gap-16">
         <h2 className="titolo-h2 m-0"><Frasi testo={N.titolo} /></h2>
         <p className="testo-base m-0 max-w-[560px] text-scuro-testo">

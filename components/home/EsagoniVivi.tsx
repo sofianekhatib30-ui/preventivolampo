@@ -12,6 +12,9 @@ import { useEffect, useRef } from "react";
 // componente mette la classe "esagoni" sulla hero: il CSS nasconde allora matrice e griglia a quadratini, che
 // restano come fondo senza JavaScript. Con «riduci movimento» il disegno è fermo (tessere e qualche filo
 // acceso); fuori dallo schermo e con la scheda nascosta si ferma.
+// Dall'11/10/2026 lo stesso fondo va anche nelle altre fasce scure del sito (Sofiane: «mettiamo questo effetto anche
+// nelle zone bordeaux dove non ci sono effetti»): numeri, demo, testata delle pagine, invito finale. La sezione che
+// lo ospita deve essere relative, isolate e overflow-hidden; solo nella hero la finestra d'esempio galleggia.
 
 type Colore = readonly [number, number, number];
 type Cella = { x: number; y: number; tono: number };
@@ -79,7 +82,7 @@ function disegnaTessera(g: CanvasRenderingContext2D, x: number, y: number, r: nu
   g.restore();
 }
 
-export function EsagoniVivi() {
+export function EsagoniVivi({ galleggia = false }: { galleggia?: boolean }) {
   const rif = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -324,7 +327,7 @@ export function EsagoniVivi() {
     // alle trasformazioni che ha già).
     const finestra = hero.querySelector<HTMLElement>("#esempio");
     let galleggio: Animation | undefined;
-    if (finestra && !riduci && typeof finestra.animate === "function") {
+    if (galleggia && finestra && !riduci && typeof finestra.animate === "function") {
       try {
         galleggio = finestra.animate(
           [{ transform: "translateY(0px)" }, { transform: "translateY(-9px)" }, { transform: "translateY(0px)" }],
@@ -358,7 +361,7 @@ export function EsagoniVivi() {
       galleggio?.cancel();
       hero.classList.remove("esagoni");
     };
-  }, []);
+  }, [galleggia]);
 
   return <canvas ref={rif} aria-hidden="true" className="griglia-luce pointer-events-none absolute inset-0 -z-[5] size-full" />;
 }

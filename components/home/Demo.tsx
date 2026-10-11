@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { linkWhatsAppProva, WHATSAPP_PROVA } from "@/lib/sito";
 import type { Dizionario } from "@/lib/i18n/it";
 import { PiePagina } from "./PiePagina";
@@ -5,7 +6,8 @@ import { PiePagina } from "./PiePagina";
 // Chiusura della home nella demo pubblica, al posto del modulo di candidatura.
 export function Demo({ d }: { d: Dizionario }) {
   return (
-    <section id="demo" className="su-scuro margini flex flex-col gap-6 bg-ardesia pb-7 pt-14 text-fondo lg:gap-[72px] lg:pb-12 lg:pt-28">
+    <section id="demo" className="su-scuro relative isolate overflow-hidden margini flex flex-col gap-6 bg-ardesia pb-7 pt-14 text-fondo lg:gap-[72px] lg:pb-12 lg:pt-28">
+      <EsagoniVivi />
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-x-[clamp(40px,5vw,72px)]">
         <h2 className="titolo-finale m-0">Il servizio non è in vendita. Il motore sì, funziona.</h2>
         <div className="flex flex-col gap-6">

@@ -1,3 +1,4 @@
+import { EsagoniVivi } from "@/components/home/EsagoniVivi";
 import { Frasi } from "@/components/Frasi";
 import { ctaPrincipale } from "@/components/home/Header";
 import type { Dizionario } from "@/lib/i18n/it";
@@ -7,7 +8,8 @@ import type { LinguaSito } from "@/lib/i18n/lingue";
 export function CtaFinale({ d, lingua, titolo, testo }: { d: Dizionario; lingua: LinguaSito; titolo: string; testo: string }) {
   const cta = ctaPrincipale(d, lingua);
   return (
-    <section className="su-scuro quadretti margini flex flex-col items-start gap-6 bg-ardesia py-16 text-fondo lg:py-24">
+    <section className="su-scuro relative isolate overflow-hidden quadretti margini flex flex-col items-start gap-6 bg-ardesia py-16 text-fondo lg:py-24">
+      <EsagoniVivi />
       <h2 className="titolo-h2 m-0 max-w-[900px]">
         <Frasi testo={titolo} />
       </h2>
