@@ -59,8 +59,19 @@ async function rinnovaSessione(request: NextRequest): Promise<NextResponse> {
   return res;
 }
 
+// PreventivoLampo non esiste più (11/10/2026): il suo vecchio indirizzo di produzione manda tutto,
+// pagine pubbliche comprese, allo stesso percorso su preventivi.kdigitalsolution.it. Le anteprime
+// dei singoli deployment restano dove sono, così si possono ancora provare. Le API no: le chiamano i programmi.
+export const VECCHIO_INDIRIZZO = "preventivolampo.vercel.app";
+export function daVecchioIndirizzo(host: string | null, pathname: string): boolean {
+  return (host ?? "").toLowerCase() === VECCHIO_INDIRIZZO && !pathname.startsWith("/api/");
+}
+
 export async function proxy(request: NextRequest) {
   const url = request.nextUrl;
+  if (daVecchioIndirizzo(request.headers.get("host"), url.pathname)) {
+    return NextResponse.redirect(`${ORIGINE_APP}${url.pathname}${url.search}`, 308);
+  }
   if (eArea(url.pathname)) {
     if (versoDominio(request.headers.get("host"), url.pathname)) return NextResponse.redirect(`${ORIGINE_APP}${url.pathname}${url.search}`, 302);
     return rinnovaSessione(request);

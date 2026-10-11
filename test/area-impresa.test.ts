@@ -9,7 +9,7 @@ import { domandeDi, ELENCO_MESTIERI } from "@/lib/impresa/mestieri";
 import { conFisco, mancanze, riepilogo } from "@/lib/preventivi/calcolo";
 import { profiloDa } from "@/lib/fisco/profilo";
 import type { Preventivo } from "@/lib/preventivi/modello";
-import { eArea, versoDominio } from "../proxy";
+import { daVecchioIndirizzo, eArea, versoDominio } from "../proxy";
 import { descrizioneDi, tipoLogo } from "@/lib/impresa/imprese";
 import { extractionSystem, EXTRACTION_SYSTEM } from "@/lib/motore/estrazione";
 import { sicuro } from "@/lib/preventivi/pdf";
@@ -145,6 +145,13 @@ describe("sessione unica di K Digital Solution", () => {
     expect(versoDominio("preventivolampo.vercel.app", "/area")).toBe(true);
     expect(versoDominio("preventivolampo.vercel.app", "/api/area/voci")).toBe(false);
     expect(versoDominio("preventivi.kdigitalsolution.it", "/area")).toBe(false);
+  });
+  it("il vecchio indirizzo di PreventivoLampo manda tutte le pagine al dominio, le API e le anteprime no", () => {
+    expect(daVecchioIndirizzo("preventivolampo.vercel.app", "/")).toBe(true);
+    expect(daVecchioIndirizzo("preventivolampo.vercel.app", "/prezzi")).toBe(true);
+    expect(daVecchioIndirizzo("preventivolampo.vercel.app", "/api/elabora")).toBe(false);
+    expect(daVecchioIndirizzo("preventivolampo-abc123-sofianekhatib30-1109s-projects.vercel.app", "/")).toBe(false);
+    expect(daVecchioIndirizzo("preventivi.kdigitalsolution.it", "/")).toBe(false);
   });
 });
 
