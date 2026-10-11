@@ -148,14 +148,14 @@ function Editor({ iniziale, id, onFatto, onAnnulla }: { iniziale: Bozza; id: str
         <span className="mt-1 block text-[14px] font-normal text-testo-3">{L.aliquotaNota}</span>
       </label>
       <label className="flex min-h-11 items-start gap-3 text-[16px]">
-        <input type="checkbox" className="mt-1 size-5 shrink-0 accent-[#343645]" checked={b.bene_significativo} onChange={(e) => set("bene_significativo", e.target.checked)} />
+        <input type="checkbox" className="mt-1 size-5 shrink-0 accent-ardesia" checked={b.bene_significativo} onChange={(e) => set("bene_significativo", e.target.checked)} />
         <span>
           {L.beneSignificativo}
           <span className="block text-[14px] text-testo-3">{L.beneNota}</span>
         </span>
       </label>
       <label className="flex min-h-11 items-start gap-3 text-[16px]">
-        <input type="checkbox" className="mt-1 size-5 shrink-0 accent-[#343645]" checked={b.fornibile_dal_cliente} onChange={(e) => set("fornibile_dal_cliente", e.target.checked)} />
+        <input type="checkbox" className="mt-1 size-5 shrink-0 accent-ardesia" checked={b.fornibile_dal_cliente} onChange={(e) => set("fornibile_dal_cliente", e.target.checked)} />
         <span>
           {L.materiale}
           <span className="block text-[14px] text-testo-3">{L.materialeNota}</span>

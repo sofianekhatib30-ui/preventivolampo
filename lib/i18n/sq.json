@@ -14,7 +14,7 @@
       "prova": "Provo motorin"
     },
     "testata": {
-      "logo": "PreventivoLampo, preventivat e tu",
+      "logo": "Preventivi, faqja kryesore",
       "sezioni": "Seksionet",
       "preventivi": "Preventivat",
       "listino": "Lista e çmimeve",
@@ -587,6 +587,7 @@
       "netto": "Neto që arkëtoni, pa mbajtjen ose TVSH-në e entit",
       "riceve": "Klienti merr mesazhin, faqen dhe PDF-në në {lingua}, me tekstin italisht pranë, që është ai që vlen.",
       "whatsapp": "Dërgo në WhatsApp",
+      "whatsappDinuovo": "Dërgoje përsëri në WhatsApp",
       "copiato": "Linku u kopjua",
       "copia": "Kopjo linkun",
       "apriPdf": "Hap PDF-në",

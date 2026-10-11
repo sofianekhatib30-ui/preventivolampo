@@ -60,6 +60,7 @@ describe("testi fissi per lingua", () => {
       expect(t.prevalenza.length).toBeGreaterThan(40);
       expect(t.accetta.letto.length).toBeGreaterThan(40);
       expect(t.messaggio("Müller", "2026-001", "1.000,00 €", "https://x/accetta/y")).toContain("https://x/accetta/y");
+      expect(t.messaggioAccettato("Müller", "2026-001", "https://x/accetta/y")).toContain("https://x/accetta/y");
       expect(t.regime.agevolata_10_beni_significativi).toContain("beni significativi");
     }
   });

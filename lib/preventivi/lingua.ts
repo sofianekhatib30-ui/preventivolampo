@@ -123,6 +123,8 @@ export type Testi = {
   };
   accetta: { titolo: string; nome: string; letto: string; accetto: string; invio: string; nonAccetto: string; nota: string; errore: string };
   messaggio: (nome: string | null, numero: string, totale: string | null, link: string) => string;
+  // Dopo che il cliente ha accettato: si rimanda il link per ritrovare preventivo e PDF.
+  messaggioAccettato: (nome: string | null, numero: string, link: string) => string;
 };
 
 // Clausola di prevalenza in italiano, nel PDF accanto a quella tradotta.
@@ -192,5 +194,7 @@ export const TESTI: Record<LinguaStraniera, Testi> = {
     },
     messaggio: (n, num, t, l) =>
       `Hello${n ? ` ${n}` : ""}, here is quote no. ${num}${t ? ` (total ${t} incl. VAT)` : ""}. You can view and accept it here, no sign-up needed: ${l}`,
+    messaggioAccettato: (n, num, l) =>
+      `Hello${n ? ` ${n}` : ""}, thank you for accepting quote no. ${num}. You can find it here at any time, with the PDF: ${l}`,
   },
 };

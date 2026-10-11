@@ -16,7 +16,7 @@ export const area = {
     prova: "Prova il motore",
   },
   testata: {
-    logo: "PreventivoLampo, i tuoi preventivi",
+    logo: "Preventivi, pagina iniziale",
     sezioni: "Sezioni",
     preventivi: "Preventivi",
     listino: "Listino",
@@ -588,6 +588,7 @@ export const area = {
     netto: "Netto che incassi, tolte ritenuta o IVA dell'ente",
     riceve: "Il cliente riceve messaggio, pagina e PDF in {lingua}, con il testo italiano accanto che fa fede.",
     whatsapp: "Invia su WhatsApp",
+    whatsappDinuovo: "Rimandalo su WhatsApp",
     copiato: "Link copiato",
     copia: "Copia il link",
     apriPdf: "Apri il PDF",

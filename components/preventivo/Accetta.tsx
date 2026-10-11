@@ -65,7 +65,7 @@ export default function Accetta({ token, testi }: { token: string; testi?: Testi
         />
       </label>
       <label className="mt-4 flex cursor-pointer items-start gap-3 text-[16px]">
-        <input type="checkbox" className="mt-0.5 size-6 shrink-0 accent-[#343645]" checked={letto} onChange={(e) => setLetto(e.target.checked)} />
+        <input type="checkbox" className="mt-0.5 size-6 shrink-0 accent-ardesia" checked={letto} onChange={(e) => setLetto(e.target.checked)} />
         {t.letto}
       </label>
       <button

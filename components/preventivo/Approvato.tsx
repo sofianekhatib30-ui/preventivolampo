@@ -35,6 +35,12 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
       : `Buongiorno${p.cliente.name ? ` ${p.cliente.name}` : ""}, le mando il preventivo n. ${p.numero}${
           c ? ` (totale ${euro(c.totaleCents)}${c.ivaCents > 0 ? " IVA inclusa" : ""})` : ""
         }. Lo può vedere e accettare da qui, senza registrarsi: ${linkCliente}`;
+  // Dopo l'accettazione il link resta utile: il cliente ci ritrova preventivo e PDF.
+  const messaggioAccettato =
+    lingua !== "it" && traduzioneAllineata(p)
+      ? TESTI[lingua].messaggioAccettato(p.cliente.name, p.numero, linkCliente)
+      : `Buongiorno${p.cliente.name ? ` ${p.cliente.name}` : ""}, grazie per aver accettato il preventivo n. ${p.numero}. Lo ritrova qui quando vuole, con il PDF: ${linkCliente}`;
+  const daMandare = p.stato === "approvato" ? messaggio : messaggioAccettato;
 
   async function copia() {
     try {
@@ -93,7 +99,7 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
         </div>
       )}
 
-      {p.stato === "approvato" && p.tokenAccettazione && (
+      {(p.stato === "approvato" || p.stato === "accettato") && p.tokenAccettazione && (
         <div className="mt-5 flex flex-col gap-2.5">
           {lingua !== "it" && traduzioneAllineata(p) && (
             <p className="text-[15px] text-testo-2">
@@ -101,7 +107,7 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
             </p>
           )}
           <a
-            href={`https://wa.me/?text=${encodeURIComponent(messaggio)}`}
+            href={`https://wa.me/?text=${encodeURIComponent(daMandare)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="bottone bottone-azione min-h-14 text-[17px]"
@@ -109,7 +115,7 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
             <svg viewBox="0 0 24 24" aria-hidden="true" className="size-5" fill="currentColor">
               <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2c.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z" />
             </svg>
-            {A.whatsapp}
+            {p.stato === "approvato" ? A.whatsapp : A.whatsappDinuovo}
           </a>
           <div className="grid grid-cols-2 gap-2.5">
             <button type="button" onClick={copia} className="bottone min-h-12 border-2 border-ardesia text-[16px]">
@@ -124,7 +130,7 @@ export default function Approvato({ p, pdf = `/api/preventivi/${p.id}/pdf` }: { 
           </a>
         </div>
       )}
-      {p.stato !== "approvato" && (
+      {p.stato === "rifiutato" && (
         <a href={pdf} className="bottone mt-5 min-h-12 border-2 border-ardesia text-[16px]">
           {A.apriPdf}
         </a>

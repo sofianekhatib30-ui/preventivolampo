@@ -14,7 +14,7 @@
       "prova": "Try the engine"
     },
     "testata": {
-      "logo": "PreventivoLampo, your quotes",
+      "logo": "Preventivi, home page",
       "sezioni": "Sections",
       "preventivi": "Quotes",
       "listino": "Price list",
@@ -587,6 +587,7 @@
       "netto": "Net you receive, after withholding or the public body's VAT",
       "riceve": "The customer gets the message, page and PDF in {lingua}, with the Italian text alongside, which is the one that counts.",
       "whatsapp": "Send on WhatsApp",
+      "whatsappDinuovo": "Send it again on WhatsApp",
       "copiato": "Link copied",
       "copia": "Copy the link",
       "apriPdf": "Open the PDF",

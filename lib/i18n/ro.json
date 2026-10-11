@@ -14,7 +14,7 @@
       "prova": "Încearcă motorul"
     },
     "testata": {
-      "logo": "PreventivoLampo, ofertele tale",
+      "logo": "Preventivi, pagina principală",
       "sezioni": "Secțiuni",
       "preventivi": "Oferte",
       "listino": "Listă de prețuri",
@@ -587,6 +587,7 @@
       "netto": "Net încasat, fără reținere sau TVA-ul instituției",
       "riceve": "Clientul primește mesajul, pagina și PDF-ul în {lingua}, cu textul în italiană alături, care are valoare juridică.",
       "whatsapp": "Trimite pe WhatsApp",
+      "whatsappDinuovo": "Trimite-o din nou pe WhatsApp",
       "copiato": "Link copiat",
       "copia": "Copiază linkul",
       "apriPdf": "Deschide PDF-ul",

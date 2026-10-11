@@ -308,3 +308,80 @@
   background: var(--color-lime);
   border: 2px solid var(--color-inchiostro);
 }
+
+/*
+ * Area di Preventivi dentro K Digital Solution (tema-kds, messo da app/(app)/area/layout.tsx).
+ * Gli stessi colori e caratteri degli altri strumenti (kds-token.css dell'account): pagina sabbia,
+ * inchiostro bordeaux scuro, oro per gli accenti su scuro, bordeaux per l'azione su chiaro.
+ * Si ridefiniscono i token del sito di PreventivoLampo con lo stesso nome, così i componenti non cambiano.
+ * Sta su html (con :has) perché anche body, i menu e le finestre che escono dal contenitore li vedano.
+ * Contrasti (WCAG 2.x): inchiostro su pagina 15:1 · sabbia su bordeaux 9,6:1 · oro su inchiostro 7,6:1 ·
+ * inchiostro su oro 7,6:1 · oro scuro su pagina 5,8:1 · testo-3 su pagina 6,1:1.
+ */
+html:has(.tema-kds) {
+  --color-ardesia: #2a1018;
+  --color-ardesia-2: #1b090f;
+  --color-lime: #c6a15b;
+  --color-lime-scuro: #7a5a22;
+  --color-cielo: #d9b97a;
+  --color-cielo-scuro: #6e1734;
+  --color-ambra: #fbefd6;
+  --color-ambra-testo: #7a4f00;
+  --color-ambra-bordo: #d9b97a;
+  --color-errore: #b42318;
+  --color-successo: #1f6b3a;
+
+  --color-fondo: #f8f0e4;
+  --color-fondo-2: #f2e4d0;
+  --color-superficie: #fffcf7;
+  --color-inchiostro: #2a1018;
+  --color-testo-2: #5e4a4d;
+  --color-testo-3: #6b5558;
+  --color-linea: #e3d3bc;
+  --color-linea-2: #cdb79a;
+  --color-scuro-testo: #f2e4d0;
+  --color-scuro-nota: #dcc6a4;
+  --color-scuro-linea: #4e2c36;
+  --color-segnale: #c6a15b;
+  --color-bolla-mia: #efddb8;
+  --color-chat: #f2e4d0;
+  --color-scontrino: #fffcf7;
+  --color-campo: #8a7670;
+  --color-riga: #eadcc6;
+
+  --font-sans: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-card: 12px;
+  --radius-campo: 8px;
+}
+/* Titoli come negli altri strumenti: Instrument Serif, peso normale, larghezza normale. */
+.tema-kds :is(h1, h2) {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-stretch: normal;
+  letter-spacing: -0.01em;
+}
+.tema-kds :is(h3, h4, p, span, a, button, dt, dd, label, li, td, th) {
+  font-stretch: normal;
+}
+/* L'azione su chiaro è bordeaux con testo sabbia (come Smistatore e Attestiamo); su scuro resta l'oro. */
+.tema-kds .bottone-azione {
+  background: #6e1734;
+  color: #f2e4d0;
+  box-shadow: none;
+}
+.tema-kds .bottone-azione:hover {
+  background: #8f2948;
+}
+.tema-kds .bottone-azione-scuro:hover {
+  background: #d9b97a;
+}
+.tema-kds ::selection {
+  background: #f2e4d0;
+  color: #2a1018;
+}
+.tema-kds .nome-strumento {
+  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}

@@ -148,7 +148,7 @@ export default function RevisioneImport({
           )}
         </p>
         <label className="mt-2 flex min-h-11 items-center gap-2.5 text-[16px]">
-          <input type="checkbox" className="size-5 accent-[#343645]" checked={soloDubbi} onChange={(e) => setSoloDubbi(e.target.checked)} />
+          <input type="checkbox" className="size-5 accent-ardesia" checked={soloDubbi} onChange={(e) => setSoloDubbi(e.target.checked)} />
           {R.soloDubbi}
         </label>
       </div>
@@ -163,7 +163,7 @@ export default function RevisioneImport({
                 <input
                   type="checkbox"
                   aria-label={fmt(R.importaRiga, { n: r.n })}
-                  className="mt-1 size-6 shrink-0 accent-[#343645]"
+                  className="mt-1 size-6 shrink-0 accent-ardesia"
                   checked={r.includi}
                   onChange={(e) => set(r.n, { includi: e.target.checked })}
                 />

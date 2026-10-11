@@ -526,7 +526,7 @@ export default function Revisione({
           <h2 className="text-xl font-extrabold">{fmt(R.lavorazioni, { n: p.righe.length })}</h2>
           {pronte < p.righe.length && (
             <label className="inline-flex min-h-11 cursor-pointer items-center gap-2 text-[15px] font-semibold">
-              <input type="checkbox" className="size-5 accent-[#343645]" checked={soloDaSistemare} onChange={(e) => setSoloDaSistemare(e.target.checked)} />
+              <input type="checkbox" className="size-5 accent-ardesia" checked={soloDaSistemare} onChange={(e) => setSoloDaSistemare(e.target.checked)} />
               {R.soloDaSistemare}
             </label>
           )}
@@ -654,7 +654,7 @@ export default function Revisione({
                 )}
                 {r.code === null && r.priceSource === "artigiano" && (
                   <label className="mt-3 flex min-h-11 items-center gap-2.5 text-[15px]">
-                    <input type="checkbox" className="size-5 accent-[#343645]" checked={r.addToPriceList} onChange={(e) => setRiga(i, { addToPriceList: e.target.checked })} />
+                    <input type="checkbox" className="size-5 accent-ardesia" checked={r.addToPriceList} onChange={(e) => setRiga(i, { addToPriceList: e.target.checked })} />
                     {R.proponi}
                   </label>
                 )}
@@ -806,7 +806,7 @@ export default function Revisione({
               />
             </p>
             <label className="mt-5 flex min-h-12 cursor-pointer items-center gap-3 rounded-campo bg-fondo px-4 text-[16px] font-semibold">
-              <input ref={spunta} type="checkbox" className="size-6 accent-[#343645]" checked={controllato} onChange={(e) => setControllato(e.target.checked)} />
+              <input ref={spunta} type="checkbox" className="size-6 accent-ardesia" checked={controllato} onChange={(e) => setControllato(e.target.checked)} />
               {R.controllato}
             </label>
             <div className="mt-5 flex flex-col gap-2">
