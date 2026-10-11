@@ -33,7 +33,11 @@ export function anthropicCaller(apiKey = process.env.ANTHROPIC_API_KEY, model = 
       body: JSON.stringify({
         model,
         max_tokens: maxTokens,
-        system: `${system}\n\nCompito: ${tool.description}`,
+        // Cache dei prompt (Sofiane, 11/10/2026, dopo l'avviso di Anthropic sul tasso di cache basso): le istruzioni
+        // sono uguali fra una chiamata e l'altra dello stesso tipo, quindi si segnano come riusabili. Se tornano entro
+        // 5 minuti costano un decimo; il primo invio costa un quarto in più. Sotto la soglia minima del modello
+        // (circa 1.024 token) Anthropic ignora il segno senza errore.
+        system: [{ type: "text", text: `${system}\n\nCompito: ${tool.description}`, cache_control: { type: "ephemeral" } }],
         output_config: { format: { type: "json_schema", schema: tool.input_schema } },
         messages: [{ role: "user", content: user }],
       }),
@@ -50,7 +54,7 @@ export function anthropicCaller(apiKey = process.env.ANTHROPIC_API_KEY, model = 
     const body = (await res.json()) as {
       content: Array<{ type: string; text?: string }>;
       stop_reason: string;
-      usage: { input_tokens: number; output_tokens: number };
+      usage: { input_tokens: number; output_tokens: number; cache_creation_input_tokens?: number; cache_read_input_tokens?: number };
     };
     if (body.stop_reason === "max_tokens") throw new Error("Claude API: risposta troncata");
     const text = body.content.filter((b) => b.type === "text").map((b) => b.text ?? "").join("");
@@ -60,6 +64,10 @@ export function anthropicCaller(apiKey = process.env.ANTHROPIC_API_KEY, model = 
     } catch {
       throw new Error("Claude API: uscita non JSON");
     }
-    return { input, inputTokens: body.usage.input_tokens, outputTokens: body.usage.output_tokens };
+    // Con la cache, input_tokens conta solo la parte non riusata: qui si sommano anche scritti e letti in cache,
+    // così inputTokens resta il totale letto dal modello, confrontabile con i preventivi di prima.
+    const u = body.usage;
+    const inputTokens = u.input_tokens + (u.cache_creation_input_tokens ?? 0) + (u.cache_read_input_tokens ?? 0);
+    return { input, inputTokens, outputTokens: u.output_tokens };
   };
 }
