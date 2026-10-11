@@ -21,9 +21,9 @@ export function Numeri({ d }: { d: Dizionario }) {
           {N.testo}
         </p>
       </div>
-      <dl className="m-0 grid gap-px overflow-hidden rounded-[20px] bg-scuro-linea md:grid-cols-3">
+      <dl className="m-0 grid overflow-hidden rounded-[20px] border border-fondo/[.12] md:grid-cols-3">
         {N.cifre.map((c) => (
-          <div key={c.cosa} className="flex flex-col gap-2 bg-ardesia-2 p-6 lg:p-8">
+          <div key={c.cosa} className="flex flex-col gap-2 bg-fondo/[.045] p-6 backdrop-blur-[3px] lg:p-8 [&+&]:border-t [&+&]:border-fondo/[.12] md:[&+&]:border-l md:[&+&]:border-t-0">
             <dt className="order-2 text-[18px] font-bold lg:text-[19px]">{c.cosa}</dt>
             <dd className="m-0 order-1 font-sans text-[64px] leading-[0.9] [font-weight:900] [font-stretch:62%] text-lime lg:text-[88px]">
               {c.cifra}

@@ -174,7 +174,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
       </div>
 
       {/* La finestra chiara della hero comune ai prodotti KDS (.scena di Attestiamo). */}
-      <figure className="relative m-0 flex min-w-0 flex-col rounded-[22px] bg-fondo p-3 text-inchiostro shadow-[0_40px_80px_-36px_rgba(20,5,10,.85)]">
+      <figure className="relative m-0 flex min-w-0 flex-col rounded-[22px] bg-fondo/[.9] p-3 text-inchiostro shadow-[0_40px_80px_-36px_rgba(20,5,10,.85)] backdrop-blur-[14px] backdrop-saturate-[1.2]">
         <div className="flex items-center gap-2.5 px-1.5 pb-2.5 pt-0.5 text-[13px] font-semibold text-testo-2">
           <span aria-hidden="true" className="flex gap-1.5">
             <i className="block size-[9px] rounded-full bg-linea" />
