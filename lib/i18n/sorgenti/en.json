@@ -943,5 +943,9 @@
   "area.avvisi.contesto.subappalto": "Inversione contabile per subappalto edile: vale se il cliente è un'impresa di costruzioni o l'appaltatore principale del lavoro.",
   "area.avvisi.contesto.edificio": "Inversione contabile per pulizia, demolizione, impianti o completamento: vale solo se il lavoro riguarda un edificio.",
   "area.avvisi.contesto.condominio": "Il condominio trattiene il 4% a titolo di acconto: il netto che incassi è più basso del totale.",
-  "area.avvisi.contesto.aliquoteDiverse": "I tuoi mestieri hanno aliquote diverse: le righe senza un'aliquota propria vanno al 22%. Indica l'aliquota sulle voci del listino che ne hanno una diversa."
+  "area.avvisi.contesto.aliquoteDiverse": "I tuoi mestieri hanno aliquote diverse: le righe senza un'aliquota propria vanno al 22%. Indica l'aliquota sulle voci del listino che ne hanno una diversa.",
+  "hero.canonePrezzo": "19,90 €",
+  "hero.canoneTesto": "al mese, IVA esclusa. I primi 30 giorni gratis con il programma pilota, senza rinnovo automatico.",
+  "demo.finestra": "Dal vocale al preventivo",
+  "demo.esempio": "Esempio"
 }

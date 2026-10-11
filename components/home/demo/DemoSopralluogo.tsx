@@ -173,9 +173,19 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
         </button>
       </div>
 
-      <figure className="relative m-0 flex min-w-0 flex-col rounded-[26px] bg-ardesia-2 p-2.5 ring-1 ring-scuro-linea lg:rounded-[34px] lg:p-3.5">
+      {/* La finestra chiara della hero comune ai prodotti KDS (.scena di Attestiamo). */}
+      <figure className="relative m-0 flex min-w-0 flex-col rounded-[22px] bg-fondo p-3 text-inchiostro shadow-[0_40px_80px_-36px_rgba(20,5,10,.85)]">
+        <div className="flex items-center gap-2.5 px-1.5 pb-2.5 pt-0.5 text-[13px] font-semibold text-testo-2">
+          <span aria-hidden="true" className="flex gap-1.5">
+            <i className="block size-[9px] rounded-full bg-linea" />
+            <i className="block size-[9px] rounded-full bg-linea" />
+            <i className="block size-[9px] rounded-full bg-linea" />
+          </span>
+          <span>{D.finestra}</span>
+          <span className="ms-auto">{D.esempio}</span>
+        </div>
         {altro ? <PannelloAltro cta={cta} D={D} /> : <Pannello s={scenario} t={t} e={trascorso} D={D} />}
-        <figcaption className="flex min-h-11 items-center justify-between gap-3 px-2 pt-2 text-[12.5px] text-scuro-nota lg:text-[13px]">
+        <figcaption className="flex min-h-11 items-center justify-between gap-3 px-1.5 pt-2.5 text-[13px] text-testo-2">
           <span>{D.didascalia}</span>
           {!altro && (
             <button
@@ -186,7 +196,7 @@ export function DemoSopralluogo({ cta }: { cta: string }) {
                   setInPausa(false);
                 } else setInPausa((p) => !p);
               }}
-              className="flex min-h-10 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border border-scuro-linea bg-transparent px-3 font-semibold text-fondo hover:border-lime"
+              className="flex min-h-[34px] shrink-0 cursor-pointer items-center gap-1.5 rounded-full border-[1.5px] border-campo bg-transparent px-3.5 font-semibold text-inchiostro hover:border-inchiostro"
             >
               {inPausa ? (finito ? D.riguarda : D.riprendi) : D.pausa}
             </button>
@@ -213,7 +223,7 @@ function Pannello({ s, t, e, D }: { s: Scenario; t: Tempi; e: number; D: Diziona
   const stato = e >= t.accettato ? 3 : e >= t.visto ? 2 : e >= t.invio ? 1 : 0;
 
   return (
-    <div className="flex min-w-0 flex-col overflow-hidden rounded-[18px] bg-chat text-inchiostro lg:rounded-[24px]">
+    <div className="flex min-w-0 flex-col overflow-hidden rounded-[14px] border border-linea bg-chat text-inchiostro">
       {/* Il vocale */}
       <div className="flex flex-col gap-2.5 border-b border-linea bg-superficie px-3.5 py-3 lg:px-5 lg:py-4">
         <div className="flex items-center justify-between gap-3">
@@ -341,8 +351,8 @@ function Onda({ avanzamento }: { avanzamento: number }) {
 
 function PannelloAltro({ cta, D }: { cta: string; D: Dizionario["demo"] }) {
   return (
-    <div className="flex min-h-[420px] flex-col justify-center gap-4 rounded-[18px] bg-chat p-5 text-inchiostro lg:min-h-[520px] lg:rounded-[24px] lg:p-8">
-      <p className="m-0 text-[26px] font-extrabold leading-[1.02] [font-stretch:75%] lg:text-[34px]">
+    <div className="flex min-h-[420px] flex-col justify-center gap-4 rounded-[14px] border border-linea bg-superficie p-5 text-inchiostro lg:min-h-[520px] lg:p-8">
+      <p className="m-0 font-[family-name:var(--font-titoli)] text-[28px] leading-[1.05] lg:text-[36px]">
         {D.altroTitolo}
       </p>
       <p className="m-0 text-[16px] leading-[1.55] text-testo-2 lg:text-[17px]">
