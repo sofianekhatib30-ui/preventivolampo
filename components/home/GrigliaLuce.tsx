@@ -1,10 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { QUADRI } from "./Matrice";
 
-// I quadratini della griglia della hero si accendono al passaggio del mouse e si spengono piano, ciascuno
-// con il suo colore: oro o vino dove la matrice ha un quadratino pieno, sabbia sulla griglia vuota.
+// I quadratini della griglia della hero si accendono al passaggio del mouse e si spengono piano, in bordeaux.
 // Stesso disegno e stessi tempi di griglia-luce.js su Smistatore Mail e Attestiamo e di sito.js su
 // Agenzie e aziende (Sofiane, 11/10/2026: «magari aggiungi anche effetti di illuminazione al passaggio
 // del mause sui quadratini»). La griglia di sfondo (utility griglia-kds) è da 30 px e parte dall'angolo
@@ -12,18 +10,9 @@ import { QUADRI } from "./Matrice";
 // movimento»; la tela non riceve clic e sta fra il fondale e il contenuto.
 const P = 30;
 
-// Colore di riempimento e di bordo per tipo di quadratino (Sofiane, 11/10: «potrebbe essere più leggera e
-// del colore del quadratino in cui si passa»).
-const COLORI = {
-  v: ["rgba(143,41,72,.34)", "rgba(196,84,118,.55)"],
-  o: ["rgba(198,161,91,.18)", "rgba(217,185,122,.5)"],
-  g: ["rgba(242,228,208,.05)", "rgba(242,228,208,.3)"],
-} as const;
-
-// I quadratini pieni della matrice come «colonna da destra,riga» (la matrice è larga 1440 e sta a destra).
-const PIENI = new Map<string, "v" | "o">(
-  QUADRI.filter(([x]) => x <= 1440 - 26).map(([x, y, s]) => [`${Math.floor((1440 - x) / P)},${Math.floor(y / P)}`, s ? "v" : "o"]),
-);
+// Luce bordeaux, il colore della palette KDS (Sofiane, 11/10: «l illuminazione bordeaux come la palette»).
+const RIEMPI = "rgba(110,23,52,.55)";
+const BORDO = "rgba(176,58,96,.75)";
 
 export function GrigliaLuce() {
   const rif = useRef<HTMLCanvasElement>(null);
@@ -38,8 +27,6 @@ export function GrigliaLuce() {
     if (!ctx) return;
 
     const celle = new Map<string, number>();
-    // Sotto i 701 px la matrice non c'è: resta solo la griglia.
-    const conMatrice = window.matchMedia("(min-width: 701px)");
     let W = 0;
     let H = 0;
     let giro = 0;
@@ -74,12 +61,11 @@ export function GrigliaLuce() {
         const [c, r] = k.split(",").map(Number);
         const x = W - P * (c + 1) + 4;
         const y = r * P + 4;
-        const [riempi, bordo] = COLORI[(conMatrice.matches && PIENI.get(k)) || "g"];
         ctx.globalAlpha = v;
         curva(x + 0.5, y + 0.5, 21, 21, 4);
-        ctx.fillStyle = riempi;
+        ctx.fillStyle = RIEMPI;
         ctx.fill();
-        ctx.strokeStyle = bordo;
+        ctx.strokeStyle = BORDO;
         ctx.lineWidth = 1;
         ctx.stroke();
         const n = v - 0.025;
