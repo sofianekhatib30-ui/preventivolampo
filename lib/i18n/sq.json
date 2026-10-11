@@ -88,7 +88,7 @@
       "accettati": "të pranuar · {importo}",
       "rifiutati": "të refuzuar",
       "nessuno": "Ende asnjë preventiv.",
-      "nessunoTesto": "Tregoje vizitën e radhës në kantier: për gjysmë minute e ke skicën gati.",
+      "nessunoTesto": "Tregoje punën e radhës: për gjysmë minute e ke skicën gati.",
       "clienteDaIndicare": "Klienti nuk është shënuar",
       "numeroDel": "nr. {numero}, datë {data}",
       "stati": {
@@ -112,7 +112,7 @@
       "h1": "Preventiv i ri",
       "serveListino": "Fillimisht të duhet lista e çmimeve: çmimet vijnë vetëm prej andej.",
       "preparaListino": "Përgatit listën e çmimeve",
-      "sotto": "Shkruaj ose diktoje vizitën në objekt. Drafti përdor {n} zërat e listës tënde të çmimeve; ajo që nuk gjen mbetet pa çmim.",
+      "sotto": "Shkruaj ose diktoje punën. Drafti përdor {n} zërat e listës tënde të çmimeve; ajo që nuk gjen mbetet pa çmim.",
       "claude": "Teksti përpunohet me Claude të Anthropic dhe ruhet bashkë me preventivin.",
       "racconta": "Trego punën siç do ta thoshe në mesazhin zanor, në italisht ose në gjuhën tënde",
       "segnaposto": "Klienti, adresa, nëse banon aty. Çfarë hiqet, çfarë vendoset, përmasat. Kush i blen materialet.",
@@ -120,7 +120,7 @@
       "prepara": "Përgatit draftin",
       "errore": "Nuk munda ta përgatis draftin. Provo përsëri.",
       "fasi": [
-        "Po e lexoj vizitën në objekt…",
+        "Po e lexoj rrëfimin…",
         "Po ndaj punimet, përmasat dhe përjashtimet…",
         "Po e kërkoj çdo zë në listën tënde të çmimeve…",
         "Po kontrolloj çfarë mungon dhe regjimin e IVA-s…",
@@ -141,7 +141,7 @@
       "telefono": "Telefoni",
       "email": "Emaili në preventiv",
       "cheLavori": "Çfarë punësh bën",
-      "cheLavoriNota": "Na ndihmon t'i lexojmë më mirë vizitat e tua në objekt.",
+      "cheLavoriNota": "Na ndihmon t'i lexojmë më mirë rrëfimet e tua.",
       "mestieri": {
         "impresaEdile": "Ndërmarrje ndërtimi",
         "muratore": "Murator",
@@ -530,7 +530,7 @@
       "aggiungiRiga": "Shto një rresht",
       "esclusi": "Të përjashtuara nga preventivi",
       "unaPerRiga": "Një për rresht",
-      "note": "Shënime nga vizita në objekt (nuk shkojnë në PDF)",
+      "note": "Shënime nga rrëfimi (nuk shkojnë në PDF)",
       "riepilogo": "Përmbledhje",
       "imponibile": "Baza e tatueshme",
       "ivaSu": "IVA {aliquota}% mbi {importo}",
@@ -606,14 +606,14 @@
     },
     "prova": {
       "nuovaProva": "Provë e re",
-      "h1": "Nga vizita në objekt te drafti",
+      "h1": "Nga rrëfimi te drafti",
       "sotto": "Motori nxjerr punimet, i përputh me listën e çmimeve dhe të përgatit draftin për ta kontrolluar. Çmimet vijnë vetëm nga lista e çmimeve: çfarë nuk gjen mbetet pa çmim, çfarë mungon ta pyet ty.",
       "avviso": "Të dhëna prove të shpikura: firma e listës së çmimeve dhe klientët e shembujve nuk ekzistojnë. Mos shkruaj emra, adresa ose numra personash realë: draftet qëndrojnë 7 ditë dhe kushdo që ka linkun mund t'i hapë. Teksti i lirë përpunohet me Claude të Anthropic. {privacy}",
       "daDove": "Nga të nisësh",
       "unEsempio": "Një shembull",
       "tuoTesto": "Teksti yt",
       "esempiBanco": "Shembuj të bankës së provës",
-      "esempiTesto": "Vizita të shpikura në objekt, të bankës së provës. Drafti del menjëherë: është dalja e regjistruar e motorit për atë rast.",
+      "esempiTesto": "Punë të shpikura, të bankës së provës. Drafti del menjëherë: është dalja e regjistruar e motorit për atë rast.",
       "lavori": {
         "bagno": "Banjo e plotë",
         "tinteggiatura": "Lyerje apartamenti me dy dhoma",
@@ -641,7 +641,7 @@
     "dettatura": {
       "parloIn": "Po flas në",
       "ascolto": "Po dëgjoj: prek për ta ndalur",
-      "detta": "Diktoje vizitën në objekt",
+      "detta": "Diktoje punën",
       "nota": "Përdor njohjen e zërit të shfletuesit: te kjo faqe vjen vetëm teksti. Në çfarëdo gjuhe që flet, drafti del në italisht.",
       "erroreMicrofono": "Shfletuesi nuk ka leje të përdorë mikrofonin.",
       "erroreLingua": "Në këtë telefon diktimi në këtë gjuhë nuk ka. Shkruaje tekstin në gjuhën tënde: drafti del në italisht njësoj.",
@@ -1116,7 +1116,7 @@
         },
         {
           "t": "p",
-          "testo": "Për të dhënat e klientëve të një zanatçiu (emra, adresa kantierësh, preventivë) kontrollues është zanatçiu: ne i përpunojmë në emër të tij, si përpunues i të dhënave, sipas marrëveshjes që nënshkruajmë me të."
+          "testo": "Për të dhënat e klientëve të një ndërmarrjeje ose të një profesionisti (emra, adresa të punimeve, preventivë) kontrollues është ndërmarrja: ne i përpunojmë në emër të saj, si përpunues i të dhënave, sipas marrëveshjes që nënshkruajmë me të."
         },
         {
           "t": "h2",
@@ -1136,7 +1136,7 @@
         },
         {
           "t": "h3",
-          "testo": "Nëse përdor zonën e zanatçinjve"
+          "testo": "Nëse përdor zonën e rezervuar për ndërmarrjet"
         },
         {
           "t": "ul",
@@ -1149,14 +1149,14 @@
         },
         {
           "t": "h3",
-          "testo": "Nëse je klient i një zanatçiu dhe e hap preventivin e tij"
+          "testo": "Nëse je klient i një ndërmarrjeje dhe e hap preventivin e saj"
         },
         {
           "t": "ul",
           "voci": [
             "Kur pranon ose refuzon një preventiv, regjistrojmë emrin që shkruan, datën dhe orën, adresën IP dhe shenjën digjitale (impronta) të PDF-së.",
-            "I duhen zanatçiut si provë e pranimit. I ruajmë në emër të tij, për sa kohë ai përdor shërbimin.",
-            "Për t'i parë, korrigjuar ose fshirë këto të dhëna mund t'i drejtohesh zanatçiut ose neve: ia përcjellim kërkesën."
+            "I duhen ndërmarrjes si provë e pranimit. I ruajmë në emër të saj, për sa kohë përdor shërbimin.",
+            "Për t'i parë, korrigjuar ose fshirë këto të dhëna mund t'i drejtohesh ndërmarrjes ose neve: ia përcjellim kërkesën."
           ]
         },
         {
@@ -1185,7 +1185,7 @@
           "voci": [
             "Supabase: baza e të dhënave, hyrja në zonë dhe arkivi i PDF-ve, në Irlandë (BE).",
             "Vercel: faqja e internetit dhe funksionet e saj, në Frankfurt (BE).",
-            "Anthropic (Claude): lexon tekstin e vizitës në kantier dhe përgatit draftin, dhe përkthen zërat e preventivit kur klienti flet një gjuhë tjetër, në Shtetet e Bashkuara.",
+            "Anthropic (Claude): lexon tekstin e rrëfimit dhe përgatit draftin, dhe përkthen zërat e preventivit kur klienti flet një gjuhë tjetër, në Shtetet e Bashkuara.",
             "Twilio dhe WhatsApp (Meta): marrin dhe dërgojnë mesazhet e WhatsApp.",
             "n8n: lidh mesazhet e WhatsApp me Preventivi.",
             "Resend: dërgon email-et me kodin e hyrjes."
@@ -1297,12 +1297,12 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi përdor vetëm cookie teknike: pa to, zona e artizanëve nuk do ta dinte që ke hyrë dhe faqja nuk do ta mbante mend gjuhën që ke zgjedhur. Pa cookie profilizimi, pa statistika, pa mjete të palëve të treta që të ndjekin nga një faqe te tjetra. Prandaj nuk gjen banner për cookie."
+          "testo": "Preventivi përdor vetëm cookie teknike: pa to, zona e rezervuar nuk do ta dinte që ke hyrë dhe faqja nuk do ta mbante mend gjuhën që ke zgjedhur. Pa cookie profilizimi, pa statistika, pa mjete të palëve të treta që të ndjekin nga një faqe te tjetra. Prandaj nuk gjen banner për cookie."
         },
         {
           "t": "ul",
           "voci": [
-            "**kds-sessione**: mban të hapur hyrjen në zonën e zejtarëve, ku hyn nga llogaria e K Digital Solution (e njëjta për të gjitha mjetet e saj). E vendos llogaria kur hyn, vlen në të gjitha adresat kdigitalsolution.it, zgjat 30 ditë nga përdorimi i fundit dhe fshihet kur del.",
+            "**kds-sessione**: mban të hapur hyrjen në zonën e rezervuar, ku hyn nga llogaria e K Digital Solution (e njëjta për të gjitha mjetet e saj). E vendos llogaria kur hyn, vlen në të gjitha adresat kdigitalsolution.it, zgjat 30 ditë nga përdorimi i fundit dhe fshihet kur del.",
             "**pl_lingua**: kujton gjuhën e faqes. E vendosim kur zgjedh një gjuhë me zgjedhësin ose kur hap një faqe në një gjuhë tjetër nga italishtja, dhe zgjat një vit."
           ]
         },

@@ -2385,15 +2385,15 @@
     "preventivo-da-vocale": {
       "meta": {
         "titolo": "Quote from a voice message: you talk, and the draft is ready",
-        "descrizione": "Quote from a voice message: describe the site visit by voice or in writing, even in your own language. You get back a draft with your price list and questions about anything missing."
+        "descrizione": "Quote from a voice message: describe the job by voice or in writing, even in your own language. You get back a draft with your price list and questions about anything missing."
       },
       "nome": "Quote from a voice message",
-      "riga": "You describe the site visit as you would to a colleague: the system lines up the items, measurements, questions and exclusions.",
+      "riga": "You describe the job as you would to a colleague: the system lines up the items, measurements, questions and exclusions.",
       "h1": "Quote from a voice message: you describe it, and the system writes the draft",
-      "sottotitolo": "When the site visit is done, you speak into your phone or write a couple of lines, just as you would to a colleague. The system splits the work into items, redoes the sums on the measurements, takes the prices from your price list and asks you about whatever you didn't say. You check it and approve it.",
+      "sottotitolo": "When you're done with the customer, you speak into your phone or write a couple of lines, just as you would to a colleague. The system splits the work into items, redoes the sums on the measurements, takes the prices from your price list and asks you about whatever you didn't say. You check it and approve it.",
       "sezioni": [
         {
-          "titolo": "How you describe the site visit",
+          "titolo": "How you describe the job",
           "paragrafi": [
             "Open the new quote page on your phone, nothing to install. You have two ways: press the microphone and dictate, or type. When you dictate, your phone's speech recognition turns your voice into text: we only receive the text, never the audio. You can read it over and fix it before preparing the draft.",
             "You can also describe the job in your own language. By voice you can choose from Italian, Romanian, Albanian, Arabic, Ukrainian, Russian, Spanish, French and English, if your phone recognises that language; if it doesn't, it tells you and you write instead. In writing any language is fine, even mixed with Italian. The draft always comes out in Italian, and measurements given in another language count the same as those given in Italian.",
@@ -2431,7 +2431,7 @@
         {
           "titolo": "How to describe it well: a few practical tips",
           "paragrafi": [
-            "The system understands site talk, rough measurements and changes of mind. But a few habits will get you a more complete draft and fewer questions to answer."
+            "The system understands everyday speech, rough measurements and changes of mind. But a few habits will get you a more complete draft and fewer questions to answer."
           ],
           "punti": [
             {
@@ -2496,7 +2496,7 @@
           },
           {
             "d": "Does the customer see what I said?",
-            "r": "No. The customer sees the quote: the items, the quantities, the prices and the exclusions. What you said and your site visit notes stay with you."
+            "r": "No. The customer sees the quote: the items, the quantities, the prices and the exclusions. What you said and your notes stay with you."
           },
           {
             "d": "What happens if I mention a job that I don't do?",
@@ -2524,7 +2524,7 @@
           "paragrafi": [
             "Houses bought by foreigners, flats let to people who have only recently started working here, second homes of families living abroad. The customer understands the measurements and the prices, but an item like «rasatura» (skim coat) or «massetto» (screed) means little to them, and a quote they don't understand gets signed late, or not at all.",
             "With Preventivi the quote can go out **in English** as well as in Italian: you choose quote by quote. Almost every foreign customer reads English; for anyone who doesn't, the quote stays in Italian.",
-            "Don't confuse it with the language you use to describe the site visit: that can also be Romanian, Albanian, Arabic or Ukrainian, and the draft still comes out in Italian. We explain it on the page about the [quote from a voice note](/funzioni/preventivo-da-vocale)."
+            "Don't confuse it with the language you use to describe the job: that can also be Romanian, Albanian, Arabic or Ukrainian, and the draft still comes out in Italian. We explain it on the page about the [quote from a voice note](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
@@ -2583,7 +2583,7 @@
             },
             {
               "titolo": "Your work",
-              "testo": "The draft, your account of the site visit, the notes and your price list stay in Italian. The customer doesn't see them."
+              "testo": "The draft, your account of the job, the notes and your price list stay in Italian. The customer doesn't see them."
             },
             {
               "titolo": "Names and addresses",
@@ -2767,8 +2767,8 @@
         {
           "titolo": "Trade words: what you call items out loud",
           "paragrafi": [
-            "In the price list an item is called «Rasatura pareti con stucco», but on site you say 'skim it', 'fill the lot', 'a coat of skim'. That's why every item has a field, **what you call it out loud**: a few words, separated by commas. When the system looks for the right item, those words count for more than the name and the description.",
-            "After an import the field is empty. It's worth filling it in for the items you use most, with the words you really use, site slang included. A few minutes is enough, and later drafts find more items first time. Every item can also have a longer description, which helps the system understand what it includes. The quote shows the item's name, which you can always tweak in the draft."
+            "In the price list an item is called «Rasatura pareti con stucco», but on the job you say 'skim it', 'fill the lot', 'a coat of skim'. That's why every item has a field, **what you call it out loud**: a few words, separated by commas. When the system looks for the right item, those words count for more than the name and the description.",
+            "After an import the field is empty. It's worth filling it in for the items you use most, with the words you really use, trade jargon included. A few minutes is enough, and later drafts find more items first time. Every item can also have a longer description, which helps the system understand what it includes. The quote shows the item's name, which you can always tweak in the draft."
           ]
         },
         {
@@ -2946,7 +2946,7 @@
             },
             {
               "titolo": "A quote that arrives a week later",
-              "testo": "People who ask for several quotes tend to go with whoever replies first and clearly. Writing it the same evening as the visit, when you remember every detail, is the simplest advantage you have. That is why the [quote by voice](/funzioni/preventivo-da-vocale) exists."
+              "testo": "People who ask for several quotes tend to go with whoever replies first and clearly. Writing it the same evening as your meeting with the customer, when you remember every detail, is the simplest advantage you have. That is why the [quote by voice](/funzioni/preventivo-da-vocale) exists."
             },
             {
               "titolo": "No validity date",
@@ -3452,7 +3452,7 @@
           "titolo": "The site visit, when you don't understand each other well",
           "paragrafi": [
             "The bilingual quote starts from the site visit, and that is where misunderstandings begin. Say the measurements and the choices out loud, show with your hands what you are going to do, and photograph what is to be removed and what is to stay. If the customer sends you messages in their language, reply in writing: a written conversation, even badly translated, is worth more than a spoken one half understood.",
-            "The same goes for you. If Italian is not your first language, you can describe the site visit in the language you think best in: Preventivi receives the text, in Romanian, Albanian, Arabic or another language, and the draft quote still comes out in Italian, ready to be translated for the customer."
+            "The same goes for you. If Italian is not your first language, you can describe the job in the language you think best in: Preventivi receives the text, in Romanian, Albanian, Arabic or another language, and the draft quote still comes out in Italian, ready to be translated for the customer."
           ]
         }
       ],
@@ -3861,36 +3861,36 @@
   "pagine": {
     "mestieri": {
       "meta": {
-        "titolo": "Quote software for tradespeople, by trade",
-        "descrizione": "Quotes for electricians, plumbers, painters and decorators, bricklayers, building firms and other home trades: typical line items, examples and the right way to price."
+        "titolo": "Quote software for every trade",
+        "descrizione": "Quotes for electricians, plumbers, garages, photographers, caterers, removal firms and other trades: typical line items, examples and the right way to price."
       },
       "h1": "The quote for your trade",
-      "testo": "Every trade has its own line items, its own units of measure and its own arguments at the end of a job. For each one you'll find the lines that come up most often, how to price them, the documents to mention and an example of a site visit turned into a draft.",
-      "altro": "Can't see your trade? If you work with line items and measurements, it works just the same: it finds the words of your trade in your price list, and anything that isn't there is left for you to price."
+      "testo": "Preventivi works with every trade that writes itemised quotes. Below you'll find all the ones it already knows, grouped by family: when you pick yours, the IVA and the rules of the trade are already set up. For some there's also a page with the typical line items and how to price them.",
+      "altro": "Can't see your trade? If you write itemised quotes, it works just the same: it finds the words of your trade in your price list, and anything that isn't there is left for you to price."
     },
     "funzioni": {
       "meta": {
         "titolo": "How Preventivi works",
-        "descrizione": "From the site visit story to the accepted quote: a draft from your price list, questions about what's missing, a PDF in the customer's language and online acceptance."
+        "descrizione": "From the story of the job to the accepted quote: a draft from your price list, questions about what's missing, a PDF in the customer's language and online acceptance."
       },
       "h1": "How it works, piece by piece",
-      "testo": "Four things do the work: the story of the site visit, your price list, the quote in the customer's language and online acceptance. Here you'll find each one explained, with what it does and what it doesn't do."
+      "testo": "Four things do the work: the story of the job, your price list, the quote in the customer's language and online acceptance. Here you'll find each one explained, with what it does and what it doesn't do."
     },
     "guide": {
       "meta": {
-        "titolo": "Quote guides for tradespeople",
-        "descrizione": "How to write a quote, lump sum or measured, IVA on work in the home, foreign customers, withdrawal: practical guides for tradespeople, with sources."
+        "titolo": "Quote guides, for every trade",
+        "descrizione": "How to write a quote, lump sum or measured, IVA on work in the home, foreign customers, withdrawal: practical guides for anyone who writes quotes, with sources."
       },
-      "h1": "Quote guides, written for people who work on site",
+      "h1": "Quote guides, written for people who work at their customers' places",
       "testo": "What to write so your quote holds up until the final payment, which IVA to apply, how to deal with a foreign customer or with a quote signed at their home. Practical guides, with the sources at the bottom of each page."
     },
     "modelli": {
       "meta": {
         "titolo": "Free quote templates by trade",
-        "descrizione": "Free quote templates in PDF and Excel for electricians, plumbers, painters and decorators, bricklayers, building firms and other trades, with typical line items."
+        "descrizione": "Free quote templates in PDF and Excel for electricians, plumbers, garages, photographers, caterers and other trades, with typical line items."
       },
       "h1": "Free quote templates, one for each trade",
-      "testo": "A template for every home trade, as a PDF to print and an Excel file to fill in. Inside you'll find the typical line items for the trade with their units of measure, the exclusions you shouldn't forget, how long the offer is valid and space for the customer to accept.",
+      "testo": "A template for every trade, as a PDF to print and an Excel file to fill in. Inside you'll find the typical line items for the trade with their units of measure, the exclusions you shouldn't forget, how long the offer is valid and space for the customer to accept.",
       "cosaContiene": {
         "titolo": "What's in the template",
         "punti": [
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "The templates are free and you don't need to sign up. The prices are left out on purpose: they're yours. If you want the quote to write itself from your account of the site visit, with the prices from your price list already in it, that's what Preventivi does.",
+      "nota": "The templates are free and you don't need to sign up. The prices are left out on purpose: they're yours. If you want the quote to write itself from your account of the job, with the prices from your price list already in it, that's what Preventivi does.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Download the {mestiere} template in {formato}"
@@ -3964,13 +3964,13 @@
         "descrizione": "Preventivi is made by K Digital Solution, Sofiane Khatib's studio. Why it exists, how we treat your prices and your customers' data, how to contact us."
       },
       "h1": "Who makes Preventivi, and why",
-      "intro": "Preventivi is a service from K Digital Solution, Sofiane Khatib's studio that builds software for small businesses. It started from something every tradesperson knows: the work on site finishes at six, and the quotes get written in the evening.",
+      "intro": "Preventivi is a service from K Digital Solution, Sofiane Khatib's studio that builds software for small businesses. It started from something anyone who works at their customers' places knows: you work during the day, and the quotes get written in the evening.",
       "sezioni": [
         {
           "titolo": "Why it exists",
           "paragrafi": [
-            "If you work in people's homes, you do the site visit, take the measurements and drive back in the van with it all in your head. Then the quote sits there for days, because writing it means looking up prices, redoing the metre counts, remembering what's excluded. Meanwhile the customer asks someone else.",
-            "Preventivi is there to close that gap: you describe the job right after the site visit, as you would to a colleague, and the draft is ready before you get to your next site."
+            "If you work at your customers' places, you see the job, take the measurements and the requests and leave with it all in your head. Then the quote sits there for days, because writing it means looking up prices, redoing the sums, remembering what's excluded. Meanwhile the customer asks someone else.",
+            "Preventivi is there to close that gap: you describe the job as soon as you're done with the customer, as you would to a colleague, and the draft is ready before you get to your next appointment."
           ]
         },
         {
@@ -3993,14 +3993,14 @@
             },
             {
               "titolo": "Data in Europe",
-              "testo": "Your price list and quotes are stored in the European Union. To prepare the draft, the text of your site visit goes through an external provider, named on the Privacy page. We sign a data processing agreement with you for your customers' data."
+              "testo": "Your price list and quotes are stored in the European Union. To prepare the draft, the text of your job description goes through an external provider, named on the Privacy page. We sign a data processing agreement with you for your customers' data."
             }
           ]
         },
         {
           "titolo": "The pilot programme",
           "paragrafi": [
-            "The pilot programme is for a group of tradespeople from different trades. They use it on their real jobs for 30 days and tell us what doesn't work. What we learn from the pilot changes the product, and the figures we publish will come from there, measured."
+            "The pilot programme is for a group of professionals from different trades. They use it on their real jobs for 30 days and tell us what doesn't work. What we learn from the pilot changes the product, and the figures we publish will come from there, measured."
           ]
         }
       ],
@@ -4015,7 +4015,7 @@
     "mestiere": {
       "racconti": "What you tell it",
       "ricevi": "What you get",
-      "vocale": "Your site visit recording",
+      "vocale": "Your account of the job",
       "bozza": "Draft",
       "prezzo": "from your price list",
       "daChiedere": "to ask",
@@ -4034,7 +4034,7 @@
       "vicini": "Related trades",
       "funzioni": "How it works",
       "guide": "Worth reading before your next quote",
-      "ctaTitolo": "Send your next quote for {mestiere} from the van.",
+      "ctaTitolo": "Send your next quote for {mestiere} from your phone.",
       "ctaTesto": "Free 30-day pilot programme: try it on your real jobs, with your own price list. We'll call you back."
     },
     "guida": {

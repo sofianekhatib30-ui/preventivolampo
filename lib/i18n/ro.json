@@ -88,7 +88,7 @@
       "accettati": "acceptate · {importo}",
       "rifiutati": "refuzate",
       "nessuno": "Încă nicio ofertă.",
-      "nessunoTesto": "Povestește următoarea vizită la fața locului: în jumătate de minut ai schița.",
+      "nessunoTesto": "Povestește următoarea lucrare: în jumătate de minut ai schița.",
       "clienteDaIndicare": "Client de completat",
       "numeroDel": "nr. {numero} din {data}",
       "stati": {
@@ -112,7 +112,7 @@
       "h1": "Deviz nou",
       "serveListino": "Mai întâi ai nevoie de lista de prețuri: prețurile vin doar de acolo.",
       "preparaListino": "Pregătește lista de prețuri",
-      "sotto": "Scrie sau dictează ce ai văzut la fața locului. Ciorna folosește cele {n} poziții din lista ta de prețuri; ce nu găsește rămâne de prețuit.",
+      "sotto": "Scrie sau dictează lucrarea. Ciorna folosește cele {n} poziții din lista ta de prețuri; ce nu găsește rămâne de prețuit.",
       "claude": "Textul este prelucrat cu Claude de la Anthropic și salvat împreună cu devizul.",
       "racconta": "Povestește lucrarea așa cum ai spune-o într-un mesaj vocal, în italiană sau în limba ta",
       "segnaposto": "Clientul, adresa, dacă locuiește acolo. Ce se scoate, ce se pune, măsurile. Cine cumpără materialele.",
@@ -120,7 +120,7 @@
       "prepara": "Pregătește ciorna",
       "errore": "Nu am reușit să pregătesc ciorna. Încearcă din nou.",
       "fasi": [
-        "Citesc ce ai spus de la fața locului…",
+        "Citesc ce ai povestit…",
         "Separ lucrările, măsurile și excluderile…",
         "Caut fiecare poziție în lista ta de prețuri…",
         "Verific ce lipsește și regimul IVA…",
@@ -141,7 +141,7 @@
       "telefono": "Telefon",
       "email": "Email pe deviz",
       "cheLavori": "Ce lucrări faceți",
-      "cheLavoriNota": "Ne ajută să înțelegem mai bine ce povestești de la fața locului.",
+      "cheLavoriNota": "Ne ajută să înțelegem mai bine ce povestești.",
       "mestieri": {
         "impresaEdile": "Firmă de construcții",
         "muratore": "Zidar",
@@ -530,7 +530,7 @@
       "aggiungiRiga": "Adaugă un rând",
       "esclusi": "Excluse din ofertă",
       "unaPerRiga": "Una pe rând",
-      "note": "Notițe de la vizita pe șantier (nu apar în PDF)",
+      "note": "Notițe din povestire (nu apar în PDF)",
       "riepilogo": "Rezumat",
       "imponibile": "Baza de calcul (imponibile)",
       "ivaSu": "IVA {aliquota}% pe {importo}",
@@ -606,14 +606,14 @@
     },
     "prova": {
       "nuovaProva": "Probă nouă",
-      "h1": "De la vizita pe șantier la ciornă",
+      "h1": "De la povestire la ciornă",
       "sotto": "Motorul extrage lucrările, le potrivește cu lista ta de prețuri și îți pregătește ciorna de verificat. Prețurile vin doar din listă: ce nu găsește rămâne de prețuit, ce lipsește te întreabă.",
       "avviso": "Date de probă inventate: firma din listă și clienții din exemple nu există. Nu introduce nume, adrese sau numere de persoane reale: ciornele rămân 7 zile și oricine are linkul le poate deschide. Textul liber este procesat cu Claude de la Anthropic. {privacy}",
       "daDove": "De unde pornești",
       "unEsempio": "Un exemplu",
       "tuoTesto": "Textul tău",
       "esempiBanco": "Exemple din banc de probă",
-      "esempiTesto": "Vizite pe șantier inventate, din banc de probă. Ciorna apare imediat: este rezultatul înregistrat al motorului pe cazul respectiv.",
+      "esempiTesto": "Lucrări inventate, din banc de probă. Ciorna apare imediat: este rezultatul înregistrat al motorului pe cazul respectiv.",
       "lavori": {
         "bagno": "Baie completă",
         "tinteggiatura": "Zugrăvit garsonieră cu două camere",
@@ -641,7 +641,7 @@
     "dettatura": {
       "parloIn": "Vorbesc în",
       "ascolto": "Te ascult: atinge ca să oprești",
-      "detta": "Dictează vizita pe șantier",
+      "detta": "Dictează lucrarea",
       "nota": "Folosește recunoașterea vocală a browserului: pe acest site ajunge doar textul. În orice limbă vorbești, ciorna iese în italiană.",
       "erroreMicrofono": "Browserul nu are permisiunea de a folosi microfonul.",
       "erroreLingua": "Pe acest telefon dictarea în această limbă nu există. Scrie textul în limba ta: ciorna iese în italiană oricum.",
@@ -1116,7 +1116,7 @@
         },
         {
           "t": "p",
-          "testo": "Pentru datele clienților unui meseriaș (nume, adrese de șantier, devize) operatorul este meseriașul: noi le prelucrăm în numele lui, ca persoană împuternicită (responsabile del trattamento), conform acordului pe care îl semnăm cu el."
+          "testo": "Pentru datele clienților unei firme sau ale unui profesionist (nume, adresele lucrărilor, devize) operatorul este firma: noi le prelucrăm în numele ei, ca persoană împuternicită (responsabile del trattamento), conform acordului pe care îl semnăm cu ea."
         },
         {
           "t": "h2",
@@ -1136,7 +1136,7 @@
         },
         {
           "t": "h3",
-          "testo": "Dacă folosești zona pentru meseriași"
+          "testo": "Dacă folosești zona rezervată firmelor"
         },
         {
           "t": "ul",
@@ -1149,14 +1149,14 @@
         },
         {
           "t": "h3",
-          "testo": "Dacă ești clientul unui meseriaș și deschizi devizul lui"
+          "testo": "Dacă ești clientul unei firme și deschizi devizul ei"
         },
         {
           "t": "ul",
           "voci": [
             "Când accepți sau refuzi un deviz, salvăm numele pe care îl scrii, data și ora, adresa IP și amprenta PDF-ului.",
-            "Îi servesc meseriașului ca dovadă a acceptării. Le păstrăm în numele lui, cât timp el folosește serviciul.",
-            "Ca să vezi, corectezi sau ștergi aceste date te poți adresa meseriașului sau nouă: îi transmitem noi cererea."
+            "Îi servesc firmei ca dovadă a acceptării. Le păstrăm în numele ei, cât timp folosește serviciul.",
+            "Ca să vezi, corectezi sau ștergi aceste date te poți adresa firmei sau nouă: îi transmitem noi cererea."
           ]
         },
         {
@@ -1185,7 +1185,7 @@
           "voci": [
             "Supabase: baza de date, accesul în zona de lucru și arhiva de PDF-uri, în Irlanda (UE).",
             "Vercel: site-ul și funcțiile lui, la Frankfurt (UE).",
-            "Anthropic (Claude): citește textul de la vizita pe șantier și pregătește ciorna, iar când clientul vorbește altă limbă traduce pozițiile din deviz, în Statele Unite.",
+            "Anthropic (Claude): citește textul povestirii și pregătește ciorna, iar când clientul vorbește altă limbă traduce pozițiile din deviz, în Statele Unite.",
             "Twilio și WhatsApp (Meta): primesc și trimit mesajele WhatsApp.",
             "n8n: leagă mesajele WhatsApp de Preventivi.",
             "Resend: trimite emailurile cu codul de acces."
@@ -1297,12 +1297,12 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi folosește doar cookie-uri tehnice: fără ele, zona pentru meseriași nu ar ști că ai intrat, iar site-ul nu ar ține minte limba pe care ai ales-o. Fără cookie-uri de profilare, fără statistici, fără instrumente ale unor terți care te urmăresc de pe un site pe altul. De aceea nu vei găsi un banner de cookie-uri."
+          "testo": "Preventivi folosește doar cookie-uri tehnice: fără ele, zona rezervată nu ar ști că ai intrat, iar site-ul nu ar ține minte limba pe care ai ales-o. Fără cookie-uri de profilare, fără statistici, fără instrumente ale unor terți care te urmăresc de pe un site pe altul. De aceea nu vei găsi un banner de cookie-uri."
         },
         {
           "t": "ul",
           "voci": [
-            "**kds-sessione**: păstrează deschis accesul în zona meseriașilor, în care intri din contul K Digital Solution (același pentru toate instrumentele sale). Îl pune contul când intri, este valabil pe toate adresele kdigitalsolution.it, durează 30 de zile de la ultima folosire și se șterge când ieși.",
+            "**kds-sessione**: păstrează deschis accesul în zona rezervată, în care intri din contul K Digital Solution (același pentru toate instrumentele sale). Îl pune contul când intri, este valabil pe toate adresele kdigitalsolution.it, durează 30 de zile de la ultima folosire și se șterge când ieși.",
             "**pl_lingua**: ține minte limba site-ului. Îl setăm când alegi o limbă din selector sau când deschizi o pagină într-o altă limbă decât italiana și durează un an."
           ]
         },

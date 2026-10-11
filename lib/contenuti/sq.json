@@ -2385,15 +2385,15 @@
     "preventivo-da-vocale": {
       "meta": {
         "titolo": "Preventiv nga mesazhi zanor: e tregon, dhe skica është gati",
-        "descrizione": "Preventiv nga mesazhi zanor: e tregon vizitën në kantier me zë ose me shkrim, edhe në gjuhën tënde. Të kthehet skica me listën tënde të çmimeve dhe pyetje për atë që mungon."
+        "descrizione": "Preventiv nga mesazhi zanor: e tregon punën me zë ose me shkrim, edhe në gjuhën tënde. Të kthehet skica me listën tënde të çmimeve dhe pyetje për atë që mungon."
       },
       "nome": "Preventiv nga mesazhi zanor",
-      "riga": "E tregon vizitën në kantier si me një koleg: zërat, masat, pyetjet dhe përjashtimet i rreshton sistemi.",
+      "riga": "E tregon punën si me një koleg: zërat, masat, pyetjet dhe përjashtimet i rreshton sistemi.",
       "h1": "Preventiv nga mesazhi zanor: e tregon, dhe skicën e shkruan sistemi",
-      "sottotitolo": "Kur mbaron vizita në kantier, flet në telefon ose shkruan dy rreshta, si me një koleg. Sistemi ndan punimet, i rillogarit masat, merr çmimet nga lista jote dhe të pyet për atë që nuk the. Ti kontrollon dhe miraton.",
+      "sottotitolo": "Kur mbaron me klientin, flet në telefon ose shkruan dy rreshta, si me një koleg. Sistemi ndan punimet, i rillogarit masat, merr çmimet nga lista jote dhe të pyet për atë që nuk the. Ti kontrollon dhe miraton.",
       "sezioni": [
         {
-          "titolo": "Si e tregon vizitën në kantier",
+          "titolo": "Si e tregon punën",
           "paragrafi": [
             "Hap faqen e preventivit të ri nga telefoni, pa instaluar asgjë. Ke dy mënyra: shtyp mikrofonin dhe diktoje, ose shkruaje. Kur diktoje, zërin e kthen në tekst njohja e zërit e telefonit: tek ne vjen vetëm teksti, kurrë audioja. Mund ta rilexosh dhe ta ndreshosh përpara se të përgatitet drafti.",
             "Mund të tregosh edhe në gjuhën tënde. Me zë zgjedh mes italishtes, rumanishtes, shqipes, arabishtes, ukrainishtes, rusishtes, spanjishtes, frëngjishtes dhe anglishtes, nëse telefoni yt e njeh atë gjuhë; nëse nuk e njeh, ta thotë dhe e shkruan. Me shkrim vlen çdo gjuhë, edhe e përzier me italishten. Skica del gjithmonë në italisht, dhe masat e thëna në një gjuhë tjetër vlejnë njësoj si ato të thëna në italisht.",
@@ -2431,7 +2431,7 @@
         {
           "titolo": "Si të tregosh mirë: disa këshilla praktike",
           "paragrafi": [
-            "Sistemi e kupton gjuhën e kantierit, masat përafërsisht dhe ndryshimet e mendjes. Por disa zakone të bëjnë të gjesh një skicë më të plotë dhe më pak pyetje për të mbyllur."
+            "Sistemi e kupton të folurën e përditshme, masat përafërsisht dhe ndryshimet e mendjes. Por disa zakone të bëjnë të gjesh një skicë më të plotë dhe më pak pyetje për të mbyllur."
           ],
           "punti": [
             {
@@ -2496,7 +2496,7 @@
           },
           {
             "d": "Klienti e sheh rrëfimin tim?",
-            "r": "Jo. Klienti sheh preventivin: zërat, sasitë, çmimet dhe përjashtimet. Rrëfimi dhe shënimet e vizitës në objekt mbeten tek ti."
+            "r": "Jo. Klienti sheh preventivin: zërat, sasitë, çmimet dhe përjashtimet. Rrëfimi dhe shënimet mbeten tek ti."
           },
           {
             "d": "Çfarë ndodh nëse përmend një punë që nuk e bëj unë?",
@@ -2524,7 +2524,7 @@
           "paragrafi": [
             "Shtëpi të blera nga të huaj, apartamente të dhëna me qira atyre që punojnë këtu prej pak, shtëpi të dyta të familjeve që jetojnë jashtë. Klienti i kupton masat dhe çmimet, por një zë si «rasatura» ose «massetto» i thotë pak, dhe një preventiv që nuk e kupton e firmos me vonesë, ose nuk e firmos fare.",
             "Me Preventivi preventivi mund të niset **në anglisht** përveç italishtes: e zgjedh preventiv pas preventivi. Anglishten e lexon pothuajse çdo klient i huaj; për atë që nuk e lexon, preventivi mbetet në italisht.",
-            "Mos e ngatërro me gjuhën në të cilën tregon vizitën në objekt: ajo mund të jetë edhe rumanisht, shqip, arabisht ose ukrainisht, dhe drafti del prapë në italisht. E shpjegojmë te faqja për [preventivin me zë](/funzioni/preventivo-da-vocale)."
+            "Mos e ngatërro me gjuhën në të cilën tregon punën: ajo mund të jetë edhe rumanisht, shqip, arabisht ose ukrainisht, dhe drafti del prapë në italisht. E shpjegojmë te faqja për [preventivin me zë](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
@@ -2583,7 +2583,7 @@
             },
             {
               "titolo": "Puna jote",
-              "testo": "Drafti, rrëfimi i vizitës në objekt, shënimet dhe lista jote e çmimeve mbeten në italisht. Klienti nuk i sheh."
+              "testo": "Drafti, rrëfimi yt, shënimet dhe lista jote e çmimeve mbeten në italisht. Klienti nuk i sheh."
             },
             {
               "titolo": "Emrat dhe adresat",
@@ -2767,8 +2767,8 @@
         {
           "titolo": "Fjalët e punës: si i quan zërat me gojë",
           "paragrafi": [
-            "Në listë një zë quhet «Rasatura pareti con stucco» (lëmim muresh me stuko), por në kantier ti thua «të lëmoj», «t'i stukoj të gjitha», «një dorë stuko lëmuese». Prandaj çdo zë ka një fushë **si e quan me gojë**: disa fjalë, të ndara me presje. Kur sistemi kërkon zërin e duhur, ato fjalë peshojnë më shumë se emri dhe përshkrimi.",
-            "Pas një importi fusha është bosh. Ia vlen ta plotësosh për zërat që përdor më shumë, me fjalët që përdor vërtet, edhe ato të kantierit. Mjaftojnë pak minuta dhe draftet e radhës gjejnë më shumë zëra me herën e parë. Çdo zë mund të ketë edhe një përshkrim më të gjatë, që e ndihmon sistemin të kuptojë çfarë përfshin. Në preventiv shkon emri i zërit, të cilin në draft mund ta ndryshosh gjithmonë."
+            "Në listë një zë quhet «Rasatura pareti con stucco» (lëmim muresh me stuko), por në punë ti thua «të lëmoj», «t'i stukoj të gjitha», «një dorë stuko lëmuese». Prandaj çdo zë ka një fushë **si e quan me gojë**: disa fjalë, të ndara me presje. Kur sistemi kërkon zërin e duhur, ato fjalë peshojnë më shumë se emri dhe përshkrimi.",
+            "Pas një importi fusha është bosh. Ia vlen ta plotësosh për zërat që përdor më shumë, me fjalët që përdor vërtet, edhe ato të profesionit. Mjaftojnë pak minuta dhe draftet e radhës gjejnë më shumë zëra me herën e parë. Çdo zë mund të ketë edhe një përshkrim më të gjatë, që e ndihmon sistemin të kuptojë çfarë përfshin. Në preventiv shkon emri i zërit, të cilin në draft mund ta ndryshosh gjithmonë."
           ]
         },
         {
@@ -2946,7 +2946,7 @@
             },
             {
               "titolo": "Preventivi që vjen pas një jave",
-              "testo": "Kush kërkon disa preventiva tenton të shkojë me atë që përgjigjet i pari në mënyrë të qartë. Ta shkruash po atë mbrëmje të sopralluogos, kur i mban mend të gjitha detajet, është avantazhi më i thjeshtë që ke. Ky është arsyeja pse ekziston [preventivi me zë](/funzioni/preventivo-da-vocale)."
+              "testo": "Kush kërkon disa preventiva tenton të shkojë me atë që përgjigjet i pari në mënyrë të qartë. Ta shkruash po atë mbrëmje të takimit me klientin, kur i mban mend të gjitha detajet, është avantazhi më i thjeshtë që ke. Ky është arsyeja pse ekziston [preventivi me zë](/funzioni/preventivo-da-vocale)."
             },
             {
               "titolo": "Pa datë vlefshmërie",
@@ -3452,7 +3452,7 @@
           "titolo": "Sopralluogo (vizita në kantier), kur nuk kuptoheni mirë",
           "paragrafi": [
             "Preventivi dygjuhësh lind nga sopralluogo, dhe aty krijohen keqkuptimet. Përsërit me zë të lartë matjet dhe zgjedhjet, trego me duar atë që do të bësh, fotografo gjërat që do të hiqen dhe ato që mbeten. Nëse klienti të dërgon mesazhe në gjuhën e tij, përgjigju me shkrim: një bisedë e shkruar, edhe e përkthyer keq, vlen më shumë se një me gojë e kuptuar përgjysmë.",
-            "E njëjta gjë vlen për ty. Nëse italishtja nuk është gjuha jote e parë, mund ta tregosh sopralluogo-n në gjuhën në të cilën mendon më mirë: te Preventivi vjen teksti, në rumanisht, shqip, arabisht ose në një gjuhë tjetër, dhe drafti i preventivit del prapë në italisht, gati për t'u përkthyer për klientin."
+            "E njëjta gjë vlen për ty. Nëse italishtja nuk është gjuha jote e parë, mund ta tregosh punën në gjuhën në të cilën mendon më mirë: te Preventivi vjen teksti, në rumanisht, shqip, arabisht ose në një gjuhë tjetër, dhe drafti i preventivit del prapë në italisht, gati për t'u përkthyer për klientin."
           ]
         }
       ],
@@ -3861,36 +3861,36 @@
   "pagine": {
     "mestieri": {
       "meta": {
-        "titolo": "Softuer preventivash për artizanë, sipas profesionit",
-        "descrizione": "Preventiva për elektricistë, hidraulikë, bojaxhinj, muratorë, ndërmarrje ndërtimi dhe profesione të tjera të shtëpisë: zëra tipikë, shembuj dhe mënyra e duhur për të vënë çmimet."
+        "titolo": "Softuer preventivash për çdo profesion",
+        "descrizione": "Preventiva për elektricistë, hidraulikë, servise, fotografë, katering, firma transporti mobiljesh dhe profesione të tjera: zëra tipikë, shembuj dhe mënyra e duhur për të vënë çmimet."
       },
       "h1": "Preventivi i profesionit tënd",
-      "testo": "Çdo profesion ka zërat e vet, njësitë e veta matëse dhe diskutimet e veta në fund të punës. Për secilin gjen rreshtat që përsëriten më shpesh, si çmohen, dokumentet që duhen cituar dhe një shembull inspektimi në vend të kthyer në draft.",
-      "altro": "Profesioni yt nuk është aty? Nëse punon me zëra e matje, funksionon njësoj: fjalët e profesionit i gjen në listën tënde të çmimeve, dhe ajo që nuk ka mbetet për t'u çmuar."
+      "testo": "Preventivi funksionon me çdo profesion që bën preventiva me zëra. Këtu poshtë janë të gjithë ata që njeh tashmë, sipas familjes: kur zgjedh tëndin, IVA dhe rregullat e profesionit janë vendosur që më parë. Për disa ka edhe një faqe me zërat tipikë dhe si çmohen.",
+      "altro": "Profesioni yt nuk është aty? Nëse bën preventiva me zëra, funksionon njësoj: fjalët e profesionit i gjen në listën tënde të çmimeve, dhe ajo që nuk ka mbetet për t'u çmuar."
     },
     "funzioni": {
       "meta": {
         "titolo": "Si funksionon Preventivi",
-        "descrizione": "Nga rrëfimi i inspektimit deri te preventivi i pranuar: draft nga lista jote, pyetje për atë që mungon, PDF në gjuhën e klientit dhe pranim online."
+        "descrizione": "Nga rrëfimi i punës deri te preventivi i pranuar: draft nga lista jote, pyetje për atë që mungon, PDF në gjuhën e klientit dhe pranim online."
       },
       "h1": "Si funksionon, pjesë-pjesë",
-      "testo": "Katër gjëra bëjnë punën: rrëfimi i inspektimit, lista jote e çmimeve, preventivi në gjuhën e klientit dhe pranimi online. Këtu i gjen të shpjeguara një nga një, me atë që bëjnë dhe atë që nuk bëjnë."
+      "testo": "Katër gjëra bëjnë punën: rrëfimi i punës, lista jote e çmimeve, preventivi në gjuhën e klientit dhe pranimi online. Këtu i gjen të shpjeguara një nga një, me atë që bëjnë dhe atë që nuk bëjnë."
     },
     "guide": {
       "meta": {
-        "titolo": "Udhëzues për preventivin për artizanë",
-        "descrizione": "Si bëhet një preventiv, me shumë të përgjithshme (a corpo) ose me matje (a misura), IVA te punimet në shtëpi, klienti i huaj, tërheqja: udhëzues praktikë për artizanë, me burimet."
+        "titolo": "Udhëzues për preventivin, për çdo profesion",
+        "descrizione": "Si bëhet një preventiv, me shumë të përgjithshme (a corpo) ose me matje (a misura), IVA te punimet në shtëpi, klienti i huaj, tërheqja: udhëzues praktikë për këdo që bën preventiva, me burimet."
       },
-      "h1": "Udhëzues për preventivin, shkruar për ata që punojnë në kantier",
+      "h1": "Udhëzues për preventivin, shkruar për ata që punojnë te klientët",
       "testo": "Çfarë të shkruash që preventivi të qëndrojë deri në shlyerje, cilën IVA të aplikosh, si të sillesh me një klient të huaj ose me një preventiv të firmosur në shtëpinë e tij. Udhëzues praktikë, me burimet në fund të çdo faqe."
     },
     "modelli": {
       "meta": {
         "titolo": "Modele preventivi falas sipas profesionit",
-        "descrizione": "Shembuj preventivi falas në PDF dhe Excel për elektricist, hidraulik, bojaxhi, murator, ndërmarrje ndërtimi dhe profesione të tjera, me zërat tipikë."
+        "descrizione": "Shembuj preventivi falas në PDF dhe Excel për elektricist, hidraulik, servis, fotograf, katering dhe profesione të tjera, me zërat tipikë."
       },
       "h1": "Modele preventivi falas, një për çdo profesion",
-      "testo": "Një shembull për çdo profesion të shtëpisë, në PDF për t'u printuar dhe në Excel për t'u plotësuar. Brenda gjen zërat tipikë të profesionit me njësitë matëse, përjashtimet që nuk duhen harruar, vlefshmërinë e ofertës dhe vendin për pranimin e klientit.",
+      "testo": "Një shembull për çdo profesion, në PDF për t'u printuar dhe në Excel për t'u plotësuar. Brenda gjen zërat tipikë të profesionit me njësitë matëse, përjashtimet që nuk duhen harruar, vlefshmërinë e ofertës dhe vendin për pranimin e klientit.",
       "cosaContiene": {
         "titolo": "Çfarë ka në model",
         "punti": [
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "Modelet janë falas dhe pa regjistrim. Çmimet nuk janë shkruar me qëllim: janë të tuat. Nëse do që preventivi të shkruhet vetë nga rrëfimi i vizitës në objekt, me çmimet e listës tënde brenda, kjo është ajo që bën Preventivi.",
+      "nota": "Modelet janë falas dhe pa regjistrim. Çmimet nuk janë shkruar me qëllim: janë të tuat. Nëse do që preventivi të shkruhet vetë nga rrëfimi i punës, me çmimet e listës tënde brenda, kjo është ajo që bën Preventivi.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Shkarko modelin për {mestiere} në {formato}"
@@ -3964,13 +3964,13 @@
         "descrizione": "Preventivi është bërë nga K Digital Solution, studioja e Sofiane Khatib. Pse ekziston, si i trajtojmë çmimet e tua dhe të dhënat e klientëve të tu, si të na kontaktosh."
       },
       "h1": "Kush e bën Preventivi, dhe pse",
-      "intro": "Preventivi është një shërbim i K Digital Solution, studioja e Sofiane Khatib që zhvillon softuer për ndërmarrje të vogla. Lindi nga diçka që e njeh çdo zanatçi: puna në kantier mbaron në gjashtë, preventivat shkruhen në mbrëmje.",
+      "intro": "Preventivi është një shërbim i K Digital Solution, studioja e Sofiane Khatib që zhvillon softuer për ndërmarrje të vogla. Lindi nga diçka që e njeh kushdo që punon te klientët: ditën punohet, preventivat shkruhen në mbrëmje.",
       "sezioni": [
         {
           "titolo": "Pse ekziston",
           "paragrafi": [
-            "Kush punon nëpër shtëpi bën vizitën në objekt, merr masat dhe kthehet me furgon me gjithçka në kokë. Pastaj preventivi mbetet aty me ditë, sepse për ta shkruar duhet të kërkosh çmimet, të rifacësh llogaritë e metrave, të kujtohesh përjashtimet. Ndërkohë klienti i kërkon një tjetri.",
-            "Preventivi shërben për ta mbyllur këtë boshllëk: e tregon punën sapo mbaron vizita, siç do t'ia tregoje një kolegu, dhe drafti është gati para se të arrish në kantierin tjetër."
+            "Kush punon te klientët e sheh punën, merr masat dhe kërkesat dhe niset me gjithçka në kokë. Pastaj preventivi mbetet aty me ditë, sepse për ta shkruar duhet të kërkosh çmimet, të bësh përsëri llogaritë, të kujtohesh përjashtimet. Ndërkohë klienti i kërkon një tjetri.",
+            "Preventivi shërben për ta mbyllur këtë boshllëk: e tregon punën sapo mbaron me klientin, siç do t'ia tregoje një kolegu, dhe drafti është gati para se të arrish në takimin tjetër."
           ]
         },
         {
@@ -3993,14 +3993,14 @@
             },
             {
               "titolo": "Të dhëna në Evropë",
-              "testo": "Lista e çmimeve dhe preventivat ruhen në Bashkimin Evropian. Për të përgatitur skicën, teksti i sopralluogo-s (inspektimit në objekt) kalon te një ofrues i jashtëm, i treguar në faqen Privacy. Me ty nënshkruajmë marrëveshjen për përpunimin e të dhënave të klientëve të tu."
+              "testo": "Lista e çmimeve dhe preventivat ruhen në Bashkimin Evropian. Për të përgatitur skicën, teksti i rrëfimit kalon te një ofrues i jashtëm, i treguar në faqen Privacy. Me ty nënshkruajmë marrëveshjen për përpunimin e të dhënave të klientëve të tu."
             }
           ]
         },
         {
           "titolo": "Programi pilot",
           "paragrafi": [
-            "Programi pilot është për një grup artizanësh të zanateve të ndryshme: e përdorin në punët e tyre të vërteta për 30 ditë dhe na tregojnë çfarë nuk funksionon. Ajo që mësojmë nga piloti e ndryshon produktin, dhe numrat që do të publikojmë do të vijnë që andej, të matur."
+            "Programi pilot është për një grup profesionistësh të zanateve të ndryshme: e përdorin në punët e tyre të vërteta për 30 ditë dhe na tregojnë çfarë nuk funksionon. Ajo që mësojmë nga piloti e ndryshon produktin, dhe numrat që do të publikojmë do të vijnë që andej, të matur."
           ]
         }
       ],
@@ -4015,7 +4015,7 @@
     "mestiere": {
       "racconti": "Çfarë tregon",
       "ricevi": "Çfarë merr",
-      "vocale": "Rrëfimi i sopralluogo-s (inspektimit në objekt)",
+      "vocale": "Rrëfimi i punës",
       "bozza": "Draft",
       "prezzo": "nga lista jote e çmimeve",
       "daChiedere": "për t'u pyetur",
@@ -4034,7 +4034,7 @@
       "vicini": "Profesione të afërta",
       "funzioni": "Si funksionon",
       "guide": "Për t'u lexuar para preventivit tjetër",
-      "ctaTitolo": "Preventivin tjetër për {mestiere} dërgoje nga furgoni.",
+      "ctaTitolo": "Preventivin tjetër për {mestiere} dërgoje nga telefoni.",
       "ctaTesto": "Program pilot falas 30 ditësh: e provon në punët e tua të vërteta, me listën tënde të çmimeve. Të telefonojmë ne."
     },
     "guida": {

@@ -88,7 +88,7 @@
       "accettati": "accepted · {importo}",
       "rifiutati": "declined",
       "nessuno": "No quotes yet.",
-      "nessunoTesto": "Tell us about your next site visit: you get the draft in half a minute.",
+      "nessunoTesto": "Tell us about your next job: you get the draft in half a minute.",
       "clienteDaIndicare": "Customer to be added",
       "numeroDel": "No. {numero} dated {data}",
       "stati": {
@@ -112,7 +112,7 @@
       "h1": "New quote",
       "serveListino": "You need your price list first: the prices only come from there.",
       "preparaListino": "Set up your price list",
-      "sotto": "Write or dictate your site visit. The draft uses the {n} items in your price list; anything it can't find is left for you to price.",
+      "sotto": "Write or dictate the job. The draft uses the {n} items in your price list; anything it can't find is left for you to price.",
       "claude": "The text is processed with Claude by Anthropic and saved with the quote.",
       "racconta": "Describe the job as you would in a voice message, in Italian or in your own language",
       "segnaposto": "Customer, address, whether they live there. What comes out, what goes in, the measurements. Who buys the materials.",
@@ -120,7 +120,7 @@
       "prepara": "Prepare the draft",
       "errore": "I couldn't prepare the draft. Try again.",
       "fasi": [
-        "Reading your site visit…",
+        "Reading your description…",
         "Separating the work, measurements and exclusions…",
         "Looking for each item in your price list…",
         "Checking what's missing and the IVA rate…",
@@ -141,7 +141,7 @@
       "telefono": "Phone",
       "email": "Email on the quote",
       "cheLavori": "What work you do",
-      "cheLavoriNota": "It helps us read your site visits better.",
+      "cheLavoriNota": "It helps us read your job descriptions better.",
       "mestieri": {
         "impresaEdile": "Building contractor",
         "muratore": "Bricklayer",
@@ -530,7 +530,7 @@
       "aggiungiRiga": "Add a line",
       "esclusi": "Not included in the quote",
       "unaPerRiga": "One per line",
-      "note": "Notes from the site visit (not shown on the PDF)",
+      "note": "Notes from your description (not shown on the PDF)",
       "riepilogo": "Summary",
       "imponibile": "Taxable amount",
       "ivaSu": "IVA {aliquota}% on {importo}",
@@ -606,14 +606,14 @@
     },
     "prova": {
       "nuovaProva": "New test",
-      "h1": "From site visit to draft",
+      "h1": "From description to draft",
       "sotto": "The engine picks out the jobs, matches them to your price list and prepares a draft for you to check. Prices come only from the price list: anything it can't find is left to be priced, and anything missing, it asks you.",
       "avviso": "Made-up test data: the price list company and the customers in the examples don't exist. Don't enter names, addresses or numbers of real people: drafts are kept for 7 days and anyone with the link can open them. Free text is processed with Claude by Anthropic. {privacy}",
       "daDove": "Where to start",
       "unEsempio": "An example",
       "tuoTesto": "Your text",
       "esempiBanco": "Test bench examples",
-      "esempiTesto": "Made-up site visits for the test bench. The draft appears straight away: it's the engine's recorded output for that case.",
+      "esempiTesto": "Made-up jobs for the test bench. The draft appears straight away: it's the engine's recorded output for that case.",
       "lavori": {
         "bagno": "Full bathroom",
         "tinteggiatura": "Painting a two-room flat",
@@ -641,7 +641,7 @@
     "dettatura": {
       "parloIn": "I'm speaking in",
       "ascolto": "I'm listening: tap to stop",
-      "detta": "Dictate the site visit",
+      "detta": "Dictate the job",
       "nota": "It uses your browser's speech recognition: only the text reaches this site. Whatever language you speak, the draft comes out in Italian.",
       "erroreMicrofono": "The browser doesn't have permission to use the microphone.",
       "erroreLingua": "Dictation in this language isn't available on this phone. Just type the text in your own language: the draft still comes out in Italian.",
@@ -1116,7 +1116,7 @@
         },
         {
           "t": "p",
-          "testo": "For the data of a tradesperson's customers (names, job site addresses, quotes), the data controller is the tradesperson. We handle it on their behalf, as data processor, under the agreement we sign with them."
+          "testo": "For the data of the customers of a business or a professional (names, job addresses, quotes), the data controller is the business. We handle it on their behalf, as data processor, under the agreement we sign with them."
         },
         {
           "t": "h2",
@@ -1136,7 +1136,7 @@
         },
         {
           "t": "h3",
-          "testo": "If you use the tradespeople area"
+          "testo": "If you use the private area for businesses"
         },
         {
           "t": "ul",
@@ -1149,14 +1149,14 @@
         },
         {
           "t": "h3",
-          "testo": "If you are a tradesperson's customer and you open their quote"
+          "testo": "If you are a business's customer and you open their quote"
         },
         {
           "t": "ul",
           "voci": [
             "When you accept or decline a quote, we record the name you type, the date and time, your IP address and the fingerprint of the PDF.",
-            "The tradesperson needs this as proof of acceptance. We keep it on their behalf, for as long as they use the service.",
-            "To see, correct or delete this data, you can contact the tradesperson or us. We will pass your request on to them."
+            "The business needs this as proof of acceptance. We keep it on their behalf, for as long as they use the service.",
+            "To see, correct or delete this data, you can contact the business or us. We will pass your request on to them."
           ]
         },
         {
@@ -1185,7 +1185,7 @@
           "voci": [
             "Supabase: database, login to the area and PDF storage, in Ireland (EU).",
             "Vercel: the website and its functions, in Frankfurt (EU).",
-            "Anthropic (Claude): reads the site visit text and prepares the draft, and translates the quote items when the customer speaks another language, in the United States.",
+            "Anthropic (Claude): reads the text of your job description and prepares the draft, and translates the quote items when the customer speaks another language, in the United States.",
             "Twilio and WhatsApp (Meta): receive and send the WhatsApp messages.",
             "n8n: connects the WhatsApp messages to Preventivi.",
             "Resend: sends the emails with the login code."
@@ -1297,12 +1297,12 @@
       "blocchi": [
         {
           "t": "p",
-          "testo": "Preventivi only uses technical cookies: without them, the tradespeople area wouldn't know you're logged in and the site wouldn't remember the language you chose. No profiling cookies, no statistics, no third-party tools that follow you from one site to another. That's why you won't see a cookie banner."
+          "testo": "Preventivi only uses technical cookies: without them, the private area wouldn't know you're logged in and the site wouldn't remember the language you chose. No profiling cookies, no statistics, no third-party tools that follow you from one site to another. That's why you won't see a cookie banner."
         },
         {
           "t": "ul",
           "voci": [
-            "**kds-sessione**: keeps you logged in to the tradespeople area, which you enter from your K Digital Solution account (the same for all its tools). The account sets it when you log in; it works on all kdigitalsolution.it addresses, lasts 30 days from your last visit and is deleted when you log out.",
+            "**kds-sessione**: keeps you logged in to the private area, which you enter from your K Digital Solution account (the same for all its tools). The account sets it when you log in; it works on all kdigitalsolution.it addresses, lasts 30 days from your last visit and is deleted when you log out.",
             "**pl_lingua**: remembers the language of the site. We set it when you pick a language with the selector or when you open a page in a language other than Italian, and it lasts one year."
           ]
         },

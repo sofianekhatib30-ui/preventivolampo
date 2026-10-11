@@ -2385,15 +2385,15 @@
     "preventivo-da-vocale": {
       "meta": {
         "titolo": "Deviz din mesaj vocal: povestești, iar ciorna e gata",
-        "descrizione": "Deviz din mesaj vocal: povestești vizita la fața locului vorbit sau scris, chiar și în limba ta. Primești ciorna cu lista ta de prețuri și întrebări despre ce lipsește."
+        "descrizione": "Deviz din mesaj vocal: povestești lucrarea vorbit sau scris, chiar și în limba ta. Primești ciorna cu lista ta de prețuri și întrebări despre ce lipsește."
       },
       "nome": "Deviz din mesaj vocal",
-      "riga": "Povestești vizita la fața locului ca unui coleg: pozițiile, măsurile, întrebările și excluderile le aranjează sistemul.",
+      "riga": "Povestești lucrarea ca unui coleg: pozițiile, măsurile, întrebările și excluderile le aranjează sistemul.",
       "h1": "Deviz din mesaj vocal: îl povestești, iar ciorna o scrie sistemul",
-      "sottotitolo": "După vizita la fața locului vorbești la telefon sau scrii două rânduri, ca și cum ai vorbi cu un coleg. Sistemul separă lucrările, refă calculele măsurilor, ia prețurile din lista ta și te întreabă ce nu ai spus. Tu verifici și aprobi.",
+      "sottotitolo": "După ce ai terminat cu clientul vorbești la telefon sau scrii două rânduri, ca și cum ai vorbi cu un coleg. Sistemul separă lucrările, refă calculele măsurilor, ia prețurile din lista ta și te întreabă ce nu ai spus. Tu verifici și aprobi.",
       "sezioni": [
         {
-          "titolo": "Cum povestești vizita la fața locului",
+          "titolo": "Cum povestești lucrarea",
           "paragrafi": [
             "Deschide de pe telefon pagina noului deviz, fără să instalezi nimic. Ai două variante: apeși pe microfon și dictezi, sau scrii. Când dictezi, vocea este transformată în text de recunoașterea vocală a telefonului: la noi ajunge doar textul, niciodată sunetul. Îl poți reciti și corecta înainte să pregătești ciorna.",
             "Poți povesti și în limba ta. Vorbit, alegi între italiană, română, albaneză, arabă, ucraineană, rusă, spaniolă, franceză și engleză, dacă telefonul tău recunoaște limba respectivă; dacă nu o recunoaște, îți spune și scrii. Scris, merge orice limbă, chiar și amestecată cu italiana. Ciorna iese mereu în italiană, iar măsurile spuse în altă limbă contează la fel ca cele spuse în italiană.",
@@ -2431,7 +2431,7 @@
         {
           "titolo": "Cum să povestești bine: câteva sfaturi practice",
           "paragrafi": [
-            "Sistemul înțelege vorbirea de pe șantier, măsurile aproximative și ezitările. Dar câteva obiceiuri te ajută să primești o ciornă mai completă și mai puține întrebări de închis."
+            "Sistemul înțelege vorbirea de zi cu zi, măsurile aproximative și ezitările. Dar câteva obiceiuri te ajută să primești o ciornă mai completă și mai puține întrebări de închis."
           ],
           "punti": [
             {
@@ -2496,7 +2496,7 @@
           },
           {
             "d": "Clientul vede ce am povestit eu?",
-            "r": "Nu. Clientul vede devizul: pozițiile, cantitățile, prețurile și excluderile. Povestea și notele de la vizită rămân la tine."
+            "r": "Nu. Clientul vede devizul: pozițiile, cantitățile, prețurile și excluderile. Povestea și notele rămân la tine."
           },
           {
             "d": "Ce se întâmplă dacă pomenesc o lucrare pe care n-o fac eu?",
@@ -2524,7 +2524,7 @@
           "paragrafi": [
             "Case cumpărate de străini, apartamente închiriate celor care lucrează aici de puțin timp, a doua casă a unor familii care locuiesc în străinătate. Clientul înțelege măsurile și prețurile, dar o poziție ca «rasatura» (gletuire) sau «massetto» (șapă) îi spune puțin, iar un deviz pe care nu-l înțelege îl semnează târziu, sau deloc.",
             "Cu Preventivi devizul poate pleca **în engleză**, pe lângă italiană: alegi deviz cu deviz. Engleza o citește aproape orice client străin; pentru cine nu o citește, devizul rămâne în italiană.",
-            "Să nu o încurci cu limba în care povestești vizita la fața locului: aceea poate fi și româna, albaneza, araba sau ucraineana, iar ciorna iese oricum în italiană. Explicăm asta în pagina despre [devizul din mesaj vocal](/funzioni/preventivo-da-vocale)."
+            "Să nu o încurci cu limba în care povestești lucrarea: aceea poate fi și româna, albaneza, araba sau ucraineana, iar ciorna iese oricum în italiană. Explicăm asta în pagina despre [devizul din mesaj vocal](/funzioni/preventivo-da-vocale)."
           ]
         },
         {
@@ -2583,7 +2583,7 @@
             },
             {
               "titolo": "Munca ta",
-              "testo": "Ciorna, povestea vizitei, notele și lista ta de prețuri rămân în italiană. Clientul nu le vede."
+              "testo": "Ciorna, povestea ta, notele și lista ta de prețuri rămân în italiană. Clientul nu le vede."
             },
             {
               "titolo": "Nume și adrese",
@@ -2767,8 +2767,8 @@
         {
           "titolo": "Cuvintele meseriei: cum numești pozițiile când vorbești",
           "paragrafi": [
-            "În listino o poziție se numește «Rasatura pareti con stucco», dar pe șantier spui „glet”, „gletuiesc tot”, „o mână de glet”. De aceea fiecare poziție are un câmp **cum o numești când vorbești**: câteva cuvinte, separate prin virgulă. Când sistemul caută poziția potrivită, cuvintele astea cântăresc mai mult decât numele și descrierea.",
-            "După un import, câmpul e gol. Merită să-l completezi pentru pozițiile pe care le folosești cel mai des, cu cuvintele pe care le folosești tu cu adevărat, inclusiv cele de șantier. Îți ajung câteva minute, iar ciornele următoare găsesc mai multe poziții din prima. Fiecare poziție poate avea și o descriere mai lungă, care ajută sistemul să înțeleagă ce cuprinde. Pe deviz apare numele poziției, pe care în ciornă îl poți oricând retușa."
+            "În listino o poziție se numește «Rasatura pareti con stucco», dar la lucru spui „glet”, „gletuiesc tot”, „o mână de glet”. De aceea fiecare poziție are un câmp **cum o numești când vorbești**: câteva cuvinte, separate prin virgulă. Când sistemul caută poziția potrivită, cuvintele astea cântăresc mai mult decât numele și descrierea.",
+            "După un import, câmpul e gol. Merită să-l completezi pentru pozițiile pe care le folosești cel mai des, cu cuvintele pe care le folosești tu cu adevărat, inclusiv cele de meserie. Îți ajung câteva minute, iar ciornele următoare găsesc mai multe poziții din prima. Fiecare poziție poate avea și o descriere mai lungă, care ajută sistemul să înțeleagă ce cuprinde. Pe deviz apare numele poziției, pe care în ciornă îl poți oricând retușa."
           ]
         },
         {
@@ -2946,7 +2946,7 @@
             },
             {
               "titolo": "Devizul care ajunge după o săptămână",
-              "testo": "Cine cere mai multe devize tinde să meargă cu cel care răspunde primul și clar. Să-l scrii chiar în seara inspecției, când îți amintești fiecare detaliu, este cel mai simplu avantaj pe care îl ai. De aceea există [devizul dictat](/funzioni/preventivo-da-vocale)."
+              "testo": "Cine cere mai multe devize tinde să meargă cu cel care răspunde primul și clar. Să-l scrii chiar în seara întâlnirii cu clientul, când îți amintești fiecare detaliu, este cel mai simplu avantaj pe care îl ai. De aceea există [devizul dictat](/funzioni/preventivo-da-vocale)."
             },
             {
               "titolo": "Fără dată de valabilitate",
@@ -3452,7 +3452,7 @@
           "titolo": "Vizita la fața locului, când nu vă înțelegeți bine",
           "paragrafi": [
             "Devizul bilingv pornește de la vizita la fața locului, și acolo apar neînțelegerile. Repetă cu voce tare măsurile și alegerile, arată cu mâinile ce o să faci, fotografiază ce se scoate și ce rămâne. Dacă clientul îți trimite mesaje în limba lui, răspunde în scris: o conversație scrisă, chiar și tradusă prost, valorează mai mult decât una vorbită și înțeleasă pe jumătate.",
-            "La fel e și pentru tine. Dacă italiana nu e prima ta limbă, poți povesti vizita în limba în care gândești mai bine: la Preventivi ajunge textul, în română, albaneză, arabă sau în altă limbă, iar ciorna devizului iese oricum în italiană, gata de tradus pentru client."
+            "La fel e și pentru tine. Dacă italiana nu e prima ta limbă, poți povesti lucrarea în limba în care gândești mai bine: la Preventivi ajunge textul, în română, albaneză, arabă sau în altă limbă, iar ciorna devizului iese oricum în italiană, gata de tradus pentru client."
           ]
         }
       ],
@@ -3861,36 +3861,36 @@
   "pagine": {
     "mestieri": {
       "meta": {
-        "titolo": "Program de devize pentru meseriași, pe meserii",
-        "descrizione": "Devize pentru electricieni, instalatori, zugravi, zidari, firme de construcții și alte meserii ale casei: poziții tipice, exemple și modul corect de a stabili prețul."
+        "titolo": "Program de devize pentru orice meserie",
+        "descrizione": "Devize pentru electricieni, instalatori, ateliere auto, fotografi, catering, firme de mutări și alte meserii: poziții tipice, exemple și modul corect de a stabili prețul."
       },
       "h1": "Devizul meseriei tale",
-      "testo": "Fiecare meserie are pozițiile ei, unitățile ei de măsură și discuțiile ei la sfârșitul lucrării. Pentru fiecare găsești rândurile care apar cel mai des, cum se stabilește prețul, documentele de menționat și un exemplu de vizită la fața locului transformată în ciornă.",
-      "altro": "Nu găsești meseria ta? Dacă lucrezi pe poziții și măsurători, merge la fel: cuvintele meseriei le ia din lista ta de prețuri, iar ce nu e acolo rămâne de prețuit de tine."
+      "testo": "Preventivi funcționează cu orice meserie care face devize pe poziții. Mai jos le găsești pe toate cele pe care le cunoaște deja, grupate pe familii: când o alegi pe a ta, IVA și regulile meseriei sunt deja setate. Pentru unele există și o pagină cu pozițiile tipice și cum se stabilește prețul.",
+      "altro": "Nu găsești meseria ta? Dacă faci devize pe poziții, merge la fel: cuvintele meseriei le ia din lista ta de prețuri, iar ce nu e acolo rămâne de prețuit de tine."
     },
     "funzioni": {
       "meta": {
         "titolo": "Cum funcționează Preventivi",
-        "descrizione": "De la povestea vizitei la fața locului până la devizul acceptat: ciornă făcută din lista ta de prețuri, întrebări despre ce lipsește, PDF în limba clientului și acceptare online."
+        "descrizione": "De la povestea lucrării până la devizul acceptat: ciornă făcută din lista ta de prețuri, întrebări despre ce lipsește, PDF în limba clientului și acceptare online."
       },
       "h1": "Cum funcționează, piesă cu piesă",
-      "testo": "Patru lucruri fac treaba: povestea vizitei la fața locului, lista ta de prețuri, devizul în limba clientului și acceptarea online. Aici le găsești explicate pe rând, cu ce fac și ce nu fac."
+      "testo": "Patru lucruri fac treaba: povestea lucrării, lista ta de prețuri, devizul în limba clientului și acceptarea online. Aici le găsești explicate pe rând, cu ce fac și ce nu fac."
     },
     "guide": {
       "meta": {
-        "titolo": "Ghiduri despre deviz pentru meseriași",
-        "descrizione": "Cum faci un deviz, la preț global sau pe măsurători, IVA la lucrările în casă, client străin, retragere: ghiduri practice pentru meseriași, cu surse."
+        "titolo": "Ghiduri despre deviz, pentru orice meserie",
+        "descrizione": "Cum faci un deviz, la preț global sau pe măsurători, IVA la lucrările în casă, client străin, retragere: ghiduri practice pentru cine face devize, cu surse."
       },
-      "h1": "Ghiduri despre deviz, scrise pentru cine lucrează pe șantier",
+      "h1": "Ghiduri despre deviz, scrise pentru cine lucrează la clienți",
       "testo": "Ce să scrii ca devizul să țină până la plata finală, ce IVA să aplici, cum te porți cu un client străin sau cu un deviz semnat la el acasă. Ghiduri practice, cu sursele la sfârșitul fiecărei pagini."
     },
     "modelli": {
       "meta": {
         "titolo": "Modele de deviz gratuite, pe meserii",
-        "descrizione": "Modele de deviz gratuite în PDF și Excel pentru electrician, instalator, zugrav, zidar, firmă de construcții și alte meserii, cu pozițiile tipice."
+        "descrizione": "Modele de deviz gratuite în PDF și Excel pentru electrician, instalator, atelier auto, fotograf, catering și alte meserii, cu pozițiile tipice."
       },
       "h1": "Modele de deviz gratuite, câte unul pentru fiecare meserie",
-      "testo": "Un model pentru fiecare meserie a casei, în PDF de tipărit și în Excel de completat. Înăuntru găsești pozițiile tipice ale meseriei cu unitățile de măsură, excluderile pe care nu trebuie să le uiți, valabilitatea ofertei și loc pentru acceptarea clientului.",
+      "testo": "Un model pentru fiecare meserie, în PDF de tipărit și în Excel de completat. Înăuntru găsești pozițiile tipice ale meseriei cu unitățile de măsură, excluderile pe care nu trebuie să le uiți, valabilitatea ofertei și loc pentru acceptarea clientului.",
       "cosaContiene": {
         "titolo": "Ce conține modelul",
         "punti": [
@@ -3916,7 +3916,7 @@
           }
         ]
       },
-      "nota": "Modelele sunt gratuite și fără înregistrare. Prețurile lipsesc intenționat: sunt ale tale. Dacă vrei ca devizul să se scrie singur, pornind de la ce povestești după vizita la fața locului, cu prețurile din lista ta deja puse, asta face Preventivi.",
+      "nota": "Modelele sunt gratuite și fără înregistrare. Prețurile lipsesc intenționat: sunt ale tale. Dacă vrei ca devizul să se scrie singur, pornind de la ce povestești despre lucrare, cu prețurile din lista ta deja puse, asta face Preventivi.",
       "pdf": "PDF",
       "excel": "Excel",
       "scarica": "Descarcă modelul pentru {mestiere} în {formato}"
@@ -3964,13 +3964,13 @@
         "descrizione": "Preventivi este făcut de K Digital Solution, studioul lui Sofiane Khatib. De ce există, cum tratăm prețurile tale și datele clienților tăi, cum ne poți contacta."
       },
       "h1": "Cine face Preventivi, și de ce",
-      "intro": "Preventivi este un serviciu al K Digital Solution, studioul lui Sofiane Khatib care face software pentru firme mici. S-a născut dintr-un lucru pe care îl știe orice meseriaș: munca pe șantier se termină la șase, devizele se scriu seara.",
+      "intro": "Preventivi este un serviciu al K Digital Solution, studioul lui Sofiane Khatib care face software pentru firme mici. S-a născut dintr-un lucru pe care îl știe oricine lucrează la clienți: ziua se muncește, devizele se scriu seara.",
       "sezioni": [
         {
           "titolo": "De ce există",
           "paragrafi": [
-            "Cine lucrează prin case face vizita la fața locului, ia măsurile și se întoarce cu duba având totul în cap. Apoi devizul stă acolo zile întregi, pentru că a-l scrie înseamnă să cauți prețurile, să refaci socotelile cu metrii, să-ți amintești ce e exclus. Între timp, clientul cere la altcineva.",
-            "Preventivi servește ca să închidă golul ăsta: povestești lucrarea imediat după vizită, cum i-ai povesti unui coleg, iar ciorna e gata înainte să ajungi la următorul șantier."
+            "Cine lucrează la clienți vede lucrarea, ia măsurile și cerințele și pleacă având totul în cap. Apoi devizul stă acolo zile întregi, pentru că a-l scrie înseamnă să cauți prețurile, să refaci socotelile, să-ți amintești ce e exclus. Între timp, clientul cere la altcineva.",
+            "Preventivi servește ca să închidă golul ăsta: povestești lucrarea imediat ce ai terminat cu clientul, cum i-ai povesti unui coleg, iar ciorna e gata înainte să ajungi la următoarea programare."
           ]
         },
         {
@@ -3993,14 +3993,14 @@
             },
             {
               "titolo": "Date în Europa",
-              "testo": "Lista de prețuri și devizele sunt păstrate în Uniunea Europeană. Ca să pregătim ciorna, textul povestirii vizitei la fața locului trece printr-un furnizor extern, indicat pe pagina Confidențialitate. Cu tine semnăm acordul pentru prelucrarea datelor clienților tăi."
+              "testo": "Lista de prețuri și devizele sunt păstrate în Uniunea Europeană. Ca să pregătim ciorna, textul povestirii trece printr-un furnizor extern, indicat pe pagina Confidențialitate. Cu tine semnăm acordul pentru prelucrarea datelor clienților tăi."
             }
           ]
         },
         {
           "titolo": "Programul pilot",
           "paragrafi": [
-            "Programul pilot este pentru un grup de meseriași din meserii diferite: îl folosesc la lucrările lor reale timp de 30 de zile și ne spun ce nu merge. Ce învățăm din pilot schimbă produsul, iar cifrele pe care le vom publica vor veni de acolo, măsurate."
+            "Programul pilot este pentru un grup de profesioniști din meserii diferite: îl folosesc la lucrările lor reale timp de 30 de zile și ne spun ce nu merge. Ce învățăm din pilot schimbă produsul, iar cifrele pe care le vom publica vor veni de acolo, măsurate."
           ]
         }
       ],
@@ -4015,7 +4015,7 @@
     "mestiere": {
       "racconti": "Ce povestești",
       "ricevi": "Ce primești",
-      "vocale": "Povestirea vizitei la fața locului",
+      "vocale": "Povestirea lucrării",
       "bozza": "Ciornă",
       "prezzo": "din lista ta de prețuri",
       "daChiedere": "de întrebat",
@@ -4034,7 +4034,7 @@
       "vicini": "Meserii apropiate",
       "funzioni": "Cum funcționează",
       "guide": "De citit înainte de următoarea ofertă",
-      "ctaTitolo": "Următoarea ofertă de preț pentru {mestiere} trimite-o direct din furgonetă.",
+      "ctaTitolo": "Următoarea ofertă de preț pentru {mestiere} trimite-o direct de pe telefon.",
       "ctaTesto": "Program pilot gratuit de 30 de zile: îl încerci pe lucrările tale reale, cu lista ta de prețuri. Te sunăm noi."
     },
     "guida": {
