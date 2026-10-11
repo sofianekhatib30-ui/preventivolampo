@@ -4,50 +4,62 @@ import type { Dizionario } from "@/lib/i18n/it";
 import type { LinguaSito } from "@/lib/i18n/lingue";
 import { DemoSopralluogo } from "./demo/DemoSopralluogo";
 import { ctaPrincipale } from "./Header";
+import { Matrice } from "./Matrice";
 
+// La hero è la stessa di Attestiamo e Smistatore Mail (Sofiane, 11/10/2026: «hero uguali per tutte e 3,
+// quella di Attestiamo»): fondo inchiostro con il fondale a quadratini, a sinistra per chi è, titolo,
+// guida, la regola che conta, i due pulsanti e il canone; a destra la prova del prodotto in una finestra
+// chiara. Misure e colori copiati da styles.css di Attestiamo (.hero, .per-chi, .regola, .canone, .scena).
 export function Hero({ d, lingua }: { d: Dizionario; lingua: LinguaSito }) {
   const CTA_PILOTA = ctaPrincipale(d, lingua);
   const h = d.hero;
   return (
     <section
       id="top"
-      className="su-scuro quadretti margini grid items-start gap-9 bg-ardesia pb-14 pt-8 text-fondo lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] xl:grid-cols-[minmax(0,1fr)_minmax(0,620px)] lg:gap-[clamp(40px,5vw,80px)] lg:pb-24 lg:pt-[72px]"
+      className="su-scuro relative isolate overflow-hidden bg-ardesia pb-[clamp(52px,7vw,104px)] pt-[clamp(44px,6vw,92px)] text-fondo-2"
     >
-      <div className="flex flex-col gap-[22px] lg:sticky lg:top-[120px] lg:gap-7">
-        <p className="m-0 flex items-center gap-2 self-start rounded-full border border-scuro-linea bg-ardesia px-3 py-1.5 text-[13.5px] font-semibold text-scuro-testo lg:gap-2.5 lg:px-3.5 lg:py-2 lg:text-[14.5px]">
-          <span aria-hidden="true" className="size-[7px] shrink-0 rounded-full bg-lime lg:size-2" />
-          {h.etichetta}
-        </p>
-        <h1 className="titolo-h1 m-0">
-          <Frasi testo={h.titolo} />
-        </h1>
-        <p className="testo-hero m-0 max-w-[600px] text-scuro-testo">
-          <Ricco testo={h.testo} classeGrassetto="text-fondo" />
-        </p>
-        <p className="m-0 max-w-[600px] border-s-4 border-lime ps-3.5 text-[17px] font-semibold leading-snug lg:text-lg">
-          {h.garanzia}
-        </p>
-        <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3.5">
-          <a href={CTA_PILOTA.href} className="bottone bottone-azione-scuro py-4 text-[17px] lg:px-7 lg:py-[18px] lg:text-lg">
-            {CTA_PILOTA.label}
-          </a>
-          <a
-            href="#come"
-            className="bottone border-2 border-cielo py-4 text-[17px] font-semibold text-fondo hover:bg-cielo hover:text-inchiostro lg:py-[18px] lg:text-lg"
-          >
-            {h.guarda}
-          </a>
+      <Matrice />
+      <div className="mx-auto grid max-w-[1240px] items-center gap-[clamp(36px,5vw,72px)] px-[clamp(16px,5vw,72px)] min-[1021px]:grid-cols-[minmax(0,1fr)_minmax(0,1.02fr)] [&>*]:min-w-0">
+        <div>
+          <p className="m-0 inline-flex items-center gap-2.5 text-[15px] font-semibold text-fondo-2">
+            <span aria-hidden="true" className="size-2 shrink-0 rounded-full bg-lime" />
+            {h.etichetta}
+          </p>
+          <h1 className="mb-[22px] mt-[18px] max-w-[15ch] text-[clamp(42px,4.8vw,64px)] leading-[1.02] text-white">
+            <Frasi testo={h.titolo} />
+          </h1>
+          <p className="m-0 max-w-[32em] text-[19px] leading-[1.6] text-fondo-2 [text-wrap:pretty]">
+            <Ricco testo={h.testo} classeGrassetto="text-white" />
+          </p>
+          <p className="mb-0 mt-5 flex max-w-[32em] items-start gap-3 font-semibold text-white">
+            <span aria-hidden="true" className="mt-px flex size-[22px] shrink-0 items-center justify-center rounded-full bg-fondo-2 text-cielo-scuro">
+              <svg viewBox="0 0 24 24" className="size-[13px]" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 6 9 17l-5-5" />
+              </svg>
+            </span>
+            {h.garanzia}
+          </p>
+          <div className="mt-[30px] flex flex-wrap gap-3">
+            <a
+              href={CTA_PILOTA.href}
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-lime px-7 py-3.5 text-[17px] font-semibold text-ardesia-2 no-underline hover:bg-cielo max-[420px]:flex-[1_1_100%]"
+            >
+              {CTA_PILOTA.label}
+            </a>
+            <a
+              href="#come"
+              className="inline-flex min-h-14 items-center justify-center rounded-full border-2 border-fondo-2 px-7 py-3.5 text-[17px] font-semibold text-fondo-2 no-underline hover:bg-fondo-2 hover:text-inchiostro max-[420px]:flex-[1_1_100%]"
+            >
+              {h.guarda}
+            </a>
+          </div>
+          <p className="mb-0 mt-7 flex max-w-[34em] flex-wrap items-baseline gap-x-3.5 gap-y-1 border-t border-fondo-2/25 pt-[18px]">
+            <b className="font-[family-name:var(--font-titoli)] text-[38px] font-normal leading-none text-white">{h.canonePrezzo}</b>
+            <span className="text-[15.5px] text-fondo-2">{h.canoneTesto}</span>
+          </p>
         </div>
-        <ul className="m-0 flex list-none flex-col gap-1.5 p-0 text-[15px] text-scuro-testo sm:flex-row sm:flex-wrap sm:gap-x-7 lg:pt-2">
-          {h.punti.map((punto) => (
-            <li key={punto}>
-              <span aria-hidden="true" className="text-lime">✓ </span>
-              {punto}
-            </li>
-          ))}
-        </ul>
+        <DemoSopralluogo cta={CTA_PILOTA.href} />
       </div>
-      <DemoSopralluogo cta={CTA_PILOTA.href} />
     </section>
   );
 }

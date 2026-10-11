@@ -693,7 +693,9 @@
       "Nuk instalon asgjë",
       "Lista e çmimeve edhe nga një foto",
       "Vendos gjithmonë ti"
-    ]
+    ],
+    "canonePrezzo": "19,90 €",
+    "canoneTesto": "në muaj, pa TVSH. 30 ditët e para falas me programin pilot, pa rinovim automatik."
   },
   "demo": {
     "gruppo": "Zgjidh një profesion për shembull",
@@ -737,7 +739,9 @@
       "imbianchino": "Apartamenti dy dhomash i z. Greco, salloni dhe dhoma e gjumit: muret dhe tavanet bëjnë njëqind e njëzet metra. Gërvisht ku zhvishet, fiksativ kudo dhe dy duar bojë të larshme. Gjashtë metra bojë kundër mykut në tavanin e banjës. Mobiljet i zhvendosim ne.",
       "piastrellista": "Dhoma e ndenjes e zonjës Marino, njëzet e tetë metra katrorë. Heq dyshemenë e vjetër dhe plintusin, ribëj masetin dhe vendos gresin tridhjetë me tridhjetë që ka blerë ajo. Plintus i ri prej gresi.",
       "muratore": "Dhoma e vogël e z. Conti. E rrëzoj murin ndarës të vjetër dhe e ndërtoj përsëri një metër më tutje: tulla të zbrazëta nga tetë, tre e njëzet me dy e shtatëdhjetë, suva nga të dyja anët. Mbetje, një metër kub. Kornizën e derës e vë unë."
-    }
+    },
+    "finestra": "Nga mesazhi zanor te preventivi",
+    "esempio": "Shembull"
   },
   "mestieri": {
     "titolo": "Çdo zanat ka fjalët e veta. Lista jote i ka tashmë.",

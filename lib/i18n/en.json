@@ -693,7 +693,9 @@
       "Nothing to install",
       "Price list even from a photo",
       "You always decide"
-    ]
+    ],
+    "canonePrezzo": "€19.90",
+    "canoneTesto": "a month, VAT excluded. The first 30 days are free with the pilot programme, with no automatic renewal."
   },
   "demo": {
     "gruppo": "Pick a trade for the example",
@@ -737,7 +739,9 @@
       "imbianchino": "Mr Greco's two-room flat, living room and bedroom: walls and ceilings come to a hundred and twenty square metres. I'll scrape where it's flaking, primer everywhere and two coats of washable emulsion. Six metres of anti-mould on the bathroom ceiling. We'll move the furniture ourselves.",
       "piastrellista": "Mrs Marino's living room, twenty-eight square metres. I'll take up the old floor and the skirting, redo the screed and lay the 30 by 30 porcelain tiles she bought. New porcelain skirting.",
       "muratore": "Mr Conti's small bedroom. I'm knocking down the old partition wall and rebuilding it a metre over: 8 cm hollow blocks, three twenty by two seventy, plaster on both sides. Rubble, one cubic metre. I'll fit the door lining myself."
-    }
+    },
+    "finestra": "From voice note to quote",
+    "esempio": "Example"
   },
   "mestieri": {
     "titolo": "Every trade has its own words. Your price list already has them.",

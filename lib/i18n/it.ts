@@ -51,9 +51,13 @@ export const it = {
     garanzia: "Prezzi solo dal tuo listino. Se una voce non c'è resta da prezzare: niente cifre inventate.",
     guarda: "Guarda come funziona",
     punti: ["Niente da installare", "Listino anche da una foto", "Decidi sempre tu"],
+    canonePrezzo: "19,90 €",
+    canoneTesto: "al mese, IVA esclusa. I primi 30 giorni gratis con il programma pilota, senza rinnovo automatico.",
   },
   demo: {
     gruppo: "Scegli un mestiere per l'esempio",
+    finestra: "Dal vocale al preventivo",
+    esempio: "Esempio",
     altroMestiere: "Altro mestiere",
     didascalia: "Esempio: lavoro e prezzi inventati, listino di prova",
     pausa: "Pausa",

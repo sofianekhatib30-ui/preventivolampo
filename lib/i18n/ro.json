@@ -693,7 +693,9 @@
       "Nu instalezi nimic",
       "Lista de prețuri și dintr-o poză",
       "Decizi mereu tu"
-    ]
+    ],
+    "canonePrezzo": "19,90 €",
+    "canoneTesto": "pe lună, fără TVA. Primele 30 de zile sunt gratuite în programul pilot, fără reînnoire automată."
   },
   "demo": {
     "gruppo": "Alege o meserie pentru exemplu",
@@ -737,7 +739,9 @@
       "imbianchino": "Apartamentul domnului Greco, living și dormitor: pereții și tavanele fac o sută douăzeci de metri. Răzuiesc unde se cojește, grund peste tot și două straturi de lavabilă. Șase metri de vopsea antimucegai pe tavanul băii. Mobila o mutăm noi.",
       "piastrellista": "Living-ul doamnei Marino, douăzeci și opt de metri pătrați. Scot pardoseala veche și plinta, refac șapa și montez gresia de treizeci pe treizeci pe care a cumpărat-o dumneaei. Plintă nouă din gresie.",
       "muratore": "Camera de copii a domnului Conti. Dărâm peretele vechi și îl refac mutat cu un metru: cărămidă de opt, trei și douăzeci pe doi și șaptezeci, tencuială pe ambele părți. Moloz, un metru cub. Tocul ușii îl pun eu."
-    }
+    },
+    "finestra": "De la mesajul vocal la ofertă",
+    "esempio": "Exemplu"
   },
   "mestieri": {
     "titolo": "Fiecare meserie are cuvintele ei. Lista ta de prețuri le știe deja.",
