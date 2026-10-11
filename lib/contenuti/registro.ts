@@ -23,6 +23,12 @@ export const SLUG_MESTIERE: Record<IdMestiere, string> = {
   falegname: "preventivo-falegname",
   fabbro: "preventivo-fabbro",
   giardiniere: "preventivo-giardiniere",
+  officina: "preventivo-officina",
+  carrozzeria: "preventivo-carrozzeria",
+  fotografo: "preventivo-fotografo",
+  catering: "preventivo-catering",
+  informatico: "preventivo-tecnico-informatico",
+  traslochi: "preventivo-trasloco",
 };
 
 export function mestiereDaSlug(slug: string): IdMestiere | undefined {
@@ -43,10 +49,20 @@ export const VICINI: Record<IdMestiere, IdMestiere[]> = {
   falegname: ["serramentista", "imbianchino", "fabbro"],
   fabbro: ["serramentista", "giardiniere", "falegname"],
   giardiniere: ["fabbro", "muratore", "impresa"],
+  officina: ["carrozzeria", "informatico", "traslochi"],
+  carrozzeria: ["officina", "fabbro", "imbianchino"],
+  fotografo: ["catering", "informatico", "giardiniere"],
+  catering: ["fotografo", "traslochi", "giardiniere"],
+  informatico: ["elettricista", "fotografo", "officina"],
+  traslochi: ["imbianchino", "falegname", "giardiniere"],
 };
 
-// Guide da proporre su ogni pagina mestiere.
-export const GUIDE_MESTIERE: IdGuida[] = ["come-fare-un-preventivo", "preventivo-a-corpo-o-a-misura", "iva-preventivo-lavori-casa"];
+// Guide da proporre su ogni pagina mestiere. Chi non lavora sulle case (officina, eventi, aziende) non riceve la
+// guida sull'IVA dei lavori in casa: al suo posto quella sul cliente straniero.
+const GUIDE_CASA: IdGuida[] = ["come-fare-un-preventivo", "preventivo-a-corpo-o-a-misura", "iva-preventivo-lavori-casa"];
+const GUIDE_ALTRI: IdGuida[] = ["come-fare-un-preventivo", "preventivo-cliente-straniero", "recesso-preventivo-accettato-a-casa"];
+const FUORI_CASA = new Set<string>(["officina", "carrozzeria", "fotografo", "catering", "informatico", "traslochi"]);
+export const guideMestiere = (m: IdMestiere): IdGuida[] => (FUORI_CASA.has(m) ? GUIDE_ALTRI : GUIDE_CASA);
 
 export const percorsoMestiere = (m: IdMestiere) => `/${SLUG_MESTIERE[m]}`;
 export const percorsoFunzione = (f: IdFunzione) => `/funzioni/${f}`;

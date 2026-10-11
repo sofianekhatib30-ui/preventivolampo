@@ -15,3 +15,10 @@ export type EsempioMotore = {
 };
 
 export const ESEMPI = dati as Partial<Record<IdMestiere, EsempioMotore>>;
+
+// Mestieri la cui pagina esce ancora senza esempio: la pagina nasconde la sezione e il pulsante che ci porta.
+// Approssimazione dichiarata (11/10/2026): le pagine sono state scritte in una sessione senza ANTHROPIC_API_KEY,
+// e un esempio scritto a mano direbbe «ecco cosa fa il sistema» senza che il sistema l'abbia fatto.
+// Decade appena c'è la chiave: `npx tsx scripts/esempi-mestieri.ts officina carrozzeria fotografo catering informatico traslochi`,
+// poi si svuota questo elenco (il test pretende l'esempio da tutti i mestieri che non sono qui).
+export const ESEMPI_DA_GENERARE: readonly IdMestiere[] = ["officina", "carrozzeria", "fotografo", "catering", "informatico", "traslochi"];

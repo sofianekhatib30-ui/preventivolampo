@@ -2,7 +2,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import sitemap from "@/app/sitemap";
-import { ESEMPI } from "@/lib/contenuti/esempi";
+import { ESEMPI, ESEMPI_DA_GENERARE } from "@/lib/contenuti/esempi";
 import { contenutiIt } from "@/lib/contenuti/it";
 import { FUNZIONI, GUIDE, MESTIERI, percorsiPubblici, SLUG_MESTIERE } from "@/lib/contenuti/registro";
 import { CHIAVI_FISSE } from "@/lib/contenuti/tipi";
@@ -77,6 +77,11 @@ describe("contenuti delle pagine: italiano", () => {
   it("l'esempio di ogni mestiere è stato ricavato dal racconto che la pagina mostra", () => {
     for (const id of MESTIERI) {
       const e = ESEMPI[id];
+      if (ESEMPI_DA_GENERARE.includes(id)) {
+        // ancora da generare: se intanto qualcuno l'ha generato, l'elenco va svuotato
+        expect(e, `${id} ha l'esempio: toglilo da ESEMPI_DA_GENERARE`).toBeUndefined();
+        continue;
+      }
       expect(e, id).toBeDefined();
       expect(e!.dettatura, id).toBe(contenutiIt.mestieri[id].esempio.dettatura);
       expect(e!.righe.length, id).toBeGreaterThan(0);

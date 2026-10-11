@@ -11,18 +11,24 @@ import { ivaPreventivoLavoriCasa } from "./guide/iva-preventivo-lavori-casa";
 import { preventivoACorpoOAMisura } from "./guide/preventivo-a-corpo-o-a-misura";
 import { preventivoClienteStraniero } from "./guide/preventivo-cliente-straniero";
 import { recessoPreventivoAccettatoACasa } from "./guide/recesso-preventivo-accettato-a-casa";
+import { carrozzeria } from "./mestieri/carrozzeria";
 import { cartongessista } from "./mestieri/cartongessista";
+import { catering } from "./mestieri/catering";
 import { elettricista } from "./mestieri/elettricista";
 import { fabbro } from "./mestieri/fabbro";
+import { fotografo } from "./mestieri/fotografo";
 import { falegname } from "./mestieri/falegname";
 import { giardiniere } from "./mestieri/giardiniere";
 import { idraulico } from "./mestieri/idraulico";
 import { imbianchino } from "./mestieri/imbianchino";
+import { informatico } from "./mestieri/informatico";
 import { impresa } from "./mestieri/impresa";
 import { muratore } from "./mestieri/muratore";
+import { officina } from "./mestieri/officina";
 import { piastrellista } from "./mestieri/piastrellista";
 import { serramentista } from "./mestieri/serramentista";
 import { termoidraulico } from "./mestieri/termoidraulico";
+import { traslochi } from "./mestieri/traslochi";
 import { pagine, ui } from "./pagine";
 
 type Largo<T> = T extends string ? string : T extends readonly (infer U)[] ? Largo<U>[] : { [K in keyof T]: Largo<T[K]> };
@@ -32,6 +38,12 @@ export const contenutiIt = {
     elettricista,
     idraulico,
     imbianchino,
+    officina,
+    fotografo,
+    catering,
+    informatico,
+    traslochi,
+    carrozzeria,
     piastrellista,
     muratore,
     impresa,

@@ -12,7 +12,7 @@ import { contenutiDi } from "@/lib/contenuti";
 import { ESEMPI } from "@/lib/contenuti/esempi";
 import {
   FUNZIONI,
-  GUIDE_MESTIERE,
+  guideMestiere,
   MESTIERI,
   mestiereDaSlug,
   percorsoFunzione,
@@ -73,9 +73,11 @@ export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pag
           <a href={p("/#candidatura")} className="bottone bottone-azione-scuro py-4 text-[17px]">
             {d.comune.ctaPilota}
           </a>
-          <a href="#esempio" className="bottone border-[1.5px] border-scuro-linea py-4 text-[17px] text-fondo no-underline hover:border-lime">
-            {m.esempio.titolo}
-          </a>
+          {esempio && (
+            <a href="#esempio" className="bottone border-[1.5px] border-scuro-linea py-4 text-[17px] text-fondo no-underline hover:border-lime">
+              {m.esempio.titolo}
+            </a>
+          )}
         </div>
       </TestaPagina>
 
@@ -210,7 +212,7 @@ export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pag
           voci={VICINI[id].map((v) => ({ href: p(percorsoMestiere(v)), nome: c.mestieri[v].nome, riga: c.mestieri[v].riga }))}
         />
         <Collegamenti titolo={U.funzioni} voci={FUNZIONI.map((f) => ({ href: p(percorsoFunzione(f)), nome: c.funzioni[f].nome, riga: c.funzioni[f].riga }))} />
-        <Collegamenti titolo={U.guide} voci={GUIDE_MESTIERE.map((g) => ({ href: p(percorsoGuida(g)), nome: c.guide[g].nome, riga: c.guide[g].riga }))} />
+        <Collegamenti titolo={U.guide} voci={guideMestiere(id).map((g) => ({ href: p(percorsoGuida(g)), nome: c.guide[g].nome, riga: c.guide[g].riga }))} />
       </section>
 
       <CtaFinale d={d} lingua={lingua} titolo={fmt(U.ctaTitolo, { mestiere: nomeMin })} testo={U.ctaTesto} />
