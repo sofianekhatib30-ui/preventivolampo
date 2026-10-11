@@ -1,0 +1,3 @@
+Scatto di Preventivi mostrato su kdigitalsolution.it (pagine Lavori e Prodotti).
+Il sito KDS lo serve dal proprio indirizzo tramite il suo middleware, che lo legge da qui.
+Non rinominare e non cancellare finché lo scatto non è caricato direttamente sul sito KDS.
