@@ -4,33 +4,33 @@
 export const pagine = {
   mestieri: {
     meta: {
-      titolo: "Software preventivi per artigiani, per mestiere",
+      titolo: "Software preventivi per ogni mestiere",
       descrizione:
-        "Preventivi per elettricisti, idraulici, imbianchini, muratori, imprese edili e altri mestieri della casa: voci tipiche, esempi e il modo giusto di prezzare.",
+        "Preventivi per elettricisti, idraulici, officine, fotografi, catering, traslochi e altri mestieri: voci tipiche, esempi e il modo giusto di prezzare.",
     },
     h1: "Il preventivo del tuo mestiere",
     testo:
-      "Ogni mestiere ha le sue voci, le sue unità di misura e le sue discussioni a fine lavoro. Per ognuno trovi le righe che tornano più spesso, come si prezzano, i documenti da citare e un esempio di sopralluogo trasformato in bozza.",
+      "Ogni mestiere ha le sue voci, le sue unità di misura e le sue discussioni a fine lavoro. Per ognuno trovi le righe che tornano più spesso, come si prezzano, i documenti da citare e un esempio di racconto trasformato in bozza.",
     altro:
-      "Il tuo mestiere non c'è? Se lavori a voci e misure funziona lo stesso: le parole del mestiere le trova nel tuo listino, e quello che non c'è resta da prezzare.",
+      "Il tuo mestiere non c'è? Se fai preventivi a voci funziona lo stesso: le parole del mestiere le trova nel tuo listino, e quello che non c'è resta da prezzare.",
   },
   funzioni: {
     meta: {
       titolo: "Come funziona Preventivi",
       descrizione:
-        "Dal racconto del sopralluogo al preventivo accettato: bozza dal tuo listino, domande su quello che manca, PDF nella lingua del cliente e accettazione online.",
+        "Dal racconto del lavoro al preventivo accettato: bozza dal tuo listino, domande su quello che manca, PDF nella lingua del cliente e accettazione online.",
     },
     h1: "Come funziona, pezzo per pezzo",
     testo:
-      "Quattro cose fanno il lavoro: il racconto del sopralluogo, il tuo listino, il preventivo nella lingua del cliente e l'accettazione online. Qui le trovi spiegate una per una, con quello che fanno e quello che non fanno.",
+      "Quattro cose fanno il lavoro: il racconto del lavoro, il tuo listino, il preventivo nella lingua del cliente e l'accettazione online. Qui le trovi spiegate una per una, con quello che fanno e quello che non fanno.",
   },
   guide: {
     meta: {
-      titolo: "Guide al preventivo per artigiani",
+      titolo: "Guide al preventivo, per ogni mestiere",
       descrizione:
-        "Come fare un preventivo, a corpo o a misura, IVA nei lavori in casa, cliente straniero, recesso: guide pratiche per artigiani, con le fonti.",
+        "Come fare un preventivo, a corpo o a misura, IVA nei lavori in casa, cliente straniero, recesso: guide pratiche per chi fa preventivi, con le fonti.",
     },
-    h1: "Guide al preventivo, scritte per chi lavora in cantiere",
+    h1: "Guide al preventivo, scritte per chi lavora dai clienti",
     testo:
       "Cosa scrivere perché il preventivo regga fino al saldo, quale IVA applicare, come comportarsi con un cliente straniero o con un preventivo firmato a casa sua. Guide pratiche, con le fonti in fondo a ogni pagina.",
   },
@@ -38,11 +38,11 @@ export const pagine = {
     meta: {
       titolo: "Modelli di preventivo gratis per mestiere",
       descrizione:
-        "Fac simile di preventivo gratis in PDF ed Excel per elettricista, idraulico, imbianchino, muratore, impresa edile e altri mestieri, con le voci tipiche.",
+        "Fac simile di preventivo gratis in PDF ed Excel per elettricista, idraulico, officina, fotografo, catering e altri mestieri, con le voci tipiche.",
     },
     h1: "Modelli di preventivo gratis, uno per mestiere",
     testo:
-      "Un fac simile per ogni mestiere della casa, in PDF da stampare e in Excel da compilare. Dentro trovi le voci tipiche del mestiere con le unità di misura, le esclusioni da non dimenticare, la validità dell'offerta e lo spazio per l'accettazione del cliente.",
+      "Un fac simile per ogni mestiere, in PDF da stampare e in Excel da compilare. Dentro trovi le voci tipiche del mestiere con le unità di misura, le esclusioni da non dimenticare, la validità dell'offerta e lo spazio per l'accettazione del cliente.",
     cosaContiene: {
       titolo: "Cosa c'è nel modello",
       punti: [
@@ -54,7 +54,7 @@ export const pagine = {
       ],
     },
     nota:
-      "I modelli sono gratuiti e senza registrazione. I prezzi non ci sono apposta: sono i tuoi. Se vuoi che il preventivo si scriva da solo partendo dal racconto del sopralluogo, con i prezzi del tuo listino già dentro, è quello che fa Preventivi.",
+      "I modelli sono gratuiti e senza registrazione. I prezzi non ci sono apposta: sono i tuoi. Se vuoi che il preventivo si scriva da solo partendo dal racconto del lavoro, con i prezzi del tuo listino già dentro, è quello che fa Preventivi.",
     pdf: "PDF",
     excel: "Excel",
     scarica: "Scarica il modello da {mestiere} in {formato}",
@@ -106,13 +106,13 @@ export const pagine = {
     },
     h1: "Chi fa Preventivi, e perché",
     intro:
-      "Preventivi è un servizio di K Digital Solution, lo studio di Sofiane Khatib che sviluppa software per piccole imprese. È nato da una cosa che tutti gli artigiani conoscono: il lavoro in cantiere finisce alle sei, i preventivi si scrivono la sera.",
+      "Preventivi è un servizio di K Digital Solution, lo studio di Sofiane Khatib che sviluppa software per piccole imprese. È nato da una cosa che conosce chiunque lavori dai clienti: di giorno si lavora, i preventivi si scrivono la sera.",
     sezioni: [
       {
         titolo: "Perché esiste",
         paragrafi: [
-          "Chi lavora nelle case fa il sopralluogo, prende le misure e torna in furgone con tutto in testa. Poi il preventivo resta lì per giorni, perché scriverlo vuol dire cercare i prezzi, rifare i conti dei metri, ricordarsi le esclusioni. Nel frattempo il cliente chiede a un altro.",
-          "Preventivi serve a chiudere quel buco: racconti il lavoro appena finito il sopralluogo, come lo racconteresti a un collega, e la bozza è pronta prima di arrivare al cantiere dopo.",
+          "Chi lavora dai clienti vede il lavoro, prende misure e richieste e riparte con tutto in testa. Poi il preventivo resta lì per giorni, perché scriverlo vuol dire cercare i prezzi, rifare i conti, ricordarsi le esclusioni. Nel frattempo il cliente chiede a un altro.",
+          "Preventivi serve a chiudere quel buco: racconti il lavoro appena finito con il cliente, come lo racconteresti a un collega, e la bozza è pronta prima di arrivare all'appuntamento dopo.",
         ],
       },
       {
@@ -122,13 +122,13 @@ export const pagine = {
           { titolo: "I prezzi sono tuoi", testo: "Ogni prezzo della bozza viene dal tuo listino. Se una voce non c'è resta da prezzare: il sistema non inventa cifre." },
           { titolo: "Decidi sempre tu", testo: "Al cliente non arriva niente senza la tua approvazione. Le misure che mancano te le chiede invece di indovinarle." },
           { titolo: "Ti risponde una persona", testo: "Se ti blocchi, scrivi e ti risponde chi il servizio l'ha fatto, non un bot." },
-          { titolo: "Dati in Europa", testo: "Listino e preventivi sono conservati nell'Unione Europea. Per preparare la bozza il testo del sopralluogo passa da un fornitore esterno, indicato nella pagina Privacy. Con te firmiamo l'accordo per il trattamento dei dati dei tuoi clienti." },
+          { titolo: "Dati in Europa", testo: "Listino e preventivi sono conservati nell'Unione Europea. Per preparare la bozza il testo del racconto passa da un fornitore esterno, indicato nella pagina Privacy. Con te firmiamo l'accordo per il trattamento dei dati dei tuoi clienti." },
         ],
       },
       {
         titolo: "Il programma pilota",
         paragrafi: [
-          "Il programma pilota è per un gruppo di artigiani di mestieri diversi: lo usano sui loro lavori veri per 30 giorni e ci dicono cosa non funziona. Quello che impariamo dal pilota cambia il prodotto, e i numeri che pubblicheremo verranno da lì, misurati.",
+          "Il programma pilota è per un gruppo di professionisti di mestieri diversi: lo usano sui loro lavori veri per 30 giorni e ci dicono cosa non funziona. Quello che impariamo dal pilota cambia il prodotto, e i numeri che pubblicheremo verranno da lì, misurati.",
         ],
       },
     ],
@@ -144,7 +144,7 @@ export const ui = {
   mestiere: {
     racconti: "Cosa racconti",
     ricevi: "Cosa ricevi",
-    vocale: "Racconto del sopralluogo",
+    vocale: "Racconto del lavoro",
     bozza: "Bozza",
     prezzo: "dal tuo listino",
     daChiedere: "da chiedere",
@@ -165,7 +165,7 @@ export const ui = {
     vicini: "Mestieri vicini",
     funzioni: "Come funziona",
     guide: "Da leggere prima del prossimo preventivo",
-    ctaTitolo: "Il prossimo preventivo da {mestiere} mandalo dal furgone.",
+    ctaTitolo: "Il prossimo preventivo da {mestiere} mandalo dal telefono.",
     ctaTesto:
       "Programma pilota gratuito di 30 giorni: lo provi sui tuoi lavori veri, con il tuo listino. Ti richiamiamo noi.",
   },

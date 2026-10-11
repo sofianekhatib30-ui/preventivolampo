@@ -91,7 +91,7 @@ export const area = {
     accettati: "accettati · {importo}",
     rifiutati: "rifiutati",
     nessuno: "Ancora nessun preventivo.",
-    nessunoTesto: "Racconta il prossimo sopralluogo: in mezzo minuto hai la bozza.",
+    nessunoTesto: "Racconta il prossimo lavoro: in mezzo minuto hai la bozza.",
     clienteDaIndicare: "Cliente da indicare",
     numeroDel: "n. {numero} del {data}",
     stati: { bozza: "Da controllare", approvato: "Inviato", accettato: "Accettato", rifiutato: "Rifiutato" },
@@ -110,7 +110,7 @@ export const area = {
     h1: "Nuovo preventivo",
     serveListino: "Prima serve il listino: i prezzi vengono solo da lì.",
     preparaListino: "Prepara il listino",
-    sotto: "Scrivi o detta il sopralluogo. La bozza usa le {n} voci del tuo listino; quello che non trova resta da prezzare.",
+    sotto: "Scrivi o detta il lavoro. La bozza usa le {n} voci del tuo listino; quello che non trova resta da prezzare.",
     claude: "Il testo viene elaborato con Claude di Anthropic e salvato con il preventivo.",
     racconta: "Racconta il lavoro come lo diresti nel vocale, in italiano o nella tua lingua",
     segnaposto: "Cliente, indirizzo, se ci abita. Cosa si toglie, cosa si mette, le misure. Chi compra i materiali.",
@@ -118,7 +118,7 @@ export const area = {
     prepara: "Prepara la bozza",
     errore: "Non sono riuscito a preparare la bozza. Riprova.",
     fasi: [
-      "Leggo il sopralluogo…",
+      "Leggo il racconto…",
       "Separo lavorazioni, misure ed esclusioni…",
       "Cerco ogni voce nel tuo listino…",
       "Controllo cosa manca e il regime IVA…",
@@ -139,7 +139,7 @@ export const area = {
     telefono: "Telefono",
     email: "Email sul preventivo",
     cheLavori: "Che lavori fate",
-    cheLavoriNota: "Aiuta a leggere meglio i vostri sopralluoghi.",
+    cheLavoriNota: "Aiuta a leggere meglio i vostri racconti.",
     // I nomi dei mestieri come li legge l'artigiano; il valore salvato resta quello italiano (lib/impresa/schema.ts).
     mestieri: {
       impresaEdile: "Impresa edile",
@@ -530,7 +530,7 @@ export const area = {
     aggiungiRiga: "Aggiungi una riga",
     esclusi: "Esclusi dal preventivo",
     unaPerRiga: "Una per riga",
-    note: "Note dal sopralluogo (non vanno sul PDF)",
+    note: "Note dal racconto (non vanno sul PDF)",
     riepilogo: "Riepilogo",
     imponibile: "Imponibile",
     ivaSu: "IVA {aliquota}% su {importo}",
@@ -607,7 +607,7 @@ export const area = {
   },
   prova: {
     nuovaProva: "Nuova prova",
-    h1: "Dal sopralluogo alla bozza",
+    h1: "Dal racconto alla bozza",
     sotto:
       "Il motore estrae le lavorazioni, le abbina al listino e ti prepara la bozza da controllare. I prezzi vengono solo dal listino: quello che non trova resta da prezzare, quello che manca te lo chiede.",
     avviso:
@@ -616,7 +616,7 @@ export const area = {
     unEsempio: "Un esempio",
     tuoTesto: "Il tuo testo",
     esempiBanco: "Esempi del banco di prova",
-    esempiTesto: "Sopralluoghi inventati del banco di prova. La bozza esce subito: è l'uscita registrata del motore su quel caso.",
+    esempiTesto: "Lavori inventati del banco di prova. La bozza esce subito: è l'uscita registrata del motore su quel caso.",
     lavori: {
       bagno: "Bagno completo",
       tinteggiatura: "Tinteggiatura bilocale",
@@ -635,7 +635,7 @@ export const area = {
     attesa: "Ci vogliono circa 20 secondi…",
     errore: "Non sono riuscito a preparare la bozza. Riprova.",
     fasi: [
-      "Leggo il sopralluogo…",
+      "Leggo il racconto…",
       "Separo lavorazioni, misure ed esclusioni…",
       "Cerco ogni voce nel listino…",
       "Controllo cosa manca e il regime IVA…",
@@ -645,7 +645,7 @@ export const area = {
   dettatura: {
     parloIn: "Parlo in",
     ascolto: "Sto ascoltando: tocca per fermare",
-    detta: "Detta il sopralluogo",
+    detta: "Detta il lavoro",
     nota: "Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo. In qualunque lingua parli, la bozza esce in italiano.",
     erroreMicrofono: "Il browser non ha il permesso di usare il microfono.",
     erroreLingua:

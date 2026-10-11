@@ -45,7 +45,7 @@ export const it = {
   },
   hero: {
     etichetta: "Per ogni mestiere: casa, auto, eventi, aziende e persone",
-    titolo: "Racconta il lavoro. Il preventivo parte dal telefono.",
+    titolo: "Racconta il lavoro. Il preventivo parte da un vocale.",
     testo:
       "Lo racconti a voce o lo scrivi, come faresti con un collega. Ti torna la bozza con i prezzi del **tuo** listino, l'IVA giusta e le voci dubbie segnate. Controlli, approvi, e il cliente riceve il PDF da accettare con un clic.",
     garanzia: "Prezzi solo dal tuo listino. Se una voce non c'è resta da prezzare: niente cifre inventate.",
@@ -351,7 +351,7 @@ export const it = {
         {
           t: "p",
           testo:
-            "Per i dati dei clienti di un artigiano (nomi, indirizzi dei cantieri, preventivi) il titolare è l'artigiano: noi li trattiamo per suo conto, come responsabile del trattamento, secondo l'accordo che firmiamo con lui.",
+            "Per i dati dei clienti di un'impresa o di un professionista (nomi, indirizzi dei lavori, preventivi) il titolare è l'impresa: noi li trattiamo per suo conto, come responsabile del trattamento, secondo l'accordo che firmiamo con lei.",
         },
         { t: "h2", testo: "Quali dati, perché e per quanto" },
         { t: "h3", testo: "Se ti candidi al programma pilota" },
@@ -363,7 +363,7 @@ export const it = {
             "Se non entri nel pilota li cancelliamo entro 12 mesi; puoi chiederci di farlo prima in qualunque momento.",
           ],
         },
-        { t: "h3", testo: "Se usi l'area artigiani" },
+        { t: "h3", testo: "Se usi l'area riservata alle imprese" },
         {
           t: "ul",
           voci: [
@@ -373,13 +373,13 @@ export const it = {
             "Restano finché usi il servizio. Quando smetti li cancelliamo entro 30 giorni, salvo quello che la legge ci obbliga a conservare (per esempio le fatture, 10 anni).",
           ],
         },
-        { t: "h3", testo: "Se sei il cliente di un artigiano e apri il suo preventivo" },
+        { t: "h3", testo: "Se sei il cliente di un'impresa e apri il suo preventivo" },
         {
           t: "ul",
           voci: [
             "Quando accetti o rifiuti un preventivo registriamo il nome che scrivi, data e ora, indirizzo IP e l'impronta del PDF.",
-            "Servono all'artigiano come prova dell'accettazione. Li conserviamo per suo conto, finché lui usa il servizio.",
-            "Per vedere, correggere o cancellare questi dati puoi rivolgerti all'artigiano o a noi: gli giriamo la richiesta.",
+            "Servono all'impresa come prova dell'accettazione. Li conserviamo per suo conto, finché usa il servizio.",
+            "Per vedere, correggere o cancellare questi dati puoi rivolgerti all'impresa o a noi: le giriamo la richiesta.",
           ],
         },
         { t: "h3", testo: "Se provi Preventivi con un esempio o su WhatsApp" },
@@ -399,7 +399,7 @@ export const it = {
           voci: [
             "Supabase: database, accesso all'area e archivio dei PDF, in Irlanda (UE).",
             "Vercel: il sito e le sue funzioni, a Francoforte (UE).",
-            "Anthropic (Claude): legge il testo del sopralluogo e prepara la bozza, e traduce le voci del preventivo quando il cliente parla un'altra lingua, negli Stati Uniti.",
+            "Anthropic (Claude): legge il testo del racconto e prepara la bozza, e traduce le voci del preventivo quando il cliente parla un'altra lingua, negli Stati Uniti.",
             "Twilio e WhatsApp (Meta): ricevono e mandano i messaggi WhatsApp.",
             "n8n: collega i messaggi WhatsApp a Preventivi.",
             "Resend: manda le email con il codice di accesso.",
@@ -493,12 +493,12 @@ export const it = {
         {
           t: "p",
           testo:
-            "Preventivi usa solo cookie tecnici: senza, l'area artigiani non saprebbe che sei entrato e il sito non ricorderebbe la lingua che hai scelto. Niente cookie di profilazione, niente statistiche, niente strumenti di terze parti che ti seguono da un sito all'altro. Per questo non trovi un banner dei cookie.",
+            "Preventivi usa solo cookie tecnici: senza, l'area riservata non saprebbe che sei entrato e il sito non ricorderebbe la lingua che hai scelto. Niente cookie di profilazione, niente statistiche, niente strumenti di terze parti che ti seguono da un sito all'altro. Per questo non trovi un banner dei cookie.",
         },
         {
           t: "ul",
           voci: [
-            "**kds-sessione**: tiene aperto l'accesso all'area artigiani, che si fa dall'account di K Digital Solution (lo stesso per tutti i suoi strumenti). Lo mette l'account quando entri, vale su tutti gli indirizzi kdigitalsolution.it, dura 30 giorni dall'ultimo uso e si cancella quando esci.",
+            "**kds-sessione**: tiene aperto l'accesso all'area riservata, che si fa dall'account di K Digital Solution (lo stesso per tutti i suoi strumenti). Lo mette l'account quando entri, vale su tutti gli indirizzi kdigitalsolution.it, dura 30 giorni dall'ultimo uso e si cancella quando esci.",
             "**pl_lingua**: ricorda la lingua del sito. Lo mettiamo quando scegli una lingua con il selettore o quando apri una pagina in una lingua diversa dall'italiano, e dura un anno.",
           ],
         },
