@@ -14,8 +14,8 @@ declare module "react" {
 }
 
 // Testata dell'area: in cima la barra comune di K Digital Solution (organizzazione, strumenti, ricerca,
-// notifiche, account e uscita), poi la testata dello strumento come in Attestiamo (marchio K, nome in
-// Archivo, impresa), lingua e sezioni. Colori KDS (border-cielo-scuro è il bordeaux:
+// notifiche, account e uscita), poi la testata dello strumento come in Attestiamo (marchio a esagono, nome
+// con la regola .nome-strumento di app/globals.css, impresa), lingua e sezioni. Colori KDS (border-cielo-scuro è il bordeaux:
 // vedi app/globals.css). Sul telefono le sezioni scorrono in orizzontale e il nome dell'impresa si accorcia.
 const SEZIONI = [
   { id: "preventivi", href: "/area" },
@@ -40,7 +40,7 @@ export async function TestataArea({ impresa, attiva, daPrezzare = 0 }: { impresa
             {/* Come negli altri strumenti, il marchio porta alla pagina iniziale del prodotto. */}
             <Link href="/" className="flex min-h-11 shrink-0 items-center gap-2.5 text-inchiostro no-underline" aria-label={T.logo}>
               <Marchio className="size-[34px] shrink-0" />
-              <span className="nome-strumento text-[26px] leading-none">Preventivi</span>
+              <span className="nome-strumento">Preventivi</span>
             </Link>
             {impresa && (
               <span className="min-w-0 truncate border-l border-linea pl-4 text-[14px] font-semibold text-testo-2">{impresa}</span>

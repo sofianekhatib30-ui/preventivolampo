@@ -301,10 +301,44 @@
   font-stretch: normal;
   letter-spacing: -0.035em;
 }
+/* Il nome dello strumento accanto al marchio: la stessa regola .nome-strumento di tutti i prodotti KDS.
+   Maiuscolo con text-transform, così nel documento il nome resta scritto come si legge. Bordeaux su fondo
+   chiaro; sui fondi scuri il testo resta bordeaux dentro una targa Champagne. Fuori dai layer, così vince
+   sulle classi di corpo e interlinea scritte nei componenti. */
 .nome-strumento {
   font-family: var(--font-titoli);
-  font-weight: 650;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--nome-colore, #6e1734);
+  background: var(--nome-targa, transparent);
+  padding: var(--nome-targa-spazio, 0);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+@media (max-width: 560px) {
+  .nome-strumento {
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    white-space: normal;
+  }
+}
+.su-scuro,
+.piede,
+.scura,
+[data-pelle="scura"],
+[tema="scuro"] {
+  --nome-colore: #6e1734;
+  --nome-targa: #f2e4d0;
+  --nome-targa-spazio: 6px 12px;
+}
+.marchio:hover .nome-strumento,
+a:hover > .nome-strumento {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 ::selection {
   background: #f2e4d0;

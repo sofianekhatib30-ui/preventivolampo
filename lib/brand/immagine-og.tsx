@@ -25,8 +25,10 @@ export function immagineOg({ titolo, riga }: { titolo: string; riga: string }) {
               <path d={f.d} fill="none" stroke={f.colore} strokeWidth={f.spessore} strokeMiterlimit={8} />
             </g>
           </svg>
-          <span style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: 46, fontWeight: 700 }}>Preventivi</span>
+          <span style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", gap: 10 }}>
+            {/* Il nome come .nome-strumento di app/globals.css sul fondo scuro: maiuscolo, grassetto, bordeaux in targa
+                Champagne. Spaziatura e margini della targa in proporzione al corpo (0,05em; 6px 12px su 19px). */}
+            <span style={{ fontSize: 46, fontWeight: 700, lineHeight: 1.1, letterSpacing: 2.3, textTransform: "uppercase", color: "#6E1734", background: "#F2E4D0", padding: "15px 29px", borderRadius: 999 }}>Preventivi</span>
             <span style={{ fontSize: 22, color: "#DCC6A4" }}>K Digital Solution</span>
           </span>
         </div>

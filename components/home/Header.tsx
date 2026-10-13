@@ -43,8 +43,8 @@ export function Header({ d, c, lingua }: { d: Dizionario; c: Contenuti; lingua: 
   return (
     // Testata chiara come quella di Attestiamo e Smistatore Mail (.testata di Attestiamo): sabbia velata, sfocatura, linea sotto.
     <header className="margini sticky top-0 z-40 flex h-[68px] items-center justify-between gap-3 border-b border-linea bg-fondo/95 text-inchiostro backdrop-blur-md backdrop-saturate-[1.3]">
-      {/* Sui telefoni più stretti il nome si stringe e non spinge fuori lingua, «Accedi» e il menu */}
-      <div className="min-w-0 [&_a]:min-w-0 [&_span]:truncate max-[439px]:[&_span]:text-[23px] max-[359px]:[&_span]:text-[20px]">
+      {/* Il corpo del nome lo decide .nome-strumento (più piccolo sotto i 560px, e lì può andare a capo): mai troncato */}
+      <div className="min-w-0 [&_a]:min-w-0">
         <Logo href={p("/")} etichetta={d.comune.logoHome} suScuro={false} />
       </div>
       <nav aria-label={d.comune.principale} className="hidden items-center gap-6 text-[15.5px] font-medium xl:flex">
