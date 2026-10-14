@@ -88,9 +88,7 @@ La home promette cose precise. **Non va online in produzione finché ognuna non 
 | «Ai nostri server arriva solo il testo, non l'audio» | La dettatura avviene nel browser; nessun audio salvato | `components/preventivo/Dettatura.tsx` |
 | «firmiamo l'accordo per il trattamento dei dati» | Modello DPA pronto | Notaio |
 | «Nessun rinnovo automatico» / «Disdici quando vuoi» | Condizioni coerenti | Notaio |
-| «dei prezzi dal tuo listino» / «6 lingue» | Nessun prezzo fuori listino (per costruzione, misura F3: prezzi inventati = 0); dall'11/10/2026 le 6 lingue sono quelle dell'interfaccia dell'artigiano, `LINGUE_SITO` in `lib/i18n/lingue.ts` (italiano, inglese, rumeno, albanese, arabo, ucraino); al cliente il preventivo va in italiano o in inglese, `LINGUE` in `lib/preventivi/lingua.ts` (decisione di Sofiane dell'11/10/2026; del 9/10: in grande solo garanzie, niente percentuali di voci giuste né dettagli del banco di prova) | `misure/2026-10-08.md`, `lib/i18n/lingue.ts` |
-| «la bozza esce in italiano» | Racconto in un'altra lingua: le voci della bozza sempre in italiano (regola nel prompt di estrazione) | `test/lingue.test.ts` |
-| «gli mandi il preventivo in inglese» | Traduzione delle voci controllata dall'artigiano; PDF e pagina bilingui con l'italiano che prevale; niente approvazione se la traduzione manca o non corrisponde alle voci | `test/lingue.test.ts` |
+| «dei prezzi dal tuo listino» / «preventivi che partono senza il tuo sì» | Nessun prezzo fuori listino (per costruzione, misura F3: prezzi inventati = 0); il link al cliente esiste solo dopo l'approvazione dell'artigiano. Dal 14/10/2026 sostituisce «6 lingue»: l'interfaccia è solo in italiano (decisione di Sofiane) | `test/preventivo-e2e.test.ts` |
 
 Aggiornata l'8/10/2026 con il rifacimento della home per tutti i mestieri: «Mandi un vocale su WhatsApp» è diventata «Lo racconti a voce o lo scrivi» (il canale WhatsApp con i vocali non è ancora attivo per gli artigiani), e «audio cancellati dopo 30 giorni» è diventata «Ai nostri server arriva solo il testo, non l'audio» (la dettatura avviene nel browser, nessun audio viene salvato).
 

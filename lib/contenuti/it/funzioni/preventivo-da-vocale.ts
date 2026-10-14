@@ -4,7 +4,7 @@ export const preventivoDaVocale: PaginaFunzione = {
   meta: {
     titolo: "Preventivo da vocale: racconti, e la bozza c'è",
     descrizione:
-      "Preventivo da vocale: racconti il lavoro a voce o per iscritto, anche nella tua lingua. Torna la bozza col tuo listino e le domande su ciò che manca.",
+      "Preventivo da vocale: racconti il lavoro a voce o per iscritto. Torna la bozza col tuo listino e le domande su ciò che manca.",
   },
   nome: "Preventivo da vocale",
   riga: "Racconti il lavoro come a un collega: voci, misure, domande ed esclusioni le mette in fila il sistema.",
@@ -16,7 +16,6 @@ export const preventivoDaVocale: PaginaFunzione = {
       titolo: "Come racconti il lavoro",
       paragrafi: [
         "Apri la pagina del nuovo preventivo dal telefono, senza installare niente. Hai due strade: premi il microfono e detti, oppure scrivi. Quando detti, la voce la trasforma in testo il riconoscimento vocale del telefono: a noi arriva solo il testo, mai l'audio. Puoi rileggerlo e sistemarlo prima di preparare la bozza.",
-        "Puoi raccontare anche nella tua lingua. A voce scegli fra italiano, rumeno, albanese, arabo, ucraino, russo, spagnolo, francese e inglese, se il tuo telefono riconosce quella lingua; se non la riconosce, te lo dice e la scrivi. Per iscritto va bene qualunque lingua, anche mescolata con l'italiano. La bozza esce sempre in italiano, e le misure dette in un'altra lingua valgono come quelle dette in italiano.",
         "Un esempio di racconto, inventato: «Bagno della signora Conti, ci abita lei. Tolgo il rivestimento fino a due metri e il piatto doccia vecchio. Il bagno è due per uno e ottanta. Metto un piatto doccia ottanta per ottanta, i sanitari li compra lei, io li monto. L'elettricista lo chiama lei.» Non serve altro.",
       ],
     },
@@ -105,7 +104,7 @@ export const preventivoDaVocale: PaginaFunzione = {
     {
       titolo: "E dopo la bozza",
       paragrafi: [
-        "Controllata la bozza, la approvi: esce il PDF con il tuo logo e un link che mandi al cliente, anche su WhatsApp con il messaggio già pronto. Lui lo apre e lo accetta dal telefono: come funziona lo trovi in [accettazione online](/funzioni/accettazione-online). Se il cliente non parla italiano, il preventivo può partire nella [sua lingua](/funzioni/preventivo-in-lingua-del-cliente).",
+        "Controllata la bozza, la approvi: esce il PDF con il tuo logo e un link che mandi al cliente, anche su WhatsApp con il messaggio già pronto. Lui lo apre e lo accetta dal telefono: come funziona lo trovi in [accettazione online](/funzioni/accettazione-online).",
         "Se vuoi vedere come cambia il racconto da un mestiere all'altro, guarda gli esempi per [elettricista](/preventivo-elettricista) e per [idraulico](/preventivo-idraulico).",
       ],
     },
@@ -120,10 +119,6 @@ export const preventivoDaVocale: PaginaFunzione = {
       {
         d: "Se mi correggo mentre parlo, cosa resta?",
         r: "Resta la versione finale di quello che hai corretto. Se dici «tre prese, anzi quattro», la riga è da quattro. Le altre lavorazioni dette prima restano dove sono.",
-      },
-      {
-        d: "Posso raccontare in rumeno o in arabo?",
-        r: "Sì. A voce dipende dal telefono: se riconosce la tua lingua detti, altrimenti scrivi. Per iscritto va bene qualunque lingua, anche mescolata con l'italiano. La bozza esce sempre in italiano.",
       },
       {
         d: "Il cliente vede il mio racconto?",

@@ -115,11 +115,6 @@ export const giardiniere: PaginaMestiere = {
     avvertenza:
       "Prendile come una traccia per orientarti, non come un parere. Regole e interpretazioni cambiano, e per il tuo caso concreto decidono il commercialista e gli uffici competenti.",
   },
-  straniero: {
-    titolo: "Giardini di chi vive fuori",
-    testo:
-      "Il proprietario che arriva solo d'estate vuole trovare il giardino in ordine e affida la manutenzione della stagione a distanza. Il preventivo può partire in inglese, con i passaggi compresi nel contratto elencati in inglese e l'italiano che fa fede. Tu lo controlli in italiano, e il cliente lo accetta dal link anche da lontano.",
-  },
   domande: {
     titolo: "Domande dai giardinieri",
     voci: [

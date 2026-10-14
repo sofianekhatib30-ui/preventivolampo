@@ -154,7 +154,6 @@ export const ui = {
     note: "Note per te",
     didascalia:
       "Bozza ricavata dal sistema dal racconto qui sopra, il {data}. Lavoro e cliente sono inventati. I prezzi non ci sono perché sono i tuoi: nella bozza vera arrivano dal tuo listino, e una voce che non hai resta da prezzare.",
-    raccontaInLingua: "Puoi raccontarlo anche nella tua lingua: la bozza esce in italiano.",
     colVoce: "Voce",
     colUnita: "Unità",
     colNota: "Cosa scrivere",

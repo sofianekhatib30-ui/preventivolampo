@@ -92,21 +92,23 @@ export default function Dettatura({ onTesto }: { onTesto: (pezzo: string) => voi
 
   return (
     <div className="mt-2">
-      <label className="mb-2 flex flex-wrap items-center gap-2 text-[15px] font-semibold text-testo-2">
-        {D.parloIn}
-        <select
-          value={lingua}
-          onChange={(e) => cambiaLingua(e.target.value)}
-          disabled={ascolto}
-          className="min-h-11 rounded-campo border border-linea-2 bg-superficie px-2 text-[16px] font-normal text-inchiostro"
-        >
-          {LINGUE_RACCONTO.map((l) => (
-            <option key={l.codice} value={l.codice} lang={l.codice}>
-              {l.nome}
-            </option>
-          ))}
-        </select>
-      </label>
+      {LINGUE_RACCONTO.length > 1 && (
+        <label className="mb-2 flex flex-wrap items-center gap-2 text-[15px] font-semibold text-testo-2">
+          {D.parloIn}
+          <select
+            value={lingua}
+            onChange={(e) => cambiaLingua(e.target.value)}
+            disabled={ascolto}
+            className="min-h-11 rounded-campo border border-linea-2 bg-superficie px-2 text-[16px] font-normal text-inchiostro"
+          >
+            {LINGUE_RACCONTO.map((l) => (
+              <option key={l.codice} value={l.codice} lang={l.codice}>
+                {l.nome}
+              </option>
+            ))}
+          </select>
+        </label>
+      )}
       <button
         type="button"
         onClick={() => (ascolto ? rec.current?.stop() : avvia())}

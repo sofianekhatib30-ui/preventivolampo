@@ -114,11 +114,6 @@ export const idraulico: PaginaMestiere = {
     avvertenza:
       "Sono indicazioni per orientarti, non una consulenza fiscale o tecnica: ogni lavoro ha i suoi dettagli, e le regole cambiano. Prima di applicarle a un caso vero, sentile confermare dal tuo commercialista.",
   },
-  straniero: {
-    titolo: "Quando il cliente parla un'altra lingua",
-    testo:
-      "Il proprietario che vive all'estero e affitta l'appartamento ti chiama per una perdita e vuole il preventivo prima di autorizzare il lavoro; la famiglia straniera che ha appena comprato casa vuole rifare il bagno. Il preventivo può arrivargli in inglese, con attacchi e sanitari tradotti voce per voce, l'italiano che fa fede e il modulo di recesso in inglese. Tu lo approvi in italiano.",
-  },
   domande: {
     titolo: "Domande dagli idraulici",
     voci: [

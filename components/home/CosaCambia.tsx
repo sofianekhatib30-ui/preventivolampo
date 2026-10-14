@@ -56,28 +56,6 @@ export function CosaCambia({ d }: { d: Dizionario }) {
           <p className="m-0 text-[13px] leading-normal text-testo-3 lg:col-start-1 lg:row-start-2 lg:self-end lg:text-sm">{C.ivaNota}</p>
         </article>
 
-        <article className={`${card} lg:col-span-2 lg:grid lg:grid-cols-2 lg:gap-x-10`}>
-          <div className="flex flex-col gap-3 lg:gap-[18px]">
-            <h3 className={titoloCard}>{C.lingueTitolo}</h3>
-            <p className={testoCard}>{C.lingueTesto}</p>
-          </div>
-          <ol className="m-0 mt-4 flex list-none flex-col gap-2 p-0 font-mono text-[13px] lg:mt-0 lg:text-sm">
-            <li lang="ro" dir="ltr" className="rounded-campo bg-bolla-mia px-4 py-3">
-              «Scot faianța veche din baie, doisprezece metri.»
-            </li>
-            <li className="rounded-campo border border-linea px-4 py-3">
-              <span lang="it" className="font-semibold">
-                Rimozione rivestimento in piastrelle · 12 mq
-              </span>
-              <span className="block text-testo-3">{C.lingueDalListino}</span>
-            </li>
-            <li className="rounded-campo border border-linea px-4 py-3">
-              <span lang="en">Removal of wall tiles</span>
-              <span className="block text-testo-3">{C.lingueAlCliente}</span>
-            </li>
-          </ol>
-        </article>
-
         <Card titolo={C.aiutoTitolo}>
           <p className={testoCard}>{C.aiutoTesto}</p>
         </Card>

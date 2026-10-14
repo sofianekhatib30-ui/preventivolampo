@@ -173,7 +173,8 @@ describe("avvertenze nelle lingue dell'interfaccia", () => {
       ...profiloDa({ regime_fiscale: "ordinario", ritenuta: false, rivalsa_inps: false, mestieri: ["Catering", "Fotografo e video"] }).avvisi,
       ...riepilogoFiscale(fisco({ cliente: "condominio", oggetto: "nuova_costruzione", primaCasa: true }), [riga(100)])!.avvisi,
     ];
-    for (const t of testi) expect(avvisoIn(DIZIONARI.en, t), t).not.toBe(t);
+    // Dal 14/10/2026 il sito è solo in italiano: non ci sono più dizionari in cui tradurre gli avvisi.
+    for (const t of testi) expect(avvisoIn(DIZIONARI.it, t), t).toBe(t);
     expect(avvisoIn(DIZIONARI.it, testi[0])).toBe(testi[0]);
   });
 });

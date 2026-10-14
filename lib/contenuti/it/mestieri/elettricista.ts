@@ -113,11 +113,6 @@ export const elettricista: PaginaMestiere = {
     avvertenza:
       "Queste note servono a orientarti e non sostituiscono il parere del tuo commercialista o del tuo consulente. Norme e aliquote possono cambiare: verifica sempre il caso concreto.",
   },
-  straniero: {
-    titolo: "Se il cliente non parla italiano",
-    testo:
-      "A chiamare l'elettricista sono spesso stranieri che hanno appena comprato casa e trovano un impianto vecchio, o uffici di aziende estere che aggiungono postazioni. Per loro il preventivo può partire in inglese: punti luce e prese con la traduzione sotto, l'italiano che fa fede e il modulo di recesso in inglese. La bozza la controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dagli elettricisti",
     voci: [

@@ -52,7 +52,8 @@ export function impronta(s: string): string {
   return JSON.stringify({ segnaposto, link, grassetti });
 }
 
-const NOMI: Record<LinguaSito, string> = {
+// Dal 14/10/2026 il sito è solo in italiano: i nomi restano per quando torna l'inglese.
+const NOMI: Record<string, string> = {
   it: "italiano",
   en: "inglese (britannico)",
   ro: "rumeno",

@@ -108,11 +108,6 @@ export const falegname: PaginaMestiere = {
     avvertenza:
       "Sono indicazioni generali per aiutarti a scrivere un preventivo più chiaro. Sul tuo caso l'ultima parola spetta al commercialista o al consulente legale, anche perché regole e interpretazioni cambiano.",
   },
-  straniero: {
-    titolo: "Su misura per clienti stranieri",
-    testo:
-      "Chi arreda un appartamento per gli affitti brevi o una seconda casa vuole capire perché un armadio su misura costa più di uno del mobilificio, e lo vuole leggere senza un interprete. Il preventivo può partire in inglese, con essenze, finiture e ferramenta tradotte, l'italiano che fa fede e il modulo di recesso in inglese. Tu lo controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dai falegnami",
     voci: [

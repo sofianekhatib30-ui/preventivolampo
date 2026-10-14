@@ -11,7 +11,9 @@
 // albanese, arabo e ucraino richiedono un carattere incorporato e un controllo di madrelingua:
 // il giorno in cui si aggiungono, vanno scritti qui i loro testi e provato il PDF.
 
-// Dall'11/10/2026 (decisione di Sofiane) il cliente straniero riceve il preventivo in inglese.
+// Dall'11/10/2026 il cliente straniero poteva ricevere il preventivo in inglese. Dal 14/10/2026 (solo italiano) la
+// scelta non si offre più: la sezione della lingua del cliente è spenta nell'area (Revisione senza «traduzioni»).
+// "en" resta nel modello perché un preventivo già salvato in inglese continui ad aprirsi e a stamparsi.
 export const LINGUE = ["it", "en"] as const;
 export type Lingua = (typeof LINGUE)[number];
 export type LinguaStraniera = Exclude<Lingua, "it">;
@@ -25,20 +27,9 @@ export const LOCALE: Record<Lingua, string> = { it: "it-IT", en: "en-GB" };
 
 // Lingue in cui l'artigiano può dettare il sopralluogo (riconoscimento vocale del browser).
 // Scritto, il motore capisce qualunque lingua; a voce dipende dal telefono: dove manca, si scrive.
-export const LINGUE_RACCONTO = [
-  { codice: "it-IT", nome: "Italiano" },
-  { codice: "ro-RO", nome: "Română" },
-  { codice: "sq-AL", nome: "Shqip" },
-  { codice: "ar-MA", nome: "العربية (المغرب)" },
-  { codice: "ar-EG", nome: "العربية (مصر)" },
-  { codice: "ar-TN", nome: "العربية (تونس)" },
-  { codice: "ar-SA", nome: "العربية" },
-  { codice: "uk-UA", nome: "Українська" },
-  { codice: "ru-RU", nome: "Русский" },
-  { codice: "es-ES", nome: "Español" },
-  { codice: "fr-FR", nome: "Français" },
-  { codice: "en-GB", nome: "English" },
-] as const;
+// Dal 14/10/2026 (decisione di Sofiane: «no solo italiano») si detta solo in italiano, e il selettore della
+// lingua di dettatura non si mostra finché qui c'è una lingua sola.
+export const LINGUE_RACCONTO = [{ codice: "it-IT", nome: "Italiano" }] as const;
 
 export type Traduzione = {
   lingua: LinguaStraniera;

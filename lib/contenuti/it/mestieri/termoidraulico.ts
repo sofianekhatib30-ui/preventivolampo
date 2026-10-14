@@ -119,11 +119,6 @@ export const termoidraulico: PaginaMestiere = {
     avvertenza:
       "Quello che leggi qui è un promemoria per non dimenticare nulla, non un parere di un tecnico o di un fiscalista. Soglie, modelli e aliquote cambiano: sul caso concreto decidono la norma in vigore e il tuo commercialista.",
   },
-  straniero: {
-    titolo: "Clienti che non parlano italiano",
-    testo:
-      "Chi ha una seconda casa e vuole il clima prima dell'estate, o la famiglia arrivata per lavoro che al primo inverno si trova la caldaia da cambiare: per il termoidraulico sono chiamate frequenti. Il preventivo può partire in inglese, con generatore, accessori e manutenzioni spiegati in inglese, l'italiano che fa fede e il modulo di recesso tradotto. Tu lo controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dai termoidraulici",
     voci: [

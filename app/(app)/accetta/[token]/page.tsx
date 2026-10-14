@@ -5,9 +5,11 @@ import { euro, UNITA_BREVE } from "@/components/preventivo/formato";
 import { importoRiga, riepilogo } from "@/lib/preventivi/calcolo";
 import { LOCALE, linguaDi, NOME_LINGUA, TESTI, traduzioneAllineata } from "@/lib/preventivi/lingua";
 import { Bandiera } from "@/components/SceltaLingua";
-import { INFO_LINGUA } from "@/lib/i18n/lingue";
 import { recesso } from "@/lib/preventivi/recesso";
 import { perToken } from "@/lib/preventivi/risolvi";
+
+// Bandiera della lingua del preventivo (italiano, o inglese per i preventivi salvati prima del 14/10/2026).
+const BANDIERA_CLIENTE: Record<"it" | "en", string> = { it: "it", en: "gb" };
 
 export const metadata: Metadata = { title: "Il tuo preventivo", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -73,7 +75,7 @@ export default async function PaginaAccetta({ params, searchParams }: { params: 
                     L === l ? "bg-ardesia text-fondo" : "text-testo-2 hover:text-inchiostro"
                   }`}
                 >
-                  <Bandiera codice={INFO_LINGUA[l].bandiera} />
+                  <Bandiera codice={BANDIERA_CLIENTE[l]} />
                   {NOME_LINGUA[l].proprio}
                 </a>
               ))}

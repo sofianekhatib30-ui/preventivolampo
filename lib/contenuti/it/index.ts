@@ -4,7 +4,6 @@ import type { PaginaFunzione, PaginaGlossario, PaginaGuida, PaginaMestiere } fro
 import { accettazioneOnline } from "./funzioni/accettazione-online";
 import { listinoPrezzi } from "./funzioni/listino-prezzi";
 import { preventivoDaVocale } from "./funzioni/preventivo-da-vocale";
-import { preventivoInLinguaDelCliente } from "./funzioni/preventivo-in-lingua-del-cliente";
 import { glossario } from "./glossario";
 import { comeFareUnPreventivo } from "./guide/come-fare-un-preventivo";
 import { ivaPreventivoLavoriCasa } from "./guide/iva-preventivo-lavori-casa";
@@ -44,7 +43,6 @@ export const contenutiIt = {
   } satisfies Record<string, PaginaMestiere>,
   funzioni: {
     "preventivo-da-vocale": preventivoDaVocale,
-    "preventivo-in-lingua-del-cliente": preventivoInLinguaDelCliente,
     "accettazione-online": accettazioneOnline,
     "listino-prezzi": listinoPrezzi,
   } satisfies Record<string, PaginaFunzione>,

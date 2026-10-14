@@ -113,11 +113,6 @@ export const piastrellista: PaginaMestiere = {
     avvertenza:
       "Sono indicazioni generali per orientarti, non una consulenza: per il tuo caso senti il commercialista o un tecnico, anche perché regole e aliquote cambiano nel tempo.",
   },
-  straniero: {
-    titolo: "Pavimenti per chi parla un'altra lingua",
-    testo:
-      "Il proprietario che vive fuori e passa solo per scegliere le piastrelle, o chi rifà il bagno prima di affittare l'appartamento: vuole capire cosa paga senza un interprete. Il preventivo può partire in inglese, con massetto, fughe e battiscopa tradotti voce per voce e l'italiano che fa fede. Tu le voci le controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dai piastrellisti",
     voci: [

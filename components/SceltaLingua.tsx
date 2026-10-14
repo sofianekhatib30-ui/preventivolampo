@@ -6,7 +6,14 @@ import { COOKIE_LINGUA, INFO_LINGUA, LINGUE_SITO, type LinguaSito, percorso, tog
 
 // Selettore della lingua dell'interfaccia: bandiera della lingua attuale; nell'elenco l'italiano in
 // cima, come lingua principale, poi le altre. La scelta resta in un cookie tecnico di preferenza.
-export function SceltaLingua({ scuro = true, compatto = false }: { scuro?: boolean; compatto?: boolean }) {
+// Con una lingua sola (dal 14/10/2026, solo italiano) il selettore non si mostra: torna da solo il giorno in cui
+// LINGUE_SITO ha di nuovo più di una lingua.
+export function SceltaLingua(props: { scuro?: boolean; compatto?: boolean }) {
+  if (LINGUE_SITO.length < 2) return null;
+  return <Selettore {...props} />;
+}
+
+function Selettore({ scuro = true, compatto = false }: { scuro?: boolean; compatto?: boolean }) {
   const { lingua, d, pubblica } = useLingua();
   const [aperto, setAperto] = useState(false);
   const radice = useRef<HTMLDivElement>(null);

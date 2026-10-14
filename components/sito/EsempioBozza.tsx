@@ -10,7 +10,7 @@ function quantita(n: number) {
 }
 
 function dataLunga(iso: string, lingua: LinguaSito) {
-  return new Date(`${iso}T12:00:00`).toLocaleDateString(lingua === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
+  return new Date(`${iso}T12:00:00`).toLocaleDateString((lingua as string) === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
 }
 
 // L'esempio della pagina mestiere: a sinistra il vocale (testo inventato, in italiano),
@@ -32,7 +32,6 @@ export function EsempioBozza({ c, lingua, lavoro, esempio, etichettaVoci }: { c:
             «{esempio.dettatura}»
           </p>
         </div>
-        {lingua !== "it" && <p className="m-0 text-[14px] text-testo-3">{U.raccontaInLingua}</p>}
       </figure>
 
       <figure className="m-0 flex flex-col gap-3">

@@ -152,9 +152,9 @@ export const it = {
     cifre: [
       { cifra: "100%", cosa: "dei prezzi dal tuo listino", dettaglio: "Nessun prezzo inventato. Quello che manca resta da prezzare finché non lo decidi tu." },
       {
-        cifra: "6 lingue",
-        cosa: "per lavorare nella tua",
-        dettaglio: "Italiano, inglese, rumeno, albanese, arabo e ucraino. Al cliente straniero il preventivo arriva in inglese, con l'italiano accanto.",
+        cifra: "0",
+        cosa: "preventivi che partono senza il tuo sì",
+        dettaglio: "Ogni preventivo lo apri e lo approvi tu prima che arrivi al cliente. Il sistema propone, tu decidi.",
       },
       { cifra: "13 s", cosa: "per avere la bozza", dettaglio: "Dal racconto del lavoro alla bozza completa, con le domande su quello che manca." },
     ],
@@ -187,11 +187,6 @@ export const it = {
       iva: "IVA 10% + IVA 22%",
       totale: "Totale",
     },
-    lingueTitolo: "Tu racconti nella tua lingua. Il cliente legge nella sua.",
-    lingueTesto:
-      "Scrivi o detti il lavoro in rumeno, albanese, arabo, ucraino o un'altra lingua: la bozza esce in italiano. Se il cliente è straniero, il preventivo gli arriva in inglese, con il testo italiano accanto che fa fede. La traduzione la vedi e la correggi prima di mandarla.",
-    lingueDalListino: "dal tuo listino, in italiano",
-    lingueAlCliente: "al cliente straniero, con l'italiano accanto",
     aiutoTitolo: "Un aiuto vero, da una persona",
     aiutoTesto:
       "Logo, dati, condizioni di pagamento, acconti, esclusioni: li imposti tu in pochi minuti. Se ti blocchi, ci scrivi o ci chiami e ti risponde una persona, non un bot. E il primo preventivo lo mandi tu, dal telefono.",
@@ -270,10 +265,6 @@ export const it = {
       {
         d: "Va bene per il mio mestiere?",
         r: "Se fai preventivi a voci, sì. Per la casa e gli impianti: elettricisti, idraulici, imbianchini, muratori, serramentisti, fabbri, giardinieri. Per l'auto: officine, carrozzerie, gommisti. Per gli eventi: fotografi, catering, allestimenti, musica. Per le aziende e le persone: tecnici informatici, grafici, stampa, formazione, lezioni private, estetica. Le parole del mestiere le trova nel tuo listino. Con il pilota lo misuriamo anche sui mestieri che non abbiamo ancora provato.",
-      },
-      {
-        d: "Posso raccontarlo nella mia lingua? E se il cliente è straniero?",
-        r: "Sì. Scrivi o detti il lavoro in rumeno, albanese, arabo, ucraino, spagnolo o un'altra lingua, e la bozza esce in italiano con i prezzi del tuo listino. A voce dipende dal telefono: dove la tua lingua non c'è, la scrivi. E se il cliente è straniero, gli mandi il preventivo in inglese: la traduzione la controlli tu, e il testo italiano resta accanto e fa fede.",
       },
       {
         d: "Parlo veloce, c'è rumore, uso termini miei.",

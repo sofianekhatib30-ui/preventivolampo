@@ -24,7 +24,7 @@ export function PaginaLegale({
   blocchi: readonly Blocco[];
   children?: ReactNode;
 }) {
-  const data = new Date(`${aggiornata}T12:00:00`).toLocaleDateString(lingua === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
+  const data = new Date(`${aggiornata}T12:00:00`).toLocaleDateString((lingua as string) === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
   return (
     <>
       <div className="margini py-12 lg:py-20">

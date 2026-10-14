@@ -113,11 +113,6 @@ export const imbianchino: PaginaMestiere = {
     avvertenza:
       "Prendi queste righe come una traccia, non come la risposta di un consulente. Ogni lavoro e ogni cliente hanno i loro casi particolari, e le regole vengono aggiornate: chiedi conferma al commercialista prima di decidere.",
   },
-  straniero: {
-    titolo: "Se il cliente è straniero",
-    testo:
-      "L'inquilino straniero che deve riconsegnare casa tinteggiata, il proprietario che vive fuori e rinfresca l'appartamento prima di affittarlo: vogliono sapere subito quanto costa e cosa è compreso. Il preventivo può arrivargli in inglese, con parole come «rasatura» o «idropittura» rese in inglese, l'italiano che fa fede e il modulo di recesso tradotto. Tu continui a lavorare in italiano.",
-  },
   domande: {
     titolo: "Domande dagli imbianchini",
     voci: [

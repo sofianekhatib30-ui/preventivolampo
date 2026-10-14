@@ -4,10 +4,12 @@
 // I preventivi restano in italiano qualunque sia la lingua dell'interfaccia: la lingua del cliente
 // si sceglie a parte, per ogni preventivo (lib/preventivi/lingua.ts).
 
-// Dall'11/10/2026 (decisione di Sofiane) le lingue di chi lavora nei cantieri in Italia, più l'inglese.
-// Spagnolo, francese, tedesco e olandese sono stati tolti: i loro indirizzi rimandano all'italiano (next.config.ts).
-export const LINGUE_SITO = ["it", "en", "ro", "sq", "ar", "uk"] as const;
-export const LINGUE_TOLTE = ["es", "fr", "de", "nl"] as const;
+// Dal 14/10/2026 (decisione di Sofiane, alla lettera: «no solo italiano») l'interfaccia è solo in italiano.
+// Inglese, rumeno, albanese, arabo e ucraino (11/10) e prima spagnolo, francese, tedesco e olandese sono stati
+// tolti: i loro indirizzi rimandano all'italiano (next.config.ts). I dizionari tradotti restano nella cartella
+// come archivio, per quando tornerà l'inglese. Condizione che fa decadere questa riga: Sofiane riapre l'inglese.
+export const LINGUE_SITO = ["it"] as const;
+export const LINGUE_TOLTE = ["es", "fr", "de", "nl", "en", "ro", "sq", "ar", "uk"] as const;
 export type LinguaSito = (typeof LINGUE_SITO)[number];
 
 export const COOKIE_LINGUA = "pl_lingua";
@@ -17,11 +19,6 @@ export const COOKIE_LINGUA = "pl_lingua";
 // artigiani arabofoni in Italia.
 export const INFO_LINGUA: Record<LinguaSito, { nome: string; bandiera: string; dir: "ltr" | "rtl" }> = {
   it: { nome: "Italiano", bandiera: "it", dir: "ltr" },
-  en: { nome: "English", bandiera: "gb", dir: "ltr" },
-  ro: { nome: "Română", bandiera: "ro", dir: "ltr" },
-  sq: { nome: "Shqip", bandiera: "al", dir: "ltr" },
-  ar: { nome: "العربية", bandiera: "ma", dir: "rtl" },
-  uk: { nome: "Українська", bandiera: "ua", dir: "ltr" },
 };
 
 export function linguaValida(v: string | undefined | null): LinguaSito {
@@ -32,15 +29,10 @@ export function linguaValida(v: string | undefined | null): LinguaSito {
 // sottocartella (/ro/preventivo-idraulico). Così ogni lingua è una pagina che i motori di ricerca vedono.
 // Indicizzate (hreflang, sitemap, index) solo le lingue qui sotto: sono quelle degli artigiani
 // stranieri più numerosi nell'edilizia, più l'inglese. Le altre esistono per chi le sceglie, in noindex.
-export const LINGUE_INDICIZZATE: readonly LinguaSito[] = ["it", "en", "ro", "sq"];
+export const LINGUE_INDICIZZATE: readonly LinguaSito[] = ["it"];
 
 export const LOCALE_OG: Record<LinguaSito, string> = {
   it: "it_IT",
-  en: "en_GB",
-  ro: "ro_RO",
-  sq: "sq_AL",
-  ar: "ar_MA",
-  uk: "uk_UA",
 };
 
 /** Indirizzo di una pagina pubblica nella lingua data: percorso("ro", "/prezzi") → "/ro/prezzi". */

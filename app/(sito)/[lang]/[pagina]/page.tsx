@@ -21,7 +21,7 @@ import {
   SLUG_MESTIERE,
   VICINI,
 } from "@/lib/contenuti/registro";
-import { INFO_LINGUA, LINGUE_SITO, linguaValida, percorso } from "@/lib/i18n/lingue";
+import { LINGUE_SITO, linguaValida, percorso } from "@/lib/i18n/lingue";
 import { dizionarioDi } from "@/lib/i18n/server";
 import { fmt } from "@/lib/i18n/testo";
 import { briciole, grafo } from "@/lib/json-ld";
@@ -50,7 +50,6 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/[pagina]">
 }
 
 // Le lingue in cui il cliente può ricevere il preventivo, con la bandiera.
-const LINGUE_CLIENTE = ["it", "en"] as const;
 
 export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pagina]">) {
   const { id, lingua, c, m } = await carica(params);
@@ -160,28 +159,6 @@ export default async function PaginaMestiere({ params }: PageProps<"/[lang]/[pag
         </dl>
       </section>
 
-      <section aria-labelledby="straniero-titolo" className="margini grid items-center gap-6 py-14 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,1fr)] lg:gap-16 lg:py-20">
-        <div className="flex flex-col gap-4">
-          <h2 id="straniero-titolo" className="titolo-h2 m-0">
-            {m.straniero.titolo}
-          </h2>
-          <p className="testo-base m-0 text-testo-2">
-            <Ricco testo={m.straniero.testo} lingua={lingua} />
-          </p>
-          <a href={p(percorsoFunzione("preventivo-in-lingua-del-cliente"))} className="self-start text-[17px] font-bold text-cielo-scuro">
-            {c.funzioni["preventivo-in-lingua-del-cliente"].nome}
-          </a>
-        </div>
-        <ul className="m-0 flex list-none flex-wrap gap-3 p-0" aria-label={c.funzioni["preventivo-in-lingua-del-cliente"].nome}>
-          {LINGUE_CLIENTE.map((l) => (
-            <li key={l} lang={l} className="flex items-center gap-2.5 rounded-full border border-linea-2 bg-superficie py-2 pe-4 ps-2 text-[16px] font-semibold">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/bandiere/${INFO_LINGUA[l].bandiera}.svg`} alt="" width={28} height={28} className="size-7 rounded-full object-cover ring-1 ring-black/10" />
-              {INFO_LINGUA[l].nome}
-            </li>
-          ))}
-        </ul>
-      </section>
 
       <section id="modello" aria-labelledby="modello-titolo" className="margini py-4 lg:py-8">
         <div className="flex flex-col gap-5 rounded-[24px] border-2 border-dashed border-linea-2 bg-superficie p-6 lg:flex-row lg:items-center lg:justify-between lg:gap-10 lg:p-10">

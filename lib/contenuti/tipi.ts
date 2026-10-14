@@ -39,7 +39,6 @@ export type PaginaMestiere = {
   };
   prezzare: { titolo: string; intro: string; punti: Punto[] };
   documenti: { titolo: string; intro: string; punti: Punto[]; avvertenza: string };
-  straniero: { titolo: string; testo: string };
   domande: { titolo: string; voci: Domanda[] };
 };
 

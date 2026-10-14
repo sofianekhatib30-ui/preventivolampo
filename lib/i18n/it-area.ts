@@ -112,7 +112,7 @@ export const area = {
     preparaListino: "Prepara il listino",
     sotto: "Scrivi o detta il lavoro. La bozza usa le {n} voci del tuo listino; quello che non trova resta da prezzare.",
     claude: "Il testo viene elaborato con Claude di Anthropic e salvato con il preventivo.",
-    racconta: "Racconta il lavoro come lo diresti nel vocale, in italiano o nella tua lingua",
+    racconta: "Racconta il lavoro come lo diresti nel vocale",
     segnaposto: "Cliente, indirizzo, se ci abita. Cosa si toglie, cosa si mette, le misure. Chi compra i materiali.",
     attesa: "Ci vogliono circa 20 secondi…",
     prepara: "Prepara la bozza",
@@ -646,10 +646,10 @@ export const area = {
     parloIn: "Parlo in",
     ascolto: "Sto ascoltando: tocca per fermare",
     detta: "Detta il lavoro",
-    nota: "Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo. In qualunque lingua parli, la bozza esce in italiano.",
+    nota: "Usa il riconoscimento vocale del browser: a questo sito arriva solo il testo.",
     erroreMicrofono: "Il browser non ha il permesso di usare il microfono.",
     erroreLingua:
-      "Su questo telefono la dettatura in questa lingua non c'è. Scrivi pure il testo nella tua lingua: la bozza esce in italiano lo stesso.",
+      "Su questo telefono la dettatura non c'è. Scrivi pure il testo: la bozza esce lo stesso.",
     erroreInterrotta: "La dettatura si è interrotta. Riprova.",
   },
 };

@@ -118,11 +118,6 @@ export const cartongessista: PaginaMestiere = {
     avvertenza:
       "Sono appunti di orientamento, non un parere di un tecnico o di un commercialista. Pratiche e regole fiscali dipendono dal caso e dal Comune: prima di scriverle in un preventivo vero, falle verificare a chi se ne occupa.",
   },
-  straniero: {
-    titolo: "Se il cliente parla un'altra lingua",
-    testo:
-      "Lo straniero che compra un open space e vuole ricavarne una camera, o l'azienda estera che divide un ufficio: per loro «controparete» e «veletta» non dicono niente. Il preventivo può partire in inglese, con queste parole rese in modo chiaro, l'italiano che fa fede e il modulo di recesso tradotto. Tu lo prepari e lo controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dai cartongessisti",
     voci: [

@@ -19,12 +19,15 @@ const nextConfig: NextConfig = {
   },
   // Lettore Excel: resta un pacchetto Node esterno (le sue dipendenze facoltative, come S3, non si impacchettano).
   serverExternalPackages: ["read-excel-file", "unzipper"],
-  // Le pagine in spagnolo, francese, tedesco e olandese sono state tolte l'11/10/2026 (erano in noindex):
-  // chi arriva da un vecchio link trova la pagina italiana.
+  // Le pagine in spagnolo, francese, tedesco e olandese sono state tolte l'11/10/2026 (erano in noindex), quelle
+  // in inglese, rumeno, albanese, arabo e ucraino il 14/10/2026 (solo italiano): chi arriva da un vecchio link
+  // trova la pagina italiana. Elenco uguale a LINGUE_TOLTE in lib/i18n/lingue.ts.
   async redirects() {
     return [
-      { source: "/:lingua(es|fr|de|nl)", destination: "/", permanent: true },
-      { source: "/:lingua(es|fr|de|nl)/:resto*", destination: "/:resto*", permanent: true },
+      { source: "/:lingua(es|fr|de|nl|en|ro|sq|ar|uk)", destination: "/", permanent: true },
+      { source: "/:lingua(es|fr|de|nl|en|ro|sq|ar|uk)/:resto*", destination: "/:resto*", permanent: true },
+      // La pagina del preventivo in inglese è stata tolta il 14/10/2026 (solo italiano): resta la guida sul cliente straniero.
+      { source: "/funzioni/preventivo-in-lingua-del-cliente", destination: "/guide/preventivo-cliente-straniero", permanent: true },
     ];
   },
   // Intestazioni di sicurezza su tutto il sito. Dal 10/10/2026 qui vive anche il cookie della sessione

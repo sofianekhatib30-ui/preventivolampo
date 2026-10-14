@@ -89,6 +89,10 @@ describe("contenuti delle pagine: italiano", () => {
 });
 
 describe("contenuti delle pagine: traduzioni", () => {
+  // Dal 14/10/2026 il sito è solo in italiano: il ciclo qui sotto torna a lavorare quando torna un'altra lingua.
+  it("solo italiano: nessuna lingua da tradurre", () => {
+    expect([...LINGUE_SITO]).toEqual(["it"]);
+  });
   for (const l of LINGUE_SITO.filter((x) => x !== "it")) {
     it(`${l}: stesse chiavi dell'italiano, parole fisse identiche, segni intatti`, () => {
       const T = foglie(leggi(l));
@@ -106,12 +110,10 @@ describe("contenuti delle pagine: traduzioni", () => {
 
 describe("indirizzi per lingua", () => {
   it("percorso e togliLingua sono uno l'inverso dell'altro", () => {
+    // Dal 14/10/2026 solo italiano: /ro/… non è più una lingua del sito (next.config.ts lo rimanda all'italiano).
     expect(percorso("it", "/prezzi")).toBe("/prezzi");
-    expect(percorso("ro", "/")).toBe("/ro");
-    expect(percorso("ro", "/prezzi")).toBe("/ro/prezzi");
-    expect(percorso("sq", "/#candidatura")).toBe("/sq#candidatura");
-    expect(togliLingua("/ro/prezzi")).toEqual({ lingua: "ro", resto: "/prezzi" });
-    expect(togliLingua("/ro")).toEqual({ lingua: "ro", resto: "/" });
+    expect(percorso("it", "/#candidatura")).toBe("/#candidatura");
+    expect(togliLingua("/ro/prezzi")).toEqual({ lingua: null, resto: "/ro/prezzi" });
     expect(togliLingua("/prezzi")).toEqual({ lingua: null, resto: "/prezzi" });
     expect(togliLingua("/romania")).toEqual({ lingua: null, resto: "/romania" });
   });
@@ -120,9 +122,9 @@ describe("indirizzi per lingua", () => {
     expect(decidi("/", undefined)).toEqual({ tipo: "riscrivi", a: "/it" });
     expect(decidi("/preventivo-idraulico", undefined)).toEqual({ tipo: "riscrivi", a: "/it/preventivo-idraulico" });
     expect(decidi("/it/prezzi", undefined)).toEqual({ tipo: "redirect", a: "/prezzi", stato: 301 });
-    expect(decidi("/ro/prezzi", undefined)).toEqual({ tipo: "ricorda", lingua: "ro" });
-    expect(decidi("/ro/prezzi", "ro")).toEqual({ tipo: "passa" });
-    expect(decidi("/prezzi", "ro")).toEqual({ tipo: "redirect", a: "/ro/prezzi", stato: 302 });
+    // Dal 14/10/2026 solo italiano: un cookie di una lingua tolta non sposta più niente. /ro/… non arriva al proxy:
+    // next.config.ts lo rimanda prima all'italiano.
+    expect(decidi("/prezzi", "ro")).toEqual({ tipo: "riscrivi", a: "/it/prezzi" });
     expect(decidi("/prezzi", "it")).toEqual({ tipo: "riscrivi", a: "/it/prezzi" });
     expect(decidi("/prezzi", "xx")).toEqual({ tipo: "riscrivi", a: "/it/prezzi" });
     for (const p of ["/area", "/area/listino", "/accedi", "/accetta/abc", "/api/elabora", "/prova", "/revisione/1", "/progetto"]) expect(decidi(p, "ro"), p).toEqual({ tipo: "passa" });

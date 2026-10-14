@@ -111,18 +111,9 @@ export const muratore: PaginaMestiere = {
     avvertenza:
       "Prendile come un promemoria del mestiere e non come un parere: ogni cantiere ha le sue regole, e per pratiche e fatture l'ultima parola spetta al tecnico e al commercialista.",
   },
-  straniero: {
-    titolo: "Opere murarie per chi vive all'estero",
-    testo:
-      "Chi ristruttura da lontano passa per il sopralluogo e poi decide dal suo paese: deve capire dal preventivo quali muri si buttano giù e cosa resta fuori. Gli può arrivare in inglese, con tramezzo e rasatura resi in modo che non cambino senso e l'italiano che fa fede. Tu lo leggi e lo controlli in italiano.",
-  },
   domande: {
     titolo: "Domande dai muratori",
     voci: [
-      {
-        d: "Posso raccontare il lavoro in rumeno o in albanese?",
-        r: "Sì. Racconti nella lingua in cui ti viene più facile, e la bozza esce in italiano, con le voci del tuo listino. La controlli prima che parta, come sempre.",
-      },
       {
         d: "Il tramezzo l'ho misurato a passi. Va bene lo stesso?",
         r: "Va bene. Dici «tre e sessanta per due e settanta» o «una quarantina di metri», e il sistema rifà il conto nell'unità della tua voce. Prima di approvare vedi ogni riga e correggi quello che non torna.",

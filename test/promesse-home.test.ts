@@ -92,22 +92,10 @@ const PROMESSE: Promessa[] = [
     prova: { file: "lib/i18n/it.ts", contiene: "Nessun rinnovo automatico: alla fine dei 30 giorni decidi tu se restare." },
   },
   {
-    rigaSpec: "«dei prezzi dal tuo listino» / «6 lingue»",
-    frasi: ["dei prezzi dal tuo listino", "6 lingue"],
-    requisito: "Nessun prezzo fuori listino; sei lingue per lavorare (interfaccia dell'artigiano)",
-    prova: { file: "lib/i18n/lingue.ts", contiene: 'export const LINGUE_SITO = ["it", "en", "ro", "sq", "ar", "uk"] as const;' },
-  },
-  {
-    rigaSpec: "«la bozza esce in italiano»",
-    frasi: ["la bozza esce in italiano"],
-    requisito: "Racconto in un'altra lingua, voci della bozza in italiano",
-    prova: { file: "test/lingue.test.ts", contiene: "il motore sa che il racconto può essere in un'altra lingua" },
-  },
-  {
-    rigaSpec: "«gli mandi il preventivo in inglese»",
-    frasi: ["gli mandi il preventivo in inglese"],
-    requisito: "Traduzione controllata, PDF e pagina bilingui con l'italiano che prevale",
-    prova: { file: "test/lingue.test.ts", contiene: "non si approva senza traduzione; con la traduzione il PDF è bilingue" },
+    rigaSpec: "«dei prezzi dal tuo listino» / «preventivi che partono senza il tuo sì»",
+    frasi: ["dei prezzi dal tuo listino", "preventivi che partono senza il tuo sì"],
+    requisito: "Nessun prezzo fuori listino; il link al cliente esiste solo dopo l'approvazione (dal 14/10/2026, al posto di «6 lingue»)",
+    prova: { file: "test/preventivo-e2e.test.ts", contiene: "non si approva finché mancano risposte; poi PDF, link al cliente e accettazione" },
   },
 ];
 
@@ -157,8 +145,9 @@ describe("promesse della home", async () => {
 
   it("ogni riga della tabella della SPEC ha la sua promessa qui, e nessuna in più", () => {
     const righe = righeDellaSpec();
-    // Minimo: una tabella che sparisce o si svuota non deve far passare il test.
-    expect(righe.length).toBeGreaterThanOrEqual(14);
+    // Minimo: una tabella che sparisce o si svuota non deve far passare il test. 12 dal 14/10/2026, quando sono
+    // uscite le due promesse sulle lingue (solo italiano).
+    expect(righe.length).toBeGreaterThanOrEqual(12);
     expect(PROMESSE.map((p) => p.rigaSpec).sort()).toEqual([...righe].sort());
   });
 

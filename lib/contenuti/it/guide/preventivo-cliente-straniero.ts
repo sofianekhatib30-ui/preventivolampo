@@ -31,7 +31,7 @@ export const preventivoClienteStraniero: PaginaGuida = {
       paragrafi: [
         "Un preventivo bilingue ha due colonne o due blocchi per ogni voce, oppure il testo italiano seguito dalla traduzione. In fondo serve una clausola che dica quale versione prevale se le due non coincidono, per esempio: «Il presente preventivo è redatto in italiano e in inglese. In caso di difformità fra le due versioni fa fede il testo italiano.»",
         "Perché l'italiano? Perché è la lingua in cui lavori, in cui il preventivo verrebbe letto da un consulente, da un perito o da un giudice italiano, e in cui sono scritti i termini tecnici. Ma la clausola non è uno scudo assoluto. Nei contratti con i consumatori, quando il senso di una clausola è dubbio, prevale l'interpretazione più favorevole al consumatore (art. 35, comma 2): se la traduzione dice una cosa diversa dall'originale e il cliente ha firmato fidandosi della sua lingua, una traduzione sbagliata può diventare un tuo problema.",
-        "Quindi la traduzione deve essere fedele, non elegante. Frasi brevi, una cosa per frase, gli stessi numeri nelle due versioni, nessun riassunto. Preventivi fa il preventivo anche in inglese, con il PDF in due lingue in cui fa fede l'italiano: tu controlli sempre la versione italiana, ed è quella che approvi prima che parta.",
+        "Quindi la traduzione deve essere fedele, non elegante. Frasi brevi, una cosa per frase, gli stessi numeri nelle due versioni, nessun riassunto.",
       ],
     },
     {
@@ -87,7 +87,7 @@ export const preventivoClienteStraniero: PaginaGuida = {
       titolo: "Il recesso spiegato nella sua lingua",
       paragrafi: [
         "Un cliente privato straniero, per il codice del consumo, è un consumatore come un altro. Se il contratto nasce a casa sua o a distanza, di regola ha 14 giorni per recedere senza dare motivi, e tu devi informarlo prima che si impegni, consegnandogli anche il modulo di recesso. Se l'informativa manca, il termine si allunga di dodici mesi.",
-        "Con un cliente straniero il problema non è la regola, è che la capisca. Un'informativa in italiano consegnata a chi non lo legge fa il minimo indispensabile e lascia aperta la discussione su cosa sapesse davvero. Meglio darla nelle due lingue, come il resto del preventivo: con Preventivi la pagina di accettazione e il modulo di recesso sono anche in inglese.",
+        "Con un cliente straniero il problema non è la regola, è che la capisca. Un'informativa in italiano consegnata a chi non lo legge fa il minimo indispensabile e lascia aperta la discussione su cosa sapesse davvero. Meglio darla nelle due lingue, come il resto del preventivo.",
         "I termini, le eccezioni (per esempio i beni fatti su misura o le riparazioni urgenti chieste dal cliente) e cosa succede se il lavoro parte prima della scadenza sono spiegati nella guida sul [recesso dal preventivo accettato a casa](/guide/recesso-preventivo-accettato-a-casa).",
       ],
     },
@@ -95,7 +95,6 @@ export const preventivoClienteStraniero: PaginaGuida = {
       titolo: "Il sopralluogo, quando non vi capite bene",
       paragrafi: [
         "Il preventivo bilingue nasce dal sopralluogo, ed è lì che si creano gli equivoci. Ripeti ad alta voce le misure e le scelte, mostra con le mani quello che farai, fotografa le cose da rimuovere e quelle da tenere. Se il cliente ti manda messaggi nella sua lingua, rispondi per iscritto: una conversazione scritta, anche tradotta male, vale più di una a voce capita a metà.",
-        "Lo stesso vale per te. Se l'italiano non è la tua prima lingua, puoi raccontare il lavoro nella lingua in cui ragioni meglio: a Preventivi arriva il testo, in rumeno, in albanese, in arabo o in un'altra lingua, e la bozza del preventivo esce comunque in italiano, pronta da tradurre per il cliente.",
       ],
     },
   ],

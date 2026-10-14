@@ -2,18 +2,11 @@ import type { LinguaSito } from "@/lib/i18n/lingue";
 import { type Contenuti, contenutiIt } from "./it";
 
 // I contenuti delle pagine nella lingua chiesta. Da usare solo nei componenti server: non devono finire
-// nel JavaScript del browser. test/contenuti.test.ts controlla che ogni lingua abbia tutte le chiavi.
-const CARICA: Record<Exclude<LinguaSito, "it">, () => Promise<{ default: unknown }>> = {
-  en: () => import("./en.json"),
-  ro: () => import("./ro.json"),
-  sq: () => import("./sq.json"),
-  ar: () => import("./ar.json"),
-  uk: () => import("./uk.json"),
-};
-
+// nel JavaScript del browser. Dal 14/10/2026 il sito è solo in italiano (lib/i18n/lingue.ts): en.json,
+// ro.json, sq.json, ar.json e uk.json restano nella cartella come archivio, non più caricati.
 export async function contenutiDi(lingua: LinguaSito): Promise<Contenuti> {
-  if (lingua === "it") return contenutiIt as unknown as Contenuti;
-  return (await CARICA[lingua]()).default as Contenuti;
+  void lingua;
+  return contenutiIt as unknown as Contenuti;
 }
 
 export type { Contenuti };

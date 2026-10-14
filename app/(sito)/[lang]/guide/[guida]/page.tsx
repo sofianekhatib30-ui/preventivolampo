@@ -44,7 +44,7 @@ export default async function PaginaGuida({ params }: PageProps<"/[lang]/guide/[
     { nome: d.nav.guide, p: "/guide" },
     { nome: g.nome, p: percorsoGuida(id) },
   ];
-  const data = new Date(`${AGGIORNATO}T12:00:00`).toLocaleDateString(lingua === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
+  const data = new Date(`${AGGIORNATO}T12:00:00`).toLocaleDateString((lingua as string) === "ar" ? "ar-MA" : lingua, { day: "numeric", month: "long", year: "numeric" });
   return (
     <Guscio d={d} c={c} lingua={lingua}>
       <TestaPagina lingua={lingua} briciole={vie} etichettaBriciole={d.comune.briciole} h1={g.h1}>

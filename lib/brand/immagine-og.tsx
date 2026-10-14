@@ -8,7 +8,8 @@ import type { LinguaSito } from "@/lib/i18n/lingue";
 export const DIMENSIONE_OG = { width: 1200, height: 630 };
 
 export function lingueSenzaCaratteri(lingua: LinguaSito) {
-  return lingua === "ar" || lingua === "uk";
+  const l: string = lingua; // dal 14/10/2026 solo "it": il controllo resta per quando tornano altre lingue
+  return l === "ar" || l === "uk";
 }
 
 export function immagineOg({ titolo, riga }: { titolo: string; riga: string }) {

@@ -120,11 +120,6 @@ export const serramentista: PaginaMestiere = {
     avvertenza:
       "Sono appunti di lavoro per orientarsi, non un parere: aliquote, detrazioni e regole cambiano spesso, e sul caso concreto decidono il tuo commercialista e il tecnico.",
   },
-  straniero: {
-    titolo: "Seconde case e clienti stranieri",
-    testo:
-      "Il proprietario di una seconda casa che vive all'estero vuole chiuderla bene prima dell'inverno e confronta i preventivi da lontano, guardando vetro, profilo e colore. Il preventivo gli arriva in inglese, con le misure del foro identiche, l'italiano che fa fede e il modulo di recesso tradotto.",
-  },
   domande: {
     titolo: "Domande dai serramentisti",
     voci: [
